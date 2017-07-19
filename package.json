@@ -1,5 +1,5 @@
 {
-  "name": "elements-sdk",
+  "name": "elementssdk",
   "version": "0.0.0",
   "description": "Styling and basic JavaScript components for UI development.\"",
   "main": "build/css/elements.css",
