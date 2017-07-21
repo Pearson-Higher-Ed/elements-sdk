@@ -1,0 +1,32 @@
+@import 'variables';
+@import 'mixins';
+
+%frm-fonts {
+  font-size: $form-font-size;
+  line-height: $form-line-height;
+  margin-bottom: 20px;
+}
+
+.pe-form {
+
+  .pe-form--name {
+    @extend %frm-fonts;
+  }
+
+  .pe-form--name-bold {
+    @extend %frm-fonts;
+    font-weight: $pe-label-bold;
+  }
+
+  .pe-form--error {
+    color: $pe-color-strawberry-red;
+  }
+
+  .pe-form--desc {
+    margin-bottom: 30px;
+  }
+
+  .pe-form--group {
+    margin-bottom: 40px;
+  }
+}

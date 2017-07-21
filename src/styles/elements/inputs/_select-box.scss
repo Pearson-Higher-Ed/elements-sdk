@@ -1,0 +1,39 @@
+@import './variables';
+@import './mixins';
+
+// NOTE: this needs a better home!
+// display label-input pairs in a row
+
+.pe-inlineblock {
+  div {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1em 1em;
+  }
+
+  div:first-child {
+    margin-left: 0;
+  }
+}
+
+.pe-select{
+  @include pe-select(
+    $pe-input-height,
+    $pe-select-padding-left,
+    $pe-select-padding-right,
+    $pe-input-default-border,
+    $pe-select-bg,
+    $pe-select-text,
+    $pe-input-font-size,
+    $pe-select-line-height,
+    $pe-select-vertical-align,
+    $pe-input-border-radius
+  );
+
+  & label {
+    @include pe-label;
+
+    display: block;
+    margin-bottom: 6px;
+  }
+}

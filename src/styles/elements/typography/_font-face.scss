@@ -1,0 +1,45 @@
+@import '../../base/variables';
+
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('#{$pe-fonts-path}opensans-light.woff2') format('woff2'),
+         url('#{$pe-fonts-path}opensans-light.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('#{$pe-fonts-path}opensans-lightitalic.woff2') format('woff2'),
+         url('#{$pe-fonts-path}opensans-lightitalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('#{$pe-fonts-path}opensans-regular.woff2') format('woff2'),
+         url('#{$pe-fonts-path}opensans-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('#{$pe-fonts-path}opensans-italic.woff2') format('woff2'),
+         url('#{$pe-fonts-path}opensans-italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('#{$pe-fonts-path}opensans-semibold.woff2') format('woff2'),
+         url('#{$pe-fonts-path}opensans-semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('#{$pe-fonts-path}opensans-semibolditalic.woff2') format('woff2'),
+         url('#{$pe-fonts-path}opensans-semibolditalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}

@@ -1,0 +1,87 @@
+@import '../../node_modules/pearson-elements/scss/elements/color/variables';
+
+.pe-loadingSpinner {
+  width: 25px;
+  height: 25px;
+  position: relative;
+}
+
+.pe-loadingSpinner-container1 > div, .pe-loadingSpinner-container2 > div {
+  width: 4px;
+  height: 4px;
+  background-color: $pe-color-digital-marine-turquoise;
+
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.6s infinite ease-in-out;
+  animation: bouncedelay 1.6s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.pe-loadingSpinner .pe-loadingSpinner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.pe-loadingSpinner-container2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.circle1 { top: 0; left: 0; }
+.circle2 { top: 0; right: 0; }
+.circle3 { right: 0; bottom: 0; }
+.circle4 { left: 0; bottom: 0; }
+
+.pe-loadingSpinner-container2 .circle1 {
+  -webkit-animation-delay: -1.4s;
+  animation-delay: -1.4s;
+}
+
+.pe-loadingSpinner-container1 .circle2 {
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+
+.pe-loadingSpinner-container2 .circle2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.pe-loadingSpinner-container1 .circle3 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+.pe-loadingSpinner-container2 .circle3 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+
+.pe-loadingSpinner-container1 .circle4 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+
+.pe-loadingSpinner-container2 .circle4 {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 25%, 100% { -webkit-transform: scale(1.0) }
+  12.5% { -webkit-transform: scale(1.5) }
+}
+
+@keyframes bouncedelay {
+  0%, 25%, 100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  } 12.5% {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+  }
+}

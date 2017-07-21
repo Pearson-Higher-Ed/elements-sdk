@@ -1,0 +1,11 @@
+@mixin pe-progressbar {
+  &::-webkit-progress-bar {
+    background: $pe-progressbar-bg;
+  }
+  &::-webkit-progress-value {
+    background: $pe-progressbar-value;
+  }
+  &::-moz-progress-bar {
+    background: $pe-progressbar-value;
+  }
+}

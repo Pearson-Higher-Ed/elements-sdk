@@ -1,0 +1,33 @@
+@import './variables';
+@import './mixins';
+
+progress[value] {
+  display: block;
+  width: 100%;
+  height: 20px;
+  color: $pe-progressbar-value; // for IE10+
+  border: $pe-progressbar-border;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  @include pe-progressbar;
+}
+
+.pe-progressbar {
+  width: 100%;
+  border: $pe-progressbar-border;
+  background: $pe-progressbar-bg;
+
+  .pe-progressbar-inner {
+    height: 18px;// plus 2px border on parent = 20
+    background: $pe-progressbar-value;
+  }
+}
+
+.pe-progressbar-label {
+  @include pe-label;
+
+  margin-bottom: 8px;
+}

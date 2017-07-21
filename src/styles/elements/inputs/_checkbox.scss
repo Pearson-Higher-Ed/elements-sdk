@@ -1,0 +1,53 @@
+@mixin checkbox() {
+
+  .pe-checkbox {
+    position      : relative;
+    min-height    : 16px;
+    margin-bottom : 14px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  input[type="checkbox"] {
+    opacity  : 0;
+    position : absolute;
+    ~ span {
+      left          : 0;
+      top           : 0;
+      position      : absolute;
+      z-index       : 0;
+      height        : $checkbox-box-height;
+      width         : $checkbox-box-width;
+      border        : $checkbox-box-border;
+      border-radius : $checkbox-box-borderRadius;
+    }
+    ~ span svg {
+      opacity : 0;
+      height  : $checkbox-box-height;
+      width   : $checkbox-box-width;
+    }
+    &:checked ~ span svg {
+      opacity : 1;
+    }
+    &:focus ~ span {
+      border        : $checkbox-box-border-focus;
+      border-radius : $checkbox-box-borderRadius;
+    }
+    &:disabled ~ span {
+      background-color : $checkbox-box-disabled-color;
+    }
+    &:disabled ~ span svg{
+      fill : $checkbox-checkmark-color-disabled;
+    }
+
+  }
+  input[type="checkbox"] ~ label {
+    display: inline-block;
+    padding-left: $checkbox-box-width + $checkbox-box-rightMargin;
+    line-height: 18px;
+    position: relative;
+    z-index: 2;
+  }
+
+};

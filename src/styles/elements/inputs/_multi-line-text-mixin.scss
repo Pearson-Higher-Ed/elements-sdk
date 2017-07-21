@@ -1,0 +1,66 @@
+
+
+@mixin multiLineText() {
+
+  %multiLineText {
+    border      : $multiLineText-border;
+    font-size   : $textInput-value-font-size;
+    color       : $pe-color-charcoal;
+    margin-top  : $textInput-basic-marginTop;
+    line-height : $textInput-line-height;
+    padding     : $multiLineText-padding;
+    resize      : none;
+    width       : $multiLineText-width;
+    box-sizing  : $multiLineText-box-sizing;
+
+    @include pe-placeholder {
+      font-size   : $textInput-placeholder-font-size;
+      color       : $textInput-placeholder-color;
+      line-height : $textInput-line-height;
+    }
+
+
+  }
+
+  .pe-multiLineText {
+    @extend %multiLineText;
+    background-color : $pe-color-white;
+    &:focus {
+      outline    : none;
+      border     : $textInput-basic-focus-border;
+      box-shadow : $textInput-basic-focus-boxShadow;
+      resize     : both;
+      overflow   : auto;
+    }
+  }
+
+  .pe-multiLineText--error {
+    @extend .pe-multiLineText;
+    background-color : $pe-color-white;
+    border           : $textInput-basic-error-border;
+    &:focus {
+      outline    : none;
+      resize     : both;
+      overflow   : auto;
+      box-shadow : $textInput-basic-error-focus-boxShadow;
+      border     : $textInput-basic-error-border;
+    }
+  }
+
+  .pe-multiLineText--disabled {
+    @extend %multiLineText;
+    outline          : none;
+    color            : $textInput-basic-disable-background-color;
+    background-color : $textInput-basic-disable-background-color;
+  }
+
+  .pe-multiLineText--readOnly {
+    @extend %multiLineText;
+    background-color : $pe-color-white;
+    border : none;
+    &:focus {
+      outline : none;
+    }
+  }
+
+};

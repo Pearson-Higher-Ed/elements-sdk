@@ -1,0 +1,4 @@
+// commonly used functions
+@function pxToRem($px, $comparator:$pe-font-size-base) {
+  @return #{$px/$comparator}rem;
+}

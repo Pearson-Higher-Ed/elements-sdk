@@ -1,0 +1,47 @@
+@mixin selectAbstracts() {
+  %container-extend {
+    position   : relative;
+    display    : $textInput-basic-display;
+    min-width  : $textInput-basic-select-minWidth;
+    padding    : 0;
+  }
+
+  %container-extend-svg {
+    position       : absolute;
+    bottom         : $svg-bottom;
+    right          : $svg-right;
+    pointer-events : none;
+  }
+
+  %container-extend-select {
+    box-sizing : border-box;
+    width      : 100%;
+    min-height : 34px;
+    margin     : 0;
+    padding    : 0 14px;
+    outline    : none;
+  }
+
+  %selectInput--basic-extend {
+    -webkit-appearance : none;
+    -moz-appearance    : none;
+    appearance         : none;
+    background-color   : $pe-color-white;
+    border             : 1px solid transparent;
+    padding-top        : 8px;
+  }
+
+  %abstract {
+    padding          : $textInput-basic-padding;
+    height           : $textInput-basic-height;
+    width            : $textInput-basic-width;
+    box-sizing       : $textInput-basic-box-sizing;
+    display          : $textInput-basic-display;
+    border-radius    : $textInput-basic-borderRadius;
+    font-size        : $textInput-value-font-size;
+    line-height      : $textInput-line-height;
+    background-color : $pe-color-white;
+    color            : $pe-color-charcoal;
+  }
+
+};

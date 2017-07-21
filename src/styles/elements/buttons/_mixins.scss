@@ -1,0 +1,35 @@
+@mixin pe-btn(
+  $bg,
+  $color,
+  $hover-bg,
+  $hover-color,
+  $disabled-bg:  null,
+  $disabled-color: null
+) {
+
+  color           : $color;
+  background-color: $bg;
+  border-radius   : $pe-btn-border-radius;
+  text-decoration : none;
+  text-overflow   : ellipsis;
+  white-space     : nowrap;
+  overflow        : hidden;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color            : $hover-color;
+    background-color : $hover-bg;
+  }
+
+  &:disabled,
+  &.pe-btn--disabled,
+  &.pe-btn--disabled:hover {
+    cursor          : default;
+    border          : 0;
+    color           : $disabled-color;
+    background-color: $disabled-bg;
+    box-shadow      : none;
+    text-decoration : none;
+  }
+}

@@ -1,0 +1,234 @@
+// contains all the global html tags
+
+// import typography variables here
+@import '../elements/typography/variables';
+
+body {
+	color: $pe-font-color-base;
+}
+
+// Remove top margins from headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Set heading following an level 1 heading a top margin of 40px
+h1 {
+	@extend .pe-heading-level1;
+}
+
+h2 {
+	@extend .pe-heading-level2;
+}
+
+h3 {
+	@extend .pe-heading-level3;
+}
+
+h4 {
+	@extend .pe-heading-level4;
+}
+
+h5 {
+	@extend .pe-heading-level5;
+}
+
+h6 {
+	@extend .pe-heading-level6;
+}
+
+// content spacings
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+	margin-top: 20px;
+}
+
+h1 + h2 {
+	margin-top: 40px;
+}
+
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+	margin-top: 6px;
+}
+
+header {
+	margin-bottom: 20px;
+
+	h1 + .subtitle {
+		@extend .pe-heading-level2;
+		margin-top: 34px;
+	}
+	h2 + .subtitle {
+		@extend .pe-heading-level3;
+	}
+	h3 + .subtitle {
+		@extend .pe-heading-level4;
+	}
+	h4 + .subtitle {
+		@extend .pe-heading-level5;
+	}
+	h5 + .subtitle {
+		@extend .pe-heading-level6;
+	}
+}
+
+// small tags within headings
+//
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  small {
+    //font-size: $pe-text-heading-small-font-size;
+    //color: $pe-text-heading-small-color;
+  }
+}
+
+
+aside {
+  //margin-bottom: $pe-aside-margin;
+  //padding: $pe-aside-padding;
+  //background: $pe-aside-bg;
+  //border-left: $pe-aside-border-left;
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 0.8rem;
+  }
+}
+
+// to be replaced
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 35px;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    //border-top: 1px solid $pe-table-border-color;
+    text-align: left;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    //border-bottom: 2px solid $pe-table-border-color;
+    border-top: 0px none;
+  }
+
+  tbody + tbody {
+    //border-bottom: 2px solid $pe-table-border-color;
+  }
+}
+
+// Links (taken from _type.scss)
+//
+
+a {
+  color: $pe-color-digital-pearson-blue;
+  text-decoration: underline;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    color: $pe-color-ink-blue;
+    text-decoration: none;
+  }
+}
+
+// Body copy
+//
+
+p {
+	@extend .pe-paragraph;
+}
+
+// Inline text
+//
+
+abbr,
+abbr[title] {
+	text-decoration: none;
+}
+
+ins {
+  &:before {
+    content: '+';
+  }
+
+  &:after {
+    content: '+';
+  }
+}
+
+mark {
+  background: $pe-text-mark-bg;
+}
+
+s {
+  //color: $pe-text-strikethrough-color;
+}
+
+small {
+	@include font-size($pe-font-size-small, $pe-line-height-small);
+}
+
+sub,
+sup {
+  font-size: 90%;
+}
+
+sub {
+  top: 0.2rem;
+}
+
+sup {
+  top: -0.2rem;
+}
+
+// Code
+//
+
+pre {
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+pre,
+code,
+kbd {
+  font-family: $pe-font-family-mono;
+}

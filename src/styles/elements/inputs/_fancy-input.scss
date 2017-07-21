@@ -1,0 +1,171 @@
+@mixin textInput() {
+  %pe-textInput {
+    padding     : $textInput-padding;
+    font-size   : $textInput-value-font-size;
+    color       : $textInput-value-color;
+    width       : $textInput-width;
+    border      : $textInput-border-reset;
+    line-height : $textInput-line-height;
+
+  }
+
+  .pe-textInput {
+    @extend %pe-textInput;
+    border-bottom       : $textInput-border-bottom;
+    border-bottom-style : $textInput-border-bottom-style;
+    border-bottom-color : $textInput-border-bottom-color;
+    @include pe-placeholder {
+      font-size : $textInput-placeholder-font-size;
+      color     : $textInput-placeholder-color;
+    }
+
+    &:focus {
+      outline : none;
+    }
+  }
+
+
+
+  .pe-input_underline {
+    background-color   : $textInput-focus-border-bottom-color;
+    display            : block;
+    height             : $textInput-error-focus-border-bottom;
+    -webkit-transform  : scale(0, 1);
+    transform          : scale(0, 1);
+    -webkit-transition : $textInput-animation;
+    transition         : $textInput-animation;
+    width              : $textInput-width;
+    margin-top         : $textInput-focus-marginTop;
+  }
+
+  input:focus+.pe-input_underline {
+    transform : scale(1);
+  }
+
+};
+
+
+
+
+
+@mixin textInputError() {
+  input:focus+.pe-inputError_underline {
+    transform : scale(1);
+  }
+
+  .pe-inputError_underline {
+    background-color   : $textInput-error-border-bottom-color;
+    display            : block;
+    height             : $textInput-error-focus-border-bottom;
+    -webkit-transform  : scale(0, 1);
+    transform          : scale(0, 1);
+    -webkit-transition : $textInput-animation;
+    transition         : $textInput-animation;
+    width              : $textInput-width;
+    margin-top         : $textInput-focus-marginTop;
+  }
+
+  .pe-textInput--input_error {
+    @extend %pe-textInput;
+    border-bottom       : $textInput-error-border-bottom;
+    border-bottom-style : $textInput-error-border-bottom-style;
+    border-bottom-color : $textInput-error-border-bottom-color;
+    @include pe-placeholder {
+      font-size : $textInput-placeholder-font-size;
+      color     : $textInput-placeholder-color;
+    }
+
+    &:focus {
+      outline : none;
+    }
+  }
+
+  .pe-input-wrapper{
+    min-height : $textInput-wrapper-min-height;
+  }
+
+};
+
+
+
+
+
+
+@mixin textInputLabel() {
+
+  %pe-textLabelInput__label {
+    font-size   : $textInput-label-font-size;
+    line-height : $textInput-label-line-height;
+    display     : $textInput-basic-display;
+  }
+
+  .pe-textLabelInput__label {
+    @extend %pe-textLabelInput__label;
+    color : $textInput-label-color;
+  }
+
+  .pe-textLabelInput__label--label_focus {
+    @extend %pe-textLabelInput__label;
+    color : $textInput-focus-label-color;
+  }
+
+  .pe-textLabelInput__label--label_error {
+    @extend %pe-textLabelInput__label;
+    color : $textInput-error-focus-label-color;
+  }
+
+  .pe-textLabelInput__label--label-disabled {
+    @extend %pe-textLabelInput__label;
+    color : $textInput-disable-text-color;
+  }
+
+};
+
+
+
+
+
+
+@mixin textInputReadOnly() {
+  .pe-textInput--input_readonly {
+    @extend %pe-textInput;
+    border-bottom      : $textInput-readonly-border;
+    background-color   : transparent;
+    font-size          : $textInput-readonly-text-font-size;
+    color              : $textInput-value-color;
+    -webkit-appearance : none;
+    @include pe-placeholder {
+      font-size : $textInput-placeholder-font-size;
+    }
+
+    &:focus {
+      outline : none;
+    }
+  }
+};
+
+
+
+
+
+
+@mixin textInputDisabled() {
+  %pe-textInput-disabled {
+    color               : $textInput-disable-text-color;
+    font-size           : $textInput-value-font-size;
+    background-color    : $textInput-disable-background-color;
+    border-bottom       : $textInput-disable-border-bottom;
+    border-bottom-style : $textInput-disable-border-bottom-style;
+    border-bottom-color : $textInput-disable-border-bottom-color;
+  }
+
+  .pe-textInput:disabled {
+    @extend %pe-textInput-disabled;
+  }
+
+  .pe-textInput-disabled {
+    @extend %pe-textInput-disabled;
+  }
+
+
+};

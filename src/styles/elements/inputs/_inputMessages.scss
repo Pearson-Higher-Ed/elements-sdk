@@ -1,0 +1,19 @@
+@mixin inputMessages() {
+
+  %pe-input--info_message {
+    display       : $textInput-messages-display;
+    padding-top   : $textInput-messages-padding-top;
+    font-size     : $textInput-label-font-size;
+    line-height   : $textInput-label-line-height;
+    margin-bottom : $textInput-messages-margin-bottom;
+  }
+
+  .pe-input--error_message {
+    @extend %pe-input--info_message;
+    color : $pe-color-strawberry-red;
+  }
+  .pe-input--info_message {
+    @extend %pe-input--info_message;
+    color : $textInput-label-color;
+  }
+}

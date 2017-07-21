@@ -1,0 +1,53 @@
+
+@mixin textInputBasic() {
+
+
+  .pe-textInput--basic {
+    @extend %abstract;
+    border     : $textInput-basic-border;
+    margin-top : $textInput-basic-marginTop;
+
+    @include pe-placeholder {
+      font-size : $textInput-placeholder-font-size;
+      color     : $textInput-placeholder-color;
+    }
+
+    &:focus {
+      outline    : none;
+      border     : $textInput-basic-focus-border;
+      box-shadow : $textInput-basic-focus-boxShadow;
+    }
+  }
+
+};
+
+
+@mixin textInputBasicError() {
+
+  .pe-textInput--basic_error {
+    @extend %abstract;
+    border     : $textInput-basic-error-border;
+    margin-top : $textInput-basic-marginTop;
+
+    @include pe-placeholder {
+      font-size : $textInput-placeholder-font-size;
+      color     : $textInput-placeholder-color;
+    }
+
+    &:focus {
+      outline    : none;
+      box-shadow : $textInput-basic-error-focus-boxShadow;
+    }
+  }
+
+
+};
+
+
+@mixin textInputBasicDisabled() {
+  .pe-textInput--basic:disabled {
+    background-color : $pe-color-moonlight;
+    margin-top       : $textInput-basic-marginTop;
+  }
+
+};
