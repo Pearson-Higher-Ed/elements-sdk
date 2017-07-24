@@ -72,7 +72,6 @@
     "jsdom": "^9.12.0",
     "markdown-it": "^5.0.2",
     "node-sass": "^4.5.0",
-    "pearson-elements": "^1.11.1",
     "prop-types": "^15.5.6",
     "react": "^15.3.0",
     "react-addons-test-utils": "^15.4.2",
