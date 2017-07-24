@@ -1,0 +1,29 @@
+// Commonly used variables
+// ===========================================
+// all variables here should carry !default
+// to facilitate using them further downstream and overriding if necessary
+// ===========================================
+
+// --------------------------------------------
+// Base typography variables
+// --------------------------------------------
+
+@import '../elements/color/variables';
+
+$pe-font-family-sans:			'Open Sans', Calibri, Tahoma, sans-serif;
+$pe-font-family-mono:			Monaco, 'Lucida Console', monospace;
+
+$pe-font-family-base:			$pe-font-family-sans !default;
+
+$pe-font-size-base:				14px !default;
+$pe-line-height-base:			18px !default;
+
+$pe-font-color-base:			$pe-color-charcoal !default;
+$pe-font-color-secondary:		$pe-color-medium-gray !default;
+
+$pe-font-color-base-inverse:		$pe-color-white;
+$pe-font-color-secondary-inverse:	$pe-color-white-gray;
+
+$pe-fonts-path: '/fonts/' !default;
+
+$pe-images-path: '/images/';

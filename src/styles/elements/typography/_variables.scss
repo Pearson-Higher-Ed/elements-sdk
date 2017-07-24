@@ -1,0 +1,86 @@
+// Type
+// base line-height, font size and font-family are defined in variables
+// to support using Elements without calling in Typography
+
+// -----------------------------
+// UI and body copy
+// -----------------------------
+$pe-line-height-copy:				22px !default;
+
+$pe-font-size-small:				12px !default;
+$pe-line-height-small:				16px !default;
+$pe-line-height-copy-small:			20px !default;
+
+$pe-font-size-large:				16px !default;
+$pe-line-height-large:				20px !default;
+$pe-line-height-copy-large:			24px !default;
+
+$pe-font-size-lead:					20px !default;
+$pe-line-height-lead:				28px !default;
+
+$pe-label-bold: 600 !default;
+
+
+// -----------------------------
+// Page headers
+// -----------------------------
+$pe-font-size-page-title:			38px !default;
+$pe-line-height-page-title:			52px !default;
+
+$pe-font-size-page-title-small:		28px !default;
+$pe-line-height-page-title-small:	38px !default;
+
+
+// -----------------------------
+// UI section headers
+// -----------------------------
+$pe-font-size-sctn-title:			20px !default;
+$pe-line-height-sctn-title:			26px !default;
+
+$pe-font-size-sctn-title-small:		18px !default;
+$pe-line-height-sctn-title-small:	22px !default;
+
+$pe-font-size-sctn-title-large:		24px !default;
+$pe-line-height-sctn-title-large:	28px !default;
+
+
+// -----------------------------
+// Content headers
+// -----------------------------
+
+
+// -----------------------------
+// Code
+// -----------------------------
+$pe-font-family-code:				$pe-font-family-mono;
+
+$pe-bg-code:						$pe-color-moonlight;
+$pe-padding-code:					0 4px;
+
+$pe-bg-pre:							$pe-color-ink-blue;
+$pe-padding-pre:					30px 50px;
+$pe-color-pre:						$pe-color-white-gray;
+$pe-font-size-pre:					14px;
+$pe-line-height-pre:				20px;
+
+
+// -----------------------------
+// Lists
+// -----------------------------
+$pe-margin-list:					12px 0;
+$pe-padding-left-list-primary:		26px;
+$pe-padding-left-list-nested:		20px;
+$pe-space-between-list-items:		6px;
+
+
+// -----------------------------
+// Links
+// -----------------------------
+$pe-color-link:						$pe-color-digital-pearson-blue;
+$pe-color-link-hover:				$pe-color-ink-blue;
+
+
+// -----------------------------
+// Inline Elements
+// -----------------------------
+$pe-text-mark-bg:					$pe-color-sunshine-yellow;

@@ -1,0 +1,182 @@
+//======textInput====================
+
+$textInput-height  : 52px;
+$textInput-width   : 100%;
+
+$textInput-line-height : 18px;
+
+$textInput-wrapper-min-height : 52px;
+
+$textInput-padding : 8px 0px 10px 0px;
+
+$textInput-animation : 0.2s ease all;
+
+$textInput-fontFamily : $pe-font-family-sans;
+
+$textInput-width        : 100%;
+$textInput-border-reset : none;
+
+$textInput-border-bottom       : 1px;
+$textInput-border-bottom-style : solid;
+$textInput-border-bottom-color : $pe-color-medium-gray;
+
+$textInput-value-color     : $pe-color-charcoal;
+$textInput-value-font-size : 14px;
+
+$textInput-label-color       : $pe-color-medium-gray;
+$textInput-label-font-size   : 12px;
+$textInput-label-line-height : 16px;
+
+$textInput-placeholder-color     : $pe-color-concrete;
+$textInput-placeholder-font-size : 14px;
+
+//=====Input Messages================
+
+$textInput-messages-padding-top   : 3px;
+$textInput-messages-display       : block;
+$textInput-messages-margin-bottom : 0;
+
+//======textInput-Error==============
+
+$textInput-error-border-bottom       : 1px;
+$textInput-error-border-bottom-style : solid;
+$textInput-error-border-bottom-color : $pe-color-strawberry-red;
+
+$textInput-error-color           : $pe-color-charcoal;
+
+$textInput-error-font-size       : 14px;
+
+$textInput-error-label-color     : $pe-color-strawberry-red;
+
+//=======textInput-focus-error=======
+
+$textInput-error-focus-border-bottom       : 4px;
+$textInput-error-focus-border-bottom-style : solid;
+$textInput-error-focus-border-bottom-color : $pe-color-strawberry-red;
+
+$textInput-error-focus-color           : $pe-color-charcoal;
+$textInput-error-focus-font-size       : 14px;
+$textInput-error-focus-label-color     : $pe-color-strawberry-red;
+$textInput-error-focus-label-font-size : 12px;
+
+//======focus=========================
+
+$textInput-focus-border-bottom       : 4px;
+$textInput-focus-border-bottom-style : solid;
+$textInput-focus-border-bottom-color : $pe-color-digital-pearson-blue;
+
+$textInput-focus-text-color     : $pe-color-charcoal;
+$textInput-focus-text-font-size : 14px;
+
+$textInput-focus-label-color     : $pe-color-digital-pearson-blue;
+$textInput-focus-label-font-size : 12px;
+
+$textInput-focus-marginTop : -3px;
+
+//======disable=======================
+$textInput-disable-background-color    : $pe-color-white;
+$textInput-disable-border-bottom       : 4px;
+$textInput-disable-border-bottom-style : solid;
+$textInput-disable-border-bottom-color : $pe-color-concrete;
+
+$textInput-disable-text-color     : $pe-color-concrete;
+
+$textInput-basic-disable-background-color : $pe-color-moonlight;
+
+//=======read-only====================
+
+$textInput-readonly-border         : 0;
+
+$textInput-readonly-text-color     : $pe-color-charcoal;
+$textInput-readonly-text-font-size : 14px;
+
+$textInput-readonly-label-color     : $pe-color-medium-gray;
+$textInput-readonly-label-font-size : 12px;
+
+
+//=============checkboxes=============
+
+$checkbox-checkmark                : '#pe-icon--check-sm-18';
+$checkbox-checkmark-color-active   : $pe-color-medium-gray;
+$checkbox-checkmark-color-disabled : $pe-color-concrete;
+
+$checkbox-box-height         : 16px;
+$checkbox-box-width          : 16px;
+$checkbox-box-rightMargin    : 12px;
+$checkbox-box-borderRadius   : 2px;
+$checkbox-box-border         : 1px solid $pe-color-concrete;
+$checkbox-box-border-focus   : 1px solid $pe-color-digital-pearson-blue;
+$checkbox-box-disabled-color : $pe-color-moonlight;
+
+//=============radio buttons=============
+
+$radio-dot                : '#pe-icon--new-notifications-9';
+$radio-dot-color          : $pe-color-medium-gray;
+$radio-dot-color-focused  : $pe-color-digital-pearson-blue;
+$radio-dot-color-disabled : $pe-color-concrete;
+$label-padding            : 28px;
+
+$radio-dot-height            : 8px;
+$radio-dot-width             : 8px;
+$radio-border-padding        : 3px 6px 6px 3px;
+$radio-border-height         : 5px;
+$radio-border-width          : 5px;
+$radio-borderRadius          : 50%;
+$radio-border                : 1px solid $pe-color-concrete;
+$radio-border-focus          : 1px solid $pe-color-digital-pearson-blue;
+$radio-disabled-color        : $pe-color-moonlight;
+
+//=============passwordInput==========
+
+$pe-btn-link-bg     : none !default;
+$pe-btn-link-border : 0 !default;
+$pe-btn-link-text   : $pe-color-digital-pearson-blue !default;
+
+$pe-passwordInput-margin-top       : -37px;
+$pe-passwordInput-basic-margin-top : -28px;
+$pe-passwordInput-width            : 40px;
+$pe-passwordInput-float            : right;
+$pe-passwordInput-outline          : none;
+$pe-passwordInput-text-decoration  : none;
+
+$pe-passwordInput-button-margin-right : 14px;
+$pe-passwordInput-basic-disabled-margin-top : -35px;
+//============textInput-basic==========
+
+$textInput-basic-padding      : 0px 14px 0px 14px;
+$textInput-basic-height       : 36px;
+$textInput-basic-borderRadius : 3px;
+$textInput-basic-display      : block;
+$textInput-basic-marginTop    : 6px;
+$textInput-basic-width        : 100%;
+$textInput-basic-box-sizing  : border-box;
+
+$textInput-basic-border       : 1px solid $pe-color-concrete;
+
+//==========textInput-basic-focus======
+
+$textInput-basic-focus-border    : 1px solid $pe-color-digital-pearson-blue;
+$textInput-basic-focus-boxShadow : 0px 0px 5px 0px $pe-color-digital-pearson-blue;
+
+//===========textInput-basicError======
+
+$textInput-basic-error-border : 1px solid $pe-color-strawberry-red;
+
+//=======textInput-basicError-focus====
+
+$textInput-basic-error-focus-boxShadow : 0px 0px 4px 0px $pe-color-strawberry-red;
+
+//=======textInput-basic-select========
+
+$textInput-basic-select-minWidth : 250px;
+
+$svg-bottom : 8px;
+$svg-right  : 14px;
+$textInput-basic-select-width : 100%;
+
+//=======multiLineText=================
+
+$multiLineText-border     : 1px solid $pe-color-concrete;
+$multiLineText-padding    : 9px 14px;
+$multiLineText-width      : 100%;
+$multiLineText-box-sizing : border-box;

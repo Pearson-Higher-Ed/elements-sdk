@@ -1,0 +1,38 @@
+// Buttons //
+
+$pe-btn-small-height      : 32px !default;
+$pe-btn-small-font-size   : 14px !default;
+$pe-btn-small-padding     : 0 12px !default;
+$pe-btn-small-line-height : 18px !default;
+
+$pe-btn-border-radius : 2px !default;
+
+$pe-btn-large-font-size     : 14px !default;
+$pe-btn-large-line-height   : 18px !default;
+$pe-btn-large-padding       : 0 12px !default;
+$pe-btn-large-height        : 36px !default;
+
+$pe-btn-xlarge-height      : 44px !default;
+$pe-btn-xlarge-font-size   : 18px !default;
+$pe-btn-xlarge-line-height : 22px !default;
+$pe-btn-xlarge-padding     : 0 20px !default;
+
+$pe-btn-primary-bg            : $pe-color-digital-pearson-blue !default;
+$pe-btn-primary-text          : $pe-color-white !default;
+$pe-btn-primary-hover-bg      : $pe-color-ink-blue !default;
+$pe-btn-primary-hover-text    : $pe-color-white !default;
+$pe-btn-primary-disabled-bg   : $pe-color-moonlight !default;
+$pe-btn-primary-disabled-text : $pe-color-concrete !default;
+
+$pe-btn-default-bg            : $pe-color-moonlight !default;
+$pe-btn-default-text          : $pe-color-charcoal !default;
+$pe-btn-default-border        : 1px solid $pe-color-concrete !default;
+$pe-btn-default-hover-bg      : $pe-color-alto !default;
+$pe-btn-default-hover-text    : $pe-color-charcoal !default;
+$pe-btn-default-disabled-bg   : $pe-color-moonlight !default;
+$pe-btn-default-disabled-text : $pe-color-concrete !default;
+
+$pe-btn-cta-bg          : $pe-color-sunshine-yellow !default;
+$pe-btn-cta-text        : $pe-color-charcoal !default;
+$pe-btn-cta-hover-bg    : #FF9A19 !default;
+$pe-btn-cta-hover-text  : $pe-color-charcoal !default;

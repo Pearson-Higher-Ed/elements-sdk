@@ -1,0 +1,18 @@
+// commonly used mixins
+
+@mixin clearfix() {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+};
+
+// font-size mixin returns font-size, line-height and margin-bottom if included
+@mixin font-size($font-size:$pe-font-size-base, $line-height:$pe-line-height-base, $margin-bottom:false){
+	font-size: pxToRem($font-size);
+	line-height: pxToRem($line-height);
+	@if $margin-bottom != false {
+		margin-bottom: pxToRem($margin-bottom);
+	}
+}

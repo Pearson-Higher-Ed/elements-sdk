@@ -1,0 +1,52 @@
+// Icons
+//
+
+// Stop the sprite from taking up room on the page
+
+#pe-icons-sprite {
+  display: none;
+}
+
+svg[class^='pe-icon--'] {
+  display: inline-block;
+  vertical-align: top;
+  fill: currentColor;
+}
+
+[class^='pe-btn'] svg[class$='-18'] {
+  vertical-align: text-top;
+}
+.pe-btn--btn_large svg[class$='-24'] {
+  margin-top: 5px;
+}
+.pe-btn--btn_xlarge svg[class$='-24'],
+[class$='--btn_xlarge'] svg[class$='-24'] {
+  margin-top: 8px;
+}
+
+svg[class$='-18'] {
+  width: 18px;
+  height: 18px;
+}
+svg[class$='-24'] {
+  width: 24px;
+  height: 24px;
+}
+
+// special cases per Van
+
+svg[class$="font-setting-18"] {
+  width: 24px;
+  height: 18px;
+}
+
+svg[class$="font-setting-24"] {
+  width: 32px;
+  height: 24px;
+}
+
+svg[class$="new-notification-9"] {
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+}

@@ -1,0 +1,10 @@
+@import './variables';
+@import './mixins';
+
+//presentation-strategies
+
+@include default-strategy();
+@include centered-strategy();
+@include left_right-strategy();
+@include basic_grid-strategy();
+@include presentation-spacing();

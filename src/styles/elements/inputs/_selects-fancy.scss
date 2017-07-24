@@ -1,0 +1,259 @@
+
+@mixin textInputFancySelect() {
+
+  .pe-select-container--fancy {
+    @extend %abstract, %container-extend;
+    -webkit-appearance : none;
+    -moz-appearance    : none;
+    padding            : 0px;
+    border:none;
+  }
+
+  .pe-select-container--fancy svg {
+    @extend %container-extend-svg;
+    right : 0;
+    outline : none;
+  }
+
+  .pe-select-container--fancy select {
+    @extend %container-extend-select;
+    padding    : 8px 0px 10px 0px;
+    outline    : none;
+    box-shadow : none;
+
+    &:focus {
+      outline    : none;
+      box-shadow : none;
+      &::-ms-value {
+        background : transparent;
+        color      : #222;
+      }
+    }
+    &::-ms-expand {
+      opacity : 0;
+    }
+  }
+
+
+  .pe-selectInput--fancy {
+    @extend %pe-textInput;
+    -webkit-appearance  : none;
+    -moz-appearance     : none;
+    appearance          : none;
+    outline             : none;
+    background-color    : transparent;
+    padding-top         : 8px;
+    border-bottom       : $textInput-border-bottom;
+    border-bottom-style : $textInput-border-bottom-style;
+    border-bottom-color : $textInput-border-bottom-color;
+    border-radius       : 0px;
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow : 0 0 0 #000;
+    }
+  }
+
+  select:focus+.pe-input_underline {
+    transform : scale(1);
+  }
+
+  // Styles for focus...
+  .pe-select-container-fancy-focus {
+    @extend %abstract, %container-extend;
+    border  : none;
+    padding : 0px;
+  }
+
+  .pe-select-container-fancy-focus svg {
+    @extend %container-extend-svg;
+    right : 0;
+  }
+
+  .pe-select-container-fancy-focus select {
+    @extend %container-extend-select;
+    padding : 8px 0px 10px 0px;
+    border  : none;
+    &:focus {
+      outline    : none;
+      &::-ms-value {
+        background : transparent;
+        color      : #222;
+      }
+      &::-ms-expand {
+        opacity : 0;
+      }
+    }
+  }
+
+};
+
+
+
+
+@mixin textInputFancySelectError() {
+
+
+  .pe-select-container-fancy-error {
+    @extend %abstract, %container-extend;
+    background-color   : transparent;
+    -webkit-appearance : none;
+    -moz-appearance    : none;
+    padding            : 0px;
+  }
+
+  .pe-select-container-fancy-error svg {
+    @extend %container-extend-svg;
+    right : 0;
+  }
+
+  .pe-select-container-fancy-error select {
+    @extend %container-extend-select;
+    padding : 8px 0px 10px 0px;
+    &:focus {
+      outline    : none;
+      box-shadow : none;
+      &::-ms-value {
+        background : transparent;
+        color      : #222;
+      }
+    }
+    &::-ms-expand {
+      opacity : 0;
+    }
+  }
+
+
+  .pe-selectInput-fancy-error {
+    @extend %pe-textInput;
+    -webkit-appearance  : none;
+    -moz-appearance     : none;
+    appearance          : none;
+    background-color    : transparent;
+    padding-top         : 8px;
+    border-bottom       : $textInput-border-bottom;
+    border-bottom-style : $textInput-border-bottom-style;
+    border-bottom-color : $textInput-error-border-bottom-color;
+    border-radius       : 0px;
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow : 0 0 0 #000;
+    }
+  }
+
+  select:focus+.pe-inputError_underline {
+    transform : scale(1);
+  }
+
+  // Styles for focus...
+  .pe-select-container-fancy-error-focus {
+    @extend %abstract, %container-extend;
+    border  : none;
+    padding : 0px;
+  }
+
+  .pe-select-container-fancy-error-focus svg {
+    @extend %container-extend-svg;
+    right : 0;
+  }
+
+  .pe-select-container-fancy-error-focus select {
+    @extend %container-extend-select;
+    padding : 8px 0px 10px 0px;
+    &:focus {
+      outline    : none;
+      &::-ms-value {
+        background : transparent;
+        color      : #222;
+      }
+      &::-ms-expand {
+        opacity : 0;
+      }
+    }
+  }
+
+
+};
+
+@mixin textInputFancySelectDisabled() {
+
+
+    .pe-select-container-fancy-disabled {
+      @extend %abstract, %container-extend;
+      background-color   : transparent;
+      -webkit-appearance : none;
+      -moz-appearance    : none;
+      appearance         : none;
+      padding            : 0px;
+    }
+
+    .pe-select-container-fancy-disabled svg {
+      @extend %container-extend-svg;
+      right : 0;
+      fill  : $pe-color-concrete;
+    }
+
+    .pe-select-container-fancy-disabled select {
+      @extend %container-extend-select;
+      padding             : 8px 0px 10px 0px;
+      color               : $pe-color-concrete;
+      border-bottom       : $textInput-disable-border-bottom;
+      border-bottom-style : $textInput-disable-border-bottom-style;
+      border-bottom-color : $textInput-disable-border-bottom-color;
+      &::-ms-expand {
+        opacity : 0;
+      }
+    }
+
+
+    .pe-selectInput-fancy-disabled {
+      @extend %pe-textInput;
+      -webkit-appearance  : none;
+      -moz-appearance     : none;
+      appearance          : none;
+      background-color    : transparent;
+      padding-top         : 8px;
+      border              : none;
+      border-radius       : 0px;
+    }
+
+};
+
+@mixin textInputFancySelectReadOnly() {
+
+
+    .pe-select-container-fancy-readonly {
+      @extend %abstract, %container-extend;
+      background-color   : transparent;
+      -webkit-appearance : none;
+      -moz-appearance    : none;
+      appearance         : none;
+      padding            : 0px;
+    }
+
+    .pe-select-container-fancy-readonly svg {
+      @extend %container-extend-svg;
+      right : 0;
+    }
+
+    .pe-select-container-fancy-readonly select {
+      @extend %container-extend-select;
+      padding    : 8px 0px 10px 0px;
+      appearance : none;
+      &::-ms-expand {
+        opacity : 0;
+      }
+    }
+
+
+    .pe-selectInput-fancy-readonly {
+      @extend %pe-textInput;
+      -webkit-appearance  : none;
+      -moz-appearance     : none;
+      appearance          : none;
+      background-color    : transparent;
+      padding-top         : 8px;
+      border              : none;
+      border-radius       : 0px;
+    }
+
+};

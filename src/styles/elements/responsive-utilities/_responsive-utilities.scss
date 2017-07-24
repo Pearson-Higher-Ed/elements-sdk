@@ -1,0 +1,40 @@
+@import './variables';
+@import './functions';
+@import './mixins';
+
+
+// Visibility
+//
+
+// Visible
+@each $breakpoint in map-keys($pe-responsive-breakpoints) {
+  .pe-#{$breakpoint}--visible {
+    display: none !important;
+  }
+
+  @include pe-responsive-breakpoint($breakpoint to $breakpoint) {
+    @include pe-visible('.pe-#{$breakpoint}--visible');
+  }
+}
+
+// Hidden
+@each $breakpoint in map-keys($pe-responsive-breakpoints) {
+  @include pe-responsive-breakpoint($breakpoint to $breakpoint) {
+    @include pe-hidden('.pe-#{$breakpoint}--hidden');
+  }
+}
+
+// Screen reader
+//
+// See http://a11yproject.com/posts/how-to-hide-content/
+
+.pe-sr-only {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  white-space: nowrap;
+  overflow: hidden;
+}

@@ -1,0 +1,238 @@
+
+@mixin textInputBasicSelect() {
+
+  .pe-select-container {
+    @extend %abstract, %container-extend;
+    border     : $textInput-basic-border;
+    padding    : 0px;
+    margin-top : $textInput-basic-marginTop;
+  }
+
+  .pe-select-container svg {
+    @extend %container-extend-svg;
+  }
+
+
+  .pe-select-container select {
+    @extend %container-extend-select;
+    padding      : .3em;
+    padding-left : 14px;
+    &:focus {
+      outline    : none;
+      border     : $textInput-basic-focus-border;
+      box-shadow : $textInput-basic-focus-boxShadow;
+      &::-ms-value {
+    		background : transparent;
+    		color      : #222;
+    	}
+    }
+    &::-ms-expand {
+      opacity : 0;
+    }
+  }
+
+  .pe-selectInput--basic {
+    @extend %selectInput--basic-extend;
+    &:-moz-focusring {
+      color       : transparent;
+      text-shadow : 0 0 0 #000;
+    }
+  }
+
+
+
+  // Styles for focus...
+  .pe-select-container-focus {
+    @extend %abstract, %container-extend;
+    border     : 1px solid transparent;
+    padding    : 0px;
+    margin-top : $textInput-basic-marginTop;
+  }
+
+  .pe-select-container-focus svg {
+    @extend %container-extend-svg;
+  }
+
+  .pe-select-container-focus select {
+    @extend %container-extend-select;
+    padding      : .3em;
+    padding-left : 14px;
+    &:focus {
+      outline    : none;
+      border     : $textInput-basic-focus-border;
+      box-shadow : $textInput-basic-focus-boxShadow;
+      &::-ms-value {
+        background : transparent;
+        color      : #222;
+      }
+      &::-ms-expand {
+        opacity : 0;
+      }
+    }
+  }
+
+};
+
+
+@mixin textInputBasicSelectError() {
+
+  .pe-select-container-error {
+    @extend %abstract, %container-extend;
+    border     : $textInput-basic-error-border;
+    padding    : 0px;
+    margin-top : $textInput-basic-marginTop;
+  }
+
+  .pe-select-container-error svg {
+    @extend %container-extend-svg;
+  }
+
+  .pe-select-container-error select {
+    @extend %container-extend-select;
+    padding      : .3em;
+    padding-left : 14px;
+    &:focus {
+      outline    : none;
+      border     : $textInput-basic-error-border;
+      box-shadow : $textInput-basic-error-focus-boxShadow;
+      &::-ms-value {
+    		background : transparent;
+    		color      : #222;
+    	}
+    }
+    &::-ms-expand {
+      opacity : 0;
+    }
+  }
+
+  // Styles for focus...
+  .pe-select-container-focus-error {
+    @extend %abstract, %container-extend;
+    border     : 1px solid transparent;
+    padding    : 0px;
+    margin-top : $textInput-basic-marginTop;
+  }
+
+  .pe-select-container-focus-error svg {
+    @extend %container-extend-svg;
+  }
+
+  .pe-select-container-focus-error select {
+    @extend %container-extend-select;
+    padding      : .3em;
+    padding-left : 14px;
+    &:focus {
+      outline    : none;
+      border     : $textInput-basic-error-border;
+      box-shadow : $textInput-basic-error-focus-boxShadow;
+      &::-ms-value {
+        background : transparent;
+        color      : #222;
+      }
+    }
+    &::-ms-expand {
+      opacity : 0;
+    }
+  }
+
+
+
+
+  .pe-select--basic_error {
+    @extend %selectInput--basic-extend;
+    -webkit-appearance : none;
+
+    @include pe-placeholder {
+      font-size : $textInput-placeholder-font-size;
+      color     : $textInput-placeholder-color;
+    }
+
+    &:focus {
+      outline    : none;
+      box-shadow : $textInput-basic-error-focus-boxShadow;
+    }
+    &:-moz-focusring {
+      color       : transparent;
+      text-shadow : 0 0 0 #000;
+    }
+  }
+
+};
+
+
+@mixin textInputBasicSelectDisabled() {
+
+  .pe-select-container-disabled {
+    @extend %abstract, %container-extend;
+    outline            : none;
+    padding            : 0px;
+    color              : $pe-color-concrete;
+    background-color   : $pe-color-moonlight;
+    -webkit-appearance : none;
+    -moz-appearance    : none;
+    appearance         : none;
+    margin-top         : $textInput-basic-marginTop;
+  }
+
+  .pe-select-container-disabled svg {
+    @extend %container-extend-svg;
+    fill : $pe-color-concrete;
+  }
+
+
+  .pe-select-container-disabled select {
+    @extend %container-extend-select;
+        border  : 1px solid $pe-color-concrete;
+        &:focus {
+              outline    : none;
+              border     : $textInput-basic-error-border;
+              box-shadow : $textInput-basic-error-focus-boxShadow;
+              &::-ms-value {
+                background : transparent;
+                color      : #222;
+              }
+            }
+            &::-ms-expand {
+              opacity : 0;
+            }
+  }
+
+};
+
+@mixin textInputBasicSelectReadOnly() {
+
+  .pe-select-container-readonly {
+    @extend %abstract, %container-extend;
+    padding            : 0px;
+    border             : none;
+    -webkit-appearance : none;
+    -moz-appearance    : none;
+    appearance         : none;
+    margin-top         : $textInput-basic-marginTop;
+  }
+
+  .pe-select-container-readonly svg {
+    @extend %container-extend-svg;
+    right : 0;
+
+  }
+
+
+  .pe-select-container-readonly select {
+    @extend %container-extend-select;
+    padding : 0px;
+    &:focus {
+      outline    : none;
+      border     : $textInput-basic-error-border;
+      box-shadow : $textInput-basic-error-focus-boxShadow;
+      &::-ms-value {
+        background : transparent;
+        color      : #222;
+      }
+    }
+    &::-ms-expand {
+      opacity : 0;
+    }
+  }
+
+};

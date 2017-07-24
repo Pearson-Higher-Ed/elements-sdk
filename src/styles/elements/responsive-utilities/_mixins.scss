@@ -1,0 +1,51 @@
+/// Generates a visible class
+@mixin pe-visible($parent) {
+  // scss-lint:disable ImportantRule
+  #{$parent} {
+    display: block !important;
+  }
+
+  table#{$parent} {
+    display: table !important;
+  }
+
+  tr#{$parent} {
+    display: table-row !important;
+  }
+
+  th#{$parent},
+  td#{$parent} {
+    display: table-cell !important;
+  }
+}
+
+/// Generates a hidden class
+@mixin pe-hidden($parent) {
+  // scss-lint:disable ImportantRule
+  #{$parent} {
+    display: none !important;
+  }
+}
+
+@mixin pe-responsive-breakpoint($breakpoint) {
+  $breakpoint: pe-responsive-parse-breakpoint($breakpoint);
+  $_min: map-get($breakpoint, min);
+  $_max: map-get($breakpoint, max);
+  $_query: null;
+
+  @if $_min {
+    $_query: '(min-width: #{$_min})';
+  }
+
+  @if $_max {
+    @if $_min {
+      $_query: '#{$_query} and ';
+    }
+
+    $_query: '#{$_query}(max-width: #{$_max})';
+  }
+
+  @if $_query {
+    @media #{$_query} { @content; }
+  }
+}

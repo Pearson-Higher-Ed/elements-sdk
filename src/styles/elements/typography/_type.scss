@@ -1,0 +1,255 @@
+@import './variables';
+@import './functions';
+@import './mixins';
+@import '../../base/mixins';
+
+html, .pe-base-fontsize {
+   font-size: pxToRem($pe-font-size-base, 16px);
+ }
+ body, .pe-fontstack  {
+   font-family: $pe-font-family-sans;
+ }
+
+// Body copy (as a class, from utilities)
+.pe-copy {
+	@include font-size($pe-font-size-base, $pe-line-height-copy);
+	color: $pe-font-color-base;
+}
+
+.pe-copy--secondary {
+	color: $pe-font-color-secondary;
+}
+
+.pe-copy--small {
+	@include font-size($pe-font-size-small, $pe-line-height-copy-small);
+	color: $pe-font-color-base;
+}
+
+.pe-copy--large {
+	@include font-size($pe-font-size-large, $pe-line-height-copy-large);
+	color: $pe-font-color-base;
+}
+
+.pe-paragraph {
+	@include font-size($pe-font-size-base, $pe-line-height-copy, 12px);
+	margin-top: 0;
+	color: $pe-font-color-base;
+}
+
+.pe-paragraph--last {
+	margin-bottom: 0;
+	color: $pe-font-color-base;
+}
+
+// Leads
+
+.pe-lead {
+	@include font-size($pe-font-size-lead, $pe-line-height-lead);
+	font-weight: lighter;
+	color: $pe-font-color-base;
+}
+
+// Page titles
+
+.pe-page-title {
+	@include font-size($pe-font-size-page-title, $pe-line-height-page-title);
+	font-weight: lighter;
+	color: $pe-font-color-base;
+}
+
+.pe-page-title--small {
+	@include font-size($pe-font-size-page-title-small, $pe-line-height-page-title-small);
+	font-weight: lighter;
+	color: $pe-font-color-base;
+}
+
+
+// Titles
+
+.pe-title {
+	@include font-size($pe-font-size-sctn-title, $pe-line-height-sctn-title);
+	font-weight: normal;
+	color: $pe-font-color-base;
+}
+
+.pe-title--small {
+	@include font-size($pe-font-size-sctn-title-small, $pe-line-height-sctn-title-small);
+	font-weight: normal;
+	color: $pe-font-color-base;
+}
+
+.pe-title--large {
+	@include font-size($pe-font-size-sctn-title-large, $pe-line-height-sctn-title-large);
+	font-weight: normal;
+	color: $pe-font-color-base;
+}
+
+.pe-title--extra-large {
+  // deprecated
+}
+
+// Secondary colors for titles
+.pe-page-title--secondary,
+.pe-title--secondary {
+	color: $pe-font-color-secondary;
+}
+
+
+// Labels
+//
+
+.pe-label {
+	@include font-size($pe-font-size-base, $pe-line-height-base);
+
+  &.pe-label--inverse {
+	color: $pe-font-color-base-inverse;
+  }
+}
+
+.pe-label--secondary {
+  @extend .pe-copy--secondary;
+
+  &.pe-label--inverse {
+	color: $pe-font-color-secondary-inverse;
+  }
+}
+
+.pe-label--small {
+	@include font-size($pe-font-size-small, $pe-line-height-small);
+}
+
+.pe-label--large {
+	@include font-size($pe-font-size-large, $pe-line-height-large);
+}
+
+.pe-label--bold,
+.pe-bold {
+	font-weight: $pe-label-bold;
+}
+
+// Lists
+//
+
+.pe-list {
+	margin: $pe-margin-list;
+	padding-left: pxToRem($pe-padding-left-list-primary);
+
+	li {
+                @include font-size($pe-font-size-base, $pe-line-height-copy, 12px);
+		margin-bottom: pxToRem($pe-space-between-list-items);
+		> ol,
+		> ul {
+			margin-top: pxToRem($pe-space-between-list-items);
+		}
+	}
+
+	&.pe-styled-lists--ordered {
+		list-style-type: decimal;
+		ol {
+			list-style-type: lower-alpha;
+			padding-left: pxToRem($pe-padding-left-list-primary);
+			ol {
+				list-style-type: lower-roman;
+			}
+		}
+	}
+
+	&.pe-styled-lists--unordered {
+		list-style-type: disc;
+		ul {
+			list-style-type: circle;
+			padding-left: pxToRem($pe-padding-left-list-primary);
+			ul {
+				list-style-type: square;
+			}
+		}
+	}
+
+	&.pe-styled-lists-heading--ordered {
+	  list-style-type: decimal;
+	  margin-top: 0;
+		ol {
+		  list-style-type: lower-alpha;
+		  padding-left: pxToRem($pe-padding-left-list-primary);
+			ol {
+			  list-style-type: lower-roman;
+			}
+		}
+	}
+
+	&.pe-styled-lists-heading--unordered {
+	  list-style-type: disc;
+	  margin-top: 0;
+		ul {
+		  list-style-type: circle;
+		  padding-left: pxToRem($pe-padding-left-list-primary);
+			ul {
+			  list-style-type: square;
+			}
+		}
+	}
+}
+
+.pe-list--unstyled {
+  	list-style: none;
+	padding-left: 0;
+	ul {
+		padding-left: pxToRem($pe-padding-left-list-primary);
+	}
+}
+
+// Headings
+//
+
+.pe-heading-level1 {
+	@extend .pe-page-title--small;
+	margin-bottom: 6px;
+}
+
+.pe-heading-level2 {
+	@extend .pe-title--large;
+	margin-bottom: 6px;
+}
+
+.pe-heading-level3 {
+	@extend .pe-title;
+	font-weight: bold;
+	margin-bottom: 6px;
+}
+
+.pe-heading-level4 {
+	@extend .pe-title;
+	margin-bottom: 6px;
+}
+
+.pe-heading-level5 {
+	@extend .pe-title--small;
+	margin-bottom: 6px;
+}
+
+.pe-heading-level6 {
+	@extend .pe-copy--large;
+	margin-bottom: 6px;
+}
+
+* + [class^="pe-heading-level"] {
+	margin-top: 20px;
+}
+
+// Code
+//
+
+.pe-code {
+	font-family: $pe-font-family-code;
+	color: $pe-color-pre;
+	@include font-size($pe-font-size-pre, $pe-line-height-pre);
+	background: $pe-bg-pre;
+	padding: $pe-padding-pre;
+}
+
+.pe-code-inline,
+.pe-kbd {
+	font-family: $pe-font-family-code;
+	background: $pe-bg-code;
+	padding: $pe-padding-code;
+}

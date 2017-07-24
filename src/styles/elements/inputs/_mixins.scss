@@ -1,0 +1,25 @@
+@mixin pe-placeholder {
+  &::-webkit-input-placeholder { @content }
+  &::-moz-placeholder { @content }
+  &:-moz-placeholder { @content }
+  &:-ms-input-placeholder { @content }
+};
+
+
+@mixin clearIEPasswordIcon() {
+  //for IE password Input Icon
+  ::-ms-reveal {
+      display: none;
+  };
+};
+
+
+@mixin fieldSet() {
+  .pe-fieldset{
+    border:none;
+  }
+
+  .pe-legend {
+    opacity: 0;
+  }
+};

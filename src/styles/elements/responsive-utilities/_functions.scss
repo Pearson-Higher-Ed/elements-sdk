@@ -1,0 +1,50 @@
+@function get-breakpoint-value($breakpoint){
+  $current-breakpoint-value-get : pe-responsive-get-breakpoint-value($breakpoint, min);
+
+  @if $current-breakpoint-value-get <= $pe-container-max-width {
+    @return $current-breakpoint-value-get
+  }
+
+  @if $current-breakpoint-value-get > $pe-container-max-width{
+    @return $pe-container-max-width
+  }
+};
+
+@function pe-responsive-parse-breakpoint($breakpoint) {
+  $_return: ();
+  $_to: index($breakpoint, to);
+
+  @if $_to {
+    @if ($_to > 1) {
+      $_min-breakpoint: nth($breakpoint, $_to - 1);
+      $_return: map-merge($_return, (
+        min: pe-responsive-get-breakpoint-value($_min-breakpoint, min)
+      ));
+    }
+
+    $_max-breakpoint: nth($breakpoint, $_to + 1);
+    $_return: map-merge($_return, (
+      max: pe-responsive-get-breakpoint-value($_max-breakpoint, max)
+    ));
+  } @else {
+    $_min-breakpoint: nth($breakpoint, 1);
+    $_return: map-merge($_return, (min: pe-responsive-get-breakpoint-value($_min-breakpoint, min)));
+  }
+
+  @return $_return;
+}
+
+@function pe-responsive-get-breakpoint-value($breakpoint, $bound) {
+  @if not index(min max, $bound) {
+    @error '$bound must be min or max';
+  }
+
+  @if not index(map-keys($pe-responsive-breakpoints), $breakpoint) {
+    @error '$breakpoint was not recognized: #{$breakpoint}';
+  }
+
+  $_return: map-get($pe-responsive-breakpoints, $breakpoint);
+  $_return: map-get($_return, $bound);
+
+  @return $_return;
+}
