@@ -1,0 +1,13 @@
+{
+  "showText"              : "show",
+  "hideText"              : "hide",
+  "isNotVisibleMsg"       : "Password is hidden",
+  "isVisibleMsg"          : "Password is visible",
+  "passwordPlaceholder"   : "Enter Password",
+  "passwordLabel"         : "Password",
+  "textLabel"             : "First Name",
+  "textPlaceholder"       : "First Name",
+  "textInputInfoMessage"  : "This is an info message",
+  "textInputErrorMessage" : "This is an error message",
+  "copyrightText"         : "Pearson Education Inc. All Rights Reserved"
+}

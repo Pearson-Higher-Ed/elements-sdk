@@ -4,6 +4,7 @@
   "description": "Styling and basic JavaScript components for UI development.\"",
   "main": "build/css/elements.css",
   "scripts": {
+    "build": "NODE_ENV=production webpack -p",
     "test": "jest --no-cache --coverage"
   },
   "jest": {

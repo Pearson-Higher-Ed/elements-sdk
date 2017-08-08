@@ -1,0 +1,129 @@
+
+%clearfix {
+  content:"";
+  display:table;
+  clear: both;
+}
+
+//========Global Styles=======================
+.displaySection{
+  @extend %clearfix;
+  overflow: auto;
+  padding: 5px;
+  margin: 10px 10px 20px;
+  width:96%;
+}
+
+.elementContainer {
+  @extend %clearfix;
+  background-color: white;
+  padding: 10px;
+}
+
+h2 {
+  margin-bottom:20px;
+}
+
+h2 a {
+  color: #000;
+}
+
+.code {
+  background-color: #f5f5f5;
+  border: 1px solid #808080;
+  font-size: .85em;
+  padding: 5px;
+  margin-top: 5px;
+  list-style: none;
+}
+
+.buttonList li {
+  margin-bottom: .6em;
+  list-style: none;
+}
+
+.li-props {
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+//---------HomePage-------------------------------
+.link_homepage {
+  color:#778899;
+  text-decoration:none;
+}
+
+.homepage {
+  margin:10px;
+}
+
+//**********Header*********************************
+.header{
+  @extend %clearfix;
+  width:100%;
+  background-color:black;
+  height:50px;
+}
+
+.header .headerButton {
+  float:right;
+  margin:2.5px;
+  outline:none;
+}
+
+.headerTitle {
+  width:50%;
+  float:left;
+  margin:10px;
+  color:#DCDCDC;
+}
+
+.header button svg {
+  vertical-align: text-top;
+  margin-left: 10px;
+}
+
+.buttonList {
+  display:none;
+  position:absolute;
+  right:0;
+  padding-top:10px;
+  padding-bottom:10px;
+  background-color:black;
+  width: 125px;
+  margin-top:0;
+  list-style: none;
+  border-bottom-left-radius:15px;
+  &:first-child {
+    margin-left:-5px;
+  }
+}
+
+.link {
+  text-decoration:none;
+  color:lightgray;
+  &:hover {
+    color:gray;
+  }
+  &:focus {
+    color:gray;
+  }
+}
+
+
+.warning {
+  padding: 5px;
+  background-color: pink;
+  border: 1px solid #db0020;
+}
+
+.warning h2 {
+  margin-bottom: 0;
+  color: #db0020;
+  line-height: 24px;
+}
+
+.inline-pic {
+  height: 50%;
+  width: 50%;
+}

@@ -1,0 +1,13 @@
+{
+  "showText"              : "montrer",
+  "hideText"              : "cacher",
+  "shownText"             : "Mot de passe est caché",
+  "hiddenText"            : "Mot de passe est visible",
+  "passwordPlaceholder"   : "Entrer le mot de passe",
+  "passwordLabel"         : "Mot de passe",
+  "textLabel"             : "Prénom",
+  "textPlaceholder"       : "Prénom",
+  "textInputMessage"      : "Ceci est un message d'information",
+  "textInputErrorMessage" : "Ceci est un message d'erreur",
+  "copyrightText"         : "French Pearson Education Inc. All Rights Reserved"
+}
