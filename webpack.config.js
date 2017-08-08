@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const demo              = `${__dirname}/demo/demo.js`;
 const demoScss          = `${__dirname}/demo/demo.scss`;
 const main              = `${__dirname}/demo/main.js`;
-const compounds         = `${__dirname}/index.js`;
+const ElementsSDK       = `${__dirname}/index.js`;
 const icons             = `${__dirname}/src/styles/assets/icons/p-icons-sprite-1.1.svg`;
 
 
@@ -13,11 +13,11 @@ module.exports = {
     demo              : [ demo, demoScss ],
     dev               : [ icons ],
     eventInstantiator : [ main ],
-    dist              : [ compounds ]
+    dist              : [ ElementsSDK ]
   },
   output: {
     path          : path.resolve(__dirname, 'build'),
-    filename      : '[name].compounds.js',
+    filename      : '[name].ElementsSDK.js',
     publicPath    : '/build/',
     libraryTarget : 'umd'
   },
@@ -25,7 +25,7 @@ module.exports = {
   devServer: {
     host               : '0.0.0.0',
     port               : 8081,
-    publicPath         : '/compounds/',
+    publicPath         : '/ElementsSDK/',
     https              : false,
     overlay            : true,
     watchContentBase   : true,
