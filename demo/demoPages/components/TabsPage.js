@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs, Pane } from '../../index';
+import { Tabs, Pane } from '../../../index';
 
 const pad = {padding: 12};
 const eight = {paddingLeft: 8};

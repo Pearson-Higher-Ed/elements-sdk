@@ -1,5 +1,5 @@
 import React            from 'react';
-import { LoadingSpinner } from '../../index';
+import { LoadingSpinner } from '../../../index';
 
 
 const LoadingSpinnerPage = () => (

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Footer } from '../../index';
+import { Footer } from '../../../index';
 
 import { injectIntl } from 'react-intl';
-import { messages }   from '../translations/defaultMessages';
+import { messages }   from '../../translations/defaultMessages';
 
 
 const copyrightText = 'Pearson Education Inc. All Rights Reserved.';

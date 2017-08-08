@@ -1,15 +1,15 @@
 import React              from 'react';
 import ReactDOM           from 'react-dom';
-import ButtonPage         from './demoPages/ButtonPage';
-import IconPage           from './demoPages/IconPage';
+import ButtonPage         from './demoPages/components/ButtonPage';
+import IconPage           from './demoPages/components/IconPage';
 import HomePage           from './demoPages/HomePage';
 import HeaderPage         from './demoPages/HeaderPage';
-import InputsPage         from './demoPages/InputsPage';
-import DropdownPage       from './demoPages/DropdownPage';
-import FooterPage         from './demoPages/FooterPage';
-import TabsPage           from './demoPages/TabsPage';
-import LoadingSpinnerPage from './demoPages/LoadingSpinnerPage';
-import StaticAlertPage    from './demoPages/StaticAlertPage';
+import InputsPage         from './demoPages/components/InputsPage';
+import DropdownPage       from './demoPages/components/DropdownPage';
+import FooterPage         from './demoPages/components/FooterPage';
+import TabsPage           from './demoPages/components/TabsPage';
+import LoadingSpinnerPage from './demoPages/components/LoadingSpinnerPage';
+import StaticAlertPage    from './demoPages/components/StaticAlertPage';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
