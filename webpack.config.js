@@ -1,3 +1,4 @@
+const fs                = require('fs');
 const path              = require('path');
 const webpack           = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -5,20 +6,23 @@ const demo              = `${__dirname}/demo/demo.js`;
 const demoScss          = `${__dirname}/demo/demo.scss`;
 const main              = `${__dirname}/demo/main.js`;
 const ElementsSDK       = `${__dirname}/index.js`;
+const styles            = `${__dirname}/src/styles/elements.scss`;
 const icons             = `${__dirname}/src/styles/assets/icons/p-icons-sprite-1.1.svg`;
-
+const fontsDir          = `${__dirname}/src/styles/assets/fonts/`;
+const fonts             = fs.readdirSync(fontsDir, 'utf-8').map(font => fontsDir + font);
 
 module.exports = {
   entry: {
     demo              : [ demo, demoScss ],
-    dev               : [ icons ],
+    dev               : [ styles, icons ],
     eventInstantiator : [ main ],
-    dist              : [ ElementsSDK ]
+    dist              : [ ElementsSDK ],
+    fontsDir          : fonts
   },
   output: {
     path          : path.resolve(__dirname, 'build'),
     filename      : '[name].ElementsSDK.js',
-    publicPath    : '/build/',
+    publicPath    : '/ElementsSDK/',
     libraryTarget : 'umd'
   },
   devtool: 'source-map',
