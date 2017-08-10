@@ -23,6 +23,7 @@ import { Icon, Button }     from '../../index';
         <ul className="buttonList">
           <li><Link className="link" to={`/`} >Home</Link></li>
           <li><Link className="link" to={`/styles-buttons`}>Styles Buttons</Link></li>
+          <li><Link className="link" to={`/forms`}>Forms</Link></li>
           <li><Link className="link" to={`/buttons`} >Buttons</Link></li>
           <li><Link className="link" to={`/icons`} >Icons</Link></li>
           <li><Link className="link" to={`/inputs`} >Inputs</Link></li>

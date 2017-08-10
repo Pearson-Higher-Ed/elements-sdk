@@ -9,11 +9,11 @@ const StylesButtonPage = () => (
     <p>Use a button to represent a user action&#8212; specifically, pressing it should perform an action on a page or document, rather than navigating a user elsewhere. These button styles
     are generally intended for content buttons rather than UI buttons. See below for <a href="#uibuttons">UI buttons</a>.</p>
       <button className="pe-btn" style={marginFour}>Default</button>
-      <button className="pe-btn__primary" style={marginFour}>Primary</button>
+      <button className="pe-btn__primary--btn_xlarge" style={marginFour}>Primary</button>
       <button className="pe-btn__cta">Call To Action</button>
     <p className="code" style={{marginTop: 12, marginBottom: 16}}>
       {`<button class="pe-btn">Default</button>`} <br/>
-      {`<button class="pe-btn__primary">Primary</button>`} <br/>
+      {`<button class="pe-btn__primary--btn_xlarge">Primary</button>`} <br/>
       {`<button class="pe-btn__cta">Call To Action</button>`}
     </p>
 
@@ -22,7 +22,7 @@ const StylesButtonPage = () => (
     <p style={{marginBottom: 12}}>Button classes can be used with {`<div>`}, {`<span>`}, {`<a>`}, {`<button>`}, and {`<input>`} elements. But try very hard not to use button styles on divs, spans, or links.</p>
       <div className="pe-btn" tabindex="0" role="button" style={marginFour}>Div</div>
       <a href="#void" className="pe-btn" role="button" style={marginFour}>Link</a>
-      <a href="#void" className="pe-btn__primary--btn_large" role="button" style={marginFour}>Large Primary Link</a>
+      <a href="#void" className="pe-btn__primary--btn_xlarge" role="button" style={marginFour}>Large Primary Link</a>
       <button type="button" className="pe-btn" style={marginFour}>Button</button>
       <input className="pe-btn" type="submit" value="Submit" style={marginFour} />
       <button type="button" className="pe-link" style={marginFour}>Button</button>
@@ -31,7 +31,7 @@ const StylesButtonPage = () => (
     <p className="code">
       {`<div class="pe-btn" tabindex="0" role="button">Div</div>`} <br/>
       {`<a href="#void" class="pe-btn" role="button">Link</a>`} <br/>
-      {`<a href="#void" class="pe-btn__primary--btn_large" role="button">Large Primary Link</a>`} <br/>
+      {`<a href="#void" class="pe-btn__primary--btn_xlarge" role="button">Large Primary Link</a>`} <br/>
       {`<button type="button" class="pe-btn">Button</button>`} <br/>
       {`<input class="pe-btn" type="submit" value="Submit" />`} <br/>
       {`<button type="button" class="pe-link">Button</button>`} <br/>

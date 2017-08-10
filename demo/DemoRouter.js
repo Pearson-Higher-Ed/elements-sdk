@@ -2,6 +2,7 @@ import React              from 'react';
 import ReactDOM           from 'react-dom';
 // Styles
 import StylesButtonPage   from './demoPages/styles/StylesButtonPage';
+import FormsPage          from './demoPages/styles/FormsPage';
 // Components
 import ButtonPage         from './demoPages/components/ButtonPage';
 import IconPage           from './demoPages/components/IconPage';
@@ -25,6 +26,7 @@ const DemoRouter = (props) => (
       <HeaderPage />
         <Route path="/" exact         component={HomePage}   />
         <Route path="/styles-buttons" component={StylesButtonPage} />
+        <Route path="/forms"          component={FormsPage} />
         <Route path="/icons"          component={IconPage}   />
         <Route path="/inputs"         component={InputsPage} />
         <Route path="/buttons"        component={ButtonPage} />
