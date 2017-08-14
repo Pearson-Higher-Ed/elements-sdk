@@ -1354,11 +1354,11 @@ const StylesIconsPage = () => (
       {`</span>`}
     </p>
 
-    <h2>Speech recognition</h2>
+    <h3>Speech recognition</h3>
 
     <p>It is important to note that speech users (who interact with the page using voice commands) will not have access to the names of interactive elements whose text is visually hidden and only made available to screen readers. There are only a few icons where a user has a good chance of guessing the interactive elements name, such as "close" and "search," so it is important to show visible names of interactive elements as much as possible.</p>
 
-    <h2>Screen readers</h2>
+    <h3>Screen readers</h3>
 
     <p>Screen readers *may* alert their users to the existence of decorative SVGs. When the icon is purely decorative, add `aria-hidden="true"` to the SVG to hide it from assistive technologies.</p>
 

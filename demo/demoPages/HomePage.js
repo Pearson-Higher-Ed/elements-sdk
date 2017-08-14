@@ -19,7 +19,7 @@ const HomePage = () => (
       <li><Link className="link_homepage" to={`typography`}>Typography</Link></li>
       <li><Link className="link_homepage" to={`styles-icons`}>Icons</Link></li>
       <li><Link className="link_homepage" to={`styles-buttons`}>Buttons</Link></li>
-      <li><Link className="link_homepage" to={`responsiveutils`}>Responsive Utilities</Link></li>
+      <li><Link className="link_homepage" to={`responsive-utils`}>Responsive Utilities</Link></li>
       <li><Link className="link_homepage" to={`styles-inputs`}>Inputs</Link></li>
       <li><Link className="link_homepage" to={`forms`}>Forms</Link></li>
     </ul>
