@@ -3,6 +3,7 @@ import ReactDOM           from 'react-dom';
 // Styles
 import StylesButtonPage   from './demoPages/styles/StylesButtonPage';
 import FormsPage          from './demoPages/styles/FormsPage';
+import StylesIconsPage    from './demoPages/styles/StylesIconsPage';
 // Components
 import ButtonPage         from './demoPages/components/ButtonPage';
 import IconPage           from './demoPages/components/IconPage';
@@ -15,10 +16,7 @@ import TabsPage           from './demoPages/components/TabsPage';
 import LoadingSpinnerPage from './demoPages/components/LoadingSpinnerPage';
 import StaticAlertPage    from './demoPages/components/StaticAlertPage';
 
-
-
 import { HashRouter as Router, Route } from 'react-router-dom';
-
 
 const DemoRouter = (props) => (
   <Router>
@@ -27,6 +25,7 @@ const DemoRouter = (props) => (
         <Route path="/" exact         component={HomePage}   />
         <Route path="/styles-buttons" component={StylesButtonPage} />
         <Route path="/forms"          component={FormsPage} />
+        <Route path="/styles-icons"   component={StylesIconsPage} />
         <Route path="/icons"          component={IconPage}   />
         <Route path="/inputs"         component={InputsPage} />
         <Route path="/buttons"        component={ButtonPage} />
@@ -37,6 +36,6 @@ const DemoRouter = (props) => (
         <Route path="/StaticAlert"    component={StaticAlertPage} />
     </div>
   </Router>
-)
+);
 
 export default DemoRouter;
