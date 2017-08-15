@@ -2,6 +2,9 @@ import React from 'react';
 
 const eight = {paddingLeft: 8};
 const sixtn = {paddingLeft: 16};
+const twntyfr = {paddingLeft: 24};
+const thrtytwo = {paddingLeft: 32};
+const forty = {paddingLeft: 40};
 
 const TypographyPage = () => (
   <div style={{padding: 14}}>
@@ -540,28 +543,28 @@ const TypographyPage = () => (
     </p>
 
     <p className="code">
-    <p>
-    Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?
-    </p>
-    <ol className="pe-list pe-styled-lists--ordered">
-      <li>List item one. How are you doing today? Quite fine, thank you. This is a long, paragraph-style list-item to show the line-height of the copy in the list-item.</li>
-      <li>Item two.</li>
-      <li>Item three.
-        <ol>
-          <li>child item one</li>
-          <li>child item two
-            <ol>
-              <li>grand child item one</li>
-              <li>grand child item two</li>
-            </ol>
-          </li>
-        </ol>
-      </li>
-    </ol>
-    <p>
-    And back to the regular copy. Hopefully you are fully prepared for your exams now. At least you have a to do list all set up for you.
-    Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?
-    </p>
+    {`<p>`} <br/>
+    {`Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?`} <br/>
+    {`</p>`} <br/>
+    {`<ol className="pe-list pe-styled-lists--ordered">`} <br/>
+      <div style={eight}>{`<li>List item one. How are you doing today? Quite fine, thank you. This is a long, paragraph-style list-item to show the line-height of the copy in the list-item.</li>`}</div>
+      <div style={eight}>{`<li>Item two.</li>`}</div>
+      <div style={eight}>{`<li>Item three.`}</div>
+        <div style={sixtn}>{`<ol>`}</div>
+          <div style={twntyfr}>{`<li>child item one</li>`}</div>
+          <div style={twntyfr}>{`<li>child item two`}</div>
+            <div style={thrtytwo}>{`<ol>`}</div>
+              <div style={forty}>{`<li>grand child item one</li>`}</div>
+              <div style={forty}>{`<li>grand child item two</li>`}</div>
+            <div style={thrtytwo}>{`</ol>`}</div>
+          <div style={twntyfr}>{`</li>`}</div>
+        <div style={sixtn}>{`</ol>`}</div>
+      <div style={eight}>{`</li>`}</div>
+    {`</ol>`} <br/>
+    {`<p>`} <br/>
+    {`And back to the regular copy. Hopefully you are fully prepared for your exams now. At least you have a to do list all set up for you.`} <br/>
+    {`Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?`} <br/>
+    {`</p>`}
     </p>
 
     <h3>Nested unordered lists</h3>
@@ -592,28 +595,28 @@ const TypographyPage = () => (
     </p>
 
     <p className="code">
-    <p>
-    And back to the regular copy. Hopefully you are fully prepared for your exams now. At least you have a to do list all set up for you.
-    Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?
-    </p>
-    <ul class="pe-list pe-styled-lists--unordered">
-      <li>List item one. How are you doing today? Quite fine, thank you.</li>
-      <li>Item two.</li>
-      <li>Item three.
-        <ul>
-          <li>child item one</li>
-          <li>child item two
-            <ul>
-              <li>grand child item one</li>
-              <li>grand child item two</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <p>
-    And back to the regular copy. Hopefully you are fully prepared for your exams now. At least you have a to do list all set up for you.
-    </p>
+    {`<p>`} <br/>
+    {`And back to the regular copy. Hopefully you are fully prepared for your exams now. At least you have a to do list all set up for you.`} <br/>
+    {`Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?`} <br/>
+    {`</p>`} <br/>
+    {`<ul class="pe-list pe-styled-lists--unordered">`} <br/>
+      <div style={eight}>{`<li>List item one. How are you doing today? Quite fine, thank you.</li>`}</div>
+      <div style={eight}>{`<li>Item two.</li>`}</div>
+      <div style={eight}>{`<li>Item three.`}</div>
+        <div style={sixtn}>{`<ul>`}</div>
+          <div style={twntyfr}>{`<li>child item one</li>`}</div>
+          <div style={twntyfr}>{`<li>child item two`}</div>
+            <div style={thrtytwo}>{`<ul>`}</div>
+              <div style={forty}>{`<li>grand child item one</li>`}</div>
+              <div style={forty}>{`<li>grand child item two</li>`}</div>
+            <div style={thrtytwo}>{`</ul>`}</div>
+          <div style={twntyfr}>{`</li>`}</div>
+        <div style={sixtn}>{`</ul>`}</div>
+      <div style={eight}>{`</li>`}</div>
+    {`</ul>`} <br/>
+    {`<p>`} <br/>
+    {`And back to the regular copy. Hopefully you are fully prepared for your exams now. At least you have a to do list all set up for you.`} <br/>
+    {`</p>`} <br/>
     </p>
 
     <h3>Nested ordered lists following a heading</h3>
@@ -638,22 +641,22 @@ const TypographyPage = () => (
     </ul>
 
     <p className="code">
-    <h2>Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?</h2>
-    <ul class="pe-list pe-styled-lists-heading--unordered">
-      <li>List item one. How are you doing today? Quite fine, thank you.</li>
-      <li>Item two.</li>
-      <li>Item three.
-        <ul>
-          <li>child item one</li>
-          <li>child item two
-            <ul>
-              <li>grand child item one</li>
-              <li>grand child item two</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
+    {`<h2>Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?</h2>`} <br/>
+    {`<ul class="pe-list pe-styled-lists-heading--unordered">`} <br/>
+      <div style={eight}>{`<li>List item one. How are you doing today? Quite fine, thank you.</li>`}</div>
+      <div style={eight}>{`<li>Item two.</li>`}</div>
+      <div style={eight}>{`<li>Item three.`}</div>
+        <div style={sixtn}>{`<ul>`}</div>
+          <div style={twntyfr}>{`<li>child item one</li>`}</div>
+          <div style={twntyfr}>{`<li>child item two`}</div>
+            <div style={thrtytwo}>{`<ul>`}</div>
+              <div style={forty}>{`<li>grand child item one</li>`}</div>
+              <div style={forty}>{`<li>grand child item two</li>`}</div>
+            <div style={thrtytwo}>{`</ul>`}</div>
+          <div style={twntyfr}>{`</li>`}</div>
+        <div style={sixtn}>{`</ul>`}</div>
+      <div style={eight}>{`</li>`}</div>
+    {`</ul>`} <br/>
     </p>
 
     <h2>Links</h2>
