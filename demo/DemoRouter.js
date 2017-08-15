@@ -5,6 +5,7 @@ import StylesButtonPage        from './demoPages/styles/StylesButtonPage';
 import FormsPage               from './demoPages/styles/FormsPage';
 import StylesIconsPage         from './demoPages/styles/StylesIconsPage';
 import ResponsiveUtilitiesPage from './demoPages/styles/ResponsiveUtilitiesPage';
+import TypographyPage          from './demoPages/styles/TypographyPage';
 // Components
 import ButtonPage         from './demoPages/components/ButtonPage';
 import IconPage           from './demoPages/components/IconPage';
@@ -28,6 +29,7 @@ const DemoRouter = (props) => (
         <Route path="/forms"            component={FormsPage} />
         <Route path="/styles-icons"     component={StylesIconsPage} />
         <Route path="/responsive-utils" component={ResponsiveUtilitiesPage} />
+        <Route path="/typography"       component={TypographyPage} />
         <Route path="/icons"            component={IconPage}   />
         <Route path="/inputs"           component={InputsPage} />
         <Route path="/buttons"          component={ButtonPage} />

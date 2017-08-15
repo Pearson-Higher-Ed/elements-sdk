@@ -5,6 +5,7 @@ const sixtn = {paddingLeft: 16};
 
 const ResponsiveUtilitiesPage = () => (
   <div style={{padding: 14}}>
+    <h1>Responsive Utilities</h1>
 
     <h2>Responsive breakpoints and media queries</h2>
 

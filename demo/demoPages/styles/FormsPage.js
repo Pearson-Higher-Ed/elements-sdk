@@ -20,12 +20,12 @@ const FormsPage = () => (
 
     <p>Form classes should be used within a form tag with the pe-form class.  All form elements should be contained within this form tag.</p>
 
-    <h2>Form Name</h2>
+    <h3>Form Name</h3>
 
     <p>For accessibility purposes, the form name should use a standard HTML header tag (e.g. h1-h6) but should also have the class pe-form--name added to it.  The purpose of this
     class is to insure proper spacing while the HTML header tag will handle typography.</p>
 
-    <h2>Top Level error</h2>
+    <h3>Top Level error</h3>
 
     <p>Individual input fields should present their own errors following the styles dictated for input components.  Fields with errors should always be accompanied by error text,
     unless a top level error message is sufficient to understand and fix the problem(s).</p>
@@ -33,17 +33,17 @@ const FormsPage = () => (
     <p>Top level errors relevant to the form as a whole may be presented above the first input and below the form name.  It should consist of a single line message (class: pe-form--error)
     and then optional chunk of body copy (class: pe-form--desc) that explains the situation in more detail.</p>
 
-    <h2>Form description</h2>
+    <h3>Form description</h3>
 
     <p>An optional form description may be added should the form fields themselves be insufficient to properly explain the information requested.  This optional area should be
     standard body copy using the appropriate semantic HTML but should contain the pe-form--desc class in order to enforce proper spacing.</p>
 
-    <h2>Input Fields</h2>
+    <h3>Input Fields</h3>
 
     <p>One or more input fields from the input components may be included in the form.  Each form element must be contained within a container (e.g. div) with the class pe-form--group
     added to insure proper spacing between form fields.  Form fields will occupy 100% of the form width and stack.</p>
 
-    <h2>Next/Submit button</h2>
+    <h3>Next/Submit button</h3>
 
     <p>The Next/Submit button should start out as a default button and become a primary (pe-btn__primary) or a CTA (pe-btn__cta) once the form has been completely filled out.  Since
     this change cannot be accomplished strictly via CSS, the application will need to detect the circumstances where the button will change upon form completion.</p>

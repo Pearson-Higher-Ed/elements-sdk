@@ -6,6 +6,8 @@ const twntyFr = {paddingLeft: 24};
 
 const StylesIconsPage = () => (
   <div style={{padding: 14}}>
+    <h1>Icons</h1>
+
     <ul className="d-icon-list" style={{color: '#6a7070'}}>
       <li>
         <svg aria-hidden="true"
