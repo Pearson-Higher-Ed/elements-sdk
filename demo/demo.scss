@@ -138,3 +138,23 @@ h2 a {
 .d-icon-list li {
   padding-bottom: 8px;
 }
+
+// ColorsPage
+
+.color-page-div {
+  display: inline-block;
+  vertical-align: top;
+  height: 150px;
+  width: 150px;
+}
+
+.color-page-white-text {
+  text-align: center;
+  padding: 16px 0;
+  color: white;
+}
+
+.color-page-dark-text {
+  text-align: center;
+  color: black;
+}
