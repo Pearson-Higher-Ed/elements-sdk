@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticAlert } from '../../index';
+import { StaticAlert } from '../../../index';
 
 const StaticAlertPage = () => (
   <div>

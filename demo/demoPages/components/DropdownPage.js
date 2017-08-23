@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from '../../index';
+import { Dropdown } from '../../../index';
 
 const simpleList = ['Thing one', 'Thing two'];
 const listItems = ['Pearson', 'Design', 'divider', 'Accelerator', '!!'];

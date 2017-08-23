@@ -1,6 +1,6 @@
 import React            from 'react';
 import { injectIntl }   from 'react-intl';
-import { Button, Icon } from '../../index';
+import { Button, Icon } from '../../../index';
 
 
 const ButtonPage = () => (

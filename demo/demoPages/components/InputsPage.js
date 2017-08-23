@@ -1,12 +1,12 @@
 import React          from 'react';
 import { injectIntl } from 'react-intl';
-import { messages }   from '../translations/defaultMessages';
+import { messages }   from '../../translations/defaultMessages';
 
-import MultiLineTextSection   from './sections/inputsPageSections/MultiLineTextSection';
-import PasswordInputSection   from './sections/inputsPageSections/PasswordInputSection';
-import TextInputSection       from './sections/inputsPageSections/TextInputSection';
-import RadioCheckGroupSection from './sections/inputsPageSections/RadioCheckGroupSection';
-import SelectSection          from './sections/inputsPageSections/SelectSection';
+import MultiLineTextSection   from './inputsPageSections/MultiLineTextSection';
+import PasswordInputSection   from './inputsPageSections/PasswordInputSection';
+import TextInputSection       from './inputsPageSections/TextInputSection';
+import RadioCheckGroupSection from './inputsPageSections/RadioCheckGroupSection';
+import SelectSection          from './inputsPageSections/SelectSection';
 
 
 const InputsPage = (props) => {

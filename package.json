@@ -4,6 +4,8 @@
   "description": "Styling and basic JavaScript components for UI development.\"",
   "main": "build/css/elements.css",
   "scripts": {
+    "start": "npm run serve",
+    "serve": "NODE_ENV=development webpack-dev-server --hot",
     "build": "NODE_ENV=production webpack -p",
     "test": "jest --no-cache --coverage"
   },
@@ -62,7 +64,7 @@
     "eslint-plugin-react": "~3.16.1",
     "expect": "~1.18.0",
     "expect-jsx": "~2.5.1",
-    "extract-text-webpack-plugin": "2.1.2",
+    "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.10.0",
     "highlight.js": "^8.9.1",
     "html-loader": "^0.4.5",
