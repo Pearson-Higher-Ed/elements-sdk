@@ -30,16 +30,16 @@ const imgPearsonLogo         = `${__dirname}/src/styles/assets/images/PearsonLog
 
 module.exports = {
   entry: {
-    'elements'          : [ elements, osItalicWoff, osItalicWoffII, osLightWoff, osLightWoffII, osLightItalicWoff, osLightItalicWoffII, osRegularWoff, osRegularWoffII, osSemiBoldWoff, osSemiBoldWoffII, osSemiBoldItalicWoff, osSemiBoldItalicWoffII, imgDarkOctocat, imgPearsonSprite, imgPearsonIcon, imgPearsonLogo ],
-    'elementsNoPlain'   : [ elementsNP ],
-    'demo.compounds'              : [ demo, demoScss ],
-    'dev.compounds'               : [ icons ],
-    'eventInstantiator' : [ main ],
-    'dist.compounds'              : [ compounds ]
+    elements          : [ elements, osItalicWoff, osItalicWoffII, osLightWoff, osLightWoffII, osLightItalicWoff, osLightItalicWoffII, osRegularWoff, osRegularWoffII, osSemiBoldWoff, osSemiBoldWoffII, osSemiBoldItalicWoff, osSemiBoldItalicWoffII, imgDarkOctocat, imgPearsonSprite, imgPearsonIcon, imgPearsonLogo ],
+    elementsNoPlain   : [ elementsNP ],
+    demo              : [ demo, demoScss ],
+    dev               : [ icons ],
+    eventInstantiator : [ main ],
+    dist              : [ compounds ]
   },
   output: {
     path          : path.resolve(__dirname, 'build'),
-    filename      : '[name].[ext]',
+    filename      : '[name].compounds.js',
     publicPath    : '/build/',
     libraryTarget : 'umd'
   },
