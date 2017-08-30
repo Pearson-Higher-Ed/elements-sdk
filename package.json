@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run serve",
     "serve": "NODE_ENV=development webpack-dev-server --hot",
-    "build": "NODE_ENV=production webpack -p; node ./scripts/buildClean.js",
+    "build": "NODE_ENV=production webpack -p",
     "test": "jest --no-cache --coverage"
   },
   "jest": {

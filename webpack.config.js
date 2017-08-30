@@ -2,8 +2,10 @@ const path                   = require('path');
 const webpack                = require('webpack');
 const HtmlWebpackPlugin      = require('html-webpack-plugin');
 const ExtractTextPlugin      = require('extract-text-webpack-plugin');
-const extractCSS             = new ExtractTextPlugin('css/[name].min.css');
-const extractSCSS            = new ExtractTextPlugin('css/[name].min.css');
+const extractElementsCss     = new ExtractTextPlugin("/css/elements.css");
+const extractElementsNPCss   = new ExtractTextPlugin('/css/elementsNoPlain.css');
+const extractDemoCss         = new ExtractTextPlugin("/css/demo.css");
+const extractCompnentCss     = new ExtractTextPlugin("/css/components.css");
 const demo                   = `${__dirname}/demo/demo.js`;
 const demoScss               = `${__dirname}/demo/demo.scss`;
 const main                   = `${__dirname}/demo/main.js`;
@@ -30,8 +32,6 @@ const imgPearsonLogo         = `${__dirname}/src/styles/assets/images/PearsonLog
 
 module.exports = {
   entry: {
-    elements          : [ elements, osItalicWoff, osItalicWoffII, osLightWoff, osLightWoffII, osLightItalicWoff, osLightItalicWoffII, osRegularWoff, osRegularWoffII, osSemiBoldWoff, osSemiBoldWoffII, osSemiBoldItalicWoff, osSemiBoldItalicWoffII, imgDarkOctocat, imgPearsonSprite, imgPearsonIcon, imgPearsonLogo ],
-    elementsNoPlain   : [ elementsNP ],
     demo              : [ demo, demoScss ],
     dev               : [ icons ],
     eventInstantiator : [ main ],
@@ -76,21 +76,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: extractSCSS.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            'sass-loader'
-          ]
-        })
+        test: /elements.scss/,
+        use: extractElementsCss.extract(['css-loader', 'sass-loader'])
       },
       {
-        test: /\.css$/,
-        use: extractCSS.extract([
-          'css-loader',
-          'style-loader'
-        ])
+        test: /elementsNoPlain.scss/,
+        use: extractElementsNPCss.extract(['css-loader', 'sass-loader'])
+      },
+      {
+        test: /demo.scss/,
+        use: extractDemoCss.extract(['css-loader', 'sass-loader'])
+      },
+      {
+        test: /\.scss$/,
+        use: extractCompnentCss.extract(['css-loader', 'sass-loader'])
       },
       {
         test: /\.(js|jsx)$/,
@@ -121,14 +120,16 @@ module.exports = {
     ]
   },
   plugins: [
+    extractElementsCss,
+    extractElementsNPCss,
+    extractDemoCss,
+    extractCompnentCss,
     new HtmlWebpackPlugin({
       template: 'demo/index.html'
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV' : JSON.stringify(process.env.NODE_ENV)
     }),
-    new webpack.NamedModulesPlugin(),
-    extractSCSS,
-    extractCSS
+    new webpack.NamedModulesPlugin()
   ]
 };

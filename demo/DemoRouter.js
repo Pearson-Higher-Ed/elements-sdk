@@ -8,6 +8,9 @@ import ResponsiveUtilitiesPage from './demoPages/styles/ResponsiveUtilitiesPage'
 import TypographyPage          from './demoPages/styles/TypographyPage';
 import StylesInputsPage        from './demoPages/styles/StylesInputsPage';
 import ColorPage               from './demoPages/styles/ColorPage';
+
+import '../src/styles/elements.scss';
+
 // Components
 import ButtonPage         from './demoPages/components/ButtonPage';
 import IconPage           from './demoPages/components/IconPage';
