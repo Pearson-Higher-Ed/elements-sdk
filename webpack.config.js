@@ -2,10 +2,10 @@ const path                   = require('path');
 const webpack                = require('webpack');
 const HtmlWebpackPlugin      = require('html-webpack-plugin');
 const ExtractTextPlugin      = require('extract-text-webpack-plugin');
-const extractElementsCss     = new ExtractTextPlugin({ filename: '/css/elements.css' });
-const extractElementsNPCss   = new ExtractTextPlugin({ filename: '/css/elementsNoPlain.css' });
-const extractDemoCss         = new ExtractTextPlugin({ filename: '/css/demo.css' });
-const extractCompnentCss     = new ExtractTextPlugin({ filename: "/css/elements.css" });
+const extractElementsCss     = new ExtractTextPlugin({ filename: 'css/elements.css' });
+const extractElementsNPCss   = new ExtractTextPlugin({ filename: 'css/elementsNoPlain.css' });
+const extractDemoCss         = new ExtractTextPlugin({ filename: 'css/demo.css' });
+const extractCompnentCss     = new ExtractTextPlugin({ filename: "css/elements.css" });
 const demo                   = `${__dirname}/demo/demo.js`;
 const demoScss               = `${__dirname}/demo/demo.scss`;
 const main                   = `${__dirname}/demo/main.js`;
@@ -40,7 +40,7 @@ module.exports = {
   output: {
     path          : path.resolve(__dirname, 'build'),
     filename      : '[name].compounds.js',
-    publicPath    : '/build/',
+    publicPath    : '/compounds/',
     libraryTarget : 'umd'
   },
   devtool: 'source-map',
@@ -122,14 +122,14 @@ module.exports = {
   plugins: [
     extractElementsCss,
     extractElementsNPCss,
-    // extractDemoCss,
-    extractCompnentCss//,
-    // new HtmlWebpackPlugin({
-    //   template: 'demo/index.html'
-    // }),
-    // new webpack.DefinePlugin({
-    //   'process.env.NODE_ENV' : JSON.stringify(process.env.NODE_ENV)
-    // }),
-    // new webpack.NamedModulesPlugin()
+    extractDemoCss,
+    extractCompnentCss,
+    new HtmlWebpackPlugin({
+      template: 'demo/index.html'
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV' : JSON.stringify(process.env.NODE_ENV)
+    }),
+    new webpack.NamedModulesPlugin()
   ]
 };
