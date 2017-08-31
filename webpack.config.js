@@ -5,7 +5,7 @@ const ExtractTextPlugin      = require('extract-text-webpack-plugin');
 const extractElementsCss     = new ExtractTextPlugin({ filename: 'css/elements.css' });
 const extractElementsNPCss   = new ExtractTextPlugin({ filename: 'css/elementsNoPlain.css' });
 const extractDemoCss         = new ExtractTextPlugin({ filename: 'css/demo.css' });
-const extractCompnentCss     = new ExtractTextPlugin({ filename: "css/elements.css" });
+const extractComponentCss     = new ExtractTextPlugin({ filename: "css/elements.css" });
 const demo                   = `${__dirname}/demo/demo.js`;
 const demoScss               = `${__dirname}/demo/demo.scss`;
 const main                   = `${__dirname}/demo/main.js`;
@@ -89,7 +89,7 @@ module.exports = {
       },
       {
         test: /^(?:(?!(elements|demo|\.js|\.jsx|\.svg|\.woff|\.woff2)).)*$/,
-        use: extractCompnentCss.extract(['css-loader', 'sass-loader'])
+        use: extractComponentCss.extract(['css-loader', 'sass-loader'])
       },
       {
         test: /\.(js|jsx)$/,
@@ -123,7 +123,7 @@ module.exports = {
     extractElementsCss,
     extractElementsNPCss,
     extractDemoCss,
-    extractCompnentCss,
+    extractComponentCss,
     new HtmlWebpackPlugin({
       template: 'demo/index.html'
     }),
