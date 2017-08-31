@@ -2,15 +2,15 @@ const path                   = require('path');
 const webpack                = require('webpack');
 const HtmlWebpackPlugin      = require('html-webpack-plugin');
 const ExtractTextPlugin      = require('extract-text-webpack-plugin');
-const extractElementsCss     = new ExtractTextPlugin("/css/elements.css");
-const extractElementsNPCss   = new ExtractTextPlugin('/css/elementsNoPlain.css');
-const extractDemoCss         = new ExtractTextPlugin("/css/demo.css");
-const extractCompnentCss     = new ExtractTextPlugin("/css/components.css");
+const extractElementsCss     = new ExtractTextPlugin({ filename: '/css/elements.css' });
+const extractElementsNPCss   = new ExtractTextPlugin({ filename: '/css/elementsNoPlain.css' });
+const extractDemoCss         = new ExtractTextPlugin({ filename: '/css/demo.css' });
+const extractCompnentCss     = new ExtractTextPlugin({ filename: "/css/elements.css" });
 const demo                   = `${__dirname}/demo/demo.js`;
 const demoScss               = `${__dirname}/demo/demo.scss`;
 const main                   = `${__dirname}/demo/main.js`;
 const compounds              = `${__dirname}/index.js`;
-const elements               = `${__dirname}/src/styles/elements.scss`;
+const elements               = `${__dirname}/mainElements.js`;
 const elementsNP             = `${__dirname}/src/styles/elementsNoPlain.scss`;
 const icons                  = `${__dirname}/src/styles/assets/icons/p-icons-sprite-1.1.svg`;
 const osItalicWoff           = `${__dirname}/src/styles/assets/fonts/opensans-italic.woff`;
@@ -33,7 +33,7 @@ const imgPearsonLogo         = `${__dirname}/src/styles/assets/images/PearsonLog
 module.exports = {
   entry: {
     demo              : [ demo, demoScss ],
-    dev               : [ icons ],
+    dev               : [ icons, osItalicWoff, osItalicWoffII, osLightWoff, osLightWoffII, osLightItalicWoff, osLightItalicWoffII, osRegularWoff, osRegularWoffII, osSemiBoldWoff, osSemiBoldWoffII, osSemiBoldItalicWoff, osSemiBoldItalicWoffII, imgDarkOctocat, imgPearsonSprite, imgPearsonIcon, imgPearsonLogo ],
     eventInstantiator : [ main ],
     dist              : [ compounds ]
   },
@@ -76,19 +76,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /elements.scss/,
+        test: /elements\.scss/,
         use: extractElementsCss.extract(['css-loader', 'sass-loader'])
       },
       {
-        test: /elementsNoPlain.scss/,
+        test: /elementsNoPlain\.scss/,
         use: extractElementsNPCss.extract(['css-loader', 'sass-loader'])
       },
       {
-        test: /demo.scss/,
+        test: /demo\.scss/,
         use: extractDemoCss.extract(['css-loader', 'sass-loader'])
       },
       {
-        test: /\.scss$/,
+        test: /^(?:(?!(elements|demo|\.js|\.jsx|\.svg|\.woff|\.woff2)).)*$/,
         use: extractCompnentCss.extract(['css-loader', 'sass-loader'])
       },
       {
@@ -122,14 +122,14 @@ module.exports = {
   plugins: [
     extractElementsCss,
     extractElementsNPCss,
-    extractDemoCss,
-    extractCompnentCss,
-    new HtmlWebpackPlugin({
-      template: 'demo/index.html'
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV' : JSON.stringify(process.env.NODE_ENV)
-    }),
-    new webpack.NamedModulesPlugin()
+    // extractDemoCss,
+    extractCompnentCss//,
+    // new HtmlWebpackPlugin({
+    //   template: 'demo/index.html'
+    // }),
+    // new webpack.DefinePlugin({
+    //   'process.env.NODE_ENV' : JSON.stringify(process.env.NODE_ENV)
+    // }),
+    // new webpack.NamedModulesPlugin()
   ]
 };

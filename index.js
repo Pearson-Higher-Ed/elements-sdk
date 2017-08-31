@@ -1,3 +1,6 @@
+import './src/styles/elements.scss';
+import './src/styles/elementsNoPlain.scss';
+
 export Button          from './src/components/Button';
 export Icon            from './src/components/Icon';
 export TextInput       from './src/components/TextInput';
