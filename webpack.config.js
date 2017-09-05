@@ -26,7 +26,7 @@ const osSemiBoldWoffII       = `${__dirname}/src/styles/assets/fonts/opensans-se
 const osSemiBoldItalicWoff   = `${__dirname}/src/styles/assets/fonts/opensans-semibolditalic.woff`;
 const osSemiBoldItalicWoffII = `${__dirname}/src/styles/assets/fonts/opensans-semibolditalic.woff2`;
 const imgDarkOctocat         = `${__dirname}/src/styles/assets/images/dark-octocat.svg`;
-const imgPearsonSprite       = `${__dirname}/src/styles/assets/images/Pearson-sprite.svg`;
+const imgPearsonSprite       = `${__dirname}/src/styles/assets/images/pearson-sprite.svg`;
 const imgPearsonIcon         = `${__dirname}/src/styles/assets/images/PearsonIcon.svg`;
 const imgPearsonLogo         = `${__dirname}/src/styles/assets/images/PearsonLogo.svg`;
 
