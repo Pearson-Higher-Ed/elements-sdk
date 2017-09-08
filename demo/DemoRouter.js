@@ -20,6 +20,7 @@ import TabsPage           from './demoPages/components/TabsPage';
 import LoadingSpinnerPage from './demoPages/components/LoadingSpinnerPage';
 import StaticAlertPage    from './demoPages/components/StaticAlertPage';
 import CalendarPage       from './demoPages/components/CalendarPage';
+import PhoneNumberPage    from './demoPages/components/PhoneNumberPage';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -44,6 +45,7 @@ const DemoRouter = (props) => (
         <Route path="/loadingSpinner"   component={LoadingSpinnerPage} />
         <Route path="/StaticAlert"      component={StaticAlertPage} />
         <Route path="/calendar"         component={CalendarPage} />
+        <Route path="/phone-number"     component={PhoneNumberPage} />
     </div>
   </Router>
 );
