@@ -89,7 +89,14 @@ module.exports = {
       },
       {
         test: /^(?:(?!(elements|demo|\.js|\.jsx|\.svg|\.woff|\.woff2)).)*$/,
-        use: extractComponentCss.extract(['css-loader', 'sass-loader'])
+        // use: extractComponentCss.extract(['css-loader', 'sass-loader'])
+        use: [{
+          loader: 'style-loader'
+        },{
+          loader: 'css-loader'
+        },{
+          loader: 'sass-loader'
+        }]
       },
       {
         test: /\.(js|jsx)$/,
