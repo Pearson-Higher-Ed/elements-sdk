@@ -5,6 +5,7 @@ export MultiLineText   from './src/components/MultiLineText';
 export RadioCheckGroup from './src/components/RadioCheckGroup';
 export Select          from './src/components/Select';
 export Dropdown        from './src/components/Dropdown/Dropdown';
+export DropdownItem    from './src/components/Dropdown/DropdownItem';
 export Footer          from './src/components/Footer/Footer';
 export Tabs            from './src/components/Tabs/Tabs';
 export Pane            from './src/components/Tabs/Pane';
