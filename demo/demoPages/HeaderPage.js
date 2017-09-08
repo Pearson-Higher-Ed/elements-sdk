@@ -37,6 +37,7 @@ import { Icon, Button }     from '../../index';
           <li><Link className="link" to={`/tabs`} >Tabs</Link></li>
           <li><Link className="link" to={`/loadingSpinner`} >Loading Spinner</Link></li>
           <li><Link className="link" to={`/staticAlert`} >Static Alert</Link></li>
+          <li><Link className="link" to={`/calendar`} >Calendar</Link></li>
         </ul>
         {this.props.children}
       </div>

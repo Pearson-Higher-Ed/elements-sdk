@@ -1,0 +1,132 @@
+@import '../../styles/elements/color/_color';
+
+.pe-calendar {
+  box-sizing: content-box;
+  width: 280px;
+  min-height: 284px;
+  color: $pe-color-charcoal;
+  padding: 16px 20px 20px;
+  position: absolute;
+  z-index: 1;
+  border: 1px solid $pe-color-concrete;
+  background-color: $pe-color-white;
+
+  .pe-cal-header {
+    margin-bottom: 8px;
+    text-align: right;
+    overflow: hidden;
+  }
+  .pe-cal-title {
+    float: left;
+    padding: 8px;
+  }
+  .pe-arrowIcons {
+    cursor: pointer;
+    height: 40px;
+    color: $pe-color-medium-gray;
+    text-align: center;
+
+    span {
+      display: block;
+      width: 40px;
+    }
+
+    &:hover, &:focus {
+      color: $pe-color-charcoal;
+    }
+  }
+  .pe-cal-cell {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 40px;
+  }
+  .pe-cal-weekdays div {
+    height: 40px;
+    color: $pe-color-medium-gray;
+    line-height: 40px;
+  }
+  .pe-cal-date {
+    cursor: pointer;
+  }
+}
+
+.pe-cal-cell-square {
+  height: 32px;
+  width: 32px;
+  margin: 4px;
+  line-height: 32px;
+  border-radius: 16px;
+
+}
+  .pe-cal-date:hover .pe-cal-cell-square {
+    color: $pe-color-charcoal;
+    background-color: $pe-color-moonlight;
+  }
+.currentDate-box {
+  width: 36px;
+  height: 36px;
+  margin: 1px 0 0 0;
+  line-height: 36px;
+  border-radius: 0;
+  border: 1px solid $pe-color-concrete;
+}
+.currentDate-box .pe-cal-cell-square {
+  margin: 3px 2px 2px;
+}
+.pe-cal-date.pe-cal-past {
+  height: 40px;
+  line-height: 38px;
+}
+
+/* inverse */
+.calendar-contrast {
+  color: $pe-color-white;
+  background-color: $pe-color-ink-blue;
+  border: 1px solid $pe-color-ink-blue;
+}
+
+.calendar-contrast .pe-cal-header .inverse-header,
+.calendar-contrast .pe-arrowIcons,
+.calendar-contrast .pe-cal-weekdays div {
+  color: $pe-color-white;
+}
+.calendar-contrast .pe-arrowIcons:hover,
+.calendar-contrast .pe-arrowIcons:focus {
+  color: $pe-color-concrete;
+}
+
+.secondary-date {
+  border: 1px solid $pe-color-concrete;
+}
+
+.pe-cal-selected,
+.pe-cal-date:hover .pe-cal-selected {
+  font-weight: 600;
+  color: $pe-color-white;
+  background-color: $pe-color-medium-gray;
+}
+/* for IE */
+.pe-cal-row div[tabindex]:focus {
+  outline: 1px dotted $pe-color-charcoal;
+}
+/* inverse */
+.pe-cal-date.date-inverse .pe-cal-selected {
+  color: $pe-color-charcoal;
+  background-color: $pe-color-white;
+}
+.calendar-contrast .pe-cal-row div[tabindex]:focus {
+  outline: 1px dotted $pe-color-white;
+}
+
+.pe-calendar .pe-cal-cell.pe-cal-date.pe-cal-past {
+  color: $pe-color-concrete;
+  cursor: not-allowed;
+}
+
+.pe-cal-cell.pe-cal-date.pe-cal-past-inverse {
+  height: 40px;
+  line-height: 38px;
+  color: $pe-color-digital-pearson-blue;
+  cursor: not-allowed;
+}

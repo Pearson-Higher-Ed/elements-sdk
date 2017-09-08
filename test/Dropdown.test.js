@@ -1,79 +1,156 @@
 import React from 'react';
 import expect from 'expect';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { jsdom } from 'jsdom';
-import { Dropdown } from '../index';
+import { Dropdown, DropdownItem } from '../index';
+import { Button } from '../index';
 
 describe('Dropdown', () => {
-  const items = ['one', 'two', 'three'];
 
-  describe('Dropdown /w label', function () {
-    beforeEach(function () {
-      this.wrapper = shallow(<Dropdown presentationType="label"
-                                       presentationText="Label here"
-                                       dropdownControlLabel="Test"
-                                       list={items}
-                                       mobileTitle="My mobile title" />);
-    });
+  it('should create an anchor for text', function () {
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'text'});
+    const anchor = dropDown.insertAnchor();
 
-    it('has the correct label', function () {
-      expect(this.wrapper.find('.dropdown-label-text').text()).toBe('Label here');
-    });
-
-    it('has the correct Icon', function () {
-      expect(this.wrapper.find('button').node.props.children.props.name).toEqual('dropdown-open-sm-18')
-    });
-
-    it('has the correct mobile title', function () {
-      expect(this.wrapper.find('li-wrapper').root.renderer._instance.
-      _currentElement.props.mobileTitle).toBe('My mobile title');
-    });
-
+    expect(anchor.type).toEqual(Button);
+    expect(anchor.props.className).toEqual('pe-icon--btn dropdown-activator');
   });
 
-  describe('Dropdown in button', function () {
-    beforeEach(function () {
-      this.wrapper = shallow(<Dropdown presentationType="button"
-                                       presentationText="Button"
-                                       dropdownControlLabel="Test"
-                                       list={items}
-                                       mobileTitle="Mobile Title" />);
-    });
+  it('should create an anchor for button', function () {
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'button'});
+    const anchor = dropDown.insertAnchor();
 
-    it('has the correct text', function () {
-      expect(this.wrapper.find('pe-btn__primary').root.renderer._instance.
-      _currentElement.props.presentationText).toBe('Button');
-    });
-
+    expect(anchor.type).toEqual(Button);
+    expect(anchor.props.className).toEqual('pe-btn dropdown-activator');
   });
 
-  describe('Dropdown - Icon only', function () {
+  it('should create an anchor for icon', function () {
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'icon'});
+    const anchor = dropDown.insertAnchor();
 
-    it('has the correct Icon', function () {
-      this.wrapper = shallow(<Dropdown presentationType="icon"
-                                       dropdownControlLabel="Test"
-                                       list={items}
-                                       mobileTitle="Title" />);
-      expect(this.wrapper.find('button').node.props.children.props.name).toEqual('dropdown-open-sm-24');
+    expect(anchor.type).toEqual(Button);
+    expect(anchor.props.className).toEqual('dropdown-activator');
+  });
+
+  it('should create an anchor for unknown should render text', function () {
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'asdf'});
+    const anchor = dropDown.insertAnchor();
+
+    expect(anchor.type).toEqual(Button);
+    expect(anchor.props.className).toEqual('pe-icon--btn dropdown-activator');
+  });
+
+  describe('dropdown changehandler', function() {
+    const document = jsdom('');
+    Object.keys(document.defaultView).forEach((property) => {
+      if (typeof global[property] === 'undefined') {
+        global[property] = document.defaultView[property];
+      }
     });
 
-    it('toggles dropdown', function () {
-      const document = jsdom('');
-      Object.keys(document.defaultView).forEach((property) => {
-        if (typeof global[property] === 'undefined') {
-          global[property] = document.defaultView[property];
+    it('should call changeHandler and set state to closed', function () {
+      let selectedItem = null;
+      const changeHandler = (item) => {
+        selectedItem = item;
+      };
+
+      const mounted = mount(<Dropdown label="test label" id="testId" type="text" changeHandler={changeHandler} />);
+      const instance = mounted.instance();
+      const e = {
+        target : {
+          nodeName: 'LI',
+          dataset : {
+            item: 'option 1'
+          }
         }
-      });
+      };
 
-      const wrap = mount(<Dropdown presentationType="icon"
-                                   dropdownControlLabel="Test"
-                                   list={items}
-                                   mobileTitle="Title" />);
-      wrap.find('.dropdown-container').simulate('click');
-      wrap.update();
-      expect(wrap.find('.li-wrapper')).toExist(true);
+      instance.itemSelected(e);
+      expect(instance.state.open).toEqual(false);
+      expect(instance.state.selectedItem).toEqual('option 1');
+      expect(selectedItem).toEqual('option 1');
     });
-
   });
 
+  describe('dropdown handleKeyDown', function() {
+    const document = jsdom('');
+    Object.keys(document.defaultView).forEach((property) => {
+      if (typeof global[property] === 'undefined') {
+        global[property] = document.defaultView[property];
+      }
+    });
+
+    it('should close dropdown if esc key is hit', function () {
+
+      const mounted = mount(<Dropdown label="test label" id="testId" type="text" />);
+      const instance = mounted.instance();
+
+      const e = {
+        which: 27
+      };
+
+      // set it to open
+      instance.toggleDropdown();
+      // force keydown call
+      instance.handleKeyDown(e);
+
+      expect(instance.state.open).toEqual(false);
+    });
+
+    it('should focus next item if keydown is hit and skip divider', function () {
+
+      const mounted = mount(
+        <Dropdown label="test label" id="testId" type="text" >
+          <DropdownItem selectedName="selected" label="list item 1" type="button" />
+          <DropdownItem type="divider" />
+          <DropdownItem label="list item 2" type="link" url="http://www.google.com" />
+        </Dropdown>
+      );
+      const instance = mounted.instance();
+
+      const e = {
+        which: 40,
+        preventDefault: () =>{}
+      };
+
+      // set it to open
+      instance.toggleDropdown();
+      // force keydown call
+      instance.handleKeyDown(e);
+
+      expect(instance.state.open).toEqual(true);
+      // this is a little confusing...but because the 0 item is going ot be the mobile header its going ot be 1
+      expect(instance.focusedItem).toEqual(1);
+
+      // skip divider
+      instance.handleKeyDown(e);
+      expect(instance.focusedItem).toEqual(3);
+    });
+
+    it('should focus previous item if up is hit and skip divider', function () {
+
+      const mounted = mount(
+        <Dropdown label="test label" id="testId" type="text" >
+          <DropdownItem selectedName="selected" label="list item 1" type="button" />
+          <DropdownItem type="divider" />
+          <DropdownItem label="list item 2" type="link" url="http://www.google.com" />
+        </Dropdown>
+      );
+      const instance = mounted.instance();
+
+      const e = {
+        which: 38,
+        preventDefault: () =>{}
+      };
+
+      // set it to open
+      instance.toggleDropdown();
+
+      instance.focusedItem = 3;
+      // force keydown call
+      instance.handleKeyDown(e);
+
+      expect(instance.state.open).toEqual(true);
+      expect(instance.focusedItem).toEqual(1);
+    });
+  });
 });
