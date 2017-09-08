@@ -29,6 +29,7 @@ import { Icon, Button }     from '../../index';
           <li><Link className="link" to={`/typography`}>Typography</Link></li>
           <li><Link className="link" to={`/styles-inputs`}>Styles Inputs</Link></li>
           <li><Link className="link" to={`/color`}>Color</Link></li>
+          <li><Link className="link" to={`/styles-tables`}>Styles Table</Link></li>
           <li><Link className="link" to={`/buttons`} >Buttons</Link></li>
           <li><Link className="link" to={`/icons`} >Icons</Link></li>
           <li><Link className="link" to={`/inputs`} >Inputs</Link></li>

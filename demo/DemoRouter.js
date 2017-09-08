@@ -8,6 +8,7 @@ import ResponsiveUtilitiesPage from './demoPages/styles/ResponsiveUtilitiesPage'
 import TypographyPage          from './demoPages/styles/TypographyPage';
 import StylesInputsPage        from './demoPages/styles/StylesInputsPage';
 import ColorPage               from './demoPages/styles/ColorPage';
+import StylesTablesPage        from './demoPages/styles/StylesTablesPage';
 // Components
 import ButtonPage         from './demoPages/components/ButtonPage';
 import IconPage           from './demoPages/components/IconPage';
@@ -36,6 +37,7 @@ const DemoRouter = (props) => (
         <Route path="/typography"       component={TypographyPage} />
         <Route path="/styles-inputs"    component={StylesInputsPage} />
         <Route path="/color"            component={ColorPage} />
+        <Route path="/styles-tables"    component={StylesTablesPage} />
         <Route path="/icons"            component={IconPage}   />
         <Route path="/inputs"           component={InputsPage} />
         <Route path="/buttons"          component={ButtonPage} />
