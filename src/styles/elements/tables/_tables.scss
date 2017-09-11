@@ -1,0 +1,141 @@
+@import 'variables';
+@import '../../base/mixins';
+
+/* "table-caption" can be either the caption element OR
+   a heading (h1, h2 etc) */
+
+/* for headings, toolbars etc */
+.pe-table-caption+.pe-table,
+.pe-table-toolbar+.pe-table,
+.pe-table+.pe-table-toolbar, 
+.pe-table+.pe-table-caption {
+  margin-top: 28px;
+}
+/* for actual <captions> */
+.pe-table caption {
+  margin-bottom: 28px;
+}
+.pe-table.pe-caption--bottom {
+  caption-side: bottom;
+  caption {
+    margin: 28px 0 0;
+  }
+}
+
+.pe-table thead, .pe-table tbody {
+  border: 1px solid $pe-table-border-color;/*alto, #d9d9d9*/
+  border-left: 0;
+  border-right: 0;
+  background-color: $pe-color-white;
+}
+.pe-table th, .pe-table td {
+  font-size: 1rem;
+  line-height: 1.286rem;
+  color: $pe-table-text-color;/*charcoal, #252525*/
+  padding: $pe-table-paddings;/*16px 20px*/
+  vertical-align: top;
+} 
+    .pe-table thead th {
+      font-weight: $pe-label-bold;
+      vertical-align: middle;
+    }
+    .pe-table td p {
+      margin-bottom: 0;
+    }
+
+/* selectables */
+.pe-table .selected th,
+.pe-table .selected td,
+.pe-table--selectable tbody tr:hover th,
+.pe-table--selectable tbody tr:hover td {
+  position: relative;
+  background-color: $pe-table-rowselect; /*digital ice blue, #d6ebe8*/
+
+/* pseudo-elements because collapsed borders hide the top one
+   and whenever coloured rows touch */
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 100%;
+    border-top: 1px solid $pe-table-rowselect-border; /* digital marine turquoise, 19a6a4*/
+  }
+  &:after {
+    top: auto;
+    bottom: -1px;
+  }
+}
+.pe-table--selectable tbody tr:hover th,
+.pe-table--selectable tbody tr:hover td {
+
+  &:before, &:after {
+    border-top: 1px solid $pe-table-rowhover-selected-border;
+  }
+}
+
+/* checkbox */
+.pe-table--selectable tbody tr td:first-child {
+  width: 1px;
+  padding-right: 0;
+
+  .pe-checkbox {
+    min-width: 20px;
+    margin-right: -1px;
+
+    /* so checkboxes can be clicked w/o JS */
+    label {
+      min-height: 18px;
+      padding-left: 18px;
+    }
+  }
+}
+
+/* sortables */
+.pe-table th[aria-sort] span,
+.pe-table th button {
+  vertical-align: top;
+}
+  .pe-table th span {
+    line-height: 23px;
+    margin-right: -3px;
+  }
+  .pe-table th button {
+    color: $pe-color-medium-gray; /* #6a7070; */
+  }
+
+/* .pe-table--active-headers means
+   headings are clickable (sorting) */
+.pe-table tbody tr:hover th,
+.pe-table tbody tr:hover td,
+.pe-table--active-headers thead th[aria-sort]:hover {
+  background-color: $pe-table-rowhover; /*moonlight, #e9e9e9*/
+  cursor: pointer;
+
+  /* color the SVG */
+  button {
+    color: $pe-table-text-color; 
+  }
+}
+
+
+/* alignments */
+
+/* left is default, only use to override */
+.pe-table .pe-table__left {
+  text-align: left;
+}
+.pe-table .pe-table__right {
+  text-align: right;
+}
+.pe-table .pe-table__center {
+  text-align: center;
+}
+
+/* temp styles for temp tristate checkbox */
+input[type="checkbox"] ~ span {
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  text-align: center;
+}

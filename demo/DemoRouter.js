@@ -8,9 +8,9 @@ import ResponsiveUtilitiesPage from './demoPages/styles/ResponsiveUtilitiesPage'
 import TypographyPage          from './demoPages/styles/TypographyPage';
 import StylesInputsPage        from './demoPages/styles/StylesInputsPage';
 import ColorPage               from './demoPages/styles/ColorPage';
-
 import '../src/styles/elements.scss';
 
+import StylesTablesPage        from './demoPages/styles/StylesTablesPage';
 // Components
 import ButtonPage         from './demoPages/components/ButtonPage';
 import IconPage           from './demoPages/components/IconPage';
@@ -22,6 +22,8 @@ import FooterPage         from './demoPages/components/FooterPage';
 import TabsPage           from './demoPages/components/TabsPage';
 import LoadingSpinnerPage from './demoPages/components/LoadingSpinnerPage';
 import StaticAlertPage    from './demoPages/components/StaticAlertPage';
+import CalendarPage       from './demoPages/components/CalendarPage';
+import PhoneNumberPage    from './demoPages/components/PhoneNumberPage';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -37,6 +39,7 @@ const DemoRouter = (props) => (
         <Route path="/typography"       component={TypographyPage} />
         <Route path="/styles-inputs"    component={StylesInputsPage} />
         <Route path="/color"            component={ColorPage} />
+        <Route path="/styles-tables"    component={StylesTablesPage} />
         <Route path="/icons"            component={IconPage}   />
         <Route path="/inputs"           component={InputsPage} />
         <Route path="/buttons"          component={ButtonPage} />
@@ -45,6 +48,8 @@ const DemoRouter = (props) => (
         <Route path="/tabs"             component={TabsPage} />
         <Route path="/loadingSpinner"   component={LoadingSpinnerPage} />
         <Route path="/StaticAlert"      component={StaticAlertPage} />
+        <Route path="/calendar"         component={CalendarPage} />
+        <Route path="/phone-number"     component={PhoneNumberPage} />
     </div>
   </Router>
 );
