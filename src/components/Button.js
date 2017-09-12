@@ -5,13 +5,13 @@ const Button = (props) => {
 
   const { btnType, btnSize, btnIcon, ...rest } = props;
 
-  let classes = (!btnSize) ? `pe-btn` : `pe-btn--btn_${btnSize}`;
+  let classes = (!btnSize) ? `pe-btn` : `pe-btn-${btnSize}`;
 
   if (btnIcon) {
-    classes = `pe-icon--btn`;
+    classes = `pe-btn-icon`;
   }
   if (btnType) {
-    classes = (!btnSize) ? `pe-btn__${btnType}` : `pe-btn__${btnType}--btn_${btnSize}`;
+    classes = (!btnSize) ? `pe-btn-${btnType}` : `pe-btn-${btnType} pe-btn-${btnSize}`;
   }
 
 

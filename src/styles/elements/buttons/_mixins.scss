@@ -7,13 +7,13 @@
   $disabled-color: null
 ) {
 
-  color           : $color;
-  background-color: $bg;
-  border-radius   : $pe-btn-border-radius;
-  text-decoration : none;
-  text-overflow   : ellipsis;
-  white-space     : nowrap;
-  overflow        : hidden;
+  color            : $color;
+  background-color : $bg;
+  border-radius    : $pe-btn-border-radius;
+  text-decoration  : none;
+  text-overflow    : ellipsis;
+  white-space      : nowrap;
+  overflow         : hidden;
 
   &:hover,
   &:active,
@@ -23,13 +23,32 @@
   }
 
   &:disabled,
-  &.pe-btn--disabled,
-  &.pe-btn--disabled:hover {
-    cursor          : default;
-    border          : 0;
-    color           : $disabled-color;
-    background-color: $disabled-bg;
-    box-shadow      : none;
-    text-decoration : none;
+  &.pe-btn-disabled,
+  &.pe-btn-disabled:hover {
+    cursor           : default;
+    border           : 0;
+    color            : $disabled-color;
+    background-color : $disabled-bg;
+    box-shadow       : none;
+    text-decoration  : none;
+  }
+}
+
+@mixin button-size($pe-btn-large-height, $pe-btn-large-font-size, $pe-btn-large-padding) {
+  height      : $pe-btn-large-height;
+  font-size   : $pe-btn-large-font-size;
+  line-height : $pe-btn-large-height;
+  padding     : $pe-btn-large-padding;
+}
+
+@mixin color-variant($bg-color, $text-color, $hover-bg, $hover-color) {
+  color            : $text-color;
+  background-color : $bg-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color            : $hover-color;
+    background-color : $hover-bg;
   }
 }

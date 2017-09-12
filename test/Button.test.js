@@ -29,7 +29,7 @@ describe('Button', () => {
     });
 
     it('should have the correct classNames', function() {
-      expect(this.wrapper.hasClass('pe-btn__primary')).toExist();
+      expect(this.wrapper.hasClass('pe-btn-primary')).toExist();
     });
 
     it('should render text correctly', function() {
@@ -69,7 +69,7 @@ describe('Button', () => {
     });
 
     it('should have the correct classNames', function() {
-      expect(this.wrapper.hasClass('pe-btn__primary')).toExist();
+      expect(this.wrapper.hasClass('pe-btn-primary')).toExist();
     });
 
     it('should render text correctly', function() {
@@ -81,26 +81,6 @@ describe('Button', () => {
     })
   });
 
-
-  describe('Small Button Test', function() {
-    beforeEach(function() {
-      this.wrapper = shallow(<Button btnSize="small">Small Button</Button>);
-    });
-
-    it('should render the Button as button element', function() {
-      expect(this.wrapper.node.type).toEqual('button');
-    });
-
-    it('should have the correct classNames', function() {
-      expect(this.wrapper.hasClass('pe-btn--btn_small')).toExist();
-    });
-
-    it('should render text correctly', function() {
-      expect(this.wrapper.text()).toEqual('Small Button');
-    });
-  });
-
-
   describe('Large Button Test', function() {
     beforeEach(function() {
       this.wrapper = shallow(<Button btnSize="large">Large Button</Button>);
@@ -111,32 +91,13 @@ describe('Button', () => {
     });
 
     it('should have the correct classNames', function() {
-      expect(this.wrapper.hasClass('pe-btn--btn_large')).toExist();
+      expect(this.wrapper.hasClass('pe-btn')).toExist();
+      expect(this.wrapper.hasClass('pe-btn-lg')).toExist();
     });
 
     it('should render text correctly', function() {
       expect(this.wrapper.text()).toEqual('Large Button');
     });
   });
-
-
-  describe('Mixed Button Test - Primary Small', function() {
-    beforeEach(function() {
-      this.wrapper = shallow(<Button btnType="primary" btnSize="small">Primary Small Button</Button>);
-    });
-
-    it('should render the Button as button element', function() {
-      expect(this.wrapper.node.type).toEqual('button');
-    });
-
-    it('should have the correct classNames', function() {
-      expect(this.wrapper.hasClass('pe-btn__primary--btn_small')).toExist();
-    });
-
-    it('should render text correctly', function() {
-      expect(this.wrapper.text()).toEqual('Primary Small Button');
-    });
-  });
-
 
 });

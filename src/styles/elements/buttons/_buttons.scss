@@ -1,8 +1,39 @@
+// Buttons
+//
+// Pearson button elements styling
 @import 'variables';
 @import 'mixins';
 
+// For icons in buttons, remove button styles
+.pe-btn-icon {
+  padding          : 0;
+  background-color : transparent;
+  border           : 0;
+}
 
-%btn {
+// Link buttons
+.pe-btn-link {
+  color            : $pe-color-digital-pearson-blue;
+  padding          : 4px;
+  text-decoration  : underline;
+  background-color : transparent;
+  border           : none;
+  cursor           : pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration : none;
+  }
+
+  &:disabled {
+    color           : $pe-color-medium-gray;
+    text-decoration : none;
+  }
+}
+
+// Default buttons
+//
+.pe-btn {
   border-radius  : $pe-btn-border-radius;
   border         : none;
   display        : inline-block;
@@ -13,233 +44,49 @@
   line-height    : $pe-btn-small-height;
   padding        : $pe-btn-small-padding;
   font-weight    : 600;
-}
+  border         : $pe-btn-default-border;
 
-%btn_large {
-  height      : $pe-btn-large-height;
-  font-size   : $pe-btn-large-font-size;
-  line-height : $pe-btn-large-height;
-  padding     : $pe-btn-large-padding;
-}
+  @include pe-btn(
+      $pe-btn-default-bg,
+      $pe-btn-default-text,
+      $pe-btn-default-hover-bg,
+      $pe-btn-default-hover-text,
+      $pe-btn-default-disabled-bg,
+      $pe-btn-default-disabled-text
+  );
 
-%btn_xlarge {
-  height      : $pe-btn-xlarge-height;
-  font-size   : $pe-btn-xlarge-font-size;
-  line-height : $pe-btn-xlarge-height;
-  padding     : $pe-btn-xlarge-padding;
-}
-
-// For icons in buttons, remove buttony styles
-
-.pe-icon--btn {
-  padding: 0;
-  background-color: transparent;
-  border: 0;
-}
-
-// for fake links
-
-%pe-link-extend {
-  text-decoration: underline;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.pe-link {
-  color: $pe-color-digital-pearson-blue;
-  padding: 0;
-  @extend %pe-link-extend;
-
-  &:hover,
-  &:focus {
-    color: $pe-color-ink-blue;
-    text-decoration: none;
-  }
-}
-
-.pe-link--btn {
-  color: $pe-color-digital-pearson-blue;
-  padding: 4px;
-  @extend %pe-link-extend;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
+  // Primary buttons
+  //
+  &.pe-btn-primary {
+    border : 0;
+    @include color-variant(
+        $pe-color-digital-marine-turquoise,
+        $pe-color-white,
+        $pe-color-brackish-turquoise,
+        $pe-color-white
+    );
   }
 
-  &:disabled {
-    color: $pe-color-medium-gray;
-    text-decoration: none;
+  // Call to action buttons
+  //
+  &.pe-btn-cta {
+    border : 0;
+    @include color-variant(
+        $pe-btn-cta-bg,
+        $pe-btn-cta-text,
+        $pe-btn-cta-hover-bg,
+        $pe-btn-cta-hover-text
+    );
   }
-}
 
-//===========btn=================================
-.pe-btn {
+  // Button size variants
+  //
+  &.pe-btn-lg {
+    @include button-size($pe-btn-large-height, $pe-btn-large-font-size, $pe-btn-large-padding);
+  }
 
-  @extend %btn;
-  border: $pe-btn-default-border;
+  &.pe-btn-xl {
+    @include button-size($pe-btn-xlarge-height, $pe-btn-xlarge-font-size, $pe-btn-xlarge-padding);
+  }
 
-  @include pe-btn(
-    $pe-btn-default-bg,
-    $pe-btn-default-text,
-    $pe-btn-default-hover-bg,
-    $pe-btn-default-hover-text,
-    $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
-  );
-
-}
-
-.pe-btn--btn_small {
-
-  @extend %btn;
-  border: $pe-btn-default-border;
-
-  @include pe-btn(
-    $pe-btn-default-bg,
-    $pe-btn-default-text,
-    $pe-btn-default-hover-bg,
-    $pe-btn-default-hover-text,
-    $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
-  );
-
-}
-
-.pe-btn--btn_large {
-
-  @extend %btn;
-  @extend %btn_large;
-  border: $pe-btn-default-border;
-
-  @include pe-btn(
-    $pe-btn-default-bg,
-    $pe-btn-default-text,
-    $pe-btn-default-hover-bg,
-    $pe-btn-default-hover-text,
-    $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
-  );
-
-}
-
-.pe-btn--btn_xlarge {
-
-  @extend %btn;
-  @extend %btn_xlarge;
-  border: $pe-btn-default-border;
-
-  @include pe-btn(
-    $pe-btn-default-bg,
-    $pe-btn-default-text,
-    $pe-btn-default-hover-bg,
-    $pe-btn-default-hover-text,
-    $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
-  );
-
-}
-
-//===========Primary=================================
-.pe-btn__primary {
-
-  @extend %btn;
-
-  @include pe-btn(
-    $pe-color-digital-marine-turquoise,
-    $pe-color-white,
-    $pe-color-brackish-turquoise,
-    $pe-color-white
-  );
-}
-
-.pe-btn__primary--btn_small {
-
-  @extend %btn;
-
-  @include pe-btn(
-  $pe-color-digital-marine-turquoise,
-  $pe-color-white,
-  $pe-color-brackish-turquoise,
-  $pe-color-white
-  );
-}
-
-.pe-btn__primary--btn_large {
-
-  @extend %btn;
-  @extend %btn_large;
-
-  @include pe-btn(
-  $pe-color-digital-marine-turquoise,
-  $pe-color-white,
-  $pe-color-brackish-turquoise,
-  $pe-color-white
-  );
-}
-
-.pe-btn__primary--btn_xlarge {
-
-  @extend %btn;
-  @extend %btn_xlarge;
-
-  @include pe-btn(
-  $pe-color-digital-marine-turquoise,
-  $pe-color-white,
-  $pe-color-brackish-turquoise,
-  $pe-color-white
-  );
-}
-
-
-//===========CTA=================================
-.pe-btn__cta {
-
-  @extend %btn;
-
-  @include pe-btn(
-    $pe-btn-cta-bg,
-    $pe-btn-cta-text,
-    $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
-  );
-}
-
-.pe-btn__cta--btn_small {
-
-  @extend %btn;
-
-  @include pe-btn(
-    $pe-btn-cta-bg,
-    $pe-btn-cta-text,
-    $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
-  );
-}
-
-.pe-btn__cta--btn_large {
-
-  @extend %btn;
-  @extend %btn_large;
-
-  @include pe-btn(
-    $pe-btn-cta-bg,
-    $pe-btn-cta-text,
-    $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
-  );
-}
-
-.pe-btn__cta--btn_xlarge {
-
-  @extend %btn;
-  @extend %btn_xlarge;
-
-  @include pe-btn(
-    $pe-btn-cta-bg,
-    $pe-btn-cta-text,
-    $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
-  );
 }
