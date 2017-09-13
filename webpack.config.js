@@ -87,7 +87,6 @@ module.exports = {
         use: extractDemoCss.extract(['css-loader', 'sass-loader'])
       },
       {
-        // test: /(Dropdown|Footer)\.scss/,
         test: /(components)\S*\.scss/,
         use: [{
           loader: 'style-loader'
