@@ -7,7 +7,7 @@
 /* for headings, toolbars etc */
 .pe-table-caption+.pe-table,
 .pe-table-toolbar+.pe-table,
-.pe-table+.pe-table-toolbar, 
+.pe-table+.pe-table-toolbar,
 .pe-table+.pe-table-caption {
   margin-top: 28px;
 }
@@ -34,7 +34,7 @@
   color: $pe-table-text-color;/*charcoal, #252525*/
   padding: $pe-table-paddings;/*16px 20px*/
   vertical-align: top;
-} 
+}
     .pe-table thead th {
       font-weight: $pe-label-bold;
       vertical-align: middle;
@@ -92,7 +92,7 @@
 }
 
 /* sortables */
-.pe-table th[aria-sort] span,
+.pe-table th.pe-table__sortable span,
 .pe-table th button {
   vertical-align: top;
 }
@@ -108,13 +108,13 @@
    headings are clickable (sorting) */
 .pe-table tbody tr:hover th,
 .pe-table tbody tr:hover td,
-.pe-table--active-headers thead th[aria-sort]:hover {
+.pe-table--active-headers th.pe-table__sortable:hover {
   background-color: $pe-table-rowhover; /*moonlight, #e9e9e9*/
   cursor: pointer;
 
   /* color the SVG */
   button {
-    color: $pe-table-text-color; 
+    color: $pe-table-text-color;
   }
 }
 
