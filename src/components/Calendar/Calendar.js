@@ -42,7 +42,7 @@ export default class Calendar extends Component {
       selectedMonth: newSelectedDt ? newSelectedDt.getMonth() : date.getMonth(),
       selectedDate: newSelectedDt ? newSelectedDt.getDate() : date.getDate(),
       selectedDt: newSelectedDt || new Date(date.getFullYear(), date.getMonth(), date.getDate()),
-      startDay: weekStartDay,
+      weekStartDay: weekStartDay,
       minDate: minDate ? minDate : null,
       secondaryDate: secondaryDate ? secondaryDate : [],
       disablePast: disablePast ? disablePast : false,
@@ -218,7 +218,7 @@ export default class Calendar extends Component {
   }
 
   render() {
-    const { monthNamesFull, month, year, dayNames, startDay, daysInMonth,
+    const { monthNamesFull, month, year, dayNames, weekStartDay, daysInMonth,
             firstOfMonth, selectedDate, disablePast, minDate, dayNamesFull,
             contrast, secondaryDate, selectedDt } = this.state;
 
@@ -239,7 +239,7 @@ export default class Calendar extends Component {
             contrast={contrast}
             dayNames={dayNames}
             dayNamesFull={dayNamesFull}
-            startDay={startDay} />
+            weekStartDay={weekStartDay} />
 
           <Dates
             selectedDt={selectedDt}
@@ -251,7 +251,7 @@ export default class Calendar extends Component {
             daysInMonth={daysInMonth}
             dayNamesFull={dayNamesFull}
             firstOfMonth={firstOfMonth}
-            startDay={startDay}
+            weekStartDay={weekStartDay}
             onSelect={this.selectDate}
             disablePast={disablePast}
             minDate={minDate}

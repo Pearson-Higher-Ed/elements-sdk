@@ -91,6 +91,22 @@
 
 }
 
+.pe-btngroup {
+  button:first-child {
+    border-top-right-radius: $pe-btn-square-border-radius;
+    border-bottom-right-radius: $pe-btn-square-border-radius;
+  }
+
+  button:last-child {
+    border-top-left-radius: $pe-btn-square-border-radius;
+    border-bottom-left-radius: $pe-btn-square-border-radius;
+  }
+
+  button:not(:first-child):not(:last-child) {
+    border-radius: $pe-btn-square-border-radius;
+  }
+}
+
 .pe-btn--btn_small {
 
   @extend %btn;
@@ -147,9 +163,9 @@
   @extend %btn;
 
   @include pe-btn(
-    $pe-color-digital-marine-turquoise,
+    $pe-color-digital-pearson-blue,
     $pe-color-white,
-    $pe-color-brackish-turquoise,
+    $pe-color-ink-blue,
     $pe-color-white
   );
 }
@@ -159,9 +175,9 @@
   @extend %btn;
 
   @include pe-btn(
-  $pe-color-digital-marine-turquoise,
+  $pe-color-digital-pearson-blue,
   $pe-color-white,
-  $pe-color-brackish-turquoise,
+  $pe-color-ink-blue,
   $pe-color-white
   );
 }
@@ -172,9 +188,9 @@
   @extend %btn_large;
 
   @include pe-btn(
-  $pe-color-digital-marine-turquoise,
+  $pe-color-digital-pearson-blue,
   $pe-color-white,
-  $pe-color-brackish-turquoise,
+  $pe-color-ink-blue,
   $pe-color-white
   );
 }
@@ -185,9 +201,9 @@
   @extend %btn_xlarge;
 
   @include pe-btn(
-  $pe-color-digital-marine-turquoise,
+  $pe-color-digital-pearson-blue,
   $pe-color-white,
-  $pe-color-brackish-turquoise,
+  $pe-color-ink-blue,
   $pe-color-white
   );
 }

@@ -23,7 +23,7 @@ export default class Dates extends Component {
     const weekStack = Array(...{ length: 7 }).map(Number.call, Number);
     const { contrast, daysInMonth, firstOfMonth, year, monthNames, month, selectedDate,
             disablePast, minDate, onSelect, secondaryDate, dayNamesFull,
-            selectedDt } = this.props;
+            selectedDt, weekStartDay } = this.props;
     const dayContrast = contrast ? 'date-inverse' :'';
     const disabledContrast = contrast ? '-inverse' : '';
     const that = this;
@@ -37,7 +37,7 @@ export default class Dates extends Component {
 
     className = rows === 6 ? 'pe-cal-dates' : 'pe-cal-dates pe-cal-fix';
     haystack = Array(...{ length: rows }).map(Number.call, Number);
-    day = this.props.startDay + 1 - first;
+    day = this.props.weekStartDay + 1 - first;
     while (day > 1) {
       day -= 7;
     }
@@ -89,7 +89,7 @@ export default class Dates extends Component {
                          <div className={`pe-cal-cell-square ${isSecondaryDate ? 'secondary-date':''} ${newSelectedDtClass}`}
                             id={`day${d}`}
                             role="gridcell"
-                            aria-label={`${dayNamesFull[i]} ${monthNames[month]} ${d}`}
+                            aria-label={`${dayNamesFull[(i + weekStartDay) % 7]} ${monthNames[month]} ${d}`}
                             aria-current={isCurrentDate ? 'date' : null}
                             tabIndex="-1"
                             onClick={onSelect.bind(that, year, month, d)}
