@@ -34,8 +34,6 @@
 // Default buttons
 //
 .pe-btn {
-  border-radius  : $pe-btn-border-radius;
-  border         : none;
   display        : inline-block;
   vertical-align : middle;
   cursor         : pointer;
@@ -47,12 +45,12 @@
   border         : $pe-btn-default-border;
 
   @include pe-btn(
-      $pe-btn-default-bg,
-      $pe-btn-default-text,
-      $pe-btn-default-hover-bg,
-      $pe-btn-default-hover-text,
-      $pe-btn-default-disabled-bg,
-      $pe-btn-default-disabled-text
+                  $pe-btn-default-bg,
+                  $pe-btn-default-text,
+                  $pe-btn-default-hover-bg,
+                  $pe-btn-default-hover-text,
+                  $pe-btn-default-disabled-bg,
+                  $pe-btn-default-disabled-text
   );
 
   // Primary buttons
@@ -60,10 +58,10 @@
   &.pe-btn-primary {
     border : 0;
     @include color-variant(
-        $pe-color-digital-marine-turquoise,
-        $pe-color-white,
-        $pe-color-brackish-turquoise,
-        $pe-color-white
+                    $pe-color-digital-pearson-blue,
+                    $pe-color-white,
+                    $pe-color-ink-blue,
+                    $pe-color-white
     );
   }
 
@@ -72,10 +70,10 @@
   &.pe-btn-cta {
     border : 0;
     @include color-variant(
-        $pe-btn-cta-bg,
-        $pe-btn-cta-text,
-        $pe-btn-cta-hover-bg,
-        $pe-btn-cta-hover-text
+                    $pe-btn-cta-bg,
+                    $pe-btn-cta-text,
+                    $pe-btn-cta-hover-bg,
+                    $pe-btn-cta-hover-text
     );
   }
 

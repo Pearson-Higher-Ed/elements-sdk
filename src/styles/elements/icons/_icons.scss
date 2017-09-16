@@ -16,11 +16,11 @@ svg[class^='pe-icon--'] {
 [class^='pe-btn'] svg[class$='-18'] {
   vertical-align: text-top;
 }
-.pe-btn--btn_large svg[class$='-24'] {
+.pe-btn-lg svg[class$='-24'] {
   margin-top: 5px;
 }
-.pe-btn--btn_xlarge svg[class$='-24'],
-[class$='--btn_xlarge'] svg[class$='-24'] {
+.pe-btn-xl svg[class$='-24'],
+[class$='-btn-xl'] svg[class$='-24'] {
   margin-top: 8px;
 }
 
