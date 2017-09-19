@@ -22,7 +22,7 @@ const HomePage = () => (
       <li><Link className="link_homepage" to={`responsive-utils`}>Responsive Utilities</Link></li>
       <li><Link className="link_homepage" to={`styles-inputs`}>Inputs</Link></li>
       <li><Link className="link_homepage" to={`forms`}>Forms</Link></li>
-      <li><Link className="link_homepage" to={`styles-tables`}>Table</Link></li>
+      <li><Link className="link_homepage" to={`styles-tables`}>Table (styles)</Link></li>
     </ul>
 
     <h2>React Components:</h2>
@@ -36,6 +36,7 @@ const HomePage = () => (
       <li><Link className="link_homepage" to={`loadingSpinner`}>Loading Spinner</Link></li>
       <li><Link className="link_homepage" to={`staticAlert`}>Static Alert</Link></li>
       <li><Link className="link_homepage" to={`calendar`}>Calendar</Link></li>
+      <li><Link className="link_homepage" to={`table`}>Table</Link></li>
     </ul>
 
     <p>Contributions: <a href="https://github.com/Pearson-Higher-Ed/docs/blob/master/origami-contributions.md">FAQ</a></p>

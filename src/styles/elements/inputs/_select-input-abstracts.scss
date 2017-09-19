@@ -8,6 +8,7 @@
 
   %container-extend-svg {
     position       : absolute;
+    top            : 5px;
     bottom         : $svg-bottom;
     right          : $svg-right;
     pointer-events : none;

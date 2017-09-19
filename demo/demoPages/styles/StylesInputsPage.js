@@ -314,8 +314,8 @@ const StylesInputsPage = () => (
       <div style={eight}>{`</select>`}</div>
       <div style={eight}>{`<svg aria-hidden="true"`}</div>
         <div style={sixtn}>{`focusable="false"`}</div>
-        <div style={sixtn}>{`class="pe-icon--dropdown-open-18">`}</div>
-      <div style={eight}>{`<use xlink:href="#dropdown-open-18"></use>`}</div>
+        <div style={sixtn}>{`class="pe-icon--dropdown-open-sm-24">`}</div>
+      <div style={eight}>{`<use xlink:href="#dropdown-open-sm-24"></use>`}</div>
       <div style={eight}>{`</svg>`}</div>
     {`</div>`}
     </p>
@@ -349,8 +349,8 @@ const StylesInputsPage = () => (
       <div style={eight}>{`</select>`}</div>
       <div style={eight}>{`<svg aria-hidden="true"`}</div>
         <div style={sixtn}>{`focusable="false"`}</div>
-        <div style={sixtn}>{`class="pe-icon--dropdown-open-18">`}</div>
-      <div style={eight}>{`<use xlink:href="#dropdown-open-18"></use>`}</div>
+        <div style={sixtn}>{`class="pe-icon--dropdown-open-sm-24">`}</div>
+      <div style={eight}>{`<use xlink:href="#dropdown-open-sm-24"></use>`}</div>
       <div style={eight}>{`</svg>`}</div>
     {`</div>`}
     {`<p id="select_error" className="pe-input--error_message">error message</p>`}
@@ -381,8 +381,8 @@ const StylesInputsPage = () => (
       <div style={eight}>{`</select>`}</div>
       <div style={eight}>{`<svg aria-hidden="true"`}</div>
         <div style={sixtn}>{`focusable="false"`}</div>
-        <div style={sixtn}>{`class="pe-icon--dropdown-open-18">`}</div>
-      <div style={eight}>{`<use xlink:href="#dropdown-open-18"></use>`}</div>
+        <div style={sixtn}>{`class="pe-icon--dropdown-open-sm-24">`}</div>
+      <div style={eight}>{`<use xlink:href="#dropdown-open-sm-24"></use>`}</div>
       <div style={eight}>{`</svg>`}</div>
     {`</div>`} <br/>
     {`<p id="readonly_hint" class="pe-input--info_message">Only valid with coupon</p>`}
@@ -413,8 +413,8 @@ const StylesInputsPage = () => (
           <div style={twntyFr}>{`<option>iphone</option>`}</div>
         <div style={sixtn}>{`</select>`}</div>
         <div style={sixtn}>{`<span class="pe-input_underline"></span>`}</div>
-        <div style={sixtn}>{`<svg focusable="false" aria-hidden="true" class="pe-icon--dropdown-open-18">`}</div>
-          <div style={twntyFr}>{`<use xlink:href="#dropdown-open-18"></use>`}</div>
+        <div style={sixtn}>{`<svg focusable="false" aria-hidden="true" class="pe-icon--dropdown-open-sm-24">`}</div>
+          <div style={twntyFr}>{`<use xlink:href="#dropdown-open-sm-24"></use>`}</div>
         <div style={sixtn}>{`</svg>`}</div>
       <div style={eight}>{`</div>`}</div>
       <div style={eight}>{`<span id="hinty_mchint" class="pe-input--info_message">This is an info message</span>`}</div>
@@ -445,8 +445,8 @@ const StylesInputsPage = () => (
           <div style={twntyFr}>{`<option>iphone</option>`}</div>
         <div style={sixtn}>{`</select>`}</div>
         <div style={sixtn}>{`<span class="pe-inputError_underline"></span>`}</div>
-        <div style={sixtn}>{`<svg focusable="false" aria-hidden="true" class="pe-icon--dropdown-open-18">`}</div>
-          <div style={twntyFr}>{`<use xlink:href="#dropdown-open-18"></use>`}</div>
+        <div style={sixtn}>{`<svg focusable="false" aria-hidden="true" class="pe-icon--dropdown-open-sm-24">`}</div>
+          <div style={twntyFr}>{`<use xlink:href="#dropdown-open-sm-24"></use>`}</div>
         <div style={sixtn}>{`</svg>`}</div>
       <div style={eight}>{`</div>`}</div>
       <div style={eight}>{`<span id="fancy_error" class="pe-input--error_message">This is an error message</span>`}</div>
@@ -476,8 +476,8 @@ const StylesInputsPage = () => (
           <div style={twntyFr}>{`<option>iphone</option>`}</div>
         <div style={sixtn}>{`</select>`}</div>
         <div style={sixtn}>{`<span class=""></span>`}</div>
-        <div style={sixtn}>{`<svg focusable="false" aria-hidden="true" class="pe-icon--dropdown-open-18">`}</div>
-          <div style={twntyFr}>{`<use xlink:href="#dropdown-open-18"></use>`}</div>
+        <div style={sixtn}>{`<svg focusable="false" aria-hidden="true" class="pe-icon--dropdown-open-sm-24">`}</div>
+          <div style={twntyFr}>{`<use xlink:href="#dropdown-open-sm-24"></use>`}</div>
         <div style={sixtn}>{`</svg>`}</div>
       <div style={eight}>{`</div>`}</div>
     </p>
@@ -506,8 +506,8 @@ const StylesInputsPage = () => (
           <div style={twntyFr}>{`<option>iphone</option>`}</div>
         <div style={sixtn}>{`</select>`}</div>
         <div style={sixtn}>{`<span class=""></span>`}</div>
-        <div style={sixtn}>{`<svg focusable="false" aria-hidden="true" class="pe-icon--dropdown-open-18">`}</div>
-          <div style={twntyFr}>{`<use xlink:href="#dropdown-open-18"></use>`}</div>
+        <div style={sixtn}>{`<svg focusable="false" aria-hidden="true" class="pe-icon--dropdown-open-sm-24">`}</div>
+          <div style={twntyFr}>{`<use xlink:href="#dropdown-open-sm-24"></use>`}</div>
         <div style={sixtn}>{`</svg>`}</div>
       <div stlye={eight}>{`</div>`}</div>
     </p>
