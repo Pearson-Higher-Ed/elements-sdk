@@ -4,6 +4,7 @@ node_js:
 - 6
 - 4
 script:
+- npm run ci
 - chmod 777 ./test/shell_scripts/run_tests.sh
 - "./test/shell_scripts/run_tests.sh"
 after_success:
