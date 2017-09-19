@@ -1,5 +1,5 @@
 {
-  "name": "@pearson-components/elementssdk",
+  "name": "@pearson-components/elements-sdk",
   "version": "0.0.1",
   "description": "Styling and basic JavaScript components for UI development.\"",
   "main": "build/css/elements.css",
@@ -36,7 +36,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pearson-Higher-Ed/ElementsSDK.git"
+    "url": "git+https://github.com/Pearson-Higher-Ed/elements-sdk.git"
   },
   "dependencies": {},
   "devDependencies": {
@@ -99,7 +99,7 @@
   "author": "Pearson Design Accelerator",
   "license": "PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA",
   "bugs": {
-    "url": "https://github.com/Pearson-Higher-Ed/ElementsSDK/issues"
+    "url": "https://github.com/Pearson-Higher-Ed/elements-sdk/issues"
   },
-  "homepage": "https://github.com/Pearson-Higher-Ed/ElementsSDK#readme"
+  "homepage": "https://github.com/Pearson-Higher-Ed/elements-sdk#readme"
 }
