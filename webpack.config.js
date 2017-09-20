@@ -1,35 +1,52 @@
-const fs                = require('fs');
-const path              = require('path');
-const webpack           = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const demo              = `${__dirname}/demo/demo.js`;
-const demoScss          = `${__dirname}/demo/demo.scss`;
-const main              = `${__dirname}/demo/main.js`;
-const ElementsSDK       = `${__dirname}/index.js`;
-const styles            = `${__dirname}/src/styles/elements.scss`;
-const icons             = `${__dirname}/src/styles/assets/icons/p-icons-sprite-1.1.svg`;
-const fontsDir          = `${__dirname}/src/styles/assets/fonts/`;
-const fonts             = fs.readdirSync(fontsDir, 'utf-8').map(font => fontsDir + font);
+const path                   = require('path');
+const webpack                = require('webpack');
+const HtmlWebpackPlugin      = require('html-webpack-plugin');
+const ExtractTextPlugin      = require('extract-text-webpack-plugin');
+const extractElementsCss     = new ExtractTextPlugin({ filename: 'css/elements.css' });
+const extractElementsNPCss   = new ExtractTextPlugin({ filename: 'css/elementsNoPlain.css' });
+const extractDemoCss         = new ExtractTextPlugin({ filename: 'css/demo.css' });
+const demo                   = `${__dirname}/demo/demo.js`;
+const demoScss               = `${__dirname}/demo/demo.scss`;
+const main                   = `${__dirname}/demo/main.js`;
+const compounds              = `${__dirname}/index.js`;
+const elements               = `${__dirname}/mainElements.js`;
+const elementsNP             = `${__dirname}/src/styles/elementsNoPlain.scss`;
+const icons                  = `${__dirname}/src/styles/assets/icons/p-icons-sprite-1.1.svg`;
+const osItalicWoff           = `${__dirname}/src/styles/assets/fonts/opensans-italic.woff`;
+const osItalicWoffII         = `${__dirname}/src/styles/assets/fonts/opensans-italic.woff2`;
+const osLightWoff            = `${__dirname}/src/styles/assets/fonts/opensans-light.woff`;
+const osLightWoffII          = `${__dirname}/src/styles/assets/fonts/opensans-light.woff2`;
+const osLightItalicWoff      = `${__dirname}/src/styles/assets/fonts/opensans-lightitalic.woff`;
+const osLightItalicWoffII    = `${__dirname}/src/styles/assets/fonts/opensans-lightitalic.woff2`;
+const osRegularWoff          = `${__dirname}/src/styles/assets/fonts/opensans-regular.woff`;
+const osRegularWoffII        = `${__dirname}/src/styles/assets/fonts/opensans-regular.woff2`;
+const osSemiBoldWoff         = `${__dirname}/src/styles/assets/fonts/opensans-semibold.woff`;
+const osSemiBoldWoffII       = `${__dirname}/src/styles/assets/fonts/opensans-semibold.woff2`;
+const osSemiBoldItalicWoff   = `${__dirname}/src/styles/assets/fonts/opensans-semibolditalic.woff`;
+const osSemiBoldItalicWoffII = `${__dirname}/src/styles/assets/fonts/opensans-semibolditalic.woff2`;
+const imgDarkOctocat         = `${__dirname}/src/styles/assets/images/dark-octocat.svg`;
+const imgPearsonSprite       = `${__dirname}/src/styles/assets/images/pearson-sprite.svg`;
+const imgPearsonIcon         = `${__dirname}/src/styles/assets/images/PearsonIcon.svg`;
+const imgPearsonLogo         = `${__dirname}/src/styles/assets/images/PearsonLogo.svg`;
 
 module.exports = {
   entry: {
     demo              : [ demo, demoScss ],
-    dev               : [ styles, icons ],
+    dev               : [ icons, osItalicWoff, osItalicWoffII, osLightWoff, osLightWoffII, osLightItalicWoff, osLightItalicWoffII, osRegularWoff, osRegularWoffII, osSemiBoldWoff, osSemiBoldWoffII, osSemiBoldItalicWoff, osSemiBoldItalicWoffII, imgDarkOctocat, imgPearsonSprite, imgPearsonIcon, imgPearsonLogo ],
     eventInstantiator : [ main ],
-    dist              : [ ElementsSDK ],
-    fontsDir          : fonts
+    dist              : [ compounds ]
   },
   output: {
     path          : path.resolve(__dirname, 'build'),
-    filename      : '[name].ElementsSDK.js',
-    publicPath    : '/ElementsSDK/',
+    filename      : '[name].compounds.js',
+    publicPath    : '/compounds/',
     libraryTarget : 'umd'
   },
   devtool: 'source-map',
   devServer: {
     host               : '0.0.0.0',
     port               : 8081,
-    publicPath         : '/ElementsSDK/',
+    publicPath         : '/compounds/',
     https              : false,
     overlay            : true,
     watchContentBase   : true,
@@ -58,13 +75,25 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(css|scss)$/,
+        test: /elements\.scss/,
+        use: extractElementsCss.extract(['css-loader', 'sass-loader'])
+      },
+      {
+        test: /elementsNoPlain\.scss/,
+        use: extractElementsNPCss.extract(['css-loader', 'sass-loader'])
+      },
+      {
+        test: /demo\.scss/,
+        use: extractDemoCss.extract(['css-loader', 'sass-loader'])
+      },
+      {
+        test: /(components)\S*\.scss/,
         use: [{
-          loader: 'style-loader' // creates style nodes from JS strings
-        }, {
-          loader: 'css-loader' // translates CSS into CommonJS
-        }, {
-          loader: 'sass-loader' // compiles Sass to CSS
+          loader: 'style-loader'
+        },{
+          loader: 'css-loader'
+        },{
+          loader: 'sass-loader'
         }]
       },
       {
@@ -80,15 +109,25 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\/icons\/\S+\.svg$/,
         loader: 'file-loader',
         options: {
           name: '/icons/[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\/images\/\S+\.(gif|jpg|png|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '/images/[name].[ext]?[hash]'
+        },
       }
     ]
   },
   plugins: [
+    extractElementsCss,
+    extractElementsNPCss,
+    extractDemoCss,
     new HtmlWebpackPlugin({
       template: 'demo/index.html'
     }),
