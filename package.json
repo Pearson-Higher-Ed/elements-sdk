@@ -12,7 +12,8 @@
     "version": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/version.js",
     "ci": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/ci.js",
     "release": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/release.js",
-    "verify": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/verify.js"
+    "verify": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/verify.js",
+    "postpublish": "npm access public && echo 'Package scope set to public!'"
   },
   "jest": {
     "moduleFileExtensions": [
