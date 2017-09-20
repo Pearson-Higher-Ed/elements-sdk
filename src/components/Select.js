@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
-import { Icon }             from '../../index.js';
+import { Icon }             from '../index.js';
 
 
 class Select extends Component {
@@ -44,7 +44,7 @@ class Select extends Component {
               {options.map((o, i) => <option key={`select-${id}-${i}`}>{o}</option>)}
             </select>
             {fancy && <span className={spanStyle} />}
-            <Icon name='dropdown-open-18' />
+            <Icon name='dropdown-open-sm-24' />
           </div>
             {infoMessage  && <span id={`infoMsg-${id}`} className="pe-input--info_message">{infoMessage}</span>}
             {inputState === 'error' && errorMessage && <span id={`errMsg-${id}`} className="pe-input--error_message">{errorMessage}</span>}

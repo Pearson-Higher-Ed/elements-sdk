@@ -9,12 +9,14 @@ export default class Footer extends Component {
     copyrightText: PropTypes.string,
     links: PropTypes.array.isRequired,
     light: PropTypes.bool,
-    singlePageStick: PropTypes.bool
+    singlePageStick: PropTypes.bool,
+    anchorTarget: PropTypes.oneOf(['_blank', '_self', '_parent', '_top'])
   }
 
   static defaultProps = {
     light: false,
-    singlePageStick: false
+    singlePageStick: false,
+    anchorTarget: '_self'
   }
 
   constructor(props) {
@@ -30,11 +32,12 @@ export default class Footer extends Component {
 
   renderLinks() {
     let items = [];
+    const { links, anchorTarget } = this.props;
 
-    for (let i = 0; i < this.props.links.length; i++) {
-      let item = this.props.links[i];
+    for (let i = 0; i < links.length; i++) {
+      let item = links[i];
       items.push(<li key={i}>
-                   <a href={item.href}>{item.text}</a>
+                   <a href={item.href} target={anchorTarget}>{item.text}</a>
                    <span aria-hidden={true}>|</span>
                  </li>);
     }

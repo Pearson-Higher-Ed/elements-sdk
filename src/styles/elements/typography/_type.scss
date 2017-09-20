@@ -63,7 +63,6 @@ html, .pe-base-fontsize {
 	color: $pe-font-color-base;
 }
 
-
 // Titles
 
 .pe-title {
@@ -84,19 +83,13 @@ html, .pe-base-fontsize {
 	color: $pe-font-color-base;
 }
 
-.pe-title--extra-large {
-  // deprecated
-}
-
 // Secondary colors for titles
 .pe-page-title--secondary,
 .pe-title--secondary {
 	color: $pe-font-color-secondary;
 }
 
-
 // Labels
-//
 
 .pe-label {
 	@include font-size($pe-font-size-base, $pe-line-height-base);
@@ -128,7 +121,6 @@ html, .pe-base-fontsize {
 }
 
 // Lists
-//
 
 .pe-list {
 	margin: $pe-margin-list;
@@ -199,7 +191,6 @@ html, .pe-base-fontsize {
 }
 
 // Headings
-//
 
 .pe-heading-level1 {
 	@extend .pe-page-title--small;
@@ -237,7 +228,6 @@ html, .pe-base-fontsize {
 }
 
 // Code
-//
 
 .pe-code {
 	font-family: $pe-font-family-code;
