@@ -1,3 +1,13 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.0.0...v1.0.4) (2017-09-21)
+
+
+### Bug Fixes
+
+* Add npmignore ([6175f0f](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/6175f0f))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v0.1.1...v1.0.0) (2017-09-20)
 
