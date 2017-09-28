@@ -81,7 +81,7 @@ Pearson Elements-SDK looks for the /fonts and /icons folders at the root of the 
 
 #### Internet Explorer
 
-Some caching headers will prevent Internet Explorer from showing font files after a refresh. The culprits are `Cache-control: no-store` and on https `Pragma: no-cache`.
+Some caching headers will prevent Internet Explorer from showing font files after a refresh. The culprits are `Cache-control: no-store` and on https `Pragma: no-cache`. The Vary header may also interfere with caching in IE.
 
 #### Icons
 
@@ -171,7 +171,7 @@ List of Elements with their current respective design version:
 |---------|------------------------|
 | Typography | v2.0.0 |
 | Color | v2.1.0 |
-| Icons | v2.1.0 |
+| Icons | v2.3.0 |
 | Buttons | v2.1.2 |
 | Inputs | v2.0.1 |
 | Grid | v1.0.0 |

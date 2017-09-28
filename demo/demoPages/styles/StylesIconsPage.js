@@ -918,6 +918,22 @@ const StylesIconsPage = () => (
       <li>
         <svg aria-hidden="true"
              focusable="false"
+             className="pe-icon--print-18">
+          <use xlinkHref="#print-18"></use>
+        </svg>
+        print-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--print-24">
+          <use xlinkHref="#print-24"></use>
+        </svg>
+        print-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
              className="pe-icon--radio-button-on-18">
           <use xlinkHref="#radio-button-on-18"></use>
         </svg>
