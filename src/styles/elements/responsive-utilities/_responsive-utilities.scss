@@ -8,9 +8,6 @@
 
 // Visible
 @each $breakpoint in map-keys($pe-responsive-breakpoints) {
-  .pe-#{$breakpoint}--visible {
-    display: none !important;
-  }
 
   @include pe-responsive-breakpoint($breakpoint to $breakpoint) {
     @include pe-visible('.pe-#{$breakpoint}--visible');
@@ -19,6 +16,10 @@
 
 // Hidden
 @each $breakpoint in map-keys($pe-responsive-breakpoints) {
+  .pe-#{$breakpoint}--hidden {
+    display: none !important;
+  }
+
   @include pe-responsive-breakpoint($breakpoint to $breakpoint) {
     @include pe-hidden('.pe-#{$breakpoint}--hidden');
   }
