@@ -23,6 +23,8 @@
     position: absolute;
     background-color: #ffffff;
     z-index: 5;
+    max-height: 300px;
+    overflow-y: auto;
 
     li {
 
@@ -41,6 +43,10 @@
         text-align: left;
         box-sizing: border-box;
 
+        &.checkmark {
+          padding: 4px 16px;
+        }
+
         span.icon-padding {
             padding-left: 8px;
         }
@@ -49,8 +55,12 @@
       a {
         color: $pe-color-charcoal;
         text-decoration: none;
-        padding: 4px 50px;
+        padding: 4px 24px;
         display: block;
+
+        &.checkmark {
+          padding: 4px 42px;
+        }
       }
     }
   }
