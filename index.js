@@ -21,3 +21,5 @@ export TableHead       from './src/components/Table/components/TableHead';
 export TableHeaderCell from './src/components/Table/components/TableHeaderCell';
 export TableRow        from './src/components/Table/components/TableRow';
 export TableRowCell    from './src/components/Table/components/TableRowCell';
+export DatePicker      from './src/components/DatePicker/DatePicker';
+export TimePicker      from './src/components/TimePicker/TimePicker';

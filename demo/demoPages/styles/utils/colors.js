@@ -25,9 +25,6 @@ const colors = {
   }, {
     name: 'digital-marine-turquoise',
     hex: '#19a5a3'
-  }, {
-    name: 'brackish-turquoise',
-    hex: '#179599'
   }],
 
   neutral: [{
