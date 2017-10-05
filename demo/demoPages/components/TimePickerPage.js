@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { injectIntl }       from 'react-intl';
-import { messages }         from '../translations/defaultMessages';
+import { messages }         from '../../translations/defaultMessages';
 
 import { TimePicker, Select } from '../../../index';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
-import { Icon, Calendar }   from '../../index';
+import { Icon, Calendar }   from '../../../index';
 import moment               from 'moment';
 
 import './DatePicker.scss';

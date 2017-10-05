@@ -1,227 +1,137 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import Button from '../Button';
-import Icon from '../Icon';
+import React from 'react';
+import { Dropdown, DropdownItem } from '../../../index';
 
-import './Dropdown.scss';
+const mobileTitle = 'Introduction to mobile';
 
-export default class Dropdown extends Component {
-
-  static propTypes = {
-    mobileTitle: PropTypes.string,
-    type: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    changeHandler: PropTypes.func
-  };
-
+class DropdownPage extends React.Component {
   constructor(props) {
-    super(props)
-
-    this.focusedItem = 0;
-
+    super(props);
     this.state = {
-      open: false,
-      selectedItem: '',
-      buttonFocus: true
+      buttonSelected : false
     };
-
-    this.toggleDropdown = this.toggleDropdown.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.itemSelected = this.itemSelected.bind(this);
-    this.clickListener = this.clickListener.bind(this);
-  }
-
-  placement(dropdown) {
-    const anchor = dropdown.children[0];
-    const element = dropdown.children[1];
-    // get window geometry - this is how jQuery does it
-    const elementRect = element.getBoundingClientRect();
-    const anchorRect = anchor.getBoundingClientRect();
-    // then we are past the right side and need to right justify
-    const touch_right = window.innerWidth < elementRect.right;
-    // we need to push up
-    const touch_bottom = elementRect.bottom > window.innerHeight;
-
-    if (touch_bottom) {
-      // 4 because of margins
-      element.style.top = `-${(elementRect.height + 4)}px`;
-    }
-
-    if (touch_right) {
-      element.style.left = `-${elementRect.width - anchorRect.width}px`;
-    }
-  }
-
-  resetPlacement(dropdown) {
-    const element = dropdown.children[1];
-    element.style.left = null;
-    element.style.top = null;
-  }
-
-  toggleDropdown() {
-    this.setState({ open: !this.state.open }, () => {
-      this.list.children[0].children[0].focus();
-      if (this.state.open) {
-        this.placement(ReactDOM.findDOMNode(this));
-      } else {
-        this.resetPlacement(ReactDOM.findDOMNode(this));
-        this.focusedItem = 0;
-      }
-    });
-  };
-
-  handleKeyDown(event) {
-    if (this.state.open) {
-      if (event.which === 27) {
-        // escape
-        return this.setState({ open: false });
-      }
-
-      if (event.which === 38) {
-        // up
-        event.preventDefault();
-        while (this.focusedItem > 0) {
-          this.focusedItem--;
-          if (this.list.children[this.focusedItem].attributes.role.value !== 'separator') {
-            break;
-          }
-        }
-        this.list.children[this.focusedItem].children[0].focus();
-      }
-
-      if (event.which === 40) {
-        // down
-        event.preventDefault();
-        while (this.focusedItem < this.list.children.length-1) {
-          this.focusedItem++;
-          if (this.list.children[this.focusedItem].attributes.role.value !== 'separator') {
-            break;
-          }
-        }
-        this.list.children[this.focusedItem].children[0].focus();
-      }
-
-      if (event.which === 9) {
-        // tab
-        this.setState({
-          open: false
-        });
-      }
-    }
-  }
-
-  getParentLiSelected(dom) {
-    if (dom.nodeName !== 'LI') {
-      return this.getParentLiSelected(dom.parentElement);
-    }
-
-    return dom;
-  }
-
-  itemSelected(e) {
-    const selectedListItem = this.getParentLiSelected(e.target);
-    if (selectedListItem.dataset.item !== 'divider') {
-      this.props.changeHandler ? this.props.changeHandler(selectedListItem.dataset.item) : null;
-      this.setState({
-        open: false,
-        selectedItem: selectedListItem.dataset.item
-      });
-      this.container.children[0].focus();
-    }
-  }
-
-  insertAnchor() {
-    let buttonClass='pe-icon--btn dropdown-activator';
-    let btnIcon=false;
-    let buttonLabel = (
-      <div>
-        {this.props.label} <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
-      </div>
-    );
-
-    switch (this.props.type) {
-      case 'button':
-        buttonClass='pe-btn dropdown-activator';
-        break;
-      case 'icon':
-        btnIcon = true;
-        buttonClass = 'dropdown-activator pe-icon--btn';
-        buttonLabel = (
-          <Icon name="dropdown-open-sm-24">{this.props.label}</Icon>
-        );
-        break;
-      // if not one of the types go to text
-      default:
-      case 'text':
-        buttonClass = 'pe-icon--btn dropdown-activator';
-        break;
-    }
-
-    return (
-      <Button
-        className={buttonClass}
-        aria-expanded={this.state.open}
-        aria-controls={`${this.props.id.replace(' ', '_')}-dropdown`}
-        aria-haspopup="true"
-        btnIcon={btnIcon}
-        focus={this.state.buttonFocus}
-        onClick={this.toggleDropdown}
-        >
-        {buttonLabel}
-      </Button>
-    );
-  }
-
-  addMobileHeader() {
-    if (window.screen.width < 480) {
-      return (
-        <li data-item="divider">
-          <div className="mobile-title">
-            <h1 className="pe-page-title pe-page-title--small">
-              {this.props.mobileTitle}
-              <span className="icon-fix">
-                <Icon name="remove-lg-18"></Icon>
-              </span>
-            </h1>
-          </div>
-        </li>
-      );
-    }
-  }
-
-  clickListener(e) {
-    const currentElement = e.target;
-
-    if (!this.container.contains(currentElement)) {
-      this.setState({open: false});
-    }
-  }
-
-  componentDidMount() {
-    document.addEventListener('click', this.clickListener);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('click', this.clickListener);
   }
 
   render() {
     return (
-        <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
-          {this.insertAnchor()}
-          <ul
-            role="menu"
-            id={`${this.props.id.replace(' ', '_')}-dropdown`}
-            ref={(dom) => { this.list = dom; }}
-            className={this.state.open ? '' : 'dropdown-menu'}
-            onClick={this.itemSelected}
-            onKeyDown={this.handleKeyDown}>
-            {this.addMobileHeader()}
-            {this.props.children}
-          </ul>
+      <div className="displaySection">
+        <h2><a href="https://pearson-higher-ed.github.io/design/c/dropdown/beta/">Dropdown</a></h2>
+        <div className="elementContainer">
+          <div className="code">
+            <h3>Props</h3>
+            <h4>Required:</h4>
+              <ul>
+                <li className="li-props">type === text, button, icon</li>
+                <li className="li-props">label === text for the button/label to activate dropdown</li>
+                <li className="li-props">id === unique id</li>
+              </ul>
+            <h4>Optional:</h4>
+            <ul>
+              <li className="li-props">mobileTitle:String === "Your mobile title"</li>
+              <li className="li-props">
+                changeHandler:Function === {`<Dropdown changeHandler={(item) => { console.log(item) } }`}
+                <br/>
+                Callback that is fired when an item is selected in the Dropdown menu.
+              </li>
+            </ul>
+            <h3>Dropdown item Props </h3>
+            <h4>Required:</h4>
+            <ul>
+              <li className="li-props">type: divider, button or link</li>
+              <li className="li-props">label: accessibility label (except for divider type)</li>
+              <li className="li-props">url: only required for link type</li>
+            </ul>
+            <h4>Optional:</h4>
+            <ul>
+              <li className="li-props">checkmark: whether or not to leave spacing for a selected checkmark</li>
+              <li className="li-props">selected: accessibility/globalization word for 'selected'</li>
+              <li className="li-props">selectedName: accessibility label for name of item</li>
+            </ul>
+          </div>
+
+          <h3>label /w Icon (shows selectable and actual connections to changeHandler)</h3>
+          <Dropdown
+            dropdownControlLabel="Dropdown open"
+            mobileTitle={mobileTitle}
+            changeHandler={(item) => {
+              console.log('item clicked', item);
+              if (item === 'list item 1') {
+                this.setState({buttonSelected:true});
+              }
+            }}
+            type="text"
+            label="text"
+            id="text">
+            <DropdownItem checkmark selected={this.state.buttonSelected}
+              selectedName="selected" label="list item 1" type="button" />
+            <DropdownItem type="divider" />
+            <DropdownItem checkmark label="list item 2" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark label="list item 3" type="link" url="http://www.google.com" />
+          </Dropdown>
+          <p className="code">
+            {`<Dropdown
+                dropdownControlLabel="Dropdown open"
+                mobileTitle={mobileTitle}
+                changeHandler={(item) => {
+                  console.log(item);
+                }}
+                type="text"
+                label="text"
+                id="text"
+              >
+                <DropdownItem checkmark label="list item 1" />
+                <DropdownItem checkmark divider />
+                <DropdownItem checkmark label="list item 2" />
+              </Dropdown>`}
+          </p>
+
+          <h3>button /w Icon (no changehandler connection)</h3>
+          <Dropdown
+            mobileTitle={mobileTitle}
+            type="button"
+            label="Button text"
+            id="buttontext">
+            <DropdownItem label="list item 1" type="button" />
+            <DropdownItem type="divider" />
+            <DropdownItem label="list item 2" type="link" url="www.google.com"/>
+          </Dropdown>
+          <p className="code">
+            {`<Dropdown
+                mobileTitle={mobileTitle}
+                type="button"
+                label="Button text"
+                id="buttontext"
+              >
+                <DropdownItem label="list item 1" />
+                <DropdownItem divider />
+                <DropdownItem label="list item 2" />
+              </Dropdown>`}
+          </p>
+
+          <h3>Icon only (no changehandler connection)</h3>
+            <Dropdown
+              mobileTitle={mobileTitle}
+              type="icon"
+              label="icon text"
+              id="iconText">
+              <DropdownItem label="list item 1" type="button" />
+              <DropdownItem type="divider" />
+              <DropdownItem label="list item 2" type="link" url="www.google.com" />
+            </Dropdown>
+            <p className="code">
+              {`<Dropdown
+                  mobileTitle={mobileTitle}
+                  type="icon"
+                  label="icon text"
+                  id="iconText"
+                >
+                  <DropdownItem label="list item 1" />
+                  <DropdownItem divider />
+                  <DropdownItem label="list item 2" />
+                </Dropdown>`}
+            </p>
         </div>
-    )
+      </div>
+    );
   }
 };
+export default DropdownPage;

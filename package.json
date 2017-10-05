@@ -44,7 +44,9 @@
     "type": "git",
     "url": "git+https://github.com/Pearson-Higher-Ed/elements-sdk.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "moment": "^2.18.1"
+  },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.5.1",
     "autoprefixer": "^6.1.0",
