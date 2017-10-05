@@ -1,0 +1,54 @@
+@import '../../node_modules/pearson-elements/scss/elements.scss';
+
+%abstract {
+  padding          : $textInput-basic-padding;
+  height           : $textInput-basic-height;
+  width            : $textInput-basic-width;
+  box-sizing       : $textInput-basic-box-sizing;
+  display          : $textInput-basic-display;
+  border-radius    : $textInput-basic-borderRadius;
+  font-size        : $textInput-value-font-size;
+  line-height      : $textInput-line-height;
+  background-color : $pe-color-white;
+  color            : $pe-color-charcoal;
+}
+
+%container-extend {
+  position  : relative;
+  display   : $textInput-basic-display;
+  min-width : $textInput-basic-select-minWidth;
+  padding   : 0;
+}
+
+%container-extend-svg {
+  position       : absolute;
+  top            : 8px;
+  right          : 14px;
+  pointer-events : none;
+}
+
+.pe-timepicker-container {
+  @extend %abstract, %container-extend;
+  padding    : 0px;
+  margin-top : $textInput-basic-marginTop;
+  width      : 100%;
+  min-width  : 150px;
+}
+
+.pe-timepicker-input-styles::-ms-clear {
+    display: none;
+}
+
+.pe-timepicker-container svg {
+  @extend %container-extend-svg;
+  fill : $pe-color-medium-gray;
+}
+
+.pe-dropdown-container{
+  position : absolute;
+  z-index  : 1;
+}
+
+.pe-icon-wrapper{
+  color : $pe-color-medium-gray;
+}

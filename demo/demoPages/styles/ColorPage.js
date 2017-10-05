@@ -66,24 +66,24 @@ const ColorPage = () => {
 
   return (
     <div style={{padding: 14}}>
-    <h1>Color</h1>
+      <h1>Color</h1>
 
-    <h2>Entire Palette</h2>
-    <p>The background color of each swatch is the hex code that will be used.</p>
-    <p>Text is in both black and white to show you the un-adjusted contrast for each.</p>
-    <p>You should not have to use these directly, but in the event you do, use `$pe-color-[color-name]` for example<br/>`$pe-color-digital-pearson-blue`.</p>
+      <h2>Entire Palette</h2>
+      <p>The background color of each swatch is the hex code that will be used.</p>
+      <p>Text is in both black and white to show you the un-adjusted contrast for each.</p>
+      <p>You should not have to use these directly, but in the event you do, use `$pe-color-[color-name]` for example<br/>`$pe-color-digital-pearson-blue`.</p>
 
-    <h3>Primary Palette</h3>
-    {primaryColors()}
+      <h3>Primary Palette</h3>
+      {primaryColors()}
 
-    <h3>Secondary Palette</h3>
-    {secondaryColors()}
+      <h3>Secondary Palette</h3>
+      {secondaryColors()}
 
-    <h3>Neutral Palette</h3>
-    {neutralColors()}
+      <h3>Neutral Palette</h3>
+      {neutralColors()}
 
-    <h3>Conditional Palette</h3>
-    {conditionalColors()}
+      <h3>Conditional Palette</h3>
+      {conditionalColors()}
 
     </div>
   );
