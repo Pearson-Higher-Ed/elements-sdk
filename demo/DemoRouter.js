@@ -24,6 +24,8 @@ import LoadingSpinnerPage from './demoPages/components/LoadingSpinnerPage';
 import StaticAlertPage    from './demoPages/components/StaticAlertPage';
 import CalendarPage       from './demoPages/components/CalendarPage';
 import TablePage          from './demoPages/components/TablePage';
+import DatePickerPage     from './demoPages/components/DatePickerPage';
+import TimePickerPage     from './demoPages/components/TimePickerPage';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -50,6 +52,8 @@ const DemoRouter = (props) => (
         <Route path="/StaticAlert"      component={StaticAlertPage} />
         <Route path="/calendar"         component={CalendarPage} />
         <Route path="/table"            component={TablePage} />
+        <Route path="/datePicker"       component={DatePickerPage} />
+        <Route path="/timePicker"       component={TimePickerPage} />
     </div>
   </Router>
 );

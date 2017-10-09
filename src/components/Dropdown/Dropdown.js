@@ -19,15 +19,18 @@ export default class Dropdown extends Component {
   constructor(props) {
     super(props)
 
+    this.focusedItem = 0;
+
     this.state = {
       open: false,
-      selectedItem: ''
+      selectedItem: '',
+      buttonFocus: true
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.itemSelected = this.itemSelected.bind(this);
-    this.closeDropdown = this.closeDropdown.bind(this);
+    this.clickListener = this.clickListener.bind(this);
   }
 
   placement(dropdown) {
@@ -57,46 +60,16 @@ export default class Dropdown extends Component {
     element.style.top = null;
   }
 
-  closeDropdown(e) {
-    const currentElement = e.currentTarget;
-    // we need to set timeout due to the browser getting the activeElement after a cycle
-    // otherwise its still on the wrong active element at the time due to the function being
-    // on blur
-    setTimeout(() => {
-      if (!currentElement.contains(document.activeElement)) {
-        this.setState({open: false});
-      }
-    }, 0);
-  }
-
-  handleOutsideClick(event) {
-    const domNode = ReactDOM.findDOMNode(this);
-
-    if ((!domNode || !domNode.contains(event.target))) {
-      this.setState({ open: false });
-    }
-  }
-
   toggleDropdown() {
-    this.focusedItem = 0;
-    this.setState({ open: !this.state.open });
-
-    if (window.screen.width >= 480) {
-      setTimeout(() => {
-        this.list.children[this.focusedItem].children[0].focus();
-      }, 0);
-      // we need timeouts because once again the state will cause a refresh so we need
-      // to wait for 1 cycle before we can find the domNode and position it properly
-      if (!this.state.open) {
-        setTimeout(() => {
-          this.placement(ReactDOM.findDOMNode(this));
-        }, 0)
+    this.setState({ open: !this.state.open }, () => {
+      this.list.children[0].children[0].focus();
+      if (this.state.open) {
+        this.placement(ReactDOM.findDOMNode(this));
       } else {
-        setTimeout(() => {
-          this.resetPlacement(ReactDOM.findDOMNode(this));
-        }, 0)
+        this.resetPlacement(ReactDOM.findDOMNode(this));
+        this.focusedItem = 0;
       }
-    }
+    });
   };
 
   handleKeyDown(event) {
@@ -129,6 +102,13 @@ export default class Dropdown extends Component {
         }
         this.list.children[this.focusedItem].children[0].focus();
       }
+
+      if (event.which === 9) {
+        // tab
+        this.setState({
+          open: false
+        });
+      }
     }
   }
 
@@ -148,6 +128,7 @@ export default class Dropdown extends Component {
         open: false,
         selectedItem: selectedListItem.dataset.item
       });
+      this.container.children[0].focus();
     }
   }
 
@@ -166,7 +147,7 @@ export default class Dropdown extends Component {
         break;
       case 'icon':
         btnIcon = true;
-        buttonClass = 'dropdown-activator';
+        buttonClass = 'dropdown-activator pe-icon--btn';
         buttonLabel = (
           <Icon name="dropdown-open-sm-24">{this.props.label}</Icon>
         );
@@ -184,7 +165,10 @@ export default class Dropdown extends Component {
         aria-expanded={this.state.open}
         aria-controls={`${this.props.id.replace(' ', '_')}-dropdown`}
         aria-haspopup="true"
-        btnIcon={btnIcon}>
+        btnIcon={btnIcon}
+        focus={this.state.buttonFocus}
+        onClick={this.toggleDropdown}
+        >
         {buttonLabel}
       </Button>
     );
@@ -207,9 +191,25 @@ export default class Dropdown extends Component {
     }
   }
 
+  clickListener(e) {
+    const currentElement = e.target;
+
+    if (!this.container.contains(currentElement)) {
+      this.setState({open: false});
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', this.clickListener);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.clickListener);
+  }
+
   render() {
     return (
-        <div className="dropdown-container" onClick={this.toggleDropdown} onBlur={this.closeDropdown} >
+        <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
           {this.insertAnchor()}
           <ul
             role="menu"

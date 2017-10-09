@@ -37,6 +37,8 @@ const HomePage = () => (
       <li><Link className="link_homepage" to={`staticAlert`}>Static Alert</Link></li>
       <li><Link className="link_homepage" to={`calendar`}>Calendar</Link></li>
       <li><Link className="link_homepage" to={`table`}>Table</Link></li>
+      <li><Link className="link_homepage" to={`datePicker`}>Date Picker</Link></li>
+      <li><Link className="link_homepage" to={`timePicker`}>Time Picker</Link></li>
     </ul>
 
     <p>Contributions: <a href="https://github.com/Pearson-Higher-Ed/docs/blob/master/origami-contributions.md">FAQ</a></p>

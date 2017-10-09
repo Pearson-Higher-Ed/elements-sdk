@@ -40,6 +40,8 @@ import { Icon, Button }     from '../../index';
           <li><Link className="link" to={`/staticAlert`} >Static Alert</Link></li>
           <li><Link className="link" to={`/calendar`} >Calendar</Link></li>
           <li><Link className="link" to={`/table`} >Table</Link></li>
+          <li><Link className="link" to={`/datePicker`} >Date Picker</Link></li>
+          <li><Link className="link" to={`/timePicker`} >Time Picker</Link></li>
         </ul>
         {this.props.children}
       </div>
