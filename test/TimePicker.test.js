@@ -1,3 +1,4 @@
+import jsdom from 'jsdom';
 import React     from 'react';
 import expect    from 'expect';
 import moment    from 'moment';
@@ -5,6 +6,10 @@ import moment    from 'moment';
 import { mount, shallow } from 'enzyme';
 
 import { TimePicker } from '../index';
+
+const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
+global.document = doc;
+global.window = doc.defaultView;
 
 describe('TimePicker', () => {
 
