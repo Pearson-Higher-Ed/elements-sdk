@@ -160,6 +160,8 @@ const IconPage = () => (
             <li><Icon name="point-back-24">Point Back 24</Icon> point-back-24</li>
             <li><Icon name="point-next-18">Point Next 18</Icon> point-next-18</li>
             <li><Icon name="point-next-24">Point Next 24</Icon> point-next-24</li>
+            <li><Icon name="print-18">Print 18</Icon> print-18</li>
+            <li><Icon name="print-24">Print 24</Icon> print-24</li>
             <li><Icon name="radio-button-off-18">Radio Button Off 18</Icon> radio-button-off-18</li>
             <li><Icon name="radio-button-off-24">Radio Button Off 24</Icon> radio-button-off-24</li>
             <li><Icon name="radio-button-on-18">Radio Button On 18</Icon> radio-button-on-18</li>

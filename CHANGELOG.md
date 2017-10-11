@@ -1,3 +1,13 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.0.6...v1.1.0) (2017-10-10)
+
+
+
+<a name="1.0.6"></a>
+## [1.0.6](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.0.5...v1.0.6) (2017-10-03)
+
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.0.4...v1.0.5) (2017-09-21)
 

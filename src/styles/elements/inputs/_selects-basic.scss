@@ -166,8 +166,8 @@
     @extend %abstract, %container-extend;
     outline            : none;
     padding            : 0px;
-    color              : $pe-color-concrete;
-    background-color   : $pe-color-moonlight;
+    color              : $pe-color-concrete !important;
+    background-color   : $pe-color-moonlight !important;
     -webkit-appearance : none;
     -moz-appearance    : none;
     appearance         : none;
