@@ -1,0 +1,23 @@
+//Grid
+
+$pe-columns             : 12 !default;
+
+$pe-columns-min-height  : 1px;
+
+$pe-container-max-width : 1140px;
+
+$pe-container-margin: (
+  xl : 40px,
+  lg : 40px,
+  md : 20px,
+  sm : 20px,
+  xs : 10px
+);
+
+$pe-gutter-widths: (
+  xl : 40px,
+  lg : 40px,
+  md : 40px,
+  sm : 20px,
+  xs : 10px
+);

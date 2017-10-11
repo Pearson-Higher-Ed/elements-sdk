@@ -1,0 +1,32 @@
+@import './variables';
+@import './mixins';
+@import '../responsive-utilities/responsive-utilities';
+@import '../../base/mixins';
+
+
+$pe-columns             : 12 !default;
+
+$pe-columns-min-height  : 1px;
+
+$pe-container-max-width : 1140px;
+
+$pe-container-margin: (
+  xl : 40px,
+  lg : 40px,
+  md : 20px,
+  sm : 20px,
+  xs : 10px
+);
+
+$pe-gutter-widths: (
+  xl : 40px,
+  lg : 40px,
+  md : 40px,
+  sm : 20px,
+  xs : 10px
+);
+
+//Grid
+
+@include generate-container($pe-container-max-width, $pe-responsive-breakpoints);
+@include generate-columns($pe-responsive-breakpoints);

@@ -37,7 +37,8 @@ h2 a {
   list-style: none;
 }
 
-.buttonList li {
+.buttonList li,
+.buttonListTwo li {
   margin-bottom: .6em;
   list-style: none;
 }
@@ -88,7 +89,8 @@ h2 a {
   margin-left: 10px;
 }
 
-.buttonList {
+.buttonList,
+.buttonListTwo {
   z-index: 5;
   display:none;
   position:absolute;
