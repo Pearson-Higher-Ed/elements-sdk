@@ -14,6 +14,7 @@ import ColorPage                  from './demoPages/styles/ColorPage';
 import StylesTablesPage           from './demoPages/styles/StylesTablesPage';
 import PresentationStrategiesPage from './demoPages/styles/PresentationStrategiesPage';
 import GridPage                   from './demoPages/styles/GridPage';
+import TemplatesPage              from './demoPages/styles/TemplatesPage';
 
 // Components
 import ButtonPage         from './demoPages/components/ButtonPage';
@@ -60,6 +61,7 @@ const DemoRouter = (props) => (
         <Route path="/timePicker"              component={TimePickerPage} />
         <Route path="/presentation-strategies" component={PresentationStrategiesPage} />
         <Route path="/grid"                    component={GridPage} />
+        <Route path="/templates"               component={TemplatesPage} />
     </div>
   </Router>
 );

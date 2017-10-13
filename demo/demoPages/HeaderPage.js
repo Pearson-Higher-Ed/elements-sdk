@@ -36,6 +36,7 @@ import { Icon, Button }     from '../../index';
           <li><Link className="link" to={`/styles-tables`}>Styles - Table</Link></li>
           <li><Link className="link" to={`/presentation-strategies`}>Presentation Strategies</Link></li>
           <li><Link className="link" to={`/grid`}>Grid</Link></li>
+          <li><Link className="link" to={`/templates`}>Templates</Link></li>
         </ul>
         <ul className="buttonListTwo">
           <li><Link className="link" to={`/buttons`} >Buttons</Link></li>
