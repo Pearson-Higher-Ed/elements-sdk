@@ -4,7 +4,7 @@ import { Table,
          TableRow,
          TableHeaderCell,
          TableBody,
-         TableRowCell } from '../../index';
+         TableRowCell } from '../../../index';
 
 const eight = {paddingLeft: 8};
 const sixteen = {paddingLeft: 16};
