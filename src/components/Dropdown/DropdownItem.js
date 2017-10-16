@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon'
 
-const DropdownItem = ({ url, label, type, selected, selectedName, checkmark }) => {
+const DropdownItem = ({ url, label, type, selected, selectedName, checkmark, onClick }) => {
   switch (type) {
     case 'divider':
       return (
@@ -21,14 +21,16 @@ const DropdownItem = ({ url, label, type, selected, selectedName, checkmark }) =
     case 'button':
       return (
         <li role="presentation" data-item={label}>
-          <button role="menuitem" className={checkmark ? 'checkmark' : ''} type="button" tabIndex="-1">
+          <button role="menuitem" className={checkmark ? 'checkmark' : ''} onClick={onClick} type="button" tabIndex="-1">
             {checkmark ?
                 <span style={{visibility: selected ? 'visible' : 'hidden'}}>
                   <Icon name="check-sm-18">{selectedName}</Icon>
                 </span> : null
             }
 
-            <span className={checkmark ? 'icon-padding' : ''}>{label}</span>
+            <span className={checkmark ? 'icon-padding' : ''}>
+              {label}
+            </span>
           </button>
         </li>
       );
