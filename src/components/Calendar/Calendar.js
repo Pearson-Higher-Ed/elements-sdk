@@ -77,11 +77,11 @@ export default class Calendar extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKeys);
+    this.container.addEventListener('keydown', this.handleKeys);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeys);
+    this.container.removeEventListener('keydown', this.handleKeys);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -91,7 +91,7 @@ export default class Calendar extends Component {
   }
 
   handleKeys = (e) => {
-    var which = e.which || e.keyCode;
+    let which = e.which || e.keyCode;
     if (which === 37 || which === 38 || which === 39 || which === 40) {
       e.preventDefault();
     }
@@ -225,7 +225,7 @@ export default class Calendar extends Component {
     const colorSwap = contrast ? 'calendar-contrast' :'';
 
     return (
-      <div className={`pe-calendar ${colorSwap}`}>
+      <div className={`pe-calendar ${colorSwap}`} ref={div => this.container = div}>
         <div className="pe-inner">
           <Header
             monthNames={monthNamesFull}
