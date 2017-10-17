@@ -1,5 +1,5 @@
-<a name="1.1.1"></a>
-## [1.1.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.1.0...v1.1.1) (2017-10-16)
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.1.0...v1.2.0) (2017-10-17)
 
 
 
