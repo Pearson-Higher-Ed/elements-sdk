@@ -8,6 +8,7 @@ import { Icon, Button }     from '../../index';
   constructor () {
     super();
     this.toggleList = _toggleList.bind(this);
+    this.toggleListTwo = _toggleListTwo.bind(this);
   }
 
   render() {
@@ -16,20 +17,28 @@ import { Icon, Button }     from '../../index';
         <div className="header">
           <Link to="/"><h1 className="headerTitle">Pearson Design Accelerator</h1></Link>
           <Button btnSize="xlarge headerButton" onClick={this.toggleList}>
-            Compounds
+            Styles
+            <Icon name="dropdown-open-18" />
+          </Button>
+          <Button btnSize="xlarge headerButton" onClick={this.toggleListTwo}>
+            Components
             <Icon name="dropdown-open-18" />
           </Button>
         </div>
         <ul className="buttonList">
-          <li><Link className="link" to={`/`} >Home</Link></li>
-          <li><Link className="link" to={`/styles-buttons`}>Styles Buttons</Link></li>
+          <li><Link className="link" to={`/styles-buttons`}>Styles - Buttons</Link></li>
           <li><Link className="link" to={`/forms`}>Forms</Link></li>
-          <li><Link className="link" to={`/styles-icons`}>Styles Icons</Link></li>
+          <li><Link className="link" to={`/styles-icons`}>Styles - Icons</Link></li>
           <li><Link className="link" to={`/responsive-utils`}>Responsive Utilities</Link></li>
           <li><Link className="link" to={`/typography`}>Typography</Link></li>
-          <li><Link className="link" to={`/styles-inputs`}>Styles Inputs</Link></li>
+          <li><Link className="link" to={`/styles-inputs`}>Styles - Inputs</Link></li>
           <li><Link className="link" to={`/color`}>Color</Link></li>
-          <li><Link className="link" to={`/styles-tables`}>Styles Table</Link></li>
+          <li><Link className="link" to={`/styles-tables`}>Styles - Table</Link></li>
+          <li><Link className="link" to={`/presentation-strategies`}>Presentation Strategies</Link></li>
+          <li><Link className="link" to={`/grid`}>Grid</Link></li>
+          <li><Link className="link" to={`/templates`}>Templates</Link></li>
+        </ul>
+        <ul className="buttonListTwo">
           <li><Link className="link" to={`/buttons`} >Buttons</Link></li>
           <li><Link className="link" to={`/icons`} >Icons</Link></li>
           <li><Link className="link" to={`/inputs`} >Inputs</Link></li>
@@ -53,6 +62,12 @@ const _toggleList = () => {
   let c = document.querySelector('.buttonList').style.display;
   c = (c !== 'initial') ? 'initial' : 'none';
   document.querySelector('.buttonList').style.display = c;
+}
+
+const _toggleListTwo = () => {
+  let c = document.querySelector('.buttonListTwo').style.display;
+  c = (c !== 'initial') ? 'initial' : 'none';
+  document.querySelector('.buttonListTwo').style.display = c;
 }
 
 
