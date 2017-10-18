@@ -65,7 +65,7 @@ class DatePickerPage extends Component {
             <h2>DatePicker</h2>
             <DatePicker
               id              = "someGiantId1"
-              dateFormat      = "mm/dd/yyyy"
+              dateFormat      = "dd/mm/yyyy"
               inputState      = {inputState}
               labelText       = "Select date"
               datepickerValue = {datePickerValue1}
