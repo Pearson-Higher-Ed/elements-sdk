@@ -1,0 +1,71 @@
+//Grid Mixins
+
+@mixin generate-container($pe-container-max-width, $pe-responsive-breakpoints) {
+  .pe-container {
+    box-sizing    : border-box;
+    max-width     : $pe-container-max-width;
+    margin-right  : auto;
+    margin-left   : auto;
+    min-height    : 1px;
+    @include clearfix();
+
+    @each $breakpoint in map-keys($pe-responsive-breakpoints) {
+
+      //Get container margin by breakpoint
+      $margin                       : map-get($pe-container-margin, $breakpoint);
+      $current-breakpoint-value-get : get-breakpoint-value($breakpoint);
+
+      //Construct media query
+      @media(min-width:$current-breakpoint-value-get){
+        padding-right : ($margin);
+        padding-left  : ($margin);
+      };
+    };
+  };
+};
+
+
+@mixin generate-columns($pe-responsive-breakpoints){
+
+  @for $i from 1 through $pe-columns {
+    $column-width : percentage($i / $pe-columns);
+
+    //Construct column defaults
+    .pe-col-#{$i} {
+      width : $column-width;
+    };
+  };
+
+  @each $breakpoint in map-keys($pe-responsive-breakpoints) {
+
+    $current-gutter                : map-get($pe-gutter-widths, $breakpoint);
+    $current-breakpoint-value-gets : get-breakpoint-value($breakpoint);
+
+    //Construct media query
+    @media(min-width: $current-breakpoint-value-gets){
+
+      //Construct Row
+      .pe-row {
+        margin-right : $current-gutter / - 2;
+        margin-left  : $current-gutter / - 2;
+        @include clearfix();
+      };
+
+      // Group common properties in media query by class list
+      $breakpoint-list:();
+
+      @for $i from 1 through $pe-columns {
+        $breakpoint-list: append($breakpoint-list, unquote(".pe-col-#{$i}"), comma);
+      };
+
+      #{$breakpoint-list} {
+        padding-right : $current-gutter / 2;
+        padding-left  : $current-gutter / 2;
+        min-height    : 1px;
+        float         : left;
+        @include clearfix();
+      };
+    };
+  };
+
+};

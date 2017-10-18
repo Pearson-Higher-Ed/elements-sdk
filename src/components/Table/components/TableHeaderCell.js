@@ -11,7 +11,8 @@ export default class TableHeaderCell extends Component {
     containerId: PropTypes.string,
     inputLabel: PropTypes.string,
     columnSort: PropTypes.func,
-    alignCell: PropTypes.oneOf(['center', 'right'])
+    alignCell: PropTypes.oneOf(['center', 'right']),
+    defaultIcon: PropTypes.string
   }
 
   static defaultProps = {
@@ -22,27 +23,20 @@ export default class TableHeaderCell extends Component {
     super(props)
 
     this.state = {
-      iconName: 'sortable-18'
+      iconName: this.props.defaultIcon || 'sortable-18'
     }
 
     this.selectAll = _selectAll.bind(this);
-    this.handleKey = _handleKey.bind(this);
   }
 
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKey);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKey);
-  }
-
-  componentDidUpdate() {
-    if (this.props.columnSort) this.props.columnSort();
+  isControlled() {
+    return this.props.iconName != null
   }
 
   iconToggle = () => {
     const { iconName } = this.state;
+    this.props.columnSort()
+
     if (iconName === 'sort-up-18') {
       return this.setState({ iconName: 'sort-down-18' })
     }
@@ -51,10 +45,10 @@ export default class TableHeaderCell extends Component {
   }
 
   render() {
-    const { children, scope, inputId, containerId, inputLabel, columnSort,
+    const { children, inputId, containerId, inputLabel, columnSort,
             alignCell } = this.props;
     const { selectable, sortable } = this.context;
-    const { iconName } = this.state;
+    const { iconName } = this.isControlled() ? this.props : this.state;
     const sortClass = sortable ? 'pe-table__sortable' :'';
     const columnAlignment = (alignCell === 'center' || alignCell === 'right')
                             ? ' pe-table__' + alignCell :'';
@@ -74,8 +68,7 @@ export default class TableHeaderCell extends Component {
           selectable && !children
             ? <div className="pe-checkbox"
                    id={containerId}
-                   onClick={this.selectAll}
-                   onKeyDown={this.handleKey}>
+                   onClick={this.selectAll}>
                 <input type="checkbox" id={inputId} />
                 <label htmlFor={inputId}>{inputLabel}</label>
                 <span>
@@ -104,11 +97,5 @@ function _selectAll() {
   const checkboxes = document.querySelectorAll('div.pe-checkbox input');
   for (let i = 1; i < checkboxes.length; i++) {
     checkboxes[i].checked = checkboxes[0].checked;
-  }
-}
-
-function _handleKey(e) {
-  if (e.which === 32) {
-    this.selectAll;
   }
 }

@@ -1,10 +1,15 @@
-<a name="1.1.0"></a>
-# [1.1.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.0.6...v1.1.0) (2017-10-10)
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.0.6...v1.2.1) (2017-10-17)
 
 
 
 <a name="1.0.6"></a>
 ## [1.0.6](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.0.5...v1.0.6) (2017-10-03)
+
+
+### Bug Fixes
+
+* move display none to hidden class in responsive utilities ([ec6d938](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/ec6d938))
 
 
 

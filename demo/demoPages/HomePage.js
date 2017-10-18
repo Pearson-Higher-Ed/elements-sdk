@@ -22,7 +22,10 @@ const HomePage = () => (
       <li><Link className="link_homepage" to={`responsive-utils`}>Responsive Utilities</Link></li>
       <li><Link className="link_homepage" to={`styles-inputs`}>Inputs</Link></li>
       <li><Link className="link_homepage" to={`forms`}>Forms</Link></li>
-      <li><Link className="link_homepage" to={`styles-tables`}>Table (styles)</Link></li>
+      <li><Link className="link_homepage" to={`styles-tables`}>Table</Link></li>
+      <li><Link className="link_homepage" to={`presentation-strategies`}>Presentation Strategies</Link></li>
+      <li><Link className="link_homepage" to={`grid`}>Grid</Link></li>
+      <li><Link className="link_homepage" to={`templates`}>Templates</Link></li>
     </ul>
 
     <h2>React Components:</h2>
