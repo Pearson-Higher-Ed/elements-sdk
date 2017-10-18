@@ -32,18 +32,25 @@ progress::-webkit-progress-value {
 }
 
 progress.pe-progress-bar-animated::-webkit-progress-value {
-  background: -webkit-repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 8px,
-                #DAF0ED 8px,
-                #DAF0ED 12px,
-                transparent 12px), #19A5A3;
+  background:
+    -webkit-repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      #DAF0ED 8px,
+      #DAF0ED 12px,
+      transparent 12px), #19A5A3;
   background-size: 50px 100%;
-  animation: move 6s linear 0 infinite;
+  -webkit-animation: animate-stripes 6s linear 0 infinite;
+  animation: animate-stripes 6s linear 0 infinite;
 }
 
-@keyframes move {
+@keyframes animate-stripes {
+  0% {background-position: 0px 0px, 0 0, 0 0}
+  100% {background-position: -100px 0px, 0 0, 0 0}
+}
+
+@-webkit-keyframes animate-stripes {
   0% {background-position: 0px 0px, 0 0, 0 0}
   100% {background-position: -100px 0px, 0 0, 0 0}
 }

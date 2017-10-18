@@ -3,7 +3,7 @@ import { ProgressBar } from '../../../index';
 
 const ProgressBarPage = () => (
   <div style={{padding: 12}}>
-    <ProgressBar type="animated" />
+    <ProgressBar type="animated" labelText="% complete" />
   </div>
 );
 
