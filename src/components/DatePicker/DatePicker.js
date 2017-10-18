@@ -79,6 +79,7 @@ export default class DatePicker extends Component {
     const ariaDescribedby     = em + (infoMessage ? `infoMsg-${id}` : '');
     const mainContainerStyles = className  ? `pe-datepicker-main ${className}`:`pe-datepicker-main`;
     const inputStyles         = inputStyle ? `pe-datepicker-input-styles ${inputStyle}`:`pe-datepicker-input-styles`;
+    const finalDateFormat = dateFormat ? dateFormat : 'mm/dd/yyyy';
 
     return (
       <div
@@ -88,7 +89,7 @@ export default class DatePicker extends Component {
         ref={(dom) => this.container = dom}
       >
         <label className={labelStyleTmp} htmlFor={id}>
-          {`${labelText} (${dateFormat})`}
+          {`${labelText} (${finalDateFormat})`}
         </label>
 
         <div className={containerStyle}>
@@ -161,6 +162,8 @@ function _datePickerOpen() {
 };
 
 function _changeHandler(e) {
+  const { dateFormat } = this.props;
+  console.log('change handler ' + e.target.value);
   this.setState({
     datepickerValue: e.target.value,
     displayOpen: false,
@@ -171,13 +174,21 @@ function _changeHandler(e) {
 };
 
 function _calendarHandler(date) {
+  const { dateFormat } = this.props
+  let dateString = (date.selectedMonth + 1) + '/' + date.selectedDate + '/' + date.selectedYear;
+
+  if (dateFormat.toLowerCase() === 'dd/mm/yyyy') {
+    dateString = date.selectedDate + '/' + (date.selectedMonth + 1) + '/' + date.selectedYear;
+  }
+
   const changeHandlerParam = {
     target: {
-      value: (date.selectedMonth + 1) + '/' + date.selectedDate + '/' + date.selectedYear
+      value: dateString
     }
   };
+
   this.setState({
-    datepickerValue: moment(date.selectedDt).format('L'),
+    datepickerValue: dateString,
     dateObject: date.selectedDt,
     displayOpen: false,
     labelStyleTmp: this.state.labelStyle
