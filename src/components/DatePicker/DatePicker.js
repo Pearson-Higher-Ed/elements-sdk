@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
 import { Icon, Calendar }   from '../../../index';
-import moment               from 'moment';
 
 import './DatePicker.scss';
 
@@ -162,7 +161,7 @@ function _datePickerOpen() {
 };
 
 function _changeHandler(e) {
-  const { dateFormat } = this.props;);
+  const { dateFormat } = this.props;
   this.setState({
     datepickerValue: e.target.value,
     displayOpen: false,
