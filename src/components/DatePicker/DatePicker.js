@@ -78,7 +78,6 @@ export default class DatePicker extends Component {
     const ariaDescribedby     = em + (infoMessage ? `infoMsg-${id}` : '');
     const mainContainerStyles = className  ? `pe-datepicker-main ${className}`:`pe-datepicker-main`;
     const inputStyles         = inputStyle ? `pe-datepicker-input-styles ${inputStyle}`:`pe-datepicker-input-styles`;
-    const finalDateFormat = dateFormat ? dateFormat : 'mm/dd/yyyy';
 
     return (
       <div
@@ -88,7 +87,7 @@ export default class DatePicker extends Component {
         ref={(dom) => this.container = dom}
       >
         <label className={labelStyleTmp} htmlFor={id}>
-          {`${labelText} (${finalDateFormat})`}
+          {`${labelText} (${dateFormat})`}
         </label>
 
         <div className={containerStyle}>
@@ -152,6 +151,10 @@ DatePicker.propTypes = {
   disablePast   : PropTypes.bool,
   minDate       : PropTypes.object
 };
+
+DatePicker.defaultProps = {
+  dateFormat: 'mm/dd/yyyy'
+}
 
 function _datePickerOpen() {
   const { inputState } = this.state;
