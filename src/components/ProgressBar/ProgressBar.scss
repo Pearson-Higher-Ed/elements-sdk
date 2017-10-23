@@ -12,45 +12,84 @@
   text-align: right;
 }
 
-progress {
+progress.pe-progress-bar {
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
-  height: 12px;
-}
-
-progress::-webkit-progress-bar {
-  background-color: #c7c7c7;
+  border: none;
   height: 4px;
-  margin-top: 4px;
 }
 
-progress::-webkit-progress-value {
-  background-color: #19A5A3;
+progress.pe-progress-bar::-webkit-progress-bar {
+  background-color: $pe-color-concrete;
+}
+
+progress.pe-progress-bar::-webkit-progress-value {
+  background-color: $pe-color-digital-marine-turquoise;
   height: 12px;
   position: relative;
   top: -4px;
 }
 
-progress.pe-progress-bar-animated::-webkit-progress-value {
-  background:
-    -webkit-repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 8px,
-      #DAF0ED 8px,
-      #DAF0ED 12px,
-      transparent 12px), #19A5A3;
-  background-size: 50px 100%;
-  -webkit-animation: animate-stripes 6s linear 0 infinite;
-  animation: animate-stripes 6s linear 0 infinite;
+progress.pe-progress-bar::-moz-progress-bar {
+  background-color: $pe-color-digital-marine-turquoise;
+  height: 12px;
+  position: relative;
+  margin-top: -4px;
 }
 
-@keyframes animate-stripes {
+progress.pe-progress-bar::-ms-fill {
+  background-color: $pe-color-digital-marine-turquoise;
+  position: relative;
+}
+
+progress.pb-animated::-webkit-progress-value {
+  background: -webkit-repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 8px,
+                $pe-color-digital-ice-blue 8px,
+                $pe-color-digital-ice-blue 12px,
+                transparent 12px), $pe-color-digital-marine-turquoise;
+  background-size: 50px 100%;
+  -webkit-animation: animateStripes_w 6s linear infinite;
+}
+
+progress.pb-animated::-moz-progress-bar {
+  background: -moz-repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 8px,
+                $pe-color-digital-ice-blue 8px,
+                $pe-color-digital-ice-blue 12px,
+                transparent 12px), $pe-color-digital-marine-turquoise;
+  background-size: 50px 100%;
+  -moz-animation: animateStripes_m 6s linear infinite;
+}
+
+progress.pb-animated::-ms-fill {
+  background: -ms-repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 8px,
+                $pe-color-digital-ice-blue 8px,
+                $pe-color-digital-ice-blue 12px,
+                transparent 12px), $pe-color-digital-marine-turquoise;
+  background-size: 50px 100%;
+  animation: animateStripes 6s linear infinite;
+}
+
+@-webkit-keyframes animateStripes_w {
   0% {background-position: 0px 0px, 0 0, 0 0}
   100% {background-position: -100px 0px, 0 0, 0 0}
 }
 
-@-webkit-keyframes animate-stripes {
+@-moz-keyframes animateStripes_m {
+  0% {background-position: 0px 0px, 0 0, 0 0}
+  100% {background-position: -100px 0px, 0 0, 0 0}
+}
+
+@keyframes animateStripes {
   0% {background-position: 0px 0px, 0 0, 0 0}
   100% {background-position: -100px 0px, 0 0, 0 0}
 }
