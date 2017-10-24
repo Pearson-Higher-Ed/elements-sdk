@@ -14,19 +14,28 @@
 
 .progress-bar-container {
   width: 140px;
+  position: relative;
+  top: -4px;
+}
+
+.progress-bar-container label {
+  padding-bottom: 4px;
 }
 
 .pe-progress-bar {
   height: 12px;
   background-color: $pe-color-digital-marine-turquoise;
-  top: -4px;
-  z-index: 1;
+  max-width: 140px;
+  position: absolute;
+  margin-top: -4px;
 }
 
-.pe-progress-bar span {
+.pe-progress-bar-rail {
+  margin-top: 10px;
+  display: block;
+  position: absolute;
   height: 4px;
   width: 140px;
-  position: relative;
   background-color: $pe-color-concrete;
 }
 
