@@ -5,6 +5,7 @@ import './ProgressBar.scss';
 
 export default class ProgressBar extends Component {
   static propTypes = {
+    min: PropTypes.number,
     max: PropTypes.number,
     value: PropTypes.number,
     type: PropTypes.oneOf(['default', 'animated']),
@@ -13,46 +14,33 @@ export default class ProgressBar extends Component {
   };
 
   static defaultProps = {
+    min: 0,
     max: 100,
     value: 0,
     type: 'default',
     alignLabel: 'center'
   };
 
-  animate = () => {
-    window.setInterval(() => {
-      let value = parseFloat(this.progress.getAttribute('value'));
-      let newValue = value + 0.3;
-      if (newValue > this.props.max) newValue = 0;
-      this.progress.setAttribute('value', newValue);
-      this.span.textContent = parseInt(newValue);
-    }, 30)
-  }
-
   render() {
-    const { max, value, type, alignLabel, labelText } = this.props;
+    const { min, max, value, type, alignLabel, labelText } = this.props;
 
     return (
-      <div>
-        <div className={`progress-bar-text-${alignLabel}`}>
-          <p className="pe-label">
-            <span ref={span => this.span = span}>
-              {value}</span>{labelText}
-          </p>
-          <progress
-            className={type === 'animated' ? 'pe-progress-bar pb-animated' : 'pe-progress-bar'}
-            role="progressbar"
-            aria-valuemax={max}
-            aria-valuenow={value}
-            aria-valuetext={`${value}%`}
-            max={max}
-            value={value}
-            ref={progress => this.progress = progress}
-          />
+      <div className="progress-bar-container">
+        <p className={`pe-label progress-bar-text-${alignLabel}`}>
+          {value} {labelText}
+        </p>
+        <div
+          className={type === 'animated' ? 'pe-progress-bar pb-animated' : 'pe-progress-bar'}
+          role="progressbar"
+          aria-valuemax={max}
+          aria-valuenow={value}
+          aria-valuetext={`${value}%`}
+          max={max}
+          value={value}
+          style={{width: `${value}%`}}
+        >
+          <span className="pe-progress-bar-rail" />
         </div>
-        <button onClick={this.animate}>
-          Click it!
-        </button>
       </div>
     )
   }
