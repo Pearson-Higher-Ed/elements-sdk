@@ -44,9 +44,7 @@
     "type": "git",
     "url": "git+https://github.com/Pearson-Higher-Ed/elements-sdk.git"
   },
-  "dependencies": {
-    "moment": "^2.18.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.5.1",
     "autoprefixer": "^6.1.0",
@@ -66,7 +64,6 @@
     "css-loader": "^0.26.1",
     "cz-conventional-changelog": "^1.1.4",
     "del": "^2.1.0",
-    "empty-module": "0.0.2",
     "enzyme": "^2.5.1",
     "eslint": "^1.10.3",
     "eslint-loader": "^1.6.1",
