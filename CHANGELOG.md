@@ -1,3 +1,16 @@
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.1...v1.2.3) (2017-10-19)
+
+
+### Bug Fixes
+
+* allow for dd/mm/yyyy formats in date picker ([4d167ad](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/4d167ad))
+* left console.log in (insufficient coffee) ([ff32e6e](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/ff32e6e))
+* putting moment dependency back (out of scope for this issue). ([ba4e90b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/ba4e90b))
+* syntax error and remove moment dependency. ([b1b2e6d](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b1b2e6d))
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.0.6...v1.2.1) (2017-10-17)
 
