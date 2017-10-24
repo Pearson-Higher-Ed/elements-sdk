@@ -22,8 +22,8 @@ export default class ProgressBar extends Component {
   };
 
   calculateRatio() {
-    if (this.props.value < this.props.min) return 0;
-    if (this.props.value > this.props.max) return 100;
+    if (this.props.value < this.props.min) return this.props.min;
+    if (this.props.value > this.props.max) return this.props.max;
     return Math.round((this.props.value - this.props.min) / (this.props.max - this.props.min) * 100);
   }
 
@@ -42,7 +42,7 @@ export default class ProgressBar extends Component {
             role="progressbar"
             aria-valuemin={min}
             aria-valuemax={max}
-            aria-valuenow={value}
+            aria-valuenow={this.calculateRatio()}
             style={{width: `${this.calculateRatio()}%`}}
           />
         </span>
