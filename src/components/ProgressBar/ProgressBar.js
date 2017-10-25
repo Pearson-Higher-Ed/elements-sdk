@@ -10,7 +10,8 @@ export default class ProgressBar extends Component {
     value: PropTypes.number,
     type: PropTypes.oneOf(['default', 'animated']),
     alignLabel: PropTypes.oneOf(['left', 'center', 'right']),
-    labelText: PropTypes.string
+    labelText: PropTypes.string,
+    id: PropTypes.string.isRequired
   };
 
   static defaultProps = {
@@ -28,16 +29,16 @@ export default class ProgressBar extends Component {
   }
 
   render() {
-    const { min, max, type, alignLabel, labelText } = this.props;
+    const { min, max, type, alignLabel, labelText, id } = this.props;
 
     return (
       <div className={`progress-bar-container progress-bar-text-${alignLabel}`}>
-        <label className="pe-label" htmlFor="pe-pb">
+        <label className="pe-label" htmlFor={id}>
           {this.calculateRatio()}{labelText}
         </label>
         <span className="pe-progress-bar-rail">
           <div
-            id="pe-pb"
+            id={id}
             className={type === 'animated' ? 'pe-progress-bar pb-animated' : 'pe-progress-bar'}
             tabIndex="-1"
             role="progressbar"

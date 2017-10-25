@@ -37,6 +37,10 @@ export default class ProgressBarPage extends Component {
         <div className="elementContainer">
           <div className="code">
             <h3>Props</h3>
+            <h4>Required:</h4>
+            <ul>
+              <li className="li-props">id:String - (`a11y`) id that is used for the element representing the progress bar and the label associated with it.</li>
+            </ul>
             <h4>Optional:</h4>
             <ul>
               <li className="li-props">min:Number - Set a min value for the ProgressBar.  Defaults to 0.</li>
@@ -45,21 +49,21 @@ export default class ProgressBarPage extends Component {
               <li className="li-props">type:String -  The ProgressBar has a `default` and `animated` type.  Defaults to `default`</li>
               <li className="li-props">alignLabel:String - alignLabel can be `left`, `center`, or `right` moving the text above the ProgessBar
               <br/> to one of those positions. Defaults to `center`.</li>
-              <li className="li-props">labelText:String.</li>
+              <li className="li-props">labelText:String</li>
             </ul>
           </div>
           <h3 style={{marginTop: 4}}>Example Usage</h3>
           <h4>Default</h4>
           <p className="code" style={{width: '80%'}}>
-          {`<ProgressBar value={30} alignLabel="left" labelText="%" />`}
+          {`<ProgressBar id="pe-pb" value={30} alignLabel="left" labelText="%" />`}
           </p>
-          <ProgressBar value={30} alignLabel="left" labelText="%" />
+          <ProgressBar id="pe-pb" value={30} alignLabel="left" labelText="%" />
 
           <h4>Animated</h4>
           <p className="code" style={{width: '80%'}}>
-            {`<ProgressBar type="animated" labelText="% complete" value={this.state.progress} />`}
+            {`<ProgressBar id="pe-pb1" type="animated" labelText="% complete" value={this.state.progress} />`}
           </p>
-          <ProgressBar type="animated" labelText="% complete" value={this.state.progress} />
+          <ProgressBar id="pe-pb1" type="animated" labelText="% complete" value={this.state.progress} />
         </div>
       </div>
     );
