@@ -28,7 +28,7 @@ export default class ProgressBar extends Component {
   }
 
   render() {
-    const { min, max, value, type, alignLabel, labelText } = this.props;
+    const { min, max, type, alignLabel, labelText } = this.props;
 
     return (
       <div className={`progress-bar-container progress-bar-text-${alignLabel}`}>
@@ -39,6 +39,7 @@ export default class ProgressBar extends Component {
           <div
             id="pe-pb"
             className={type === 'animated' ? 'pe-progress-bar pb-animated' : 'pe-progress-bar'}
+            tabIndex="-1"
             role="progressbar"
             aria-valuemin={min}
             aria-valuemax={max}
