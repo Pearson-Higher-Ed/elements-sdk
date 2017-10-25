@@ -51,9 +51,9 @@ export default class ProgressBarPage extends Component {
           <h3 style={{marginTop: 4}}>Example Usage</h3>
           <h4>Default</h4>
           <p className="code" style={{width: '80%'}}>
-          {`<ProgressBar value={30} alignLabel="left" labelText="% complete" />`}
+          {`<ProgressBar value={30} alignLabel="left" labelText="%" />`}
           </p>
-          <ProgressBar value={30} alignLabel="left" labelText="% complete" />
+          <ProgressBar value={30} alignLabel="left" labelText="%" />
 
           <h4>Animated</h4>
           <p className="code" style={{width: '80%'}}>

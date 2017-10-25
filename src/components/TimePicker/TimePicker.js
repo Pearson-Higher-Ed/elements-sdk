@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
 import { Icon }             from '../../../index';
 import { List }             from './components/List';
-import moment               from 'moment';
 
 import './TimePicker.scss';
 
