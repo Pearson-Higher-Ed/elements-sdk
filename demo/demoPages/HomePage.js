@@ -10,7 +10,7 @@ const HomePage = () => (
       Unified Brand that is International Ready (i18n, l10n). <br/>
       The ElementsSDK is split into two sections: Styles & Components. <br/><br/>
       Styles contain basic HTML elements with css styles.  Components provide more
-      functionality and use React and Javascript to accomplish this.
+      functionality using React and Javascript to accomplish this.
     </p>
 
     <h2>Styles:</h2>

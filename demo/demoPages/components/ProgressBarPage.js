@@ -64,6 +64,9 @@ export default class ProgressBarPage extends Component {
             {`<ProgressBar id="pe-pb1" type="animated" labelText="% complete" value={this.state.progress} />`}
           </p>
           <ProgressBar id="pe-pb1" type="animated" labelText="% complete" value={this.state.progress} />
+          {this.state.progress >= 100 &&
+            <h1>Loaded!</h1>
+          }
         </div>
       </div>
     );
