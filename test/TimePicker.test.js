@@ -1,7 +1,6 @@
 import jsdom from 'jsdom';
 import React     from 'react';
 import expect    from 'expect';
-import moment    from 'moment';
 
 import { mount, shallow } from 'enzyme';
 
