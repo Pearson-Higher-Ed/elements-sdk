@@ -1,0 +1,98 @@
+@import '../../styles/elements.scss';
+
+.progress-bar-text-center {
+  text-align: center;
+}
+
+.progress-bar-text-left {
+  text-align: left;
+}
+
+.progress-bar-text-right {
+  text-align: right;
+}
+
+.progress-bar-container {
+  width: 140px;
+  position: relative;
+  top: -4px;
+}
+
+.progress-bar-container label {
+  padding-bottom: 4px;
+}
+
+.pe-progress-bar {
+  height: 12px;
+  background-color: $pe-color-digital-marine-turquoise;
+  max-width: 140px;
+  position: absolute;
+  margin-top: -4px;
+}
+
+.pe-progress-bar-rail {
+  margin-top: 10px;
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 140px;
+  background-color: $pe-color-concrete;
+}
+
+.pb-animated {
+  background: -webkit-repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 8px,
+                $pe-color-digital-ice-blue 8px,
+                $pe-color-digital-ice-blue 12px,
+                transparent 12px), $pe-color-digital-marine-turquoise;
+  background: -moz-repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 8px,
+                $pe-color-digital-ice-blue 8px,
+                $pe-color-digital-ice-blue 12px,
+                transparent 12px), $pe-color-digital-marine-turquoise;
+  background: -ms-repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 8px,
+                $pe-color-digital-ice-blue 8px,
+                $pe-color-digital-ice-blue 12px,
+                transparent 12px), $pe-color-digital-marine-turquoise;
+  background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 8px,
+                $pe-color-digital-ice-blue 8px,
+                $pe-color-digital-ice-blue 12px,
+                transparent 12px), $pe-color-digital-marine-turquoise;
+  -webkit-background-size: 50px 100%;
+  -moz-background-size: 50px 100%;
+  background-size: 50px 100%;
+  -webkit-animation: animateStripes_w 6s linear infinite;
+  -moz-animation: animateStripes_m 6s linear infinite;
+  -ms-animation: animateStripes_ms 6s linear infinite;
+  animation: animateStripes 6s linear infinite;
+}
+
+@-webkit-keyframes animateStripes_w {
+  0% {background-position: 0px 0px, 0 0, 0 0}
+  100% {background-position: -100px 0px, 0 0, 0 0}
+}
+
+@-moz-keyframes animateStripes_m {
+  0% {background-position: 0px 0px, 0 0, 0 0}
+  100% {background-position: -100px 0px, 0 0, 0 0}
+}
+
+@-ms-keyframes animateStripes_ms {
+  0% {background-position: 0px 0px, 0 0, 0 0}
+  100% {background-position: -100px 0px, 0 0, 0 0}
+}
+
+@keyframes animateStripes {
+  0% {background-position: 0px 0px, 0 0, 0 0}
+  100% {background-position: -100px 0px, 0 0, 0 0}
+}

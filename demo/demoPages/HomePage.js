@@ -10,7 +10,7 @@ const HomePage = () => (
       Unified Brand that is International Ready (i18n, l10n). <br/>
       The ElementsSDK is split into two sections: Styles & Components. <br/><br/>
       Styles contain basic HTML elements with css styles.  Components provide more
-      functionality and use React and Javascript to accomplish this.
+      functionality using React and Javascript to accomplish this.
     </p>
 
     <h2>Styles:</h2>
@@ -42,6 +42,7 @@ const HomePage = () => (
       <li><Link className="link_homepage" to={`table`}>Table</Link></li>
       <li><Link className="link_homepage" to={`datePicker`}>Date Picker</Link></li>
       <li><Link className="link_homepage" to={`timePicker`}>Time Picker</Link></li>
+      <li><Link className="link_homepage" to={`progress-bar`}>Progress Bar</Link></li>
     </ul>
 
     <p>Contributions: <a href="https://github.com/Pearson-Higher-Ed/docs/blob/master/origami-contributions.md">FAQ</a></p>

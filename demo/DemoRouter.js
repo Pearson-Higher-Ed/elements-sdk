@@ -31,6 +31,7 @@ import CalendarPage       from './demoPages/components/CalendarPage';
 import TablePage          from './demoPages/components/TablePage';
 import DatePickerPage     from './demoPages/components/DatePickerPage';
 import TimePickerPage     from './demoPages/components/TimePickerPage';
+import ProgressBarPage    from './demoPages/components/ProgressBarPage';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -47,6 +48,10 @@ const DemoRouter = (props) => (
         <Route path="/styles-inputs"           component={StylesInputsPage} />
         <Route path="/color"                   component={ColorPage} />
         <Route path="/styles-tables"           component={StylesTablesPage} />
+        <Route path="/presentation-strategies" component={PresentationStrategiesPage} />
+        <Route path="/grid"                    component={GridPage} />
+        <Route path="/templates"               component={TemplatesPage} />
+
         <Route path="/icons"                   component={IconPage}   />
         <Route path="/inputs"                  component={InputsPage} />
         <Route path="/buttons"                 component={ButtonPage} />
@@ -59,9 +64,7 @@ const DemoRouter = (props) => (
         <Route path="/table"                   component={TablePage} />
         <Route path="/datePicker"              component={DatePickerPage} />
         <Route path="/timePicker"              component={TimePickerPage} />
-        <Route path="/presentation-strategies" component={PresentationStrategiesPage} />
-        <Route path="/grid"                    component={GridPage} />
-        <Route path="/templates"               component={TemplatesPage} />
+        <Route path="/progress-bar"            component={ProgressBarPage} />
     </div>
   </Router>
 );

@@ -15,8 +15,9 @@
 
   .pe-select-container select {
     @extend %container-extend-select;
-    padding      : .3em;
-    padding-left : 14px;
+
+    padding: 0 14px;
+
     &:focus {
       outline    : none;
       border     : $textInput-basic-focus-border;
@@ -91,6 +92,7 @@
     @extend %container-extend-select;
     padding      : .3em;
     padding-left : 14px;
+
     &:focus {
       outline    : none;
       border     : $textInput-basic-error-border;
