@@ -205,7 +205,7 @@
 
   .pe-select-container-readonly {
     @extend %abstract, %container-extend;
-    padding            : 0px;
+    padding            : 0 14px;
     border             : none;
     -webkit-appearance : none;
     -moz-appearance    : none;
@@ -222,7 +222,7 @@
 
   .pe-select-container-readonly select {
     @extend %container-extend-select;
-    padding : 0px;
+    padding : 0;
     &:focus {
       outline    : none;
       border     : $textInput-basic-error-border;
