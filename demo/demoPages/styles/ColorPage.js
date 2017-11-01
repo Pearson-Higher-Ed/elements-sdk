@@ -66,7 +66,7 @@ const ColorPage = () => {
 
   return (
     <div style={{padding: 14}}>
-      <h1>Color</h1>
+      <h1><a href="http://pearson-higher-ed.github.io/design/c/colors/">Color</a></h1>
 
       <h2>Entire Palette</h2>
       <p>The background color of each swatch is the hex code that will be used.</p>

@@ -6,11 +6,10 @@ const twentyFour = {paddingLeft: 24};
 
 const TemplatesPage = () => (
   <div style={{padding: 14}}>
-    <h1>Templates</h1>
+    <h1><a href="http://pearson-higher-ed.github.io/design/c/templates/">Templates</a></h1>
     <p>A standard set of page structures for a variety of use cases.
        Templates provide a way of organizing and structuring the content of a page in a consistent and responsive way. There are a variety of templates available for everything from simple single column presentations to more complicated multi-column structures.
     </p>
-    <a href="https://pearson-higher-ed.github.io/design/c/templates/">Design and Redlines</a>
 
     <p>Several Presentation Strategies are available for organization of content within the layout areas provided by each templates.</p>
 

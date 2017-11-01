@@ -21,7 +21,7 @@ const colors = {
     hex: '#ff9a19'
   }, {
     name: 'digital-ice-blue',
-    hex: 'daf0ed'
+    hex: '#daf0ed'
   }, {
     name: 'digital-marine-turquoise',
     hex: '#19a5a3'
@@ -38,7 +38,7 @@ const colors = {
     hex: '#c7c7c7'
   }, {
     name: 'alto',
-    hex: 'd9d9d9'
+    hex: '#d9d9d9'
   }, {
     name: 'moonlight',
     hex: '#e9e9e9'

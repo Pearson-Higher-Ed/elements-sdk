@@ -5,9 +5,8 @@ const sixteen = {paddingLeft: 16};
 
 const GridPage = () => (
   <div style={{padding: 14}}>
-    <h1>Grid</h1>
+    <h1><a href="http://pearson-higher-ed.github.io/design/c/grid/">Grid</a></h1>
     <p>A low level framework for positioning elements on the page.
-      <a href="https://pearson-higher-ed.github.io/design/c/grid/">Design and Redlines</a>
     </p>
 
     <h2>Equal Columns</h2>

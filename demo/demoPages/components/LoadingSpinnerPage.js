@@ -4,7 +4,7 @@ import { LoadingSpinner } from '../../../index';
 
 const LoadingSpinnerPage = () => (
       <div className="displaySection">
-        <h2>Loading Spinner</h2>
+        <h2><a href="http://pearson-higher-ed.github.io/design/c/loading-indicator/">Loading Spinner</a></h2>
 
         <div className="elementContainer">
 
