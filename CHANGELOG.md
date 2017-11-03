@@ -1,19 +1,53 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.3.2...v1.4.0) (2017-11-03)
+
+
+
 <a name="1.3.2"></a>
 ## [1.3.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.3.1...v1.3.2) (2017-10-31)
 
 
 
 <a name="1.3.1"></a>
-## [1.3.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.1.0...v1.3.1) (2017-10-31)
+## [1.3.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.3...v1.3.1) (2017-10-31)
+
+
+### Bug Fixes
+
+* color hex corrected ([b8f3a83](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b8f3a83))
+
+
+
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.2...v1.2.3) (2017-10-19)
+
+
+
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.1...v1.2.2) (2017-10-18)
 
 
 ### Bug Fixes
 
 * allow for dd/mm/yyyy formats in date picker ([4d167ad](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/4d167ad))
-* color hex corrected ([b8f3a83](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b8f3a83))
 * left console.log in (insufficient coffee) ([ff32e6e](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/ff32e6e))
 * putting moment dependency back (out of scope for this issue). ([ba4e90b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/ba4e90b))
 * syntax error and remove moment dependency. ([b1b2e6d](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b1b2e6d))
+
+
+
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.0...v1.2.1) (2017-10-17)
+
+
+
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.1.1...v1.2.0) (2017-10-17)
+
+
+
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.1.0...v1.1.1) (2017-10-16)
 
 
 
