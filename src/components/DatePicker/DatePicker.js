@@ -70,9 +70,7 @@ export default class DatePicker extends Component {
     const { inputStyle, labelStyleTmp, labelStyle, displayOpen, datepickerValue,
             spanStyle, dateObject, containerStyle, placeholder, disablePast, minDate
           } = this.state;
-    const { className, inputState, id, labelText, dateFormat, infoMessage,
-            errorMessage
-          } = this.props;
+    const { className, inputState, id, labelText, infoMessage, errorMessage } = this.props;
 
     const em                  = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
     const ariaDescribedby     = em + (infoMessage ? `infoMsg-${id}` : '');
@@ -87,7 +85,7 @@ export default class DatePicker extends Component {
         ref={(dom) => this.container = dom}
       >
         <label className={labelStyleTmp} htmlFor={id}>
-          {`${labelText} (${dateFormat})`}
+          {labelText}
         </label>
 
         <div className={containerStyle}>
@@ -164,7 +162,6 @@ function _datePickerOpen() {
 };
 
 function _changeHandler(e) {
-  const { dateFormat } = this.props;
   this.setState({
     datepickerValue: e.target.value,
     displayOpen: false,
@@ -175,10 +172,9 @@ function _changeHandler(e) {
 };
 
 function _calendarHandler(date) {
-  const { dateFormat } = this.props
   let dateString = (date.selectedMonth + 1) + '/' + date.selectedDate + '/' + date.selectedYear;
 
-  if (dateFormat.toLowerCase() === 'dd/mm/yyyy') {
+  if (this.props.dateFormat.toLowerCase() === 'dd/mm/yyyy') {
     dateString = date.selectedDate + '/' + (date.selectedMonth + 1) + '/' + date.selectedYear;
   }
 
