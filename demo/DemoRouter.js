@@ -32,6 +32,7 @@ import TablePage          from './demoPages/components/TablePage';
 import DatePickerPage     from './demoPages/components/DatePickerPage';
 import TimePickerPage     from './demoPages/components/TimePickerPage';
 import ProgressBarPage    from './demoPages/components/ProgressBarPage';
+import PhoneNumberPage    from './demoPages/PhoneNumberPage';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -65,6 +66,7 @@ const DemoRouter = (props) => (
         <Route path="/datePicker"              component={DatePickerPage} />
         <Route path="/timePicker"              component={TimePickerPage} />
         <Route path="/progress-bar"            component={ProgressBarPage} />
+        <Route path="/phone-number"   component={PhoneNumberPage} />
     </div>
   </Router>
 );

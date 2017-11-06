@@ -43,6 +43,7 @@ const HomePage = () => (
       <li><Link className="link_homepage" to={`datePicker`}>Date Picker</Link></li>
       <li><Link className="link_homepage" to={`timePicker`}>Time Picker</Link></li>
       <li><Link className="link_homepage" to={`progress-bar`}>Progress Bar</Link></li>
+      <li><Link className="link_homepage" to={`phone-number`}>Phone Number</Link></li>
     </ul>
 
     <p>Contributions: <a href="https://github.com/Pearson-Higher-Ed/docs/blob/master/origami-contributions.md">FAQ</a></p>
