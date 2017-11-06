@@ -44,7 +44,10 @@
     "type": "git",
     "url": "git+https://github.com/Pearson-Higher-Ed/elements-sdk.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "input-format": "^0.1.15",
+    "libphonenumber-js": "^0.4.38"
+  },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.5.1",
     "autoprefixer": "^6.1.0",
