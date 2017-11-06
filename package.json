@@ -46,7 +46,8 @@
   },
   "dependencies": {
     "input-format": "^0.1.15",
-    "libphonenumber-js": "^0.4.38"
+    "libphonenumber-js": "^0.4.38",
+    "react-responsive-ui": "^0.10.6"
   },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.5.1",
