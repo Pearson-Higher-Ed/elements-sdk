@@ -32,7 +32,7 @@ import TablePage          from './demoPages/components/TablePage';
 import DatePickerPage     from './demoPages/components/DatePickerPage';
 import TimePickerPage     from './demoPages/components/TimePickerPage';
 import ProgressBarPage    from './demoPages/components/ProgressBarPage';
-import PhoneNumberPage    from './demoPages/PhoneNumberPage';
+import PhoneNumberPage    from './demoPages/components/PhoneNumberPage';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
