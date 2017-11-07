@@ -47,10 +47,10 @@ class DatePickerPage extends Component {
                 <li>time:Boolean  === "render datepicker as timepicker"</li>
                 <li>className:String  === "styles to pass to datepicker"</li>
                 <li>id:String === "A unique name for the datepicker"</li>
-                <li>dateFormat:String === "format for date/time entry. Defaults to mm/dd/yyyy."</li>
+                <li>dateFormat:String === "format for how the date is displayed. Defaults to mm/dd/yyyy."</li>
                 <li>inputState:String === "styles for input state, one of 'error','disabled','readOnly','default'"</li>
-                <li>labelText:String === "unique lable for the input field"</li>
-                <li>datePickerValue:Date/Time === "value to be displayed by the datepicker/timepicker"</li>
+                <li>labelText:String === "unique label for the input field"</li>
+                <li>datePickerValue:Date === "value to be displayed by the datepicker"</li>
                 <li>changeHandler:Function === "function to pass values on change"</li>
                 <li>infoMessage:String === "an optional info message displayed below the input"</li>
                 <li>errorMessage:String === "an optional error message displayed below the input"</li>
@@ -67,19 +67,19 @@ class DatePickerPage extends Component {
               id              = "someGiantId1"
               dateFormat      = "dd/mm/yyyy"
               inputState      = {inputState}
-              labelText       = "Select date"
+              labelText       = "Select date (dd/mm/yyyy)"
               datepickerValue = {datePickerValue1}
               changeHandler   = {value => this.setState({datePickerValue1:value})}
               infoMessage     = {text.textInputInfoMessage}
               errorMessage    = {text.textInputErrorMessage}
             />
-            <p className="code">{`<DatePicker id="someGiantId" inputState = "default" labelText = "Select date" datepickerValue = {this.state.datepickerValue2} changeHandler = {() => console.log("DatePicker-(basic)-changed!!")} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
+            <p className="code">{`<DatePicker id="someGiantId" inputState = "default" labelText = "Select date (dd/mm/yyyy)" datepickerValue = {this.state.datepickerValue1} changeHandler = {value => this.setState({datePickerValue1:value})} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
 
             <h2>DatePicker (range): </h2>
             <DatePicker
               id              = "someGiantId2"
               inputState      = {inputState}
-              labelText       = "Select Start date"
+              labelText       = "Select start date (mm/dd/yyyy)"
               datepickerValue = {datePickerValue2}
               changeHandler   = {value => this.setState({datePickerValue2:value})}
               infoMessage     = {text.textInputInfoMessage}
@@ -88,13 +88,14 @@ class DatePickerPage extends Component {
             <DatePicker
               id              = "someGiantId3"
               inputState      = {inputState}
-              labelText       = "Select End date"
+              labelText       = "Select end date (mm/dd/yyyy)"
               datepickerValue = {datePickerValue3}
               changeHandler   = {value => this.setState({datePickerValue3:value})}
               infoMessage     = {text.textInputInfoMessage}
               errorMessage    = {text.textInputErrorMessage}
             />
-            <p className="code">{`<DatePicker id="someGiantId" inputState = "default" labelText = "Select date" datepickerValue = {this.state.datepickerValue2} changeHandler = {() => console.log("DatePicker-(basic)-changed!!")} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
+            <p className="code">{`<DatePicker id="someGiantId" inputState = "default" labelText = "Select start date (mm/dd/yyyy)" datepickerValue = {this.state.datepickerValue2} changeHandler = {value => this.setState({datePickerValue2:value})} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
+            <p className="code">{`<DatePicker id="someGiantId" inputState = "default" labelText = "Select end date (mm/dd/yyyy)" datepickerValue = {this.state.datepickerValue3} changeHandler = {value => this.setState({datePickerValue3:value})} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
 
           </div>
         </div>
