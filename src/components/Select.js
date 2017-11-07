@@ -20,7 +20,7 @@ class Select extends Component {
 
   render() {
 
-    const { labelStyle, inputStyle, spanStyle, selectStyle, containerStyle, containerFocusStyle, disabledStyle, containerStyleTmp, labelFocusStyle, labelStyleTmp } = this.state;
+    const { labelStyle, spanStyle, selectStyle, containerStyle, containerFocusStyle, containerStyleTmp, labelFocusStyle, labelStyleTmp } = this.state;
     const { id, fancy, labelText, inputState, options, infoMessage, errorMessage, changeHandler, selectedOption } = this.props;
 
     const em = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';

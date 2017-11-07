@@ -67,8 +67,8 @@ export default class DatePicker extends Component {
   }
 
   render() {
-    const { inputStyle, labelStyleTmp, labelStyle, displayOpen, datepickerValue,
-            spanStyle, dateObject, containerStyle, placeholder, disablePast, minDate
+    const { inputStyle, labelStyleTmp, displayOpen, datepickerValue,
+            dateObject, containerStyle, placeholder, disablePast, minDate
           } = this.state;
     const { className, inputState, id, labelText, infoMessage, errorMessage } = this.props;
 
@@ -194,7 +194,7 @@ function _calendarHandler(date) {
 };
 
 function _applyDatePickerStyles(inputState) {
-  let { labelStyle, inputStyle, labelFocusStyle, labelStyleTmp, containerStyle } = this.state;
+  let { labelStyle, inputStyle, labelFocusStyle, containerStyle } = this.state;
 
   switch (inputState) {
     case 'error':
