@@ -33,6 +33,9 @@ $pe-btn-default-hover-text    : $pe-color-charcoal !default;
 $pe-btn-default-hover-border  : 1px solid $pe-color-charcoal !default;
 $pe-btn-default-disabled-bg   : $pe-color-moonlight !default;
 $pe-btn-default-disabled-text : $pe-color-concrete !default;
+.pe-btn:hover {
+	border: $pe-btn-default-hover-border;
+}
 
 $pe-btn-cta-bg          : $pe-color-sunshine-yellow !default;
 $pe-btn-cta-text        : $pe-color-charcoal !default;

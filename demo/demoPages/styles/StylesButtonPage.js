@@ -8,6 +8,7 @@ const StylesButtonPage = () => (
 
     <p>Use a button to represent a user action&#8212; specifically, pressing it should perform an action on a page or document, rather than navigating a user elsewhere. These button styles
     are generally intended for content buttons rather than UI buttons. See below for <a href="#uibuttons">UI buttons</a>.</p>
+      <button className="pe-btn__tertiary" style={marginFour}>Tertiary</button>
       <button className="pe-btn" style={marginFour}>Default</button>
       <button className="pe-btn__primary--btn_xlarge" style={marginFour}>Primary</button>
       <button className="pe-btn__cta">Call To Action</button>

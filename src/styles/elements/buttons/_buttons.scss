@@ -259,3 +259,54 @@
     $pe-btn-cta-hover-text
   );
 }
+
+//===========TERTIARY=================================
+.pe-btn__tertiary {
+  
+    @extend %btn;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
+  
+  .pe-btn__tertiary--btn_small {
+  
+    @extend %btn;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
+  
+  .pe-btn__tertiary--btn_large {
+  
+    @extend %btn;
+    @extend %btn_large;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
+  
+  .pe-btn__tertiary--btn_xlarge {
+  
+    @extend %btn;
+    @extend %btn_xlarge;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
