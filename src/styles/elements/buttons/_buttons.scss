@@ -21,13 +21,14 @@
   line-height : $pe-btn-large-height;
   padding     : $pe-btn-large-padding;
 }
-
+/* xlarge size is removed in button v3.0
 %btn_xlarge {
   height      : $pe-btn-xlarge-height;
   font-size   : $pe-btn-xlarge-font-size;
   line-height : $pe-btn-xlarge-height;
   padding     : $pe-btn-xlarge-padding;
 }
+*/
 
 // For icons in buttons, remove buttony styles
 
@@ -140,6 +141,7 @@
 
 }
 
+/* xlarge size is removed in button v3.0
 .pe-btn--btn_xlarge {
 
   @extend %btn;
@@ -156,6 +158,7 @@
   );
 
 }
+*/
 
 //===========Primary=================================
 .pe-btn__primary {
@@ -195,6 +198,7 @@
   );
 }
 
+/* xlarge size is removed in button v3.0
 .pe-btn__primary--btn_xlarge {
 
   @extend %btn;
@@ -207,6 +211,7 @@
   $pe-color-white
   );
 }
+*/
 
 
 //===========CTA=================================
@@ -247,6 +252,7 @@
   );
 }
 
+/* xlarge size is removed in button v3.0
 .pe-btn__cta--btn_xlarge {
 
   @extend %btn;
@@ -259,7 +265,7 @@
     $pe-btn-cta-hover-text
   );
 }
-
+*/
 //===========TERTIARY=================================
 .pe-btn__tertiary {
   
@@ -297,7 +303,7 @@
       $pe-btn-tertiary-hover-text
     );
   }
-  
+  /* xlarge size is removed in button v3.0
   .pe-btn__tertiary--btn_xlarge {
   
     @extend %btn;
@@ -310,3 +316,4 @@
       $pe-btn-tertiary-hover-text
     );
   }
+  */ 
