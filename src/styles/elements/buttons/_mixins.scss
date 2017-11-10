@@ -3,6 +3,7 @@
   $color,
   $hover-bg,
   $hover-color,
+  $hover-border: null,
   $disabled-bg:  null,
   $disabled-color: null
 ) {
@@ -20,6 +21,7 @@
   &:focus {
     color            : $hover-color;
     background-color : $hover-bg;
+    border           : $hover-border;
   }
 
   &:disabled,

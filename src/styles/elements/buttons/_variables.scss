@@ -13,12 +13,12 @@ $pe-btn-large-font-size     : 16px !default;
 $pe-btn-large-line-height   : 0 !default;
 $pe-btn-large-padding       : 0 30px !default;
 
-/* xlarge size is removed in button v3.0
+// xlarge size is removed in button v3.0
 $pe-btn-xlarge-height      : 44px !default;
 $pe-btn-xlarge-font-size   : 18px !default;
 $pe-btn-xlarge-line-height : 22px !default;
 $pe-btn-xlarge-padding     : 0 20px !default;
-*/
+
 
 $pe-btn-primary-bg            : $pe-color-digital-pearson-blue !default;
 $pe-btn-primary-text          : $pe-color-white !default;
@@ -35,11 +35,7 @@ $pe-btn-default-hover-text    : $pe-color-charcoal !default;
 $pe-btn-default-hover-border  : 1px solid $pe-color-charcoal !default;
 $pe-btn-default-disabled-bg   : $pe-color-moonlight !default;
 $pe-btn-default-disabled-text : $pe-color-concrete !default;
-.pe-btn, .pe-btn--btn_small, .pe-btn--btn_large{
-	&:hover {
-		border: $pe-btn-default-hover-border;
-	}
-}
+
 
 $pe-btn-cta-bg          : $pe-color-sunshine-yellow !default;
 $pe-btn-cta-text        : $pe-color-charcoal !default;
