@@ -7,6 +7,7 @@
 	/* `position: relative` is for the floating label absolute positioning
 	   and also for `.rrui__select__options width` sizing */
 	position : relative;
+	margin-top: 5px;
 }
 
 .rrui__input:not(.rrui__input--multiline),
@@ -46,6 +47,10 @@
 	font-family : inherit;
 	font-weight : inherit;
 	font-style  : inherit;
+}
+
+.rrui__select__close {
+	display: none;
 }
 
 /*===========================================================
@@ -113,6 +118,8 @@
 .rrui__select
 {
 	user-select : none;
+	float: left;
+	padding-top: 6px;
 }
 
 .rrui__select--menu
@@ -241,6 +248,30 @@
 	box-sizing : border-box;
 }
 
+.rrui__select__button {
+	background: #FFFFFF;
+	border: 0;
+	padding: 0;
+	height: 10px;
+	width: 30px;
+}
+
+.rrui-input__container {
+	float: left;
+}
+
+.rrui-input__intlCode {
+	float: left;
+	width: 40px;
+	margin-top: 10px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.rrui-input__intlCode--disabled {
+	display: none;
+}
+
 .rrui__select__selected {
 	/* Because Chrome adds `text-align: center` for all buttons */
 	text-align : left;
@@ -303,7 +334,7 @@
 	height : 0;
 
 	margin-left   : 0.35em;
-	margin-top    : 0.1em;
+	margin-top    : 0;
 	margin-bottom : 0.1em;
 
 	opacity: 0.7;

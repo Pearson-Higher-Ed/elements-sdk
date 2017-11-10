@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Phone from './source/Input.js';
+import metadata from 'libphonenumber-js/metadata.min.json';
 
 import './component/rrui.css';
 import './component/style.css';
@@ -44,6 +45,7 @@ export default class PhoneNumber extends Component {
           selectMaxItems={selectMaxItems}
           className={className}
           inputClassName={errorInput}
+          metadata={metadata}
         />
         {infoMessage && <p className="pe-input--info_message">{infoMessage}</p>}
         {errorMessage && <p className="pe-input--error_message">{errorMessage}</p>}

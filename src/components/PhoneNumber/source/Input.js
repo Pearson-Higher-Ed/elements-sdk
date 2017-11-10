@@ -294,6 +294,13 @@ export default class Input extends Component
 		// Set the currently selected country
 		this.state.country_code = country
 
+		try {
+			this.state.country_number = getPhoneCode(country);
+		}
+		catch(e) {
+			this.state.country_number = '001';
+		}
+
 		// If a phone number `value` is passed then format it
 		if (value)
 		{
@@ -311,6 +318,7 @@ export default class Input extends Component
 
 		// `<Select/>` options
 		this.select_options = []
+		let selectLabel = '';
 
 		// Whether custom country names are supplied
 		let using_custom_country_names = false
@@ -323,10 +331,13 @@ export default class Input extends Component
 				using_custom_country_names = true
 			}
 
+			selectLabel = dictionary[country_code] || default_dictionary[country_code];
+			selectLabel = selectLabel + ' (+' + getPhoneCode(country_code) + ')';
+
 			this.select_options.push
 			({
 				value : country_code,
-				label : dictionary[country_code] || default_dictionary[country_code],
+				label : selectLabel,
 				icon  : get_country_option_icon(country_code, this.props)
 			})
 		}
@@ -409,13 +420,25 @@ export default class Input extends Component
 	set_country_code_value(country_code)
 	{
 		const { onCountryChange } = this.props
+		let country_number = this.state.country_number;
 
 		if (onCountryChange)
 		{
 			onCountryChange(country_code)
 		}
 
-		this.setState({ country_code })
+		try {
+			country_number = getPhoneCode(country_code);
+		}
+		catch(e) {
+			country_number = '001'
+		}
+		console.log('set country code values: ' + country_code + ' ' + country_number);
+
+		this.setState({
+			country_code: country_code,
+			country_number: country_number
+		})
 	}
 
 	// `<select/>` `onChange` handler
@@ -953,9 +976,12 @@ export default class Input extends Component
 		{
 			value,
 			country_code,
-			country_select_is_shown
+			country_select_is_shown,
+			country_number
 		}
 		= this.state
+
+		const phoneCodeLabel = country_select_is_shown ? 'rrui-input__intlCode--disabled' : 'rrui-input__intlCode';
 
 		// `type="tel"` was reported to have issues with
 		// Samsung keyboards caret position on Android OS.
@@ -1004,9 +1030,11 @@ export default class Input extends Component
 							inputClassName={ inputClassName }/>
 					}
 
+					<div className={ phoneCodeLabel }>{ '+' + country_number }</div>
+
 					{/* Phone number `<input/>` */}
 					{ !country_select_is_shown &&
-						<InputComponent
+						<div className='rrui-input__container'><InputComponent
 							type="tel"
 							{ ...input_props }
 							ref={ this.store_input_instance }
@@ -1019,18 +1047,9 @@ export default class Input extends Component
 							format={ this.format }
 							onKeyDown={ this.on_key_down }
 							style={ inputStyle }
-							className={ classNames
-							(
-								'rrui__input',
-								'rrui__input-element',
-								'rrui__input-field',
-								{
-									'rrui__input-field--invalid'  : error && indicateInvalid,
-									'rrui__input-field--disabled' : disabled
-								},
-								'react-phone-number-input__phone',
-								inputClassName
-							) }/>
+							metadata={ metadata }
+							className='pe-textInput'
+							/><span className='pe-input_underline'></span></div>
 					}
 				</div>
 
