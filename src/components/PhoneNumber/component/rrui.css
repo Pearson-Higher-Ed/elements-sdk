@@ -162,7 +162,7 @@
 
 .rrui__select__options:not(.rrui__select__options--menu)
 {
-	width : calc(100% + 0.3rem * 4 * 2);
+	width : 400px;
 }
 
 .rrui__select__options--downward
