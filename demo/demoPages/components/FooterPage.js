@@ -70,7 +70,7 @@ const FooterPage = (props) => {
             All Rights Reserved.';`} <br/><br/>
             {`<Footer links={testLinks} copyrightText={crText} singlePageStick />`}
           </p>
-        <Footer links={testLinks} anchorTarget="blank" copyrightText={intlText.copyrightText} singlePageStick />
+        <Footer links={testLinks} copyrightText={intlText.copyrightText} singlePageStick />
       </div>
     </div>
     );
