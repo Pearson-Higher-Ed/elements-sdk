@@ -1,9 +1,7 @@
 import React     from 'react';
 import PropTypes from 'prop-types';
 
-const Button = (props) => {
-
-  const { btnType, btnSize, btnIcon, ...rest } = props;
+const Button = ({ btnType, btnSize, btnIcon, children, ...rest }) => {
 
   let classes = (!btnSize) ? `pe-btn` : `pe-btn--btn_${btnSize}`;
 
@@ -14,14 +12,10 @@ const Button = (props) => {
     classes = (!btnSize) ? `pe-btn__${btnType}` : `pe-btn__${btnType}--btn_${btnSize}`;
   }
 
-
-  return <button className={classes} {...rest}>{props.children}</button>;
-
+  return <button className={classes} {...rest}>{children}</button>;
 };
 
-
 export default Button;
-
 
 Button.propTypes = {
   btnType: PropTypes.string,

@@ -2,9 +2,7 @@ import React     from 'react';
 import PropTypes from 'prop-types';
 
 
-const RadioCheckGroup = (props) => {
-
-  const { legendText, options, name, inputType, selectedOptions, changeHandler } = props;
+const RadioCheckGroup = ({ legendText, options, name, inputType, selectedOptions, changeHandler }) => {
 
   return (
         <fieldset className="pe-fieldset">

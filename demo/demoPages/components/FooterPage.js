@@ -49,6 +49,8 @@ const FooterPage = (props) => {
             <li className="li-props">The <b>singlePageStick</b> prop can be used if the page you are using the Footer on does <br/>
             not exceed the screen&#39;s height. If the page exceeds one screen in height do not use <br/>
             this prop as this will absolutely position the Footer over your content.</li>
+            <li className="li-props">anchorTarget:String === {`'blank' || 'self'`}</li>
+            <li className="li-props">The anchorTarget prop specifies where to open the linked document.</li>
           </ul>
         </div>
 
@@ -68,7 +70,7 @@ const FooterPage = (props) => {
             All Rights Reserved.';`} <br/><br/>
             {`<Footer links={testLinks} copyrightText={crText} singlePageStick />`}
           </p>
-        <Footer links={testLinks} copyrightText={intlText.copyrightText} singlePageStick />
+        <Footer links={testLinks} anchorTarget="blank" copyrightText={intlText.copyrightText} singlePageStick />
       </div>
     </div>
     );
