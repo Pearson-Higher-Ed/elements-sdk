@@ -172,7 +172,7 @@ List of Elements with their current respective design version:
 | Typography | v2.0.0 |
 | Color | v2.1.0 |
 | Icons | v2.3.0 |
-| Buttons | v2.1.2 |
+| Buttons | v3.0.0 |
 | Inputs | v2.0.1 |
 | Grid | v1.0.0 |
 | Presentation Strategies | v1.0.0 |
