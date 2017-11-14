@@ -1,10 +1,20 @@
+<a name="1.4.3"></a>
+## [1.4.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.2...v1.4.3) (2017-11-14)
+
+
+
 <a name="1.4.2"></a>
-## [1.4.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.0...v1.4.2) (2017-11-13)
+## [1.4.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.1...v1.4.2) (2017-11-13)
 
 
 ### Features
 
 * Sonar setup ([03c7893](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/03c7893))
+
+
+
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.0...v1.4.1) (2017-11-07)
 
 
 
