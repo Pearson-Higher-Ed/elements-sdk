@@ -36,7 +36,7 @@ const PhoneNumberPage = () => (
             <li className="li-props">Adds the `International` option to the list of countries.</li>
             <li className="li-props">convertToNational:Boolean</li>
             <li className="li-props">Converts the initially passed phone number value to a number for its country.</li>
-            <li className="li-props">selectMaxItems:Number === {`<Calendar selectMaxItems={5} />`}</li>
+            <li className="li-props">selectMaxItems:Number === {`<PhoneNumber selectMaxItems={5} />`}</li>
             <li className="li-props">Defines the height of the dropdown country select list.</li>
             <li className="li-props">className:String</li>
             <li className="li-props">Component CSS class.</li>

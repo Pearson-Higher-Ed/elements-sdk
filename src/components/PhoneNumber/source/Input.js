@@ -1057,7 +1057,7 @@ export default class Input extends Component
 
 				{/* Error message */}
 				{ error && indicateInvalid &&
-					<div className={ classNames('rrui__input-error', 'react-phone-number-input__error') }>
+					<div className={ classNames('rrui__input-error', 'react-phone-number-input__error') } aria-describedby={id}>
 						{ error }
 					</div>
 				}
