@@ -42,7 +42,7 @@ export default class StaticAlert extends Component {
     if (this.props.type === 'Success') {
       return (
         <span className="success-svg">
-          <Icon name="check-sm-18" />
+          <Icon name="check-lg-18" />
         </span>
       );
     }
