@@ -984,11 +984,11 @@ export default class Input extends Component
 		= this.state
 
 		const phoneCodeLabel = country_select_is_shown ? 'rrui-input__intlCode--disabled' : 'rrui-input__intlCode';
-		const useFancy = fancy ? 'pe-textInput' : 'pe-textInput-basic';
+		const useFancy = fancy ? 'pe-textInput' : 'pe-textInput--basic';
 		const underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 
 		if (!fancy) {
-			inputStyle.marginTop = '7px';
+			inputStyle.marginTop = '0px';
 		}
 
 		// `type="tel"` was reported to have issues with
