@@ -928,6 +928,7 @@ export default class Input extends Component
 	{
 		const
 		{
+			id,
 			saveOnIcons,
 			showCountrySelect,
 			nativeExpanded,
@@ -1035,6 +1036,7 @@ export default class Input extends Component
 					{/* Phone number `<input/>` */}
 					{ !country_select_is_shown &&
 						<div className='rrui-input__container'><InputComponent
+							id={id}
 							type="tel"
 							{ ...input_props }
 							ref={ this.store_input_instance }

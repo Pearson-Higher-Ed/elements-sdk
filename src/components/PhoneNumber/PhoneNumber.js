@@ -9,6 +9,7 @@ import './component/style.css';
 export default class PhoneNumber extends Component {
 
   static propTypes = {
+    id: PropTypes.string,
     labelText: PropTypes.string,
     infoMessage: PropTypes.string,
     errorMessage: PropTypes.string
@@ -19,7 +20,7 @@ export default class PhoneNumber extends Component {
   }
 
   render() {
-    const { country, placeholder, onChange, value, onKeyDown, disabled,
+    const { id, country, placeholder, onChange, value, onKeyDown, disabled,
             onCountryChange, countries, international, convertToNational,
             selectMaxItems, className, inputClassName, labelText,
             infoMessage, errorMessage } = this.props;
@@ -32,6 +33,7 @@ export default class PhoneNumber extends Component {
         <label className={`pe-textLabelInput__label${errorLabel}`}>{labelText}</label>
 
         <Phone
+          id={id}
           value={value}
           country={country}
           placeholder={placeholder}
@@ -47,8 +49,8 @@ export default class PhoneNumber extends Component {
           inputClassName={errorInput}
           metadata={metadata}
         />
-        {infoMessage && <p className="pe-input--info_message">{infoMessage}</p>}
-        {errorMessage && <p className="pe-input--error_message">{errorMessage}</p>}
+        {infoMessage && <p className="pe-input--info_message" aria-describedby={id}>{infoMessage}</p>}
+        {errorMessage && <p className="pe-input--error_message" aria-describedby={id}>{errorMessage}</p>}
 
       </div>
     );
