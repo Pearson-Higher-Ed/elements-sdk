@@ -41,6 +41,7 @@ const PhoneNumberPage = () => (
             <li className="li-props">className:String</li>
             <li className="li-props">Component CSS class.</li>
             <li className="li-props">inputClassName:String</li>
+            <li className="li-props">fancy:Boolean (defaults to true)</li>
             <li className="li-props">{`<input />`} CSS class.</li>
           </ul>
       </div> <br/>

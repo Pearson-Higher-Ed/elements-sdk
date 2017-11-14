@@ -23,7 +23,7 @@ export default class PhoneNumber extends Component {
     const { id, country, placeholder, onChange, value, onKeyDown, disabled,
             onCountryChange, countries, international, convertToNational,
             selectMaxItems, className, inputClassName, labelText,
-            infoMessage, errorMessage } = this.props;
+            infoMessage, errorMessage, fancy = true } = this.props;
 
     const errorLabel = errorMessage ? '--label_error' :'';
     const errorInput = errorMessage ? 'react-phone-number-input__phone--error' : inputClassName;
@@ -48,6 +48,7 @@ export default class PhoneNumber extends Component {
           className={className}
           inputClassName={errorInput}
           metadata={metadata}
+          fancy={fancy}
         />
         {infoMessage && <p className="pe-input--info_message" aria-describedby={id}>{infoMessage}</p>}
         {errorMessage && <p className="pe-input--error_message" aria-describedby={id}>{errorMessage}</p>}

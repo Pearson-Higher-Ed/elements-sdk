@@ -941,7 +941,7 @@ export default class Input extends Component
 			inputTabIndex,
 			style,
 			selectStyle,
-			inputStyle,
+			inputStyle = {},
 			className,
 			inputClassName,
 
@@ -963,6 +963,7 @@ export default class Input extends Component
 			internationalIcon,
 			convertToNational,
 			metadata,
+			fancy,
 			...input_props
 		}
 		= this.props
@@ -983,6 +984,12 @@ export default class Input extends Component
 		= this.state
 
 		const phoneCodeLabel = country_select_is_shown ? 'rrui-input__intlCode--disabled' : 'rrui-input__intlCode';
+		const useFancy = fancy ? 'pe-textInput' : 'pe-textInput-basic';
+		const underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
+
+		if (!fancy) {
+			inputStyle.marginTop = '7px';
+		}
 
 		// `type="tel"` was reported to have issues with
 		// Samsung keyboards caret position on Android OS.
@@ -1050,8 +1057,10 @@ export default class Input extends Component
 							onKeyDown={ this.on_key_down }
 							style={ inputStyle }
 							metadata={ metadata }
-							className='pe-textInput'
-							/><span className='pe-input_underline'></span></div>
+							className={ useFancy }
+							/>
+							{ underlineSpan }
+						</div>
 					}
 				</div>
 
