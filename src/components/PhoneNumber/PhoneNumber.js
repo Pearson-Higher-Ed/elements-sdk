@@ -15,6 +15,10 @@ export default class PhoneNumber extends Component {
     errorMessage: PropTypes.string
   }
 
+  static defaultProps = {
+    fancy: true
+  }
+
   constructor(props) {
     super(props)
   }
@@ -23,7 +27,7 @@ export default class PhoneNumber extends Component {
     const { id, country, placeholder, onChange, value, onKeyDown, disabled,
             onCountryChange, countries, international, convertToNational,
             selectMaxItems, className, inputClassName, labelText,
-            infoMessage, errorMessage, fancy = true } = this.props;
+            infoMessage, errorMessage, fancy } = this.props;
 
     const errorLabel = errorMessage ? '--label_error' :'';
     const errorInput = errorMessage ? 'react-phone-number-input__phone--error' : inputClassName;
