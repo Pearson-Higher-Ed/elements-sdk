@@ -3,6 +3,7 @@
 
 
 %btn {
+  box-sizing     : border-box;
   border-radius  : $pe-btn-border-radius;
   border         : none;
   display        : inline-block;
@@ -13,6 +14,13 @@
   line-height    : $pe-btn-small-height;
   padding        : $pe-btn-small-padding;
   font-weight    : 600;
+  margin-bottom  : .5em;
+  svg {
+    margin-left  : .5em;
+    margin-bottom  : .5em;
+    vertical-align : middle;
+    }
+
 }
 
 %btn_large {
@@ -22,6 +30,7 @@
   padding     : $pe-btn-large-padding;
 }
 
+// xlarge size is removed in button v3.0
 %btn_xlarge {
   height      : $pe-btn-xlarge-height;
   font-size   : $pe-btn-xlarge-font-size;
@@ -85,6 +94,7 @@
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
+    $pe-btn-default-hover-border,
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
@@ -117,6 +127,7 @@
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
+    $pe-btn-default-hover-border,
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
@@ -134,12 +145,14 @@
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
+    $pe-btn-default-hover-border,
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
 
 }
 
+// xlarge size is removed in button v3.0
 .pe-btn--btn_xlarge {
 
   @extend %btn;
@@ -195,6 +208,7 @@
   );
 }
 
+// xlarge size is removed in button v3.0
 .pe-btn__primary--btn_xlarge {
 
   @extend %btn;
@@ -207,6 +221,7 @@
   $pe-color-white
   );
 }
+
 
 
 //===========CTA=================================
@@ -247,6 +262,7 @@
   );
 }
 
+// xlarge size is removed in button v3.0
 .pe-btn__cta--btn_xlarge {
 
   @extend %btn;
@@ -259,3 +275,85 @@
     $pe-btn-cta-hover-text
   );
 }
+
+//===========TERTIARY=================================
+.pe-btn__tertiary {
+  
+    @extend %btn;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
+  
+  .pe-btn__tertiary--btn_small {
+  
+    @extend %btn;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
+  
+  .pe-btn__tertiary--btn_large {
+  
+    @extend %btn;
+    @extend %btn_large;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
+  // xlarge size is removed in button v3.0
+  .pe-btn__tertiary--btn_xlarge {
+  
+    @extend %btn;
+    @extend %btn_xlarge;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
+  
+
+
+  /*
+.pe-btn--btn_small{
+  .pe-icon--calendar-18{
+    padding-left: 10px;
+  }
+}
+
+.pe-btn__cta--btn_large{
+  .pe-icon--calendar-18{
+    padding-top: 2px;
+    padding-left: 10px;
+  }
+}
+
+.pe-btn--btn_small{
+  .pe-icon--calendar-24{
+    padding-top: 4px;
+    padding-left: 10px;
+  }
+}
+
+.pe-btn__cta--btn_large{
+  .pe-icon--calendar-24{
+    padding-top: 8px;
+    padding-left: 10px;
+  }
+}
+*/
