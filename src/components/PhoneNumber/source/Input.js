@@ -332,7 +332,7 @@ export default class Input extends Component
 			}
 
 			selectLabel = dictionary[country_code] || default_dictionary[country_code];
-			selectLabel = selectLabel + ' (+' + getPhoneCode(country_code) + ')';
+			selectLabel = selectLabel + ' +' + getPhoneCode(country_code);
 
 			this.select_options.push
 			({
