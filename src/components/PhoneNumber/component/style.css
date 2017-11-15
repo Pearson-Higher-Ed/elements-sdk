@@ -94,9 +94,9 @@
 {
 	/* The flag icon size is 4x3 hence the exact `width` and `height` values */
 	width: 20px;
-	height: 15px;
+	height: 10px;
 
-	border     : 1px solid #bfbfbf;
+	border     : 0px solid #bfbfbf;
 	/* Makes sure `width`x`height` is exactly `4x3` and `border` width is not included in it */
 	box-sizing : content-box;
 }
