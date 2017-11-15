@@ -22,13 +22,13 @@ $pe-btn-xlarge-padding     : 0 20px !default;
 
 $pe-btn-primary-bg            : $pe-color-digital-pearson-blue !default;
 $pe-btn-primary-text          : $pe-color-white !default;
-$pe-btn-primary-hover-bg      : $pe-color-ink-blue !default;
+$pe-btn-primary-hover-bg      : darken($pe-color-digital-pearson-blue, 10%) !default;
 $pe-btn-primary-hover-text    : $pe-color-white !default;
 $pe-btn-primary-disabled-bg   : $pe-color-moonlight !default;
 $pe-btn-primary-disabled-text : $pe-color-concrete !default;
 
 $pe-btn-default-bg            : $pe-color-white !default;
-$pe-btn-default-text          : $pe-color-medium-gray !default;
+$pe-btn-default-text          : #505759 !default;
 $pe-btn-default-border        : 1px solid $pe-color-concrete !default;
 $pe-btn-default-hover-bg      : $pe-color-white !default;
 $pe-btn-default-hover-text    : $pe-color-charcoal !default;
@@ -39,10 +39,10 @@ $pe-btn-default-disabled-text : $pe-color-concrete !default;
 
 $pe-btn-cta-bg          : $pe-color-sunshine-yellow !default;
 $pe-btn-cta-text        : $pe-color-charcoal !default;
-$pe-btn-cta-hover-bg    : #FF9A19 !default;
+$pe-btn-cta-hover-bg    : darken($pe-color-sunshine-yellow, 10%) !default;
 $pe-btn-cta-hover-text  : $pe-color-charcoal !default;
 
 $pe-btn-tertiary-bg            : $pe-color-white-gray !default;
-$pe-btn-tertiary-text          : $pe-color-medium-gray !default;
-$pe-btn-tertiary-hover-bg      : $pe-color-moonlight !default;
+$pe-btn-tertiary-text          : #505759 !default;
+$pe-btn-tertiary-hover-bg      : darken($pe-color-white-gray, 10%) !default;
 $pe-btn-tertiary-hover-text    : $pe-color-charcoal !default;
