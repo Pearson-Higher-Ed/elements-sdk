@@ -16,8 +16,7 @@ export default class PhoneNumber extends Component {
   }
 
   static defaultProps = {
-    fancy: true,
-    error: false
+    fancy: true
   }
 
   constructor(props) {
