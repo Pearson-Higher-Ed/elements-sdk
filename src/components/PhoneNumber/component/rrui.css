@@ -257,6 +257,7 @@
 
 .rrui__buttonCodeGroup {
 	float: left;
+	padding-top: 3px;
 }
 
 .rrui__buttonCodeGroup-basic {
@@ -279,7 +280,7 @@
 }
 
 .rrui-input__padding {
-	padding-top: 1px;
+	padding-top: 4px;
 }
 
 .rrui-input__intlCode--disabled {
