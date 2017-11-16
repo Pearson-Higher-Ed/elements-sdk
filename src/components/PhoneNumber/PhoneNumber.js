@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Phone from './source/Input.js';
-import metadata from 'libphonenumber-js/metadata.min.json';
+import metadata from 'libphonenumber-js/metadata.full.json';
 
 import './component/rrui.css';
 import './component/style.css';

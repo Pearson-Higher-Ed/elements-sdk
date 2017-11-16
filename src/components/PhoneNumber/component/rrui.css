@@ -2,11 +2,6 @@
 = Input                                                     =
 ===========================================================*/
 
-.rrui__input
-{
-	/*margin-top: 5px;*/
-}
-
 .rrui__input:not(.rrui__input--multiline),
 .rrui__input-label
 {
@@ -116,7 +111,6 @@
 {
 	user-select : none;
 	float: left;
-	/*padding-top: 3px;*/
 }
 
 .rrui__select--menu
@@ -272,7 +266,6 @@
 .rrui-input__intlCode {
 	float: left;
 	width: 32px;
-	/*margin-top: 9px;*/
 	margin-top: 2px;
 	margin-left: 4px;
 	margin-right: 4px;
@@ -355,13 +348,6 @@
 	opacity: 0.7;
 
 	transition: opacity 100ms ease-out;
-
-	/* border-width: arrow_height arrow_width/2 0 arrow_width/2 */
-	/*border-width : 0.35em 0.2em 0 0.2em;
-
-	border-style       : solid;
-	border-left-color  : transparent;
-	border-right-color : transparent;*/
 
 	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyBmaWxsPSclMjM4Qzk4RjInPjxwYXRoIGQ9Ik0xMi43MDU5ODcxLDcuMjkxNzcyNTggQzEyLjMxNDMwNTUsNi45MDI5MTAwOSAxMS42ODI4MTg5LDYuOTAzOTA3MTcgMTEuMjkzMTM1Nyw3LjI5Mzc2Njc1IEw5LDkuNTkwMDQ5NjIgTDYuNzA2ODY0MjcsNy4yOTM3NjY3NSBDNi4zMTcxODEwOCw2LjkwMjkxMDA5IDUuNjg1Njk0NDYsNi45MDE5MTMgNS4yOTQwMTI4OSw3LjI5MTc3MjU4IEM0LjkwMzMzMDUxLDcuNjgwNjM1MDcgNC45MDEzMzIxMyw4LjMxMDc5MTczIDUuMjkyMDE0NTIsOC43MDE2NDgzOSBMOC4yOTI1NzUxMiwxMS43MDY4NTc1IEM4LjQ4MDQyMjQxLDExLjg5NDMwOTIgOC43MzQyMTYwOCwxMiA5LDEyIEM5LjI2NTc4MzkyLDEyIDkuNTIwNTc2NzgsMTEuODk0MzA5MiA5LjcwNzQyNDg4LDExLjcwNjg1NzUgTDEyLjcwNzk4NTUsOC43MDE2NDgzOSBDMTMuMDk4NjY3OSw4LjMxMDc5MTczIDEzLjA5NjY2OTUsNy42ODA2MzUwNyAxMi43MDU5ODcxLDcuMjkxNzcyNTgiPjwvcGF0aD48L3N2Zz4=") no-repeat;
 

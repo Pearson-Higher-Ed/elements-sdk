@@ -16,7 +16,7 @@ const PhoneNumberPage = () => (
             <li className="li-props">infoMessage:String === {`<PhoneNumber infoMessage="How informative!" />`}</li>
             <li className="li-props">Message displayed below the Input</li>
             <li className="li-props">errorMessage:String === {`<PhoneNumber errorMessage="Error message" />`}</li>
-            <li className="li-props">Message displayed below the Input during an error state.</li>
+            <li className="li-props">Message displayed below the Input during an error state.  Note:  will trigger form field to be in an error state.</li>
             <li className="li-props">country:String === {`<PhoneNumber country="US" />`}</li>
             <li className="li-props">Two-letter country code to be used as the default country. <br/>Full list of codes can be found here&nbsp;
             <a href="https://github.com/catamphetamine/react-phone-number-input/blob/master/source/country%20names.json" target="_blank">Country codes</a></li>
