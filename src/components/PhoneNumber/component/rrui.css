@@ -4,7 +4,7 @@
 
 .rrui__input
 {
-	margin-top: 5px;
+	/*margin-top: 5px;*/
 }
 
 .rrui__input:not(.rrui__input--multiline),
@@ -116,7 +116,7 @@
 {
 	user-select : none;
 	float: left;
-	padding-top: 3px;
+	/*padding-top: 3px;*/
 }
 
 .rrui__select--menu
@@ -255,16 +255,31 @@
 	width: 40px;
 }
 
+.rrui__buttonCodeGroup {
+	float: left;
+}
+
+.rrui__buttonCodeGroup-basic {
+	float: left;
+	padding-top: 9px;
+}
+
 .rrui-input__container {
 	float: left;
 }
 
 .rrui-input__intlCode {
 	float: left;
-	width: 40px;
-	margin-top: 9px;
+	width: 32px;
+	/*margin-top: 9px;*/
+	margin-top: 2px;
 	margin-left: 4px;
 	margin-right: 4px;
+	text-align: right;
+}
+
+.rrui-input__padding {
+	padding-top: 1px;
 }
 
 .rrui-input__intlCode--disabled {

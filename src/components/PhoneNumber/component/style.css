@@ -28,7 +28,7 @@
 
 .react-phone-number-input__country:not(.rrui__select--expanded)
 {
-	margin-right : 0.5em;
+	margin-right : 0;
 }
 
 .react-phone-number-input__country .rrui__select__selected--autocomplete

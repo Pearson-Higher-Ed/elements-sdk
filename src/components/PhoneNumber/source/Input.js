@@ -984,7 +984,8 @@ export default class Input extends Component
 		= this.state
 
 		const phoneCodeLabel = country_select_is_shown ? 'rrui-input__intlCode--disabled' : 'rrui-input__intlCode';
-		const useFancy = fancy ? 'pe-textInput' : 'pe-textInput--basic';
+		const useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
+		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
 		const underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 
 		if (!fancy) {
@@ -1008,6 +1009,7 @@ export default class Input extends Component
 
 				{/* Country `<select/>` and phone number `<input/>` */}
 				<div className="react-phone-number-input__row">
+					<div className={fancyGroup}>
 
 					{/* Country `<select/>` */}
 					{ showCountrySelect && this.can_change_country() &&
@@ -1038,7 +1040,8 @@ export default class Input extends Component
 							inputClassName={ inputClassName }/>
 					}
 
-					<div className={ phoneCodeLabel }>{ '+' + country_number }</div>
+						<div className={ phoneCodeLabel }>{ '+' + country_number }</div>
+					</div>
 
 					{/* Phone number `<input/>` */}
 					{ !country_select_is_shown &&
