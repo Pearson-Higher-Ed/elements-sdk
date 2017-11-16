@@ -984,9 +984,14 @@ export default class Input extends Component
 		= this.state
 
 		const phoneCodeLabel = country_select_is_shown ? 'rrui-input__intlCode--disabled' : 'rrui-input__intlCode';
-		const useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
 		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
-		const underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
+		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
+		let useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
+
+		if (error) {
+			useFancy = fancy ? 'pe-textInput--input_error rrui-input__padding' : 'pe-textInput--basic_error';
+			underlineSpan = fancy ? (<span className='pe-inputError_underline'></span>) : '';
+		}
 
 		if (!fancy) {
 			inputStyle.marginTop = '0px';
