@@ -433,7 +433,6 @@ export default class Input extends Component
 		catch(e) {
 			country_number = '001'
 		}
-		console.log('set country code values: ' + country_code + ' ' + country_number);
 
 		this.setState({
 			country_code: country_code,
