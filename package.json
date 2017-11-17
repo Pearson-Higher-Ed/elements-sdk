@@ -1,6 +1,6 @@
 {
   "name": "@pearson-components/elements-sdk",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "Styling and basic JavaScript components for UI development.\"",
   "main": "build/css/elements.css",
   "scripts": {
