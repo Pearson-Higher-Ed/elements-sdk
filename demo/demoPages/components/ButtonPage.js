@@ -13,7 +13,7 @@ const ButtonPage = () => (
             <h3>Props:</h3>
             <ul>
               <li>btnType:String === "primary", "cta", "default", "tertiary"</li>
-              <li>btnSize:String === "small", "large"</li>
+              <li>btnSize:String === "small", "large", "xlarge"</li>
               <li>btnIcon:Bool === true/false</li>
               <li>disabled</li>
             </ul>
@@ -67,6 +67,16 @@ const ButtonPage = () => (
           <p className="code">{'<Button btnSize="large">Large</Button>'}</p>
 
           <br />
+
+          <h3>xLarge Button:</h3>
+          <Button btnSize="xlarge">xLarge</Button>
+          <p className="code">{'<Button btnSize="xlarge">xLarge</Button>'}</p>
+
+          <br />
+
+          <h3>Primary xLarge Button:</h3>
+          <Button btnType="primary" btnSize="xlarge">Primary xLarge</Button>
+          <p className="code">{'<Button btnType="primary" btnSize="xlarge">xLarge</Button>'}</p>
         </div>
 
       </div>
