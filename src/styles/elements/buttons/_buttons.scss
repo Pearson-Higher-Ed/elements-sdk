@@ -1,44 +1,47 @@
 @import 'variables';
 @import 'mixins';
 
-
 %btn {
   box-sizing     : border-box;
-  border-radius  : $pe-btn-border-radius;
   border         : none;
   display        : inline-block;
   vertical-align : middle;
   cursor         : pointer;
-  font-size      : $pe-btn-small-font-size;
-  height         : $pe-btn-small-height;
-  line-height    : $pe-btn-small-height;
-  padding        : $pe-btn-small-padding;
+
+  // Large: The standard button size, prefer this button as a default size 
+  // unless there is a reason to go up or down.
+  height         : $pe-btn-large-height;
+  padding        : $pe-btn-large-padding;
+  border-radius  : $pe-btn-large-border-radius;
+  font-size      : $pe-btn-large-font-size;
+  line-height    : $pe-btn-large-height;
+
   font-weight    : 600;
-  margin-bottom  : .5em;
+
   svg {
     margin-left  : .5em;
-    margin-bottom  : .5em;
+    //margin-bottom  : .5em;
     vertical-align : middle;
     }
 
 }
 
 %btn_large {
-  height      : $pe-btn-large-height;
-  font-size   : $pe-btn-large-font-size;
-  line-height : $pe-btn-large-height;
-  padding     : $pe-btn-large-padding;
+  height         : $pe-btn-large-height;
+  border-radius  : $pe-btn-large-border-radius;
+  padding        : $pe-btn-large-padding;
+  font-size      : $pe-btn-large-font-size;
+  line-height    : $pe-btn-large-height;
 }
 
-// xlarge size is removed in button v3.0
 %btn_xlarge {
-  height      : $pe-btn-xlarge-height;
-  font-size   : $pe-btn-xlarge-font-size;
-  line-height : $pe-btn-xlarge-height;
-  padding     : $pe-btn-xlarge-padding;
+  height         : $pe-btn-xlarge-height;
+  border-radius  : $pe-btn-xlarge-border-radius;
+  padding        : $pe-btn-xlarge-padding;
+  font-size      : $pe-btn-xlarge-font-size;
+  line-height    : $pe-btn-xlarge-height; 
 }
 
-// For icons in buttons, remove buttony styles
 
 .pe-icon--btn {
   padding: 0;
@@ -87,13 +90,13 @@
 .pe-btn {
 
   @extend %btn;
-  border: $pe-btn-default-border;
 
   @include pe-btn(
     $pe-btn-default-bg,
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
+    $pe-btn-default-border,
     $pe-btn-default-hover-border,
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
@@ -120,13 +123,13 @@
 .pe-btn--btn_small {
 
   @extend %btn;
-  border: $pe-btn-default-border;
 
   @include pe-btn(
     $pe-btn-default-bg,
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
+    $pe-btn-default-border,
     $pe-btn-default-hover-border,
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
@@ -138,13 +141,13 @@
 
   @extend %btn;
   @extend %btn_large;
-  border: $pe-btn-default-border;
 
   @include pe-btn(
     $pe-btn-default-bg,
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
+    $pe-btn-default-border,
     $pe-btn-default-hover-border,
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
@@ -152,18 +155,18 @@
 
 }
 
-// xlarge size is removed in button v3.0
 .pe-btn--btn_xlarge {
 
   @extend %btn;
   @extend %btn_xlarge;
-  border: $pe-btn-default-border;
 
   @include pe-btn(
     $pe-btn-default-bg,
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
+    $pe-btn-default-border,
+    $pe-btn-default-hover-border,
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
@@ -208,7 +211,6 @@
   );
 }
 
-// xlarge size is removed in button v3.0
 .pe-btn__primary--btn_xlarge {
 
   @extend %btn;
@@ -262,7 +264,6 @@
   );
 }
 
-// xlarge size is removed in button v3.0
 .pe-btn__cta--btn_xlarge {
 
   @extend %btn;
@@ -313,7 +314,7 @@
       $pe-btn-tertiary-hover-text
     );
   }
-  // xlarge size is removed in button v3.0
+ 
   .pe-btn__tertiary--btn_xlarge {
   
     @extend %btn;
