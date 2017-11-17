@@ -16,7 +16,8 @@ export default class PhoneNumber extends Component {
   }
 
   static defaultProps = {
-    fancy: true
+    fancy: true,
+    errorMessage: ''
   }
 
   constructor(props) {
@@ -31,7 +32,6 @@ export default class PhoneNumber extends Component {
 
     const errorLabel = errorMessage ? '--label_error' :'';
     const errorInput = errorMessage ? 'react-phone-number-input__phone--error' : inputClassName;
-    const error = errorMessage ? true : false;
 
     return (
       <div>
@@ -54,7 +54,7 @@ export default class PhoneNumber extends Component {
           inputClassName={errorInput}
           metadata={metadata}
           fancy={fancy}
-          error={error}
+          error={errorMessage}
         />
         {infoMessage && <p className="pe-input--info_message" aria-describedby={id}>{infoMessage}</p>}
         {errorMessage && <p className="pe-input--error_message" aria-describedby={id}>{errorMessage}</p>}
