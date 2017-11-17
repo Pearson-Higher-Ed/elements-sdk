@@ -49,9 +49,8 @@ export default class TimePicker extends Component {
 
   render() {
 
-    const { inputStyle, labelStyleTmp, labelStyle, displayOpen, timepickerValue,
-            spanStyle, containerStyle, placeholder
-          } = this.state;
+    const { inputStyle, labelStyleTmp, displayOpen, timepickerValue,
+            containerStyle, placeholder } = this.state;
     const { className, inputState, id, labelText, timeFormat, infoMessage,
             errorMessage, twentyFourHour, TWENTYFOUR_HOURS, HOURS, disableLabel
           } = this.props;
@@ -228,7 +227,7 @@ function _listEventInterface(e) {
 };
 
 function _applyTimePickerStyles(inputState) {
-  let { labelStyle, inputStyle, labelFocusStyle, labelStyleTmp, containerStyle } = this.state;
+  let { labelStyle, inputStyle, labelFocusStyle, containerStyle } = this.state;
 
   switch (inputState) {
     case 'error':

@@ -1,5 +1,50 @@
+<a name="1.4.3"></a>
+## [1.4.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.2...v1.4.3) (2017-11-14)
+
+
+
+<a name="1.4.2"></a>
+## [1.4.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.1...v1.4.2) (2017-11-13)
+
+
+### Features
+
+* Sonar setup ([03c7893](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/03c7893))
+
+
+
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.0...v1.4.1) (2017-11-07)
+
+
+
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.3.2...v1.4.0) (2017-11-03)
+
+
+
+<a name="1.3.2"></a>
+## [1.3.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.3.1...v1.3.2) (2017-10-31)
+
+
+
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.3...v1.3.1) (2017-10-31)
+
+
+### Bug Fixes
+
+* color hex corrected ([b8f3a83](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b8f3a83))
+
+
+
 <a name="1.2.3"></a>
-## [1.2.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.1...v1.2.3) (2017-10-19)
+## [1.2.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.2...v1.2.3) (2017-10-19)
+
+
+
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.1...v1.2.2) (2017-10-18)
 
 
 ### Bug Fixes
@@ -12,7 +57,22 @@
 
 
 <a name="1.2.1"></a>
-## [1.2.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.0.6...v1.2.1) (2017-10-17)
+## [1.2.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.0...v1.2.1) (2017-10-17)
+
+
+
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.1.1...v1.2.0) (2017-10-17)
+
+
+
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.1.0...v1.1.1) (2017-10-16)
+
+
+
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.0.6...v1.1.0) (2017-10-10)
 
 
 

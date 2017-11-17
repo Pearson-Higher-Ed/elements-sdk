@@ -5,14 +5,13 @@ const sixteen = {paddingLeft: 16};
 
 const PresentationStrategiesPage = () => (
   <div style={{padding: 14}}>
-    <h1>Presentation Strategies</h1>
+    <h1><a href="http://pearson-higher-ed.github.io/design/c/presentation-strategies/">Presentation Strategies</a></h1>
 
     <p>This component provides several standard strategies for presenting content within a layout template.
         Layout Templates help you structure a page at a high level and chunk it into major layout areas.
         Presentation strategies operate at one level lower, helping to actually fill out those layout areas
         in a standard and rational way. </p>
 
-    <a href="https://pearson-higher-ed.github.io/design/c/presentation-strategies/">Design and redlines</a>
     <p>Feature List</p>
     <ul>
       <li>Support for common layout patterns</li>

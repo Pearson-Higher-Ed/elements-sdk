@@ -6,14 +6,7 @@ import { ProgressBar } from '../index';
 describe('ProgressBar', () => {
 
   it('Should render the ProgressBar', function () {
-    this.wrapper = shallow(<ProgressBar />);
+    this.wrapper = shallow(<ProgressBar id="test" />);
     expect(this.wrapper.node.type).toEqual('div');
-  });
-
-  it('Calculates the correct ratio', function () {
-    const pBar = new ProgressBar({max: 200, value: 50, min: 0 });
-    const valueCheck = pBar.calculateRatio();
-
-    expect(valueCheck).toEqual(25);
   });
 });

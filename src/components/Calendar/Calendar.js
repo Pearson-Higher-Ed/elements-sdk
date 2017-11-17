@@ -195,7 +195,6 @@ export default class Calendar extends Component {
   }
 
   enterSelect = () => {
-    const icons = document.querySelectorAll('button.pe-arrowIcons');
     const days = document.querySelectorAll('div.pe-cal-cell-square');
     if (this.state.selectedElement) {
       this.state.selectedElement.classList.remove('pe-cal-selected');

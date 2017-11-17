@@ -13,7 +13,7 @@ import { Icon, Button }     from '../../index';
 
   render() {
     return  (
-      <div className="container">
+      <div className="demo-container">
         <div className="header">
           <Link to="/"><h1 className="headerTitle">Pearson Design Accelerator</h1></Link>
           <Button btnSize="xlarge headerButton" onClick={this.toggleList}>
@@ -37,6 +37,7 @@ import { Icon, Button }     from '../../index';
           <li><Link className="link" to={`/presentation-strategies`}>Presentation Strategies</Link></li>
           <li><Link className="link" to={`/grid`}>Grid</Link></li>
           <li><Link className="link" to={`/templates`}>Templates</Link></li>
+          <li><Link className="link" to={`/bootstrap-grid`}>Bootstrap - Grid</Link></li>
         </ul>
         <ul className="buttonListTwo">
           <li><Link className="link" to={`/buttons`} >Buttons</Link></li>

@@ -31,6 +31,23 @@ export default class StaticAlert extends Component {
     this.setState({ isOpen: false });
   }
 
+  typeCheck = () => {
+    if (this.props.type === 'Error') {
+      return (
+        <span className="error-svg">
+          <Icon name="warning-18" />
+        </span>
+      );
+    }
+    if (this.props.type === 'Success') {
+      return (
+        <span className="success-svg">
+          <Icon name="check-lg-18" />
+        </span>
+      );
+    }
+  }
+
   render() {
 
     const { type, title, message, inline, disable } = this.props;
@@ -50,20 +67,7 @@ export default class StaticAlert extends Component {
             </button><br/>
 
             <div className="alert-content-container">
-              {type === 'Error' ? <span className="error-svg">
-                                    <svg focusable="false"
-                                         className="pe-icon--warning-18">
-                                         <use xlinkHref="#warning-18"></use>
-                                    </svg>
-                                  </span>
-                                :null}
-              {type === 'Success' ? <span className="success-svg">
-                                      <svg focusable="false"
-                                           className="pe-icon--check-18">
-                                           <use xlinkHref="#check-sm-18"></use>
-                                      </svg>
-                                    </span>
-                                  :null}
+              {this.typeCheck()}
               <div className={`alert-content-${infoCheck}`}>
                 <h2 className="pe-label alert-title">
                   <strong>{title}</strong>

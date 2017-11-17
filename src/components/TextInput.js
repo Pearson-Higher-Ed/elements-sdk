@@ -27,7 +27,7 @@ class TextInput extends Component {
   render() {
 
     const { labelStyle, inputStyle, spanStyle, passwordStatusText, visibilityStatusText, passwordTypeSelector, butttonStyle, labelFocusStyle, labelStyleTmp  }  = this.state;
-    const { inputState, fancy, id, labelText, password, placeholder, infoMessage, errorMessage, changeHandler } = this.props;
+    const { inputState, id, labelText, password, placeholder, infoMessage, errorMessage, changeHandler } = this.props;
 
     const em = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
     const ariaDescribedby =  em + ((infoMessage) ? `infoMsg-${id}` : '');
@@ -79,8 +79,8 @@ TextInput.propTypes = {
 
 
 function _togglePassword() {
-  const { passwordTypeSelector, passwordStatusText, visibilityStatusText } = this.state;
-  const { showText, hideText, isNotVisibleMsg, isVisibleMsg, inputState } = this.props;
+  const { passwordTypeSelector, passwordStatusText } = this.state;
+  const { showText, hideText, isNotVisibleMsg, isVisibleMsg } = this.props;
 
   const passwordTypeSelectorTmp = (passwordTypeSelector === 'password') ? 'text' : 'password';
   const visibilityStatusTextTmp = (passwordStatusText === showText) ? isVisibleMsg : isNotVisibleMsg;

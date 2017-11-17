@@ -6,7 +6,7 @@ const twentyFour = {paddingLeft: 24};
 
 const StylesTablesPage = () => (
   <div style={{padding:14}}>
-    <h1>Tables</h1>
+    <h1><a href="http://pearson-higher-ed.github.io/design/c/tables/">Tables</a></h1>
 
     <p>Use tables to display tabular data. For simply laying things out in a visual grid form, use CSS instead (and ensure any focusables follow visual tab order if you do).</p>
     <p>Tables should have either a heading above them, or a caption element, giving them their name/basic description.</p>
@@ -208,7 +208,7 @@ const StylesTablesPage = () => (
     <h2>Sortable columns</h2>
 
     <p>Tables with sortable columns will have controls for sorting in the table headers, represented by the sorting icons. These tables also require JavaScript to do anything. The React table is able to accept outside sorting functionality.</p>
-    
+
 
   </div>
 )

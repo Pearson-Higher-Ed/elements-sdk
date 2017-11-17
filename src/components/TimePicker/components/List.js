@@ -4,9 +4,7 @@ import { Icon } from "../../../../index";
 import './List.scss';
 
 
-export const List = (props) => {
-
-    const { id, itemsToList, itemToParent, selectedItem, listRef, listEvents } = props;
+export const List = ({ id, itemsToList, itemToParent, selectedItem, listRef, listEvents }) => {
 
     return (
       <ul id="itemlist" className="pe-itemList" ref={listRef} onKeyDown={listEvents} role="listbox" aria-expanded="true" aria-live="polite">

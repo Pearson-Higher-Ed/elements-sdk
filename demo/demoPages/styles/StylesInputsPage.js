@@ -6,9 +6,8 @@ const twntyFr = {paddingLeft: 24};
 
 const StylesInputsPage = () => (
   <div style={{padding: 14}}>
-    <h1>Inputs</h1>
+    <h1><a href="http://pearson-higher-ed.github.io/design/c/inputs/">Inputs</a></h1>
     <p>An input is a field used to save a response from a user.</p>
-    <a href="http://pearson-higher-ed.github.io/design/c/inputs/">Design and Redlines</a>
 
     <h2>Labels</h2>
     <p>All inputs must have direct labels, even when the visual design such as the field being physically close to other text can give some users a good idea of what to fill in. Labels need to be programmatically associated with the inputs, by having a `for` attribute which matches the input&#39;s (unique to the page!) `id` attribute.</p>

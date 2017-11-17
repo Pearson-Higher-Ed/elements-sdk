@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import uuid      from 'uuid';
 
 
-const Icon = (props) => {
-
-  const { name, children } = props;
+const Icon = ({ name, children }) => {
 
   const i_id = (children) ? '_'+uuid.v1() : null;
 
@@ -16,12 +14,14 @@ const Icon = (props) => {
            aria-labelledby = {i_id}
            className       = {`pe-icon--${name}`}
            >
-           {children && <title id={i_id}>{children}</title>}
+           {children &&
+             <title id={i_id}>
+              {children}
+            </title>}
         <use xlinkHref={'#' + name}></use>
       </svg>
     );
 };
-
 
 export default Icon;
 

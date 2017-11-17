@@ -2,16 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../../Icon';
 
-const TableRowCell = (props, context) => {
-  const { children, inputId, containerId, cellId, labelledbyCellId, alignCell } = props;
-  const { selectable } = context;
+const TableRowCell = ({ children, inputId, containerId, cellId, labelledbyCellId, alignCell }, { selectable }) => {
   const columnAlignment = alignCell === 'center' ? ' pe-table__center'
                           : alignCell === 'right'
                           ? ' pe-table__right'
                           : '';
 
   return (
-    <td id={cellId} className={`${columnAlignment}`}>
+    <td id={cellId} className={columnAlignment}>
       { selectable && !children
         ? <div className="pe-checkbox">
             <input type="checkbox" id={inputId} aria-labelledby={`${containerId} ${labelledbyCellId}`} />

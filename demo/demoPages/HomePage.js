@@ -26,6 +26,7 @@ const HomePage = () => (
       <li><Link className="link_homepage" to={`presentation-strategies`}>Presentation Strategies</Link></li>
       <li><Link className="link_homepage" to={`grid`}>Grid</Link></li>
       <li><Link className="link_homepage" to={`templates`}>Templates</Link></li>
+      <li><Link className="link_homepage" to={`bootstrap-grid`}>Bootstrap - Grid</Link></li>
     </ul>
 
     <h2>React Components:</h2>

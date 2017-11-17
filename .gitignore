@@ -2,6 +2,6 @@ build/
 node_modules/
 coverage/
 yarn.lock
-package-lock.json
 *.log
 .DS_store
+.scannerwork/

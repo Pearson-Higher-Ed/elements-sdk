@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const TableHead = (props) => {
-  const { children } = props;
-
+const TableHead = ({ children }) => {
   return (
     <thead>
       {children}

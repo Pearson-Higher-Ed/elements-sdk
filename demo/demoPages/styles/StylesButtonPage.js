@@ -4,7 +4,7 @@ const marginFour = {marginRight: 4};
 
 const StylesButtonPage = () => (
   <div style={{padding: 14}}>
-    <h1>Buttons</h1>
+    <h1><a href="http://pearson-higher-ed.github.io/design/c/buttons/">Buttons</a></h1>
 
     <p>Use a button to represent a user action&#8212; specifically, pressing it should perform an action on a page or document, rather than navigating a user elsewhere. These button styles
     are generally intended for content buttons rather than UI buttons. See below for <a href="#uibuttons">UI buttons</a>.</p>

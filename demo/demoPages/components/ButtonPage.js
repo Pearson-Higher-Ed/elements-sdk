@@ -50,12 +50,6 @@ const ButtonPage = () => (
 
           <br />
 
-          <h3>Primary Disabled Button:</h3>
-          <Button btnType="primary" disabled>Primary Disabled</Button>
-          <p className="code">{'<Button btnType="primary" disabled>Disabled</Button>'}</p>
-
-          <br />
-
           <h3>Small Button:</h3>
           <Button btnSize="small">Small</Button>
           <p className="code">{'<Button btnSize="small">Small</Button>'}</p>

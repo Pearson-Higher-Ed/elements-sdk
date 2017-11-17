@@ -6,7 +6,7 @@ const twntyFr = {paddingLeft: 24};
 
 const StylesIconsPage = () => (
   <div style={{padding: 14}}>
-    <h1>Icons</h1>
+    <h1><a href="http://pearson-higher-ed.github.io/design/c/icons/">Icons</a></h1>
 
     <ul className="d-icon-list" style={{color: '#6a7070'}}>
       <li>

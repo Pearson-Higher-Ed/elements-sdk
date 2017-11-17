@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TableRow = (props) => {
-  const { children } = props;
+const TableRow = ({ children }) => {
 
   const selectedRow = () => {
     const tables = document.querySelectorAll('.pe-table--selectable');
