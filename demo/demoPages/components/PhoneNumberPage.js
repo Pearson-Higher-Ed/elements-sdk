@@ -47,6 +47,7 @@ const PhoneNumberPage = () => (
       </div> <br/>
 
     <PhoneNumber
+      id="demo"
       country="US"
       placeholder="555-555-5555"
       labelText="Mobile phone"

@@ -55,9 +55,10 @@ export default class PhoneNumber extends Component {
           metadata={metadata}
           fancy={fancy}
           error={errorMessage}
+          labelText={labelText}
         />
-        {infoMessage && <p className="pe-input--info_message" aria-describedby={id}>{infoMessage}</p>}
-        {errorMessage && <p className="pe-input--error_message" aria-describedby={id}>{errorMessage}</p>}
+        {infoMessage && <p className="pe-input--info_message" id={id + "phoneNumberInfo"}>{infoMessage}</p>}
+        {errorMessage && <p className="pe-input--error_message" id={id + "phoneNumberError"}>{errorMessage}</p>}
 
       </div>
     );
