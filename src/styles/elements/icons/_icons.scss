@@ -13,16 +13,19 @@ svg[class^='pe-icon--'] {
   fill: currentColor;
 }
 
-[class^='pe-btn'] svg[class$='-18'] {
-  vertical-align: text-top;
+[class^='pe-btn'] svg[class$='-18'], [class^='pe-btn'] svg[class$='-24'] {
+  vertical-align: middle;
+  margin-left  : .5em;
 }
-.pe-btn--btn_large svg[class$='-24'] {
-  margin-top: 5px;
-}
-.pe-btn--btn_xlarge svg[class$='-24'],
-[class$='--btn_xlarge'] svg[class$='-24'] {
-  margin-top: 8px;
-}
+
+
+// .pe-btn--btn_large svg[class$='-24'] {
+//   margin-top: 5px;
+// }
+// .pe-btn--btn_xlarge svg[class$='-24'],
+// [class$='--btn_xlarge'] svg[class$='-24'] {
+//   margin-top: 8px;
+// }
 
 svg[class$='-18'] {
   width: 18px;
