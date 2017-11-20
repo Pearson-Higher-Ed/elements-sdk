@@ -20,7 +20,7 @@ describe('Dropdown', () => {
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
-    expect(anchor.props.className).toEqual('pe-btn dropdown-activator');
+    expect(anchor.props.className).toEqual('pe-btn__primary dropdown-activator');
   });
 
   it('should create an anchor for icon', function () {
