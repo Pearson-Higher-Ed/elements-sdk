@@ -31,21 +31,21 @@ $pe-btn-cta-text        : $pe-color-charcoal !default;
 $pe-btn-cta-hover-bg    : $pe-color-sunflower-yellow !default;
 $pe-btn-cta-hover-text  : $pe-color-charcoal !default;
 
-$pe-btn-default-bg            : $pe-color-white !default;
+$pe-btn-default-bg            : transparent !default;
 $pe-btn-default-text          : $pe-color-graphite !default;
 $pe-btn-default-border        : 1px solid $pe-color-concrete !default;
-$pe-btn-default-hover-bg      : $pe-color-white !default;
-$pe-btn-default-hover-text    : $pe-color-charcoal !default;
-$pe-btn-default-hover-border  : 1px solid $pe-color-charcoal !default;
+$pe-btn-default-hover-bg      : transparent !default;
+$pe-btn-default-hover-text    : darken($pe-color-graphite, 10%) !default;
+$pe-btn-default-hover-border  : 1px solid darken($pe-color-concrete, 10%) !default;
 $pe-btn-default-disabled-bg   : $pe-color-moonlight !default;
 $pe-btn-default-disabled-text : $pe-color-concrete !default;
 
 $pe-btn-tertiary-bg            : $pe-color-white-gray !default;
 $pe-btn-tertiary-text          : $pe-color-graphite !default;
 $pe-btn-tertiary-hover-bg      : darken($pe-color-white-gray, 10%) !default;
-$pe-btn-tertiary-hover-text    : $pe-color-charcoal !default;
+$pe-btn-tertiary-hover-text    : darken($pe-color-graphite, 10%) !default;
 
-
-// unused in button v3.0.0 beta2
+// unused border radius in v3.0.0 beta2
 $pe-btn-border-radius : 22px !default;
+
 $pe-btn-square-border-radius: 0px !important;

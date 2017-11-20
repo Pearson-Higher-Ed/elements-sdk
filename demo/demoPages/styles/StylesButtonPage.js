@@ -16,7 +16,7 @@ const StylesButtonPage = () => (
       {`<button class="pe-btn__tertiary">Tertiary</button>`} <br/>
       {`<button class="pe-btn">Default</button>`} <br/>
       {`<button class="pe-btn__cta">Call To Action</button>`} <br/>
-      {`<button className="pe-btn__primary">Primary</button>`}
+      {`<button class="pe-btn__primary">Primary</button>`}
     </p>
 
     <h2>Elements</h2>
@@ -57,7 +57,7 @@ const StylesButtonPage = () => (
 
     <p>For elements that do not support the `disabled` attribute, use `pe-btn--disabled` and `aria-disabled`.</p>
     <div className="pe-btn pe-btn--disabled" aria-disabled="true">Not a button</div> <br/><br/>
-    <p className="code">{`<div className="pe-btn pe-btn--disabled" aria-disabled="true">Not a button</div>`}</p>
+    <p className="code">{`<div class="pe-btn pe-btn--disabled" aria-disabled="true">Not a button</div>`}</p>
 
     <h2>Sizes</h2>
 
@@ -68,7 +68,7 @@ const StylesButtonPage = () => (
     <p className="code" style={{padding: 8}}>
       {`<button class="pe-btn--btn_small" style={{marginRight: 3}}>Small</button>`} <br/>
       {`<button class="pe-btn__cta--btn_large">CTA Large</button>`} <br/>
-      {`<button className="pe-btn__primary--btn_xlarge" style={marginFour}>Primary xLarge</button>`}
+      {`<button class="pe-btn__primary--btn_xlarge" style={marginFour}>Primary xLarge</button>`}
     </p>
 
     <h2>Text overflow</h2>
@@ -96,7 +96,7 @@ const StylesButtonPage = () => (
     </button>
 
     <p className="code">
-      {`<button type="button" className="pe-icon--btn">`}
+      {`<button type="button" class="pe-icon--btn">`}
       <div style={{paddingLeft: 8}}>{`<svg role="img"`} <br/></div>
       <div style={{paddingLeft: 36}}>{`aria-labelledby="b1"`} <br/></div>
       <div style={{paddingLeft: 36}}>{`focusable="false"`} <br/></div>

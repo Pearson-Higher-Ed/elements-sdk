@@ -17,29 +17,23 @@
   line-height    : $pe-btn-large-height;
 
   font-weight    : 600;
-
-  svg {
-    margin-left  : .5em;
-    //margin-bottom  : .5em;
-    vertical-align : middle;
-    }
-
 }
 
-%btn_large {
-  height         : $pe-btn-large-height;
-  border-radius  : $pe-btn-large-border-radius;
-  padding        : $pe-btn-large-padding;
-  font-size      : $pe-btn-large-font-size;
-  line-height    : $pe-btn-large-height;
+%btn_small {
+  height         : $pe-btn-small-height;
+  border-radius  : $pe-btn-small-border-radius;
+  padding        : $pe-btn-small-padding;
+  font-size      : $pe-btn-small-font-size;
+  line-height    : $pe-btn-small-line-height;
 }
+
 
 %btn_xlarge {
   height         : $pe-btn-xlarge-height;
   border-radius  : $pe-btn-xlarge-border-radius;
   padding        : $pe-btn-xlarge-padding;
   font-size      : $pe-btn-xlarge-font-size;
-  line-height    : $pe-btn-xlarge-height; 
+  line-height    : $pe-btn-xlarge-line-height; 
 }
 
 
@@ -123,6 +117,7 @@
 .pe-btn--btn_small {
 
   @extend %btn;
+  @extend %btn_small;
 
   @include pe-btn(
     $pe-btn-default-bg,
@@ -140,7 +135,6 @@
 .pe-btn--btn_large {
 
   @extend %btn;
-  @extend %btn_large;
 
   @include pe-btn(
     $pe-btn-default-bg,
@@ -201,7 +195,6 @@
 .pe-btn__primary--btn_large {
 
   @extend %btn;
-  @extend %btn_large;
 
   @include pe-btn(
   $pe-color-digital-pearson-blue,
@@ -254,7 +247,6 @@
 .pe-btn__cta--btn_large {
 
   @extend %btn;
-  @extend %btn_large;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -305,7 +297,6 @@
   .pe-btn__tertiary--btn_large {
   
     @extend %btn;
-    @extend %btn_large;
   
     @include pe-btn(
       $pe-btn-tertiary-bg,
@@ -328,33 +319,3 @@
     );
   }
   
-
-
-  /*
-.pe-btn--btn_small{
-  .pe-icon--calendar-18{
-    padding-left: 10px;
-  }
-}
-
-.pe-btn__cta--btn_large{
-  .pe-icon--calendar-18{
-    padding-top: 2px;
-    padding-left: 10px;
-  }
-}
-
-.pe-btn--btn_small{
-  .pe-icon--calendar-24{
-    padding-top: 4px;
-    padding-left: 10px;
-  }
-}
-
-.pe-btn__cta--btn_large{
-  .pe-icon--calendar-24{
-    padding-top: 8px;
-    padding-left: 10px;
-  }
-}
-*/
