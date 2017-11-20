@@ -14,7 +14,7 @@ const HomePage = () => (
     </p>
 
     <div className="ul-wrapper">
-      <h2>Styles:</h2>
+      <h2>Styles</h2>
       <ul className="homepageList">
         <li><Link className="linkz pe-link" to={`color`}>Color</Link></li>
         <li><Link className="linkz pe-link" to={`typography`}>Typography</Link></li>
@@ -32,7 +32,7 @@ const HomePage = () => (
     </div>
 
     <div className="ul-wrapper">
-      <h2>React Components:</h2>
+      <h2>React Components</h2>
       <ul className="homepageList">
         <li><Link className="linkz pe-link" to={`buttons`}>Buttons</Link></li>
         <li><Link className="linkz pe-link" to={`icons`}>Icons</Link></li>
@@ -51,12 +51,12 @@ const HomePage = () => (
       </ul>
     </div>
 
-    <p>Contributions: <a href="https://github.com/Pearson-Higher-Ed/docs/blob/master/origami-contributions.md">FAQ</a></p>
-    <p>Pearson Elements SDK: <a href="http://pearson-higher-ed.github.io/elements/">http://pearson-higher-ed.github.io/elements/</a></p>
-    <p>Design Site: <a href="http://pearson-higher-ed.github.io/design/">http://pearson-higher-ed.github.io/design/</a></p>
-    <p>Unit Test Coverage: <a href="https://pearson-higher-ed.github.io/compounds/coverage/lcov-report/">https://pearson-higher-ed.github.io/compounds/coverage/lcov-report/</a></p>
-    <p>HipChat Room: PDA-Help</p>
-    <p>Email: pearson-design-accelerator@pearson.com</p>
+    <p><b>Contributions:</b> <a href="https://github.com/Pearson-Higher-Ed/docs/blob/master/origami-contributions.md">FAQ</a></p>
+    <p><b>Pearson Elements SDK:</b> <a href="http://pearson-higher-ed.github.io/elements/">http://pearson-higher-ed.github.io/elements/</a></p>
+    <p><b>Design Site:</b> <a href="http://pearson-higher-ed.github.io/design/">http://pearson-higher-ed.github.io/design/</a></p>
+    <p><b>Unit Test Coverage:</b> <a href="https://pearson-higher-ed.github.io/compounds/coverage/lcov-report/">https://pearson-higher-ed.github.io/compounds/coverage/lcov-report/</a></p>
+    <p><b>HipChat Room:</b> PDA-Help</p>
+    <p><b>Email:</b> pearson-design-accelerator@pearson.com</p>
 
   </div>
 );
