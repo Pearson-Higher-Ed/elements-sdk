@@ -16,38 +16,38 @@ const HomePage = () => (
     <div className="ul-wrapper">
       <h2>Styles</h2>
       <ul className="homepageList">
-        <li><Link className="linkz pe-link" to={`color`}>Color</Link></li>
-        <li><Link className="linkz pe-link" to={`typography`}>Typography</Link></li>
-        <li><Link className="linkz pe-link" to={`styles-icons`}>Icons</Link></li>
-        <li><Link className="linkz pe-link" to={`styles-buttons`}>Buttons</Link></li>
-        <li><Link className="linkz pe-link" to={`responsive-utils`}>Responsive Utilities</Link></li>
-        <li><Link className="linkz pe-link" to={`styles-inputs`}>Inputs</Link></li>
-        <li><Link className="linkz pe-link" to={`forms`}>Forms</Link></li>
-        <li><Link className="linkz pe-link" to={`styles-tables`}>Table</Link></li>
-        <li><Link className="linkz pe-link" to={`presentation-strategies`}>Presentation Strategies</Link></li>
-        <li><Link className="linkz pe-link" to={`grid`}>Grid</Link></li>
-        <li><Link className="linkz pe-link" to={`templates`}>Templates</Link></li>
-        <li><Link className="linkz pe-link" to={`bootstrap-grid`}>Bootstrap - Grid</Link></li>
+        <li><Link className="homepage-link pe-link" to={`color`}>Color</Link></li>
+        <li><Link className="homepage-link pe-link" to={`typography`}>Typography</Link></li>
+        <li><Link className="homepage-link pe-link" to={`styles-icons`}>Icons</Link></li>
+        <li><Link className="homepage-link pe-link" to={`styles-buttons`}>Buttons</Link></li>
+        <li><Link className="homepage-link pe-link" to={`responsive-utils`}>Responsive Utilities</Link></li>
+        <li><Link className="homepage-link pe-link" to={`styles-inputs`}>Inputs</Link></li>
+        <li><Link className="homepage-link pe-link" to={`forms`}>Forms</Link></li>
+        <li><Link className="homepage-link pe-link" to={`styles-tables`}>Table</Link></li>
+        <li><Link className="homepage-link pe-link" to={`presentation-strategies`}>Presentation Strategies</Link></li>
+        <li><Link className="homepage-link pe-link" to={`grid`}>Grid</Link></li>
+        <li><Link className="homepage-link pe-link" to={`templates`}>Templates</Link></li>
+        <li><Link className="homepage-link pe-link" to={`bootstrap-grid`}>Bootstrap - Grid</Link></li>
       </ul>
     </div>
 
     <div className="ul-wrapper">
       <h2>React Components</h2>
       <ul className="homepageList">
-        <li><Link className="linkz pe-link" to={`buttons`}>Buttons</Link></li>
-        <li><Link className="linkz pe-link" to={`icons`}>Icons</Link></li>
-        <li><Link className="linkz pe-link" to={`inputs`}>Inputs</Link></li>
-        <li><Link className="linkz pe-link" to={`dropdown`}>Dropdown</Link></li>
-        <li><Link className="linkz pe-link" to={`footer`}>Footer</Link></li>
-        <li><Link className="linkz pe-link" to={`tabs`}>Tabs</Link></li>
-        <li><Link className="linkz pe-link" to={`loadingSpinner`}>Loading Spinner</Link></li>
-        <li><Link className="linkz pe-link" to={`staticAlert`}>Static Alert</Link></li>
-        <li><Link className="linkz pe-link" to={`calendar`}>Calendar</Link></li>
-        <li><Link className="linkz pe-link" to={`table`}>Table</Link></li>
-        <li><Link className="linkz pe-link" to={`datePicker`}>Date Picker</Link></li>
-        <li><Link className="linkz pe-link" to={`timePicker`}>Time Picker</Link></li>
-        <li><Link className="linkz pe-link" to={`progress-bar`}>Progress Bar</Link></li>
-        <li><Link className="linkz pe-link" to={`phone-number`}>Phone Number</Link></li>
+        <li><Link className="homepage-link pe-link" to={`buttons`}>Buttons</Link></li>
+        <li><Link className="homepage-link pe-link" to={`icons`}>Icons</Link></li>
+        <li><Link className="homepage-link pe-link" to={`inputs`}>Inputs</Link></li>
+        <li><Link className="homepage-link pe-link" to={`dropdown`}>Dropdown</Link></li>
+        <li><Link className="homepage-link pe-link" to={`footer`}>Footer</Link></li>
+        <li><Link className="homepage-link pe-link" to={`tabs`}>Tabs</Link></li>
+        <li><Link className="homepage-link pe-link" to={`loadingSpinner`}>Loading Spinner</Link></li>
+        <li><Link className="homepage-link pe-link" to={`staticAlert`}>Static Alert</Link></li>
+        <li><Link className="homepage-link pe-link" to={`calendar`}>Calendar</Link></li>
+        <li><Link className="homepage-link pe-link" to={`table`}>Table</Link></li>
+        <li><Link className="homepage-link pe-link" to={`datePicker`}>Date Picker</Link></li>
+        <li><Link className="homepage-link pe-link" to={`timePicker`}>Time Picker</Link></li>
+        <li><Link className="homepage-link pe-link" to={`progress-bar`}>Progress Bar</Link></li>
+        <li><Link className="homepage-link pe-link" to={`phone-number`}>Phone Number</Link></li>
       </ul>
     </div>
 
