@@ -600,16 +600,11 @@ export default class Input extends Component
 		// "As you type" formatter
 		const formatter = new as_you_type(country_code, metadata)
 
-		// console.log('format');
-		// console.log(formatter);
-
 		// Is used to check if a country code can already be derived
 		this.formatter = formatter
 
 		// Format phone number
 		const text = formatter.input(input_text)
-
-		// console.log(text);
 
 		return { text, template: formatter.template }
 	}
@@ -992,9 +987,13 @@ export default class Input extends Component
 		const ariaDescribedbyInput =  id + 'phoneNumberInfo ' + id + 'phoneNumberError';
 		const selectLabelAria = selectAriaLabel ? selectAriaLabel + ' screen readers, skip to ' + labelText : 'Select country screen readers, skip to ' + labelText;
 		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
-		const errorMsg = indicateInvalid && is_valid_number({phone: value, country: 'US'}) ? error : 'Invalid Number';
+		let errorMsg = indicateInvalid && is_valid_number({phone: value, country: 'US'}) ? error : 'Invalid Number';
 		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 		let useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
+
+		if (!indicateInvalid) {
+			errorMsg = error;
+		}
 
 		if (errorMsg) {
 			useFancy = fancy ? 'pe-textInput--input_error rrui-input__padding' : 'pe-textInput--basic_error';
@@ -1004,9 +1003,6 @@ export default class Input extends Component
 		if (!fancy) {
 			inputStyle.marginTop = '0px';
 		}
-
-		// console.log(value);
-		console.log(indicateInvalid && is_valid_number({phone: value, country: 'US'}));
 
 
 		// `type="tel"` was reported to have issues with
@@ -1116,14 +1112,8 @@ function parse_partial_number(value, country_code, metadata)
 	// "As you type" formatter
 	const formatter = new as_you_type(country_code, metadata)
 
-	// console.log('parse_partial_number');
-	// console.log(formatter);
-	// console.log('+' + getPhoneCode(country_code) + value);
-
 	// Input partially entered phone number
 	formatter.input('+' + getPhoneCode(country_code) + value)
-
-	// console.log(formatter);
 
 	// Return the parsed partial phone number
 	// (has `.national_number`, `.country`, etc)
