@@ -143,7 +143,7 @@ export default class Dropdown extends Component {
 
     switch (this.props.type) {
       case 'button':
-        buttonClass='pe-btn dropdown-activator';
+        buttonClass='pe-btn__primary dropdown-activator';
         break;
       case 'icon':
         btnIcon = true;

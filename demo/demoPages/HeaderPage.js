@@ -1,77 +1,59 @@
-import React, { Component } from 'react';
-import { Link }             from 'react-router-dom';
-import { Icon, Button }     from '../../index';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Dropdown, DropdownItem } from '../../index';
 
 
- class HeaderPage extends Component {
-
-  constructor () {
-    super();
-    this.toggleList = _toggleList.bind(this);
-    this.toggleListTwo = _toggleListTwo.bind(this);
-  }
-
-  render() {
-    return  (
-      <div className="demo-container">
-        <div className="header">
-          <Link to="/"><h1 className="headerTitle">Pearson Design Accelerator</h1></Link>
-          <Button btnSize="xlarge headerButton" onClick={this.toggleList}>
-            Styles
-            <Icon name="dropdown-open-18" />
-          </Button>
-          <Button btnSize="xlarge headerButton" onClick={this.toggleListTwo}>
-            Components
-            <Icon name="dropdown-open-18" />
-          </Button>
+const HeaderPage = ({ children }) => {
+  return (
+    <div className="demo-container">
+      <div className="header">
+        <Link to="/"><h1 className="headerTitle">Pearson Design Accelerator</h1></Link>
+        <div className="multi-dd-wrapper">
+          <div className="dropdown-wrapper">
+            <Dropdown
+              type="button"
+              label="Styles"
+              id="stylez">
+              <DropdownItem label="Styles - Buttons" type="link" url="/#/styles-buttons" />
+              <DropdownItem label="Forms" type="link" url="/#/forms" />
+              <DropdownItem label="Styles - Icons" type="link" url="/#/styles-icons" />
+              <DropdownItem label="Responsive Utilities" type="link" url="/#/responsive-utils" />
+              <DropdownItem label="Typography" type="link" url="/#/typography" />
+              <DropdownItem label="Styles - Inputs" type="link" url="/#/styles-inputs" />
+              <DropdownItem label="Color" type="link" url="/#/color" />
+              <DropdownItem label="Styles - Tables" type="link" url="/#/styles-tables" />
+              <DropdownItem label="Presentation Strategies" type="link" url="/#/presentation-strategies" />
+              <DropdownItem label="Grid" type="link" url="/#/grid" />
+              <DropdownItem label="Templates" type="link" url="/#/templates" />
+              <DropdownItem label="Bootstrap - Grid" type="link" url="/#/bootstrap-grid" />
+            </Dropdown>
+          </div>
+          <div className="dropdown-wrapper">
+            <Dropdown
+              type="button"
+              label="Components"
+              id="react-components">
+              <DropdownItem label="Buttons" type="link" url="/#/buttons" />
+              <DropdownItem label="Icons" type="link" url="/#/icons" />
+              <DropdownItem label="Inputs" type="link" url="/#/inputs" />
+              <DropdownItem label="Dropdown" type="link" url="/#/dropdown" />
+              <DropdownItem label="Footer" type="link" url="/#/footer" />
+              <DropdownItem label="Tabs" type="link" url="/#/tabs" />
+              <DropdownItem label="Loading Spinner" type="link" url="/#/loadingSpinner" />
+              <DropdownItem label="Static Alert" type="link" url="/#/staticAlert" />
+              <DropdownItem label="Calendar" type="link" url="/#/calendar" />
+              <DropdownItem label="Table" type="link" url="/#/table" />
+              <DropdownItem label="Date Picker" type="link" url="/#/datePicker" />
+              <DropdownItem label="Time Picker" type="link" url="/#/timePicker" />
+              <DropdownItem label="Progress Bar" type="link" url="/#/progress-bar" />
+              <DropdownItem label="Phone Number" type="link" url="/#/phone-number" />
+            </Dropdown>
+          </div>
         </div>
-        <ul className="buttonList">
-          <li><Link className="link" to={`/styles-buttons`}>Styles - Buttons</Link></li>
-          <li><Link className="link" to={`/forms`}>Forms</Link></li>
-          <li><Link className="link" to={`/styles-icons`}>Styles - Icons</Link></li>
-          <li><Link className="link" to={`/responsive-utils`}>Responsive Utilities</Link></li>
-          <li><Link className="link" to={`/typography`}>Typography</Link></li>
-          <li><Link className="link" to={`/styles-inputs`}>Styles - Inputs</Link></li>
-          <li><Link className="link" to={`/color`}>Color</Link></li>
-          <li><Link className="link" to={`/styles-tables`}>Styles - Table</Link></li>
-          <li><Link className="link" to={`/presentation-strategies`}>Presentation Strategies</Link></li>
-          <li><Link className="link" to={`/grid`}>Grid</Link></li>
-          <li><Link className="link" to={`/templates`}>Templates</Link></li>
-          <li><Link className="link" to={`/bootstrap-grid`}>Bootstrap - Grid</Link></li>
-        </ul>
-        <ul className="buttonListTwo">
-          <li><Link className="link" to={`/buttons`} >Buttons</Link></li>
-          <li><Link className="link" to={`/icons`} >Icons</Link></li>
-          <li><Link className="link" to={`/inputs`} >Inputs</Link></li>
-          <li><Link className="link" to={`/dropdown`} >Dropdown</Link></li>
-          <li><Link className="link" to={`/footer`} >Footer</Link></li>
-          <li><Link className="link" to={`/tabs`} >Tabs</Link></li>
-          <li><Link className="link" to={`/loadingSpinner`} >Loading Spinner</Link></li>
-          <li><Link className="link" to={`/staticAlert`} >Static Alert</Link></li>
-          <li><Link className="link" to={`/calendar`} >Calendar</Link></li>
-          <li><Link className="link" to={`/table`} >Table</Link></li>
-          <li><Link className="link" to={`/datePicker`} >Date Picker</Link></li>
-          <li><Link className="link" to={`/timePicker`} >Time Picker</Link></li>
-          <li><Link className="link" to={`/progress-bar`} >Progress Bar</Link></li>
-          <li><Link className="link" to={`/phone-number`} >Phone Number</Link></li>
-        </ul>
-        {this.props.children}
       </div>
-    )
-  }
+      {children}
+    </div>
+  );
 }
-
-const _toggleList = () => {
-  let c = document.querySelector('.buttonList').style.display;
-  c = (c !== 'initial') ? 'initial' : 'none';
-  document.querySelector('.buttonList').style.display = c;
-}
-
-const _toggleListTwo = () => {
-  let c = document.querySelector('.buttonListTwo').style.display;
-  c = (c !== 'initial') ? 'initial' : 'none';
-  document.querySelector('.buttonListTwo').style.display = c;
-}
-
 
 export default HeaderPage;
