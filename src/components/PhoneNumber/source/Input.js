@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
-import { as_you_type, parse, format, getPhoneCode, DIGITS } from 'libphonenumber-js'
+import { as_you_type, parse, format, getPhoneCode, is_valid_number, DIGITS } from 'libphonenumber-js'
 import { ReactInput } from 'input-format'
 import classNames from 'classnames'
 
@@ -600,11 +600,16 @@ export default class Input extends Component
 		// "As you type" formatter
 		const formatter = new as_you_type(country_code, metadata)
 
+		// console.log('format');
+		// console.log(formatter);
+
 		// Is used to check if a country code can already be derived
 		this.formatter = formatter
 
 		// Format phone number
 		const text = formatter.input(input_text)
+
+		// console.log(text);
 
 		return { text, template: formatter.template }
 	}
@@ -987,10 +992,11 @@ export default class Input extends Component
 		const ariaDescribedbyInput =  id + 'phoneNumberInfo ' + id + 'phoneNumberError';
 		const selectLabelAria = selectAriaLabel ? selectAriaLabel + ' screen readers, skip to ' + labelText : 'Select country screen readers, skip to ' + labelText;
 		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
+		const errorMsg = indicateInvalid && is_valid_number({phone: value, country: 'US'}) ? error : 'Invalid Number';
 		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 		let useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
 
-		if (error) {
+		if (errorMsg) {
 			useFancy = fancy ? 'pe-textInput--input_error rrui-input__padding' : 'pe-textInput--basic_error';
 			underlineSpan = fancy ? (<span className='pe-inputError_underline'></span>) : '';
 		}
@@ -999,6 +1005,10 @@ export default class Input extends Component
 			inputStyle.marginTop = '0px';
 		}
 
+		// console.log(value);
+		console.log(indicateInvalid && is_valid_number({phone: value, country: 'US'}));
+
+
 		// `type="tel"` was reported to have issues with
 		// Samsung keyboards caret position on Android OS.
 		// https://github.com/catamphetamine/react-phone-number-input/issues/59
@@ -1006,86 +1016,94 @@ export default class Input extends Component
 		// but this will result in a non-digital input keyboard.
 
 		return (
-			<div
-				style={ style }
-				className={ classNames('react-phone-number-input',
-				{
-					'react-phone-number-input--invalid': error && indicateInvalid
-				},
-				className) }>
+			<div>
+				<div
+					style={ style }
+					className={ classNames('react-phone-number-input',
+					{
+						'react-phone-number-input--invalid': error && indicateInvalid
+					},
+					className) }>
 
-				{/* Country `<select/>` and phone number `<input/>` */}
-				<div className="react-phone-number-input__row">
-					<div className={fancyGroup}>
+					{/* Country `<select/>` and phone number `<input/>` */}
+					<div className="react-phone-number-input__row">
+						<div className={fancyGroup}>
 
-					{/* Country `<select/>` */}
-					{ showCountrySelect && this.can_change_country() &&
-						<SelectComponent
-							ref={ this.store_select_instance }
-							value={ country_code }
-							options={ this.select_options }
-							onChange={ this.set_country }
-							disabled={ disabled }
-							onToggle={ this.country_select_toggled }
-							onTabOut={ this.on_country_select_tab_out }
-							nativeExpanded={ nativeExpanded }
-							autocomplete
-							autocompleteShowAll
-							maxItems={ selectMaxItems }
-							concise
-							tabIndex={ selectTabIndex }
-							focusUponSelection={ false }
-							saveOnIcons={ saveOnIcons }
-							name={ input_props.name ? `${input_props.name}__country` : undefined }
-							ariaLabel={ selectLabelAria }
-							closeAriaLabel={ selectCloseAriaLabel }
-							style={ selectStyle }
-							className={ classNames('react-phone-number-input__country',
-							{
-								'react-phone-number-input__country--native-expanded' : nativeExpanded
-							}) }
-							inputClassName={ inputClassName }/>
-					}
+						{/* Country `<select/>` */}
+						{ showCountrySelect && this.can_change_country() &&
+							<SelectComponent
+								ref={ this.store_select_instance }
+								value={ country_code }
+								options={ this.select_options }
+								onChange={ this.set_country }
+								disabled={ disabled }
+								onToggle={ this.country_select_toggled }
+								onTabOut={ this.on_country_select_tab_out }
+								nativeExpanded={ nativeExpanded }
+								autocomplete
+								autocompleteShowAll
+								maxItems={ selectMaxItems }
+								concise
+								tabIndex={ selectTabIndex }
+								focusUponSelection={ false }
+								saveOnIcons={ saveOnIcons }
+								name={ input_props.name ? `${input_props.name}__country` : undefined }
+								ariaLabel={ selectLabelAria }
+								closeAriaLabel={ selectCloseAriaLabel }
+								style={ selectStyle }
+								className={ classNames('react-phone-number-input__country',
+								{
+									'react-phone-number-input__country--native-expanded' : nativeExpanded
+								}) }
+								inputClassName={ inputClassName }/>
+							}
 
-						<div className={ phoneCodeLabel }>{ '+' + country_number }</div>
-					</div>
-
-					{/* Phone number `<input/>` */}
-					{ !country_select_is_shown &&
-						<div className='rrui-input__container'><InputComponent
-							id={id + "phoneNumberInput"}
-							type="tel"
-							{ ...input_props }
-							ref={ this.store_input_instance }
-							value={ value }
-							aria-label={labelText}
-							onChange={ this.on_change }
-							onBlur={ this.on_blur }
-							disabled={ disabled }
-							autoComplete={ autoComplete }
-							parse={ this.parse_character }
-							format={ this.format }
-							onKeyDown={ this.on_key_down }
-							style={ inputStyle }
-							metadata={ metadata }
-							className={ useFancy }
-							aria-describedby={ ariaDescribedbyInput }
-							/>
-							{ underlineSpan }
+							<div className={ phoneCodeLabel }>{ '+' + country_number }</div>
 						</div>
-					}
-				</div>
 
-				{/* Error message */}
-				{ error && indicateInvalid &&
-					<div className={ classNames('rrui__input-error', 'react-phone-number-input__error') } aria-describedby={id}>
-						{ error }
+						{/* Phone number `<input/>` */}
+						{ !country_select_is_shown &&
+							<div className='rrui-input__container'><InputComponent
+								id={id + "phoneNumberInput"}
+								type="tel"
+								{ ...input_props }
+								ref={ this.store_input_instance }
+								value={ value }
+								aria-label={labelText}
+								onChange={ this.on_change }
+								onBlur={ this.on_blur }
+								disabled={ disabled }
+								autoComplete={ autoComplete }
+								parse={ this.parse_character }
+								format={ this.format }
+								onKeyDown={ this.on_key_down }
+								style={ inputStyle }
+								metadata={ metadata }
+								className={ useFancy }
+								aria-describedby={ ariaDescribedbyInput }
+								/>
+								{ underlineSpan }
+							</div>
+						}
 					</div>
-				}
+
+
+				</div>
+				{/* Error message */}
+				{errorMsg && <p className="pe-input--error_message" id={id + "phoneNumberError"}>{errorMsg}</p>}
 			</div>
 		)
 	}
 }
+
+export {
+	parse as parse_phone_number,
+	parse as parsePhoneNumber,
+	format as format_phone_number,
+	format as formatPhoneNumber,
+	is_valid_number as is_valid_number,
+	is_valid_number as isValidNumber
+} from 'libphonenumber-js';
 
 // Parses a partially entered phone number
 // and returns the national number so far.
@@ -1098,8 +1116,14 @@ function parse_partial_number(value, country_code, metadata)
 	// "As you type" formatter
 	const formatter = new as_you_type(country_code, metadata)
 
+	// console.log('parse_partial_number');
+	// console.log(formatter);
+	// console.log('+' + getPhoneCode(country_code) + value);
+
 	// Input partially entered phone number
-	formatter.input(value)
+	formatter.input('+' + getPhoneCode(country_code) + value)
+
+	// console.log(formatter);
 
 	// Return the parsed partial phone number
 	// (has `.national_number`, `.country`, etc)
