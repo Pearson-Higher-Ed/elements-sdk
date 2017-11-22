@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Phone from './source/Input.js';
+import Phone from './components/Input.js';
 import metadata from 'libphonenumber-js/metadata.full.json';
 
 import './component/rrui.css';

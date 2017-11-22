@@ -17,7 +17,6 @@ import GridPage                   from './demoPages/styles/GridPage';
 import TemplatesPage              from './demoPages/styles/TemplatesPage';
 import BootstrapGridPage          from './demoPages/styles/BootstrapGridPage';
 
-
 // Components
 import ButtonPage         from './demoPages/components/ButtonPage';
 import IconPage           from './demoPages/components/IconPage';
@@ -56,19 +55,19 @@ const DemoRouter = (props) => (
         <Route path="/templates"               component={TemplatesPage} />
         <Route path="/bootstrap-grid"          component={BootstrapGridPage} />
 
-        <Route path="/icons"                   component={IconPage} />
-        <Route path="/inputs"                  component={InputsPage} />
-        <Route path="/buttons"                 component={ButtonPage} />
-        <Route path="/dropdown"                component={DropdownPage} />
-        <Route path="/footer"                  component={FooterPage} />
-        <Route path="/tabs"                    component={TabsPage} />
-        <Route path="/loadingSpinner"          component={LoadingSpinnerPage} />
-        <Route path="/StaticAlert"             component={StaticAlertPage} />
-        <Route path="/calendar"                component={CalendarPage} />
-        <Route path="/table"                   component={TablePage} />
-        <Route path="/datePicker"              component={DatePickerPage} />
-        <Route path="/timePicker"              component={TimePickerPage} />
-        <Route path="/progress-bar"            component={ProgressBarPage} />
+        <Route path="/icons"          component={IconPage} />
+        <Route path="/inputs"         component={InputsPage} />
+        <Route path="/buttons"        component={ButtonPage} />
+        <Route path="/dropdown"       component={DropdownPage} />
+        <Route path="/footer"         component={FooterPage} />
+        <Route path="/tabs"           component={TabsPage} />
+        <Route path="/loadingSpinner" component={LoadingSpinnerPage} />
+        <Route path="/StaticAlert"    component={StaticAlertPage} />
+        <Route path="/calendar"       component={CalendarPage} />
+        <Route path="/table"          component={TablePage} />
+        <Route path="/datePicker"     component={DatePickerPage} />
+        <Route path="/timePicker"     component={TimePickerPage} />
+        <Route path="/progress-bar"   component={ProgressBarPage} />
         <Route path="/phone-number"   component={PhoneNumberPage} />
     </div>
   </Router>

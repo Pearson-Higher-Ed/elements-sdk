@@ -5,6 +5,10 @@
   clear: both;
 }
 
+body {
+  background-color: #fafafa;
+}
+
 //========Global Styles=======================
 .displaySection{
   @extend %clearfix;
@@ -37,87 +41,59 @@ h2 a {
   list-style: none;
 }
 
-.buttonList li,
-.buttonListTwo li {
-  margin-bottom: .6em;
-  list-style: none;
-}
-
 .li-props {
   list-style: none;
   margin-bottom: 8px;
 }
 
+.homepageList li {
+  list-style-type: none;
+}
+
 //---------HomePage-------------------------------
-.link_homepage {
-  color:#778899;
-  text-decoration:none;
+.homepage-link {
+  text-decoration: none !important;
   font-size: 15px;
 }
 
 .homepage {
-  margin:10px;
+  margin: 12px 22px;
 }
 
 .homepage p {
   font-size: 16px;
 }
 
+.ul-wrapper {
+  display: inline-table;
+  margin: 0 10px;
+}
+
 //---------Header---------------------------------
 .header{
   @extend %clearfix;
   width:100%;
-  background-color:black;
-  height:50px;
-}
-
-.header .headerButton {
-  float:right;
-  margin:2.5px;
-  outline:none;
+  background-color: #FFFFFF;
+  height:60px;
+  border-bottom: 1px solid #e9e9e9;
 }
 
 .headerTitle {
-  width:50%;
   float:left;
   margin:10px;
-  color:#DCDCDC;
+  color:#252525;
+  font-weight: 600;
 }
 
-.header button svg {
-  vertical-align: text-top;
-  margin-left: 10px;
+.multi-dd-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
 }
 
-.buttonList,
-.buttonListTwo {
-  z-index: 5;
-  display:none;
-  position:absolute;
-  right:0;
-  padding-top:10px;
-  padding-bottom:10px;
-  background-color:black;
-  width: 125px;
-  margin-top:0;
-  list-style: none;
-  border-bottom-left-radius:15px;
-  &:first-child {
-    margin-left:-5px;
-  }
+.dropdown-wrapper {
+  margin: 12px;
 }
-
-.link {
-  text-decoration:none;
-  color:lightgray;
-  &:hover {
-    color:gray;
-  }
-  &:focus {
-    color:gray;
-  }
-}
-
 
 .warning {
   padding: 5px;

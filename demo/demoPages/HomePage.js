@@ -13,46 +13,50 @@ const HomePage = () => (
       functionality using React and Javascript to accomplish this.
     </p>
 
-    <h2>Styles:</h2>
-    <ul className="homepageList">
-      <li><Link className="link_homepage" to={`color`}>Color</Link></li>
-      <li><Link className="link_homepage" to={`typography`}>Typography</Link></li>
-      <li><Link className="link_homepage" to={`styles-icons`}>Icons</Link></li>
-      <li><Link className="link_homepage" to={`styles-buttons`}>Buttons</Link></li>
-      <li><Link className="link_homepage" to={`responsive-utils`}>Responsive Utilities</Link></li>
-      <li><Link className="link_homepage" to={`styles-inputs`}>Inputs</Link></li>
-      <li><Link className="link_homepage" to={`forms`}>Forms</Link></li>
-      <li><Link className="link_homepage" to={`styles-tables`}>Table</Link></li>
-      <li><Link className="link_homepage" to={`presentation-strategies`}>Presentation Strategies</Link></li>
-      <li><Link className="link_homepage" to={`grid`}>Grid</Link></li>
-      <li><Link className="link_homepage" to={`templates`}>Templates</Link></li>
-      <li><Link className="link_homepage" to={`bootstrap-grid`}>Bootstrap - Grid</Link></li>
-    </ul>
+    <div className="ul-wrapper">
+      <h2>Styles</h2>
+      <ul className="homepageList">
+        <li><Link className="homepage-link pe-link" to={`color`}>Color</Link></li>
+        <li><Link className="homepage-link pe-link" to={`typography`}>Typography</Link></li>
+        <li><Link className="homepage-link pe-link" to={`styles-icons`}>Icons</Link></li>
+        <li><Link className="homepage-link pe-link" to={`styles-buttons`}>Buttons</Link></li>
+        <li><Link className="homepage-link pe-link" to={`responsive-utils`}>Responsive Utilities</Link></li>
+        <li><Link className="homepage-link pe-link" to={`styles-inputs`}>Inputs</Link></li>
+        <li><Link className="homepage-link pe-link" to={`forms`}>Forms</Link></li>
+        <li><Link className="homepage-link pe-link" to={`styles-tables`}>Table</Link></li>
+        <li><Link className="homepage-link pe-link" to={`presentation-strategies`}>Presentation Strategies</Link></li>
+        <li><Link className="homepage-link pe-link" to={`grid`}>Grid</Link></li>
+        <li><Link className="homepage-link pe-link" to={`templates`}>Templates</Link></li>
+        <li><Link className="homepage-link pe-link" to={`bootstrap-grid`}>Bootstrap - Grid</Link></li>
+      </ul>
+    </div>
 
-    <h2>React Components:</h2>
-    <ul className="homepageList">
-      <li><Link className="link_homepage" to={`buttons`}>Buttons</Link></li>
-      <li><Link className="link_homepage" to={`icons`}>Icons</Link></li>
-      <li><Link className="link_homepage" to={`inputs`}>Inputs</Link></li>
-      <li><Link className="link_homepage" to={`dropdown`}>Dropdown</Link></li>
-      <li><Link className="link_homepage" to={`footer`}>Footer</Link></li>
-      <li><Link className="link_homepage" to={`tabs`}>Tabs</Link></li>
-      <li><Link className="link_homepage" to={`loadingSpinner`}>Loading Spinner</Link></li>
-      <li><Link className="link_homepage" to={`staticAlert`}>Static Alert</Link></li>
-      <li><Link className="link_homepage" to={`calendar`}>Calendar</Link></li>
-      <li><Link className="link_homepage" to={`table`}>Table</Link></li>
-      <li><Link className="link_homepage" to={`datePicker`}>Date Picker</Link></li>
-      <li><Link className="link_homepage" to={`timePicker`}>Time Picker</Link></li>
-      <li><Link className="link_homepage" to={`progress-bar`}>Progress Bar</Link></li>
-      <li><Link className="link_homepage" to={`phone-number`}>Phone Number</Link></li>
-    </ul>
+    <div className="ul-wrapper">
+      <h2>React Components</h2>
+      <ul className="homepageList">
+        <li><Link className="homepage-link pe-link" to={`buttons`}>Buttons</Link></li>
+        <li><Link className="homepage-link pe-link" to={`icons`}>Icons</Link></li>
+        <li><Link className="homepage-link pe-link" to={`inputs`}>Inputs</Link></li>
+        <li><Link className="homepage-link pe-link" to={`dropdown`}>Dropdown</Link></li>
+        <li><Link className="homepage-link pe-link" to={`footer`}>Footer</Link></li>
+        <li><Link className="homepage-link pe-link" to={`tabs`}>Tabs</Link></li>
+        <li><Link className="homepage-link pe-link" to={`loadingSpinner`}>Loading Spinner</Link></li>
+        <li><Link className="homepage-link pe-link" to={`staticAlert`}>Static Alert</Link></li>
+        <li><Link className="homepage-link pe-link" to={`calendar`}>Calendar</Link></li>
+        <li><Link className="homepage-link pe-link" to={`table`}>Table</Link></li>
+        <li><Link className="homepage-link pe-link" to={`datePicker`}>Date Picker</Link></li>
+        <li><Link className="homepage-link pe-link" to={`timePicker`}>Time Picker</Link></li>
+        <li><Link className="homepage-link pe-link" to={`progress-bar`}>Progress Bar</Link></li>
+        <li><Link className="homepage-link pe-link" to={`phone-number`}>Phone Number</Link></li>
+      </ul>
+    </div>
 
-    <p>Contributions: <a href="https://github.com/Pearson-Higher-Ed/docs/blob/master/origami-contributions.md">FAQ</a></p>
-    <p>Pearson Elements SDK: <a href="http://pearson-higher-ed.github.io/elements/">http://pearson-higher-ed.github.io/elements/</a></p>
-    <p>Design Site: <a href="http://pearson-higher-ed.github.io/design/">http://pearson-higher-ed.github.io/design/</a></p>
-    <p>Unit Test Coverage: <a href="https://pearson-higher-ed.github.io/compounds/coverage/lcov-report/">https://pearson-higher-ed.github.io/compounds/coverage/lcov-report/</a></p>
-    <p>HipChat Room: PDA-Help</p>
-    <p>Email: pearson-design-accelerator@pearson.com</p>
+    <p><b>Contributions:</b> <a href="https://github.com/Pearson-Higher-Ed/docs/blob/master/origami-contributions.md">FAQ</a></p>
+    <p><b>Pearson Elements SDK:</b> <a href="http://pearson-higher-ed.github.io/elements/">http://pearson-higher-ed.github.io/elements/</a></p>
+    <p><b>Design Site:</b> <a href="http://pearson-higher-ed.github.io/design/">http://pearson-higher-ed.github.io/design/</a></p>
+    <p><b>Unit Test Coverage:</b> <a href="https://pearson-higher-ed.github.io/compounds/coverage/lcov-report/">https://pearson-higher-ed.github.io/compounds/coverage/lcov-report/</a></p>
+    <p><b>HipChat Room:</b> PDA-Help</p>
+    <p><b>Email:</b> pearson-design-accelerator@pearson.com</p>
 
   </div>
 );
