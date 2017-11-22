@@ -1,15 +1,11 @@
-<a name="1.5.1"></a>
-## [1.5.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.5.0...v1.5.1) (2017-11-21)
+<a name="1.5.2"></a>
+## [1.5.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.3...v1.5.2) (2017-11-22)
 
 
 ### Bug Fixes
 
+* babel-runtime ([002f7c8](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/002f7c8))
 * Dropdown button color & setup new Header routes ([caeef09](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/caeef09))
-
-
-
-<a name="1.5.0"></a>
-# [1.5.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.3...v1.5.0) (2017-11-17)
 
 
 ### Features
