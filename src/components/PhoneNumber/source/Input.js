@@ -606,6 +606,8 @@ export default class Input extends Component
 		// Format phone number
 		const text = formatter.input(input_text)
 
+		this.state.validNumber = formatter.template && formatter.partially_populated_template.indexOf('x') < 0? true : false;
+
 		return { text, template: formatter.template }
 	}
 
@@ -979,7 +981,8 @@ export default class Input extends Component
 			value,
 			country_code,
 			country_select_is_shown,
-			country_number
+			country_number,
+			validNumber
 		}
 		= this.state
 
@@ -987,7 +990,8 @@ export default class Input extends Component
 		const ariaDescribedbyInput =  id + 'phoneNumberInfo ' + id + 'phoneNumberError';
 		const selectLabelAria = selectAriaLabel ? selectAriaLabel + ' screen readers, skip to ' + labelText : 'Select country screen readers, skip to ' + labelText;
 		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
-		let errorMsg = indicateInvalid && is_valid_number({phone: value, country: 'US'}) ? error : 'Invalid Number';
+		// let errorMsg = indicateInvalid && is_valid_number({phone: value, country: country_code}) ? error : 'Invalid Number';
+		let errorMsg = indicateInvalid && validNumber ? error : 'Invalid Number';
 		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 		let useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
 

@@ -42,7 +42,7 @@ const PhoneNumberPage = () => (
             <li className="li-props">Component CSS class.</li>
             <li className="li-props">inputClassName:String</li>
             <li className="li-props">validate:Boolean</li>
-            <li className="li-props">Turns on phone number validation (default: false, warning: very strict)</li>
+            <li className="li-props">Validates phone number against complete phone number template. (default: false)</li>
             <li className="li-props">fancy:Boolean (defaults to true)</li>
             <li className="li-props">{`<input />`} CSS class.</li>
           </ul>
@@ -54,6 +54,7 @@ const PhoneNumberPage = () => (
       placeholder="555-555-5555"
       labelText="Mobile phone"
       onChange={(num) => console.log(num)}
+      validate={true}
     />
 
     <h3>Example usage</h3>
