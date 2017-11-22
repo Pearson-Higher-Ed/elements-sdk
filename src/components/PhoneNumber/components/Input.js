@@ -606,6 +606,8 @@ export default class Input extends Component
 		// Format phone number
 		const text = formatter.input(input_text)
 
+		console.log(text);
+
 		this.state.validNumber = formatter.template && formatter.partially_populated_template.indexOf('x') < 0? true : false;
 
 		return { text, template: formatter.template }

@@ -72,4 +72,4 @@ export {
 	format as formatPhoneNumber,
 	is_valid_number as is_valid_number,
 	is_valid_number as isValidNumber
-} from './source/Input.js';
+} from './components/Input.js';
