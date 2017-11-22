@@ -54,7 +54,6 @@ const PhoneNumberPage = () => (
       placeholder="555-555-5555"
       labelText="Mobile phone"
       onChange={(num) => console.log(num)}
-      validate={true}
     />
 
     <h3>Example usage</h3>
