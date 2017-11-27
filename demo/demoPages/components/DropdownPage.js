@@ -52,9 +52,9 @@ class DropdownPage extends React.Component {
           <Dropdown
             dropdownControlLabel="Dropdown open"
             mobileTitle={mobileTitle}
-            changeHandler={(item) => {
-              console.log('item clicked', item);
-              if (item === 'list item 1') {
+            changeHandler={(data) => {
+              console.log('item clicked', data.item);
+              if (data.item === 'list item 1') {
                 this.setState({buttonSelected:true});
               }
             }}
@@ -127,6 +127,44 @@ class DropdownPage extends React.Component {
                   <DropdownItem label="list item 1" />
                   <DropdownItem divider />
                   <DropdownItem label="list item 2" />
+                </Dropdown>`}
+            </p>
+            <h3>Image Icon w/ Image Options (w/ changehandler connection)</h3>
+            <Dropdown
+              dropdownControlLabel="Dropdown open"
+              mobileTitle={mobileTitle}
+              changeHandler={(data) => {
+                console.log('item clicked', data.value);
+                if (data.value === 'US') {
+                  this.setState({buttonImageSelected:true});
+                }
+              }}
+              type="image"
+              label="image"
+              id="image"
+              btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
+              btnImageHeight="10"
+              btnImageWidth="20">
+              <DropdownItem checkmark selected={this.state.buttonImageSelected}
+                selectedName="selected" label="image item 1" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" imgHeight="10" imgWidth="20" selectValue="US" />
+              <DropdownItem type="divider" />
+              <DropdownItem checkmark label="image item 2" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" />
+              <DropdownItem checkmark label="image item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" />
+            </Dropdown>
+            <p className="code">
+              {`<Dropdown
+                  dropdownControlLabel="Dropdown open"
+                  mobileTitle={mobileTitle}
+                  changeHandler={(item) => {
+                    console.log(item);
+                  }}
+                  type="text"
+                  label="text"
+                  id="text"
+                >
+                  <DropdownItem checkmark label="list item 1" />
+                  <DropdownItem checkmark divider />
+                  <DropdownItem checkmark label="list item 2" />
                 </Dropdown>`}
             </p>
         </div>

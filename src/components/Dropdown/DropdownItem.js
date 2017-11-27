@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon'
 
-const DropdownItem = ({ url, label, type, selected, selectedName, checkmark, onClick }) => {
+const DropdownItem = ({ url, label, selectValue, type, selected, selectedName, checkmark, onClick, imgUrl, imgHeight, imgWidth }) => {
   switch (type) {
     case 'divider':
       return (
@@ -20,7 +20,7 @@ const DropdownItem = ({ url, label, type, selected, selectedName, checkmark, onC
       break;
     case 'button':
       return (
-        <li role="presentation" data-item={label}>
+        <li role="presentation" data-item={label} data-value={selectValue}>
           <button role="menuitem" className={checkmark ? 'checkmark' : ''} onClick={onClick} type="button" tabIndex="-1">
             {checkmark ?
                 <span style={{visibility: selected ? 'visible' : 'hidden'}}>
@@ -34,6 +34,24 @@ const DropdownItem = ({ url, label, type, selected, selectedName, checkmark, onC
           </button>
         </li>
       );
+      break;
+      case 'imageButton':
+        return (
+          <li role="presentation" data-item={label} data-value={selectValue}>
+            <button role="menuitem" className={checkmark ? 'checkmark' : ''} onClick={onClick} type="button" tabIndex="-1">
+            {checkmark ?
+                <span style={{visibility: selected ? 'visible' : 'hidden'}}>
+                  <Icon name="check-sm-18">{selectedName}</Icon>
+                </span> : null
+            }
+
+            <span className={checkmark ? 'icon-padding' : ''}>
+              <img src={imgUrl} height={imgHeight} width={imgWidth} />
+              &nbsp;{label}
+            </span>
+          </button>
+          </li>
+        );
       break;
     default:
       break;

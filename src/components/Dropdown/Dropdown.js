@@ -13,7 +13,10 @@ export default class Dropdown extends Component {
     type: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    changeHandler: PropTypes.func
+    changeHandler: PropTypes.func,
+    btnImage: PropTypes.string,
+    btnImageHeight: PropTypes.string,
+    btnImageWidth: PropTypes.string
   };
 
   constructor(props) {
@@ -24,7 +27,8 @@ export default class Dropdown extends Component {
     this.state = {
       open: false,
       selectedItem: '',
-      buttonFocus: true
+      buttonFocus: true,
+      btnImage: props.btnImage
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -123,7 +127,7 @@ export default class Dropdown extends Component {
   itemSelected(e) {
     const selectedListItem = this.getParentLiSelected(e.target);
     if (selectedListItem.dataset.item !== 'divider') {
-      this.props.changeHandler ? this.props.changeHandler(selectedListItem.dataset.item) : null;
+      this.props.changeHandler ? this.props.changeHandler(selectedListItem.dataset) : null;
       this.setState({
         open: false,
         selectedItem: selectedListItem.dataset.item
@@ -152,6 +156,17 @@ export default class Dropdown extends Component {
           <Icon name="dropdown-open-sm-24">{this.props.label}</Icon>
         );
         break;
+      case 'image':
+        
+        btnIcon = true;
+        buttonClass= 'pe-icon--btn dropdown-activator';
+        buttonLabel = (
+          <div>
+            <img src={this.state.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} />
+            <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
+          </div>
+        );
+      break;
       // if not one of the types go to text
       default:
       case 'text':
