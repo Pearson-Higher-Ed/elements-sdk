@@ -133,6 +133,7 @@ export default class Dropdown extends Component {
         selectedItem: selectedListItem.dataset.item
       });
       this.container.children[0].focus();
+      selectedListItem.scrollIntoView(true);
     }
   }
 

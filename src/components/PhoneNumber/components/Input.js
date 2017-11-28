@@ -1011,6 +1011,7 @@ export default class Input extends Component
 		const ariaDescribedbyInput =  id + 'phoneNumberInfo ' + id + 'phoneNumberError';
 		const selectLabelAria = selectAriaLabel ? selectAriaLabel + ' screen readers, skip to ' + labelText : 'Select country screen readers, skip to ' + labelText;
 		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
+		const menuImage = country_code === 'IN' ? 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg' : imgBaseUrl + country_code.toLowerCase() + '.svg'
 		let errorMsg = indicateInvalid && validNumber ? error : 'Invalid Number';
 		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 		let useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
@@ -1036,17 +1037,16 @@ export default class Input extends Component
 		// but this will result in a non-digital input keyboard.
 
 		return (
-			<div>
+			<div ref="phoneNumberBase">
 			<Dropdown
 				dropdownControlLabel="Dropdown open"
 				changeHandler={(data) => {
-					console.log('item clicked', data.value);
 					this.set_country(data.value);
 				}}
 				type="image"
 				label="image"
-				id="image"
-				btnImage={imgBaseUrl + country_code.toLowerCase() + '.svg'}
+				id={id + "-phoneNumber"}
+				btnImage={menuImage}
 				btnImageHeight="10"
 				btnImageWidth="20">
 					{this.createDropdownItems()}
