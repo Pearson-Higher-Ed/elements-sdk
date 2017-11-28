@@ -18,7 +18,6 @@ $pe-btn-xlarge-padding       : 0 20px !default;
 $pe-btn-xlarge-font-size     : 16px !default;
 $pe-btn-xlarge-line-height   : 20px !default;
 
-
 $pe-btn-primary-bg            : $pe-color-digital-pearson-blue !default;
 $pe-btn-primary-text          : $pe-color-white !default;
 $pe-btn-primary-hover-bg      : $pe-color-ink-blue !default;
@@ -45,7 +44,7 @@ $pe-btn-tertiary-text          : $pe-color-graphite !default;
 $pe-btn-tertiary-hover-bg      : darken($pe-color-white-gray, 10%) !default;
 $pe-btn-tertiary-hover-text    : darken($pe-color-graphite, 10%) !default;
 
-// unused border radius in v3.0.0 beta2
+// unused border radius in v3.0.0-beta2
 $pe-btn-border-radius : 22px !default;
 
 $pe-btn-square-border-radius: 0px !important;

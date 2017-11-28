@@ -66,9 +66,9 @@ const StylesButtonPage = () => (
     <button className="pe-btn__cta--btn_large" style={marginFour}>CTA Large</button>
     <button className="pe-btn__primary--btn_xlarge" style={marginFour}>Primary xLarge</button>
     <p className="code" style={{padding: 8}}>
-      {`<button class="pe-btn--btn_small" style={{marginRight: 3}}>Small</button>`} <br/>
+      {`<button class="pe-btn--btn_small">Small</button>`} <br/>
       {`<button class="pe-btn__cta--btn_large">CTA Large</button>`} <br/>
-      {`<button class="pe-btn__primary--btn_xlarge" style={marginFour}>Primary xLarge</button>`}
+      {`<button class="pe-btn__primary--btn_xlarge">Primary xLarge</button>`}
     </p>
 
     <h2>Text overflow</h2>

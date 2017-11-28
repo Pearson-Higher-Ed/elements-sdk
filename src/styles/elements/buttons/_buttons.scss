@@ -14,7 +14,7 @@
   padding        : $pe-btn-large-padding;
   border-radius  : $pe-btn-large-border-radius;
   font-size      : $pe-btn-large-font-size;
-  line-height    : $pe-btn-large-height;
+  line-height    : $pe-btn-large-line-height;
 
   font-weight    : 600;
 }
@@ -81,7 +81,7 @@
 }
 
 //===========btn=================================
-.pe-btn {
+.pe-btn, .pe-btn--btn_large {
 
   @extend %btn;
 
@@ -132,23 +132,6 @@
 
 }
 
-.pe-btn--btn_large {
-
-  @extend %btn;
-
-  @include pe-btn(
-    $pe-btn-default-bg,
-    $pe-btn-default-text,
-    $pe-btn-default-hover-bg,
-    $pe-btn-default-hover-text,
-    $pe-btn-default-border,
-    $pe-btn-default-hover-border,
-    $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
-  );
-
-}
-
 .pe-btn--btn_xlarge {
 
   @extend %btn;
@@ -168,7 +151,7 @@
 }
 
 //===========Primary=================================
-.pe-btn__primary {
+.pe-btn__primary, .pe-btn__primary--btn_large {
 
   @extend %btn;
 
@@ -183,18 +166,7 @@
 .pe-btn__primary--btn_small {
 
   @extend %btn;
-
-  @include pe-btn(
-  $pe-color-digital-pearson-blue,
-  $pe-color-white,
-  $pe-color-ink-blue,
-  $pe-color-white
-  );
-}
-
-.pe-btn__primary--btn_large {
-
-  @extend %btn;
+  @extend %btn_small;
 
   @include pe-btn(
   $pe-color-digital-pearson-blue,
@@ -220,7 +192,7 @@
 
 
 //===========CTA=================================
-.pe-btn__cta {
+.pe-btn__cta, .pe-btn__cta--btn_large {
 
   @extend %btn;
 
@@ -235,18 +207,7 @@
 .pe-btn__cta--btn_small {
 
   @extend %btn;
-
-  @include pe-btn(
-    $pe-btn-cta-bg,
-    $pe-btn-cta-text,
-    $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
-  );
-}
-
-.pe-btn__cta--btn_large {
-
-  @extend %btn;
+  @extend %btn_small;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -270,7 +231,7 @@
 }
 
 //===========TERTIARY=================================
-.pe-btn__tertiary {
+.pe-btn__tertiary, .pe-btn__tertiary--btn_large {
   
     @extend %btn;
   
@@ -285,18 +246,7 @@
   .pe-btn__tertiary--btn_small {
   
     @extend %btn;
-  
-    @include pe-btn(
-      $pe-btn-tertiary-bg,
-      $pe-btn-tertiary-text,
-      $pe-btn-tertiary-hover-bg,
-      $pe-btn-tertiary-hover-text
-    );
-  }
-  
-  .pe-btn__tertiary--btn_large {
-  
-    @extend %btn;
+    @extend %btn_small;
   
     @include pe-btn(
       $pe-btn-tertiary-bg,
@@ -318,4 +268,24 @@
       $pe-btn-tertiary-hover-text
     );
   }
+
+// vertical align doesn't work in div and a, the text in those sticks to the top border.
+// It stays at center before because the line height in this file was mistakenly set as height.
+// Here set the line-height in div and a as the same as the height to make text align center.
+  div [class$='--btn_xlarge'], a [class$='--btn_xlarge'] {
+    line-height: 40px !important;
+  }
+
+  div [class$='--btn_large'], a [class$='--btn_large'] {
+    line-height: 36px !important;
+  }
+
+  .pe-btn__primary, .pe-btn__cta, .pe-btn__tertiary, .pe-btn {
+    line-height: 36px !important;
+  }
+  
+  div [class$='--btn_small'], a [class$='--btn_small'] {
+    line-height: 32px !important;
+  }
+  
   
