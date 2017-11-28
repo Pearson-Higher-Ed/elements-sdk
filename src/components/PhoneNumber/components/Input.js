@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom'
 import { as_you_type, parse, format, getPhoneCode, is_valid_number, DIGITS } from 'libphonenumber-js'
 import { ReactInput } from 'input-format'
 import classNames from 'classnames'
+import Dropdown from '../../Dropdown/Dropdown';
+import DropdownItem from '../../Dropdown/DropdownItem';
 
 // Could have been `import { Select } from 'react-responsive-ui'`
 // but in that case Webpack bundles the whole `react-responsive-ui` package.
@@ -361,6 +363,7 @@ export default class Input extends Component
 		{
 			this.select_options.unshift
 			({
+				value : 'IN',
 				label : dictionary['International'] || default_dictionary['International'],
 				icon  : flags === false ? undefined : internationalIcon
 			})
@@ -605,8 +608,6 @@ export default class Input extends Component
 
 		// Format phone number
 		const text = formatter.input(input_text)
-
-		console.log(formatter);
 
 		this.state.validNumber = formatter.template && formatter.partially_populated_template.indexOf('x') < 0? true : false;
 
@@ -927,6 +928,23 @@ export default class Input extends Component
 		this.input = instance
 	}
 
+	createDropdownItems = () => {
+		const imgBaseUrl = 'https://lipis.github.io/flag-icon-css/flags/4x3/';
+		const inBaseUrl = 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg';
+
+		return (
+			<div>{this.select_options.map((country) =>
+				<DropdownItem checkmark selected={this.state.country_code === country.value}
+					selectedName="selected"
+					label={country.label}
+					type="imageButton"
+					imgUrl={country.value === 'IN' ? inBaseUrl : imgBaseUrl + country.value.toLowerCase() + '.svg'}
+					imgHeight="10" imgWidth="20"
+					selectValue={country.value} />
+			)}</div>
+		);
+	}
+
 	render()
 	{
 		const
@@ -988,11 +1006,11 @@ export default class Input extends Component
 		}
 		= this.state
 
+		const imgBaseUrl = 'https://lipis.github.io/flag-icon-css/flags/4x3/';
 		const phoneCodeLabel = country_select_is_shown ? 'rrui-input__intlCode--disabled' : 'rrui-input__intlCode';
 		const ariaDescribedbyInput =  id + 'phoneNumberInfo ' + id + 'phoneNumberError';
 		const selectLabelAria = selectAriaLabel ? selectAriaLabel + ' screen readers, skip to ' + labelText : 'Select country screen readers, skip to ' + labelText;
 		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
-		// let errorMsg = indicateInvalid && is_valid_number({phone: value, country: country_code}) ? error : 'Invalid Number';
 		let errorMsg = indicateInvalid && validNumber ? error : 'Invalid Number';
 		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 		let useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
@@ -1019,6 +1037,20 @@ export default class Input extends Component
 
 		return (
 			<div>
+			<Dropdown
+				dropdownControlLabel="Dropdown open"
+				changeHandler={(data) => {
+					console.log('item clicked', data.value);
+					this.set_country(data.value);
+				}}
+				type="image"
+				label="image"
+				id="image"
+				btnImage={imgBaseUrl + country_code.toLowerCase() + '.svg'}
+				btnImageHeight="10"
+				btnImageWidth="20">
+					{this.createDropdownItems()}
+				</Dropdown>
 				<div
 					style={ style }
 					className={ classNames('react-phone-number-input',

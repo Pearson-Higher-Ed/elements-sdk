@@ -157,12 +157,12 @@ export default class Dropdown extends Component {
         );
         break;
       case 'image':
-        
+
         btnIcon = true;
         buttonClass= 'pe-icon--btn dropdown-activator';
         buttonLabel = (
           <div>
-            <img src={this.state.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} />
+            <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} />
             <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
           </div>
         );

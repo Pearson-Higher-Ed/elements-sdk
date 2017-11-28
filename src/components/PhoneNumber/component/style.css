@@ -115,3 +115,7 @@
 
 	border : none;
 }
+
+.dropdown-container ul {
+	width: 415px;
+}
