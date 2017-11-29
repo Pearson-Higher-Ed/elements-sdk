@@ -27,6 +27,7 @@ export default class Dropdown extends Component {
     this.state = {
       open: false,
       selectedItem: '',
+      selectedItemDOM: '',
       buttonFocus: true,
       btnImage: props.btnImage
     };
@@ -130,10 +131,10 @@ export default class Dropdown extends Component {
       this.props.changeHandler ? this.props.changeHandler(selectedListItem.dataset) : null;
       this.setState({
         open: false,
-        selectedItem: selectedListItem.dataset.item
+        selectedItem: selectedListItem.dataset.item,
+        selectedItemDOM: selectedListItem
       });
       this.container.children[0].focus();
-      selectedListItem.scrollIntoView(true);
     }
   }
 
@@ -216,7 +217,28 @@ export default class Dropdown extends Component {
   }
 
   componentDidMount() {
+    const itemList = this.container.children[1];
+    let selectedIndex = -1;
     document.addEventListener('click', this.clickListener);
+
+    for (let i = 0; i < this.props.children.length; i++) {
+      if (this.props.children[i].props.selected) {
+        selectedIndex = i;
+        break;
+      }
+    }
+
+    if (selectedIndex >= 0) {
+      this.setState({
+        selectedItemDOM: document.getElementById(this.props.children[selectedIndex].props.selectValue + '-selected-true')
+      });
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.state.selectedItemDOM) {
+      this.state.selectedItemDOM.scrollIntoView(true);
+    }
   }
 
   componentWillUnmount() {

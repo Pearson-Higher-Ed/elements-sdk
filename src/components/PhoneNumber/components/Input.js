@@ -363,7 +363,7 @@ export default class Input extends Component
 		{
 			this.select_options.unshift
 			({
-				value : 'IN',
+				value : 'INT',
 				label : dictionary['International'] || default_dictionary['International'],
 				icon  : flags === false ? undefined : internationalIcon
 			})
@@ -928,23 +928,6 @@ export default class Input extends Component
 		this.input = instance
 	}
 
-	createDropdownItems = () => {
-		const imgBaseUrl = 'https://lipis.github.io/flag-icon-css/flags/4x3/';
-		const inBaseUrl = 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg';
-
-		return (
-			<div>{this.select_options.map((country) =>
-				<DropdownItem checkmark selected={this.state.country_code === country.value}
-					selectedName="selected"
-					label={country.label}
-					type="imageButton"
-					imgUrl={country.value === 'IN' ? inBaseUrl : imgBaseUrl + country.value.toLowerCase() + '.svg'}
-					imgHeight="10" imgWidth="20"
-					selectValue={country.value} />
-			)}</div>
-		);
-	}
-
 	render()
 	{
 		const
@@ -1011,7 +994,8 @@ export default class Input extends Component
 		const ariaDescribedbyInput =  id + 'phoneNumberInfo ' + id + 'phoneNumberError';
 		const selectLabelAria = selectAriaLabel ? selectAriaLabel + ' screen readers, skip to ' + labelText : 'Select country screen readers, skip to ' + labelText;
 		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
-		const menuImage = country_code === 'IN' ? 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg' : imgBaseUrl + country_code.toLowerCase() + '.svg'
+		const intFlagUrl = 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg';
+		const menuImage = country_code === 'INT' ? intFlagUrl : imgBaseUrl + country_code.toLowerCase() + '.svg'
 		let errorMsg = indicateInvalid && validNumber ? error : 'Invalid Number';
 		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 		let useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
@@ -1037,7 +1021,7 @@ export default class Input extends Component
 		// but this will result in a non-digital input keyboard.
 
 		return (
-			<div ref="phoneNumberBase">
+			<div>
 			<Dropdown
 				dropdownControlLabel="Dropdown open"
 				changeHandler={(data) => {
@@ -1049,7 +1033,15 @@ export default class Input extends Component
 				btnImage={menuImage}
 				btnImageHeight="10"
 				btnImageWidth="20">
-					{this.createDropdownItems()}
+					{this.select_options.map((country) =>
+						<DropdownItem checkmark selected={this.state.country_code === country.value}
+							selectedName="selected"
+							label={country.label}
+							type="imageButton"
+							imgUrl={country.value === 'INT' ? intFlagUrl : imgBaseUrl + country.value.toLowerCase() + '.svg'}
+							imgHeight="10" imgWidth="20"
+							selectValue={country.value} />
+					)}
 				</Dropdown>
 				<div
 					style={ style }
