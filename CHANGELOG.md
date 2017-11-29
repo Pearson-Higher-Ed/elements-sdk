@@ -5,13 +5,11 @@
 ### Bug Fixes
 
 * Routing for gh-pages ([1c31875](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/1c31875))
-* Routing for gh-pages ([8bf3774](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/8bf3774))
 
 
 ### Features
 
 * gh-pages script ([85fc22b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/85fc22b))
-* gh-pages script ([2691b2f](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/2691b2f))
 
 
 
