@@ -1022,29 +1022,6 @@ export default class Input extends Component
 
 		return (
 			<div>
-			<Dropdown
-				dropdownControlLabel="Dropdown open"
-				changeHandler={(data) => {
-					this.set_country(data.value);
-				}}
-				type="image"
-				label="image"
-				id={id + "-phoneNumber"}
-				btnImage={menuImage}
-				btnImageHeight="10"
-				btnImageWidth="20">
-					{this.select_options.map((country) => {
-						return (
-							<DropdownItem checkmark selected={this.state.country_code === country.value}
-								selectedName="selected"
-								label={country.label}
-								type="imageButton"
-								imgUrl={country.value === 'INT' ? intFlagUrl : imgBaseUrl + country.value.toLowerCase() + '.svg'}
-								imgHeight="10" imgWidth="20"
-								selectValue={country.value} />
-						)
-					})}
-				</Dropdown>
 				<div
 					style={ style }
 					className={ classNames('react-phone-number-input',
@@ -1057,34 +1034,29 @@ export default class Input extends Component
 					<div className="react-phone-number-input__row">
 						<div className={fancyGroup}>
 
-						{/* Country `<select/>` */}
-						{ showCountrySelect && this.can_change_country() &&
-							<SelectComponent
-								ref={ this.store_select_instance }
-								value={ country_code }
-								options={ this.select_options }
-								onChange={ this.set_country }
-								disabled={ disabled }
-								onToggle={ this.country_select_toggled }
-								onTabOut={ this.on_country_select_tab_out }
-								nativeExpanded={ nativeExpanded }
-								autocomplete
-								autocompleteShowAll
-								maxItems={ selectMaxItems }
-								concise
-								tabIndex={ selectTabIndex }
-								focusUponSelection={ false }
-								saveOnIcons={ saveOnIcons }
-								name={ input_props.name ? `${input_props.name}__country` : undefined }
-								ariaLabel={ selectLabelAria }
-								closeAriaLabel={ selectCloseAriaLabel }
-								style={ selectStyle }
-								className={ classNames('react-phone-number-input__country',
-								{
-									'react-phone-number-input__country--native-expanded' : nativeExpanded
-								}) }
-								inputClassName={ inputClassName }/>
-							}
+						<div style={{float: 'left'}}><Dropdown
+							dropdownControlLabel="Dropdown open"
+							changeHandler={(data) => {
+								this.set_country(data.value);
+							}}
+							type="image"
+							label="image"
+							id={id + "-phoneNumber"}
+							btnImage={menuImage}
+							btnImageHeight="10"
+							btnImageWidth="20">
+								{this.select_options.map((country) => {
+									return (
+										<DropdownItem checkmark selected={this.state.country_code === country.value}
+											selectedName="selected"
+											label={country.label}
+											type="imageButton"
+											imgUrl={country.value === 'INT' ? intFlagUrl : imgBaseUrl + country.value.toLowerCase() + '.svg'}
+											imgHeight="10" imgWidth="20"
+											selectValue={country.value} />
+									)
+								})}
+							</Dropdown></div>
 
 							<div className={ phoneCodeLabel }>{ '+' + country_number }</div>
 						</div>

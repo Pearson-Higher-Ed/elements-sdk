@@ -161,9 +161,7 @@ export default class Dropdown extends Component {
       case 'image':
         let imgPad = '0';
         if (this.props.btnImageHeight < 18) {
-          console.log("less than 18 in height");
           imgPad = Math.floor((18 - this.props.btnImageHeight)/2);
-          console.log(imgPad);
         }
         btnIcon = true;
         buttonClass= 'pe-icon--btn dropdown-activator dropdown-image';
@@ -242,7 +240,10 @@ export default class Dropdown extends Component {
 
   componentDidUpdate() {
     if (this.state.selectedItemDOM) {
-      this.state.selectedItemDOM.scrollIntoView(true);
+      // delay necessary so allow the list to appear before trying to scroll into view
+      setTimeout(() => {
+        this.state.selectedItemDOM.scrollIntoView(true);
+      }, 1);
     }
   }
 

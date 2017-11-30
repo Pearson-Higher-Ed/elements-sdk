@@ -118,4 +118,5 @@
 
 .pe-phoneNumberInput .dropdown-container ul {
 	width: 415px;
+	max-height: 125px;
 }
