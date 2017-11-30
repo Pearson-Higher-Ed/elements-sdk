@@ -995,7 +995,7 @@ export default class Input extends Component
 		const selectLabelAria = selectAriaLabel ? selectAriaLabel + ' screen readers, skip to ' + labelText : 'Select country screen readers, skip to ' + labelText;
 		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
 		const intFlagUrl = 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg';
-		const menuImage = country_code === 'INT' ? intFlagUrl : imgBaseUrl + country_code.toLowerCase() + '.svg'
+		const menuImage = country_code === 'INT' || !country_code ? intFlagUrl : imgBaseUrl + country_code.toLowerCase() + '.svg'
 		let errorMsg = indicateInvalid && validNumber ? error : 'Invalid Number';
 		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 		let useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
@@ -1033,15 +1033,17 @@ export default class Input extends Component
 				btnImage={menuImage}
 				btnImageHeight="10"
 				btnImageWidth="20">
-					{this.select_options.map((country) =>
-						<DropdownItem checkmark selected={this.state.country_code === country.value}
-							selectedName="selected"
-							label={country.label}
-							type="imageButton"
-							imgUrl={country.value === 'INT' ? intFlagUrl : imgBaseUrl + country.value.toLowerCase() + '.svg'}
-							imgHeight="10" imgWidth="20"
-							selectValue={country.value} />
-					)}
+					{this.select_options.map((country) => {
+						return (
+							<DropdownItem checkmark selected={this.state.country_code === country.value}
+								selectedName="selected"
+								label={country.label}
+								type="imageButton"
+								imgUrl={country.value === 'INT' ? intFlagUrl : imgBaseUrl + country.value.toLowerCase() + '.svg'}
+								imgHeight="10" imgWidth="20"
+								selectValue={country.value} />
+						)
+					})}
 				</Dropdown>
 				<div
 					style={ style }

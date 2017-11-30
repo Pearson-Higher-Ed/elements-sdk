@@ -2,6 +2,12 @@
   cursor: pointer;
 }
 
+.dropdown-image {
+  svg {
+    margin-left: 4px;
+  }
+}
+
 .dropdown-container {
   display: inline-block;
   position: relative;

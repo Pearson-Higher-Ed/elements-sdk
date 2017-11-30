@@ -35,7 +35,7 @@ export default class PhoneNumber extends Component {
     const errorInput = errorMessage ? 'react-phone-number-input__phone--error' : inputClassName;
 
     return (
-      <div>
+      <div className="pe-phoneNumberInput">
         <label className={`pe-textLabelInput__label${errorLabel}`}>{labelText}</label>
 
         <Phone

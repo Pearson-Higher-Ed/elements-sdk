@@ -116,6 +116,6 @@
 	border : none;
 }
 
-.dropdown-container ul {
+.pe-phoneNumberInput .dropdown-container ul {
 	width: 415px;
 }

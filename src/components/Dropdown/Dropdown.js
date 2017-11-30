@@ -159,12 +159,17 @@ export default class Dropdown extends Component {
         );
         break;
       case 'image':
-
+        let imgPad = '0';
+        if (this.props.btnImageHeight < 18) {
+          console.log("less than 18 in height");
+          imgPad = Math.floor((18 - this.props.btnImageHeight)/2);
+          console.log(imgPad);
+        }
         btnIcon = true;
-        buttonClass= 'pe-icon--btn dropdown-activator';
+        buttonClass= 'pe-icon--btn dropdown-activator dropdown-image';
         buttonLabel = (
           <div>
-            <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} />
+            <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{paddingTop: imgPad + 'px'}} />
             <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
           </div>
         );
