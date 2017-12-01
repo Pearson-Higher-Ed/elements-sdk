@@ -36,6 +36,7 @@ export default class Dropdown extends Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.itemSelected = this.itemSelected.bind(this);
     this.clickListener = this.clickListener.bind(this);
+    this.getSelectedIndex = this.getSelectedIndex.bind(this);
   }
 
   placement(dropdown) {
@@ -219,10 +220,8 @@ export default class Dropdown extends Component {
     }
   }
 
-  componentDidMount() {
-    const itemList = this.container.children[1];
-    let selectedIndex = -1;
-    document.addEventListener('click', this.clickListener);
+  getSelectedIndex() {
+    let selectedIndex = 0;
 
     for (let i = 0; i < this.props.children.length; i++) {
       if (this.props.children[i].props.selected) {
@@ -231,9 +230,16 @@ export default class Dropdown extends Component {
       }
     }
 
+    return selectedIndex;
+  }
+
+  componentDidMount() {
+    const selectedIndex = this.getSelectedIndex();
+    document.addEventListener('click', this.clickListener);
+
     if (selectedIndex >= 0) {
       this.setState({
-        selectedItemDOM: document.getElementById(this.props.children[selectedIndex].props.selectValue + '-selected-true')
+        selectedItemDOM: document.getElementById(this.props.id + '-' + this.props.children[selectedIndex].props.selectValue)
       });
     }
   }

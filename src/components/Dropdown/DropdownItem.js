@@ -11,13 +11,14 @@ export default class DropdownItem extends Component {
     selectedName: PropTypes.string,
     checkmark: PropTypes.bool,
     onClick: PropTypes.func,
+    dropdownId: PropTypes.string,
     imgUrl: PropTypes.string,
     imgHeight: PropTypes.string,
     imgWidth: PropTypes.string
   };
 
   render() {
-    const { url, label, selectValue, type, selected, selectedName, checkmark, onClick, imgUrl, imgHeight, imgWidth } = this.props;
+    const { url, label, selectValue, type, selected, selectedName, checkmark, onClick, dropdownId, imgUrl, imgHeight, imgWidth } = this.props;
 
     switch (type) {
       case 'divider':
@@ -53,7 +54,7 @@ export default class DropdownItem extends Component {
         break;
         case 'imageButton':
           return (
-            <li role="presentation" data-item={label} data-value={selectValue} id={selectValue + "-selected-" + selected}>
+            <li role="presentation" data-item={label} data-value={selectValue} id={dropdownId + "-" + selectValue}>
               <button role="menuitem" className={checkmark ? 'checkmark' : ''} onClick={onClick} type="button" tabIndex="-1">
               {checkmark ?
                   <span style={{visibility: selected ? 'visible' : 'hidden'}}>

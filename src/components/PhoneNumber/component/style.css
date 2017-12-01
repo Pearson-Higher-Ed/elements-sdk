@@ -120,3 +120,7 @@
 	width: 415px;
 	max-height: 125px;
 }
+
+.pe-phoneNumberInput .dropdown-container button {
+	padding-top: 1px;
+}
