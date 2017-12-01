@@ -223,10 +223,12 @@ export default class Dropdown extends Component {
   getSelectedIndex() {
     let selectedIndex = 0;
 
-    for (let i = 0; i < this.props.children.length; i++) {
-      if (this.props.children[i].props.selected) {
-        selectedIndex = i;
-        break;
+    if (this.props.children) {
+      for (let i = 0; i < this.props.children.length; i++) {
+        if (this.props.children[i].props.selected) {
+          selectedIndex = i;
+          break;
+        }
       }
     }
 
@@ -237,7 +239,7 @@ export default class Dropdown extends Component {
     const selectedIndex = this.getSelectedIndex();
     document.addEventListener('click', this.clickListener);
 
-    if (selectedIndex >= 0) {
+    if (selectedIndex >= 0 && this.props.children) {
       this.setState({
         selectedItemDOM: document.getElementById(this.props.id + '-' + this.props.children[selectedIndex].props.selectValue)
       });
@@ -245,7 +247,7 @@ export default class Dropdown extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.selectedItemDOM) {
+    if (this.state.selectedItemDOM && typeof this.state.selectedItemDOM.scrollIntoView === 'function') {
       // delay necessary so allow the list to appear before trying to scroll into view
       setTimeout(() => {
         this.state.selectedItemDOM.scrollIntoView(true);
