@@ -275,6 +275,11 @@ export default class Input extends Component
 
 		let { country } = this.props
 
+		this.getValidNumber = this.getValidNumber.bind(this);
+
+		this.state.validNumber = false;
+		this.state.inputDirty = false;
+
 		// Normalize `country` code
 		country = normalize_country_code(country, dictionary)
 
@@ -787,7 +792,13 @@ export default class Input extends Component
 	on_blur = (event) =>
 	{
 		const { onBlur } = this.props
-		const { value_property } = this.state
+		const { value, value_property, inputDirty } = this.state
+
+		if (value) {
+			this.setState({
+				inputDirty: true
+			});
+		}
 
 		if (!onBlur)
 		{
@@ -928,6 +939,10 @@ export default class Input extends Component
 		this.input = instance
 	}
 
+	getValidNumber = () => {
+		return this.state.validNumber;
+	}
+
 	render()
 	{
 		const
@@ -985,7 +1000,8 @@ export default class Input extends Component
 			country_code,
 			country_select_is_shown,
 			country_number,
-			validNumber
+			validNumber,
+			inputDirty
 		}
 		= this.state
 
@@ -999,6 +1015,8 @@ export default class Input extends Component
 		let errorMsg = indicateInvalid && validNumber ? error : 'Invalid Number';
 		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 		let useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
+
+		errorMsg = inputDirty ? errorMsg : '';
 
 		if (!indicateInvalid) {
 			errorMsg = error;

@@ -58,6 +58,7 @@ export default class PhoneNumber extends Component {
           error={errorMessage}
           labelText={labelText}
           indicateInvalid={validate}
+          ref={(instance) => {this.inputComponent = instance}}
         />
 
       </div>
