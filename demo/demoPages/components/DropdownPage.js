@@ -48,7 +48,7 @@ class DropdownPage extends React.Component {
               <li className="li-props">checkmark: whether or not to leave spacing for a selected checkmark</li>
               <li className="li-props">selected: accessibility/globalization word for 'selected'</li>
               <li className="li-props">selectedName: accessibility label for name of item</li>
-              <li className="li-props">imgUrl: URL to image (if type is imgButton)</li>
+              <li className="li-props">imgUrl: URL to image (if type is imageButton)</li>
               <li className="li-props">imgHeight: Display height of image (if type is imgButton)</li>
               <li className="li-props">imgWidth: Display width of image (if type is imgButton)</li>
             </ul>
