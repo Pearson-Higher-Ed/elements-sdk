@@ -73,6 +73,7 @@ export default class PhoneNumberPage extends Component {
             <div style={eight}>{`onChange={(num) => console.log(num)}`}</div>
             <div style={eight}>{`ref{(instance) => {this.phoneNumber = instance}}`}</div>
           {`/>`}
+          {`<button onclick={() => console.log(this.phoneNumber.inputComponent.getValidNumber())}>Valid?</button>`}
         </p>
 
         </div>

@@ -4,7 +4,7 @@ The Pearson Elements-SDK library contains a number of UI/UX interface elements t
 
 First are the CSS styles which allow the application to be developed according to the standards found at the [Pearson UI/UX design site](http://pearson-higher-ed.github.io/design/).  Any UI/UX piece which only requires styling can be found in the /src/styles directory.  This portion of the library is written exclusively in SASS and is transpiled at build time (either when Elements-SDK is built or when the SASS files are built by the consuming app).  
 
-Second, are the JavaScript components which bring behaviors and programmatic functionality to the elements.  This components are a mix of SASS/CSS styling and JavaScript functionality.  Any UI/UX piece which requires both styling and functionality can be found in the /src/components directory.  Components found in this directory need to be imported into the application either from the source code or from the built distribution file found in /build/dist.compounds.js
+Second, are the JavaScript components which bring behaviors and programmatic functionality to the elements.  This components are a mix of SASS/CSS styling and JavaScript functionality.  Any UI/UX piece which requires both styling and functionality can be found in the /src/components directory.  Components found in this directory need to be imported into the application from the built distribution file found in /build/dist.compounds.js
 
 The Pearson Elements-SDK is intended for developers to consume as much or as little as needed to get the job done.  
 
@@ -32,12 +32,12 @@ Consuming the JavaScript components requires importing into a consuming app as f
 
 Import a single component:
 
-    import { Button } from '@pearson-components/elements-sdk/index';
+    import { Button } from '@pearson-components/elements-sdk/build/dist.compounds';
 
 
 Import all components:
 
-    import * as Compounds from '@pearson-components/elements-sdk/index';
+    import * as Compounds from '@pearson-components/elements-sdk/build/dist.compounds';
     const Button = Compounds.Button
 
 or destructure as needed:
@@ -47,7 +47,7 @@ or destructure as needed:
       Icon,
       TextInput,
       Select
-    } from '@pearson-components/elements-sdk/index';
+    } from '@pearson-components/elements-sdk/build/dist.compounds';
 
 ### External Dependencies
 
