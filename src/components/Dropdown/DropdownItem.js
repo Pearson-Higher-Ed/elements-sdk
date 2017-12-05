@@ -63,7 +63,7 @@ export default class DropdownItem extends Component {
               }
 
               <span className={checkmark ? 'icon-padding' : ''}>
-                <img src={imgUrl} height={imgHeight} width={imgWidth} />
+                <img src={imgUrl} height={imgHeight} width={imgWidth} alt=""/>
                 &nbsp;{label}
               </span>
             </button>

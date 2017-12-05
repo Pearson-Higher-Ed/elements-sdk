@@ -1058,7 +1058,7 @@ export default class Input extends Component
 								this.set_country(data.value);
 							}}
 							type="image"
-							label="image"
+							label="choose country code"
 							id={id + "-phoneNumber"}
 							btnImage={menuImage}
 							btnImageHeight="10"
@@ -1088,7 +1088,7 @@ export default class Input extends Component
 								{ ...input_props }
 								ref={ this.store_input_instance }
 								value={ value }
-								aria-label={labelText}
+								aria-label={labelText + ', +' + country_number}
 								onChange={ this.on_change }
 								onBlur={ this.on_blur }
 								disabled={ disabled }
