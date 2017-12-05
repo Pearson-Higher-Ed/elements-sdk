@@ -115,6 +115,20 @@ export default class Dropdown extends Component {
           open: false
         });
       }
+
+      if (event.which >= 65 && event.which <= 90) {
+        // a through z pressed
+        const alphaArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        let searchIndex = this.focusedItem;
+        while (searchIndex >= 0 && searchIndex < this.list.children.length) {
+          searchIndex++;
+          if (this.list.children[searchIndex].attributes['data-item'].nodeValue.toLowerCase().indexOf(alphaArray[event.which-65]) === 0) {
+            this.focusedItem = searchIndex;
+            break;
+          }
+        }
+        this.list.children[this.focusedItem].children[0].focus();
+      }
     }
   }
 
