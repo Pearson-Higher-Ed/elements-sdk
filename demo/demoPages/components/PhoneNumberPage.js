@@ -58,7 +58,6 @@ export default class PhoneNumberPage extends Component {
           labelText="Mobile phone"
           onChange={(num) => console.log(num)}
           ref={(instance) => {this.phoneNumber = instance}}
-          validate={true}
         />
 
         <p>&nbsp;</p>
