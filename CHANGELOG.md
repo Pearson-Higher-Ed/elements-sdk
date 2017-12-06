@@ -2,6 +2,11 @@
 # [1.6.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.5.0...v1.6.0) (2017-12-06)
 
 
+### Features
+
+* gh-pages script ([85fc22b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/85fc22b))
+* fix: Create image button for dropdown, image item for dropdownItem, replace old select in PhoneNumber with dropdown
+
 ### Bug Fixes
 
 * babel-runtime ([002f7c8](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/002f7c8))
@@ -10,14 +15,6 @@
 * remove is_valid_number (too strict) ([d6ad2bf](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/d6ad2bf))
 * Routing for gh-pages ([1c31875](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/1c31875))
 * Routing for gh-pages ([8bf3774](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/8bf3774))
-
-
-### Features
-
-* gh-pages script ([85fc22b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/85fc22b))
-* gh-pages script ([2691b2f](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/2691b2f))
-
-
 
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.1...v1.5.0) (2017-11-17)
