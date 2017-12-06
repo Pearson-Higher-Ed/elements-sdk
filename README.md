@@ -32,12 +32,12 @@ Consuming the JavaScript components requires importing into a consuming app as f
 
 Import a single component:
 
-    import { Button } from '@pearson-components/elements-sdk/build/dist.compounds';
+    import { Button } from '@pearson-components/elements-sdk/build/dist.elements-sdk';
 
 
 Import all components:
 
-    import * as Compounds from '@pearson-components/elements-sdk/build/dist.compounds';
+    import * as Compounds from '@pearson-components/elements-sdk/build/dist.elements-sdk';
     const Button = Compounds.Button
 
 or destructure as needed:
@@ -47,7 +47,7 @@ or destructure as needed:
       Icon,
       TextInput,
       Select
-    } from '@pearson-components/elements-sdk/build/dist.compounds';
+    } from '@pearson-components/elements-sdk/build/dist.elements-sdk';
 
 ### External Dependencies
 
