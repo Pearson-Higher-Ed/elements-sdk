@@ -52,7 +52,7 @@ const HomePage = () => (
     </div>
 
     <p><b>Contributions:</b> <a href="https://github.com/Pearson-Higher-Ed/docs/blob/master/origami-contributions.md">FAQ</a></p>
-    <p><b>Pearson Elements SDK:</b> <a href="http://pearson-higher-ed.github.io/elements/">http://pearson-higher-ed.github.io/elements/</a></p>
+    <p><b>Pearson Elements SDK:</b> <a href="http://pearson-higher-ed.github.io/elements/elements/">http://pearson-higher-ed.github.io/elements/elements/</a></p>
     <p><b>Design Site:</b> <a href="http://pearson-higher-ed.github.io/design/">http://pearson-higher-ed.github.io/design/</a></p>
     <p><b>Unit Test Coverage:</b> <a href="https://pearson-higher-ed.github.io/compounds/coverage/lcov-report/">https://pearson-higher-ed.github.io/compounds/coverage/lcov-report/</a></p>
     <p><b>HipChat Room:</b> PDA-Help</p>

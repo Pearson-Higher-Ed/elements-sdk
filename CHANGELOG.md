@@ -1,3 +1,18 @@
+<a name="1.5.3"></a>
+## [1.5.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.5.2...v1.5.3) (2017-11-29)
+
+
+### Bug Fixes
+
+* Routing for gh-pages ([1c31875](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/1c31875))
+
+
+### Features
+
+* gh-pages script ([85fc22b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/85fc22b))
+
+
+
 <a name="1.5.2"></a>
 ## [1.5.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.3...v1.5.2) (2017-11-22)
 
