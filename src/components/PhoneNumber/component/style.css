@@ -115,3 +115,13 @@
 
 	border : none;
 }
+
+.pe-phoneNumberInput .dropdown-container ul {
+	width: 415px;
+	max-height: 125px;
+	margin-top: 6px;
+}
+
+.pe-phoneNumberInput .dropdown-container button {
+	padding-top: 1px;
+}

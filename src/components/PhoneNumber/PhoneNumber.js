@@ -17,7 +17,8 @@ export default class PhoneNumber extends Component {
 
   static defaultProps = {
     fancy: true,
-    errorMessage: ''
+    errorMessage: '',
+    validate: false
   }
 
   constructor(props) {
@@ -28,13 +29,13 @@ export default class PhoneNumber extends Component {
     const { id, country, placeholder, onChange, value, onKeyDown, disabled,
             onCountryChange, countries, international, convertToNational,
             selectMaxItems, className, inputClassName, labelText,
-            infoMessage, errorMessage, fancy } = this.props;
+            infoMessage, errorMessage, fancy, validate } = this.props;
 
     const errorLabel = errorMessage ? '--label_error' :'';
     const errorInput = errorMessage ? 'react-phone-number-input__phone--error' : inputClassName;
 
     return (
-      <div>
+      <div className="pe-phoneNumberInput">
         <label className={`pe-textLabelInput__label${errorLabel}`}>{labelText}</label>
 
         <Phone
@@ -56,11 +57,20 @@ export default class PhoneNumber extends Component {
           fancy={fancy}
           error={errorMessage}
           labelText={labelText}
+          indicateInvalid={validate}
+          ref={(instance) => {this.inputComponent = instance}}
         />
-        {infoMessage && <p className="pe-input--info_message" id={id + "phoneNumberInfo"}>{infoMessage}</p>}
-        {errorMessage && <p className="pe-input--error_message" id={id + "phoneNumberError"}>{errorMessage}</p>}
 
       </div>
     );
   }
 }
+
+export {
+	parse as parse_phone_number,
+	parse as parsePhoneNumber,
+	format as format_phone_number,
+	format as formatPhoneNumber,
+	is_valid_number as is_valid_number,
+	is_valid_number as isValidNumber
+} from './components/Input.js';

@@ -31,6 +31,14 @@ describe('Dropdown', () => {
     expect(anchor.props.className).toEqual('dropdown-activator pe-icon--btn');
   });
 
+  it('should create an anchor for image', function () {
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'image'});
+    const anchor = dropDown.insertAnchor();
+
+    expect(anchor.type).toEqual(Button);
+    expect(anchor.props.className).toEqual('pe-icon--btn dropdown-activator dropdown-image');
+  });
+
   it('should create an anchor for unknown should render text', function () {
     const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'asdf'});
     const anchor = dropDown.insertAnchor();
@@ -67,7 +75,7 @@ describe('Dropdown', () => {
       instance.itemSelected(e);
       expect(instance.state.open).toEqual(false);
       expect(instance.state.selectedItem).toEqual('option 1');
-      expect(selectedItem).toEqual('option 1');
+      expect(selectedItem.item).toEqual('option 1');
     });
   });
 
@@ -103,6 +111,7 @@ describe('Dropdown', () => {
           <DropdownItem selectedName="selected" label="list item 1" type="button" />
           <DropdownItem type="divider" />
           <DropdownItem label="list item 2" type="link" url="http://www.google.com" />
+          <DropdownItem label="list item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" />
         </Dropdown>
       );
       const instance = mounted.instance();

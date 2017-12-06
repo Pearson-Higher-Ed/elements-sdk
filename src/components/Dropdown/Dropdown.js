@@ -13,7 +13,10 @@ export default class Dropdown extends Component {
     type: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    changeHandler: PropTypes.func
+    changeHandler: PropTypes.func,
+    btnImage: PropTypes.string,
+    btnImageHeight: PropTypes.string,
+    btnImageWidth: PropTypes.string
   };
 
   constructor(props) {
@@ -24,13 +27,16 @@ export default class Dropdown extends Component {
     this.state = {
       open: false,
       selectedItem: '',
-      buttonFocus: true
+      selectedItemDOM: '',
+      buttonFocus: true,
+      btnImage: props.btnImage
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.itemSelected = this.itemSelected.bind(this);
     this.clickListener = this.clickListener.bind(this);
+    this.getSelectedIndex = this.getSelectedIndex.bind(this);
   }
 
   placement(dropdown) {
@@ -109,6 +115,28 @@ export default class Dropdown extends Component {
           open: false
         });
       }
+
+      if (event.which >= 65 && event.which <= 90) {
+        // a through z pressed
+        const alphaArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        let searchIndex = this.focusedItem;
+        while (searchIndex >= 0 && searchIndex < this.list.children.length-1) {
+          searchIndex++;
+          if (this.list.children[searchIndex].attributes['data-item'].nodeValue.toLowerCase().indexOf(alphaArray[event.which-65]) === 0) {
+            this.focusedItem = searchIndex;
+            break;
+          }
+
+          if (searchIndex === this.focusedItem) {
+            break;
+          }
+
+          if (searchIndex === this.list.children.length-1) {
+            searchIndex = 0;
+          }
+        }
+        this.list.children[this.focusedItem].children[0].focus();
+      }
     }
   }
 
@@ -123,10 +151,11 @@ export default class Dropdown extends Component {
   itemSelected(e) {
     const selectedListItem = this.getParentLiSelected(e.target);
     if (selectedListItem.dataset.item !== 'divider') {
-      this.props.changeHandler ? this.props.changeHandler(selectedListItem.dataset.item) : null;
+      this.props.changeHandler ? this.props.changeHandler(selectedListItem.dataset) : null;
       this.setState({
         open: false,
-        selectedItem: selectedListItem.dataset.item
+        selectedItem: selectedListItem.dataset.item,
+        selectedItemDOM: selectedListItem
       });
       this.container.children[0].focus();
     }
@@ -152,6 +181,20 @@ export default class Dropdown extends Component {
           <Icon name="dropdown-open-sm-24">{this.props.label}</Icon>
         );
         break;
+      case 'image':
+        let imgPad = '0';
+        if (this.props.btnImageHeight < 18) {
+          imgPad = Math.floor((18 - this.props.btnImageHeight)/2);
+        }
+        btnIcon = true;
+        buttonClass= 'pe-icon--btn dropdown-activator dropdown-image';
+        buttonLabel = (
+          <div>
+            <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt=""/>
+            <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
+          </div>
+        );
+      break;
       // if not one of the types go to text
       default:
       case 'text':
@@ -199,8 +242,39 @@ export default class Dropdown extends Component {
     }
   }
 
+  getSelectedIndex() {
+    let selectedIndex = 0;
+
+    if (this.props.children) {
+      for (let i = 0; i < this.props.children.length; i++) {
+        if (this.props.children[i].props.selected) {
+          selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    return selectedIndex;
+  }
+
   componentDidMount() {
+    const selectedIndex = this.getSelectedIndex();
     document.addEventListener('click', this.clickListener);
+
+    if (selectedIndex >= 0 && this.props.children) {
+      this.setState({
+        selectedItemDOM: document.getElementById(this.props.id + '-' + this.props.children[selectedIndex].props.selectValue)
+      });
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.state.selectedItemDOM && typeof this.state.selectedItemDOM.scrollIntoView === 'function') {
+      // delay necessary so allow the list to appear before trying to scroll into view
+      setTimeout(() => {
+        this.state.selectedItemDOM.scrollIntoView(true);
+      }, 1);
+    }
   }
 
   componentWillUnmount() {
