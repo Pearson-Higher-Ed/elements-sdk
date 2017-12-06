@@ -38,15 +38,15 @@ module.exports = {
   },
   output: {
     path          : path.resolve(__dirname, 'build'),
-    filename      : '[name].compounds.js',
-    publicPath    : '/compounds/',
+    filename      : '[name].elements-sdk.js',
+    publicPath    : '/elements-sdk/',
     libraryTarget : 'umd'
   },
   devtool: 'source-map',
   devServer: {
     host               : '0.0.0.0',
     port               : 8081,
-    publicPath         : '/compounds/',
+    publicPath         : '/elements-sdk/',
     https              : false,
     overlay            : true,
     watchContentBase   : true,
