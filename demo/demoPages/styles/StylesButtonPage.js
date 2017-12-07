@@ -61,13 +61,13 @@ const StylesButtonPage = () => (
 
     <h2>Sizes</h2>
 
-    <p>Buttons can be made smaller or larger.</p>
+    <p>Buttons can be made smaller or larger. Large is the standard button size, prefer this button as a default size unless there is a reason to go up or down.</p>
     <button className="pe-btn--btn_small" style={marginFour}>Small</button>
-    <button className="pe-btn__cta--btn_large" style={marginFour}>CTA Large</button>
+    <button className="pe-btn__cta" style={marginFour}>CTA Large</button>
     <button className="pe-btn__primary--btn_xlarge" style={marginFour}>Primary xLarge</button>
     <p className="code" style={{padding: 8}}>
       {`<button class="pe-btn--btn_small">Small</button>`} <br/>
-      {`<button class="pe-btn__cta--btn_large">CTA Large</button>`} <br/>
+      {`<button class="pe-btn__cta">CTA Large</button>`} <br/>
       {`<button class="pe-btn__primary--btn_xlarge">Primary xLarge</button>`}
     </p>
 
@@ -118,7 +118,7 @@ const StylesButtonPage = () => (
         <use xlinkHref="#calendar-18"></use>
       </svg>
     </button>
-    <button type="button" className="pe-btn__cta--btn_large" aria-label="End date" style={marginFour}>
+    <button type="button" className="pe-btn__cta" aria-label="End date" style={marginFour}>
       CTA large with icon
       <svg aria-hidden="true"
            focusable="false"
@@ -144,7 +144,7 @@ const StylesButtonPage = () => (
         <use xlinkHref="#calendar-24"></use>
       </svg>
     </button>
-    <button type="button" className="pe-btn__cta--btn_large" aria-label="Start date" style={marginFour}>
+    <button type="button" className="pe-btn__cta" aria-label="Start date" style={marginFour}>
       CTA large with icon
       <svg aria-hidden="true"
            focusable="false"
@@ -170,7 +170,7 @@ const StylesButtonPage = () => (
       <div style={{paddingLeft: 16}}>{`<use xlink:href="#calendar-18"></use>`} <br/></div>
       <div style={{paddingLeft: 8}}>{`</svg>`} <br/></div>
       {`</button>`}<br/>
-      {`<button type="button" class="pe-btn__cta--btn_large" aria-label="End date">`} <br/>
+      {`<button type="button" class="pe-btn__cta" aria-label="End date">`} <br/>
       CTA large with icon
       <div style={{paddingLeft: 8}}>{`<svg aria-hidden="true"`} <br/></div>
       <div style={{paddingLeft: 36}}>{`focusable="false"`} <br/></div>
@@ -194,7 +194,7 @@ const StylesButtonPage = () => (
       <div style={{paddingLeft: 16}}>{`<use xlink:href="#calendar-24"></use>`} <br/></div>
       <div style={{paddingLeft: 8}}>{`</svg>`} <br/></div>
       {`</button>`}<br/>
-      {`<button type="button" class="pe-btn__cta--btn_large" aria-label="Start date">`} <br/>
+      {`<button type="button" class="pe-btn__cta" aria-label="Start date">`} <br/>
       CTA large with icon
       <div style={{paddingLeft: 8}}>{`<svg aria-hidden="true"`} <br/></div>
       <div style={{paddingLeft: 36}}>{`focusable="false"`} <br/></div>

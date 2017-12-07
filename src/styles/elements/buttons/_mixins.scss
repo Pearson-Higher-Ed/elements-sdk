@@ -2,9 +2,12 @@
   $bg,
   $color,
   $hover-bg,
-  $hover-color,
+  $press-bg,
+  $hover-color: null,
+  $press-color: null,
   $border: null,
   $hover-border: null,
+  $press-border: null,
   $disabled-bg:  null,
   $disabled-color: null
 ) {
@@ -18,11 +21,16 @@
   overflow        : hidden;
 
   &:hover,
-  &:active,
   &:focus {
     color            : $hover-color;
     background-color : $hover-bg;
     border           : $hover-border;
+  }
+
+  &:active{
+    color            : $press-color;
+    background-color : $press-bg;
+    border           : $press-border;
   }
 
   &:disabled,
