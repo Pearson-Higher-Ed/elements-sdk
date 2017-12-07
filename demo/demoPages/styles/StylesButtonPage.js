@@ -52,7 +52,7 @@ const StylesButtonPage = () => (
     <h2>Disabled</h2>
 
     <p>Buttons can be disabled when an action is not available to the user for the current context. Primary and call to action buttons have no disabled state.</p>
-    <button className="pe-btn" disabled>Default</button> <br/><br/>
+    <button className="pe-btn" disabled>Default</button><br/><br/>
     <p className="code">{`<button class="pe-btn" disabled>Default</button>`}</p>
 
     <p>For elements that do not support the `disabled` attribute, use `pe-btn--disabled` and `aria-disabled`.</p>

@@ -2,14 +2,9 @@
   $bg,
   $color,
   $hover-bg,
-  $press-bg,
-  $hover-color: null,
-  $press-color: null,
+  $hover-color,
   $border: null,
-  $hover-border: null,
-  $press-border: null,
-  $disabled-bg:  null,
-  $disabled-color: null
+  $hover-border: null
 ) {
 
   color           : $color;
@@ -21,16 +16,11 @@
   overflow        : hidden;
 
   &:hover,
+  &:active,
   &:focus {
     color            : $hover-color;
     background-color : $hover-bg;
     border           : $hover-border;
-  }
-
-  &:active{
-    color            : $press-color;
-    background-color : $press-bg;
-    border           : $press-border;
   }
 
   &:disabled,
@@ -38,8 +28,8 @@
   &.pe-btn--disabled:hover {
     cursor          : default;
     border          : 0;
-    color           : $disabled-color;
-    background-color: $disabled-bg;
+    color           : $pe-btn-default-disabled-text;
+    background-color: $pe-btn-default-disabled-bg;
     box-shadow      : none;
     text-decoration : none;
   }
