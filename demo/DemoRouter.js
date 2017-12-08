@@ -16,6 +16,7 @@ import PresentationStrategiesPage from './demoPages/styles/PresentationStrategie
 import GridPage                   from './demoPages/styles/GridPage';
 import TemplatesPage              from './demoPages/styles/TemplatesPage';
 import BootstrapGridPage          from './demoPages/styles/BootstrapGridPage';
+import AccordionPage              from './demoPages/styles/AccordionPage';
 
 // Components
 import ButtonPage         from './demoPages/components/ButtonPage';
@@ -54,6 +55,7 @@ const DemoRouter = (props) => (
         <Route path="/grid"                    component={GridPage} />
         <Route path="/templates"               component={TemplatesPage} />
         <Route path="/bootstrap-grid"          component={BootstrapGridPage} />
+        <Route path="/accordion"               component={AccordionPage} />
 
         <Route path="/icons"          component={IconPage} />
         <Route path="/inputs"         component={InputsPage} />

@@ -1,0 +1,27 @@
+.pe-accordion-head {
+    display:flex;
+    align-items: center;
+    width: 100%;
+}
+.pe-accordion-icons{
+  margin-right:2em;
+}
+.pe-accordion-title{
+  display:flex;
+  align-items: center;
+  svg{
+    margin-right: 0.5em;
+}
+}
+
+.pe-accordion-content {
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  margin-top: 1.2em;
+  margin-left: calc(18px + 2em);
+
+  .pe-accordion-item {
+      margin-top: 1em;
+      }
+}

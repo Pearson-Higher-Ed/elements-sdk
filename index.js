@@ -25,3 +25,4 @@ export DatePicker      from './src/components/DatePicker/DatePicker';
 export TimePicker      from './src/components/TimePicker/TimePicker';
 export ProgressBar     from './src/components/ProgressBar/ProgressBar';
 export PhoneNumber     from './src/components/PhoneNumber/PhoneNumber';
+export Accordion       from './src/components/Accoridon/Accordion';

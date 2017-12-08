@@ -25,6 +25,7 @@ const HeaderPage = ({ children }) => (
             <DropdownItem label="Grid" type="link" url="/elements-sdk/#/grid" />
             <DropdownItem label="Templates" type="link" url="/elements-sdk/#/templates" />
             <DropdownItem label="Bootstrap - Grid" type="link" url="/elements-sdk/#/bootstrap-grid" />
+            <DropdownItem label="Accordion" type="link" url="/elements-sdk/#/accordion" />
           </Dropdown>
         </div>
         <div className="dropdown-wrapper">
