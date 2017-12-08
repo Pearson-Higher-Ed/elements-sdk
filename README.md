@@ -218,7 +218,7 @@ List of Elements with their current respective design version:
 | Presentation Strategies | v1.0.0 |
 | Templates | v2.0.0-beta.2 |
 | Responsive Utilities (Breakpoints) | v1.0.0 |
-| Forms | v1.0.0-beta.3 |
+| Forms | v1.1.0 |
 
 
 ** Developers should update table as they implement new versions...*
