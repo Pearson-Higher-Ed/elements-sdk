@@ -3,6 +3,8 @@ import { defineMessages } from 'react-intl';
 //
 // Default messages are 'en-US'
 //
+const currentYear = new Date().getFullYear();
+
 export const messages = defineMessages({
   showText: {
     id             : 'showText',
@@ -53,10 +55,5 @@ export const messages = defineMessages({
     id             : 'textInputErrorMessage',
     description    : 'an optional error message displayed below input',
     defaultMessage : 'This is an error message'
-  },
-  copyrightText: {
-    id              : 'copyrightText',
-    description     : 'Copyright text for footer',
-    defaultMessage  : 'Pearson Education Inc. All Rights Reserved'
   }
 });
