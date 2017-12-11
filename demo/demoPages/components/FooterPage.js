@@ -31,7 +31,7 @@ const FooterPage = () => {
           <ul>
             <li className="li-props">copyrightText:String</li>
             <li className="li-props">Used to insert copyright information. Defaults to
-            'Copyright', <span>&copy;</span>, `${currentYear} Pearson Education Inc. All Rights Reserved.`
+            Copyright &copy; {currentYear} Pearson Education Inc. All Rights Reserved.
             </li>
             <li className="li-props">light:Boolean === {`<Footer light />`}</li>
             <li className="li-props">The <b>light</b> prop can be used to provide contrast
