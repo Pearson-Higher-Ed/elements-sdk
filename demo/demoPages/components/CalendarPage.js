@@ -9,13 +9,13 @@ const CalendarPage = () => (
         <h3>Props</h3>
         <h4>Optional:</h4>
           <ul>
-            <li className="li-props">If needing to i8ln, pass those new values into the following three props.
-            Otherwise they default to English.</li>
+            <li className="li-props" style={{fontSize: 14}}><b>If needing to i8ln, pass those new values into the following three props.
+            Otherwise, they default to English.</b></li>
             <li className="li-props">dayNamesFull:Array === {`['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', `}<br/>
             {`'Saturday', 'Sunday']`}</li>
             <li className="li-props">Passed into the weekdays {`<abbr>`}.</li>
             <li className="li-props">dayNamesShort:Array === {`['S', 'M', 'T', 'W', 'T', 'F', 'S']`}</li>
-            <li className="li-props">What is actually displayed in the Calendar.</li>
+            <li className="li-props">Days displayed in the Calendar.</li>
             <li className="li-props">monthNamesFull:Array === {`["January", "February", "March", "April", "May", "June", `}<br/>
             {`"July", "August", "September", "October", "November", "December"]`}</li>
             <li className="li-props">disablePast:Boolean === {`<Calendar disablePast />`}</li>
