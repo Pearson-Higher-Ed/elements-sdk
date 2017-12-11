@@ -3,8 +3,6 @@ import { defineMessages } from 'react-intl';
 //
 // Default messages are 'en-US'
 //
-const currentYear = new Date().getFullYear();
-
 export const messages = defineMessages({
   showText: {
     id             : 'showText',
