@@ -1,9 +1,10 @@
 import React from 'react';
 import { Footer } from '../../../index';
 
-const currentYear = new Date().getFullYear();
 
 const FooterPage = () => {
+
+  const currentYear = new Date().getFullYear();
   const testLinks = [{
     text: 'First link',
     href: 'first'
