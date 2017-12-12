@@ -1,24 +1,25 @@
-<a name="1.6.1"></a>
-## [1.6.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.6.0...v1.6.1) (2017-12-06)
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.6.0...v1.7.0) (2017-12-12)
 
 
 ### Bug Fixes
 
+* remove react >15.4 unit test tool movement warnings ([f4a2cea](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/f4a2cea))
+* Update Footer copyrightText ([e2e0573](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/e2e0573))
 * Webpack naming ([0259cc5](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/0259cc5))
 
 
 
 <a name="1.6.0"></a>
-# [1.6.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.5.3...v1.6.0) (2017-12-06)
-
-
-
-<a name="1.5.3"></a>
-## [1.5.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.5.2...v1.5.3) (2017-11-29)
+# [1.6.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.5.0...v1.6.0) (2017-12-06)
 
 
 ### Bug Fixes
 
+* babel-runtime ([002f7c8](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/002f7c8))
+* Dropdown button color & setup new Header routes ([caeef09](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/caeef09))
+* expose methods and allow client-side validation ([b2a3460](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b2a3460))
+* remove is_valid_number (too strict) ([d6ad2bf](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/d6ad2bf))
 * Routing for gh-pages ([1c31875](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/1c31875))
 * Routing for gh-pages ([8bf3774](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/8bf3774))
 
@@ -30,70 +31,19 @@
 
 
 
-<a name="1.5.2"></a>
-## [1.5.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.5.1...v1.5.2) (2017-11-22)
-
-
-### Bug Fixes
-
-* babel-runtime ([002f7c8](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/002f7c8))
-* expose methods and allow client-side validation ([b2a3460](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b2a3460))
-* remove is_valid_number (too strict) ([d6ad2bf](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/d6ad2bf))
-
-
-
-<a name="1.5.1"></a>
-## [1.5.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.5.0...v1.5.1) (2017-11-21)
-
-
-### Bug Fixes
-
-* Dropdown button color & setup new Header routes ([caeef09](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/caeef09))
-
-
-
 <a name="1.5.0"></a>
-# [1.5.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.3...v1.5.0) (2017-11-17)
-
-
-### Features
-
-* **PhoneNumber:** Create Phone Number input component ([b4fa6ac](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b4fa6ac))
-
-
-
-<a name="1.4.3"></a>
-## [1.4.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.2...v1.4.3) (2017-11-14)
-
-
-
-<a name="1.4.2"></a>
-## [1.4.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.1...v1.4.2) (2017-11-13)
+# [1.5.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.1...v1.5.0) (2017-11-17)
 
 
 ### Features
 
 * Sonar setup ([03c7893](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/03c7893))
+* **PhoneNumber:** Create Phone Number input component ([b4fa6ac](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b4fa6ac))
 
 
 
 <a name="1.4.1"></a>
-## [1.4.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.4.0...v1.4.1) (2017-11-07)
-
-
-
-<a name="1.4.0"></a>
-# [1.4.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.3.2...v1.4.0) (2017-11-03)
-
-
-
-<a name="1.3.2"></a>
-## [1.3.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.3.1...v1.3.2) (2017-10-31)
-
-
-
-<a name="1.3.1"></a>
-## [1.3.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.3...v1.3.1) (2017-10-31)
+## [1.4.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.2...v1.4.1) (2017-11-07)
 
 
 ### Bug Fixes
@@ -102,13 +52,8 @@
 
 
 
-<a name="1.2.3"></a>
-## [1.2.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.2...v1.2.3) (2017-10-19)
-
-
-
 <a name="1.2.2"></a>
-## [1.2.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.1...v1.2.2) (2017-10-18)
+## [1.2.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.0...v1.2.2) (2017-10-18)
 
 
 ### Bug Fixes
@@ -120,18 +65,8 @@
 
 
 
-<a name="1.2.1"></a>
-## [1.2.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.2.0...v1.2.1) (2017-10-17)
-
-
-
 <a name="1.2.0"></a>
-# [1.2.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.1.1...v1.2.0) (2017-10-17)
-
-
-
-<a name="1.1.1"></a>
-## [1.1.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.1.0...v1.1.1) (2017-10-16)
+# [1.2.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.1.0...v1.2.0) (2017-10-17)
 
 
 
