@@ -53,10 +53,5 @@ export const messages = defineMessages({
     id             : 'textInputErrorMessage',
     description    : 'an optional error message displayed below input',
     defaultMessage : 'This is an error message'
-  },
-  copyrightText: {
-    id              : 'copyrightText',
-    description     : 'Copyright text for footer',
-    defaultMessage  : 'Pearson Education Inc. All Rights Reserved'
   }
 });

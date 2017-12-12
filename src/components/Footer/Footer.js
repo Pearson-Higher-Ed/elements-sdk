@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 import './Footer.scss';
 
+const currentYear = new Date().getFullYear();
+
 const Footer = ({ copyrightText, links, anchorTarget, light, singlePageStick }) => {
 
   const renderCopy = () => {
-    const year = new Date().getFullYear();
     return (<p className="pe-label">
-              Copyright &copy; {year} {copyrightText}
+              {copyrightText}
             </p>);
   };
 
@@ -41,7 +42,6 @@ const Footer = ({ copyrightText, links, anchorTarget, light, singlePageStick }) 
 export default Footer;
 
 Footer.propTypes = {
-  copyrightText: PropTypes.string,
   links: PropTypes.array.isRequired,
   light: PropTypes.bool,
   singlePageStick: PropTypes.bool,
@@ -51,5 +51,6 @@ Footer.propTypes = {
 Footer.defaultProps = {
   light: false,
   singlePageStick: false,
-  anchorTarget: 'self'
+  anchorTarget: 'self',
+  copyrightText: ['Copyright', <span>&copy;</span>, `${currentYear} Pearson Education Inc. All Rights Reserved.`]
 }
