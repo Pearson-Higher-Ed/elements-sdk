@@ -1,6 +1,6 @@
 {
   "name": "@pearson-components/elements-sdk",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Styling and basic JavaScript components for UI development.\"",
   "main": "build/css/elements.css",
   "scripts": {
@@ -116,4 +116,4 @@
     "url": "https://github.com/Pearson-Higher-Ed/elements-sdk/issues"
   },
   "homepage": "https://github.com/Pearson-Higher-Ed/elements-sdk#readme"
-} 
+}

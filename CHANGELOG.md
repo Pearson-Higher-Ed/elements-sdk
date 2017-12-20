@@ -1,3 +1,13 @@
+<a name="1.7.1"></a>
+## [1.7.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.7.0...v1.7.1) (2017-12-20)
+
+
+### Features
+
+* **icons:** add breadcrumb icon ([3a2c0e4](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/3a2c0e4))
+
+
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.6.0...v1.7.0) (2017-12-12)
 
