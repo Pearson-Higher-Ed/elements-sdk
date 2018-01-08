@@ -200,29 +200,6 @@ QA may use the event harness to instantiate a component for testing using this f
 ```
 
 
-
-## Element Design Document Version
-
-List of Elements with their current respective design version:
-
-( <a href="http://pearson-higher-ed.github.io/design/">Design Document Site</a> )
-
-| Element | Current Design Version |
-|---------|------------------------|
-| Typography | v2.0.0 |
-| Color | v2.1.0 |
-| Icons | v2.3.0 |
-| Buttons | v2.1.2 |
-| Inputs | v2.0.1 |
-| Grid | v1.0.0 |
-| Presentation Strategies | v1.0.0 |
-| Templates | v2.0.0-beta.2 |
-| Responsive Utilities (Breakpoints) | v1.0.0 |
-| Forms | v1.0.0-beta.3 |
-
-
-** Developers should update table as they implement new versions...*
-
 ## Guidelines
 
 All submissions must be via pull request and approved before the pearson-design-accelerator@pearson.com team will merge
