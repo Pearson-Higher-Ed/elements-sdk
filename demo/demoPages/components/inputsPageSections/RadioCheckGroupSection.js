@@ -3,24 +3,48 @@ import React, { Component } from 'react';
 import { RadioCheckGroup }  from '../../../../index';
 
 
-class RadioCheckGroupSection extends Component {
+export default class RadioCheckGroupSection extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      checkboxOptions         : {"tea":"default","coffee":"disabled","soda":"","water":"disabled"},
-      checkboxSelectedOptions : ["coffee","water","tea"],
-      radioOptions1           : {"tea":"default","coffee":"disabled","soda":"","water":"disabled"},
-      radioSelectedOptions1   : ["coffee"],
-      radioOptions2           : {"tea":"default","coffee":"","soda":"","water":""},
-      radioSelectedOptions2   : ["tea"]
+      checkboxOptions         : [{value: 0, label: 'coffee'}, {value: 1, label: 'tea'}, {value: 2, label: 'hot cocoa'}],
+      radioOptions1           : [{value: 0, label: 'coffee', checked: true, disabled: true}, {value: 1, label: 'tea', disabled: true}, {value: 2, label: 'hot cocoa', disabled: true}],
+      radioOptions2           : [{value: 0, label: 'coffee', checked: true}, {value: 1, label: 'tea'}, {value: 2, label: 'hot cocoa'}]
     };
 
-    this.radioHandler1    = _radioHandler1.bind(this);
-    this.radioHandler2    = _radioHandler2.bind(this);
-    this.checkboxHandler  = _checkboxHandler.bind(this);
+    this.checkboxHandler = this.checkboxHandler.bind(this);
+    this.radioHandler = this.radioHandler.bind(this);
   }
 
+  checkboxHandler (e) {
+    const checkboxOptions = this.state.checkboxOptions.map((option) => {
+      if (option.value.toString() === e.target.value) {
+        return option.checked ? Object.assign(option, { checked: false }) : Object.assign(option, { checked: true });
+      }
+      return option
+    });
+
+    this.setState({
+      checkboxOptions
+    });
+  }
+
+  radioHandler (options) {
+    const updatedOptions = (e) => {
+      const radioOptions = this.state[options].map((option) => {
+        if (option.value.toString() === e.target.value) {
+          return Object.assign(option, { checked: true });
+        }
+        return Object.assign(option, { checked: false });
+      });
+
+      this.setState({
+        [options]: radioOptions
+      });
+    }
+    return updatedOptions
+  }
 
   render() {
 
@@ -32,12 +56,12 @@ class RadioCheckGroupSection extends Component {
             <h3>Props:</h3>
             <p>RadioCheckGroup:</p>
             <ul>
-              <li>id:String(required)               === "a unique name"</li>
-              <li>legendText:String(required)       === "a desciptive label"</li>
-              <li>options:Object(required)          === {'{<option>:<inputState>,<option>:<inputState>, ... }'} where inputState is one of 'default','disabled'. </li>
-              <li>name:String(required)             === "a desciptive name"</li>
-              <li>selectedOptions:Array             === "the checked options (radio only supports a single selected option by definition)"</li>
-              <li>changeHandler:Function(required)  === "handles populating the selected options from the options (see source for example <a href='https://github.com/Pearson-Higher-Ed/compounds/blob/inputs/demo/demoPages/sections/inputsPageSections/RadioCheckGroupSection.js'>https://github.com/Pearson-Higher-Ed/compounds/blob/inputs/demo/demoPages/sections/inputsPageSections/RadioCheckGroupSection.js</a>)"</li>
+              <li>inputType:String(required)       === "radio or checkbox"</li>
+              <li>id:String(required)              === "a unique name"</li>
+              <li>legendText:String(required)      === "a desciptive label"</li>
+              <li>options:Array(required)          === "[{'value', 'label', 'checked', 'disabled'}, {'value', 'label', 'checked', 'disabled'}] where checked and disabled take a boolean." </li>
+              <li>name:String(required)            === "a desciptive name"</li>
+              <li>changeHandler:Function(required) === "handles populating the selected options from the options (see source for example <a href='https://github.com/Pearson-Higher-Ed/compounds/blob/inputs/demo/demoPages/sections/inputsPageSections/RadioCheckGroupSection.js'>https://github.com/Pearson-Higher-Ed/compounds/blob/inputs/demo/demoPages/sections/inputsPageSections/RadioCheckGroupSection.js</a>)"</li>
             </ul>
 
           </div>
@@ -49,11 +73,9 @@ class RadioCheckGroupSection extends Component {
             name            = "radiobutton1"
             legendText      = "These are radio buttons"
             options         = {this.state.radioOptions1}
-            selectedOptions = {this.state.radioSelectedOptions1}
-            changeHandler   = {this.radioHandler1}
+            changeHandler   = {this.radioHandler('radioOptions1')}
             />
-          <br />
-          <p className="code">{'<RadioCheckGroup inputType="radio" id="radiobutton1" legendText="radiobutton1" options={{"tea":"default","coffee":"disabled","soda":"","water":"disabled"}} selectedOptions={["tea"]} changeHandler={() => {}} />'}</p>
+          <p className="code">{'<RadioCheckGroup inputType="radio" id="radiobutton1" legendText="radiobutton1" options={[{value: 0, label: "coffee", checked: true, disabled: true}, {value: 1, label: "tea", disabled: true}, {value: 2, label: "hot cocoa", disabled: true}]} changeHandler={() => {}} />'}</p>
 
 
           <h3>RadioButton Group:</h3>
@@ -64,11 +86,10 @@ class RadioCheckGroupSection extends Component {
             name            = "radiobutton2"
             legendText      = "These are radio buttons"
             options         = {this.state.radioOptions2}
-            selectedOptions = {this.state.radioSelectedOptions2}
-            changeHandler   = {this.radioHandler2}
+            changeHandler   = {this.radioHandler('radioOptions2')}
             />
           <br />
-          <p className="code">{'<RadioCheckGroup inputType="radio" id="radiobutton2" legendText="radiobutton2" options={{"tea":"default","coffee":"","soda":"","water":""}} selectedOptions={["tea"]} changeHandler={() => {}} />'}</p>
+          <p className="code">{'<RadioCheckGroup inputType="radio" id="radiobutton2" legendText="radiobutton2" options={[{value: 0, label: "coffee", checked: true}, {value: 1, label: "tea"}, {value: 2, label: "hot cocoa", disabled: true}]} changeHandler={() => {}} />'}</p>
 
           <h3>Checkbox Group:</h3>
 
@@ -78,61 +99,10 @@ class RadioCheckGroupSection extends Component {
             name            = "checkbox1"
             legendText      = "These are checkboxes"
             options         = {this.state.checkboxOptions}
-            selectedOptions = {this.state.checkboxSelectedOptions}
             changeHandler   = {this.checkboxHandler}
             />
-          <br />
-          <p className="code">{'<RadioCheckGroup inputType="checkbox" id="checkbox1" legendText="checkbox1" options={{"tea":"default","coffee":"disabled","soda":"","water":"disabled"}} selectedOptions={["coffee","water","tea"]} changeHandler={() => {}} />'}</p>
-
+          <p className="code">{'<RadioCheckGroup inputType="checkbox" id="checkbox1" legendText="checkbox1" options={[{value: 0, label: "coffee", checked: true}, {value: 1, label: "tea"}, {value: 2, label: "hot cocoa"}]} changeHandler={() => {}} />'}</p>
       </div>
     )
   }
-}
-
-
-export default RadioCheckGroupSection;
-
-
-
-function _checkboxHandler (e) {
-    const newSelection = e.target.value;
-
-    let newSelectionArray;
-
-    if(this.state.checkboxSelectedOptions.indexOf(newSelection) > -1) {
-      newSelectionArray = this.state.checkboxSelectedOptions.filter(s => s !== newSelection)
-    } else {
-      newSelectionArray = [...this.state.checkboxSelectedOptions, newSelection];
-    }
-
-    this.setState({ checkboxSelectedOptions: newSelectionArray });
-  }
-
-
-function _radioHandler1 (e) {
-    const newSelection = e.target.value;
-
-    let newSelectionArray;
-
-    if(this.state.radioSelectedOptions1.indexOf(newSelection) > -1) {
-      newSelectionArray = this.state.radioSelectedOptions1.filter(s => s !== newSelection)
-    } else {
-      newSelectionArray = [newSelection];
-    }
-
-    this.setState({ radioSelectedOptions1: newSelectionArray });
-}
-
-function _radioHandler2 (e) {
-    const newSelection = e.target.value;
-
-    let newSelectionArray;
-
-    if(this.state.radioSelectedOptions2.indexOf(newSelection) > -1) {
-      newSelectionArray = this.state.radioSelectedOptions2.filter(s => s !== newSelection)
-    } else {
-      newSelectionArray = [newSelection];
-    }
-
-    this.setState({ radioSelectedOptions2: newSelectionArray });
 }
