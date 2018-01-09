@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes            from 'prop-types';
 
-
 const RadioCheckGroup = ({ legendText, options, name, inputType, changeHandler }) => {
     return (
           <fieldset className="pe-fieldset">
