@@ -62,7 +62,7 @@ const StylesInputsPage = () => (
     <h2>Inputs - Fancy (single line - error)</h2>
 
     <label className="pe-textLabelInput__label--label_error" htmlFor="name2">First Name</label>
-    <input type="text" className="pe-textInput--input_error" id="name2" value="Cher" aria-describedby="someError" aria-invalid="true" />
+    <input type="text" className="pe-textInput--input_error" id="name2" value="Cher" aria-describedby="someError" aria-invalid="true" onChange={()=>{}}/>
     <span className="pe-inputError_underline"></span>
     <span id="someError" className="pe-input--error_message">this is an error message</span>
 
@@ -75,8 +75,8 @@ const StylesInputsPage = () => (
 
     <h2>Inputs - Fancy (single line - disabled)</h2>
 
-    <label className="pe-textLabelInput__label--label-disabled" htmlForfor="name3">First Name</label>
-    <input type="text" className="pe-textInput" id="name3" value="The Donald" disabled />
+    <label className="pe-textLabelInput__label--label-disabled" htmlFor="name3">First Name</label>
+    <input type="text" className="pe-textInput" id="name3" value="The Donald" disabled onChange={()=>{}}/>
 
     <p className="code">
     {`<label class="pe-textLabelInput__label--label-disabled" for="name3">First Name</label>`} <br/>
@@ -85,8 +85,8 @@ const StylesInputsPage = () => (
 
     <h2>Inputs (single line - read only)</h2>
 
-    <label className="pe-textLabelInput__label" htmlForfor="name4">First Name</label>
-    <input type="text" className="pe-textInput--input_readonly" id="name4" value="The Donald" readonly />
+    <label className="pe-textLabelInput__label" htmlFor="name4">First Name</label>
+    <input type="text" className="pe-textInput--input_readonly" id="name4" value="The Donald" readOnly onChange={()=>{}}/>
 
     <p className="code">
     {`<label class="pe-textLabelInput__label" for="name4">First Name</label>`} <br/>
@@ -119,7 +119,7 @@ const StylesInputsPage = () => (
     <h2>Inputs - Basic (single line - error)</h2>
 
     <label className="pe-textLabelInput__label--label_error" htmlFor="emailz">Email address</label>
-    <input type="text" className="pe-textInput--basic_error" id="emailz" value="email@domain" aria-invalid="true" aria-describedby="no_tld_error" />
+    <input type="text" className="pe-textInput--basic_error" id="emailz" value="email@domain" aria-invalid="true" aria-describedby="no_tld_error" onChange={()=>{}}/>
     <p id="no_tld_error" className="pe-input--error_message">This address looks like it&#39;s missing the TLD.</p>
 
     <p className="code">
@@ -131,7 +131,7 @@ const StylesInputsPage = () => (
     <h2>Inputs - Basic (single line - disabled)</h2>
 
     <label className="pe-textLabelInput__label--label-disabled" htmlFor="x">Label</label>
-    <input type="text" className="pe-textInput--basic" id="x" disabled value="some pre-filled value" />
+    <input type="text" className="pe-textInput--basic" id="x" disabled value="some pre-filled value" onChange={()=>{}}/>
 
     <p className="code">
     {`<label class="pe-textLabelInput__label--label-disabled" for="x">Label</label>`} <br/>
@@ -141,7 +141,7 @@ const StylesInputsPage = () => (
     <h2> Inputs - Basic (single line - readonly)</h2>
 
     <label className="pe-textLabelInput__label" htmlFor="y">Label</label>
-    <input type="text" className="pe-textInput--input_readonly" id="y" value="read only" readonly />
+    <input type="text" className="pe-textInput--input_readonly" id="y" value="read only" readOnly onChange={()=>{}}/>
 
     <p className="code">
     {`<label class="pe-textLabelInput__label" for="y">Label</label>`} <br/>
@@ -189,7 +189,7 @@ const StylesInputsPage = () => (
     <p>Consider the usefulness (or not) of a readonly password input.</p>
 
     <label htmlFor="PasswordInputFancyReadOnly" className="pe-textLabelInput__label">Your chosen password</label>
-    <input type="password" id="PasswordInputFancyReadOnly" readonly className="pe-textInput--input_readonly" aria-describedby="password_hint3" value="*********" />
+    <input type="password" id="PasswordInputFancyReadOnly" readOnly className="pe-textInput--input_readonly" aria-describedby="password_hint3" value="*********" onChange={()=>{}}/>
     <button type="button" id="showbutton-PasswordInputFancyReadOnly" className="pe-textInput__showButton">show</button>
     <span id="password_hint3" className="pe-input--info_message">This is an info message</span>
 
@@ -235,7 +235,7 @@ const StylesInputsPage = () => (
     <h2>Inputs (password) - Basic (error)</h2>
 
     <label htmlFor="PasswordInputBasicError" className="pe-textLabelInput__label--label_error">Password: </label>
-    <input type="password" id="PasswordInputBasicError" value="star wars" className="pe-textInput--basic_error" aria-invalid="true" aria-describedby="pw_error2 pw_hint2" />
+    <input type="password" id="PasswordInputBasicError" value="star wars" className="pe-textInput--basic_error" aria-invalid="true" aria-describedby="pw_error2 pw_hint2" onChange={()=>{}}/>
     <span className=""></span>
     <button type="button" id="showbutton-PasswordInputBasicError" className="pe-textInput__showButton-basic">show</button>
     <span id="pw_hint2" className="pe-input--info_message">"star wars" is a terrible password. So is "12345" and "1a2b3c4d" and "password". Do not use these.. Or do, I&#39;m not your mother.</span>
@@ -253,7 +253,7 @@ const StylesInputsPage = () => (
     <h2>Inputs (password) - Basic (disabled)</h2>
 
     <label htmlFor="PasswordInputBasicDisabled" className="pe-textLabelInput__label--label-disabled">Password</label>
-    <input type="password" id="PasswordInputBasicDisabled" value="***********" disabled className="pe-textInput--basic" />
+    <input type="password" id="PasswordInputBasicDisabled" value="***********" disabled className="pe-textInput--basic" onChange={()=>{}}/>
     <span className=""></span>
     <button type="button" id="showbutton-PasswordInputBasicDisabled" disabled className="pe-textInput__showButton-basic--disabled">show</button>
 
@@ -267,7 +267,7 @@ const StylesInputsPage = () => (
     <h2>Inputs (password) - Basic (readonly)</h2>
 
     <label htmlFor="PasswordInputBasicReadOnly" className="pe-textLabelInput__label">Password</label>
-    <input type="password" id="PasswordInputBasicReadOnly" value="zomgwtfbbq" readonly className="pe-textInput--input_readonly" />
+    <input type="password" id="PasswordInputBasicReadOnly" value="zomgwtfbbq" readOnly className="pe-textInput--input_readonly" onChange={()=>{}}/>
     <button type="button" id="showbutton-PasswordInputBasicReadOnly" className="pe-textInput__showButton">show</button>
 
     <p className="code">
@@ -290,10 +290,10 @@ const StylesInputsPage = () => (
     <label className="pe-textLabelInput__label" htmlFor="send_message">Send message to</label>
     <div className="pe-select-container">
       <select className="pe-selectInput--basic" id="send_message">
-        <option value="GBPTF">Grizzly Bear Prevention Task Force</option>
-        <option value="1234B">Boaty McBoatface</option>
-        <option value="GDL">GDL</option>
-        <option value="LED">LED</option>
+        <option value="GBPTF" onChange={()=>{}}>Grizzly Bear Prevention Task Force</option>
+        <option value="1234B" onChange={()=>{}}>Boaty McBoatface</option>
+        <option value="GDL" onChange={()=>{}}>GDL</option>
+        <option value="LED" onChange={()=>{}}>LED</option>
       </select>
       <svg aria-hidden="true"
         focusable="false"
@@ -302,7 +302,7 @@ const StylesInputsPage = () => (
       </svg>
     </div>
 
-    <p className="code">
+    <div className="code">
     {`<label class="pe-textLabelInput__label" for="send_message">Send message to</label>`} <br/>
     {`<div class="pe-select-container">`} <br/>
       <div style={eight}>{`<select class="pe-selectInput--basic" id="send_message">`}</div>
@@ -317,17 +317,17 @@ const StylesInputsPage = () => (
       <div style={eight}>{`<use xlink:href="#dropdown-open-sm-24"></use>`}</div>
       <div style={eight}>{`</svg>`}</div>
     {`</div>`}
-    </p>
+  </div>
 
     <h2>Select Inputs - Basic (error)</h2>
 
     <label className="pe-textLabelInput__label--label_error" htmlFor="fout">Error label</label>
     <div className="pe-select-container-error">
       <select className="pe-selectInput--basic" id="fout" aria-describedby="select_error">
-        <option value="uno">Uno</option>
-        <option value="dos">Dos</option>
-        <option value="tres">Tres</option>
-        <option value="quatro">Quatro</option>
+        <option value="uno" onChange={()=>{}}>Uno</option>
+        <option value="dos" onChange={()=>{}}>Dos</option>
+        <option value="tres" onChange={()=>{}}>Tres</option>
+        <option value="quatro" onChange={()=>{}}>Quatro</option>
       </select>
       <svg aria-hidden="true"
         focusable="false"
@@ -337,7 +337,7 @@ const StylesInputsPage = () => (
     </div>
     <p id="select_error" className="pe-input--error_message">error message</p>
 
-    <p className="code">
+    <div className="code">
     {`<label class="pe-textLabelInput__label--label_error" for="fout">Error label</label>`} <br/>
     {`<div class="pe-select-container-error">`} <br/>
       <div style={eight}>{`<select class="pe-selectInput--basic" id="fout" aria-describedby="select_error">`}</div>
@@ -353,7 +353,7 @@ const StylesInputsPage = () => (
       <div style={eight}>{`</svg>`}</div>
     {`</div>`}
     {`<p id="select_error" className="pe-input--error_message">error message</p>`}
-    </p>
+  </div>
 
     <h2>Select Inputs - Basic (readOnly)</h2>
 
@@ -362,7 +362,7 @@ const StylesInputsPage = () => (
     <label className="pe-textLabelInput__label" htmlFor="readonly_zomg">Readonly label</label>
     <div className="pe-select-container-readonly">
       <select className="pe-select-container-readonly" id="readonly_zomg">
-        <option value="tres">Three</option>
+        <option value="tres" onChange={()=>{}}>Three</option>
       </select>
       <svg aria-hidden="true"
         focusable="false"
@@ -372,7 +372,7 @@ const StylesInputsPage = () => (
     </div>
     <p id="readonly_hint" className="pe-input--info_message">Only valid with coupon</p>
 
-    <p className="code">
+    <div className="code">
     {`<label class="pe-textLabelInput__label" htmlFor="readonly_zomg">Readonly label</label>`} <br/>
     {`<div class="pe-select-container-readonly">`} <br/>
       <div style={eight}>{`<select class="pe-select-container-readonly" id="readonly_zomg">`}</div>
@@ -385,7 +385,7 @@ const StylesInputsPage = () => (
       <div style={eight}>{`</svg>`}</div>
     {`</div>`} <br/>
     {`<p id="readonly_hint" class="pe-input--info_message">Only valid with coupon</p>`}
-    </p>
+  </div>
 
     <h2>Select Inputs - fancy</h2>
 
@@ -403,7 +403,7 @@ const StylesInputsPage = () => (
       </div>
       <span id="hinty_mchint" className="pe-input--info_message">This is an info message</span>
 
-    <p className="code">
+    <div className="code">
     {`<label for="select_fancy" class="pe-textLabelInput__label">Select Label:</label>`} <br/>
       <div style={eight}>{`<div class="pe-select-container--fancy">`}</div>
         <div style={sixtn}>{`<select id="select_fancy" class="pe-selectInput--fancy" aria-describedby="hinty_mchint">`}</div>
@@ -417,7 +417,7 @@ const StylesInputsPage = () => (
         <div style={sixtn}>{`</svg>`}</div>
       <div style={eight}>{`</div>`}</div>
       <div style={eight}>{`<span id="hinty_mchint" class="pe-input--info_message">This is an info message</span>`}</div>
-    </p>
+    </div>
 
     <h2>Select Inputs - fancy (error)</h2>
 
@@ -435,7 +435,7 @@ const StylesInputsPage = () => (
       </div>
       <span id="fancy_error" className="pe-input--error_message">This is an error message</span>
 
-    <p className="code">
+    <div className="code">
     {`<label for="select_fancy_error" class="pe-textLabelInput__label--label_error">Select Label:</label>`} <br/>
       <div style={eight}>{`<div class="pe-select-container-fancy-error">`}</div>
         <div style={sixtn}>{`<select id="select_fancy_error" class="pe-selectInput-fancy-error" aria-invalid="true" aria-describedby="fancy_error">`}</div>
@@ -449,7 +449,7 @@ const StylesInputsPage = () => (
         <div style={sixtn}>{`</svg>`}</div>
       <div style={eight}>{`</div>`}</div>
       <div style={eight}>{`<span id="fancy_error" class="pe-input--error_message">This is an error message</span>`}</div>
-    </p>
+    </div>
 
     <h2>Select Inputs - fancy (disabled)</h2>
 
@@ -466,7 +466,7 @@ const StylesInputsPage = () => (
         </svg>
       </div>
 
-    <p className="code">
+    <div className="code">
     {`<label for="select_disabled" class="pe-textLabelInput__label--label-disabled">Select Label:</label>`}
       <div style={eight}>{`<div class="pe-select-container-fancy-disabled">`}</div>
         <div style={sixtn}>{`<select id="select_disabled" disabled class="pe-selectInput-fancy-disabled">`}</div>
@@ -479,7 +479,7 @@ const StylesInputsPage = () => (
           <div style={twntyFr}>{`<use xlink:href="#dropdown-open-sm-24"></use>`}</div>
         <div style={sixtn}>{`</svg>`}</div>
       <div style={eight}>{`</div>`}</div>
-    </p>
+    </div>
 
     <h2>Select Inputs - fancy (readonly)</h2>
 
@@ -496,7 +496,7 @@ const StylesInputsPage = () => (
         </svg>
       </div>
 
-    <p className="code">
+    <div className="code">
     {`<label for="select_readonly" class="pe-textLabelInput__label">Select Label:</label>`}
       <div stlye={eight}>{`<div class="pe-select-container-fancy-readonly">`}</div>
         <div style={sixtn}>{`<select id="select_readonly" disabled="" class="pe-selectInput-fancy-readonly">`}</div>
@@ -509,7 +509,7 @@ const StylesInputsPage = () => (
           <div style={twntyFr}>{`<use xlink:href="#dropdown-open-sm-24"></use>`}</div>
         <div style={sixtn}>{`</svg>`}</div>
       <div stlye={eight}>{`</div>`}</div>
-    </p>
+    </div>
 
     <h2>Multiple Line text</h2>
 
@@ -552,7 +552,7 @@ const StylesInputsPage = () => (
     <h2>Multiple line text - readonly</h2>
 
     <label className="pe-textLabelInput__label" htmlFor="andale">Multi-line label</label>
-    <textarea className="pe-multiLineText--readOnly" id="andale" cols="30" rows="5" readonly>Read this</textarea>
+    <textarea className="pe-multiLineText--readOnly" id="andale" cols="30" rows="5" readOnly>Read this</textarea>
 
     <p className="code">
     {`<label class="pe-textLabelInput__label" for="andale">Multi-line label</label>`} <br/>
@@ -570,7 +570,7 @@ const StylesInputsPage = () => (
 
     Unselected
     <div className="pe-checkbox">
-      <input type="checkbox"  id="checkboxInput" value="1" />
+      <input type="checkbox"  id="checkboxInput" value="1" onChange={()=>{}}/>
       <label htmlFor="checkboxInput">Bacon</label>
       <span>
         <svg aria-hidden="true"
@@ -581,7 +581,7 @@ const StylesInputsPage = () => (
       </span>
     </div>
 
-    <p className="code">
+    <div className="code">
     {`<div class="pe-checkbox">`}
       <div style={eight}>{`<input type="checkbox"  id="checkboxInput" value="1" />`}</div>
       <div style={eight}>{`<label for="checkboxInput">Bacon</label>`}</div>
@@ -591,11 +591,11 @@ const StylesInputsPage = () => (
         <div style={sixtn}>{`</svg>`}</div>
       <div style={eight}>{`</span>`}</div>
     {`</div>`}
-    </p>
+    </div>
 
     Selected
      <div className="pe-checkbox">
-       <input type="checkbox" id="checkboxInput2" value="1" checked/>
+       <input type="checkbox" id="checkboxInput2" value="1" checked onChange={()=>{}}/>
        <label htmlFor="checkboxInput2">Pastrami</label>
        <span>
          <svg aria-hidden="true"
@@ -606,7 +606,7 @@ const StylesInputsPage = () => (
        </span>
      </div>
 
-    <p className="code">
+    <div className="code">
      {`<div class="pe-checkbox">`} <br/>
        <div style={eight}>{`<input type="checkbox" id="checkboxInput2" value="1" checked/>`}</div>
        <div style={eight}>{`<label for="checkboxInput2">Pastrami</label>`}</div>
@@ -616,11 +616,11 @@ const StylesInputsPage = () => (
          <div style={sixtn}>{`</svg>`}</div>
        <div style={eight}>{`</span>`}</div>
      {`</div>`}
-    </p>
+   </div>
 
     Disabled Selected
     <div className="pe-checkbox">
-      <input type="checkbox" id="checkboxInput5" checked disabled/>
+      <input type="checkbox" id="checkboxInput5" checked disabled onChange={()=>{}}/>
       <label htmlFor="checkboxInput5">Tripe</label>
       <span>
         <svg aria-hidden="true"
@@ -631,7 +631,7 @@ const StylesInputsPage = () => (
       </span>
     </div>
 
-    <p className="code">
+    <div className="code">
     {`<div class="pe-checkbox">`}
       <div style={eight}>{`<input type="checkbox" id="checkboxInput5" checked disabled/>`}</div>
       <div style={eight}>{`<label for="checkboxInput5">Tripe</label>`}</div>
@@ -641,7 +641,7 @@ const StylesInputsPage = () => (
         <div style={sixtn}>{`</svg>`}</div>
       <div style={eight}>{`</span>`}</div>
     {`</div>`}
-    </p>
+  </div>
 
     Disabled Unselected
     <div className="pe-checkbox">
@@ -656,7 +656,7 @@ const StylesInputsPage = () => (
       </span>
     </div>
 
-    <p className="code">
+    <div className="code">
     {`<div class="pe-checkbox">`}
       <div style={eight}>{`<input type="checkbox" id="checkboxInput6" disabled/>`}</div>
       <div style={eight}>{`<label for="checkboxInput6">Meatball</label>`}</div>
@@ -666,7 +666,7 @@ const StylesInputsPage = () => (
         <div style={sixtn}>{`</svg>`}</div>
       <div style={eight}>{`</span>`}</div>
     {`</div>`}
-    </p>
+  </div>
 
     <h2>Inputs (radio buttons)</h2>
 
@@ -696,7 +696,7 @@ const StylesInputsPage = () => (
       </div>
 
       <div className="pe-radio">
-        <input type="radio" name="scotch" id="scotchMS" checked="checked" />
+        <input type="radio" name="scotch" id="scotchMS" checked="checked" onChange={()=>{}}/>
         <label htmlFor="scotchMS">Monkey Shoulder (selected)</label>
         <span>
           <svg aria-hidden="true"
@@ -720,7 +720,7 @@ const StylesInputsPage = () => (
       </div>
     </fieldset>
 
-    <p className="code">
+    <div className="code">
     {`<fieldset class="pe-fieldset">`} <br/>
       <div style={eight}>{`<legend>Which scotch do you like with your cookies?</legend>`}</div>
       <div style={eight}>{`<div class="pe-radio">`}</div>
@@ -753,7 +753,7 @@ const StylesInputsPage = () => (
         <div style={sixtn}>{`</span>`}</div>
       <div style={eight}>{`</div>`}</div>
     {`</fieldset>`}
-    </p>
+  </div>
 
     <h3>Accessibility Concerns</h3>
 
@@ -762,7 +762,7 @@ const StylesInputsPage = () => (
     <h2 id="cookiemonster">Cookies</h2>
     <div role="radiogroup" aria-describedby="cookiemonster">
       <div className="pe-radio">
-        <input type="radio" name="cookiez" id="cookiey" checked />
+        <input type="radio" name="cookiez" id="cookiey" checked onChange={()=>{}}/>
         <label htmlFor="cookiey">Love them</label>
         <span>
           <svg aria-hidden="true"
@@ -785,7 +785,7 @@ const StylesInputsPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
     {`<h2 id="cookiemonster">Cookies</h2>`} <br/>
     {`<div role="radiogroup" aria-describedby="cookiemonster">`} <br/>
       <div style={eight}>{`<div className="pe-radio">`}</div>
@@ -807,13 +807,13 @@ const StylesInputsPage = () => (
         <div style={sixtn}>{`</span>`}</div>
       <div style={eight}>{`</div>`}</div>
     {`</div>`}
-    </p>
+  </div>
 
     <p>If the developer does not even have the freedom to wrap the radio buttons, `aria-describedby` can be used directly as well:</p>
 
     <h2 id="cookiemonster2">Cookies</h2>
     <div className="pe-radio">
-      <input type="radio" name="cookiezz" id="cookieyes" checked aria-describedby="cookiemonster2" />
+      <input type="radio" name="cookiezz" id="cookieyes" checked aria-describedby="cookiemonster2" onChange={()=>{}}/>
       <label htmlFor="cookieyes">Love them</label>
       <span>
         <svg aria-hidden="true" focusable="false" className="pe-icon--radio-dot">
@@ -831,7 +831,7 @@ const StylesInputsPage = () => (
       </span>
     </div>
 
-    <p className="code">
+    <div className="code">
     {`<h2 id="cookiemonster2">Cookies</h2>`} <br/>
     {`<div class="pe-radio">`} <br/>
       <div style={eight}>{`<input type="radio" name="cookiezz" id="cookieyes" checked aria-describedby="cookiemonster2">`}</div>
@@ -851,14 +851,14 @@ const StylesInputsPage = () => (
         <div style={sixtn}>{`</svg>`}</div>
       <div style={eight}>{`</span>`}</div>
     {`</div>`}
-    </p>
+  </div>
 
     <h3>RadioCheckGroup - (radio)</h3>
 
      <fieldset className="pe-fieldset">
        <legend className="pe-legend">These are radio buttons</legend>
        <div className="pe-radio">
-          <input type="radio" id="radiocheck-radiobutton2-tea-0" name="radiobutton2" value="tea" /><label htmlFor="radiocheck-radiobutton2-tea-0">tea</label>
+          <input type="radio" id="radiocheck-radiobutton2-tea-0" name="radiobutton2" value="tea" onChange={()=>{}}/><label htmlFor="radiocheck-radiobutton2-tea-0">tea</label>
           <span>
              <svg aria-hidden="true" focusable="false" className="pe-icon--radio-dot">
                 <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#new-notification-9"></use>
@@ -866,7 +866,7 @@ const StylesInputsPage = () => (
           </span>
        </div>
        <div className="pe-radio">
-          <input type="radio" id="radiocheck-radiobutton2-coffee-1" name="radiobutton2" value="coffee" /><label htmlFor="radiocheck-radiobutton2-coffee-1">coffee</label>
+          <input type="radio" id="radiocheck-radiobutton2-coffee-1" name="radiobutton2" value="coffee" onChange={()=>{}}/><label htmlFor="radiocheck-radiobutton2-coffee-1">coffee</label>
           <span>
              <svg aria-hidden="true" focusable="false" className="pe-icon--radio-dot">
                 <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#new-notification-9"></use>
@@ -874,7 +874,7 @@ const StylesInputsPage = () => (
           </span>
        </div>
        <div className="pe-radio">
-          <input type="radio" id="radiocheck-radiobutton2-soda-2" name="radiobutton2" value="soda" /><label htmlFor="radiocheck-radiobutton2-soda-2">soda</label>
+          <input type="radio" id="radiocheck-radiobutton2-soda-2" name="radiobutton2" value="soda" onChange={()=>{}} /><label htmlFor="radiocheck-radiobutton2-soda-2">soda</label>
           <span>
              <svg aria-hidden="true" focusable="false" className="pe-icon--radio-dot">
                 <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#new-notification-9"></use>
@@ -882,7 +882,7 @@ const StylesInputsPage = () => (
           </span>
        </div>
        <div className="pe-radio">
-          <input type="radio" id="radiocheck-radiobutton2-water-3" name="radiobutton2" value="water" /><label htmlFor="radiocheck-radiobutton2-water-3">water</label>
+          <input type="radio" id="radiocheck-radiobutton2-water-3" name="radiobutton2" value="water" onChange={()=>{}}/><label htmlFor="radiocheck-radiobutton2-water-3">water</label>
           <span>
              <svg aria-hidden="true" focusable="false" className="pe-icon--radio-dot">
                 <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#new-notification-9"></use>
@@ -891,7 +891,7 @@ const StylesInputsPage = () => (
        </div>
      </fieldset>
 
-     <p className="code">
+     <div className="code">
      {`<fieldset class="pe-fieldset">`} <br/>
        <div style={eight}>{`<legend class="pe-legend">These are radio buttons</legend>`}</div>
        <div style={eight}>{`<div class="pe-radio">`}</div>
@@ -927,11 +927,11 @@ const StylesInputsPage = () => (
           <div style={sixtn}>{`</span>`}</div>
        <div style={eight}>{`</div>`}</div>
      {`</fieldset>`}
-     </p>
+   </div>
 
      <h3>RadioCheckGroup - (checkbox)</h3>
 
-     <p className="code">
+     <div className="code">
      {`<fieldset class="pe-fieldset">`} <br/>
        <div style={eight}>{`<legend class="pe-legend">These are checkboxes</legend>`}</div>
        <div style={eight}>{`<div class="pe-checkbox">`}</div>
@@ -967,7 +967,7 @@ const StylesInputsPage = () => (
           <div style={sixtn}>{`</span>`}</div>
        <div style={eight}>{`</div>`}</div>
     {`</fieldset>`}
-    </p>
+  </div>
 
   </div>
 );

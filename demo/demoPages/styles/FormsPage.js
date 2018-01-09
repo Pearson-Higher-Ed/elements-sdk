@@ -68,7 +68,7 @@ const FormsPage = () => (
       <button className="pe-btn__cta">Submit</button>
     </form>
 
-    <p className="code">
+    <div className="code">
       {`<form class="pe-form">`}
         <div style={padEight}>{`<h1 class="pe-form--name-bold">Form Name</h1>`}</div>
         <div style={padEight}>{`<p class="pe-form--error">Initial error description (target one line or less)</p>`}</div>
@@ -85,7 +85,7 @@ const FormsPage = () => (
         <div style={padEight}>{`</div>`}</div>
         <div style={padEight}>{`<button class="pe-btn__cta">Submit</button>`}</div>
       {`</form>`}
-    </p>
+    </div>
 
   </div>
 );

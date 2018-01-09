@@ -20,7 +20,7 @@ const StylesButtonPage = () => (
     <h2>Elements</h2>
 
     <p style={{marginBottom: 12}}>Button classes can be used with {`<div>`}, {`<span>`}, {`<a>`}, {`<button>`}, and {`<input>`} elements. But try very hard not to use button styles on divs, spans, or links.</p>
-      <div className="pe-btn" tabindex="0" role="button" style={marginFour}>Div</div>
+      <div className="pe-btn" tabIndex="0" role="button" style={marginFour}>Div</div>
       <a href="#void" className="pe-btn" role="button" style={marginFour}>Link</a>
       <a href="#void" className="pe-btn__primary--btn_xlarge" role="button" style={marginFour}>Large Primary Link</a>
       <button type="button" className="pe-btn" style={marginFour}>Button</button>
@@ -29,7 +29,7 @@ const StylesButtonPage = () => (
       <button type="button" className="pe-link--btn" style={marginFour}>Link button 2.0</button>
       <button type="button" className="pe-link--btn" disabled style={marginFour}>Disabled link button 2.0</button>
     <p className="code">
-      {`<div class="pe-btn" tabindex="0" role="button">Div</div>`} <br/>
+      {`<div class="pe-btn" tabIndex="0" role="button">Div</div>`} <br/>
       {`<a href="#void" class="pe-btn" role="button">Link</a>`} <br/>
       {`<a href="#void" class="pe-btn__primary--btn_xlarge" role="button">Large Primary Link</a>`} <br/>
       {`<button type="button" class="pe-btn">Button</button>`} <br/>
@@ -42,9 +42,9 @@ const StylesButtonPage = () => (
     <aside>
       <h3 className="pe-title">Accessibility: Using non-button elements</h3>
       <p>Where possible, prefer native HTML buttons {`(<button>, <input type="button">) etc`} over other elements styled as buttons, so that the User Agent and the OS do most of the work for you.</p>
-      <p>If using an element other than a native HTML button, add the <a href="http://www.w3.org/TR/wai-aria/roles#button"><code>role="button"</code></a> attribute, and script in both click and keyup/down listeners (detect both spacebar and enter keys) to recreate button behavior. Also since buttons and inputs (but not divs, spans, or anchors) have a native disabled attribute, add <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled"><code>aria-disabled</code></a> to elements you want to disable, as well as manually changing the <code>tabindex</code> value to <code>{-1}</code> (or removing it in the case of non-natively focusables like div and span) to prevent average keyboarders from being able to tab to it (disabled elements cannot be in the tab order).</p>
+      <p>If using an element other than a native HTML button, add the <a href="http://www.w3.org/TR/wai-aria/roles#button"><code>role="button"</code></a> attribute, and script in both click and keyup/down listeners (detect both spacebar and enter keys) to recreate button behavior. Also since buttons and inputs (but not divs, spans, or anchors) have a native disabled attribute, add <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled"><code>aria-disabled</code></a> to elements you want to disable, as well as manually changing the <code>tabIndex</code> value to <code>{-1}</code> (or removing it in the case of non-natively focusables like div and span) to prevent average keyboarders from being able to tab to it (disabled elements cannot be in the tab order).</p>
 
-      <p>Another thing to be aware of that developers sometimes miss, is that because a focusable, interactive element is <strong>not</strong> allowed inside a button (ie, <span style={{color:'#b00'}}>{`<button>Im button text<a href="somewhere"> with a link</a></button>`}</span>), the same rule holds for divs or other elements turned into buttons with <code>tabindex</code> and <code>role=button</code>, even though an HTML validator currently wont flag this. This also holds true for polyfilled <b>details/summary</b> elements!</p>
+      <p>Another thing to be aware of that developers sometimes miss, is that because a focusable, interactive element is <strong>not</strong> allowed inside a button (ie, <span style={{color:'#b00'}}>{`<button>Im button text<a href="somewhere"> with a link</a></button>`}</span>), the same rule holds for divs or other elements turned into buttons with <code>tabIndex</code> and <code>role=button</code>, even though an HTML validator currently wont flag this. This also holds true for polyfilled <b>details/summary</b> elements!</p>
     </aside>
 
     <h2>Disabled</h2>
@@ -94,7 +94,7 @@ const StylesButtonPage = () => (
       </svg>
     </button>
 
-    <p className="code">
+    <div className="code">
       {`<button type="button" className="pe-icon--btn">`}
       <div style={{paddingLeft: 8}}>{`<svg role="img"`} <br/></div>
       <div style={{paddingLeft: 36}}>{`aria-labelledby="b1"`} <br/></div>
@@ -104,7 +104,7 @@ const StylesButtonPage = () => (
       <div style={{paddingLeft: 16}}>{`<use xlink:href="#remove-lg-24"></use>`} <br/></div>
       <div style={{paddingLeft: 8}}>{`</svg>`} <br/></div>
       {`</button>`}
-    </p>
+    </div>
 
     <h2>Icon alignment inside buttons</h2>
 
@@ -160,7 +160,7 @@ const StylesButtonPage = () => (
       </svg>
     </button>
 
-    <p className="code">
+    <div className="code">
       {`<button type="button" class="pe-btn--btn_small" aria-label="Start date">`} <br/>
       Small with icon
       <div style={{paddingLeft: 8}}>{`<svg aria-hidden="true"`} <br/></div>
@@ -208,7 +208,7 @@ const StylesButtonPage = () => (
       <div style={{paddingLeft: 16}}>{`<use xlink:href="#calendar-24"></use>`} <br/></div>
       <div style={{paddingLeft: 8}}>{`</svg>`} <br/></div>
       {`</button>`}
-    </p>
+    </div>
 
   </div>
 );

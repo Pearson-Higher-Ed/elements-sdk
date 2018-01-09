@@ -1267,7 +1267,7 @@ const StylesIconsPage = () => (
 
     <p>To use the second method, include the JavaScript below to your page which uses icons. Ensure the path in the GET request is the right path for your sprite:</p>
 
-    <p className="code">
+    <div className="code">
     {`if (!document.getElementById('pe-icons-sprite')) {`}
       <div style={eight}>{`var pe_ajax=new XMLHttpRequest();`}</div>
       <div style={eight}>{`pe_ajax.open("GET", "/icons/p-icons-sprite-1.1.svg", true);`}</div>
@@ -1279,7 +1279,7 @@ const StylesIconsPage = () => (
         <div style={sixtn}>{`);`}</div>
       <div style={eight}>{`}`}</div>
       <div style={eight}>{`pe_ajax.send();`}</div>
-    </p>
+    </div>
 
     <p>If you are using Babel or other ES5-to-ES6 transpiler for your JavaScript, you may wish to change <b>{`var pe_ajax`}</b> to <b>{`const pe_ajax`}</b>.</p>
 
@@ -1376,7 +1376,7 @@ const StylesIconsPage = () => (
       </svg>
     </span>
 
-    <p className="code">
+    <div className="code">
       {`<span style="color:#da0474;">`}
         <div style={eight}>{`<svg role="img"`}</div>
              <div style={twntyFr}>{`aria-labelledby="r3"`}</div>
@@ -1386,7 +1386,7 @@ const StylesIconsPage = () => (
           <div style={sixtn}>{`<use xlink:href="#new-notification-9"></use>`}</div>
         <div style={eight}>{`</svg>`}</div>
       {`</span>`}
-    </p>
+    </div>
 
     <h3>Speech recognition</h3>
 

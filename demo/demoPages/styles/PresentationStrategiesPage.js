@@ -45,14 +45,14 @@ const PresentationStrategiesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;width:300px;'>`} <br/>
         <div style={eight}>{`<div class='pe-strategy__default'>`}</div>
           <div style={sixteen}>{`<div style='background:cyan;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
           <div style={sixteen}>{`<div style='background:blueViolet;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Centered</h2>
     <p>The centered strategy simply centers its contents within the containing area.</p>
@@ -64,14 +64,14 @@ const PresentationStrategiesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;width:300px;'>`} <br/>
         <div style={eight}>{`<div class='pe-strategy__centered'>`}</div>
           <div style={sixteen}>{`<div style='background:cyan;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
           <div style={sixteen}>{`<div style='background:blueViolet;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Left/Right</h2>
     <p>This strategy aligns one chunk of content to the left and another chunk to the right.</p>
@@ -83,14 +83,14 @@ const PresentationStrategiesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;width:300px;'>`} <br/>
         <div style={eight}>{`<div class='pe-strategy__left_right'>`}</div>
           <div style={sixteen}>{`<div style='background:cyan;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
           <div style={sixteen}>{`<div style='background:blueViolet;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Basic Grid</h2>
     <p>The basic grid strategy arranges equally sized chunks of content into two, three, or four rows. Each chunk should maintain the same height. The gutter size is configurable to be either small (10px) or large (20px). Chunks fill the content area in a left-to-right, top-to-bottom pattern.</p>
@@ -114,7 +114,7 @@ const PresentationStrategiesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;width:100%;height:140px;'>`} <br/>
         <div style={eight}>{`<div class='pe-strategy__basic-grid--small-2col'>`}</div>
           <div style={sixteen}>{`<div style='background:cyan;text-align:center;'>Content Area</div>`}</div>
@@ -131,7 +131,7 @@ const PresentationStrategiesPage = () => (
           <div style={sixteen}>{`<div style='background:SlateBlue;text-align:center;'>Content Area</div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h4>Basic Grid (--small-3col)</h4>
 
@@ -152,7 +152,7 @@ const PresentationStrategiesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;width:100%;height:90px'>`} <br/>
         <div style={eight}>{`<div class='pe-strategy__basic-grid--small-3col'>`}</div>
           <div style={sixteen}>{`<div style='background:cyan;text-align:center;'>Content Area</div>`}</div>
@@ -169,7 +169,7 @@ const PresentationStrategiesPage = () => (
           <div style={sixteen}>{`<div style='background:SlateBlue;text-align:center;'>Content Area</div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h4>Basic Grid (--large-2col)</h4>
 
@@ -190,7 +190,7 @@ const PresentationStrategiesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;width:100%;height:225px;'>`} <br/>
         <div style={eight}>{`<div class='pe-strategy__basic-grid--large-2col'>`}</div>
           <div style={sixteen}>{`<div style='background:cyan;text-align:center;'>Content Area</div>`}</div>
@@ -207,7 +207,7 @@ const PresentationStrategiesPage = () => (
           <div style={sixteen}>{`<div style='background:SlateBlue;text-align:center;'>Content Area</div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Spacing</h2>
     <p>Stacked strategies have the same spacing options as templates: Directly Adjoining, Small Gap, and Large Gap.</p>
@@ -229,7 +229,7 @@ const PresentationStrategiesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;width:300px;'>`}
         <div style={eight}>{`<div class='pe-strategy__centered'>`}</div>
           <div style={sixteen}>{`<div style='background:cyan;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
@@ -244,7 +244,7 @@ const PresentationStrategiesPage = () => (
           <div style={sixteen}>{`<div style='background:blueViolet;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h4>Small Gap</h4>
 
@@ -263,7 +263,7 @@ const PresentationStrategiesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;width:300px;'>`} <br/>
         <div style={eight}>{`<div class='pe-strategy__centered--small-gap'>`}</div>
           <div style={sixteen}>{`<div style='background:cyan;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
@@ -278,7 +278,7 @@ const PresentationStrategiesPage = () => (
           <div style={sixteen}>{`<div style='background:blueViolet;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h4>Large gap</h4>
 
@@ -297,7 +297,7 @@ const PresentationStrategiesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;width:300px;'>`} <br/>
         <div style={eight}>{`<div class='pe-strategy__centered--large-gap'>`}</div>
           <div style={sixteen}>{`<div style='background:cyan;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
@@ -312,7 +312,7 @@ const PresentationStrategiesPage = () => (
           <div style={sixteen}>{`<div style='background:blueViolet;text-align:center;height:40px;width:100px;'>Content Area</div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Redlines</h2>
     <h3>Strategies</h3>

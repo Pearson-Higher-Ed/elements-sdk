@@ -12,36 +12,38 @@ const ResponsiveUtilitiesPage = () => (
     <p>The responsive breakpoints are defined as follows:</p>
 
     <table>
-      <tr>
-        <th>Breakpoint</th>
-        <th>Min width</th>
-        <th>Max width</th>
-      </tr>
-      <tr>
-        <td>xs</td>
-        <td>0px</td>
-        <td>479px</td>
-      </tr>
-      <tr>
-        <td>sm</td>
-        <td>480px</td>
-        <td>767px</td>
-      </tr>
-      <tr>
-        <td>md</td>
-        <td>768px</td>
-        <td>1023px</td>
-      </tr>
-      <tr>
-        <td>lg</td>
-        <td>1024px</td>
-        <td>1279px</td>
-      </tr>
-      <tr>
-        <td>xl</td>
-        <td>1280px</td>
-        <td></td>
-      </tr>
+      <tbody>
+        <tr>
+          <th>Breakpoint</th>
+          <th>Min width</th>
+          <th>Max width</th>
+        </tr>
+        <tr>
+          <td>xs</td>
+          <td>0px</td>
+          <td>479px</td>
+        </tr>
+        <tr>
+          <td>sm</td>
+          <td>480px</td>
+          <td>767px</td>
+        </tr>
+        <tr>
+          <td>md</td>
+          <td>768px</td>
+          <td>1023px</td>
+        </tr>
+        <tr>
+          <td>lg</td>
+          <td>1024px</td>
+          <td>1279px</td>
+        </tr>
+        <tr>
+          <td>xl</td>
+          <td>1280px</td>
+          <td></td>
+        </tr>
+      </tbody>
     </table>
 
     <h3>Advanced usage with Sass</h3>
@@ -91,50 +93,52 @@ const ResponsiveUtilitiesPage = () => (
     <p>Visibility helpers are provided to make it easier to control element visibility based on the current breakpoint.</p>
 
     <table>
-      <tr>
-        <th>Selector</th>
-        <th>Visible</th>
-      </tr>
-      <tr>
-        <td>.pe-xs--visible</td>
-        <td><span className="pe-xs--visible">✓</span></td>
-      </tr>
-      <tr>
-        <td>.pe-sm--visible</td>
-        <td><span className="pe-sm--visible">✓</span></td>
-      </tr>
-      <tr>
-        <td>.pe-md--visible</td>
-        <td><span className="pe-md--visible">✓</span></td>
-      </tr>
-      <tr>
-        <td>.pe-lg--visible</td>
-        <td><span className="pe-lg--visible">✓</span></td>
-      </tr>
-      <tr>
-        <td>.pe-xl--visible</td>
-        <td><span className="pe-xl--visible">✓</span></td>
-      </tr>
-      <tr>
-        <td>.pe-xs--hidden</td>
-        <td><span className="pe-xs--hidden">✓</span></td>
-      </tr>
-      <tr>
-        <td>.pe-sm--hidden</td>
-        <td><span className="pe-sm--hidden">✓</span></td>
-      </tr>
-      <tr>
-        <td>.pe-md--hidden</td>
-        <td><span className="pe-md--hidden">✓</span></td>
-      </tr>
-      <tr>
-        <td>.pe-lg-hidden</td>
-        <td><span className="pe-lg--hidden">✓</span></td>
-      </tr>
-      <tr>
-        <td>.pe-xl-hidden</td>
-        <td><span className="pe-xl--hidden">✓</span></td>
-      </tr>
+      <tbody>
+        <tr>
+          <th>Selector</th>
+          <th>Visible</th>
+        </tr>
+        <tr>
+          <td>.pe-xs--visible</td>
+          <td><span className="pe-xs--visible">✓</span></td>
+        </tr>
+        <tr>
+          <td>.pe-sm--visible</td>
+          <td><span className="pe-sm--visible">✓</span></td>
+        </tr>
+        <tr>
+          <td>.pe-md--visible</td>
+          <td><span className="pe-md--visible">✓</span></td>
+        </tr>
+        <tr>
+          <td>.pe-lg--visible</td>
+          <td><span className="pe-lg--visible">✓</span></td>
+        </tr>
+        <tr>
+          <td>.pe-xl--visible</td>
+          <td><span className="pe-xl--visible">✓</span></td>
+        </tr>
+        <tr>
+          <td>.pe-xs--hidden</td>
+          <td><span className="pe-xs--hidden">✓</span></td>
+        </tr>
+        <tr>
+          <td>.pe-sm--hidden</td>
+          <td><span className="pe-sm--hidden">✓</span></td>
+        </tr>
+        <tr>
+          <td>.pe-md--hidden</td>
+          <td><span className="pe-md--hidden">✓</span></td>
+        </tr>
+        <tr>
+          <td>.pe-lg-hidden</td>
+          <td><span className="pe-lg--hidden">✓</span></td>
+        </tr>
+        <tr>
+          <td>.pe-xl-hidden</td>
+          <td><span className="pe-xl--hidden">✓</span></td>
+        </tr>
+      </tbody>
     </table>
 
     <h3>Visible</h3>
@@ -181,13 +185,13 @@ const ResponsiveUtilitiesPage = () => (
       like screen readers.
     </p>
 
-    <p className="code">
+    <div className="code">
     {`<p>This paragraph is visible on the screen.</p>`} <br/>
     {`<p class="pe-sr-only">`} <br/>
       <div style={eight}>{`This paragraph is only visible to assistive technologies`}</div>
       <div style={eight}>{`like screen readers.`}</div>
     {`</p>`}
-    </p>
+  </div>
 
     <h4>Hiding content from screen readers</h4>
 

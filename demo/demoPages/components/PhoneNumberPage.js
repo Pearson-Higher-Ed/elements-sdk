@@ -9,7 +9,7 @@ export default class PhoneNumberPage extends Component {
     return (
       <div className="displaySection">
         <h2>Phone Number</h2> <br/>
-        <div elementContainer>
+        <div className="elementContainer">
           <div className="code">
             <h3>Props</h3>
             <h4>Optional:</h4>
@@ -64,7 +64,7 @@ export default class PhoneNumberPage extends Component {
         <p><button onClick={() => console.log(this.phoneNumber.inputComponent.getValidNumber())}>Valid?</button></p>
 
         <h3>Example usage</h3>
-        <p className="code">
+        <div className="code">
           {`<PhoneNumber`} <br/>
             <div style={eight}>{`country="US"`}</div>
             <div style={eight}>{`placeholder="555-555-5555"`}</div>
@@ -73,7 +73,7 @@ export default class PhoneNumberPage extends Component {
             <div style={eight}>{`ref{(instance) => {this.phoneNumber = instance}}`}</div>
           {`/>`}
           {`<button onclick={() => console.log(this.phoneNumber.inputComponent.getValidNumber())}>Valid?</button>`}
-        </p>
+        </div>
 
         </div>
 

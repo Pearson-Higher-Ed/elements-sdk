@@ -53,7 +53,7 @@ const TypographyPage = () => (
     	<p className="subtitle">Subtitle, sized based on the preceding element</p>
     </header>
 
-    <p className="code">
+    <div className="code">
       {`<header>`} <br/>
       	<div style={eight}>{`<h1>Title Element 1</h1>`}</div>
       	<div style={eight}>{`<p class="subtitle">Subtitle, sized based on the preceding element</p>`}</div>
@@ -75,7 +75,7 @@ const TypographyPage = () => (
       	<div style={eight}>{`<p class="subtitle">Subtitle, sized based on the preceding element</p>`}</div>
       {`</header>`} <br/>
 
-    </p>
+    </div>
 
     <h2>Paragraphs</h2>
 
@@ -176,7 +176,7 @@ const TypographyPage = () => (
     <h3>Secondary color copy style</h3>
 
     <div style={{padding: 8}}>
-      <p class="pe-copy pe-copy--secondary">
+      <p className="pe-copy pe-copy--secondary">
         Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque
         penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam
         id dolor id nibh ultricies vehicula.
@@ -316,12 +316,12 @@ const TypographyPage = () => (
       <div className="pe-label pe-label--secondary pe-label--inverse">Inverse secondary UI Text</div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div style="background-color: #000">`} <br/>
         <div style={eight}>{`<div class="pe-label pe-label--inverse">Inverse UI Text</div>`}</div>
         <div style={eight}>{`<div class="pe-label pe-label--secondary pe-label--inverse">Inverse secondary UI Text</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Inline text</h2>
 
@@ -336,12 +336,12 @@ const TypographyPage = () => (
       <abbr title="HyperText Markup Language">HTML</abbr> document.
     </p>
 
-    <p className="code">
+    <div className="code">
       {`<p>`} <br/>
         <div style={eight}>{`Basic elements are the backbone of any`}</div>
         <div style={eight}>{`<abbr title="HyperText Markup Language">HTML</abbr> document.`}</div>
       {`</p>`}
-    </p>
+    </div>
 
     <h3>{`<ins>`}, {`<del>`}</h3>
 
@@ -402,7 +402,7 @@ const TypographyPage = () => (
     </p>
 
     <aside>
-      <h1 class="pe-title">The difference between <code>&lt;b&gt;</code> and <code>&lt;strong&gt;</code></h1>
+      <h1 className="pe-title">The difference between <code>&lt;b&gt;</code> and <code>&lt;strong&gt;</code></h1>
       <p>The <code>&lt;b&gt;</code> and <code>&lt;strong&gt;</code> elements are similar. However, bold is a physical state that represents both the content and its presentation, while strong is a logical state that separates the content from its presentation&mdash;it indicates that, in the current context, the text is more important than the surrounding text.</p>
     </aside>
 
@@ -434,11 +434,11 @@ const TypographyPage = () => (
       <q cite="https://en.wikipedia.org/wiki/Lost_in_Space#Catchphrases">That does not compute</q> is one of several of the Robot&#39;s catchphrases used in the television show <i>Lost in Space</i>.
     </p>
 
-    <p className="code">
+    <div className="code">
       {`<p>`} <br/>
         <div style={eight}>{`<q cite="https://en.wikipedia.org/wiki/Lost_in_Space#Catchphrases">That does not compute</q> is one of several of the Robot&#39;s catchphrases used in the television show <i>Lost in Space</i>.`}</div>
       {`</p>`}
-    </p>
+    </div>
 
     <h2>Code</h2>
     <h3>Inline</h3>
@@ -454,7 +454,7 @@ const TypographyPage = () => (
 
     <p>A multi-line code block should be wrapper with {`<pre></pre>`} elements.</p>
 
-    <pre class="pe-code"><code>// This is a code example <br/>
+    <pre className="pe-code"><code>// This is a code example <br/>
     {`  function greet(greeting) {
       console.log(greeting);
     }
@@ -473,8 +473,8 @@ const TypographyPage = () => (
     <p>Use the {`<kbd>`} element to represent user input.</p>
 
     <p>
-      To switch directories, type <kbd class="pe-kbd">cd</kbd> followed by the name of the directory.<br/>
-      To edit settings, press <kbd class="pe-kbd">ctrl</kbd> + <kbd class="pe-kbd">,</kbd>
+      To switch directories, type <kbd className="pe-kbd">cd</kbd> followed by the name of the directory.<br/>
+      To edit settings, press <kbd className="pe-kbd">ctrl</kbd> + <kbd className="pe-kbd">,</kbd>
     </p>
 
     <p className="code">
@@ -501,7 +501,7 @@ const TypographyPage = () => (
       </li>
     </ul>
 
-    <p className="code">
+    <div className="code">
     {`<ul class="pe-list pe-list--unstyled">`} <br/>
       <div style={eight}>{`<li>One</li>`}</div>
       <div style={eight}>{`<li>Two</li>`}</div>
@@ -513,7 +513,7 @@ const TypographyPage = () => (
       <div style={eight}>{`</ul>`}</div>
       <div style={eight}>{`</li>`}</div>
     {`</ul>`}
-    </p>
+  </div>
 
     <h3>Nested ordered lists</h3>
 
@@ -542,7 +542,7 @@ const TypographyPage = () => (
     Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?
     </p>
 
-    <p className="code">
+    <div className="code">
     {`<p>`} <br/>
     {`Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?`} <br/>
     {`</p>`} <br/>
@@ -565,7 +565,7 @@ const TypographyPage = () => (
     {`And back to the regular copy. Hopefully you are fully prepared for your exams now. At least you have a to do list all set up for you.`} <br/>
     {`Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?`} <br/>
     {`</p>`}
-    </p>
+  </div>
 
     <h3>Nested unordered lists</h3>
 
@@ -594,7 +594,7 @@ const TypographyPage = () => (
     And back to the regular copy. Hopefully you are fully prepared for your exams now. At least you have a to do list all set up for you.
     </p>
 
-    <p className="code">
+    <div className="code">
     {`<p>`} <br/>
     {`And back to the regular copy. Hopefully you are fully prepared for your exams now. At least you have a to do list all set up for you.`} <br/>
     {`Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?`} <br/>
@@ -617,7 +617,7 @@ const TypographyPage = () => (
     {`<p>`} <br/>
     {`And back to the regular copy. Hopefully you are fully prepared for your exams now. At least you have a to do list all set up for you.`} <br/>
     {`</p>`} <br/>
-    </p>
+  </div>
 
     <h3>Nested ordered lists following a heading</h3>
 
@@ -640,7 +640,7 @@ const TypographyPage = () => (
       </li>
     </ul>
 
-    <p className="code">
+    <div className="code">
     {`<h2>Basic body. As you read, quiz yourself to review concepts and prep for exams, without leaving the page. What could be easier?</h2>`} <br/>
     {`<ul class="pe-list pe-styled-lists-heading--unordered">`} <br/>
       <div style={eight}>{`<li>List item one. How are you doing today? Quite fine, thank you.</li>`}</div>
@@ -657,7 +657,7 @@ const TypographyPage = () => (
         <div style={sixtn}>{`</ul>`}</div>
       <div style={eight}>{`</li>`}</div>
     {`</ul>`} <br/>
-    </p>
+  </div>
 
     <h2>Links</h2>
 

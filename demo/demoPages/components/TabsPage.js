@@ -23,7 +23,7 @@ const TabsPage = () => (
       </Tabs>
 
       <h3>Example usage</h3>
-        <p className="code">
+        <div className="code">
           {`<Tabs>`} <br/>
           <div style={eight}>{`<Pane label="Tabby">`} <br/> </div>
           <div style={sixteen}>{`<div>Tab 1</div>`} <br/> </div>
@@ -35,7 +35,7 @@ const TabsPage = () => (
           <div style={sixteen}>{`<div>Tab 3</div>`} <br/> </div>
           <div style={eight}>{`</Pane>`} <br/> </div>
           {`</Tabs>`}
-        </p>
+        </div>
 
       <div className="code">
         <h3>Tab Props</h3>

@@ -29,7 +29,7 @@ const GridPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<p>pe-col-1</p>`} <br/>
       {`<div class="pe-container">`} <br/>
         <div style={eight}>{`<div class='pe-row'>`}</div>
@@ -47,7 +47,7 @@ const GridPage = () => (
           <div style={sixteen}>{`<div class="pe-col-1"><p style="background:cyan">twelve</p></div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Span multiple columns</h2>
 
@@ -59,7 +59,7 @@ const GridPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class="pe-container">`} <br/>
         <div style={eight}>{`<div class='pe-row'>`}</div>
           <div style={sixteen}>{`<div class="pe-col-4"><p style="background:cyan">one</p></div>`}</div>
@@ -67,7 +67,7 @@ const GridPage = () => (
           <div style={sixteen}>{`<div class="pe-col-4"><p style="background:cyan">three</p></div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Span columns</h2>
 
@@ -110,7 +110,7 @@ const GridPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class="pe-container">`} <br/>
         <div style={eight}>{`<div class='pe-row'>`}</div>
           <div style={sixteen}>{`<div class="pe-col-1"><p style="background:cyan">one</p></div>`}</div>
@@ -149,7 +149,7 @@ const GridPage = () => (
           <div style={sixteen}>{`<div class="pe-col-12"><p style="background:cyan">twelve</p></div>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
 
 

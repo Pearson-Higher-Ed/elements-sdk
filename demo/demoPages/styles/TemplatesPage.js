@@ -41,11 +41,11 @@ const TemplatesPage = () => (
       <h6 style={{background:'cyan',textAlign:'center',height:40}}>Content Area</h6>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;'>`} <br/>
         <div style={eight}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <p>The simplest page template, it takes up the full 10 columns available at every breakpoint.</p>
 
@@ -63,11 +63,11 @@ const TemplatesPage = () => (
       <h6 style={{background:'cyan',textAlign:'center', height:40}}>Content Area</h6>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single-10-col' style='background:magenta;'>`} <br/>
         <div style={eight}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Two Column</h2>
     <p>This template devotes 8 columns to a main content area and the remaining 4 to a sidebar which appears on either side. At medium and smaller breakpoints the content areas stack, with the option to put the sidebar above or below the main content area.</p>
@@ -94,7 +94,7 @@ const TemplatesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__double' style='background:magenta;'>`}
         <div style={eight}>{`<div class='pe-template__double--main'>`}</div>
           <div style={sixteen}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
@@ -103,7 +103,7 @@ const TemplatesPage = () => (
           <div style={sixteen}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Sidebar Area</h6>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h4>Two Column 4/8 - (left)</h4>
 
@@ -116,7 +116,7 @@ const TemplatesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__double' style='background:magenta;'>`} <br/>
         <div style={eight}>{`<div class="pe-template__double--sidebar">`}</div>
           <div style={sixteen}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Sidebar Area</h6>`}</div>
@@ -125,7 +125,7 @@ const TemplatesPage = () => (
           <div style={sixteen}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h4>Two Column 6/6</h4>
 
@@ -138,7 +138,7 @@ const TemplatesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__double' style='background:magenta;'>`} <br/>
         <div style={eight}>{`<div class='pe-template__double--main_half'>`}</div>
           <div style={sixteen}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
@@ -147,7 +147,7 @@ const TemplatesPage = () => (
           <div style={sixteen}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Sidebar Area</h6>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Three Column</h2>
     <p>This template devotes 4 columns to all content areas. To use add class `pe-template__triple pe-template__triple-[size]`. See below code for example. Using -md would mean that you want the columns to stack when the width is {'<'} 768px. By default (using just ` pe-template__triple`) the columns stack at lg screen size or {'<'} 1024px.</p>
@@ -179,7 +179,7 @@ const TemplatesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__triple pe-template__triple-md' style='background:magenta;'>`} <br/>
         <div style={eight}>{`<div class="pe-template__triple--content">`}</div>
           <div style={sixteen}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
@@ -191,7 +191,7 @@ const TemplatesPage = () => (
           <div style={sixteen}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Static Column</h2>
     <p>The static column presents a single column of fixed width which is centered in the page. At smaller breakpoints it transitions to full width fluid behavior. This column comes in three different sizes; small, medium and large.</p>
@@ -212,11 +212,11 @@ const TemplatesPage = () => (
       <h6 style={{background:'cyan',textAlign:'center',height:40}}>Content Area</h6>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__static-medium'>`} <br/>
         <div style={eight}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h2>Shared Features</h2>
     <p>Spacing:</p>
@@ -249,7 +249,7 @@ const TemplatesPage = () => (
       <h6 style={{background:'cyan',textAlign:'center',height:40}}>Content Area</h6>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__single' style='background:magenta;'>`} <br/>
         <div style={eight}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
       {`</div>`} <br/>
@@ -264,7 +264,7 @@ const TemplatesPage = () => (
       {`<div class='pe-template__single' style='background:magenta;'>`} <br/>
         <div style={eight}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h4>Standard Spacing</h4>
 
@@ -285,7 +285,7 @@ const TemplatesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__small-gap'>`} <br/>
         <div style={eight}>{`<div class='pe-template__single' style='background:magenta;'>`}</div>
           <div style={sixteen}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
@@ -302,7 +302,7 @@ const TemplatesPage = () => (
           <div style={sixteen}>{`<h6 style='background:lightblue;text-align:center;height:40px;'>Content Area</h6>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
     <h4>Large Spacing</h4>
 
@@ -323,7 +323,7 @@ const TemplatesPage = () => (
       </div>
     </div>
 
-    <p className="code">
+    <div className="code">
       {`<div class='pe-template__large-gap'>`}
         <div style={eight}>{`<div class='pe-template__single' style='background:magenta;'>`}</div>
           <div style={sixteen}>{`<h6 style='background:cyan;text-align:center;height:40px;'>Content Area</h6>`}</div>
@@ -340,7 +340,7 @@ const TemplatesPage = () => (
           <div style={sixteen}>{`<h6 style='background:lightblue;text-align:center;height:40px;'>Content Area</h6>`}</div>
         <div style={eight}>{`</div>`}</div>
       {`</div>`}
-    </p>
+    </div>
 
   </div>
 );
