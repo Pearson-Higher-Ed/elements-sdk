@@ -5,9 +5,9 @@
   "main": "build/css/elements.css",
   "scripts": {
     "start": "npm run serve",
-    "serve": "NODE_ENV=development webpack-dev-server --hot",
+    "serve": "webpack-dev-server --hot",
     "gh-pages": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/gh-pages.js",
-    "build": "NODE_ENV=production webpack -p",
+    "build": "webpack -p",
     "test": "jest --no-cache --coverage",
     "gen-changelog": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/gen-changelog.js",
     "version": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/version.js",
@@ -47,12 +47,10 @@
     "url": "git+https://github.com/Pearson-Higher-Ed/elements-sdk.git"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "babel-runtime": "^6.26.0",
     "input-format": "^0.1.15",
     "libphonenumber-js": "^0.4.48",
-    "react-intl": "^2.4.0",
-    "react-responsive-ui": "^0.10.13"
+    "react-responsive-ui": "^0.10.13",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.5.8",
@@ -62,11 +60,13 @@
     "babel-jest": "^18.0.0",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
     "colors": "~1.1.2",
     "conventional-changelog": "^1.1.7",
     "css-loader": "^0.26.4",
@@ -87,11 +87,11 @@
     "image-webpack-loader": "^3.4.2",
     "intl": "~1.1.0",
     "jest": "16.0.2",
-    "jsdom": "^9.12.0",
     "markdown-it": "^5.0.2",
     "node-sass": "^4.7.2",
+    "react-intl": "^2.4.0",
     "react-router-dom": "^4.2.2",
-    "react-test-renderer": "15.6.1",
+    "react-test-renderer": "^15.6.1",
     "react-transition-group": "^1.2.1",
     "sass-loader": "^6.0.6",
     "semver": "~5.1.0",
@@ -99,7 +99,6 @@
     "style-loader": "^0.13.2",
     "transform-runtime": "0.0.0",
     "url-loader": "^0.5.7",
-    "uuid": "^2.0.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.0"
   },
