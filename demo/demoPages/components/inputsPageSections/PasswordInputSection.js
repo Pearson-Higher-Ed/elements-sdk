@@ -29,8 +29,8 @@ const PasswordInputSection = (props) => (
 
       <h3>PasswordInput - Fancy:</h3>
         <TextInput
-          password     = {true}
-          fancy        = {true}
+          password        = {true}
+          fancy           = {true}
           id              = "PasswordInputFancy"
           changeHandler   = {() => {}}
           labelText       = {props.intlDefaultText.passwordLabel}
@@ -51,15 +51,15 @@ const PasswordInputSection = (props) => (
 
       <h3>PasswordInput - Basic:</h3>
         <TextInput
-          password     = {true}
-          id           = "PasswordInputBasic"
-          changeHandler  = {() => {}}
-          labelText    = {props.intlDefaultText.passwordLabel}
-          placeholder  = {props.intlDefaultText.passwordPlaceholder}
-          infoMessage  = {props.intlDefaultText.textInputInfoMessage}
-          errorMessage = {props.intlDefaultText.textInputErrorMessage}
-          showText     = {props.intlDefaultText.showText}
-          hideText     = {props.intlDefaultText.hideText}
+          password        = {true}
+          id              = "PasswordInputBasic"
+          changeHandler   = {() => {}}
+          labelText       = {props.intlDefaultText.passwordLabel}
+          placeholder     = {props.intlDefaultText.passwordPlaceholder}
+          infoMessage     = {props.intlDefaultText.textInputInfoMessage}
+          errorMessage    = {props.intlDefaultText.textInputErrorMessage}
+          showText        = {props.intlDefaultText.showText}
+          hideText        = {props.intlDefaultText.hideText}
           isNotVisibleMsg = {props.intlDefaultText.isNotVisibleMsg}
           isVisibleMsg    = {props.intlDefaultText.isVisibleMsg}
           />
@@ -72,15 +72,14 @@ const PasswordInputSection = (props) => (
 
       <h3>PasswordInput - Basic Error:</h3>
         <TextInput
-          password     = {true}
-          id           = "PasswordInputBasicError"
-          inputState   = "error"
-          changeHandler  = {() => {}}
-          aria-invalid = "true"
-          labelText    = {props.intlDefaultText.passwordLabel}
-          errorMessage = {props.intlDefaultText.textInputErrorMessage}
-          showText     = {props.intlDefaultText.showText}
-          hideText     = {props.intlDefaultText.hideText}
+          password        = {true}
+          id              = "PasswordInputBasicError"
+          inputState      = "error"
+          changeHandler   = {() => {}}
+          labelText       = {props.intlDefaultText.passwordLabel}
+          errorMessage    = {props.intlDefaultText.textInputErrorMessage}
+          showText        = {props.intlDefaultText.showText}
+          hideText        = {props.intlDefaultText.hideText}
           isNotVisibleMsg = {props.intlDefaultText.isNotVisibleMsg}
           isVisibleMsg    = {props.intlDefaultText.isVisibleMsg}
           />
@@ -94,17 +93,16 @@ const PasswordInputSection = (props) => (
 
       <h3>PasswordInput - Fancy Error:</h3>
         <TextInput
-          password     = {true}
-          id           = "PasswordInputFancyError"
-          fancy        = {true}
-          inputState   = "error"
-          changeHandler  = {() => {}}
-          aria-invalid="true"
-          labelText    = {props.intlDefaultText.passwordLabel}
-          infoMessage  = {props.intlDefaultText.textInputInfoMessage}
-          errorMessage = {props.intlDefaultText.textInputErrorMessage}
-          showText     = {props.intlDefaultText.showText}
-          hideText     = {props.intlDefaultText.hideText}
+          password        = {true}
+          id              = "PasswordInputFancyError"
+          fancy           = {true}
+          inputState      = "error"
+          changeHandler   = {() => {}}
+          labelText       = {props.intlDefaultText.passwordLabel}
+          infoMessage     = {props.intlDefaultText.textInputInfoMessage}
+          errorMessage    = {props.intlDefaultText.textInputErrorMessage}
+          showText        = {props.intlDefaultText.showText}
+          hideText        = {props.intlDefaultText.hideText}
           isNotVisibleMsg = {props.intlDefaultText.isNotVisibleMsg}
           isVisibleMsg    = {props.intlDefaultText.isVisibleMsg}
           />
@@ -117,16 +115,16 @@ const PasswordInputSection = (props) => (
 
       <h3>PasswordInput - Basic Disabled:</h3>
         <TextInput
-          password     = {true}
-          id           = "PasswordInputBasicDisabled"
-          inputState   = "disabled"
-          changeHandler  = {() => {}}
-          labelText    = {props.intlDefaultText.passwordLabel}
-          placeholder  = {props.intlDefaultText.passwordPlaceholder}
-          infoMessage  = {props.intlDefaultText.textInputInfoMessage}
-          errorMessage = {props.intlDefaultText.textInputErrorMessage}
-          showText     = {props.intlDefaultText.showText}
-          hideText     = {props.intlDefaultText.hideText}
+          password        = {true}
+          id              = "PasswordInputBasicDisabled"
+          inputState      = "disabled"
+          changeHandler   = {() => {}}
+          labelText       = {props.intlDefaultText.passwordLabel}
+          placeholder     = {props.intlDefaultText.passwordPlaceholder}
+          infoMessage     = {props.intlDefaultText.textInputInfoMessage}
+          errorMessage    = {props.intlDefaultText.textInputErrorMessage}
+          showText        = {props.intlDefaultText.showText}
+          hideText        = {props.intlDefaultText.hideText}
           isNotVisibleMsg = {props.intlDefaultText.isNotVisibleMsg}
           isVisibleMsg    = {props.intlDefaultText.isVisibleMsg}
           />
@@ -139,17 +137,17 @@ const PasswordInputSection = (props) => (
 
       <h3>PasswordInput - Fancy Disabled:</h3>
         <TextInput
-          password     = {true}
-          id           = "PasswordInputFancyDisabled"
-          fancy        = {true}
-          inputState   = "disabled"
-          changeHandler  = {() => {}}
-          labelText    = {props.intlDefaultText.passwordLabel}
-          placeholder  = {props.intlDefaultText.passwordPlaceholder}
-          infoMessage  = {props.intlDefaultText.textInputInfoMessage}
-          errorMessage = {props.intlDefaultText.textInputErrorMessage}
-          showText     = {props.intlDefaultText.showText}
-          hideText     = {props.intlDefaultText.hideText}
+          password        = {true}
+          id              = "PasswordInputFancyDisabled"
+          fancy           = {true}
+          inputState      = "disabled"
+          changeHandler   = {() => {}}
+          labelText       = {props.intlDefaultText.passwordLabel}
+          placeholder     = {props.intlDefaultText.passwordPlaceholder}
+          infoMessage     = {props.intlDefaultText.textInputInfoMessage}
+          errorMessage    = {props.intlDefaultText.textInputErrorMessage}
+          showText        = {props.intlDefaultText.showText}
+          hideText        = {props.intlDefaultText.hideText}
           isNotVisibleMsg = {props.intlDefaultText.isNotVisibleMsg}
           isVisibleMsg    = {props.intlDefaultText.isVisibleMsg}
           />
@@ -163,14 +161,14 @@ const PasswordInputSection = (props) => (
       <h3>PasswordInput - Basic readOnly:</h3>
       <p>It is not recommended to have readonly password inputs.</p>
         <TextInput
-          password     = {true}
-          id           = "PasswordInputBasicReadOnly"
-          inputState   = "readOnly"
-          changeHandler  = {() => {}}
-          labelText    = {props.intlDefaultText.passwordLabel}
-          errorMessage = {props.intlDefaultText.textInputErrorMessage}
-          showText     = {props.intlDefaultText.showText}
-          hideText     = {props.intlDefaultText.hideText}
+          password        = {true}
+          id              = "PasswordInputBasicReadOnly"
+          inputState      = "readOnly"
+          changeHandler   = {() => {}}
+          labelText       = {props.intlDefaultText.passwordLabel}
+          errorMessage    = {props.intlDefaultText.textInputErrorMessage}
+          showText        = {props.intlDefaultText.showText}
+          hideText        = {props.intlDefaultText.hideText}
           isNotVisibleMsg = {props.intlDefaultText.isNotVisibleMsg}
           isVisibleMsg    = {props.intlDefaultText.isVisibleMsg}
           />
@@ -183,15 +181,15 @@ const PasswordInputSection = (props) => (
 
       <h3>PasswordInput - Fancy readOnly:</h3>
         <TextInput
-          password     = {true}
-          id           = "PasswordInputFancyReadOnly"
-          fancy        = {true}
-          inputState   = "readOnly"
-          changeHandler  = {() => {}}
-          labelText    = {props.intlDefaultText.passwordLabel}
-          errorMessage = {props.intlDefaultText.textInputErrorMessage}
-          showText     = {props.intlDefaultText.showText}
-          hideText     = {props.intlDefaultText.hideText}
+          password        = {true}
+          id              = "PasswordInputFancyReadOnly"
+          fancy           = {true}
+          inputState      = "readOnly"
+          changeHandler   = {() => {}}
+          labelText       = {props.intlDefaultText.passwordLabel}
+          errorMessage    = {props.intlDefaultText.textInputErrorMessage}
+          showText        = {props.intlDefaultText.showText}
+          hideText        = {props.intlDefaultText.hideText}
           isNotVisibleMsg = {props.intlDefaultText.isNotVisibleMsg}
           isVisibleMsg    = {props.intlDefaultText.isVisibleMsg}
           />
