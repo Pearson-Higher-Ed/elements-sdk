@@ -8,15 +8,31 @@ const StylesButtonPage = () => (
 
     <p>Use a button to represent a user action&#8212; specifically, pressing it should perform an action on a page or document, rather than navigating a user elsewhere. These button styles
     are generally intended for content buttons rather than UI buttons. See below for <a href="#uibuttons">UI buttons</a>.</p>
-      <button className="pe-btn__tertiary" style={marginFour}>Tertiary</button>
-      <button className="pe-btn" style={marginFour}>Default</button>
+    <p>There are four types of buttons:
+      <ul>
+        <li>
+          CTA button is your Call To Action button. It is the single most important action on the page and takes higher priority over the Primary button type. It should be used only in specific instances such as the Sign-In process. It can only be used once per page.
+        </li>
+        <li>
+          Primary button indicates the main call to action and should only appear once per group of buttons.
+        </li>
+        <li>
+          Default button is your basic button, it can appear multiple times in a given group. Note that it is transparent so you are responsible for using it over a contrast compliant background.
+        </li>
+        <li>
+          Tertiary button is for reduced importance actions which should be de-emphasized compared to the default button type.
+        </li>
+      </ul>
+    </p>
       <button className="pe-btn__cta" style={marginFour}>Call To Action</button>
-      <button className="pe-btn__primary">Primary</button>
+      <button className="pe-btn__primary" style={marginFour}>Primary</button>
+      <button className="pe-btn" style={marginFour}>Default</button>
+      <button className="pe-btn__tertiary">Tertiary</button>
     <p className="code" style={{marginTop: 12, marginBottom: 16}}>
-      {`<button class="pe-btn__tertiary">Tertiary</button>`} <br/>
-      {`<button class="pe-btn">Default</button>`} <br/>
       {`<button class="pe-btn__cta">Call To Action</button>`} <br/>
-      {`<button class="pe-btn__primary">Primary</button>`}
+      {`<button class="pe-btn__primary">Primary</button>`} <br/>
+      {`<button class="pe-btn">Default</button>`} <br/>
+      {`<button class="pe-btn__tertiary">Tertiary</button>`}
     </p>
 
     <h2>Elements</h2>
