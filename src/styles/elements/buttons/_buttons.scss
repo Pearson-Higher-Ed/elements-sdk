@@ -13,18 +13,18 @@
   height         : $pe-btn-large-height;
   padding        : $pe-btn-large-padding;
   border-radius  : $pe-btn-large-border-radius;
-  font-size      : $pe-btn-large-font-size;
-  line-height    : $pe-btn-large-line-height;
+  font-size      : $pe-font-size-base;
+  line-height    : $pe-line-height-base;
 
-  font-weight    : 600;
+  font-weight    : $pe-label-bold;
 }
 
 %btn_small {
   height         : $pe-btn-small-height;
   border-radius  : $pe-btn-small-border-radius;
   padding        : $pe-btn-small-padding;
-  font-size      : $pe-btn-small-font-size;
-  line-height    : $pe-btn-small-line-height;
+  font-size      : $pe-font-size-base;
+  line-height    : $pe-line-height-base;
 }
 
 
@@ -32,8 +32,8 @@
   height         : $pe-btn-xlarge-height;
   border-radius  : $pe-btn-xlarge-border-radius;
   padding        : $pe-btn-xlarge-padding;
-  font-size      : $pe-btn-xlarge-font-size;
-  line-height    : $pe-btn-xlarge-line-height; 
+  font-size      : $pe-font-size-large;
+  line-height    : $pe-line-height-large; 
 }
 
 
