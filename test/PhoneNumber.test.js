@@ -1,8 +1,9 @@
-import React from 'react';
-import expect from 'expect';
-import { shallow, mount } from 'enzyme';
-import { jsdom } from 'jsdom';
+import React           from 'react';
+import enzyme          from 'enzyme';
 import { PhoneNumber } from '../index';
+
+const { shallow } = enzyme;
+
 
 describe('PhoneNumber', () => {
 
@@ -17,7 +18,7 @@ describe('PhoneNumber', () => {
           onChange={(num) => console.log(num)}
         />
       );
-      expect(wrapper.node.type).toEqual('div');
+      expect(wrapper.getElement(0).type).toEqual('div');
     });
 
     it('should render the PhoneNumber in an error state', function() {
@@ -30,7 +31,7 @@ describe('PhoneNumber', () => {
           errorMessage={"Error"}
         />
       );
-      expect(wrapper.node.props.children[1].props.inputClassName).toEqual('react-phone-number-input__phone--error');
+      expect(wrapper.getElement(0).props.children[1].props.inputClassName).toEqual('react-phone-number-input__phone--error');
     });
   });
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../Icon';
+import { Icon } from '../../../../index';
 
 const Header = ({onPrev, onNext, month, year, monthNames, contrast}) => {
   const colorSwap = contrast ? 'inverse-header' :'';

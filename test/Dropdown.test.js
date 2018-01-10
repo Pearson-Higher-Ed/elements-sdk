@@ -1,9 +1,13 @@
 import React from 'react';
-import expect from 'expect';
-import { mount } from 'enzyme';
-import { jsdom } from 'jsdom';
-import { Dropdown, DropdownItem } from '../index';
-import { Button } from '../index';
+import enzyme from 'enzyme';
+
+import {
+  Dropdown,
+  DropdownItem,
+  Button
+} from '../index';
+
+const { mount } = enzyme;
 
 describe('Dropdown', () => {
 
@@ -48,12 +52,6 @@ describe('Dropdown', () => {
   });
 
   describe('dropdown changehandler', function() {
-    const document = jsdom('');
-    Object.keys(document.defaultView).forEach((property) => {
-      if (typeof global[property] === 'undefined') {
-        global[property] = document.defaultView[property];
-      }
-    });
 
     it('should call changeHandler and set state to closed', function () {
       let selectedItem = null;
@@ -80,12 +78,6 @@ describe('Dropdown', () => {
   });
 
   describe('dropdown handleKeyDown', function() {
-    const document = jsdom('');
-    Object.keys(document.defaultView).forEach((property) => {
-      if (typeof global[property] === 'undefined') {
-        global[property] = document.defaultView[property];
-      }
-    });
 
     it('should close dropdown if esc key is hit', function () {
 

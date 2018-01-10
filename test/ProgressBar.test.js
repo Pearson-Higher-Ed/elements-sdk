@@ -1,12 +1,14 @@
-import React       from 'react';
-import expect      from 'expect';
-import { shallow } from 'enzyme';
+import React           from 'react';
+import enzyme          from 'enzyme';
 import { ProgressBar } from '../index';
+
+const { shallow } = enzyme;
+
 
 describe('ProgressBar', () => {
 
   it('Should render the ProgressBar', function () {
-    this.wrapper = shallow(<ProgressBar id="test" />);
-    expect(this.wrapper.node.type).toEqual('div');
+    const wrapper = shallow(<ProgressBar id="test" />);
+    expect(wrapper.getElement(0).type).toEqual('div');
   });
 });

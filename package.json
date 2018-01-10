@@ -1,51 +1,29 @@
 {
   "name": "@pearson-components/elements-sdk",
   "version": "1.7.1",
-  "description": "Styling and basic JavaScript components for UI development.\"",
   "main": "build/css/elements.css",
+  "author": "Pearson Design Accelerator",
+  "description": "Styling and basic JavaScript components for UI development.",
+  "license": "PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA",
+  "homepage": "https://pearson-higher-ed.github.io/elements-sdk",
+  "bugs": { "url": "https://github.com/Pearson-Higher-Ed/elements-sdk/issues" },
+  "keywords": [ "pearson-components" ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pearson-Higher-Ed/elements-sdk.git"
+  },
   "scripts": {
     "start": "npm run serve",
     "serve": "webpack-dev-server --hot",
-    "gh-pages": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/gh-pages.js",
     "build": "webpack -p",
-    "test": "jest --no-cache --coverage",
+    "gh-pages": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/gh-pages.js",
+    "test": "jest --no-cache --coverage --config test/testConfig/jest.config.js",
     "gen-changelog": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/gen-changelog.js",
     "version": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/version.js",
     "ci": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/ci.js",
     "release": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/release.js",
     "verify": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/verify.js",
     "postpublish": "npm access public && echo 'Package scope set to public!'"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/test/_enzymeConfig.js",
-    "moduleFileExtensions": [
-      "jsx",
-      "js",
-      "json"
-    ],
-    "moduleNameMapper": {
-      "^.+\\.(css|scss)$": "<rootDir>/test/__mocks__/styleMock.js",
-      "^.+\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/fileMock.js"
-    },
-    "collectCoverageFrom": [
-      "**/src/*.{js,jsx}",
-      "**/src/**/*.{js,jsx}",
-      "!**/src/**/components/*.{js,jsx}"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/(build|node_modules|demo|coverage)/",
-      "<rootDir>/src/styles"
-    ],
-    "testEnvironment": "node",
-    "coverageThreshold": {
-      "global": {
-        "lines": 80
-      }
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Pearson-Higher-Ed/elements-sdk.git"
   },
   "dependencies": {
     "input-format": "^0.1.15",
@@ -55,7 +33,6 @@
   },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.5.8",
-    "autoprefixer": "^6.1.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.1.1",
     "babel-jest": "^18.0.0",
@@ -68,29 +45,16 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "babel-runtime": "^6.26.0",
-    "colors": "~1.1.2",
-    "conventional-changelog": "^1.1.7",
     "css-loader": "^0.26.4",
-    "cz-conventional-changelog": "^1.1.4",
-    "del": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.13.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^1.10.3",
-    "eslint-loader": "^1.6.1",
-    "eslint-plugin-react": "~3.16.1",
-    "expect": "~1.18.0",
-    "expect-jsx": "^5.0.0",
+    "eslint": "^4.15.0",
     "extract-text-webpack-plugin": "^2.1.2",
-    "file-loader": "^0.10.1",
-    "highlight.js": "^8.9.1",
-    "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.30.1",
-    "ignore-styles": "~5.0.1",
-    "image-webpack-loader": "^3.4.2",
-    "intl": "~1.1.0",
     "jest": "^22.0.5",
-    "jsdom": "^11.5.1",
-    "markdown-it": "^5.0.2",
     "node-sass": "^4.7.2",
     "react": "^16.2.0",
     "react-addons-test-utils": "^15.6.2",
@@ -98,22 +62,8 @@
     "react-intl": "^2.4.0",
     "react-router-dom": "^4.2.2",
     "react-test-renderer": "^15.6.1",
-    "react-transition-group": "^1.2.1",
-    "sass-loader": "^6.0.6",
-    "semver": "~5.1.0",
-    "style-loader": "^0.13.2",
     "transform-runtime": "0.0.0",
-    "url-loader": "^0.5.7",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.0"
-  },
-  "keywords": [
-    "pearson-components"
-  ],
-  "author": "Pearson Design Accelerator",
-  "license": "PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA",
-  "bugs": {
-    "url": "https://github.com/Pearson-Higher-Ed/elements-sdk/issues"
-  },
-  "homepage": "https://github.com/Pearson-Higher-Ed/elements-sdk#readme"
+  }
 }

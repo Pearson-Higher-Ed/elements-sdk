@@ -68,12 +68,12 @@ export default class RadioCheckGroupSection extends Component {
           <h3>RadioButton Group (disabled):</h3>
 
           <RadioCheckGroup
-            inputType       = "radio"
-            id              = "radiobutton1"
-            name            = "radiobutton1"
-            legendText      = "These are radio buttons"
-            options         = {this.state.radioOptions1}
-            changeHandler   = {this.radioHandler('radioOptions1')}
+            inputType     = "radio"
+            id            = "radiobutton1"
+            name          = "radiobutton1"
+            legendText    = "These are radio buttons"
+            options       = {this.state.radioOptions1}
+            changeHandler = {this.radioHandler('radioOptions1')}
             />
           <p className="code">{'<RadioCheckGroup inputType="radio" id="radiobutton1" legendText="radiobutton1" options={[{value: 0, label: "coffee", checked: true, disabled: true}, {value: 1, label: "tea", disabled: true}, {value: 2, label: "hot cocoa", disabled: true}]} changeHandler={() => {}} />'}</p>
 
@@ -81,12 +81,12 @@ export default class RadioCheckGroupSection extends Component {
           <h3>RadioButton Group:</h3>
 
           <RadioCheckGroup
-            inputType       = "radio"
-            id              = "radiobutton2"
-            name            = "radiobutton2"
-            legendText      = "These are radio buttons"
-            options         = {this.state.radioOptions2}
-            changeHandler   = {this.radioHandler('radioOptions2')}
+            inputType     = "radio"
+            id            = "radiobutton2"
+            name          = "radiobutton2"
+            legendText    = "These are radio buttons"
+            options       = {this.state.radioOptions2}
+            changeHandler = {this.radioHandler('radioOptions2')}
             />
           <br />
           <p className="code">{'<RadioCheckGroup inputType="radio" id="radiobutton2" legendText="radiobutton2" options={[{value: 0, label: "coffee", checked: true}, {value: 1, label: "tea"}, {value: 2, label: "hot cocoa", disabled: true}]} changeHandler={() => {}} />'}</p>
@@ -94,12 +94,12 @@ export default class RadioCheckGroupSection extends Component {
           <h3>Checkbox Group:</h3>
 
           <RadioCheckGroup
-            inputType       = "checkbox"
-            id              = "checkbox1"
-            name            = "checkbox1"
-            legendText      = "These are checkboxes"
-            options         = {this.state.checkboxOptions}
-            changeHandler   = {this.checkboxHandler}
+            inputType     = "checkbox"
+            id            = "checkbox1"
+            name          = "checkbox1"
+            legendText    = "These are checkboxes"
+            options       = {this.state.checkboxOptions}
+            changeHandler = {this.checkboxHandler}
             />
           <p className="code">{'<RadioCheckGroup inputType="checkbox" id="checkbox1" legendText="checkbox1" options={[{value: 0, label: "coffee", checked: true}, {value: 1, label: "tea"}, {value: 2, label: "hot cocoa"}]} changeHandler={() => {}} />'}</p>
       </div>

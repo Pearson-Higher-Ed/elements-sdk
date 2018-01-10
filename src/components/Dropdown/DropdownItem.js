@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon'
+import { Icon } from '../../../index'
 
 export default class DropdownItem extends Component {
   static propTypes = {

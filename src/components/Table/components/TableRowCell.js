@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../../Icon';
+import { Icon } from '../../../../index';
 
 const TableRowCell = ({ children, inputId, containerId, cellId, labelledbyCellId, alignCell }, { selectable }) => {
   const columnAlignment = alignCell === 'center' ? ' pe-table__center'

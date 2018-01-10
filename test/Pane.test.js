@@ -1,31 +1,29 @@
 import React from 'react';
-import expect from 'expect';
-import { shallow } from 'enzyme';
+import enzyme from 'enzyme';
 import { Tabs, Pane } from '../index';
 
-describe('Pane', () => {
+const { mount } = enzyme;
 
-  describe('Pane tests', function () {
-    beforeEach(function () {
-      this.wrapper = shallow(<Tabs>
-                               <Pane label="Tab 1">
-                                 <div>Uno</div>
-                               </Pane>
-                               <Pane label="Tab 2">
-                                 <div>Dos</div>
-                               </Pane>
-                             </Tabs>);
-    });
+describe('Pane tests', () => {
+
+    const wrapper = mount(<Tabs>
+                             <Pane label="Tab 1">
+                               <div>Uno</div>
+                             </Pane>
+                             <Pane label="Tab 2">
+                               <div>Dos</div>
+                             </Pane>
+                           </Tabs>);
 
     it('passes the label through props', function () {
-      expect(this.wrapper.node.props.children[0].props.children[0].props.children.props.children)
-            .toBe('Tab 1');
+      expect(wrapper.find('Pane').contains(<div>Uno</div>)).toEqual(true);
     });
 
-    it('passes children content through props', function() {
-      expect(this.wrapper.node.props.children[1].props.children.props.children.props.children)
-            .toBe('Uno');
+    it('changes tabs on click', function () {
+    wrapper.find('[aria-selected=false]').simulate('click');
+    wrapper.update();
+    expect(wrapper.find('Pane').contains(<div>Dos</div>)).toEqual(true);
+
     });
 
-  });
 });

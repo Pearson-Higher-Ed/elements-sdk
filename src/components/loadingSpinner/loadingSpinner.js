@@ -1,5 +1,5 @@
 import React from 'react';
-import "./loadingSpinner.scss";
+import "./LoadingSpinner.scss";
 
 const LoadingSpinner = () => (
   <div className="pe-loadingSpinner">

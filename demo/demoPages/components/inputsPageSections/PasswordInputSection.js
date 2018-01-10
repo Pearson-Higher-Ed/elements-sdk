@@ -193,7 +193,7 @@ const PasswordInputSection = (props) => (
           isNotVisibleMsg = {props.intlDefaultText.isNotVisibleMsg}
           isVisibleMsg    = {props.intlDefaultText.isVisibleMsg}
           />
-        <p className="code">{'<PasswordInput password={true} id="PasswordInputFancyReadOnly" fancy={true} inputState="readOnly" changeHandler={() => {}} labelText="Password" value="12345" infoMessage="This is an info message" errorMessage="This is an error message" showText="show" hideText="hide" isNotVisibleMsg="Password is hidden" isVisibleMsg="Password is visible"  />'}</p>
+        <p className="code">{'<TextInput password={true} id="PasswordInputFancyReadOnly" fancy={true} inputState="readOnly" changeHandler={() => {}} labelText="Password" value="12345" infoMessage="This is an info message" errorMessage="This is an error message" showText="show" hideText="hide" isNotVisibleMsg="Password is hidden" isVisibleMsg="Password is visible"  />'}</p>
 
   </div>
 )
