@@ -123,17 +123,21 @@ h2 a {
 .color-page-div {
   display: inline-block;
   vertical-align: top;
-  height: 150px;
-  width: 150px;
+  width: 12em;
 }
 
-.color-page-white-text {
+.color-page-div>p {
+  text-align: center;
+}
+
+.color-page-white-text,
+.color-page-dark-text {
   text-align: center;
   padding: 16px 0;
-  color: white;
+  color: #ffffff;
+  margin: 0;
 }
 
 .color-page-dark-text {
-  text-align: center;
-  color: black;
+  color: #000000;
 }

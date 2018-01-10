@@ -49,7 +49,8 @@ export default class ProgressBarPage extends Component {
               <li className="li-props">type:String -  The ProgressBar has a `default` and `animated` type.  Defaults to `default`</li>
               <li className="li-props">alignLabel:String - alignLabel can be `left`, `center`, or `right` moving the text above the ProgessBar
               <br/> to one of those positions. Defaults to `center`.</li>
-              <li className="li-props">labelText:String</li>
+              <li className="li-props">labelText:String - appended to value in the label</li>
+              <li className="li-props">valueText:String - Text to be read by a screen reader for the progress bar if "X percent" is not desired</li>
             </ul>
           </div>
           <h3 style={{marginTop: 4}}>Example Usage</h3>

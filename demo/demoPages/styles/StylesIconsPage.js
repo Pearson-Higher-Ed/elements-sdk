@@ -140,6 +140,22 @@ const StylesIconsPage = () => (
       <li>
         <svg aria-hidden="true"
              focusable="false"
+             className="pe-icon--breadcrumb-18">
+          <use xlinkHref="#breadcrumb-18"></use>
+        </svg>
+        breadcrumb-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--breadcrumb-24">
+          <use xlinkHref="#breadcrumb-24"></use>
+        </svg>
+        breadcrumb-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
              className="pe-icon--calendar-18">
           <use xlinkHref="#calendar-18"></use>
         </svg>
@@ -1241,7 +1257,7 @@ const StylesIconsPage = () => (
 
     <p>The icons above are called from a single larger SVG sprite, using the {`<use>`} tag and href attribute. In Internet Explorer 11 and the webkit version of some Androids default "Chrome" browser, this does not work due to a bug unless the sprite is actually on the HTML page where you want to use icons (as opposed to referencing the sprite from your filesystem).</p>
 
-    <p>The sprite is invisible on the page, however it is currently around 84kb large. Consumers of the SDK need to choose whether they want to</p>
+    <p>The sprite is invisible on the page, however it is currently around 85kb large. Consumers of the SDK need to choose whether they want to</p>
     <ul>
       <li>manually include the sprite at the top of their pages as simply an SVG tag (view source of this page)</li>
       <li>use JavaScript to dynamically call add the sprite to the page</li>
