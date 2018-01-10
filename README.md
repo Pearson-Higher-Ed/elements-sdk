@@ -8,7 +8,7 @@ Second, are the JavaScript components which bring behaviors and programmatic fun
 
 The Pearson Elements-SDK is intended for developers to consume as much or as little as needed to get the job done.  
 
-## Consuming this SDK
+## Consuming this SDK (via npm and imports)
 
 It is recommended that Elements-SDK be installed into the project using [npm](https://npmjs.org):
 
@@ -48,6 +48,46 @@ or destructure as needed:
       TextInput,
       Select
     } from '@pearson-components/elements-sdk/build/dist.elements-sdk';
+
+## Consuming this SDK (via HTML)
+
+This library is published to NPM and is therefore available via unkpg.com.  This allows teams to be able to consume the library through simple
+script includes (for JS) and to link to stylesheets (for CSS).  Below is an example which includes the full CSS styling, JS library, and Icon
+sprite to enable the entire Elements-SDK library to be used.
+
+```
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@pearson-components/elements-sdk@1.6.1/build/css/elements.css" />
+    <script type="text/javascript" src="https://unpkg.com/react@15.6.2/dist/react.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/react-dom@15.6.2/dist/react-dom.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@pearson-components/elements-sdk@1.6.1/build/dist.elements-sdk.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      if (document.body.children[0].nodeName !== 'svg') {
+        var pe_ajax = new XMLHttpRequest();
+        pe_ajax.open("GET", "https://unpkg.com/@pearson-components/elements-sdk@1.6.1/build/icons/p-icons-sprite-1.1.svg", true);
+        pe_ajax.responseType = "document";
+        pe_ajax.onload = function(e) {
+          document.body.insertBefore(
+            pe_ajax.responseXML.documentElement,
+            document.body.childNodes[0]
+          );
+        }
+        pe_ajax.send();
+      }
+
+      var rootElement = React.createElement(PhoneNumber, {id: 'demo', country: 'US', placeholder: 'enter phone', labelText: 'Mobile Phone'});
+      var container = React.createElement('div', {}, rootElement);
+      ReactDOM.render(container, document.getElementById('app'));
+    </script>
+  </body>
+</html>
+```
+
+
 
 ### External Dependencies
 
@@ -178,7 +218,7 @@ List of Elements with their current respective design version:
 | Presentation Strategies | v1.0.0 |
 | Templates | v2.0.0-beta.2 |
 | Responsive Utilities (Breakpoints) | v1.0.0 |
-| Forms | v1.0.0-beta.3 |
+| Forms | v1.1.0 |
 
 
 ** Developers should update table as they implement new versions...*

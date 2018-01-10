@@ -1,16 +1,10 @@
 import React from 'react';
 import { Footer } from '../../../index';
 
-import { injectIntl } from 'react-intl';
-import { messages }   from '../../translations/defaultMessages';
 
+const FooterPage = () => {
 
-const copyrightText = 'Pearson Education Inc. All Rights Reserved.';
-
-const FooterPage = (props) => {
-
-  const { intl } = props;
-
+  const currentYear = new Date().getFullYear();
   const testLinks = [{
     text: 'First link',
     href: 'first'
@@ -21,10 +15,6 @@ const FooterPage = (props) => {
     text: 'Last link',
     href: 'last'
   }];
-
-  const intlText = {
-    copyrightText : intl.formatMessage(messages.copyrightText)
-  };
 
   return (
     <div className="displaySection">
@@ -41,7 +31,9 @@ const FooterPage = (props) => {
           <h4>Optional:</h4>
           <ul>
             <li className="li-props">copyrightText:String</li>
-            <li className="li-props">Used to insert copyright information.</li>
+            <li className="li-props">Used to insert copyright information. Defaults to
+            Copyright &copy; {currentYear} Pearson Education Inc. All Rights Reserved.
+            </li>
             <li className="li-props">light:Boolean === {`<Footer light />`}</li>
             <li className="li-props">The <b>light</b> prop can be used to provide contrast
             on a darker background.</li>
@@ -66,14 +58,12 @@ const FooterPage = (props) => {
               text: 'Last link',
               href: 'last'
             }];`} <br/>
-            {`const crText= 'Pearson Education Inc.
-            All Rights Reserved.';`} <br/><br/>
-            {`<Footer links={testLinks} copyrightText={crText} singlePageStick />`}
+            {`<Footer links={testLinks} singlePageStick />`}
           </p>
-        <Footer links={testLinks} copyrightText={intlText.copyrightText} singlePageStick />
+        <Footer links={testLinks} singlePageStick />
       </div>
     </div>
     );
 };
 
-export default injectIntl(FooterPage);
+export default FooterPage;

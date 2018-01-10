@@ -1,7 +1,7 @@
 import React     from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ btnType, btnSize, btnIcon, children, ...rest }) => {
+const Button = ({ btnType, btnSize, btnIcon, children, focus, ...rest }) => {
 
   let classes = (!btnSize) ? `pe-btn` : `pe-btn--btn_${btnSize}`;
 

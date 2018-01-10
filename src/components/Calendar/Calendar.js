@@ -12,20 +12,25 @@ export default class Calendar extends Component {
   static propTypes = {
     disablePast: PropTypes.bool,
     minDate: PropTypes.object,
-    secondaryDate: PropTypes.array,
+    secondaryDate: PropTypes.arrayOf(PropTypes.object),
     onSelect: PropTypes.func,
     contrast: PropTypes.bool,
-    dayNamesFull: PropTypes.array,
-    monthNamesFull: PropTypes.array,
+    dayNamesFull: PropTypes.arrayOf(PropTypes.string),
+    monthNamesFull: PropTypes.arrayOf(PropTypes.string),
     weekStartDay: PropTypes.number,
-    dayNamesShort: PropTypes.array,
+    dayNamesShort: PropTypes.arrayOf(PropTypes.string),
     newSelectedDt: PropTypes.object
   }
 
   static defaultProps = {
     disablePast: false,
     contrast: false,
-    weekStartDay: 0
+    weekStartDay: 0,
+    dayNamesShort: ["S", "M", "T", "W", "T", "F", "S"],
+    dayNamesFull: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    monthNamesFull: ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"],
+    secondaryDate: []
   }
 
   constructor(props) {
@@ -44,14 +49,12 @@ export default class Calendar extends Component {
       selectedDt: newSelectedDt || new Date(date.getFullYear(), date.getMonth(), date.getDate()),
       weekStartDay: weekStartDay,
       minDate: minDate ? minDate : null,
-      secondaryDate: secondaryDate ? secondaryDate : [],
-      disablePast: disablePast ? disablePast : false,
+      secondaryDate: secondaryDate,
+      disablePast: disablePast,
       contrast: contrast,
-      dayNames: dayNamesShort || ["S", "M", "T", "W", "T", "F", "S"],
-      dayNamesFull: dayNamesFull || ["Sunday", "Monday", "Tuesday", "Wednesday",
-        "Thursday", "Friday", "Saturday"],
-      monthNamesFull: monthNamesFull || ["January", "February", "March", "April",
-        "May", "June", "July", "August", "September", "October", "November", "December"],
+      dayNames: dayNamesShort,
+      dayNamesFull: dayNamesFull,
+      monthNamesFull: monthNamesFull,
       firstOfMonth: null,
       daysInMonth: null
     }
