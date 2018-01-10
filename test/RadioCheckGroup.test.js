@@ -8,7 +8,7 @@ describe('RadioCheckGroup', () => {
   describe('Basic RadioCheckGroup Test', function() {
 
     it('should render the RadioCheckGroup as div element', function() {
-      this.wrapper = shallow(<RadioCheckGroup  id="multiTestId" labelText="Multi Label:" legendText="legend"  changeHandler={() => {}} inputType='radio' options={{"coffee":"checked-disabled", "tea":"checked"}} selectedOptions={["coffee"]}  showText="show" hideText="hide" />);
+      this.wrapper = shallow(<RadioCheckGroup  id="multiTestId" labelText="Multi Label:" legendText="legend"  changeHandler={() => {}} inputType='radio' options={[{value: 0, label: 'coffee', checked: true}, {value: 1, label: 'tea'}, {value: 2, label: 'hot cocoa', disabled: true}]} showText="show" hideText="hide" />);
       expect(this.wrapper.node.type).toEqual('fieldset');
     });
 

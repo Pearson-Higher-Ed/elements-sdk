@@ -8,9 +8,7 @@ const currentYear = new Date().getFullYear();
 const Footer = ({ copyrightText, links, anchorTarget, light, singlePageStick }) => {
 
   const renderCopy = () => {
-    return (<p className="pe-label">
-              {copyrightText}
-            </p>);
+    return <p className="pe-label">{copyrightText}</p>;
   };
 
   const renderLinks = () => {

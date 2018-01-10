@@ -141,8 +141,8 @@ Windows users will need the following additional steps:
 
 Clone the project and install the dependencies and build the library:
 
-    git clone https://github.com/Pearson-Higher-Ed/elements.git
-    cd elements
+    git clone https://github.com/Pearson-Higher-Ed/elements-sdk.git
+    cd elements-sdk
     npm install
     npm run build
 

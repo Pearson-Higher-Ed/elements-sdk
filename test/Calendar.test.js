@@ -58,17 +58,33 @@ describe('Calendar', () => {
         expect(wrapper.node.state.selectedDt).toEqual(selectedDate);
       });
 
-      it('goes to prev month', function() {
-        expect(wrapper.node.state.month).toEqual(month);
-        wrapper.find('[aria-label="Prev month"]').simulate('click');
-        expect(wrapper.node.state.month).toEqual(month - 1);
+      it('goes to prev month if not January', function() {
+        if (wrapper.node.state.month > 0) {
+          wrapper.find('[aria-label="Prev month"]').simulate('click');
+          expect(wrapper.node.state.month).toEqual(month - 1);
+        }
       });
 
-      it('goes to next month', function() {
-        wrapper.find('[aria-label="Next month"]').simulate('click');
-        expect(wrapper.node.state.month).toEqual(month);
+      it('goes to next month if not December', function() {
+        if (wrapper.node.state.month < 11) {
+          wrapper.find('[aria-label="Next month"]').simulate('click');
+          expect(wrapper.node.state.month).toEqual(month + 1);
+        }
       });
 
+      it('goes to prev month if January', function() {
+        if (wrapper.node.state.month === 0) {
+          wrapper.find('[aria-label="Prev month"]').simulate('click');
+          expect(wrapper.node.state.month).toEqual(11);
+        }
+      });
+
+      it('goes to next month if December', function() {
+        if (wrapper.node.state.month === 11) {
+          wrapper.find('[aria-label="Next month"]').simulate('click');
+          expect(wrapper.node.state.month).toEqual(0);
+        }
+      });
     });
 
   });
