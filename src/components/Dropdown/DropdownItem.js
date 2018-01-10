@@ -71,6 +71,7 @@ export default class DropdownItem extends Component {
           );
         break;
       default:
+        return <div></div>
         break;
     }
   }
