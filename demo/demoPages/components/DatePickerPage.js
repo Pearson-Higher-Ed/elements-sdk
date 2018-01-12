@@ -94,6 +94,7 @@ class DatePickerPage extends Component {
               infoMessage     = {text.textInputInfoMessage}
               errorMessage    = {text.textInputErrorMessage}
             />
+            <p className="code">{`DatePicker Range is made up of two single datepickers`}</p>
             <p className="code">{`<DatePicker id="someGiantId" inputState = "default" labelText = "Select start date (mm/dd/yyyy)" datepickerValue = {this.state.datepickerValue2} changeHandler = {value => this.setState({datePickerValue2:value})} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
             <p className="code">{`<DatePicker id="someGiantId" inputState = "default" labelText = "Select end date (mm/dd/yyyy)" datepickerValue = {this.state.datepickerValue3} changeHandler = {value => this.setState({datePickerValue3:value})} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
 
