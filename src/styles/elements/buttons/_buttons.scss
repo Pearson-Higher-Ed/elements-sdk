@@ -266,11 +266,11 @@
 // vertical align doesn't work in div and a, the text in those sticks to the top border.
 // It stayed at center before because the line height in this file was mistakenly set as height.
 // Here set the line-height in div and a as the same as the height to make text align center.
-  div [class$='--btn_xlarge'], a [class$='--btn_xlarge'] {
+  div[class$='--btn_xlarge'], a[class$='--btn_xlarge'] {
     line-height: 40px !important;
   }
 
-  div [class$='--btn_large'], a [class$='--btn_large'] {
+  div[class$='--btn_large'], a[class$='--btn_large'] {
     line-height: 36px !important;
   }
 
@@ -278,7 +278,7 @@
     line-height: 36px !important;
   }
   
-  div [class$='--btn_small'], a [class$='--btn_small'] {
+  div[class$='--btn_small'], a[class$='--btn_small'] {
     line-height: 32px !important;
   }
   
