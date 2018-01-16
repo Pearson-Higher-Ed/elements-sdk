@@ -274,7 +274,8 @@
     line-height: 36px !important;
   }
 
-  .pe-btn__primary, .pe-btn__cta, .pe-btn__tertiary, .pe-btn {
+  div[class='pe-btn__primary'], div[class='pe-btn__cta'], div[class='pe-btn__tertiary'], div[class='pe-btn'],
+  a[class='pe-btn__primary'], a[class='pe-btn__cta'], a[class='pe-btn__tertiary'], a[class='pe-btn'] {
     line-height: 36px !important;
   }
   
