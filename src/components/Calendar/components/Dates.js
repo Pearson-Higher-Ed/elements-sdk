@@ -82,10 +82,10 @@ const Dates = (props) => {
                 }
                 {isCurrentDate = current.getDate().toString().split(' ')==statics.date && firstOfMonth.getMonth().toString().split(' ')==statics.month;}
                 {isSecondaryDate = secondaryDate.some(date => date.getTime()===current.getTime())}
-                {newSelectedDtClass = (selectedDt.getTime() === current.getTime() && (selectedDt.getDate() !== statics.date || selectedDt.getMonth() !== statics.month)) ? 'pe-cal-selected' :'';}
+                {newSelectedDtClass = selectedDt && selectedDt.getTime() === current.getTime() ? 'pe-cal-selected' :'';}
 
                 {secondaryString = isSecondaryDate ? ' Secondary date' : ''}
-                {chosenDateString = (selectedDt.getTime() === current.getTime() && (selectedDt.getDate() !== statics.date || selectedDt.getMonth() !== statics.month)) ? ' Chosen date' : '';}
+                {chosenDateString = (selectedDt && selectedDt.getTime() === current.getTime() && (selectedDt.getDate() !== statics.date || selectedDt.getMonth() !== statics.month)) ? ' Chosen date' : '';}
                 {ariaLabel = dayNamesFull[i]+' '+monthNames[month]+' '+d+secondaryString+chosenDateString}
 
                 return (
