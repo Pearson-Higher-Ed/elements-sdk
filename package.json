@@ -111,7 +111,7 @@
     "pearson-components"
   ],
   "author": "Pearson Design Accelerator",
-  "license": "PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Pearson-Higher-Ed/elements-sdk/issues"
   },
