@@ -59,13 +59,6 @@ export default class StaticAlert extends Component {
       <div>
         {this.state.isOpen &&
           <div className={`pe-alert${inlineCheck} alert-${type}`}>
-            <button className="pe-icon--btn close-title"
-                    disabled={disableCheck}
-                    onClick={this.handleClose}
-                    aria-label="Close alert">
-              <Icon name="remove-sm-24" />
-            </button><br/>
-
             <div className="alert-content-container">
               {this.typeCheck()}
               <div className={`alert-content-${infoCheck}`}>
@@ -77,6 +70,13 @@ export default class StaticAlert extends Component {
                 </p>
               </div>
             </div>
+
+            <button className="pe-icon--btn close-title"
+                    disabled={disableCheck}
+                    onClick={this.handleClose}
+                    aria-label="Close alert">
+              <Icon name="remove-sm-24" />
+            </button>
           </div>
         }
       </div>

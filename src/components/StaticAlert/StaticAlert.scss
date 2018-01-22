@@ -1,4 +1,5 @@
 .pe-alert {
+  display: flex;
   margin: 32px 0 0 32px;
   padding: 12px 12px 28px 28px;
   position: fixed;
@@ -9,6 +10,7 @@
 }
 
 .pe-alert-inline {
+  display: flex;
   padding: 12px 12px 28px 28px;
   background-color: #FFF;
   position: static;
@@ -17,6 +19,7 @@
 }
 
 .alert-content- {
+  margin-top: 1em;
   margin-left: 12px;
   padding: 4px 12px 0 0;
 }
@@ -43,12 +46,12 @@
     padding-right: 8px;
   }
 
-  .error-svg {
-    margin-top: 10px !important;
+  .alert-content-container .error-svg {
+    margin-top: 1.6em;
   }
 
-  .success-svg {
-    margin-top: 6px !important;
+  .alert-content-container .success-svg {
+    margin-top: 1.4em;
   }
 }
 
@@ -78,12 +81,12 @@
 
 .error-svg {
   color: #db0020;
-  margin-top: 8px;
+  margin-top: 1.5em;
 }
 
 .success-svg {
   color: #19A5A3;
-  margin-top: 4px;
+  margin-top: 1.3em;
 }
 
 .alert-content-container {
@@ -102,4 +105,5 @@
 
 .close-title {
   float: right;
+  align-self: flex-start;
 }
