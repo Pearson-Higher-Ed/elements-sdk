@@ -1,3 +1,15 @@
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.8.0...v1.9.0) (2018-01-22)
+
+
+### Bug Fixes
+
+* DES-895, progress bar spacing; also changed label tag to output tag (GLP) ([83be336](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/83be336))
+* DES-900, switched button and text around so that close button reads out last ([f8bc279](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/f8bc279))
+* issue [#232](https://github.com/Pearson-Higher-Ed/elements-sdk/issues/232) by Dinuka ([b9d571b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b9d571b))
+
+
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.7.1...v1.8.0) (2018-01-12)
 
