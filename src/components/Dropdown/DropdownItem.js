@@ -71,7 +71,16 @@ export default class DropdownItem extends Component {
           );
         break;
       default:
+        return <li id="itemTypeNotRecognized">DropdownItem "type" prop not recognized...</li>
         break;
     }
   }
 };
+
+DropdownItem.propTypes = {
+  type: PropTypes.string.isRequired
+};
+
+DropdownItem.defaultProps = {
+  type: "link",
+}
