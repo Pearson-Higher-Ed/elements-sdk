@@ -47,6 +47,7 @@
     "url": "git+https://github.com/Pearson-Higher-Ed/elements-sdk.git"
   },
   "dependencies": {
+    "babel-plugin-array-includes": "^2.0.3",
     "babel-polyfill": "^6.23.0",
     "babel-runtime": "^6.26.0",
     "input-format": "^0.1.15",
