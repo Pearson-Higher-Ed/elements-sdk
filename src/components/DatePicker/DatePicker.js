@@ -20,6 +20,7 @@ export default class DatePicker extends Component {
     this.datePickerOpen        = _datePickerOpen.bind(this);
     this.calendarHandler       = _calendarHandler.bind(this);
     this.changeHandler         = _changeHandler.bind(this);
+    this.parseDate             = _parseDate.bind(this);
   }
 
   componentDidMount() {
@@ -49,7 +50,11 @@ export default class DatePicker extends Component {
       this.input.focus();
     }
     if (e.altKey && e.which === 40) {
-      this.setState({ displayOpen: true });
+      const enteredDate = this.parseDate(e.target.value);
+      this.setState({ 
+        displayOpen: true,
+        dateObject: enteredDate
+      });
     }
   }
 
@@ -156,8 +161,12 @@ DatePicker.defaultProps = {
 
 function _datePickerOpen() {
   const { inputState } = this.state;
+  const enteredDate = this.parseDate(this.state.datepickerValue || '');
   if(inputState !== 'readOnly' || inputState !== 'disabled'){
-    this.setState({ displayOpen: true });
+    this.setState({ 
+      displayOpen: true,
+      dateObject: enteredDate
+    });
   }
 };
 
@@ -170,6 +179,39 @@ function _changeHandler(e) {
   this.props.changeHandler.call(this, e.target.value);
   this.input.focus();
 };
+
+function _parseDate(dateString) {
+  const dateParts = dateString.split('/');
+  if (dateParts.length !== 3) {
+    return;
+  }
+
+  const dayPart = this.props.dateFormat.toLowerCase() === 'dd/mm/yyyy' ? dateParts[0] : dateParts[1];
+  const monthPart = this.props.dateFormat.toLowerCase() === 'dd/mm/yyyy' ? dateParts[1] : dateParts[0];
+  
+  const year = Number.parseInt(dateParts[2]);
+  if (Number.isNaN(year) || year < 1900 || year > 9999) {
+    return;
+  }
+  const isLeapYear = year % 4 === 0;
+
+  const month = Number.parseInt(monthPart);
+  if (Number.isNaN(month) || month < 1 || month > 12) {
+    return;
+  }
+
+  const day = Number.parseInt(dayPart);
+  if (Number.isNaN(day) || day < 1 || day > 31) {
+    return;
+  }
+  if ((!isLeapYear && month === 2 && day > 28) ||
+      (isLeapYear && month === 2 && day > 29) ||
+      ([4, 6, 9, 11].includes(month) && day > 30)) {
+        return;
+  }
+
+  return new Date(year, month - 1, day);
+}
 
 function _calendarHandler(date) {
   let dateString = (date.selectedMonth + 1) + '/' + date.selectedDate + '/' + date.selectedYear;
