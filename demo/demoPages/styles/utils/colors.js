@@ -31,6 +31,9 @@ const colors = {
     name: 'charcoal',
     hex: '#252525'
   }, {
+    name: 'graphite',
+    hex: '#505759'
+  }, {
     name: 'medium-gray',
     hex: '#6a7070'
   }, {

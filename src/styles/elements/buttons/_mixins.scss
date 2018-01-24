@@ -3,13 +3,13 @@
   $color,
   $hover-bg,
   $hover-color,
-  $disabled-bg:  null,
-  $disabled-color: null
+  $border: null,
+  $hover-border: null
 ) {
 
   color           : $color;
   background-color: $bg;
-  border-radius   : $pe-btn-border-radius;
+  border          : $border;
   text-decoration : none;
   text-overflow   : ellipsis;
   white-space     : nowrap;
@@ -20,6 +20,7 @@
   &:focus {
     color            : $hover-color;
     background-color : $hover-bg;
+    border           : $hover-border;
   }
 
   &:disabled,
@@ -27,8 +28,8 @@
   &.pe-btn--disabled:hover {
     cursor          : default;
     border          : 0;
-    color           : $disabled-color;
-    background-color: $disabled-bg;
+    color           : $pe-btn-default-disabled-text;
+    background-color: $pe-btn-default-disabled-bg;
     box-shadow      : none;
     text-decoration : none;
   }
