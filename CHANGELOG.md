@@ -1,3 +1,13 @@
+<a name="1.9.1"></a>
+## [1.9.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.0...v1.9.1) (2018-01-25)
+
+
+### Bug Fixes
+
+* Change to Calendar unit test ([81b9a0b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/81b9a0b))
+
+
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.8.0...v1.9.0) (2018-01-22)
 
