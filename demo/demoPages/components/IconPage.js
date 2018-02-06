@@ -202,6 +202,24 @@ const IconPage = () => (
             <li><Icon name="zoom-in-24">Zoom In 24</Icon> zoom-in-24</li>
             <li><Icon name="zoom-out-18">Zoom Out 18</Icon> zoom-out-18</li>
             <li><Icon name="zoom-out-24">Zoom Out 24</Icon> zoom-out-24</li>
+            <li><Icon name="file-word-18">File Word 18</Icon> file-word-18</li>
+            <li><Icon name="file-word-24">File Word 24</Icon> file-word-24</li>
+            <li><Icon name="file-powerpoint-18">File PowerPoint 18</Icon> file-powerpoint-18</li>
+            <li><Icon name="file-powerpoint-24">File PowerPoint 24</Icon> file-powerpoint-24</li>
+            <li><Icon name="file-pdf-18">File PDF 18</Icon> file-pdf-18</li>
+            <li><Icon name="file-pdf-24">File PDF 24</Icon> file-pdf-24</li>
+            <li><Icon name="file-excel-18">File Excel 18</Icon> file-excel-18</li>
+            <li><Icon name="file-excel-24">File Excel 24</Icon> file-excel-24</li>
+            <li><Icon name="adobe-acrobat-18">Adobe Acrobat 18</Icon> adobe-acrobat-18</li>
+            <li><Icon name="adobe-acrobat-24">Adobe Acrobat 24</Icon> adobe-acrobat-24</li>
+            <li><Icon name="upload-18">Upload 18</Icon> upload-18</li>
+            <li><Icon name="upload-24">Upload 24</Icon> upload-24</li>
+            <li><Icon name="download-18">Download 18</Icon> download-18</li>
+            <li><Icon name="download-24">Download 24</Icon> download-24</li>
+            <li><Icon name="shopping-cart-18">Shopping Cart 18</Icon> shopping-cart-18</li>
+            <li><Icon name="shopping-cart-24">Shopping Cart 24</Icon> shopping-cart-24</li>
+            <li><Icon name="comment-18">Comment 18</Icon> comment-18</li>
+            <li><Icon name="comment-24">Comment 24</Icon> comment-24</li>
           </ul>
         </div>
       </div>
