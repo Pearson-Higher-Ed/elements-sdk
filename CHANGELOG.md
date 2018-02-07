@@ -1,3 +1,13 @@
+<a name="1.9.2"></a>
+## [1.9.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.1...v1.9.2) (2018-02-07)
+
+
+### Bug Fixes
+
+* Cal unit test ([66811e7](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/66811e7))
+
+
+
 <a name="1.9.1"></a>
 ## [1.9.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.0...v1.9.1) (2018-01-25)
 
