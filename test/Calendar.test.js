@@ -5,6 +5,9 @@ import { jsdom } from 'jsdom';
 import { Calendar } from '../index';
 
 describe('Calendar', () => {
+  const date = new Date();
+  const currentDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const month = date.getMonth();
 
   describe('Calendar', function () {
     const document = jsdom('');
@@ -46,39 +49,47 @@ describe('Calendar', () => {
     });
 
     describe('mounted', function () {
-      const date = new Date();
-      const currentDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-      const month = date.getMonth();
 
-      const wrapper = mount(<Calendar />);
       it('selects a new date', function() {
         const selectedDate = new Date(date.getFullYear(), date.getMonth(), 3);
         const newWrapper = mount(<Calendar newSelectedDt={selectedDate} />)
         newWrapper.find('#day4').simulate('click');
         expect(newWrapper.node.state.selectedDt).toEqual(new Date(date.getFullYear(), date.getMonth(), 4));
       });
+    });
 
+    describe('goes back one month', function () {
+      const wrapper = mount(<Calendar />);
       it('goes to prev month if not January', function() {
         if (wrapper.node.state.month > 0) {
           wrapper.find('[aria-label="Prev month"]').simulate('click');
           expect(wrapper.node.state.month).toEqual(month - 1);
         }
       });
+    });
 
+    describe('goes to next month if not December', function () {
+      const wrapper = mount(<Calendar />);
       it('goes to next month if not December', function() {
         if (wrapper.node.state.month < 11) {
           wrapper.find('[aria-label="Next month"]').simulate('click');
           expect(wrapper.node.state.month).toEqual(month + 1);
         }
       });
+    });
 
+    describe('goes to prev month if January', function () {
+      const wrapper = mount(<Calendar />);
       it('goes to prev month if January', function() {
         if (wrapper.node.state.month === 0) {
           wrapper.find('[aria-label="Prev month"]').simulate('click');
           expect(wrapper.node.state.month).toEqual(11);
         }
       });
+    });
 
+    describe('goes to next month if December', function () {
+      const wrapper = mount(<Calendar />);
       it('goes to next month if December', function() {
         if (wrapper.node.state.month === 11) {
           wrapper.find('[aria-label="Next month"]').simulate('click');
