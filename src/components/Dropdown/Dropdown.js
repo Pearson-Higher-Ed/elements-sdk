@@ -190,11 +190,12 @@ export default class Dropdown extends Component {
         buttonClass= 'pe-icon--btn dropdown-activator dropdown-image';
         buttonLabel = (
           <div>
-            <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt=""/>
+            <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth}
+            style={{marginTop: imgPad + 'px'}} alt=""/>
             <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
           </div>
         );
-      break;
+        break;
       // if not one of the types go to text
       default:
       case 'text':
@@ -212,7 +213,7 @@ export default class Dropdown extends Component {
         btnIcon={btnIcon}
         focus={this.state.buttonFocus}
         onClick={this.toggleDropdown}
-      >
+        >
         {buttonLabel}
       </Button>
     );
@@ -244,11 +245,12 @@ export default class Dropdown extends Component {
   }
 
   getSelectedIndex() {
-    let selectedIndex = 0;
+    let selectedIndex = -1;
 
     if (this.props.children) {
       for (let i = 0; i < this.props.children.length; i++) {
-        if (this.props.children[i].props.selected) {
+        const { props = {} } = this.props.children[i] || {};
+        if (props.selected) {
           selectedIndex = i;
           break;
         }
