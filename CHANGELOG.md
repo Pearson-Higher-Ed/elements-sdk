@@ -1,3 +1,14 @@
+<a name="1.9.3"></a>
+## [1.9.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.2...v1.9.3) (2018-02-16)
+
+
+### Bug Fixes
+
+* multiline text to 3px ([d6d778e](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/d6d778e))
+* Starts selectedIndex check at -1 so only valid children will get the selectedIndex value; undefined and other values are sometimes passed in to children as we build up the structure ([3aae5de](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/3aae5de))
+
+
+
 <a name="1.9.2"></a>
 ## [1.9.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.1...v1.9.2) (2018-02-07)
 
