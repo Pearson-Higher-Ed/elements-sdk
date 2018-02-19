@@ -58,7 +58,7 @@ export default class StaticAlert extends Component {
     return (
       <div>
         {this.state.isOpen &&
-          <div className={`pe-alert${inlineCheck} alert-${type}`}>
+          <div className={`static-pe-alert${inlineCheck} alert-${type}`}>
             <div className="static-alert-content-container">
               {this.typeCheck()}
               <div className={`static-alert-content-${infoCheck}`}>

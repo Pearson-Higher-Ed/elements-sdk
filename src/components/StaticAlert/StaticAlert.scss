@@ -1,4 +1,5 @@
-.pe-alert {
+.static-pe-alert {
+  justify-content: space-between;
   display: flex;
   margin: 32px 0 0 32px;
   padding: 12px 12px 28px 28px;
@@ -9,7 +10,8 @@
   top: 0;
 }
 
-.pe-alert-inline {
+.static-pe-alert-inline {
+  justify-content: space-between;
   display: flex;
   padding: 12px 12px 28px 28px;
   background-color: #FFF;
