@@ -16,6 +16,7 @@ export default class Dropdown extends Component {
     changeHandler: PropTypes.func,
     btnImage: PropTypes.string,
     btnImageHeight: PropTypes.string,
+    scrollable: PropTypes.bool,
     btnImageWidth: PropTypes.string
   };
 
@@ -244,11 +245,12 @@ export default class Dropdown extends Component {
   }
 
   getSelectedIndex() {
-    let selectedIndex = 0;
+    let selectedIndex = -1;
 
     if (this.props.children) {
       for (let i = 0; i < this.props.children.length; i++) {
-        if (this.props.children[i].props.selected) {
+        const { props = {} } = this.props.children[i] || {};
+        if (props.selected) {
           selectedIndex = i;
           break;
         }
@@ -270,7 +272,7 @@ export default class Dropdown extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.selectedItemDOM && typeof this.state.selectedItemDOM.scrollIntoView === 'function') {
+    if (this.state.selectedItemDOM && typeof this.state.selectedItemDOM.scrollIntoView === 'function' && this.props.scrollable) {
       // delay necessary so allow the list to appear before trying to scroll into view
       setTimeout(() => {
         this.state.selectedItemDOM.scrollIntoView(true);
