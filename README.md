@@ -132,7 +132,7 @@ Pearson Elements-SDK uses an SVG sprite for icons (the Pearson logos are two sep
 Please review the [guidelines](https://github.com/Pearson-Higher-Ed/docs/blob/master/origami-contributions.md) for contributing before getting started.
 
 [Git](https://git-scm.com/downloads) must be installed.
-[Node.js](https://nodejs.org/en/) v4 must be installed (QA testing will target even numbered Node versions, specifically 4 and 6).
+[Node.js](https://nodejs.org/en/) v6 or higher must be installed (QA testing will target even numbered Node versions, specifically 6 and 8).
 
 Windows users will need the following additional steps:
 
@@ -215,4 +215,4 @@ This project was inspired by other popular front-end frameworks published under 
 
 ## License
 
-Copyright 2017 Pearson Education.
+Copyright 2018 Pearson Education.
