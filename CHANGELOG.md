@@ -1,80 +1,29 @@
-<a name="1.9.3"></a>
-## [1.9.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.2...v1.9.3) (2018-02-16)
-
-
-### Bug Fixes
-
-* multiline text to 3px ([d6d778e](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/d6d778e))
-* Starts selectedIndex check at -1 so only valid children will get the selectedIndex value; undefined and other values are sometimes passed in to children as we build up the structure ([3aae5de](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/3aae5de))
-
-
-
-<a name="1.9.2"></a>
-## [1.9.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.1...v1.9.2) (2018-02-07)
-
-
-### Bug Fixes
-
-* Cal unit test ([66811e7](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/66811e7))
-
-
-
-<a name="1.9.1"></a>
-## [1.9.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.0...v1.9.1) (2018-01-25)
-
-
-### Bug Fixes
-
-* Change to Calendar unit test ([81b9a0b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/81b9a0b))
-
-
-
-<a name="1.9.0"></a>
-# [1.9.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.8.0...v1.9.0) (2018-01-22)
-
-
-### Bug Fixes
-
-* DES-895, progress bar spacing; also changed label tag to output tag (GLP) ([83be336](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/83be336))
-* DES-900, switched button and text around so that close button reads out last ([f8bc279](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/f8bc279))
-* issue [#232](https://github.com/Pearson-Higher-Ed/elements-sdk/issues/232) by Dinuka ([b9d571b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b9d571b))
-
-
-
-<a name="1.8.0"></a>
-# [1.8.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.7.1...v1.8.0) (2018-01-12)
+<a name="1.9.4"></a>
+## [1.9.4](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.6.1...v1.9.4) (2018-02-20)
 
 
 ### Bug Fixes
 
 * Align Calendar's unit tests with Compounds fix. ([1933bd7](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/1933bd7))
+* Cal unit test ([66811e7](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/66811e7))
+* Change to Calendar unit test ([81b9a0b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/81b9a0b))
+* DES-895, progress bar spacing; also changed label tag to output tag (GLP) ([83be336](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/83be336))
+* DES-900, switched button and text around so that close button reads out last ([f8bc279](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/f8bc279))
 * fix package-lock.json file for security vulnerability ([a8194e3](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/a8194e3))
-
-
-
-<a name="1.7.1"></a>
-## [1.7.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.7.0...v1.7.1) (2017-12-20)
-
-
-### Bug Fixes
-
+* from compounds - prevent scroll when not needed and handle non component children ([6c0fe55](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/6c0fe55))
+* issue [#232](https://github.com/Pearson-Higher-Ed/elements-sdk/issues/232) by Dinuka ([b9d571b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/b9d571b))
+* multiline text to 3px ([d6d778e](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/d6d778e))
+* Provide unique cn's to StaticAlert ([e40f451](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/e40f451))
+* remove react >15.4 unit test tool movement warnings ([f4a2cea](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/f4a2cea))
 * **typeography:** point font URLs to unpkg.com ([7c1c4c2](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/7c1c4c2))
+* Removing NodeJs 4 and adding NodeJs 8 ([ef77cc3](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/ef77cc3))
+* Starts selectedIndex check at -1 so only valid children will get the selectedIndex value; undefined and other values are sometimes passed in to children as we build up the structure ([3aae5de](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/3aae5de))
+* Update Footer copyrightText ([e2e0573](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/e2e0573))
 
 
 ### Features
 
 * **icons:** add breadcrumb icon ([3a2c0e4](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/3a2c0e4))
-
-
-
-<a name="1.7.0"></a>
-# [1.7.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.6.1...v1.7.0) (2017-12-12)
-
-
-### Bug Fixes
-
-* remove react >15.4 unit test tool movement warnings ([f4a2cea](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/f4a2cea))
-* Update Footer copyrightText ([e2e0573](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/e2e0573))
 
 
 
