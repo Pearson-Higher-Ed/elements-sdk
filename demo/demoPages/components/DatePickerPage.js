@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { injectIntl }       from 'react-intl';
-import { messages }         from '../../translations/defaultMessages';
+import { messages }         from '../translations/defaultMessages';
 
-import { DatePicker, Select } from '../../../index';
+import { DatePicker, Select } from '../../index';
 
 
 class DatePickerPage extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -56,6 +56,17 @@ class DatePickerPage extends Component {
                 <li>errorMessage:String === "an optional error message displayed below the input"</li>
                 <li>disablePast: Boolean === "Disable all past dates"</li>
                 <li>minDate:Object === "Accepts a date object which disables all dates prior to that date."</li>
+                <li>weekStartDay:Number === {`<Calendar weekStartDay={1} />`}</li>
+                <li>The Calendar will default to Sunday starting the week.  <i>weekStartDay</i> allows
+                you to change that by <br/>passing in the index of the day you would like.
+                0 - 6 are acceptable to use.</li>
+                <li>dayNamesFull:Array === {`['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', `}<br/>
+                {`'Saturday', 'Sunday']`}</li>
+                <li>Passed into the weekdays {`<abbr>`}.</li>
+                <li>dayNamesShort:Array === {`['S', 'M', 'T', 'W', 'T', 'F', 'S']`}</li>
+                <li>What is actually displayed in the Calendar.</li>
+                <li>monthNamesFull:Array === {`["January", "February", "March", "April", "May", "June", `}<br/>
+                {`"July", "August", "September", "October", "November", "December"]`}</li>
               </ul>
 
               <h3>Configure Props:</h3>

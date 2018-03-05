@@ -16,6 +16,11 @@ describe('Footer', () => {
       expect(this.wrapper.node.type).toEqual('footer');
     });
 
+    it('has the correct Copyright text', function () {
+      expect(this.wrapper.node.props.children[1].props.children)
+      .toEqual("CR text");
+    });
+
     it('correctly passes the light prop', function () {
       const lightProp = shallow(<Footer links={moreLinks} light />);
       expect(this.wrapper.instance().props.light).toEqual(false);
