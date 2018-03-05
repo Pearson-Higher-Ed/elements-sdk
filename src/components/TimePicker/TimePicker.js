@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
-import { Icon }             from '../../index';
+import { Icon }             from '../../../index';
 import { List }             from './components/List';
 
 import './TimePicker.scss';
