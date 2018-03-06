@@ -1126,6 +1126,22 @@ const StylesIconsPage = () => (
       <li>
         <svg aria-hidden="true"
              focusable="false"
+             className="pe-icon--sortable-18">
+          <use xlinkHref="#sortable-18"></use>
+        </svg>
+        sortable-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--sortable-24">
+          <use xlinkHref="#sortable-24"></use>
+        </svg>
+        sortable-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
              className="pe-icon--sort-down-18">
           <use xlinkHref="#sort-down-18"></use>
         </svg>
