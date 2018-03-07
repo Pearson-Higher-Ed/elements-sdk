@@ -1,3 +1,13 @@
+<a name="1.10.1"></a>
+## [1.10.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.0...v1.10.1) (2018-03-07)
+
+
+### Bug Fixes
+
+* Clear Footer key warning ([a05c703](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/a05c703))
+
+
+
 <a name="1.10.0"></a>
 # [1.10.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.6...v1.10.0) (2018-03-07)
 
