@@ -24,7 +24,6 @@ const HeaderPage = ({ children }) => (
             <DropdownItem label="Presentation Strategies" type="link" url="/elements-sdk/#/presentation-strategies" />
             <DropdownItem label="Grid" type="link" url="/elements-sdk/#/grid" />
             <DropdownItem label="Templates" type="link" url="/elements-sdk/#/templates" />
-            <DropdownItem label="Bootstrap - Grid" type="link" url="/elements-sdk/#/bootstrap-grid" />
           </Dropdown>
         </div>
         <div className="dropdown-wrapper">

@@ -27,7 +27,6 @@ const HomePage = () => (
         <li><Link className="homepage-link pe-link" to={`presentation-strategies`}>Presentation Strategies</Link></li>
         <li><Link className="homepage-link pe-link" to={`grid`}>Grid</Link></li>
         <li><Link className="homepage-link pe-link" to={`templates`}>Templates</Link></li>
-        <li><Link className="homepage-link pe-link" to={`bootstrap-grid`}>Bootstrap - Grid</Link></li>
       </ul>
     </div>
 
