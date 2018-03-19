@@ -3,10 +3,11 @@
 @import './mixins';
 @import '../../base/mixins';
 
-html, .pe-base-fontsize {
+.pe-base-fontsize {
    font-size: pxToRem($pe-font-size-base, 16px);
  }
- body, .pe-fontstack  {
+
+.pe-fontstack  {
    font-family: $pe-font-family-sans;
  }
 
