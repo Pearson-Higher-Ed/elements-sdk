@@ -4,12 +4,8 @@ node_js:
 - 6
 - 4
 script:
-- npm run ci
-- chmod 777 ./node_modules/@pearson-components/npm-scripts/shell_scripts/run_selenium_ci_tests.sh
 - export REPO_NAME=glp-elements-sdk
-- export TEST_GROUP=desktop-regression
 - export SUITE_NAME=glp_elements_sdk
-- ./node_modules/@pearson-components/npm-scripts/shell_scripts/run_selenium_ci_tests.sh
 after_success:
 - npm run deploy-ci
 deploy:
