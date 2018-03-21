@@ -3,8 +3,13 @@
 // import typography variables here
 @import '../elements/typography/variables';
 
+html {
+  font-size: pxToRem($pe-font-size-base, 16px);
+}
+
 body {
 	color: $pe-font-color-base;
+    font-family: $pe-font-family-sans;
 }
 
 // Remove top margins from headings
