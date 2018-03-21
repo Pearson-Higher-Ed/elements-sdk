@@ -1,32 +1,75 @@
 @import 'variables';
 @import 'mixins';
 
-%frm-fonts {
-  font-size: $form-font-size;
-  line-height: $form-line-height;
-  margin-bottom: 20px;
-}
 
 .pe-form {
 
   .pe-form--name {
-    @extend %frm-fonts;
+    margin-bottom: 36px;
   }
 
-  .pe-form--name-bold {
-    @extend %frm-fonts;
-    font-weight: $pe-label-bold;
+  .pe-form--instr {
+    margin-top: -12px;
+    margin-bottom: 24px;
   }
 
-  .pe-form--error {
-    color: $pe-color-strawberry-red;
+  .pe-form--input {
+    margin-bottom: 36px;
+    &:first-child{
+      margin-top: 24px;
+    }
+    &:last-child{
+      margin-bottom: 52px;
+    }
   }
 
-  .pe-form--desc {
-    margin-bottom: 30px;
+  .pe-form--button-group{
+    display: flex;
+    flex-direction: row-reverse;
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+    }
+    button{ 
+      &:last-child{
+        margin-right: 20px;
+        @media screen and (min-width: 768px) {
+          margin-right: 40px;
+      }
+        @media screen and (max-width: 480px) {
+          margin-right: 0;
+          margin-top: 16px;
+      }
+    }
+    }
   }
 
-  .pe-form--group {
-    margin-bottom: 40px;
+  .pe-form--inline-input{
+    display: flex;
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+    }
   }
+
+  .pe-form--inline-element{
+    width: 100%;
+    margin-right: 20px;
+    @media screen and (min-width: 768px) {       
+      margin-right: 40px;    
+    }
+    @media screen and (max-width: 480px) {
+      margin-right: 0;
+      margin-bottom: 36px; 
+    }
+    &:last-child{
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $pe-color-concrete;
+  margin-top: -20px;
+  margin-bottom: 36px;
+}
 }

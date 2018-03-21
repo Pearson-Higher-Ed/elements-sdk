@@ -13,9 +13,9 @@ const ProgressBar = ({ min, max, type, alignLabel, labelText, id, value, valueTe
 
   return (
     <div className={`progress-bar-container progress-bar-text-${alignLabel}`}>
-      <label className="pe-label" htmlFor={id}>
+      <output className="pe-label">
         {calculateRatio()}{labelText}
-      </label>
+      </output>
       <span className="pe-progress-bar-rail">
         <div
           id={id}

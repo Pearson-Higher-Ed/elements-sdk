@@ -20,7 +20,7 @@ class DropdownPage extends React.Component {
             <h3>Props</h3>
             <h4>Required:</h4>
               <ul>
-                <li className="li-props">type === text, button, icon, image</li>
+                <li className="li-props">type === text, button, icon, image.</li>
                 <li className="li-props">label === text for the button/label to activate dropdown</li>
                 <li className="li-props">id === unique id</li>
               </ul>

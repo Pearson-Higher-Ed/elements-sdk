@@ -1,7 +1,7 @@
 {
   "name": "@pearson-components/elements-sdk",
-  "version": "1.7.1",
-  "description": "Styling and basic JavaScript components for UI development.\"",
+  "version": "2.1.0-beta",
+  "description": "**Unstable BETA** Styling and basic JavaScript components for UI development.\"",
   "main": "build/css/elements.css",
   "scripts": {
     "start": "npm run serve",
@@ -47,6 +47,7 @@
     "url": "git+https://github.com/Pearson-Higher-Ed/elements-sdk.git"
   },
   "dependencies": {
+    "babel-plugin-array-includes": "^2.0.3",
     "babel-polyfill": "^6.23.0",
     "babel-runtime": "^6.26.0",
     "input-format": "^0.1.15",
@@ -111,7 +112,7 @@
     "pearson-components"
   ],
   "author": "Pearson Design Accelerator",
-  "license": "PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Pearson-Higher-Ed/elements-sdk/issues"
   },

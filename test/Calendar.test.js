@@ -53,9 +53,9 @@ describe('Calendar', () => {
       const wrapper = mount(<Calendar />);
       it('selects a new date', function() {
         const selectedDate = new Date(date.getFullYear(), date.getMonth(), 3);
-        expect(wrapper.node.state.selectedDt).toEqual(currentDate);
-        wrapper.find('#day3').simulate('click');
-        expect(wrapper.node.state.selectedDt).toEqual(selectedDate);
+        const newWrapper = mount(<Calendar newSelectedDt={selectedDate} />)
+        newWrapper.find('#day4').simulate('click');
+        expect(newWrapper.node.state.selectedDt).toEqual(new Date(date.getFullYear(), date.getMonth(), 4));
       });
 
       it('goes to prev month if not January', function() {

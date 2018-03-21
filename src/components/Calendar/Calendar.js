@@ -46,7 +46,7 @@ export default class Calendar extends Component {
       selectedYear: newSelectedDt ? newSelectedDt.getFullYear() : date.getFullYear(),
       selectedMonth: newSelectedDt ? newSelectedDt.getMonth() : date.getMonth(),
       selectedDate: newSelectedDt ? newSelectedDt.getDate() : date.getDate(),
-      selectedDt: newSelectedDt || new Date(date.getFullYear(), date.getMonth(), date.getDate()),
+      selectedDt: newSelectedDt,
       weekStartDay: weekStartDay,
       minDate: minDate ? minDate : null,
       secondaryDate: secondaryDate,

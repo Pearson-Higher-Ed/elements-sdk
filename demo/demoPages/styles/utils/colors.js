@@ -48,6 +48,9 @@ const colors = {
     rename:'neutral-two',
     hex: '#252525'
   }, {
+    name: 'graphite',
+    hex: '#505759'
+  }, {
     name: 'medium-gray',
     rename:'neutral-three',
     hex: '#6a7070'

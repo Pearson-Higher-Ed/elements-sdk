@@ -205,13 +205,14 @@ export default class Dropdown extends Component {
     return (
       <Button
         className={buttonClass}
+        type="button"
         aria-expanded={this.state.open}
         aria-controls={`${this.props.id.replace(' ', '_')}-dropdown`}
         aria-haspopup="true"
         btnIcon={btnIcon}
         focus={this.state.buttonFocus}
         onClick={this.toggleDropdown}
-        >
+      >
         {buttonLabel}
       </Button>
     );
@@ -288,7 +289,7 @@ export default class Dropdown extends Component {
           <ul
             role="menu"
             id={`${this.props.id.replace(' ', '_')}-dropdown`}
-            ref={(dom) => { this.list = dom; }}
+            ref={(parent) => { this.list = parent; }}
             className={this.state.open ? '' : 'dropdown-menu'}
             onClick={this.itemSelected}
             onKeyDown={this.handleKeyDown}>
