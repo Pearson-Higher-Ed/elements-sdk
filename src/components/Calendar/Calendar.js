@@ -99,8 +99,13 @@ export default class Calendar extends Component {
       e.preventDefault();
     }
 
+    if (which === 13 || which === 32) {
+      e.stopPropagation();
+    }
+
     switch (which) {
       case 13: this.enterSelect(); break;
+      case 32: this.enterSelect(); break;
       case 37: this.leftArrow(); break;
       case 38: this.upArrow(); break;
       case 39: this.rightArrow(); break;
