@@ -57,7 +57,9 @@ export default class Dropdown extends Component {
     }
 
     if (touch_right) {
-      element.style.left = `-${elementRect.width - anchorRect.width}px`;
+    	if (window.screen.width >= 768) {
+      		element.style.left = `-${elementRect.width - anchorRect.width}px`;
+      }
     }
   }
 
@@ -220,15 +222,17 @@ export default class Dropdown extends Component {
   }
 
   addMobileHeader() {
-    if (window.screen.width < 480) {
+    if (window.screen.width < 768) {
       return (
         <li data-item="divider">
           <div className="mobile-title">
             <h1 className="pe-page-title pe-page-title--small">
               {this.props.mobileTitle}
-              <span className="icon-fix">
-                <Icon name="remove-lg-18"></Icon>
-              </span>
+              <button className="pe-icon--btn icon-fix"
+                    onClick={this.toggleDropdown}
+                    aria-label="Close dropdown">
+              <Icon name="remove-lg-18" />
+            </button>
             </h1>
           </div>
         </li>
