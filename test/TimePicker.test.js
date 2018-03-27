@@ -75,7 +75,7 @@ describe('TimePicker', () => {
     it('should close the dropdown with enter key', function() {
       this.wrapper = mount(<TimePicker id="test" labelText="test" timeFormat="hh:mm" changeHandler={() => {}} time/>);
       this.wrapper.find('input').simulate('click');
-      const e = {"target":{"innerText":"Hi there"},"which":13};
+      const e = {"target":{"innerText":"Hi there"},"which":13, preventDefault:() => {}};
       this.wrapper.instance().inputEvents(e);
       expect(this.wrapper.find('ul').exists()).toEqual(false);
     });
