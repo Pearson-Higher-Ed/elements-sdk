@@ -1,3 +1,13 @@
+<a name="1.10.2"></a>
+## [1.10.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.1...v1.10.2) (2018-03-27)
+
+
+### Bug Fixes
+
+* Add additional keyboard functionality ([18c58d9](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/18c58d9))
+
+
+
 <a name="1.10.1"></a>
 ## [1.10.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.0...v1.10.1) (2018-03-07)
 
