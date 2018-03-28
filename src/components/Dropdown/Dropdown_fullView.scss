@@ -73,6 +73,7 @@
 
   .divider-container {
     cursor: default;
+    padding: 0 24px;
     &:hover {
       background-color: transparent;
     }
@@ -82,7 +83,7 @@
       border-top: none;
       border-left: none;
       border-right: none;
-      width: 80%;
+      width: 100%;
       margin-top: 2px;
       margin-bottom: 1px;
     }

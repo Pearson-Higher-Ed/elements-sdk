@@ -35,6 +35,8 @@ class DropdownPage extends React.Component {
               <li className="li-props">btnImage:String === "URL to the image" (if dropdown is image type)</li>
               <li className="li-props">btnImageHeight:String === "Display height of image in pixels" (if dropdown is image type)</li>
               <li className="li-props">btnImageWidth:String === "Display width of the image in pixels" (if dropdown is image type)</li>
+              <li className="li-props">btnImageAlt:String === "Alt text for image" (if dropdown is image type)</li>
+
             </ul>
             <h3>Dropdown item Props </h3>
             <h4>Required:</h4>
@@ -51,6 +53,7 @@ class DropdownPage extends React.Component {
               <li className="li-props">imgUrl: URL to image (if type is imageButton)</li>
               <li className="li-props">imgHeight: Display height of image (if type is imgButton)</li>
               <li className="li-props">imgWidth: Display width of image (if type is imgButton)</li>
+              <li className="li-props">imgAlt: Alt text of image (if type is imgButton)</li>
             </ul>
           </div>
 
@@ -150,12 +153,13 @@ class DropdownPage extends React.Component {
               id="image"
               btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
               btnImageHeight="10"
-              btnImageWidth="20">
+              btnImageWidth="20"
+              btnImageAlt="US flag">
               <DropdownItem checkmark selected={this.state.buttonImageSelected}
-                selectedName="selected" label="image item 1" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" imgHeight="10" imgWidth="20" selectValue="US" />
+                selectedName="selected" label="image item 1" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" imgHeight="10" imgWidth="20" selectValue="US" imgAlt="US flag" />
               <DropdownItem type="divider" />
-              <DropdownItem checkmark label="image item 2" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" />
-              <DropdownItem checkmark label="image item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" />
+              <DropdownItem checkmark label="image item 2" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" imgAlt="UK flag" />
+              <DropdownItem checkmark label="image item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" imgAlt="African flag" />
             </Dropdown>
             <p className="code">
               {`<Dropdown
@@ -172,12 +176,13 @@ class DropdownPage extends React.Component {
                 id="image"
                 btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
                 btnImageHeight="10"
-                btnImageWidth="20">
+                btnImageWidth="20"
+                btnImageAlt="US flag">
                 <DropdownItem checkmark selected={this.state.buttonImageSelected}
-                  selectedName="selected" label="image item 1" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" imgHeight="10" imgWidth="20" selectValue="US" />
+                  selectedName="selected" label="image item 1" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" imgHeight="10" imgWidth="20" selectValue="US" imgAlt="US flag" />
                 <DropdownItem type="divider" />
-                <DropdownItem checkmark label="image item 2" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" />
-                <DropdownItem checkmark label="image item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" />
+                <DropdownItem checkmark label="image item 2" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" imgAlt="UK flag" />
+                <DropdownItem checkmark label="image item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" imgAlt="African flag" />
               </Dropdown>`}
             </p>
         </div>

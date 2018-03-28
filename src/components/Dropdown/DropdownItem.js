@@ -14,11 +14,12 @@ export default class DropdownItem extends Component {
     dropdownId: PropTypes.string,
     imgUrl: PropTypes.string,
     imgHeight: PropTypes.string,
-    imgWidth: PropTypes.string
+    imgWidth: PropTypes.string,
+    imgAlt: PropTypes.string
   };
 
   render() {
-    const { url, label, selectValue, type, selected, selectedName, checkmark, onClick, dropdownId, imgUrl, imgHeight, imgWidth } = this.props;
+    const { url, label, selectValue, type, selected, selectedName, checkmark, onClick, dropdownId, imgUrl, imgHeight, imgWidth, imgAlt } = this.props;
 
     switch (type) {
       case 'divider':
@@ -63,7 +64,7 @@ export default class DropdownItem extends Component {
               }
 
               <span className={checkmark ? 'icon-padding' : ''}>
-                <img src={imgUrl} height={imgHeight} width={imgWidth} alt=""/>
+                <img src={imgUrl} height={imgHeight} width={imgWidth} alt={imgAlt} />
                 &nbsp;{label}
               </span>
             </button>

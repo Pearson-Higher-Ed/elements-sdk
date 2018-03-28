@@ -12,6 +12,7 @@ const HeaderPage = ({ children }) => (
           <Dropdown
             type="button"
             label="Styles"
+            mobileTitle="Styles"
             id="stylez">
             <DropdownItem label="Styles - Buttons" type="link" url="/elements-sdk/#/styles-buttons" />
             <DropdownItem label="Forms" type="link" url="/elements-sdk/#/forms" />
@@ -30,6 +31,7 @@ const HeaderPage = ({ children }) => (
           <Dropdown
             type="button"
             label="Components"
+            mobileTitle="Components"
             id="react-components">
             <DropdownItem label="Buttons" type="link" url="/elements-sdk/#/buttons" />
             <DropdownItem label="Icons" type="link" url="/elements-sdk/#/icons" />

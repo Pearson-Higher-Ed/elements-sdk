@@ -17,7 +17,8 @@ export default class Dropdown extends Component {
     btnImage: PropTypes.string,
     btnImageHeight: PropTypes.string,
     scrollable: PropTypes.bool,
-    btnImageWidth: PropTypes.string
+    btnImageWidth: PropTypes.string,
+    btnImageAlt: PropTypes.string
   };
 
   constructor(props) {
@@ -71,7 +72,14 @@ export default class Dropdown extends Component {
 
   toggleDropdown() {
     this.setState({ open: !this.state.open }, () => {
-      this.list.children[0].children[0].focus();
+      
+      if (window.screen.width < 768) {
+      	this.list.children[1].children[0].focus();
+      }
+      else { 
+      	this.list.children[0].children[0].focus();
+      }
+      
       if (this.state.open) {
         this.placement(ReactDOM.findDOMNode(this));
       } else {
@@ -169,7 +177,7 @@ export default class Dropdown extends Component {
     let btnIcon=false;
     let buttonLabel = (
       <div>
-        {this.props.label} <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
+        {this.props.label} <Icon name="dropdown-open-sm-18"/>
       </div>
     );
 
@@ -193,8 +201,8 @@ export default class Dropdown extends Component {
         buttonClass= 'pe-icon--btn dropdown-activator dropdown-image';
         buttonLabel = (
           <div>
-            <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt=""/>
-            <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
+            <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt={this.props.btnImageAlt} />
+            <Icon name="dropdown-open-sm-18"/>
           </div>
         );
       break;
@@ -226,14 +234,16 @@ export default class Dropdown extends Component {
       return (
         <li data-item="divider">
           <div className="mobile-title">
-            <h1 className="pe-page-title pe-page-title--small">
+            <h1 className="pe-title pe-title--small" 
+            	id={`${this.props.id.replace(' ', '_')}-title`}>
               {this.props.mobileTitle}
+              </h1>
               <button className="pe-icon--btn icon-fix"
                     onClick={this.toggleDropdown}
                     aria-label="Close dropdown">
               <Icon name="remove-lg-18" />
             </button>
-            </h1>
+            
           </div>
         </li>
       );
@@ -297,6 +307,7 @@ export default class Dropdown extends Component {
             id={`${this.props.id.replace(' ', '_')}-dropdown`}
             ref={(parent) => { this.list = parent; }}
             className={this.state.open ? '' : 'dropdown-menu'}
+            aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
             onClick={this.itemSelected}
             onKeyDown={this.handleKeyDown}>
             {this.addMobileHeader()}
