@@ -195,6 +195,7 @@ function _inputEvents(e) {
       e.preventDefault();
       this.setState({ displayOpen: !this.state.displayOpen });
       break;
+    case 32:
   };
 };
 
@@ -223,6 +224,7 @@ function _listEventInterface(e) {
       }
       break;
     case 13:  //enter
+    case 32:  //space
       e.preventDefault();
       this.listHandler(e);
       this.setState({ displayOpen: false });

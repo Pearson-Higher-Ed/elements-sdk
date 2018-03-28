@@ -46,6 +46,7 @@ const Dates = (props) => {
 
   return (
     <div className={className}
+         ref={props.datesRef}
          role="grid"
          tabIndex="0"
          aria-activedescendant={`day${selectedDate}`}
