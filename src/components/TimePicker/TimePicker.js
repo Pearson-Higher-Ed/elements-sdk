@@ -195,7 +195,6 @@ function _inputEvents(e) {
       e.preventDefault();
       this.setState({ displayOpen: !this.state.displayOpen });
       break;
-    case 32:
   };
 };
 
