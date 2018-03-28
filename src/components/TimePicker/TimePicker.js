@@ -191,7 +191,7 @@ function _inputEvents(e) {
     case 9:   //tab
       this.setState({ displayOpen:false, labelStyleTmp:this.state.labelStyle });
       break;
-    case 13:
+    case 13: // enter
       e.preventDefault();
       this.setState({ displayOpen: !this.state.displayOpen });
       break;

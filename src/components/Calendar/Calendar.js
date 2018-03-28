@@ -97,26 +97,26 @@ export default class Calendar extends Component {
     let which = e.which || e.keyCode;
 
     switch (which) {
-      case 13:
-      case 32:
-      case 37:
-      case 38:
-      case 39:
-      case 40:
+      case 13: // space
+      case 32: // enter
+      case 37: // left arrow
+      case 38: // up arrow
+      case 39: // right arrow
+      case 40: // down arrow
         e.preventDefault();
         break;
-      default: break;      
+      default: break;
     }
 
     switch (which) {
-      case 13:
-      case 32:
+      case 13: // space
+      case 32: // enter
         this.enterSelect();
         break;
-      case 37: this.leftArrow(); break;
-      case 38: this.upArrow(); break;
-      case 39: this.rightArrow(); break;
-      case 40: this.downArrow(); break;
+      case 37: this.leftArrow(); break; // left arrow
+      case 38: this.upArrow(); break; // up arrow
+      case 39: this.rightArrow(); break; // right arrow
+      case 40: this.downArrow(); break; // down arrow
       default: break;
     }
   }
