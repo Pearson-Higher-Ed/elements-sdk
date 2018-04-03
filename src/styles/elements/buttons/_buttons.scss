@@ -1,35 +1,41 @@
 @import 'variables';
 @import 'mixins';
 
-
 %btn {
-  border-radius  : $pe-btn-border-radius;
+  box-sizing     : border-box;
   border         : none;
   display        : inline-block;
   vertical-align : middle;
   cursor         : pointer;
-  font-size      : $pe-btn-small-font-size;
-  height         : $pe-btn-small-height;
-  line-height    : $pe-btn-small-height;
-  padding        : $pe-btn-small-padding;
-  font-weight    : 600;
+
+  // Large: The standard button size, prefer this button as a default size 
+  // unless there is a reason to go up or down.
+  height         : $pe-btn-large-height;
+  padding        : $pe-btn-large-padding;
+  border-radius  : $pe-btn-large-border-radius;
+  font-size      : $pe-font-size-base;
+  line-height    : $pe-line-height-base;
+
+  font-weight    : $pe-label-bold;
 }
 
-%btn_large {
-  height      : $pe-btn-large-height;
-  font-size   : $pe-btn-large-font-size;
-  line-height : $pe-btn-large-height;
-  padding     : $pe-btn-large-padding;
+%btn_small {
+  height         : $pe-btn-small-height;
+  border-radius  : $pe-btn-small-border-radius;
+  padding        : $pe-btn-small-padding;
+  font-size      : $pe-font-size-base;
+  line-height    : $pe-line-height-base;
 }
+
 
 %btn_xlarge {
-  height      : $pe-btn-xlarge-height;
-  font-size   : $pe-btn-xlarge-font-size;
-  line-height : $pe-btn-xlarge-height;
-  padding     : $pe-btn-xlarge-padding;
+  height         : $pe-btn-xlarge-height;
+  border-radius  : $pe-btn-xlarge-border-radius;
+  padding        : $pe-btn-xlarge-padding;
+  font-size      : $pe-font-size-large;
+  line-height    : $pe-line-height-large; 
 }
 
-// For icons in buttons, remove buttony styles
 
 .pe-icon--btn {
   padding: 0;
@@ -76,18 +82,17 @@
 }
 
 //===========btn=================================
-.pe-btn {
+.pe-btn, .pe-btn--btn_large {
 
   @extend %btn;
-  border: $pe-btn-default-border;
 
   @include pe-btn(
     $pe-btn-default-bg,
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
-    $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
+    $pe-btn-default-border,
+    $pe-btn-default-hover-border
   );
 
 }
@@ -111,32 +116,15 @@
 .pe-btn--btn_small {
 
   @extend %btn;
-  border: $pe-btn-default-border;
+  @extend %btn_small;
 
   @include pe-btn(
     $pe-btn-default-bg,
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
-    $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
-  );
-
-}
-
-.pe-btn--btn_large {
-
-  @extend %btn;
-  @extend %btn_large;
-  border: $pe-btn-default-border;
-
-  @include pe-btn(
-    $pe-btn-default-bg,
-    $pe-btn-default-text,
-    $pe-btn-default-hover-bg,
-    $pe-btn-default-hover-text,
-    $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
+    $pe-btn-default-border,
+    $pe-btn-default-hover-border
   );
 
 }
@@ -145,54 +133,41 @@
 
   @extend %btn;
   @extend %btn_xlarge;
-  border: $pe-btn-default-border;
 
   @include pe-btn(
     $pe-btn-default-bg,
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
-    $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
+    $pe-btn-default-border,
+    $pe-btn-default-hover-border
   );
 
 }
 
 //===========Primary=================================
-.pe-btn__primary {
+.pe-btn__primary, .pe-btn__primary--btn_large {
 
   @extend %btn;
 
   @include pe-btn(
-    $pe-color-digital-pearson-blue,
-    $pe-color-white,
-    $pe-color-ink-blue,
-    $pe-color-white
+    $pe-btn-primary-bg,
+    $pe-btn-primary-text,
+    $pe-btn-primary-hover-bg,
+    $pe-btn-primary-hover-text
   );
 }
 
 .pe-btn__primary--btn_small {
 
   @extend %btn;
+  @extend %btn_small;
 
   @include pe-btn(
-  $pe-color-digital-pearson-blue,
-  $pe-color-white,
-  $pe-color-ink-blue,
-  $pe-color-white
-  );
-}
-
-.pe-btn__primary--btn_large {
-
-  @extend %btn;
-  @extend %btn_large;
-
-  @include pe-btn(
-  $pe-color-digital-pearson-blue,
-  $pe-color-white,
-  $pe-color-ink-blue,
-  $pe-color-white
+    $pe-btn-primary-bg,
+    $pe-btn-primary-text,
+    $pe-btn-primary-hover-bg,
+    $pe-btn-primary-hover-text
   );
 }
 
@@ -202,16 +177,17 @@
   @extend %btn_xlarge;
 
   @include pe-btn(
-  $pe-color-digital-pearson-blue,
-  $pe-color-white,
-  $pe-color-ink-blue,
-  $pe-color-white
+    $pe-btn-primary-bg,
+    $pe-btn-primary-text,
+    $pe-btn-primary-hover-bg,
+    $pe-btn-primary-hover-text
   );
 }
 
 
+
 //===========CTA=================================
-.pe-btn__cta {
+.pe-btn__cta, .pe-btn__cta--btn_large {
 
   @extend %btn;
 
@@ -226,19 +202,7 @@
 .pe-btn__cta--btn_small {
 
   @extend %btn;
-
-  @include pe-btn(
-    $pe-btn-cta-bg,
-    $pe-btn-cta-text,
-    $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
-  );
-}
-
-.pe-btn__cta--btn_large {
-
-  @extend %btn;
-  @extend %btn_large;
+  @extend %btn_small;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -260,3 +224,64 @@
     $pe-btn-cta-hover-text
   );
 }
+
+//===========TERTIARY=================================
+.pe-btn__tertiary, .pe-btn__tertiary--btn_large {
+  
+    @extend %btn;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
+  
+  .pe-btn__tertiary--btn_small {
+  
+    @extend %btn;
+    @extend %btn_small;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
+ 
+  .pe-btn__tertiary--btn_xlarge {
+  
+    @extend %btn;
+    @extend %btn_xlarge;
+  
+    @include pe-btn(
+      $pe-btn-tertiary-bg,
+      $pe-btn-tertiary-text,
+      $pe-btn-tertiary-hover-bg,
+      $pe-btn-tertiary-hover-text
+    );
+  }
+
+// vertical align doesn't work in div and a, the text in those sticks to the top border.
+// It stayed at center before because the line height in this file was mistakenly set as height.
+// Here set the line-height in div and a as the same as the height to make text align center.
+  div[class$='--btn_xlarge'], a[class$='--btn_xlarge'] {
+    line-height: 40px !important;
+  }
+
+  div[class$='--btn_large'], a[class$='--btn_large'] {
+    line-height: 36px !important;
+  }
+
+  div[class='pe-btn__primary'], div[class='pe-btn__cta'], div[class='pe-btn__tertiary'], div[class='pe-btn'],
+  a[class='pe-btn__primary'], a[class='pe-btn__cta'], a[class='pe-btn__tertiary'], a[class='pe-btn'] {
+    line-height: 36px !important;
+  }
+  
+  div[class$='--btn_small'], a[class$='--btn_small'] {
+    line-height: 32px !important;
+  }
+  
+  

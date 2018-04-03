@@ -9,6 +9,8 @@ const ColorPage = () => {
                     style={{backgroundColor: item.hex}}>
                  <p className="color-page-white-text">{item.name}</p>
                  <p className="color-page-dark-text">{item.name}</p>
+                 <p className="color-page-white-text">{item.rename}</p>
+                 <p className="color-page-dark-text">{item.rename}</p>
                </div><p>{item.hex}</p></div>);
   };
   const primaryColors = () => {
@@ -62,7 +64,7 @@ const ColorPage = () => {
       <h2>Entire Palette</h2>
       <p>The background color of each swatch is the hex code that will be used.</p>
       <p>Text is in both black and white to show you the un-adjusted contrast for each.</p>
-      <p>You should not have to use these directly, but in the event you do, use `$pe-color-[color-name]` for example<br/>`$pe-color-digital-pearson-blue`.</p>
+      <p>You should not have to use these directly, but in the event you do, use `$pe-color-[color-name]`, for example `$pe-color-digital-pearson-blue`; or use the palette naming, for example `$primary`, `$secondary-three`. </p>
 
       <h3>Primary Palette</h3>
       {primaryColors()}
