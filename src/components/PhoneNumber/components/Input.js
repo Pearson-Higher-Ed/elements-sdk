@@ -1053,6 +1053,7 @@ export default class Input extends Component
 						<div className={fancyGroup}>
 
 						<div style={{float: 'left'}}><Dropdown
+							scrollable={true}
 							dropdownControlLabel="Dropdown open"
 							changeHandler={(data) => {
 								this.set_country(data.value);

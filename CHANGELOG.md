@@ -1,3 +1,86 @@
+<a name="1.10.2"></a>
+## [1.10.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.1...v1.10.2) (2018-03-27)
+
+
+### Bug Fixes
+
+* Add additional keyboard functionality ([18c58d9](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/18c58d9))
+
+
+
+<a name="1.10.1"></a>
+## [1.10.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.0...v1.10.1) (2018-03-07)
+
+
+### Bug Fixes
+
+* Clear Footer key warning ([a05c703](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/a05c703))
+
+
+
+<a name="1.10.0"></a>
+# [1.10.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.6...v1.10.0) (2018-03-07)
+
+
+
+<a name="1.9.6"></a>
+## [1.9.6](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.5...v1.9.6) (2018-03-06)
+
+
+### Features
+
+* Add sortable icon ([7127ce1](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/7127ce1))
+
+
+
+<a name="1.9.5"></a>
+## [1.9.5](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.4...v1.9.5) (2018-03-06)
+
+
+
+<a name="1.9.4"></a>
+## [1.9.4](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.3...v1.9.4) (2018-02-20)
+
+
+### Bug Fixes
+
+* from compounds - prevent scroll when not needed and handle non component children ([6c0fe55](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/6c0fe55))
+* Provide unique cn's to StaticAlert ([e40f451](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/e40f451))
+
+
+
+<a name="1.9.3"></a>
+## [1.9.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.2...v1.9.3) (2018-02-16)
+
+
+### Bug Fixes
+
+* multiline text to 3px ([d6d778e](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/d6d778e))
+* Removing NodeJs 4 and adding NodeJs 8 ([ef77cc3](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/ef77cc3))
+* Starts selectedIndex check at -1 so only valid children will get the selectedIndex value; undefined and other values are sometimes passed in to children as we build up the structure ([3aae5de](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/3aae5de))
+
+
+
+<a name="1.9.2"></a>
+## [1.9.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.1...v1.9.2) (2018-02-07)
+
+
+### Bug Fixes
+
+* Cal unit test ([66811e7](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/66811e7))
+
+
+
+<a name="1.9.1"></a>
+## [1.9.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.9.0...v1.9.1) (2018-01-25)
+
+
+### Bug Fixes
+
+* Change to Calendar unit test ([81b9a0b](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/81b9a0b))
+
+
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.8.0...v1.9.0) (2018-01-22)
 

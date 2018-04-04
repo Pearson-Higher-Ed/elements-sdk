@@ -80,11 +80,11 @@ export default class Calendar extends Component {
   }
 
   componentDidMount() {
-    this.container.addEventListener('keydown', this.handleKeys);
+    this.dates.addEventListener('keydown', this.handleKeys);
   }
 
   componentWillUnmount() {
-    this.container.removeEventListener('keydown', this.handleKeys);
+    this.dates.removeEventListener('keydown', this.handleKeys);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -95,16 +95,28 @@ export default class Calendar extends Component {
 
   handleKeys = (e) => {
     let which = e.which || e.keyCode;
-    if (which === 37 || which === 38 || which === 39 || which === 40) {
-      e.preventDefault();
+
+    switch (which) {
+      case 13: // space
+      case 32: // enter
+      case 37: // left arrow
+      case 38: // up arrow
+      case 39: // right arrow
+      case 40: // down arrow
+        e.preventDefault();
+        break;
+      default: break;
     }
 
     switch (which) {
-      case 13: this.enterSelect(); break;
-      case 37: this.leftArrow(); break;
-      case 38: this.upArrow(); break;
-      case 39: this.rightArrow(); break;
-      case 40: this.downArrow(); break;
+      case 13: // space
+      case 32: // enter
+        this.enterSelect();
+        break;
+      case 37: this.leftArrow(); break; // left arrow
+      case 38: this.upArrow(); break; // up arrow
+      case 39: this.rightArrow(); break; // right arrow
+      case 40: this.downArrow(); break; // down arrow
       default: break;
     }
   }
@@ -227,7 +239,7 @@ export default class Calendar extends Component {
     const colorSwap = contrast ? 'calendar-contrast' :'';
 
     return (
-      <div className={`pe-calendar ${colorSwap}`} ref={div => this.container = div}>
+      <div className={`pe-calendar ${colorSwap}`}>
         <div className="pe-inner">
           <Header
             monthNames={monthNamesFull}
@@ -244,6 +256,7 @@ export default class Calendar extends Component {
             weekStartDay={weekStartDay} />
 
           <Dates
+            datesRef={el => this.dates = el}
             selectedDt={selectedDt}
             month={month}
             monthNames={monthNamesFull}

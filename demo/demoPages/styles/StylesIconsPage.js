@@ -1126,6 +1126,22 @@ const StylesIconsPage = () => (
       <li>
         <svg aria-hidden="true"
              focusable="false"
+             className="pe-icon--sortable-18">
+          <use xlinkHref="#sortable-18"></use>
+        </svg>
+        sortable-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--sortable-24">
+          <use xlinkHref="#sortable-24"></use>
+        </svg>
+        sortable-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
              className="pe-icon--sort-down-18">
           <use xlinkHref="#sort-down-18"></use>
         </svg>
@@ -1250,6 +1266,150 @@ const StylesIconsPage = () => (
           <use xlinkHref="#zoom-out-24"></use>
         </svg>
         zoom-out-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--file-word-18">
+          <use xlinkHref="#file-word-18"></use>
+        </svg>
+        file-word-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--file-word-24">
+          <use xlinkHref="#file-word-24"></use>
+        </svg>
+        file-word-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--file-powerpoint-18">
+          <use xlinkHref="#file-powerpoint-18"></use>
+        </svg>
+        file-powerpoint-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--file-powerpoint-24">
+          <use xlinkHref="#file-powerpoint-24"></use>
+        </svg>
+        file-powerpoint-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--file-pdf-18">
+          <use xlinkHref="#file-pdf-18"></use>
+        </svg>
+        file-pdf-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--file-pdf-24">
+          <use xlinkHref="#file-pdf-24"></use>
+        </svg>
+        file-pdf-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--file-excel-18">
+          <use xlinkHref="#file-excel-18"></use>
+        </svg>
+        file-excel-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--file-excel-24">
+          <use xlinkHref="#file-excel-24"></use>
+        </svg>
+        file-excel-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--adobe-acrobat-18">
+          <use xlinkHref="#adobe-acrobat-18"></use>
+        </svg>
+        adobe-acrobat-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--adobe-acrobat-24">
+          <use xlinkHref="#adobe-acrobat-24"></use>
+        </svg>
+        adobe-acrobat-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--upload-18">
+          <use xlinkHref="#upload-18"></use>
+        </svg>
+        upload-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--upload-24">
+          <use xlinkHref="#upload-24"></use>
+        </svg>
+        upload-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--download-18">
+          <use xlinkHref="#download-18"></use>
+        </svg>
+        download-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--download-24">
+          <use xlinkHref="#download-24"></use>
+        </svg>
+        download-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--shopping-cart-18">
+          <use xlinkHref="#shopping-cart-18"></use>
+        </svg>
+        shopping-cart-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--shopping-cart-24">
+          <use xlinkHref="#shopping-cart-24"></use>
+        </svg>
+        shopping-cart-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--comment-18">
+          <use xlinkHref="#comment-18"></use>
+        </svg>
+        comment-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--comment-24">
+          <use xlinkHref="#comment-24"></use>
+        </svg>
+        comment-24
       </li>
     </ul>
 

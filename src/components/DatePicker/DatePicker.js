@@ -11,9 +11,7 @@ export default class DatePicker extends Component {
     super(props);
 
     this.state = {
-      datepickerValue : this.props.datePickerValue,
-      disablePast: this.props.disablePast ? this.props.disablePast : false,
-      minDate: this.props.minDate ? this.props.minDate : null
+      datepickerValue : this.props.datePickerValue
     };
 
     this.applyDatePickerStyles = _applyDatePickerStyles.bind(this);
@@ -51,7 +49,7 @@ export default class DatePicker extends Component {
     }
     if (e.altKey && e.which === 40) {
       const enteredDate = this.parseDate(e.target.value);
-      this.setState({ 
+      this.setState({
         displayOpen: true,
         dateObject: enteredDate
       });
@@ -73,9 +71,10 @@ export default class DatePicker extends Component {
 
   render() {
     const { inputStyle, labelStyleTmp, displayOpen, datepickerValue,
-            dateObject, containerStyle, placeholder, disablePast, minDate
-          } = this.state;
-    const { className, inputState, id, labelText, infoMessage, errorMessage } = this.props;
+            dateObject, containerStyle, placeholder } = this.state;
+    const { className, inputState, id, labelText, infoMessage, errorMessage,
+            dayNamesFull, monthNamesFull, weekStartDay, dayNamesShort, disablePast, minDate
+          } = this.props;
 
     const em                  = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
     const ariaDescribedby     = em + (infoMessage ? `infoMsg-${id}` : '');
@@ -115,12 +114,12 @@ export default class DatePicker extends Component {
         {infoMessage  &&
           <span id={`infoMsg-${id}`} className="pe-input--info_message">
             {infoMessage}
-          </span> }
+          </span>}
 
         {errorMessage && inputState === 'error' &&
           <span id={`errMsg-${id}`} className="pe-input--error_message">
             {errorMessage}
-          </span> }
+          </span>}
 
         {displayOpen  && inputState !== 'readOnly' &&
           <div
@@ -132,8 +131,12 @@ export default class DatePicker extends Component {
               minDate={minDate}
               newSelectedDt={dateObject}
               onSelect={this.calendarHandler}
+              dayNamesFull={dayNamesFull}
+              monthNamesFull={monthNamesFull}
+              weekStartDay={weekStartDay}
+              dayNamesShort={dayNamesShort}
             />
-          </div> }
+          </div>}
 
       </div>
     );
@@ -152,20 +155,26 @@ DatePicker.propTypes = {
   inputState    : PropTypes.string,
   className     : PropTypes.string,
   disablePast   : PropTypes.bool,
-  minDate       : PropTypes.object
+  minDate       : PropTypes.object,
+  dayNamesFull  : PropTypes.arrayOf(PropTypes.string),
+  monthNamesFull: PropTypes.arrayOf(PropTypes.string),
+  weekStartDay  : PropTypes.number,
+  dayNamesShort : PropTypes.arrayOf(PropTypes.string)
 };
 
 DatePicker.defaultProps = {
-  dateFormat: 'mm/dd/yyyy'
+  dateFormat: 'mm/dd/yyyy',
+  inputState: ''
 }
 
 function _datePickerOpen() {
-  const { inputState } = this.state;
+  const { inputState } = this.props;
   const enteredDate = this.parseDate(this.state.datepickerValue || '');
-  if(inputState !== 'readOnly' || inputState !== 'disabled'){
-    this.setState({ 
-      displayOpen: true,
-      dateObject: enteredDate
+
+  if (inputState === '' || inputState === 'default' || inputState === 'error') {
+    this.setState({
+      dateObject: enteredDate,
+      displayOpen: true
     });
   }
 };
@@ -182,32 +191,26 @@ function _changeHandler(e) {
 
 function _parseDate(dateString) {
   const dateParts = dateString.split('/');
-  if (dateParts.length !== 3) {
-    return;
-  }
+  if (dateParts.length !== 3) return;
 
   const dayPart = this.props.dateFormat.toLowerCase() === 'dd/mm/yyyy' ? dateParts[0] : dateParts[1];
   const monthPart = this.props.dateFormat.toLowerCase() === 'dd/mm/yyyy' ? dateParts[1] : dateParts[0];
-  
+
   const year = Number.parseInt(dateParts[2]);
-  if (Number.isNaN(year) || year < 1900 || year > 9999) {
-    return;
-  }
+  if (Number.isNaN(year) || year < 1900 || year > 9999) return;
+
   const isLeapYear = year % 4 === 0;
 
   const month = Number.parseInt(monthPart);
-  if (Number.isNaN(month) || month < 1 || month > 12) {
-    return;
-  }
+  if (Number.isNaN(month) || month < 1 || month > 12) return;
 
   const day = Number.parseInt(dayPart);
-  if (Number.isNaN(day) || day < 1 || day > 31) {
-    return;
-  }
+  if (Number.isNaN(day) || day < 1 || day > 31) return;
+
   if ((!isLeapYear && month === 2 && day > 28) ||
       (isLeapYear && month === 2 && day > 29) ||
       ([4, 6, 9, 11].includes(month) && day > 30)) {
-        return;
+    return;
   }
 
   return new Date(year, month - 1, day);

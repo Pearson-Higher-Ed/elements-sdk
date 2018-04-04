@@ -186,6 +186,8 @@ const IconPage = () => (
             <li><Icon name="show-off-24">Show Off 24</Icon> show-off-24</li>
             <li><Icon name="show-on-18">Show On 18</Icon> show-on-18</li>
             <li><Icon name="show-on-24">Show On 24</Icon> show-on-24</li>
+            <li><Icon name="sortable-18">Sort 18</Icon> sortable-18</li>
+            <li><Icon name="sortable-24">Sort 24</Icon> sortable-24</li>
             <li><Icon name="sort-up-18">Sort Up 18</Icon> sort-up-18</li>
             <li><Icon name="sort-up-24">Sort Up 24</Icon> sort-up-24</li>
             <li><Icon name="sort-down-18">Sort Down 18</Icon> sort-down-18</li>
@@ -202,6 +204,45 @@ const IconPage = () => (
             <li><Icon name="zoom-in-24">Zoom In 24</Icon> zoom-in-24</li>
             <li><Icon name="zoom-out-18">Zoom Out 18</Icon> zoom-out-18</li>
             <li><Icon name="zoom-out-24">Zoom Out 24</Icon> zoom-out-24</li>
+            <li><Icon name="file-word-18">File Word 18</Icon> file-word-18</li>
+            <li><Icon name="file-word-24">File Word 24</Icon> file-word-24</li>
+            <li><Icon name="file-powerpoint-18">File PowerPoint 18</Icon> file-powerpoint-18</li>
+            <li><Icon name="file-powerpoint-24">File PowerPoint 24</Icon> file-powerpoint-24</li>
+            <li><Icon name="file-pdf-18">File PDF 18</Icon> file-pdf-18</li>
+            <li><Icon name="file-pdf-24">File PDF 24</Icon> file-pdf-24</li>
+            <li><Icon name="file-excel-18">File Excel 18</Icon> file-excel-18</li>
+            <li><Icon name="file-excel-24">File Excel 24</Icon> file-excel-24</li>
+            <li><Icon name="adobe-acrobat-18">Adobe Acrobat 18</Icon> adobe-acrobat-18</li>
+            <li><Icon name="adobe-acrobat-24">Adobe Acrobat 24</Icon> adobe-acrobat-24</li>
+            <li><Icon name="upload-18">Upload 18</Icon> upload-18</li>
+            <li><Icon name="upload-24">Upload 24</Icon> upload-24</li>
+            <li><Icon name="download-18">Download 18</Icon> download-18</li>
+            <li><Icon name="download-24">Download 24</Icon> download-24</li>
+            <li><Icon name="shopping-cart-18">Shopping Cart 18</Icon> shopping-cart-18</li>
+            <li><Icon name="shopping-cart-24">Shopping Cart 24</Icon> shopping-cart-24</li>
+            <li><Icon name="comment-18">Comment 18</Icon> comment-18</li>
+            <li><Icon name="comment-24">Comment 24</Icon> comment-24</li>
+            <li><Icon name="achieved-check-18"> Achieved Check 18</Icon> achieved-check-18</li>
+            <li><Icon name="achieved-check-24"> Achieved Check 24</Icon> achieved-check-24</li>
+            <li><Icon name="circle-bullet-18"> Circle Bullet 18</Icon> circle-bullet-18</li>
+            <li><Icon name="circle-bullet-24"> Circle Bullet 24</Icon> circle-bullet-24</li>
+            <li><Icon name="dot-18"> Dot 18</Icon> dot-18</li>
+            <li><Icon name="dot-24"> Dot 24</Icon> dot-24</li>
+            <li><Icon name="eye-18"> Eye 18</Icon> eye-18</li>
+            <li><Icon name="eye-24"> Eye 24</Icon> eye-24</li>
+            <li><Icon name="incorrect-18"> Incorrect 18</Icon> incorrect-18</li>
+            <li><Icon name="incorrect-24"> Incorrect 24</Icon> incorrect-24</li>
+            <li><Icon name="infinity-18"> Infinity 18</Icon> infinity-18</li>
+            <li><Icon name="infinity-24"> Infinity 24</Icon> infinity-24</li>
+            <li><Icon name="information-18"> Information 18</Icon> information-18</li>
+            <li><Icon name="information-24"> Information 24</Icon> information-24</li>
+            <li><Icon name="popin-18"> Pop In 18</Icon> popin-18</li>
+            <li><Icon name="popin-24"> Pop In 24</Icon> popin-24</li>
+            <li><Icon name="popout-18"> Pop Out 18</Icon> popout-18</li>
+            <li><Icon name="popout-24"> Pop Out 24</Icon> popout-24</li>
+            <li><Icon name="star-18"> Star 18</Icon> star-18</li>
+            <li><Icon name="star-24"> Star 24</Icon> star-24</li>
+            
           </ul>
         </div>
       </div>

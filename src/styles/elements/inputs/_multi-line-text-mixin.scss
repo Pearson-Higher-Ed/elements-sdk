@@ -3,15 +3,16 @@
 @mixin multiLineText() {
 
   %multiLineText {
-    border      : $multiLineText-border;
-    font-size   : $textInput-value-font-size;
-    color       : $pe-color-charcoal;
-    margin-top  : $textInput-basic-marginTop;
-    line-height : $textInput-line-height;
-    padding     : $multiLineText-padding;
-    resize      : none;
-    width       : $multiLineText-width;
-    box-sizing  : $multiLineText-box-sizing;
+    border        : $multiLineText-border;
+    border-radius : $multiLineText-borderRadius;
+    font-size     : $textInput-value-font-size;
+    color         : $pe-color-charcoal;
+    margin-top    : $textInput-basic-marginTop;
+    line-height   : $textInput-line-height;
+    padding       : $multiLineText-padding;
+    resize        : none;
+    width         : $multiLineText-width;
+    box-sizing    : $multiLineText-box-sizing;
 
     @include pe-placeholder {
       font-size   : $textInput-placeholder-font-size;

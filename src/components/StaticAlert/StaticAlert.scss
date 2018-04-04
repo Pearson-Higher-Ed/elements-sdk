@@ -1,4 +1,5 @@
-.pe-alert {
+.static-pe-alert {
+  justify-content: space-between;
   display: flex;
   margin: 32px 0 0 32px;
   padding: 12px 12px 28px 28px;
@@ -9,7 +10,8 @@
   top: 0;
 }
 
-.pe-alert-inline {
+.static-pe-alert-inline {
+  justify-content: space-between;
   display: flex;
   padding: 12px 12px 28px 28px;
   background-color: #FFF;
@@ -18,45 +20,45 @@
   left: 0;
 }
 
-.alert-content- {
+.static-alert-content- {
   margin-top: 1em;
   margin-left: 12px;
   padding: 4px 12px 0 0;
 }
 
-.alert-content-info {
+.static-alert-content-info {
   margin: 0;
   padding: 4px 12px 0 0;
 }
 
 @media (max-width: 767px) {
-  .pe-alert {
+  .static-pe-alert {
     margin: 36px 25px 0;
     padding: 8px 8px 24px 28px;
     width: 440px;
   }
 
-  .pe-alert-inline {
+  .static-pe-alert-inline {
     padding: 8px 8px 24px 28px;
     width: auto;
   }
 
-  .alert-content-,
-  .alert-content-info {
+  .static-alert-content-,
+  .static-alert-content-info {
     padding-right: 8px;
   }
 
-  .alert-content-container .error-svg {
+  .static-alert-content-container .static-error-svg {
     margin-top: 1.6em;
   }
 
-  .alert-content-container .success-svg {
+  .static-alert-content-container .static-success-svg {
     margin-top: 1.4em;
   }
 }
 
 @media (max-width: 529px) {
-  .pe-alert {
+  .static-pe-alert {
     width: auto;
   }
 }
@@ -68,42 +70,42 @@
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16);
 }
 
-.alert-Error {
+.static-alert-Error {
   @extend %border-extend;
   border-left: 3px solid #db0020;
 }
 
-.alert-Success,
-.alert-Information {
+.static-alert-Success,
+.static-alert-Information {
   @extend %border-extend;
   border-left: 3px solid #19A5A3;
 }
 
-.error-svg {
+.static-error-svg {
   color: #db0020;
   margin-top: 1.5em;
 }
 
-.success-svg {
+.static-success-svg {
   color: #19A5A3;
   margin-top: 1.3em;
 }
 
-.alert-content-container {
+.static-alert-content-container {
   display: flex;
 }
 
-.alert-title {
+.static-alert-title {
   margin: 0 4px 0 0;
   display: inline;
 }
 
-.alert-text {
+.static-alert-text {
   margin-bottom: 0;
   display: inline;
 }
 
-.close-title {
+.static-close-title {
   float: right;
   align-self: flex-start;
 }
