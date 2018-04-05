@@ -35,6 +35,7 @@
   padding: 0;
   background-color: transparent;
   border: 0;
+  
 }
 
 // for fake links
@@ -89,6 +90,11 @@
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 
 }
 
@@ -121,6 +127,11 @@
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 
 }
 
@@ -138,6 +149,11 @@
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 
 }
 
@@ -155,6 +171,11 @@
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 
 }
 
@@ -169,6 +190,11 @@
     $pe-color-ink-blue,
     $pe-color-white
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 }
 
 .pe-btn__primary--btn_small {
@@ -181,6 +207,11 @@
   $pe-color-ink-blue,
   $pe-color-white
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 }
 
 .pe-btn__primary--btn_large {
@@ -194,6 +225,11 @@
   $pe-color-ink-blue,
   $pe-color-white
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 }
 
 .pe-btn__primary--btn_xlarge {
@@ -207,6 +243,11 @@
   $pe-color-ink-blue,
   $pe-color-white
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 }
 
 
@@ -221,6 +262,11 @@
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 }
 
 .pe-btn__cta--btn_small {
@@ -233,6 +279,11 @@
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 }
 
 .pe-btn__cta--btn_large {
@@ -246,6 +297,11 @@
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 }
 
 .pe-btn__cta--btn_xlarge {
@@ -259,4 +315,9 @@
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text
   );
+  
+  &:focus {
+  	outline: 1px solid $condition-three;
+  	outline-offset: 2px;
+  }
 }
