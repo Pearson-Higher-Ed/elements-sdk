@@ -19,8 +19,10 @@ $pe-btn-xlarge-line-height : 22px !default;
 $pe-btn-xlarge-padding     : 0 20px !default;
 
 $pe-btn-primary-bg            : $pe-color-digital-pearson-blue !default;
+$pe-btn-primary-border		  : 1px solid $pe-color-digital-pearson-blue !default;
 $pe-btn-primary-text          : $pe-color-white !default;
 $pe-btn-primary-hover-bg      : $pe-color-ink-blue !default;
+$pe-btn-primary-hover-border  : 1px solid $pe-color-ink-blue;
 $pe-btn-primary-hover-text    : $pe-color-white !default;
 $pe-btn-primary-disabled-bg   : $pe-color-moonlight !default;
 $pe-btn-primary-disabled-text : $pe-color-concrete !default;
@@ -34,6 +36,9 @@ $pe-btn-default-disabled-bg   : $pe-color-moonlight !default;
 $pe-btn-default-disabled-text : $pe-color-concrete !default;
 
 $pe-btn-cta-bg          : $pe-color-sunshine-yellow !default;
+$pe-btn-cta-border      : 1px solid $pe-color-sunshine-yellow !default;
 $pe-btn-cta-text        : $pe-color-charcoal !default;
-$pe-btn-cta-hover-bg    : #FF9A19 !default;
+$pe-btn-cta-hover-bg	: $pe-color-sunflower-yellow !default;
+$pe-btn-cta-hover-border: 1px solid $pe-color-sunflower-yellow !default;
 $pe-btn-cta-hover-text  : $pe-color-charcoal !default;
+

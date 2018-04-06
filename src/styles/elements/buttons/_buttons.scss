@@ -29,13 +29,25 @@
   padding     : $pe-btn-xlarge-padding;
 }
 
+%pe-btn-focus {
+	&:focus {
+		outline: 1px solid $pe-color-hot-pink;
+		outline-offset: 2px;
+	}
+}
+
+%pe-btn-hover-primary {
+	&:hover {
+		border: $pe-btn-primary-hover-border;
+	}
+}
+
 // For icons in buttons, remove buttony styles
 
 .pe-icon--btn {
   padding: 0;
   background-color: transparent;
-  border: none !important;
-  
+  border: none;  
 }
 
 // for fake links
@@ -80,6 +92,7 @@
 .pe-btn {
 
   @extend %btn;
+  @extend %pe-btn-focus;
   border: $pe-btn-default-border;
 
   @include pe-btn(
@@ -90,12 +103,6 @@
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
-  
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
-  }
-
 }
 
 .pe-btngroup {
@@ -117,6 +124,7 @@
 .pe-btn--btn_small {
 
   @extend %btn;
+  @extend %pe-btn-focus;
   border: $pe-btn-default-border;
 
   @include pe-btn(
@@ -127,18 +135,12 @@
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
-  
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
-  }
-
 }
 
 .pe-btn--btn_large {
-
   @extend %btn;
   @extend %btn_large;
+  @extend %pe-btn-focus;
   border: $pe-btn-default-border;
 
   @include pe-btn(
@@ -149,16 +151,9 @@
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
-  
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
-  }
-
 }
 
 .pe-btn--btn_xlarge {
-
   @extend %btn;
   @extend %btn_xlarge;
   border: $pe-btn-default-border;
@@ -171,20 +166,14 @@
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text
   );
-  
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
-  }
-
 }
 
 //===========Primary=================================
 .pe-btn__primary {
-
-  border: none !important;
-
   @extend %btn;
+  border: $pe-btn-primary-border;
+  @extend %pe-btn-focus;
+  @extend %pe-btn-hover-primary;
 
   @include pe-btn(
     $pe-color-digital-pearson-blue,
@@ -192,19 +181,12 @@
     $pe-color-ink-blue,
     $pe-color-white
   );
-  
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
-  }
-
 }
 
 .pe-btn__primary--btn_small {
-
-  border: none !important;
-
   @extend %btn;
+  border: $pe-btn-primary-border;
+  @extend %pe-btn-focus;
 
   @include pe-btn(
   $pe-color-digital-pearson-blue,
@@ -213,19 +195,16 @@
   $pe-color-white
   );
   
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
+  &:hover {
+  	border: $pe-btn-primary-hover-border;
   }
-  
 }
 
 .pe-btn__primary--btn_large {
-
-  border: none !important;
-
   @extend %btn;
+  border: $pe-btn-primary-border;
   @extend %btn_large;
+  @extend %pe-btn-focus;
 
   @include pe-btn(
   $pe-color-digital-pearson-blue,
@@ -234,18 +213,16 @@
   $pe-color-white
   );
   
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
+  &:hover {
+  	border: $pe-btn-primary-hover-border;
   }
 }
 
 .pe-btn__primary--btn_xlarge {
-
-  border: none !important;
-
   @extend %btn;
+  border: $pe-btn-primary-border;
   @extend %btn_xlarge;
+  @extend %pe-btn-focus;
 
   @include pe-btn(
   $pe-color-digital-pearson-blue,
@@ -254,19 +231,17 @@
   $pe-color-white
   );
   
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
+  &:hover {
+  	border: $pe-btn-primary-hover-border;
   }
 }
 
 
 //===========CTA=================================
 .pe-btn__cta {
-
-  border: none !important;
-
   @extend %btn;
+  border: $pe-btn-cta-border;
+  @extend %pe-btn-focus;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -275,17 +250,15 @@
     $pe-btn-cta-hover-text
   );
   
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
+  &:hover {
+  	border: $pe-btn-cta-hover-border;
   }
 }
 
 .pe-btn__cta--btn_small {
-
-  border: none !important;
-
   @extend %btn;
+  border: $pe-btn-cta-border;
+  @extend %pe-btn-focus;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -294,18 +267,16 @@
     $pe-btn-cta-hover-text
   );
   
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
+  &:hover {
+  	border: $pe-btn-cta-hover-border;
   }
 }
 
 .pe-btn__cta--btn_large {
-
-  border: none !important;
-
   @extend %btn;
+  border: $pe-btn-cta-border;
   @extend %btn_large;
+  @extend %pe-btn-focus;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -314,18 +285,16 @@
     $pe-btn-cta-hover-text
   );
   
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
+  &:hover {
+  	border: $pe-btn-cta-hover-border;
   }
 }
 
 .pe-btn__cta--btn_xlarge {
-
-  border: none !important;
-
   @extend %btn;
+  border: $pe-btn-cta-border;
   @extend %btn_xlarge;
+  @extend %pe-btn-focus;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -334,8 +303,7 @@
     $pe-btn-cta-hover-text
   );
   
-  &:focus {
-  	outline: 1px solid $condition-three;
-  	outline-offset: 2px;
+  &:hover {
+  	border: $pe-btn-cta-hover-border;
   }
 }
