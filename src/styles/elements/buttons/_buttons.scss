@@ -34,7 +34,7 @@
 .pe-icon--btn {
   padding: 0;
   background-color: transparent;
-  border: 0;
+  border: none !important;
   
 }
 
@@ -182,6 +182,8 @@
 //===========Primary=================================
 .pe-btn__primary {
 
+  border: none !important;
+
   @extend %btn;
 
   @include pe-btn(
@@ -195,9 +197,12 @@
   	outline: 1px solid $condition-three;
   	outline-offset: 2px;
   }
+
 }
 
 .pe-btn__primary--btn_small {
+
+  border: none !important;
 
   @extend %btn;
 
@@ -212,9 +217,12 @@
   	outline: 1px solid $condition-three;
   	outline-offset: 2px;
   }
+  
 }
 
 .pe-btn__primary--btn_large {
+
+  border: none !important;
 
   @extend %btn;
   @extend %btn_large;
@@ -233,6 +241,8 @@
 }
 
 .pe-btn__primary--btn_xlarge {
+
+  border: none !important;
 
   @extend %btn;
   @extend %btn_xlarge;
@@ -254,6 +264,8 @@
 //===========CTA=================================
 .pe-btn__cta {
 
+  border: none !important;
+
   @extend %btn;
 
   @include pe-btn(
@@ -270,6 +282,8 @@
 }
 
 .pe-btn__cta--btn_small {
+
+  border: none !important;
 
   @extend %btn;
 
@@ -288,6 +302,8 @@
 
 .pe-btn__cta--btn_large {
 
+  border: none !important;
+
   @extend %btn;
   @extend %btn_large;
 
@@ -305,6 +321,8 @@
 }
 
 .pe-btn__cta--btn_xlarge {
+
+  border: none !important;
 
   @extend %btn;
   @extend %btn_xlarge;
