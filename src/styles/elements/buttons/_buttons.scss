@@ -29,19 +29,6 @@
   padding     : $pe-btn-xlarge-padding;
 }
 
-%pe-btn-focus {
-	&:focus {
-		outline: 1px solid $pe-color-hot-pink;
-		outline-offset: 2px;
-	}
-}
-
-%pe-btn-hover-primary {
-	&:hover {
-		border: $pe-btn-primary-hover-border;
-	}
-}
-
 // For icons in buttons, remove buttony styles
 
 .pe-icon--btn {
@@ -89,8 +76,15 @@
 }
 
 //===========btn=================================
-.pe-btn {
 
+%pe-btn-focus {
+	&:focus {
+		outline: 1px solid $pe-color-hot-pink;
+		outline-offset: 2px;
+	}
+}
+
+.pe-btn {
   @extend %btn;
   @extend %pe-btn-focus;
   border: $pe-btn-default-border;
@@ -122,7 +116,6 @@
 }
 
 .pe-btn--btn_small {
-
   @extend %btn;
   @extend %pe-btn-focus;
   border: $pe-btn-default-border;
@@ -169,11 +162,17 @@
 }
 
 //===========Primary=================================
+%pe-btn-primary-hover {
+	&:hover {
+		border: $pe-btn-primary-hover-border;
+	}
+}
+
 .pe-btn__primary {
   @extend %btn;
   border: $pe-btn-primary-border;
   @extend %pe-btn-focus;
-  @extend %pe-btn-hover-primary;
+  @extend %pe-btn-primary-hover;
 
   @include pe-btn(
     $pe-color-digital-pearson-blue,
@@ -187,6 +186,7 @@
   @extend %btn;
   border: $pe-btn-primary-border;
   @extend %pe-btn-focus;
+  @extend %pe-btn-primary-hover;
 
   @include pe-btn(
   $pe-color-digital-pearson-blue,
@@ -194,10 +194,6 @@
   $pe-color-ink-blue,
   $pe-color-white
   );
-  
-  &:hover {
-  	border: $pe-btn-primary-hover-border;
-  }
 }
 
 .pe-btn__primary--btn_large {
@@ -205,6 +201,7 @@
   border: $pe-btn-primary-border;
   @extend %btn_large;
   @extend %pe-btn-focus;
+  @extend %pe-btn-primary-hover;
 
   @include pe-btn(
   $pe-color-digital-pearson-blue,
@@ -212,10 +209,6 @@
   $pe-color-ink-blue,
   $pe-color-white
   );
-  
-  &:hover {
-  	border: $pe-btn-primary-hover-border;
-  }
 }
 
 .pe-btn__primary--btn_xlarge {
@@ -223,6 +216,7 @@
   border: $pe-btn-primary-border;
   @extend %btn_xlarge;
   @extend %pe-btn-focus;
+  @extend %pe-btn-primary-hover;
 
   @include pe-btn(
   $pe-color-digital-pearson-blue,
@@ -230,18 +224,21 @@
   $pe-color-ink-blue,
   $pe-color-white
   );
-  
-  &:hover {
-  	border: $pe-btn-primary-hover-border;
+}
+
+//===========CTA=================================
+
+%pe-btn-cta-hover {
+	&:hover {
+  	border: $pe-btn-cta-hover-border;
   }
 }
 
-
-//===========CTA=================================
 .pe-btn__cta {
   @extend %btn;
   border: $pe-btn-cta-border;
   @extend %pe-btn-focus;
+  @extend %pe-btn-cta-hover;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -249,16 +246,13 @@
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text
   );
-  
-  &:hover {
-  	border: $pe-btn-cta-hover-border;
-  }
 }
 
 .pe-btn__cta--btn_small {
   @extend %btn;
   border: $pe-btn-cta-border;
   @extend %pe-btn-focus;
+  @extend %pe-btn-cta-hover;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -266,10 +260,6 @@
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text
   );
-  
-  &:hover {
-  	border: $pe-btn-cta-hover-border;
-  }
 }
 
 .pe-btn__cta--btn_large {
@@ -277,6 +267,7 @@
   border: $pe-btn-cta-border;
   @extend %btn_large;
   @extend %pe-btn-focus;
+  @extend %pe-btn-cta-hover;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -284,10 +275,6 @@
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text
   );
-  
-  &:hover {
-  	border: $pe-btn-cta-hover-border;
-  }
 }
 
 .pe-btn__cta--btn_xlarge {
@@ -295,6 +282,7 @@
   border: $pe-btn-cta-border;
   @extend %btn_xlarge;
   @extend %pe-btn-focus;
+  @extend %pe-btn-cta-hover;
 
   @include pe-btn(
     $pe-btn-cta-bg,
@@ -302,8 +290,4 @@
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text
   );
-  
-  &:hover {
-  	border: $pe-btn-cta-hover-border;
-  }
 }
