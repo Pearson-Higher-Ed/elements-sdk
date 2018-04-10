@@ -1411,6 +1411,86 @@ const StylesIconsPage = () => (
         </svg>
         comment-24
       </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--warning-sm-18">
+          <use xlinkHref="#warning-sm-18"></use>
+        </svg>
+        warning-sm-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--warning-sm-24">
+          <use xlinkHref="#warning-sm-24"></use>
+        </svg>
+        warning-sm-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--text-bold-18">
+          <use xlinkHref="#text-bold-18"></use>
+        </svg>
+        text-bold-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--text-bold-24">
+          <use xlinkHref="#text-bold-24"></use>
+        </svg>
+        text-bold-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--text-italic-18">
+          <use xlinkHref="#text-italic-18"></use>
+        </svg>
+        text-italic-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--text-italic-24">
+          <use xlinkHref="#text-italic-24"></use>
+        </svg>
+        text-italic-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--attachment-18">
+          <use xlinkHref="#attachment-18"></use>
+        </svg>
+        attachment-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--attachment-24">
+          <use xlinkHref="#attachment-24"></use>
+        </svg>
+        attachment-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--number-list-18">
+          <use xlinkHref="#number-list-18"></use>
+        </svg>
+        number-list-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--number-list-24">
+          <use xlinkHref="#number-list-24"></use>
+        </svg>
+        number-list-24
+      </li>
     </ul>
 
     <h2>Two methods of including icons</h2>
