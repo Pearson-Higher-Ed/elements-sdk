@@ -29,13 +29,6 @@
   padding     : $pe-btn-xlarge-padding;
 }
 
-%btn-focus {
-	&:focus {
-		outline: 1px solid $pe-color-hot-pink;
-		outline-offset: 2px;
-	}
-}
-
 // For icons in buttons, remove buttony styles
 
 .pe-icon--btn {
@@ -92,10 +85,10 @@
     $pe-btn-default-hover-text,
     $pe-btn-default-disabled-bg,
     $pe-btn-default-disabled-text,
+    $pe-btn-default-border,
+    $pe-btn-default-hover-border
   );
   @extend %btn;
-  @extend %btn-focus;
-  border: $pe-btn-default-border;
 }
 
 .pe-btngroup {
@@ -121,11 +114,11 @@
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
     $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
+    $pe-btn-default-disabled-text,
+    $pe-btn-default-border,
+    $pe-btn-default-hover-border
   );
   @extend %btn;
-  @extend %btn-focus;
-  border: $pe-btn-default-border;
 }
 
 .pe-btn--btn_large {
@@ -135,12 +128,12 @@
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
     $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
+    $pe-btn-default-disabled-text,
+    $pe-btn-default-border,
+    $pe-btn-default-hover-border
   );
   @extend %btn;
   @extend %btn_large;
-  @extend %btn-focus;
-  border: $pe-btn-default-border;
 }
 
 .pe-btn--btn_xlarge {
@@ -150,32 +143,26 @@
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
     $pe-btn-default-disabled-bg,
-    $pe-btn-default-disabled-text
+    $pe-btn-default-disabled-text,
+    $pe-btn-default-border,
+    $pe-btn-default-hover-border
   );
   @extend %btn;
   @extend %btn_xlarge;
-  @extend %btn-focus;
-  border: $pe-btn-default-border;
 }
 
 //===========Primary=================================
-%btn-primary-hover {
-	&:hover {
-		border: $pe-btn-primary-hover-border;
-	}
-}
 
 .pe-btn__primary {
   @include pe-btn(
     $pe-color-digital-pearson-blue,
     $pe-color-white,
     $pe-color-ink-blue,
-    $pe-color-white
+    $pe-color-white,
+    $border:($pe-btn-primary-border),
+    $border-hover:($pe-btn-primary-hover-border)
   );
   @extend %btn;
-  @extend %btn-focus;
-  @extend %btn-primary-hover;
-  border: $pe-btn-primary-border;
 }
 
 .pe-btn__primary--btn_small {
@@ -183,12 +170,11 @@
   $pe-color-digital-pearson-blue,
   $pe-color-white,
   $pe-color-ink-blue,
-  $pe-color-white
+  $pe-color-white,
+  $border:($pe-btn-primary-border),
+  $border-hover:($pe-btn-primary-hover-border)
   );
   @extend %btn;
-  @extend %btn-focus;
-  @extend %btn-primary-hover;
-  border: $pe-btn-primary-border;
 }
 
 .pe-btn__primary--btn_large {
@@ -196,13 +182,12 @@
   $pe-color-digital-pearson-blue,
   $pe-color-white,
   $pe-color-ink-blue,
-  $pe-color-white
+  $pe-color-white,
+  $border:($pe-btn-primary-border),
+  $border-hover:($pe-btn-primary-hover-border)
   );
   @extend %btn;
   @extend %btn_large;
-  @extend %btn-focus;
-  @extend %btn-primary-hover;
-  border: $pe-btn-primary-border;
 }
 
 .pe-btn__primary--btn_xlarge {
@@ -210,34 +195,26 @@
   $pe-color-digital-pearson-blue,
   $pe-color-white,
   $pe-color-ink-blue,
-  $pe-color-white
+  $pe-color-white,
+  $border:($pe-btn-primary-border),
+  $border-hover:($pe-btn-primary-hover-border)
   );
   @extend %btn;
   @extend %btn_xlarge;
-  @extend %btn-focus;
-  @extend %btn-primary-hover;
-  border: $pe-btn-primary-border;
 }
 
 //===========CTA=================================
-
-%btn-cta-hover {
-	&:hover {
-  	border: $pe-btn-cta-hover-border;
-  }
-}
 
 .pe-btn__cta {
   @include pe-btn(
     $pe-btn-cta-bg,
     $pe-btn-cta-text,
     $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
+    $pe-btn-cta-hover-text,
+    $border:($pe-btn-cta-border),
+    $border-hover:($pe-btn-cta-hover-border)
   );
   @extend %btn;
-  @extend %btn-focus;
-  @extend %btn-cta-hover;
-  border: $pe-btn-cta-border;
 }
 
 .pe-btn__cta--btn_small {
@@ -245,12 +222,11 @@
     $pe-btn-cta-bg,
     $pe-btn-cta-text,
     $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
+    $pe-btn-cta-hover-text,
+    $border:($pe-btn-cta-border),
+    $border-hover:($pe-btn-cta-hover-border)
   );
   @extend %btn;
-  @extend %btn-focus;
-  @extend %btn-cta-hover;
-  border: $pe-btn-cta-border;
 }
 
 .pe-btn__cta--btn_large {
@@ -258,13 +234,12 @@
     $pe-btn-cta-bg,
     $pe-btn-cta-text,
     $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
+    $pe-btn-cta-hover-text,
+    $border:($pe-btn-cta-border),
+    $border-hover:($pe-btn-cta-hover-border)
   );
   @extend %btn;
   @extend %btn_large;
-  @extend %btn-focus;
-  @extend %btn-cta-hover;
-  border: $pe-btn-cta-border;
 }
 
 .pe-btn__cta--btn_xlarge {
@@ -272,11 +247,10 @@
     $pe-btn-cta-bg,
     $pe-btn-cta-text,
     $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
+    $pe-btn-cta-hover-text,
+    $border:($pe-btn-cta-border),
+    $border-hover:($pe-btn-cta-hover-border)
   );
   @extend %btn;
   @extend %btn_xlarge;
-  @extend %btn-focus;
-  @extend %btn-cta-hover;
-  border: $pe-btn-cta-border;
 }
