@@ -4,7 +4,9 @@
   $hover-bg,
   $hover-color,
   $disabled-bg:  null,
-  $disabled-color: null
+  $disabled-color: null,
+  $border: 0,
+  $border-hover: 0
 ) {
 
   color           : $color;
@@ -14,19 +16,24 @@
   text-overflow   : ellipsis;
   white-space     : nowrap;
   overflow        : hidden;
+  border		  : $border;
 
   &:hover,
-  &:active,
-  &:focus {
+  &:active {
     color            : $hover-color;
     background-color : $hover-bg;
+    border			 : $border-hover;
   }
-
+  &:focus {
+	outline: 1px solid $pe-color-hot-pink;
+	outline-offset: 2px;
+  }
+  
   &:disabled,
   &.pe-btn--disabled,
   &.pe-btn--disabled:hover {
     cursor          : default;
-    border          : 0;
+    border			: $disabled-bg;
     color           : $disabled-color;
     background-color: $disabled-bg;
     box-shadow      : none;
