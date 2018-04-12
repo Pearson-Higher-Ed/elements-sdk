@@ -31,7 +31,8 @@ export default class Dropdown extends Component {
       selectedItem: '',
       selectedItemDOM: '',
       buttonFocus: true,
-      btnImage: props.btnImage
+      btnImage: props.btnImage,
+      width: window.innerWidth
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -41,6 +42,22 @@ export default class Dropdown extends Component {
     this.getSelectedIndex = this.getSelectedIndex.bind(this);
   }
 
+//   determine window width to launch modal for mobile
+//   componentWillMount() {
+//   	window.addEventListener('resize', this.handleWindowSizeChange);
+//   }
+//   make sure to remove the listener
+//   when the component is not mounted anymore
+//   componentWillUnmount() {
+//     window.removeEventListener('resize', this.handleWindowSizeChange);
+//   }
+// 
+//   handleWindowSizeChange = () => {
+//     this.setState({ width: window.innerWidth });
+//   };
+// 	end mobile
+	
+	
   placement(dropdown) {
     const anchor = dropdown.children[0];
     const element = dropdown.children[1];
@@ -75,6 +92,7 @@ export default class Dropdown extends Component {
       
       if (window.screen.width < 768) {
       	this.list.children[1].children[0].focus();
+      	this.focusedItem = 1;
       }
       else { 
       	this.list.children[0].children[0].focus();
@@ -86,6 +104,7 @@ export default class Dropdown extends Component {
         this.resetPlacement(ReactDOM.findDOMNode(this));
         this.focusedItem = 0;
       }
+      
     });
   };
 
@@ -99,34 +118,78 @@ export default class Dropdown extends Component {
       if (event.which === 38) {
         // up
         event.preventDefault();
-        while (this.focusedItem > 0) {
-          this.focusedItem--;
-          if (this.list.children[this.focusedItem].attributes.role.value !== 'separator') {
-            break;
-          }
-        }
+        //for mobile, skip header
+        if (window.screen.width < 768) {
+        	if (this.focusedItem > 1) {
+				if (this.list.children[this.focusedItem-1].attributes.role.value !== 'separator') {
+            		this.focusedItem--;
+          		} 
+          		else {          
+					this.focusedItem = this.focusedItem - 2;	
+          		}	
+	        }
+	        else {
+        	  this.focusedItem = this.list.children.length-1;
+         	}       
+        } 
+    	//desktop or tablet
+        else {
+      		if (this.focusedItem > 0) {
+        	
+				if (this.list.children[this.focusedItem-1].attributes.role.value !== 'separator') {
+            		this.focusedItem--;
+          		} 
+            
+          		else {          
+					this.focusedItem = this.focusedItem - 2;          		
+          		}	
+        	}
+        	else {
+        		this.focusedItem = this.list.children.length-1;
+        	}
+       }   
         this.list.children[this.focusedItem].children[0].focus();
-      }
-
+	  }
+	  
       if (event.which === 40) {
         // down
         event.preventDefault();
-        while (this.focusedItem < this.list.children.length-1) {
-          this.focusedItem++;
-          if (this.list.children[this.focusedItem].attributes.role.value !== 'separator') {
-            break;
-          }
+        if (this.focusedItem < this.list.children.length-1) {
+        	if (this.list.children[this.focusedItem+1].attributes.role.value !== 'separator') {
+        		this.focusedItem++;
+        	} 
+        	else {
+        		this.focusedItem = this.focusedItem + 2;
+        	}  
+        }         
+        else {
+        	if (window.screen.width < 768) {
+        		this.focusedItem = 1;
+        	} else {
+        		this.focusedItem = 0;
+        	}
         }
         this.list.children[this.focusedItem].children[0].focus();
       }
 
       if (event.which === 9) {
         // tab
-        this.setState({
-          open: false
-        });
+        event.preventDefault();
+        if (window.screen.width < 768) {
+        	//for mobile, tab should cycle between close button and list
+        	if (document.activeElement.parentNode.hasAttribute("role")) {
+        		this.list.children[0].querySelector('button').focus();
+        	} else {
+        		this.list.children[1].children[0].focus();
+        	}
+        } 
+        else {
+        	this.setState({
+        	  open: false
+        	});
+        }
       }
-
+	  
       if (event.which >= 65 && event.which <= 90) {
         // a through z pressed
         const alphaArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -299,7 +362,11 @@ export default class Dropdown extends Component {
   }
 
   render() {
-    return (
+    const { width } = this.state;
+    const isMobile = width < 768;
+    
+    if (isMobile) {
+      return (
         <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
           {this.insertAnchor()}
           <ul
@@ -314,6 +381,25 @@ export default class Dropdown extends Component {
             {this.props.children}
           </ul>
         </div>
-    )
+      
+      )
+    } else {
+      return (
+        <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
+          {this.insertAnchor()}
+          <ul
+            role="menu"
+            id={`${this.props.id.replace(' ', '_')}-dropdown`}
+            ref={(parent) => { this.list = parent; }}
+            className={this.state.open ? '' : 'dropdown-menu'}
+            aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
+            onClick={this.itemSelected}
+            onKeyDown={this.handleKeyDown}>
+            {this.addMobileHeader()}
+            {this.props.children}
+          </ul>
+        </div>
+      )
+    }
   }
 };

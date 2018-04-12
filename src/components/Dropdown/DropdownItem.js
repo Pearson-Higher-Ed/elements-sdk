@@ -17,10 +17,21 @@ export default class DropdownItem extends Component {
     imgWidth: PropTypes.string,
     imgAlt: PropTypes.string
   };
-
+  constructor(props) {
+  	super(props);
+  	this.state = {
+  		selected: false
+  	};
+  	this.toggleChecked = this.toggleChecked.bind(this);
+  }
+  
+  toggleChecked (e) {
+  	this.setState({selected: true})
+  }
+ 
   render() {
     const { url, label, selectValue, type, selected, selectedName, checkmark, onClick, dropdownId, imgUrl, imgHeight, imgWidth, imgAlt } = this.props;
-
+	
     switch (type) {
       case 'divider':
         return (
