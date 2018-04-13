@@ -220,6 +220,16 @@ const IconPage = () => (
             <li><Icon name="shopping-cart-24">Shopping Cart 24</Icon> shopping-cart-24</li>
             <li><Icon name="comment-18">Comment 18</Icon> comment-18</li>
             <li><Icon name="comment-24">Comment 24</Icon> comment-24</li>
+            <li><Icon name="warning-sm-18">Warning 18</Icon> warning-sm-18</li>
+            <li><Icon name="warning-sm-24">Warning 24</Icon> warning-sm-24</li>
+            <li><Icon name="text-bold-18">Text bold 18</Icon> text-bold-18</li>
+            <li><Icon name="text-bold-24">Text bold 24</Icon> text-bold-24</li>
+            <li><Icon name="text-italic-18">Text italic 18</Icon> text-italic-18</li>
+            <li><Icon name="text-italic-24">Text italic 24</Icon> text-italic-24</li>
+            <li><Icon name="attachment-18">Attachment 18</Icon> attachment-18</li>
+            <li><Icon name="attachment-24">Attachment 24</Icon> attachment-24</li>
+            <li><Icon name="number-list-18">Number list 18</Icon> number-list-18</li>
+            <li><Icon name="number-list-24">Number list 24</Icon> number-list-24</li>
             <li><Icon name="achieved-check-18"> Achieved Check 18</Icon> achieved-check-18</li>
             <li><Icon name="achieved-check-24"> Achieved Check 24</Icon> achieved-check-24</li>
             <li><Icon name="circle-bullet-18"> Circle Bullet 18</Icon> circle-bullet-18</li>

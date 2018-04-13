@@ -1251,6 +1251,247 @@ const StylesIconsPage = () => (
         </svg>
         zoom-out-24
       </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--warning-sm-18">
+          <use xlinkHref="#warning-sm-18"></use>
+        </svg>
+        warning-sm-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--warning-sm-24">
+          <use xlinkHref="#warning-sm-24"></use>
+        </svg>
+        warning-sm-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--text-bold-18">
+          <use xlinkHref="#text-bold-18"></use>
+        </svg>
+        text-bold-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--text-bold-24">
+          <use xlinkHref="#text-bold-24"></use>
+        </svg>
+        text-bold-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--text-italic-18">
+          <use xlinkHref="#text-italic-18"></use>
+        </svg>
+        text-italic-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--text-italic-24">
+          <use xlinkHref="#text-italic-24"></use>
+        </svg>
+        text-italic-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--attachment-18">
+          <use xlinkHref="#attachment-18"></use>
+        </svg>
+        attachment-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--attachment-24">
+          <use xlinkHref="#attachment-24"></use>
+        </svg>
+        attachment-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--number-list-18">
+          <use xlinkHref="#number-list-18"></use>
+        </svg>
+        number-list-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--number-list-24">
+          <use xlinkHref="#number-list-24"></use>
+        </svg>
+        number-list-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--achieved-check-18">
+          <use xlinkHref="#achieved-check-18"></use>
+        </svg>
+        achieved-check-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--achieved-check-24">
+          <use xlinkHref="#achieved-check-24"></use>
+        </svg>
+        achieved-check-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--circle-bullet-18">
+          <use xlinkHref="#circle-bullet-18"></use>
+        </svg>
+        circle-bullet-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--circle-bullet-24">
+          <use xlinkHref="#circle-bullet-24"></use>
+        </svg>
+        circle-bullet-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--dot-18">
+          <use xlinkHref="#dot-18"></use>
+        </svg>
+        dot-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--dot-24">
+          <use xlinkHref="#dot-24"></use>
+        </svg>
+        dot-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--eye-18">
+          <use xlinkHref="#eye-18"></use>
+        </svg>
+        eye-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--eye-24">
+          <use xlinkHref="#eye-24"></use>
+        </svg>
+        eye-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--incorrect-18">
+          <use xlinkHref="#incorrect-18"></use>
+        </svg>
+        incorrect-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--incorrect-24">
+          <use xlinkHref="#incorrect-24"></use>
+        </svg>
+        incorrect-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--infinity-18">
+          <use xlinkHref="#infinity-18"></use>
+        </svg>
+        infinity-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--infinity-24">
+          <use xlinkHref="#infinity-24"></use>
+        </svg>
+        infinity-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--information-18">
+          <use xlinkHref="#information-18"></use>
+        </svg>
+        information-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--information-24">
+          <use xlinkHref="#information-24"></use>
+        </svg>
+        information-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--popin-18">
+          <use xlinkHref="#popin-18"></use>
+        </svg>
+        popin-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--popin-24">
+          <use xlinkHref="#popin-24"></use>
+        </svg>
+        popin-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--popout-18">
+          <use xlinkHref="#popout-18"></use>
+        </svg>
+        popout-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--popout-24">
+          <use xlinkHref="#popout-24"></use>
+        </svg>
+        popout-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--star-18">
+          <use xlinkHref="#star-18"></use>
+        </svg>
+        star-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--star-24">
+          <use xlinkHref="#star-24"></use>
+        </svg>
+        star-24
+      </li>
+      
     </ul>
 
     <h2>Two methods of including icons</h2>
