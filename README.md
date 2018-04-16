@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Pearson-Higher-Ed/elements-sdk.svg?branch=master)](https://travis-ci.org/Pearson-Higher-Ed/elements-sdk)
+
 # Pearson Elements-SDK
 
 The Pearson Elements-SDK library contains a number of UI/UX interface elements that allow developers to develop applications using a consistent look and feel.  Elements-SDK is split into two separate sets of functionality.  
