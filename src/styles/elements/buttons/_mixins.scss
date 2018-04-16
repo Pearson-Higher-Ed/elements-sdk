@@ -3,8 +3,10 @@
   $color,
   $hover-bg,
   $hover-color,
-  $border: null,
-  $hover-border: null
+  $disabled-bg: null,
+  $disabled-color: null,
+  $border: 0,
+  $border-hover: 0
 ) {
 
   color           : $color;
@@ -16,18 +18,27 @@
   overflow        : hidden;
 
   &:hover,
-  &:active,
-  &:focus {
+  &:active {
     color            : $hover-color;
     background-color : $hover-bg;
-    border           : $hover-border;
+    border           : $border-hover;
+  }
+  &:focus {
+  	outline: 1px solid $pe-color-hot-pink;
+	outline-offset: 2px;
+  	
+  	 /*FOR outline focus shaped like the button*/
+  	 // display: inline-block;
+	 // box-shadow: 0 0 0 1px $pe-color-hot-pink;
+	 // border-radius: 22px;
+	 // outline: none;
   }
 
   &:disabled,
   &.pe-btn--disabled,
   &.pe-btn--disabled:hover {
     cursor          : default;
-    border          : 0;
+    border		    : $pe-btn-default-disabled-bg;
     color           : $pe-btn-default-disabled-text;
     background-color: $pe-btn-default-disabled-bg;
     box-shadow      : none;
