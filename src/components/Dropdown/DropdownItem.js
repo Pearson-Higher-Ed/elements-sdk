@@ -7,6 +7,7 @@ export default class DropdownItem extends Component {
 		label: PropTypes.string,
 		selectValue: PropTypes.string,
 		type: PropTypes.string,
+		itemSelected: PropTypes.string,
 		selected: PropTypes.bool,
 		selectedName: PropTypes.string,
 		checkmark: PropTypes.bool,
@@ -17,23 +18,8 @@ export default class DropdownItem extends Component {
 		imgWidth: PropTypes.string
 	};
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			checked : false
-		};
-
-		this.handleCheck = this.handleCheck.bind(this);
-	}
-
-	handleCheck() {
-		this.state.checked === false ?
-			this.setState({checked: true}) :
-			this.setState({checked: false})
-	}
-
 	render() {
-		const { url, label, selectValue, type, selected, selectedName, checkmark, onClick, dropdownId, imgUrl, imgHeight, imgWidth } = this.props;
+		const { url, label, selectValue, type, selected, selectedName, checkmark, onClick, dropdownId, imgUrl, imgHeight, imgWidth, itemSelected} = this.props;
 
 		switch (type) {
 			case 'divider':
@@ -69,20 +55,27 @@ export default class DropdownItem extends Component {
 				break;
 			case 'imageButton':
 				return (
-					<li role="presentation" data-item={label} data-value={selectValue} id={dropdownId + "-" + selectValue}>
+					<li role="presentation"
+						data-item={label}
+						data-value={selectValue}
+						id={dropdownId + "-" + selectValue}
+						aria-checked={itemSelected === selectValue}
+					>
 						<button role="menuitem"
 								className={checkmark ? 'checkmark' : ''}
-								onClick={()=> {onClick; checkmark ? this.handleCheck() : null}}
 								tabIndex="-1">
-							{checkmark ?
-								<span style={{visibility: this.state.checked ? 'visible' : 'hidden'}}>
-                            <Icon name="check-sm-18">{selectedName}</Icon>
-                          </span> : null
-							}
+								{checkmark ?
+									<span style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
+										<Icon name="check-sm-18">{selectedName}</Icon>
+									</span> : null
+								}
 							<span className={checkmark ? 'icon-padding' : ''}>
-                <img src={imgUrl} height={imgHeight} width={imgWidth} alt=""/>
+                				<img src={imgUrl}
+									 height={imgHeight}
+									 width={imgWidth}
+									 alt={selectValue}/>
 								&nbsp;{label}
-              </span>
+							</span>
 						</button>
 					</li>
 				);

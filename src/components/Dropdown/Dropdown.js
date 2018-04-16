@@ -28,6 +28,7 @@ export default class Dropdown extends Component {
 		this.state = {
 			open: false,
 			selectedItem: '',
+			selectedValue: '',
 			selectedItemDOM: '',
 			buttonFocus: true,
 			btnImage: props.btnImage
@@ -156,6 +157,7 @@ export default class Dropdown extends Component {
 			this.setState({
 				open: false,
 				selectedItem: selectedListItem.dataset.item,
+				selectedValue: selectedListItem.getAttribute('data-value'),
 				selectedItemDOM: selectedListItem
 			});
 			this.container.children[0].focus();
@@ -296,7 +298,7 @@ export default class Dropdown extends Component {
 					onClick={this.itemSelected}
 					onKeyDown={this.handleKeyDown}>
 					{this.addMobileHeader()}
-					{this.props.children}
+					{React.Children.map(this.props.children, child => React.cloneElement(child, {itemSelected: this.state.selectedValue}))}
 				</ul>
 			</div>
 		)
