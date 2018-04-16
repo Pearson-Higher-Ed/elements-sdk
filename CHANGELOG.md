@@ -1,3 +1,14 @@
+<a name="1.10.6"></a>
+## [1.10.6](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.2...v1.10.6) (2018-04-16)
+
+
+### Bug Fixes
+
+* Correct default values for 24hr clock in Timepicker ([c305c55](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/c305c55))
+* Properly stop event bubbling on enter & space || Move Cal ref from container to child ([52c3a92](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/52c3a92))
+
+
+
 <a name="1.10.2"></a>
 ## [1.10.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.1...v1.10.2) (2018-03-27)
 
