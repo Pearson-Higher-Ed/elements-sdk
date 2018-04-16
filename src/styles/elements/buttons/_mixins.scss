@@ -3,7 +3,7 @@
   $color,
   $hover-bg,
   $hover-color,
-  $disabled-bg: null,
+  $disabled-bg:  null,
   $disabled-color: null,
   $border: 0,
   $border-hover: 0
@@ -11,36 +11,62 @@
 
   color           : $color;
   background-color: $bg;
-  border          : $border;
+  border-radius   : $pe-btn-border-radius;
   text-decoration : none;
   text-overflow   : ellipsis;
   white-space     : nowrap;
   overflow        : hidden;
+  border		  : $border;
+
+  position: relative;
+  z-index: 10;
 
   &:hover,
   &:active {
     color            : $hover-color;
     background-color : $hover-bg;
-    border           : $border-hover;
+    border			 : $border-hover;
+    
   }
-  &:focus {
-  	outline: 1px solid $pe-color-hot-pink;
-	outline-offset: 2px;
-  	
-  	 /*FOR outline focus shaped like the button*/
-  	 // display: inline-block;
-	 // box-shadow: 0 0 0 1px $pe-color-hot-pink;
-	 // border-radius: 22px;
-	 // outline: none;
-  }
+  // &:focus {
+	// outline: 1px solid $pe-color-hot-pink;
+	// outline-offset: 2px;
+  // }
 
+  &:focus {
+    outline: 0;
+    &:after {
+    content: "";
+    border: 1px solid $pe-color-hot-pink;
+    position: absolute;
+    border-radius: $pe-btn-border-radius;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    top: -3px;
+	left: -3px;
+    z-index: -100;
+  	}
+   }
+
+//   &:focus:after {
+//     content: "";
+//     border: 1px solid $pe-color-hot-pink;
+//     position: absolute;
+//     border-radius: $pe-btn-border-radius;
+//     width: calc(100% + 3px);
+//     height: calc(100% + 3px);
+//     top: -3px;
+// 	   left: -3px;
+//     z-index: -100;
+//   }
+  
   &:disabled,
   &.pe-btn--disabled,
   &.pe-btn--disabled:hover {
     cursor          : default;
-    border		    : $pe-btn-default-disabled-bg;
-    color           : $pe-btn-default-disabled-text;
-    background-color: $pe-btn-default-disabled-bg;
+    border			: $disabled-bg;
+    color           : $disabled-color;
+    background-color: $disabled-bg;
     box-shadow      : none;
     text-decoration : none;
   }
