@@ -129,26 +129,30 @@ export default class Dropdown extends Component {
     });
   };
 
+  handleSetItem() {
+    const dropdown = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
+          parentWrapper = dropdown.parentElement.parentElement
+
+    this.resetPlacement(ReactDOM.findDOMNode(this));
+    this.focusedItem = 0;
+
+    if(window.screen.width < 768){
+      // show children of body
+      for(let key in document.body.children){
+        let child = document.body.children[key]
+        if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
+          child.style.display = ""
+        }
+      }
+    }
+  }
+
   handleKeyDown(event) {
     if (this.state.open) {
       if (event.which === 27) {
         // escape
         return this.setState({ open: false }, () => {
-          const dropdown = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
-                parentWrapper = dropdown.parentElement.parentElement
-
-          this.resetPlacement(ReactDOM.findDOMNode(this));
-          this.focusedItem = 0;
-
-          if(window.screen.width < 768){
-            // show children of body
-            for(let key in document.body.children){
-              let child = document.body.children[key]
-              if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
-                child.style.display = ""
-              }
-            }
-          }
+          this.handleSetItem()
         });
       }
 
@@ -267,6 +271,8 @@ export default class Dropdown extends Component {
         open: false,
         selectedItem: selectedListItem.dataset.item,
         selectedItemDOM: selectedListItem
+      }, () => {
+        this.handleSetItem()
       });
       this.container.children[0].focus();
     }
@@ -379,7 +385,12 @@ export default class Dropdown extends Component {
     document.addEventListener('click', this.clickListener);
 
     // TODO: add a orientationChange listener to move DOM node
-    
+    window.addEventListener("orientationChange", e => {
+      this.placeInBody()
+    })
+    window.addEventListener("resize", e => {
+      this.placeInBody()
+    })
 
     if (selectedIndex >= 0 && this.props.children) {
       this.setState({
@@ -388,15 +399,36 @@ export default class Dropdown extends Component {
     }
 
     // If it's on mobile, place the dropdown as a child of the body
+    this.placeInBody()
+  }
+
+  placeInBody() {
+    var id = this.props.id.replace(" ", "_")+"-dropdown",
+        menu = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
+        fakeId = id+"--placeholder"
     if(window.screen.width < 768){
-      var menu = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
-          divWrapper = document.createElement("div"),
-          divContainer = document.createElement("div")
+      var divWrapper = document.createElement("div"),
+          divContainer = document.createElement("div"),
+          placeholder = document.createElement("div"),
+          curParent = menu.parentElement
+      placeholder.setAttribute("id", fakeId),
+      placeholder.setAttribute("style", "display:none;")
       divWrapper.className = "dropdown-wrapper"
       divContainer.className = "dropdown-container"
+
+      // insert a placeholder
+      curParent.insertBefore(placeholder, menu)
+
+      // put the new stuff on the DOM
       divContainer.appendChild(menu)
       divWrapper.appendChild(divContainer)
       document.body.appendChild(divWrapper)
+    } else {
+      if(menu.parentElement.parentElement.parentElement.tagName === "BODY"){
+        var placeholder = document.getElementById(fakeId),
+            curParent = placeholder.parentElement
+        curParent.replaceChild(menu, placeholder)
+      }
     }
   }
 
