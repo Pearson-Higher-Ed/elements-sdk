@@ -91,57 +91,62 @@ export default class Dropdown extends Component {
 
   toggleDropdown() {
     this.setState({ open: !this.state.open }, () => {
-      const dropdown = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
-            parentWrapper = dropdown.parentElement.parentElement
-      if (window.screen.width < 768) {
-      	this.list.children[1].children[0].focus();
-      	this.focusedItem = 1;
-      }
-      else {
-      	this.list.children[0].children[0].focus();
-      }
+      const dropdown = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
+      // don't run in tests (DOM manipulation)
+      if(dropdown != null){
+        const parentWrapper = dropdown.parentElement.parentElement
+        if (window.screen.width < 768) {
+        	this.list.children[1].children[0].focus();
+        	this.focusedItem = 1;
+        }
+        else {
+        	this.list.children[0].children[0].focus();
+        }
 
-      if (this.state.open) {
-        this.placement(ReactDOM.findDOMNode(this));
-        if(window.screen.width < 768){
-          // hide children of body
-          for(let key in document.body.children){
-            let child = document.body.children[key]
-            if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
-              child.style.display = "none"
+        if (this.state.open) {
+          this.placement(ReactDOM.findDOMNode(this));
+          if(window.screen.width < 768){
+            // hide children of body
+            for(let key in document.body.children){
+              let child = document.body.children[key]
+              if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
+                child.style.display = "none"
+              }
+            }
+          }
+        } else {
+          this.resetPlacement(ReactDOM.findDOMNode(this));
+          this.focusedItem = 0;
+          if(window.screen.width < 768){
+            // show children of body
+            for(let key in document.body.children){
+              let child = document.body.children[key]
+              if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
+                child.style.display = ""
+              }
             }
           }
         }
-      } else {
-        this.resetPlacement(ReactDOM.findDOMNode(this));
-        this.focusedItem = 0;
-        if(window.screen.width < 768){
-          // show children of body
-          for(let key in document.body.children){
-            let child = document.body.children[key]
-            if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
-              child.style.display = ""
-            }
-          }
-        }
       }
-
     });
   };
 
   handleSetItem() {
-    const dropdown = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
-          parentWrapper = dropdown.parentElement.parentElement
+    const dropdown = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
+    // don't run for tests (DOM maniplation)
+    if(dropdown != null){
+      const parentWrapper = dropdown.parentElement.parentElement
 
-    this.resetPlacement(ReactDOM.findDOMNode(this));
-    this.focusedItem = 0;
+      this.resetPlacement(ReactDOM.findDOMNode(this));
+      this.focusedItem = 0;
 
-    if(window.screen.width < 768){
-      // show children of body
-      for(let key in document.body.children){
-        let child = document.body.children[key]
-        if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
-          child.style.display = ""
+      if(window.screen.width < 768){
+        // show children of body
+        for(let key in document.body.children){
+          let child = document.body.children[key]
+          if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
+            child.style.display = ""
+          }
         }
       }
     }
@@ -402,28 +407,31 @@ export default class Dropdown extends Component {
     var id = this.props.id.replace(" ", "_")+"-dropdown",
         menu = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
         fakeId = id+"--placeholder"
-    if(window.screen.width < 768){
-      var divWrapper = document.createElement("div"),
-          divContainer = document.createElement("div"),
-          placeholder = document.createElement("div"),
-          curParent = menu.parentElement
-      placeholder.setAttribute("id", fakeId),
-      placeholder.setAttribute("style", "display:none;")
-      divWrapper.className = "dropdown-wrapper"
-      divContainer.className = "dropdown-container"
+    // don't manipulate DOM for tests
+    if(menu != null){
+      if(window.screen.width < 768){
+        var divWrapper = document.createElement("div"),
+            divContainer = document.createElement("div"),
+            placeholder = document.createElement("div"),
+            curParent = menu.parentElement
+        placeholder.setAttribute("id", fakeId),
+        placeholder.setAttribute("style", "display:none;")
+        divWrapper.className = "dropdown-wrapper"
+        divContainer.className = "dropdown-container"
 
-      // insert a placeholder
-      curParent.insertBefore(placeholder, menu)
+        // insert a placeholder
+        curParent.insertBefore(placeholder, menu)
 
-      // put the new stuff on the DOM
-      divContainer.appendChild(menu)
-      divWrapper.appendChild(divContainer)
-      document.body.appendChild(divWrapper)
-    } else {
-      if(menu.parentElement.parentElement.parentElement.tagName === "BODY"){
-        var placeholder = document.getElementById(fakeId),
-            curParent = placeholder.parentElement
-        curParent.replaceChild(menu, placeholder)
+        // put the new stuff on the DOM
+        divContainer.appendChild(menu)
+        divWrapper.appendChild(divContainer)
+        document.body.appendChild(divWrapper)
+      } else {
+        if(menu.parentElement.parentElement.parentElement.tagName === "BODY"){
+          var placeholder = document.getElementById(fakeId),
+              curParent = placeholder.parentElement
+          curParent.replaceChild(menu, placeholder)
+        }
       }
     }
   }
