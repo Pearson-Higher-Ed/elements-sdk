@@ -384,13 +384,9 @@ export default class Dropdown extends Component {
     const selectedIndex = this.getSelectedIndex();
     document.addEventListener('click', this.clickListener);
 
-    // TODO: add a orientationChange listener to move DOM node
-    window.addEventListener("orientationChange", e => {
-      this.placeInBody()
-    })
-    window.addEventListener("resize", e => {
-      this.placeInBody()
-    })
+    // responsiveness events
+    window.addEventListener("orientationChange", this.placeInBody)
+    window.addEventListener("resize", this.placeInBody)
 
     if (selectedIndex >= 0 && this.props.children) {
       this.setState({
@@ -442,7 +438,10 @@ export default class Dropdown extends Component {
   }
 
   componentWillUnmount() {
+    // garbage cleanup
     document.removeEventListener('click', this.clickListener);
+    window.removeEventListener("orientationChange", this.placeInBody)
+    window.removeEventListener("resize", this.placeInBody)
   }
 
   render() {
