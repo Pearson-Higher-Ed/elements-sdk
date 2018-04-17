@@ -15,7 +15,6 @@
   border-radius  : $pe-btn-large-border-radius;
   font-size      : $pe-font-size-base;
   line-height    : $pe-line-height-base;
-
   font-weight    : $pe-label-bold;
 }
 
@@ -48,14 +47,14 @@
 %pe-link-extend {
   text-decoration: underline;
   background-color: transparent;
-  border: none;
+  border: 0;
   cursor: pointer;
 }
 
 .pe-link {
+  @extend %pe-link-extend;
   color: $pe-color-digital-pearson-blue;
   padding: 0;
-  @extend %pe-link-extend;
 
   &:hover,
   &:focus {
@@ -65,9 +64,9 @@
 }
 
 .pe-link--btn {
+  @extend %pe-link-extend;
   color: $pe-color-digital-pearson-blue;
   padding: 4px;
-  @extend %pe-link-extend;
 
   &:hover,
   &:focus {
@@ -82,19 +81,19 @@
 }
 
 //===========btn=================================
+
 .pe-btn, .pe-btn--btn_large {
-
-  @extend %btn;
-
-  @include pe-btn(
+   @include pe-btn(
     $pe-btn-default-bg,
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
+    $pe-btn-default-disabled-bg,
+    $pe-btn-default-disabled-text,
     $pe-btn-default-border,
     $pe-btn-default-hover-border
   );
-
+  @extend %btn;
 }
 
 .pe-btngroup {
@@ -114,154 +113,150 @@
 }
 
 .pe-btn--btn_small {
-
-  @extend %btn;
-  @extend %btn_small;
-
   @include pe-btn(
     $pe-btn-default-bg,
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
+    $pe-btn-default-disabled-bg,
+    $pe-btn-default-disabled-text,
     $pe-btn-default-border,
     $pe-btn-default-hover-border
   );
-
+  @extend %btn;
+  @extend %btn_small;
 }
 
 .pe-btn--btn_xlarge {
-
-  @extend %btn;
-  @extend %btn_xlarge;
-
   @include pe-btn(
     $pe-btn-default-bg,
     $pe-btn-default-text,
     $pe-btn-default-hover-bg,
     $pe-btn-default-hover-text,
+    $pe-btn-default-disabled-bg,
+    $pe-btn-default-disabled-text,
     $pe-btn-default-border,
     $pe-btn-default-hover-border
   );
-
+  @extend %btn;
+  @extend %btn_xlarge;
 }
 
 //===========Primary=================================
 .pe-btn__primary, .pe-btn__primary--btn_large {
-
-  @extend %btn;
-
   @include pe-btn(
     $pe-btn-primary-bg,
     $pe-btn-primary-text,
     $pe-btn-primary-hover-bg,
-    $pe-btn-primary-hover-text
+    $pe-btn-primary-hover-text,
+    $border:($pe-btn-primary-border),
+    $border-hover:($pe-btn-primary-hover-border)
   );
+  @extend %btn;
 }
 
 .pe-btn__primary--btn_small {
-
-  @extend %btn;
-  @extend %btn_small;
-
   @include pe-btn(
     $pe-btn-primary-bg,
     $pe-btn-primary-text,
     $pe-btn-primary-hover-bg,
-    $pe-btn-primary-hover-text
+    $pe-btn-primary-hover-text,
+    $border:($pe-btn-primary-border),
+    $border-hover:($pe-btn-primary-hover-border)
   );
+  @extend %btn;
+  @extend %btn_small;
 }
 
 .pe-btn__primary--btn_xlarge {
-
-  @extend %btn;
-  @extend %btn_xlarge;
-
   @include pe-btn(
     $pe-btn-primary-bg,
     $pe-btn-primary-text,
     $pe-btn-primary-hover-bg,
-    $pe-btn-primary-hover-text
+    $pe-btn-primary-hover-text,
+    $border:($pe-btn-primary-border),
+    $border-hover:($pe-btn-primary-hover-border)
   );
+  @extend %btn;
+  @extend %btn_xlarge;
 }
-
-
 
 //===========CTA=================================
 .pe-btn__cta, .pe-btn__cta--btn_large {
-
-  @extend %btn;
-
   @include pe-btn(
     $pe-btn-cta-bg,
     $pe-btn-cta-text,
     $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
+    $pe-btn-cta-hover-text,
+    $border:($pe-btn-cta-border),
+    $border-hover:($pe-btn-cta-hover-border)
   );
+  @extend %btn;
 }
 
 .pe-btn__cta--btn_small {
-
-  @extend %btn;
-  @extend %btn_small;
-
   @include pe-btn(
     $pe-btn-cta-bg,
     $pe-btn-cta-text,
     $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
+    $pe-btn-cta-hover-text,
+    $border:($pe-btn-cta-border),
+    $border-hover:($pe-btn-cta-hover-border)
   );
+  @extend %btn;
+  @extend %btn_small;
 }
 
 .pe-btn__cta--btn_xlarge {
-
-  @extend %btn;
-  @extend %btn_xlarge;
-
   @include pe-btn(
     $pe-btn-cta-bg,
     $pe-btn-cta-text,
     $pe-btn-cta-hover-bg,
-    $pe-btn-cta-hover-text
+    $pe-btn-cta-hover-text,
+    $border:($pe-btn-cta-border),
+    $border-hover:($pe-btn-cta-hover-border)
   );
+  @extend %btn;
+  @extend %btn_xlarge;
 }
 
 //===========TERTIARY=================================
 .pe-btn__tertiary, .pe-btn__tertiary--btn_large {
-  
-    @extend %btn;
-  
     @include pe-btn(
       $pe-btn-tertiary-bg,
       $pe-btn-tertiary-text,
       $pe-btn-tertiary-hover-bg,
-      $pe-btn-tertiary-hover-text
+      $pe-btn-tertiary-hover-text,
+      $border:($pe-btn-tertiary-border),
+      $border-hover:($pe-btn-tertiary-hover-border)
     );
+    @extend %btn;
   }
   
   .pe-btn__tertiary--btn_small {
-  
-    @extend %btn;
-    @extend %btn_small;
-  
     @include pe-btn(
       $pe-btn-tertiary-bg,
       $pe-btn-tertiary-text,
       $pe-btn-tertiary-hover-bg,
-      $pe-btn-tertiary-hover-text
+      $pe-btn-tertiary-hover-text,
+      $border:($pe-btn-tertiary-border),
+      $border-hover:($pe-btn-tertiary-hover-border)
     );
+    @extend %btn;
+    @extend %btn_small;
   }
  
   .pe-btn__tertiary--btn_xlarge {
-  
-    @extend %btn;
-    @extend %btn_xlarge;
-  
     @include pe-btn(
       $pe-btn-tertiary-bg,
       $pe-btn-tertiary-text,
       $pe-btn-tertiary-hover-bg,
-      $pe-btn-tertiary-hover-text
+      $pe-btn-tertiary-hover-text,
+      $border:($pe-btn-tertiary-border),
+      $border-hover:($pe-btn-tertiary-hover-border)
     );
+    @extend %btn;
+    @extend %btn_xlarge;
   }
 
 // vertical align doesn't work in div and a, the text in those sticks to the top border.
@@ -283,5 +278,3 @@
   div[class$='--btn_small'], a[class$='--btn_small'] {
     line-height: 32px !important;
   }
-  
-  
