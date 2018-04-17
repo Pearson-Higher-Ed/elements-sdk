@@ -12,7 +12,7 @@
     <script>
       if (document.body.children[0].nodeName !== 'svg') {
         var pe_ajax = new XMLHttpRequest();
-        pe_ajax.open("GET", "../icons/p-icons-sprite-1.1.svg", true);
+        pe_ajax.open("GET", "/elements-sdk/icons/p-icons-sprite-1.1.svg", true);
         pe_ajax.responseType = "document";
         pe_ajax.onload = function(e) {
           document.body.insertBefore(
