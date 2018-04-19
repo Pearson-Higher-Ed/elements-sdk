@@ -42,22 +42,6 @@ export default class Dropdown extends Component {
     this.getSelectedIndex = this.getSelectedIndex.bind(this);
   }
 
-//   determine window width to launch modal for mobile
-//   componentWillMount() {
-//   	window.addEventListener('resize', this.handleWindowSizeChange);
-//   }
-//   make sure to remove the listener
-//   when the component is not mounted anymore
-//   componentWillUnmount() {
-//     window.removeEventListener('resize', this.handleWindowSizeChange);
-//   }
-//
-//   handleWindowSizeChange = () => {
-//     this.setState({ width: window.innerWidth });
-//   };
-// 	end mobile
-
-
   placement(dropdown) {
     const anchor = dropdown.children[0];
     // fetch by ID vs children
@@ -275,6 +259,7 @@ export default class Dropdown extends Component {
       this.setState({
         open: false,
         selectedItem: selectedListItem.dataset.item,
+        selectedValue: selectedListItem.getAttribute('data-value'),
         selectedItemDOM: selectedListItem
       }, () => {
         this.handleSetItem()
@@ -288,7 +273,7 @@ export default class Dropdown extends Component {
     let btnIcon=false;
     let buttonLabel = (
       <div>
-        {this.props.label} <Icon name="dropdown-open-sm-18"/>
+        {this.props.label} <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
       </div>
     );
 
@@ -313,7 +298,7 @@ export default class Dropdown extends Component {
         buttonLabel = (
           <div>
             <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt={this.props.btnImageAlt} />
-            <Icon name="dropdown-open-sm-18"/>
+            <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
           </div>
         );
       break;
@@ -468,7 +453,7 @@ export default class Dropdown extends Component {
             onClick={this.itemSelected}
             onKeyDown={this.handleKeyDown}>
             {this.addMobileHeader()}
-            {this.props.children}
+            {React.Children.map(this.props.children, child => React.cloneElement(child, {itemSelected: this.state.selectedValue}))}
           </ul>
         </div>
 
@@ -486,7 +471,7 @@ export default class Dropdown extends Component {
             onClick={this.itemSelected}
             onKeyDown={this.handleKeyDown}>
             {this.addMobileHeader()}
-            {this.props.children}
+            {React.Children.map(this.props.children, child => React.cloneElement(child, {itemSelected: this.state.selectedValue}))}
           </ul>
         </div>
       )
