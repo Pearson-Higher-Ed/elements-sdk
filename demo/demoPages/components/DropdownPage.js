@@ -75,17 +75,17 @@ class DropdownPage extends React.Component {
           </Dropdown>
           <p className="code">
             {`<Dropdown
-                dropdownControlLabel="Dropdown open"
-                mobileTitle={mobileTitle}
-                type="text"
-                label="text"
-                id="text"
-              >
-                <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-1" label="list item 1" />
-                <DropdownItem checkmark divider />
-                <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-2" label="list item 2" />
-                <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-3" label="list item 3" />
-              </Dropdown>`}
+            dropdownControlLabel="Dropdown open"
+            mobileTitle={mobileTitle}
+            type="text"
+            label="text"
+            id="text">
+            <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-1" 
+              selectedName="selected" label="list item 1" type="button" />
+            <DropdownItem type="divider" />
+            <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-2" label="list item 2" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-3" label="list item 3" type="link" url="http://www.google.com" />
+          </Dropdown>`}
           </p>
 
           <h3>button /w Icon (no checkmarks)</h3>
@@ -100,15 +100,14 @@ class DropdownPage extends React.Component {
           </Dropdown>
           <p className="code">
             {`<Dropdown
-                mobileTitle={mobileTitle}
-                type="button"
-                label="Button text"
-                id="buttontext"
-              >
-                <DropdownItem dropdownId="dropBtnIcons" selectValue="list-item-1" label="list item 1" />
-                <DropdownItem divider />
-                <DropdownItem dropdownId="dropBtnIcons" selectValue="list-item-2" label="list item 2" />
-              </Dropdown>`}
+            mobileTitle={mobileTitle}
+            type="button"
+            label="Button text"
+            id="buttontext">
+            <DropdownItem dropdownId="dropBtnIcons" selectValue="list-item-1" label="list item 1" type="button" />
+            <DropdownItem type="divider" />
+            <DropdownItem dropdownId="dropBtnIcons" selectValue="list-item-2" label="list item 2" type="link" url="www.google.com"/>
+          </Dropdown>`}
           </p>
 
           <h3>Icon only (no checkmarks)</h3>
@@ -123,15 +122,14 @@ class DropdownPage extends React.Component {
             </Dropdown>
             <p className="code">
               {`<Dropdown
-                  mobileTitle={mobileTitle}
-                  type="icon"
-                  label="icon text"
-                  id="iconText"
-                >
-                  <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" />
-                  <DropdownItem divider />
-                  <DropdownItem dropdownId="dropIcon" selectValue="list-item-2" label="list item 2" />
-                </Dropdown>`}
+              mobileTitle={mobileTitle}
+              type="icon"
+              label="icon text"
+              id="iconText">
+              <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
+              <DropdownItem type="divider" />
+              <DropdownItem dropdownId="dropIcon" selectValue="list-item-2" label="list item 2" type="link" url="www.google.com" />
+            </Dropdown>`}
             </p>
             <h3>Image Icon w/ Image Options (w/ checkmarks)</h3>
             <Dropdown
@@ -152,20 +150,21 @@ class DropdownPage extends React.Component {
             </Dropdown>
             <p className="code">
               {`<Dropdown
-                dropdownControlLabel="Dropdown open"
-                mobileTitle={mobileTitle}
-                type="image"
-                label="image"
-                id="image"
-                btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
-                btnImageHeight="10"
-                btnImageWidth="20"
-                btnImageAlt="US flag">
-                <DropdownItem checkmark selectedName="selected" label="image item 1" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" imgHeight="10" imgWidth="20" selectValue="US" imgAlt="US flag" />
-                <DropdownItem type="divider" />
-                <DropdownItem checkmark selectedName="selected" label="image item 2" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" imgAlt="UK flag" />
-                <DropdownItem checkmark selectedName="selected" label="image item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" imgAlt="African flag" />
-              </Dropdown>`}
+              dropdownControlLabel="Dropdown open"
+              dropdownId="dropImg"
+              mobileTitle={mobileTitle}
+              type="image"
+              label="image"
+              id="image"
+              btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
+              btnImageHeight="10"
+              btnImageWidth="20"
+              btnImageAlt="US flag">
+              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 1" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" imgHeight="10" imgWidth="20" selectValue="US" imgAlt="US flag" />
+              <DropdownItem type="divider" />
+              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 2" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" imgAlt="UK flag" />
+              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" imgAlt="African flag" />
+            </Dropdown>`}
             </p>
         </div>
       </div>

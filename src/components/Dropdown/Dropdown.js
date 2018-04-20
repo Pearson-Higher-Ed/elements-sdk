@@ -40,6 +40,7 @@ export default class Dropdown extends Component {
     this.itemSelected = this.itemSelected.bind(this);
     this.clickListener = this.clickListener.bind(this);
     this.getSelectedIndex = this.getSelectedIndex.bind(this);
+    this.placeInBody = this.placeInBody.bind(this);
   }
 
   placement(dropdown) {
@@ -54,10 +55,19 @@ export default class Dropdown extends Component {
     const touch_right = window.innerWidth < elementRect.right;
     // we need to push up
     const touch_bottom = elementRect.bottom > window.innerHeight;
+    // get how close button is from top
+    const top_tooclose = elementRect.top < elementRect.height;
 
     if (touch_bottom) {
-      // 4 because of margins
-      element.style.top = `-${(elementRect.height + 4)}px`;
+		//but is not at top of page (like demo site) 
+		if (top_tooclose) {
+		console.log(window.innerHeight);
+		  element.style.maxHeight = `${(window.screen.height - elementRect.top - 60)}px`;
+		}
+		else {
+          // 4 because of margins
+          element.style.top = `-${(elementRect.height + 4)}px`; 
+      }
     }
 
     if (touch_right) {
@@ -273,7 +283,7 @@ export default class Dropdown extends Component {
     let btnIcon=false;
     let buttonLabel = (
       <div>
-        {this.props.label} <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
+        {this.props.label} <Icon name="dropdown-open-sm-18"></Icon>
       </div>
     );
 
@@ -298,7 +308,7 @@ export default class Dropdown extends Component {
         buttonLabel = (
           <div>
             <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt={this.props.btnImageAlt} />
-            <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
+            <Icon name="dropdown-open-sm-18"></Icon>
           </div>
         );
       break;
@@ -373,9 +383,12 @@ export default class Dropdown extends Component {
   componentDidMount() {
     const selectedIndex = this.getSelectedIndex();
     document.addEventListener('click', this.clickListener);
-
     // responsiveness events
-    window.addEventListener("orientationChange", this.placeInBody)
+    window.addEventListener("orientationChange", function() {
+    this.placeInBody
+    console.log(this.props.id);
+
+    }, false)
     window.addEventListener("resize", this.placeInBody)
 
     if (selectedIndex >= 0 && this.props.children) {
@@ -389,6 +402,7 @@ export default class Dropdown extends Component {
   }
 
   placeInBody() {
+  	
     var id = this.props.id.replace(" ", "_")+"-dropdown",
         menu = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
         fakeId = id+"--placeholder"
