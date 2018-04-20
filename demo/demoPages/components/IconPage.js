@@ -232,6 +232,10 @@ const IconPage = () => (
             <li><Icon name="attachment-24">Attachment 24</Icon> attachment-24</li>
             <li><Icon name="number-list-18">Number list 18</Icon> number-list-18</li>
             <li><Icon name="number-list-24">Number list 24</Icon> number-list-24</li>
+            <li><Icon name="link-18">Link 18</Icon> link-18</li>
+            <li><Icon name="link-24">Link 24</Icon> link-24</li>
+            <li><Icon name="link-out-18">Link out 18</Icon> link-out-18</li>
+            <li><Icon name="link-out-24">Link out 24</Icon> link-out-24</li>
           </ul>
         </div>
       </div>
