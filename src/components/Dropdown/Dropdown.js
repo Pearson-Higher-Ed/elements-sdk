@@ -61,7 +61,6 @@ export default class Dropdown extends Component {
     if (touch_bottom) {
 		//but is not at top of page (like demo site) 
 		if (top_tooclose) {
-		console.log(window.innerHeight);
 		  element.style.maxHeight = `${(window.screen.height - elementRect.top - 60)}px`;
 		}
 		else {
