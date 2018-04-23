@@ -1,6 +1,6 @@
 import React from 'react';
 import expect from 'expect';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { jsdom } from 'jsdom';
 import { Dropdown, DropdownItem } from '../index';
 import { Button } from '../index';
@@ -54,29 +54,19 @@ describe('Dropdown', () => {
         global[property] = document.defaultView[property];
       }
     });
-
-    it('should call changeHandler and set state to closed', function () {
-      let selectedItem = null;
-      const changeHandler = (item) => {
-        selectedItem = item;
-      };
-
-      const mounted = mount(<Dropdown label="test label" id="testId" type="text" changeHandler={changeHandler} />);
+	
+    it('selecting item should set dropdown state to closed', function () {
+    
+      const mounted = shallow(
+      	<Dropdown label="test label" id="testId" type="text">
+      		<DropdownItem checkmark selectValue="testitem1" dropdownId="test1" selectedName="selected" label="list item 1" type="button" />
+      	</Dropdown>);
       const instance = mounted.instance();
-      const e = {
-        target : {
-          nodeName: 'LI',
-          dataset : {
-            item: 'option 1'
-          }
-        }
-      };
 
-      instance.itemSelected(e);
-      expect(instance.state.open).toEqual(false);
-      expect(instance.state.selectedItem).toEqual('option 1');
-      expect(selectedItem.item).toEqual('option 1');
-    });
+     instance.toggleDropdown();
+     mounted.find('li button').simulate('click');
+     expect(instance.state.open).toEqual(false);
+   });
   });
 
   describe('dropdown handleKeyDown', function() {
@@ -139,9 +129,9 @@ describe('Dropdown', () => {
 
       const mounted = mount(
         <Dropdown label="test label" id="testId" type="text" >
-          <DropdownItem selectedName="selected" label="list item 1" type="button" />
+          <DropdownItem selectedName="selected" selectValue="testlist1" label="list item 1" type="button" />
           <DropdownItem type="divider" />
-          <DropdownItem label="list item 2" type="link" url="http://www.google.com" />
+          <DropdownItem label="list item 2" selectValue="testlist2" type="link" url="http://www.google.com" />
         </Dropdown>
       );
       const instance = mounted.instance();
