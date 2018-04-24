@@ -44,12 +44,13 @@ export default class DropdownItem extends Component {
 				data-value={selectValue}
 				id={dropdownId + "-" + selectValue}
 				aria-checked={itemSelected === selectValue}
+				className={itemSelected === selectValue ? 'active' : ''}
 			>
             <button role="menuitem"
 				className={checkmark ? 'checkmark' : ''}
 				tabIndex="-1">
 				{checkmark ?
-					<span style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
+					<span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
 						<Icon name="check-sm-18">{selectedName}</Icon>
 					</span> : null
 				}
@@ -67,12 +68,13 @@ export default class DropdownItem extends Component {
 				data-value={selectValue}
 				id={dropdownId + "-" + selectValue}
 				aria-checked={itemSelected === selectValue}
+				className={itemSelected === selectValue ? 'active' : ''}
 			>
 				<button role="menuitem"
 					className={checkmark ? 'checkmark' : ''}
 					tabIndex="-1">
 						{checkmark ?
-							<span style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
+							<span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
 								<Icon name="check-sm-18">{selectedName}</Icon>
 							</span> : null
 						}

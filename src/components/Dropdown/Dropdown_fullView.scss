@@ -52,7 +52,9 @@
         &.checkmark {
           padding: 4px 16px;
         }
-
+		span.icon {
+			color: $pe-color-medium-gray;
+		}
         span.icon-padding {
             padding-left: 8px;
         }
