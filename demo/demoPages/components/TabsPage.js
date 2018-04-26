@@ -5,12 +5,18 @@ const pad = {padding: 12};
 const eight = {paddingLeft: 8};
 const sixteen = {paddingLeft: 16};
 
+const testHandler = function(i){
+  // test handler
+  console.log(i)
+}
+
 const TabsPage = () => (
   <div className="displaySection">
     <h2><a href="http://pearson-higher-ed.github.io/design/c/tab-navigation/beta/">Tabs</a></h2>
-
     <div className="elementContainer">
-      <Tabs>
+      <Tabs
+        callback={testHandler}
+      >
         <Pane label="Tabby">
           <div style={pad}>A bunch of words in Tab 1</div>
         </Pane>
@@ -45,6 +51,7 @@ const TabsPage = () => (
         </ul>
         <h4>Optional:</h4>
         <ul>
+          <li className="li-props">add a callback to communicate with a higher order component {`<Tabs callback={function}>`}</li>
           <li className="li-props">selected:Number === {`<Tabs selected={2}>`}</li>
           <li className="li-props">The selected prop can be passed the index of
           the tab you would like active on page load. <br/>
