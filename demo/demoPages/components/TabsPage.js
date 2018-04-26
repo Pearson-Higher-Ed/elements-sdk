@@ -5,11 +5,18 @@ const pad = {padding: 12};
 const eight = {paddingLeft: 8};
 const sixteen = {paddingLeft: 16};
 
+const testHandler = function(i){
+  // test handler
+  console.log(i)
+}
+
 const TabsPage = () => (
   <div className="displaySection">
     <h2><a href="http://pearson-higher-ed.github.io/design/c/tab-navigation/beta/">Tabs</a></h2>
     <div className="elementContainer">
-      <Tabs>
+      <Tabs
+        callback={testHandler}
+      >
         <Pane label="Tabby">
           <div style={pad}>A bunch of words in Tab 1</div>
         </Pane>

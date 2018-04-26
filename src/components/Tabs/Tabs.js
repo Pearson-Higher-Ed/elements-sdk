@@ -37,7 +37,7 @@ export default class Tabs extends Component {
     event.preventDefault();
 
     if (this.props.callback !== undefined) {
-      this.props.callback();
+      this.props.callback(i);
     }
 
     this.setState({
