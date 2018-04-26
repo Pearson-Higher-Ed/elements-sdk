@@ -1,5 +1,15 @@
+<a name="1.11.3"></a>
+## [1.11.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.11.2...v1.11.3) (2018-04-26)
+
+
+
 <a name="1.11.2"></a>
 ## [1.11.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.11.1...v1.11.2) (2018-04-26)
+
+
+### Bug Fixes
+
+* callback for tabs on activated, add in key passing in callback ([54e59ad](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/54e59ad))
 
 
 
