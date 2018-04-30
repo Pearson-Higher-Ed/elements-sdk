@@ -27,7 +27,7 @@ class TextInput extends Component {
   render() {
 
     const { labelStyle, inputStyle, spanStyle, passwordStatusText, visibilityStatusText, passwordTypeSelector, butttonStyle, labelFocusStyle, labelStyleTmp  }  = this.state;
-    const { inputState, id, labelText, password, placeholder, infoMessage, errorMessage, changeHandler } = this.props;
+    const { inputState, id, labelText, password, placeholder, infoMessage, errorMessage, changeHandler, inputValue } = this.props;
 
     const em = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
     const ariaDescribedby =  em + ((infoMessage) ? `infoMsg-${id}` : '');
@@ -48,7 +48,8 @@ class TextInput extends Component {
           onFocus          = {() => this.setState({labelStyleTmp:labelFocusStyle})}
           onBlur           = {() => this.setState({labelStyleTmp:labelStyle})}
           onChange         = { changeHandler }
-          />
+          value            = {inputValue}
+        />
 
         {(inputState  !== 'readOnly' || inputState !== 'disabled') && <span className={spanStyle} />}
         {password     && <span><button type="button" className={butttonStyle} id={`showbutton-${id}`} onClick={this.togglePassword} disabled={inputState === 'disabled'}>{passwordStatusText}</button> <span aria-live="polite" aria-atomic="true" className="pe-sr-only">{visibilityStatusText}</span></span>}
@@ -74,8 +75,13 @@ TextInput.propTypes = {
   infoMessage        : PropTypes.string,
   errorMessage       : PropTypes.string,
   fancy              : PropTypes.bool,
-  password           : PropTypes.bool
+  password           : PropTypes.bool,
+  inputValue         : PropTypes.string.isRequired
 };
+
+TextInput.defaultProps = {
+  inputValue: ''
+}
 
 
 function _togglePassword() {

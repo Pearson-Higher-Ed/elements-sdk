@@ -19,6 +19,7 @@ const TextInputSection = (props) => (
           <li>changeHandler:Function(required) === "handles changes"</li>
           <li>infoMessage:String === "an optional info message displayed below the input"</li>
           <li>errorMessage:String === "an optional error message displayed below the input"</li>
+          <li>inputValue:String === "Value of the input field"</li>
         </ul>
       </div>
 
@@ -46,10 +47,10 @@ const TextInputSection = (props) => (
         inputState    = "default"
         changeHandler = {() => {}}
         labelText     = {props.intlDefaultText.textLabel}
-        placeholder   = {props.intlDefaultText.textPlaceholder}
         infoMessage   = {props.intlDefaultText.textInputInfoMessage}
         errorMessage  = {props.intlDefaultText.textInputErrorMessage}
-        />
+        inputValue    = {props.intlDefaultText.textInputDefaultValue}
+      />
       <p className="code">{'<TextInput id="b" fancy={true} inputState="default" changeHandler={() => {}} labelText="First Name" placeholder="First Name" infoMessage="This is an info message" errorMessage="This is an error message"  />'}</p>
 
 
