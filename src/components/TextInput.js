@@ -27,7 +27,7 @@ class TextInput extends Component {
   render() {
 
     const { labelStyle, inputStyle, spanStyle, passwordStatusText, visibilityStatusText, passwordTypeSelector, butttonStyle, labelFocusStyle, labelStyleTmp  }  = this.state;
-    const { inputState, id, labelText, password, placeholder, infoMessage, errorMessage, changeHandler, inputValue } = this.props;
+    const { inputState, id, labelText, password, placeholder, infoMessage, errorMessage, changeHandler, value } = this.props;
 
     const em = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
     const ariaDescribedby =  em + ((infoMessage) ? `infoMsg-${id}` : '');
@@ -48,7 +48,7 @@ class TextInput extends Component {
           onFocus          = {() => this.setState({labelStyleTmp:labelFocusStyle})}
           onBlur           = {() => this.setState({labelStyleTmp:labelStyle})}
           onChange         = { changeHandler }
-          value            = {inputValue}
+          value            = {value}
         />
 
         {(inputState  !== 'readOnly' || inputState !== 'disabled') && <span className={spanStyle} />}
@@ -76,11 +76,11 @@ TextInput.propTypes = {
   errorMessage       : PropTypes.string,
   fancy              : PropTypes.bool,
   password           : PropTypes.bool,
-  inputValue         : PropTypes.string.isRequired
+  value         : PropTypes.string.isRequired
 };
 
 TextInput.defaultProps = {
-  inputValue: ''
+  value: ''
 }
 
 
