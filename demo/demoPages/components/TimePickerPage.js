@@ -48,7 +48,7 @@ class TimePickerPage extends Component {
               <li>dateFormat:String === "format for date/time entry"</li>
               <li>inputState:String === "styles for input state, one of 'error','disabled','readOnly','default'"</li>
               <li>labelText:String === "unique lable for the input field"</li>
-              <li>timepickerValue:Date/Time === "value to be displayed by the datepicker/timepicker"</li>
+              <li>timepickerValue:String === "value to be displayed by the timepicker"</li>
               <li>changeHandler:Function === "function to pass values on change"</li>
               <li>infoMessage:String === "an optional info message displayed below the input"</li>
               <li>errorMessage:String === "an optional error message displayed below the input"</li>
