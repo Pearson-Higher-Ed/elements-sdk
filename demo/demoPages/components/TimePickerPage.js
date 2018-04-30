@@ -63,22 +63,20 @@ class TimePickerPage extends Component {
           <h2>TimePicker (basic time): </h2>
           <TimePicker
             id              = "someGiantId1"
-            timeFormat      = "hh:mm"
             inputState      = {inputState}
-            labelText       = "Select time"
+            labelText       = "Select time (hh:mm)"
             timepickerValue = {timepickerValue1}
             changeHandler   = {time => this.setState({ timepickerValue1: time })}
             infoMessage     = {text.textInputInfoMessage}
             errorMessage    = {text.textInputErrorMessage}
           />
-          <p className="code">{`<TimePicker id = "someGiantId" timeFormat = "hh:mm" inputState = "default" labelText = "Select time" timepickerValue = {this.state.timepickerValue3} changeHandler = {() => console.log("TimePicker-(basic)-changed!!")} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
+          <p className="code">{`<TimePicker id = "someGiantId" inputState = "default" labelText = "Select time (hh:mm)" timepickerValue = {this.state.timepickerValue3} changeHandler = {() => console.log("TimePicker-(basic)-changed!!")} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
 
           <h2>TimePicker (basic time range): </h2>
           <TimePicker
             id              = "someGiantId2"
-            timeFormat      = "hh:mm"
             inputState      = {inputState}
-            labelText       = "Select time"
+            labelText       = "Select time (hh:mm)"
             timepickerValue = {timepickerValue2}
             changeHandler   = {time => this.setState({ timepickerValue2: time })}
             infoMessage     = {text.textInputInfoMessage}
@@ -86,15 +84,14 @@ class TimePickerPage extends Component {
           />
           <TimePicker
             id              = "someGiantId3"
-            timeFormat      = "hh:mm"
             inputState      = {inputState}
-            labelText       = "Select time"
+            labelText       = "Select time (hh:mm)"
             timepickerValue = {timepickerValue3}
             changeHandler   = {time => this.setState({ timepickerValue3: time })}
             infoMessage     = {text.textInputInfoMessage}
             errorMessage    = {text.textInputErrorMessage}
           />
-          <p className="code">{`<TimePicker fancy = {true} id = "someGiantId" dateFormat = "hh:mm" inputState = "default" labelText = "Select time" datepickerValue = {this.state.datepickerValue4} changeHandler = {() => console.log("TimePicker-(basic)-changed!!")} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
+          <p className="code">{`<TimePicker fancy = {true} id = "someGiantId" inputState = "default" labelText = "Select time (hh:mm)" datepickerValue = {this.state.datepickerValue4} changeHandler = {() => console.log("TimePicker-(basic)-changed!!")} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
 
         </div>
       </div>
