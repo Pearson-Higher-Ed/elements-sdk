@@ -16,7 +16,9 @@ export default class Dropdown extends Component {
     changeHandler: PropTypes.func,
     btnImage: PropTypes.string,
     btnImageHeight: PropTypes.string,
-    btnImageWidth: PropTypes.string
+    scrollable: PropTypes.bool,
+    btnImageWidth: PropTypes.string,
+    btnImageAlt: PropTypes.string
   };
 
   constructor(props) {
@@ -29,7 +31,8 @@ export default class Dropdown extends Component {
       selectedItem: '',
       selectedItemDOM: '',
       buttonFocus: true,
-      btnImage: props.btnImage
+      btnImage: props.btnImage,
+      width: window.innerWidth
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -37,11 +40,14 @@ export default class Dropdown extends Component {
     this.itemSelected = this.itemSelected.bind(this);
     this.clickListener = this.clickListener.bind(this);
     this.getSelectedIndex = this.getSelectedIndex.bind(this);
+    this.placeInBody = this.placeInBody.bind(this);
   }
 
   placement(dropdown) {
     const anchor = dropdown.children[0];
-    const element = dropdown.children[1];
+    // fetch by ID vs children
+    //const element = dropdown.children[1];
+    const element = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
     // get window geometry - this is how jQuery does it
     const elementRect = element.getBoundingClientRect();
     const anchorRect = anchor.getBoundingClientRect();
@@ -49,71 +55,178 @@ export default class Dropdown extends Component {
     const touch_right = window.innerWidth < elementRect.right;
     // we need to push up
     const touch_bottom = elementRect.bottom > window.innerHeight;
+    // get how close button is from top
+    const top_tooclose = elementRect.top < elementRect.height;
 
     if (touch_bottom) {
-      // 4 because of margins
-      element.style.top = `-${(elementRect.height + 4)}px`;
+		//but is not at top of page (like demo site) 
+		if (top_tooclose) {
+		  element.style.maxHeight = `${(window.screen.height - elementRect.top - 60)}px`;
+		}
+		else {
+          // 4 because of margins
+          element.style.top = `-${(elementRect.height + 4)}px`; 
+      }
     }
 
     if (touch_right) {
-      element.style.left = `-${elementRect.width - anchorRect.width}px`;
+    	if (window.screen.width >= 768) {
+      		element.style.left = `-${elementRect.width - anchorRect.width}px`;
+      }
     }
   }
 
   resetPlacement(dropdown) {
-    const element = dropdown.children[1];
+    const element = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
     element.style.left = null;
     element.style.top = null;
   }
 
   toggleDropdown() {
     this.setState({ open: !this.state.open }, () => {
-      this.list.children[0].children[0].focus();
-      if (this.state.open) {
-        this.placement(ReactDOM.findDOMNode(this));
-      } else {
-        this.resetPlacement(ReactDOM.findDOMNode(this));
-        this.focusedItem = 0;
+      const dropdown = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
+      // don't run in tests (DOM manipulation)
+      if(dropdown != null){
+        const parentWrapper = dropdown.parentElement.parentElement
+        if (window.screen.width < 768) {
+        	this.list.children[1].children[0].focus();
+        	this.focusedItem = 1;
+        }
+        else {
+        	this.list.children[0].children[0].focus();
+        }
+
+        if (this.state.open) {
+          this.placement(ReactDOM.findDOMNode(this));
+          if(window.screen.width < 768){
+            // hide children of body
+            for(let key in document.body.children){
+              let child = document.body.children[key]
+              if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
+                child.style.display = "none"
+              }
+            }
+          }
+        } else {
+          this.resetPlacement(ReactDOM.findDOMNode(this));
+          this.focusedItem = 0;
+          if(window.screen.width < 768){
+            // show children of body
+            for(let key in document.body.children){
+              let child = document.body.children[key]
+              if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
+                child.style.display = ""
+              }
+            }
+          }
+        }
       }
     });
   };
+
+  handleSetItem() {
+    const dropdown = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
+    // don't run for tests (DOM maniplation)
+    if(dropdown != null){
+      const parentWrapper = dropdown.parentElement.parentElement
+
+      this.resetPlacement(ReactDOM.findDOMNode(this));
+      this.focusedItem = 0;
+
+      if(window.screen.width < 768){
+        // show children of body
+        for(let key in document.body.children){
+          let child = document.body.children[key]
+          if(child != parentWrapper && child.tagName != "SCRIPT" && child.style){
+            child.style.display = ""
+          }
+        }
+      }
+    }
+  }
 
   handleKeyDown(event) {
     if (this.state.open) {
       if (event.which === 27) {
         // escape
-        return this.setState({ open: false });
+        return this.setState({ open: false }, () => {
+          this.handleSetItem()
+        });
       }
 
       if (event.which === 38) {
         // up
         event.preventDefault();
-        while (this.focusedItem > 0) {
-          this.focusedItem--;
-          if (this.list.children[this.focusedItem].attributes.role.value !== 'separator') {
-            break;
-          }
+        //for mobile, skip header
+        if (window.screen.width < 768) {
+        	if (this.focusedItem > 1) {
+				if (this.list.children[this.focusedItem-1].attributes.role.value !== 'separator') {
+            		this.focusedItem--;
+          		}
+          		else {
+					this.focusedItem = this.focusedItem - 2;
+          		}
+	        }
+	        else {
+        	  this.focusedItem = this.list.children.length-1;
+         	}
         }
+    	//desktop or tablet
+        else {
+      		if (this.focusedItem > 0) {
+
+				if (this.list.children[this.focusedItem-1].attributes.role.value !== 'separator') {
+            		this.focusedItem--;
+          		}
+
+          		else {
+					this.focusedItem = this.focusedItem - 2;
+          		}
+        	}
+        	else {
+        		this.focusedItem = this.list.children.length-1;
+        	}
+       }
         this.list.children[this.focusedItem].children[0].focus();
-      }
+	  }
 
       if (event.which === 40) {
         // down
         event.preventDefault();
-        while (this.focusedItem < this.list.children.length-1) {
-          this.focusedItem++;
-          if (this.list.children[this.focusedItem].attributes.role.value !== 'separator') {
-            break;
-          }
+        if (this.focusedItem < this.list.children.length-1) {
+        	if (this.list.children[this.focusedItem+1].attributes.role.value !== 'separator') {
+        		this.focusedItem++;
+        	}
+        	else {
+        		this.focusedItem = this.focusedItem + 2;
+        	}
+        }
+        else {
+        	if (window.screen.width < 768) {
+        		this.focusedItem = 1;
+        	} else {
+        		this.focusedItem = 0;
+        	}
         }
         this.list.children[this.focusedItem].children[0].focus();
       }
 
       if (event.which === 9) {
         // tab
-        this.setState({
-          open: false
-        });
+        event.preventDefault();
+        if (window.screen.width < 768) {
+        	//for mobile, tab should cycle between close button and list
+        	if (document.activeElement.parentNode.hasAttribute("role")) {
+        		this.list.children[0].querySelector('button').focus();
+        	} else {
+        		this.list.children[1].children[0].focus();
+        	}
+        }
+        else {
+        	this.setState({
+        	  open: false
+        	});
+        }
       }
 
       if (event.which >= 65 && event.which <= 90) {
@@ -155,7 +268,10 @@ export default class Dropdown extends Component {
       this.setState({
         open: false,
         selectedItem: selectedListItem.dataset.item,
+        selectedValue: selectedListItem.getAttribute('data-value'),
         selectedItemDOM: selectedListItem
+      }, () => {
+        this.handleSetItem()
       });
       this.container.children[0].focus();
     }
@@ -166,7 +282,7 @@ export default class Dropdown extends Component {
     let btnIcon=false;
     let buttonLabel = (
       <div>
-        {this.props.label} <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
+        {this.props.label} <Icon name="dropdown-open-sm-18"></Icon>
       </div>
     );
 
@@ -190,8 +306,8 @@ export default class Dropdown extends Component {
         buttonClass= 'pe-icon--btn dropdown-activator dropdown-image';
         buttonLabel = (
           <div>
-            <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt=""/>
-            <Icon name="dropdown-open-sm-18">{this.props.label}</Icon>
+            <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt={this.props.btnImageAlt} />
+            <Icon name="dropdown-open-sm-18"></Icon>
           </div>
         );
       break;
@@ -219,16 +335,20 @@ export default class Dropdown extends Component {
   }
 
   addMobileHeader() {
-    if (window.screen.width < 480) {
+    if (window.screen.width < 768) {
       return (
         <li data-item="divider">
           <div className="mobile-title">
-            <h1 className="pe-page-title pe-page-title--small">
+            <h1 className="pe-title pe-title--small"
+            	id={`${this.props.id.replace(' ', '_')}-title`}>
               {this.props.mobileTitle}
-              <span className="icon-fix">
-                <Icon name="remove-lg-18"></Icon>
-              </span>
-            </h1>
+              </h1>
+              <button className="pe-icon--btn icon-fix"
+                    onClick={this.toggleDropdown}
+                    aria-label="Close dropdown">
+              <Icon name="remove-lg-18" />
+            </button>
+
           </div>
         </li>
       );
@@ -244,11 +364,12 @@ export default class Dropdown extends Component {
   }
 
   getSelectedIndex() {
-    let selectedIndex = 0;
+    let selectedIndex = -1;
 
     if (this.props.children) {
       for (let i = 0; i < this.props.children.length; i++) {
-        if (this.props.children[i].props.selected) {
+        const { props = {} } = this.props.children[i] || {};
+        if (props.selected) {
           selectedIndex = i;
           break;
         }
@@ -261,16 +382,60 @@ export default class Dropdown extends Component {
   componentDidMount() {
     const selectedIndex = this.getSelectedIndex();
     document.addEventListener('click', this.clickListener);
+    // responsiveness events
+    window.addEventListener("orientationChange", function() {
+    this.placeInBody
+    console.log(this.props.id);
+
+    }, false)
+    window.addEventListener("resize", this.placeInBody)
 
     if (selectedIndex >= 0 && this.props.children) {
       this.setState({
         selectedItemDOM: document.getElementById(this.props.id + '-' + this.props.children[selectedIndex].props.selectValue)
       });
     }
+
+    // If it's on mobile, place the dropdown as a child of the body
+    this.placeInBody()
+  }
+
+  placeInBody() {
+  	
+    var id = this.props.id.replace(" ", "_")+"-dropdown",
+        menu = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
+        fakeId = id+"--placeholder"
+    // don't manipulate DOM for tests
+    if(menu != null){
+      if(window.screen.width < 768){
+        var divWrapper = document.createElement("div"),
+            divContainer = document.createElement("div"),
+            placeholder = document.createElement("div"),
+            curParent = menu.parentElement
+        placeholder.setAttribute("id", fakeId),
+        placeholder.setAttribute("style", "display:none;")
+        divWrapper.className = "dropdown-wrapper"
+        divContainer.className = "dropdown-container"
+
+        // insert a placeholder
+        curParent.insertBefore(placeholder, menu)
+
+        // put the new stuff on the DOM
+        divContainer.appendChild(menu)
+        divWrapper.appendChild(divContainer)
+        document.body.appendChild(divWrapper)
+      } else {
+        if(menu.parentElement.parentElement.parentElement.tagName === "BODY"){
+          var placeholder = document.getElementById(fakeId),
+              curParent = placeholder.parentElement
+          curParent.replaceChild(menu, placeholder)
+        }
+      }
+    }
   }
 
   componentDidUpdate() {
-    if (this.state.selectedItemDOM && typeof this.state.selectedItemDOM.scrollIntoView === 'function') {
+    if (this.state.selectedItemDOM && typeof this.state.selectedItemDOM.scrollIntoView === 'function' && this.props.scrollable) {
       // delay necessary so allow the list to appear before trying to scroll into view
       setTimeout(() => {
         this.state.selectedItemDOM.scrollIntoView(true);
@@ -279,11 +444,17 @@ export default class Dropdown extends Component {
   }
 
   componentWillUnmount() {
+    // garbage cleanup
     document.removeEventListener('click', this.clickListener);
+    window.removeEventListener("orientationChange", this.placeInBody)
+    window.removeEventListener("resize", this.placeInBody)
   }
 
   render() {
-    return (
+    const isMobile = window.screen.width < 768;
+
+    if (isMobile) {
+      return (
         <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
           {this.insertAnchor()}
           <ul
@@ -291,12 +462,32 @@ export default class Dropdown extends Component {
             id={`${this.props.id.replace(' ', '_')}-dropdown`}
             ref={(parent) => { this.list = parent; }}
             className={this.state.open ? '' : 'dropdown-menu'}
+            aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
             onClick={this.itemSelected}
             onKeyDown={this.handleKeyDown}>
             {this.addMobileHeader()}
-            {this.props.children}
+            {React.Children.map(this.props.children, child => React.cloneElement(child, {itemSelected: this.state.selectedValue}))}
           </ul>
         </div>
-    )
+
+      )
+    } else {
+      return (
+        <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
+          {this.insertAnchor()}
+          <ul
+            role="menu"
+            id={`${this.props.id.replace(' ', '_')}-dropdown`}
+            ref={(parent) => { this.list = parent; }}
+            className={this.state.open ? '' : 'dropdown-menu'}
+            aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
+            onClick={this.itemSelected}
+            onKeyDown={this.handleKeyDown}>
+            {this.addMobileHeader()}
+            {React.Children.map(this.props.children, child => React.cloneElement(child, {itemSelected: this.state.selectedValue}))}
+          </ul>
+        </div>
+      )
+    }
   }
 };
