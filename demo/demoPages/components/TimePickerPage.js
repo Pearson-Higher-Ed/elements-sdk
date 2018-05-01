@@ -70,7 +70,7 @@ class TimePickerPage extends Component {
             infoMessage     = {text.textInputInfoMessage}
             errorMessage    = {text.textInputErrorMessage}
           />
-          <p className="code">{`<TimePicker id = "someGiantId" inputState = "default" labelText = "Select time (hh:mm)" timepickerValue = {this.state.timepickerValue3} changeHandler = {() => console.log("TimePicker-(basic)-changed!!")} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
+          <p className="code">{`<TimePicker id = "someGiantId" inputState = "default" labelText = "Select time (hh:mm)" timepickerValue = {this.state.timepickerValue1} changeHandler = {() => console.log("TimePicker-(basic)-changed!!")} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
 
           <h2>TimePicker (basic time range): </h2>
           <TimePicker
@@ -91,7 +91,7 @@ class TimePickerPage extends Component {
             infoMessage     = {text.textInputInfoMessage}
             errorMessage    = {text.textInputErrorMessage}
           />
-          <p className="code">{`<TimePicker fancy = {true} id = "someGiantId" inputState = "default" labelText = "Select time (hh:mm)" datepickerValue = {this.state.datepickerValue4} changeHandler = {() => console.log("TimePicker-(basic)-changed!!")} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
+          <p className="code">{`<TimePicker fancy = {true} id = "someGiantId" inputState = "default" labelText = "Select time (hh:mm)" timepickerValue = {this.state.datepickerValue3} changeHandler = {() => console.log("TimePicker-(basic)-changed!!")} infoMessage = "${text.textInputInfoMessage}" errorMessage = "${text.textInputErrorMessage}" />`}</p>
 
         </div>
       </div>
