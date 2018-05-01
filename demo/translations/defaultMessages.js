@@ -53,5 +53,10 @@ export const messages = defineMessages({
     id             : 'textInputErrorMessage',
     description    : 'an optional error message displayed below input',
     defaultMessage : 'This is an error message'
+  },
+  textInputDefaultValue: {
+    id             : 'textInputDefaultValue',
+    description    : 'Default value for an input field',
+    defaultMessage : 'Default Value'
   }
 });
