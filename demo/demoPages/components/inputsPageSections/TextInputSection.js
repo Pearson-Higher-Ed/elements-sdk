@@ -19,7 +19,7 @@ const TextInputSection = (props) => (
           <li>changeHandler:Function(required) === "handles changes"</li>
           <li>infoMessage:String === "an optional info message displayed below the input"</li>
           <li>errorMessage:String === "an optional error message displayed below the input"</li>
-          <li>value:String === "Value of the input field"</li>
+          <li>value:Any === "Value of the input field"</li>
         </ul>
       </div>
 

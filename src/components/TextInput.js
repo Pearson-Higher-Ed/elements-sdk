@@ -76,13 +76,12 @@ TextInput.propTypes = {
   errorMessage       : PropTypes.string,
   fancy              : PropTypes.bool,
   password           : PropTypes.bool,
-  value         : PropTypes.string.isRequired
+  value : PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object,
+    PropTypes.string
+  ])
 };
-
-TextInput.defaultProps = {
-  value: ''
-}
-
 
 function _togglePassword() {
   const { passwordTypeSelector, passwordStatusText } = this.state;
