@@ -35,6 +35,11 @@ export default class Tabs extends Component {
 
   handleClick(i, event) {
     event.preventDefault();
+
+    if (this.props.callback !== undefined) {
+      this.props.callback();
+    }
+
     this.setState({
       selected: i
     });
