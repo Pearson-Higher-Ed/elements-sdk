@@ -1,3 +1,13 @@
+<a name="1.12.0"></a>
+# [1.12.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.11.3...v1.12.0) (2018-05-07)
+
+
+### Features
+
+* Add in value prop for text inputs ([d8c0e34](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/d8c0e34))
+
+
+
 <a name="1.11.3"></a>
 ## [1.11.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.11.2...v1.11.3) (2018-04-26)
 
