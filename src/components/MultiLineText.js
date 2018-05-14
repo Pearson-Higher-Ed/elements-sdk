@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
-
+import { Icon }             from '../../index';
 
 class MultiLineText extends Component {
 
@@ -42,7 +42,7 @@ class MultiLineText extends Component {
                     >
           </textarea>
             {infoMessage  && <span id={`infoMsg-${id}`} className="pe-input--info_message">{infoMessage}</span>}
-            {inputState === 'error' && errorMessage && <span id={`errMsg-${id}`} className="pe-input--error_message">{errorMessage}</span>}
+            {inputState === 'error' && errorMessage && <span id={`errMsg-${id}`} className="pe-input--error_message"><Icon name="warning-sm-18">Error</Icon> {errorMessage}</span>}
         </div>
       )
 

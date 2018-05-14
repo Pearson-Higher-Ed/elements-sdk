@@ -7,7 +7,6 @@ export default class DropdownItem extends Component {
     label: PropTypes.string,
     selectValue: PropTypes.string,
     type: PropTypes.string,
-    itemSelected: PropTypes.string,
     selected: PropTypes.bool,
     selectedName: PropTypes.string,
     checkmark: PropTypes.bool,
@@ -15,13 +14,12 @@ export default class DropdownItem extends Component {
     dropdownId: PropTypes.string,
     imgUrl: PropTypes.string,
     imgHeight: PropTypes.string,
-    imgWidth: PropTypes.string,
-    imgAlt: PropTypes.string
+    imgWidth: PropTypes.string
   };
- 
+
   render() {
-    const { url, label, selectValue, type, selected, selectedName, checkmark, onClick, dropdownId, imgUrl, imgHeight, imgWidth, imgAlt, itemSelected } = this.props;
-	
+    const { url, label, selectValue, type, selected, selectedName, checkmark, onClick, dropdownId, imgUrl, imgHeight, imgWidth } = this.props;
+
     switch (type) {
       case 'divider':
         return (
@@ -39,21 +37,14 @@ export default class DropdownItem extends Component {
         break;
       case 'button':
         return (
-          <li role="presentation"
-				data-item={label}
-				data-value={selectValue}
-				id={dropdownId + "-" + selectValue}
-				aria-checked={itemSelected === selectValue}
-				className={itemSelected === selectValue ? 'active' : ''}
-			>
-            <button role="menuitem"
-				className={checkmark ? 'checkmark' : ''}
-				tabIndex="-1">
-				{checkmark ?
-					<span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
-						<Icon name="check-sm-18">{selectedName}</Icon>
-					</span> : null
-				}
+          <li role="presentation" data-item={label} data-value={selectValue}>
+            <button role="menuitem" className={checkmark ? 'checkmark' : ''} onClick={onClick} type="button" tabIndex="-1">
+              {checkmark ?
+                  <span style={{visibility: selected ? 'visible' : 'hidden'}}>
+                    <Icon name="check-sm-18">{selectedName}</Icon>
+                  </span> : null
+              }
+
               <span className={checkmark ? 'icon-padding' : ''}>
                 {label}
               </span>
@@ -63,31 +54,21 @@ export default class DropdownItem extends Component {
         break;
         case 'imageButton':
           return (
-            <li role="presentation"
-				data-item={label}
-				data-value={selectValue}
-				id={dropdownId + "-" + selectValue}
-				aria-checked={itemSelected === selectValue}
-				className={itemSelected === selectValue ? 'active' : ''}
-			>
-				<button role="menuitem"
-					className={checkmark ? 'checkmark' : ''}
-					tabIndex="-1">
-						{checkmark ?
-							<span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
-								<Icon name="check-sm-18">{selectedName}</Icon>
-							</span> : null
-						}
-						<span className={checkmark ? 'icon-padding' : ''}>
-                			<img src={imgUrl}
-								 height={imgHeight}
-								 width={imgWidth}
-								 alt={selectValue}/>
-							&nbsp;{label}
-						</span>
-				</button>
-			</li>
-			);
+            <li role="presentation" data-item={label} data-value={selectValue} id={dropdownId + "-" + selectValue}>
+              <button role="menuitem" className={checkmark ? 'checkmark' : ''} onClick={onClick} type="button" tabIndex="-1">
+              {checkmark ?
+                  <span style={{visibility: selected ? 'visible' : 'hidden'}}>
+                    <Icon name="check-sm-18">{selectedName}</Icon>
+                  </span> : null
+              }
+
+              <span className={checkmark ? 'icon-padding' : ''}>
+                <img src={imgUrl} height={imgHeight} width={imgWidth} alt=""/>
+                &nbsp;{label}
+              </span>
+            </button>
+            </li>
+          );
         break;
       default:
         return <li id="itemTypeNotRecognized">DropdownItem "type" prop not recognized...</li>

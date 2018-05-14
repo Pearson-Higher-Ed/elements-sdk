@@ -39,7 +39,7 @@
       }
 
 
-      button[role=menuitem] {
+      button {
         background-color: transparent;
         border: 0;
         padding: 0;
@@ -52,9 +52,7 @@
         &.checkmark {
           padding: 4px 16px;
         }
-		span.icon {
-			color: $pe-color-medium-gray;
-		}
+
         span.icon-padding {
             padding-left: 8px;
         }
@@ -75,7 +73,6 @@
 
   .divider-container {
     cursor: default;
-    padding: 0 24px;
     &:hover {
       background-color: transparent;
     }
@@ -85,7 +82,7 @@
       border-top: none;
       border-left: none;
       border-right: none;
-      width: 100%;
+      width: 80%;
       margin-top: 2px;
       margin-bottom: 1px;
     }

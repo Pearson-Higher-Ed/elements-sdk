@@ -254,29 +254,26 @@ export default class Dropdown extends Component {
   }
 
   getParentLiSelected(dom) {
-    if ((dom.nodeName !== 'LI') && (dom.nodeName !== 'UL')) {
+    if (dom.nodeName !== 'LI') {
       return this.getParentLiSelected(dom.parentElement);
     }
 
     return dom;
-    
   }
 
   itemSelected(e) {
     const selectedListItem = this.getParentLiSelected(e.target);
-    if (selectedListItem.nodeName == 'LI') {
-      if (selectedListItem.dataset.item !== 'divider') {
-        this.props.changeHandler ? this.props.changeHandler(selectedListItem.dataset) : null;
-        this.setState({
-          open: false,
-          selectedItem: selectedListItem.dataset.item,
-          selectedValue: selectedListItem.getAttribute('data-value'),
-          selectedItemDOM: selectedListItem
-        }, () => {
-          this.handleSetItem()
-        });
-        this.container.children[0].focus();
-      }
+    if (selectedListItem.dataset.item !== 'divider') {
+      this.props.changeHandler ? this.props.changeHandler(selectedListItem.dataset) : null;
+      this.setState({
+        open: false,
+        selectedItem: selectedListItem.dataset.item,
+        selectedValue: selectedListItem.getAttribute('data-value'),
+        selectedItemDOM: selectedListItem
+      }, () => {
+        this.handleSetItem()
+      });
+      this.container.children[0].focus();
     }
   }
 
@@ -359,14 +356,10 @@ export default class Dropdown extends Component {
   }
 
   clickListener(e) {
-    if (window.screen.width > 767) {
-    	const currentElement = e.target;
+    const currentElement = e.target;
 
-    	if (!this.container.contains(currentElement)) {
-    	  this.setState({open: false});
-    	}
-    } else {
-    	return
+    if (!this.container.contains(currentElement)) {
+      this.setState({open: false});
     }
   }
 
