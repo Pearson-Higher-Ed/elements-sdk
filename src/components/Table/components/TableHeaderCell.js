@@ -60,12 +60,12 @@ export default class TableHeaderCell extends Component {
             ? 'ascending'
             : iconName === 'sort-down-18'
             ? 'descending'
-            : null }
+            : 'none' }
           columnSort={sortCheck}
           className={`${sortClass}${columnAlignment}`}
       >
         {
-          selectable && !children
+          selectable && !columnSort
             ? <div className="pe-checkbox"
                    id={containerId}
                    onClick={this.selectAll}>
@@ -79,8 +79,13 @@ export default class TableHeaderCell extends Component {
         }
         {
           columnSort &&
-            <button type="button" className="pe-icon--btn" onClick={this.iconToggle}>
-              <Icon name={iconName} />
+            <button type="button" title={
+              iconName === 'sort-up-18'
+              ? 'Sorted up'
+              : iconName === 'sort-down-18'
+              ? 'Sorted down'
+              : 'Unsorted' } onClick={this.iconToggle}>
+              {inputLabel}<Icon name={iconName} />
             </button>
         }
       </th>

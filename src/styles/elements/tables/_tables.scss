@@ -100,7 +100,7 @@
     line-height: 23px;
     margin-right: -3px;
   }
-  .pe-table th button {
+  .pe-table th button svg {
     color: $pe-color-medium-gray; /* #6a7070; */
   }
 
@@ -113,11 +113,18 @@
   cursor: pointer;
 
   /* color the SVG */
-  button {
+  button svg {
     color: $pe-table-text-color;
   }
 }
 
+th.pe-table__sortable button {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
 
 /* alignments */
 
