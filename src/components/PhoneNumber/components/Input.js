@@ -6,6 +6,8 @@ import { ReactInput } from 'input-format'
 import classNames from 'classnames'
 import Dropdown from '../../Dropdown/Dropdown';
 import DropdownItem from '../../Dropdown/DropdownItem';
+import Icon from '../../Icon';
+
 
 // Could have been `import { Select } from 'react-responsive-ui'`
 // but in that case Webpack bundles the whole `react-responsive-ui` package.
@@ -1110,7 +1112,7 @@ export default class Input extends Component
 
 				</div>
 				{/* Error message */}
-				{errorMsg && <p className="pe-input--error_message" id={id + "phoneNumberError"}>{errorMsg}</p>}
+				{errorMsg && <p className="pe-input--error_message" id={id + "phoneNumberError"}><Icon name="warning-sm-18">Error</Icon> {errorMsg}</p>}
 			</div>
 		)
 	}
