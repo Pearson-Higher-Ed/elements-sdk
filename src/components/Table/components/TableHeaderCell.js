@@ -65,7 +65,7 @@ export default class TableHeaderCell extends Component {
           className={`${sortClass}${columnAlignment}`}
       >
         {
-          selectable && !columnSort
+          selectable && !columnSort && !children
             ? <div className="pe-checkbox"
                    id={containerId}
                    onClick={this.selectAll}>
@@ -78,8 +78,8 @@ export default class TableHeaderCell extends Component {
             : children
         }
         {
-          columnSort &&
-            <button type="button" title={
+          columnSort && !children
+          ? <button type="button" title={
               iconName === 'sort-up-18'
               ? 'Sorted up'
               : iconName === 'sort-down-18'
@@ -87,6 +87,7 @@ export default class TableHeaderCell extends Component {
               : 'Unsorted' } onClick={this.iconToggle}>
               {inputLabel}<Icon name={iconName} />
             </button>
+          : children
         }
       </th>
     )
@@ -99,8 +100,19 @@ TableHeaderCell.contextTypes = {
 }
 
 function _selectAll() {
-  const checkboxes = document.querySelectorAll('div.pe-checkbox input');
-  for (let i = 1; i < checkboxes.length; i++) {
-    checkboxes[i].checked = checkboxes[0].checked;
-  }
+  const tables = [].slice.call(document.getElementsByClassName('pe-table--selectable'));
+
+  tables.forEach((table) => {
+    let thead = table.getElementsByTagName('thead')[0],
+        tbody = table.getElementsByTagName('tbody')[0];
+    let thInput = thead.getElementsByTagName('INPUT')[0],
+        trs = [].slice.call(tbody.getElementsByTagName('TR'));
+    let trInputs = trs.map(tr => tr.getElementsByTagName('INPUT')[0]);
+
+    if (thInput && thInput.type === 'checkbox') {
+        trInputs.forEach((input) => {
+          input.checked = thInput.checked;
+        });
+    }   
+  });
 }

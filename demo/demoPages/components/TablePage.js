@@ -4,8 +4,7 @@ import { Table,
          TableRow,
          TableHeaderCell,
          TableBody,
-         TableRowCell,
-        Icon } from '../../../index';
+         TableRowCell } from '../../../index';
 
 const eight = {paddingLeft: 8};
 const sixteen = {paddingLeft: 16};
@@ -22,7 +21,6 @@ class TablePage extends React.Component {
 
   handleColumnSort = (item) => {
     return () => {
-      console.log(item);
       this.setState(prevState => ({
         itemSelected: item,
         direction: prevState.direction === 'up' ? 'down' : 'up'
@@ -163,9 +161,9 @@ class TablePage extends React.Component {
                 containerId="comic_select"
                 inputLabel="Select"
               />
-              <TableHeaderCell columnSort={this.handleColumnSort('comic')} iconName={this.getIconName('comic')} inputLabel="Comic"></TableHeaderCell>
-              <TableHeaderCell columnSort={this.handleColumnSort('character')} iconName={this.getIconName('character')} inputLabel="Main characters"></TableHeaderCell>
-              <TableHeaderCell columnSort={this.handleColumnSort('country')} iconName={this.getIconName('country')} inputLabel="Country"></TableHeaderCell>
+              <TableHeaderCell columnSort={this.handleColumnSort('mix')} iconName={this.getIconName('mix')} inputLabel="Mix"/>
+              <TableHeaderCell columnSort={this.handleColumnSort('lala')} iconName={this.getIconName('lala')} inputLabel="Lala"/>
+              <TableHeaderCell columnSort={this.handleColumnSort('yoyo')} iconName={this.getIconName('yoyo')} inputLabel="Yoyo"/>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -191,50 +189,6 @@ class TablePage extends React.Component {
             </TableRow>
           </TableBody>
         </Table>
-
-        <Table selectable sortable>
-          <TableHead>
-            <TableRow>
-              <TableHeaderCell
-                inputId="comic_select_0"
-                containerId="comic_select"
-                inputLabel="Select"
-              />
-              <TableHeaderCell columnSort={this.handleColumnSort('comic')} iconName={this.getIconName('comic')} inputLabel="Comic"></TableHeaderCell>
-              <TableHeaderCell columnSort={this.handleColumnSort('character')} iconName={this.getIconName('character')} inputLabel="Main characters"></TableHeaderCell>
-              <TableHeaderCell columnSort={this.handleColumnSort('country')} iconName={this.getIconName('country')} inputLabel="Country"></TableHeaderCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableRowCell
-                inputId="c1"
-                containerId="comic_select"
-                labelledbyCellId="sel_Spirou"
-              />
-              <TableRowCell cellId="sel_Spirou">Spirou</TableRowCell>
-              <TableRowCell>Spirou, Fantasio</TableRowCell>
-              <TableRowCell>Belgium</TableRowCell>
-            </TableRow>
-            <TableRow>
-              <TableRowCell
-                inputId="c2"
-                containerId="comic_select"
-                labelledbyCellId="sel_sew"
-              />
-              <TableRowCell cellId="sel_sew">Suske en Wiske</TableRowCell>
-              <TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>
-              <TableRowCell>Belgium</TableRowCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-        <div className="pe-checkbox">
-            <input type="checkbox" id='yes' aria-labelledby='ohno' />
-            <label htmlFor='yes'>wow</label>
-            <span>
-              <Icon name="check-sm-18" />
-            </span>
-        </div>
       </div>
     );
   }
