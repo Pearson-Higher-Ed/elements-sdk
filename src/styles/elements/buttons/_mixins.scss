@@ -17,18 +17,38 @@
   white-space     : nowrap;
   overflow        : hidden;
   border		  : $border;
+  overflow        : visible;
+
+  position: relative;
+  z-index: 1;
 
   &:hover,
   &:active {
     color            : $hover-color;
     background-color : $hover-bg;
     border			 : $border-hover;
+
   }
+  // &:focus {
+// 	outline: 1px solid $pe-color-hot-pink;
+// 	outline-offset: 2px;
+//   } Square-shaped-focus
+
   &:focus {
-	outline: 1px solid $pe-color-hot-pink;
-	outline-offset: 2px;
-  }
-  
+    outline: 0;
+    &:after {
+    content: "";
+    border: 1px solid $pe-color-hot-pink;
+    position: absolute;
+    border-radius: $pe-btn-border-radius;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    top: -5px;
+	left: -5px;
+    z-index: -100;
+  	}
+   }
+
   &:disabled,
   &.pe-btn--disabled,
   &.pe-btn--disabled:hover {

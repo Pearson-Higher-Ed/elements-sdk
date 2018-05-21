@@ -11,9 +11,12 @@ $pe-color-neutral-five: #E9E9E9;
 $pe-color-sunshine-yellow: #FFB81C;
 $pe-color-sunflower-yellow: #FF9A19;
 $pe-color-digital-ice-blue: #DAF0ED;
+$pe-color-digital-marine-turquoise: #19A6A4;
+$pe-color-brackish-turquoise: #179599;
 
 // Neutral Palette
 $pe-color-charcoal: #252525;
+$pe-color-graphite: #505759;
 $pe-color-medium-gray: #6A7070;
 $pe-color-concrete: #C7C7C7;
 $pe-color-alto: #D9D9D9;
@@ -23,5 +26,31 @@ $pe-color-moonlight: #E9E9E9;
 $pe-color-strawberry-red: #DB0020;
 $pe-color-digital-grass-green: #038238;
 $pe-color-hot-pink: #DA0474;
-$pe-color-digital-marine-turquoise: #19A6A4;
-$pe-color-brackish-turquoise: #179599;
+
+
+//Colors Remap
+
+//Primary Palette
+$primary: $pe-color-digital-pearson-blue;
+$primary-two: $pe-color-ink-blue;
+$primary-three: $pe-color-white;
+$primary-four: $pe-color-white-gray;
+
+//Secondary Palette
+$secondary: $pe-color-sunshine-yellow;
+$secondary-two: $pe-color-sunflower-yellow;
+$secondary-three: $pe-color-digital-ice-blue;
+$secondary-four: $pe-color-digital-marine-turquoise;
+$secondary-five: $pe-color-brackish-turquoise;
+
+// Neutral Palette
+$neutral: $pe-color-concrete;
+$neutral-two: $pe-color-charcoal;
+$neutral-three: $pe-color-medium-gray;
+$neutral-four: $pe-color-alto;
+$neutral-five: $pe-color-moonlight;
+ 
+// Conditional Palette
+$conditional: $pe-color-strawberry-red;
+$conditional-two: $pe-color-digital-grass-green;
+$conditional-three: $pe-color-hot-pink;

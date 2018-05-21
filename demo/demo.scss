@@ -133,11 +133,15 @@ h2 a {
 .color-page-white-text,
 .color-page-dark-text {
   text-align: center;
-  padding: 16px 0;
-  color: #ffffff;
   margin: 0;
+}
+
+.color-page-white-text {
+  color: #ffffff;
+  padding-top: 20px;
 }
 
 .color-page-dark-text {
   color: #000000;
+  padding-bottom: 20px;
 }
