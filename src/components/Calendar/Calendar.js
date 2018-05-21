@@ -97,8 +97,8 @@ export default class Calendar extends Component {
     let which = e.which || e.keyCode;
 
     switch (which) {
-      case 13: // space
-      case 32: // enter
+      case 13: // enter
+      case 32: // space
       case 37: // left arrow
       case 38: // up arrow
       case 39: // right arrow
@@ -109,8 +109,8 @@ export default class Calendar extends Component {
     }
 
     switch (which) {
-      case 13: // space
-      case 32: // enter
+      case 13: // enter
+      case 32: // space
         this.enterSelect();
         break;
       case 37: this.leftArrow(); break; // left arrow
