@@ -98,7 +98,7 @@ export default class TimePicker extends Component {
           </span> }
         {errorMessage && inputState === 'error' &&
           <span id={`errMsg-${id}`} className="pe-input--error_message">
-            {errorMessage}
+            <Icon name="warning-sm-18">Error</Icon> {errorMessage}
           </span> }
 
         {displayOpen  && inputState !== 'readOnly' &&
