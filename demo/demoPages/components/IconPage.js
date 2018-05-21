@@ -236,6 +236,26 @@ const IconPage = () => (
             <li><Icon name="link-24">Link 24</Icon> link-24</li>
             <li><Icon name="link-out-18">Link out 18</Icon> link-out-18</li>
             <li><Icon name="link-out-24">Link out 24</Icon> link-out-24</li>
+            <li><Icon name="achieved-check-18"> Achieved Check 18</Icon> achieved-check-18</li>
+            <li><Icon name="achieved-check-24"> Achieved Check 24</Icon> achieved-check-24</li>
+            <li><Icon name="circle-bullet-18"> Circle Bullet 18</Icon> circle-bullet-18</li>
+            <li><Icon name="circle-bullet-24"> Circle Bullet 24</Icon> circle-bullet-24</li>
+            <li><Icon name="dot-18"> Dot 18</Icon> dot-18</li>
+            <li><Icon name="dot-24"> Dot 24</Icon> dot-24</li>
+            <li><Icon name="eye-18"> Eye 18</Icon> eye-18</li>
+            <li><Icon name="eye-24"> Eye 24</Icon> eye-24</li>
+            <li><Icon name="incorrect-18"> Incorrect 18</Icon> incorrect-18</li>
+            <li><Icon name="incorrect-24"> Incorrect 24</Icon> incorrect-24</li>
+            <li><Icon name="infinity-18"> Infinity 18</Icon> infinity-18</li>
+            <li><Icon name="infinity-24"> Infinity 24</Icon> infinity-24</li>
+            <li><Icon name="information-18"> Information 18</Icon> information-18</li>
+            <li><Icon name="information-24"> Information 24</Icon> information-24</li>
+            <li><Icon name="popin-18"> Pop In 18</Icon> popin-18</li>
+            <li><Icon name="popin-24"> Pop In 24</Icon> popin-24</li>
+            <li><Icon name="popout-18"> Pop Out 18</Icon> popout-18</li>
+            <li><Icon name="popout-24"> Pop Out 24</Icon> popout-24</li>
+            <li><Icon name="star-18"> Star 18</Icon> star-18</li>
+            <li><Icon name="star-24"> Star 24</Icon> star-24</li>
           </ul>
         </div>
       </div>
