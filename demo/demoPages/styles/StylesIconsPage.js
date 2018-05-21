@@ -1414,18 +1414,18 @@ const StylesIconsPage = () => (
       <li>
         <svg aria-hidden="true"
              focusable="false"
-             className="pe-icon--warning-sm-18">
-          <use xlinkHref="#warning-sm-18"></use>
+             className="pe-icon--eye-18">
+          <use xlinkHref="#eye-18"></use>
         </svg>
-        warning-sm-18
+        eye-18
       </li>
       <li>
         <svg aria-hidden="true"
              focusable="false"
-             className="pe-icon--warning-sm-24">
-          <use xlinkHref="#warning-sm-24"></use>
+             className="pe-icon--eye-24">
+          <use xlinkHref="#eye-24"></use>
         </svg>
-        warning-sm-24
+        eye-24
       </li>
       <li>
         <svg aria-hidden="true"
