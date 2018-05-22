@@ -175,6 +175,7 @@ function _listHandler(e) {
 };
 
 function _inputEvents(e) {
+  // option & down arrow
   if (e.altKey && e.which === 40) {
     this.setState({ displayOpen: !this.state.displayOpen });
   }
