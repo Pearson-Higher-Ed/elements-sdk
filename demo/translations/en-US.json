@@ -8,5 +8,6 @@
   "textLabel"             : "First Name",
   "textPlaceholder"       : "First Name",
   "textInputInfoMessage"  : "This is an info message",
-  "textInputErrorMessage" : "This is an error message"
+  "textInputErrorMessage" : "This is an error message",
+  "textInputDefaultValue" : "Default Value"
 }

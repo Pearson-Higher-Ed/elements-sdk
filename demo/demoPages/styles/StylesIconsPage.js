@@ -1491,6 +1491,38 @@ const StylesIconsPage = () => (
         </svg>
         number-list-24
       </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--link-18">
+          <use xlinkHref="#link-18"></use>
+        </svg>
+        link-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--link-24">
+          <use xlinkHref="#link-24"></use>
+        </svg>
+        link-24
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--link-out-18">
+          <use xlinkHref="#link-out-18"></use>
+        </svg>
+        link-out-18
+      </li>
+      <li>
+        <svg aria-hidden="true"
+             focusable="false"
+             className="pe-icon--link-out-24">
+          <use xlinkHref="#link-out-24"></use>
+        </svg>
+        link-out-24
+      </li>
     </ul>
 
     <h2>Two methods of including icons</h2>

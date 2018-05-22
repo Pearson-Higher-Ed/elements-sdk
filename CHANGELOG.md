@@ -1,3 +1,54 @@
+<a name="1.12.0"></a>
+# [1.12.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.11.3...v1.12.0) (2018-05-07)
+
+
+### Features
+
+* Add in value prop for text inputs ([d8c0e34](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/d8c0e34))
+
+
+
+<a name="1.11.3"></a>
+## [1.11.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.11.2...v1.11.3) (2018-04-26)
+
+
+
+<a name="1.11.2"></a>
+## [1.11.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.11.1...v1.11.2) (2018-04-26)
+
+
+### Bug Fixes
+
+* callback for tabs on activated, add in key passing in callback ([54e59ad](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/54e59ad))
+
+
+
+<a name="1.11.1"></a>
+## [1.11.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.11.0...v1.11.1) (2018-04-25)
+
+
+
+<a name="1.11.0"></a>
+# [1.11.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.7...v1.11.0) (2018-04-24)
+
+
+
+<a name="1.10.7"></a>
+## [1.10.7](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.6...v1.10.7) (2018-04-23)
+
+
+
+<a name="1.10.6"></a>
+## [1.10.6](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.2...v1.10.6) (2018-04-16)
+
+
+### Bug Fixes
+
+* Correct default values for 24hr clock in Timepicker ([c305c55](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/c305c55))
+* Properly stop event bubbling on enter & space || Move Cal ref from container to child ([52c3a92](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/52c3a92))
+
+
+
 <a name="1.10.2"></a>
 ## [1.10.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.10.1...v1.10.2) (2018-03-27)
 

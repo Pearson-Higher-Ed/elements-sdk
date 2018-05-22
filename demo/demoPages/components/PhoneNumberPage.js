@@ -56,6 +56,7 @@ export default class PhoneNumberPage extends Component {
           country="US"
           placeholder="555-555-5555"
           labelText="Mobile phone"
+          validate
           onChange={(num) => console.log(num)}
           ref={(instance) => {this.phoneNumber = instance}}
         />
