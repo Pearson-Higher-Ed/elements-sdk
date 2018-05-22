@@ -1,6 +1,6 @@
 {
   "name": "@pearson-components/elements-sdk",
-  "version": "2.1.1-beta",
+  "version": "2.2.0-beta",
   "description": "**Unstable BETA** Styling and basic JavaScript components for UI development.\"",
   "main": "build/css/elements.css",
   "scripts": {
