@@ -47,7 +47,7 @@ class Select extends Component {
             <Icon name='dropdown-open-sm-24' />
           </div>
             {infoMessage  && <span id={`infoMsg-${id}`} className="pe-input--info_message">{infoMessage}</span>}
-            {inputState === 'error' && errorMessage && <span id={`errMsg-${id}`} className="pe-input--error_message">{errorMessage}</span>}
+            {inputState === 'error' && errorMessage && <span id={`errMsg-${id}`} className="pe-input--error_message"><Icon name="warning-sm-18">Error</Icon> {errorMessage}</span>}
         </div>
       )
 

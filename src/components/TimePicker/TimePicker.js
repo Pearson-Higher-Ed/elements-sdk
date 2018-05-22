@@ -51,8 +51,8 @@ export default class TimePicker extends Component {
 
     const { inputStyle, labelStyleTmp, displayOpen, timepickerValue,
             containerStyle, placeholder } = this.state;
-    const { className, inputState, id, labelText, timeFormat, infoMessage,
-            errorMessage, twentyFourHour, TWENTYFOUR_HOURS, HOURS, disableLabel
+    const { className, inputState, id, labelText, infoMessage, errorMessage,
+            twentyFourHour, TWENTYFOUR_HOURS, HOURS, disableLabel
           } = this.props;
 
     const em                  = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
@@ -70,7 +70,7 @@ export default class TimePicker extends Component {
         ref={(dom) => this.container = dom}
       >
         <label className={`${labelStyleTmp}${labelCheck}`} htmlFor={id}>
-          {`${labelText} (${timeFormat})`}
+          {labelText}
         </label>
 
         <div className={containerStyle}>
@@ -98,7 +98,7 @@ export default class TimePicker extends Component {
           </span> }
         {errorMessage && inputState === 'error' &&
           <span id={`errMsg-${id}`} className="pe-input--error_message">
-            {errorMessage}
+            <Icon name="warning-sm-18">Error</Icon> {errorMessage}
           </span> }
 
         {displayOpen  && inputState !== 'readOnly' &&
@@ -131,7 +131,6 @@ TimePicker.defaultProps = {
 TimePicker.propTypes = {
   id               : PropTypes.string.isRequired,
   labelText        : PropTypes.string.isRequired,
-  timeFormat       : PropTypes.string.isRequired,
   changeHandler    : PropTypes.func.isRequired,
   infoMessage      : PropTypes.string,
   errorMessage     : PropTypes.string,

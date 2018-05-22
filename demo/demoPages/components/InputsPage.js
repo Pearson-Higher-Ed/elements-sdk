@@ -28,7 +28,8 @@ const InputsPage = (props) => {
     textLabel             : intl.formatMessage(messages.textLabel),
     textPlaceholder       : intl.formatMessage(messages.textPlaceholder),
     textInputInfoMessage  : intl.formatMessage(messages.textInputInfoMessage),
-    textInputErrorMessage : intl.formatMessage(messages.textInputErrorMessage)
+    textInputErrorMessage : intl.formatMessage(messages.textInputErrorMessage),
+    textInputDefaultValue : intl.formatMessage(messages.textInputDefaultValue)
   };
 
   return (

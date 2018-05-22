@@ -9,5 +9,6 @@
   "textPlaceholder"       : "Prénom",
   "textInputMessage"      : "Ceci est un message d'information",
   "textInputErrorMessage" : "Ceci est un message d'erreur",
-  "copyrightText"         : "French Pearson Education Inc. All Rights Reserved"
+  "copyrightText"         : "French Pearson Education Inc. All Rights Reserved",
+  "textInputDefaultValue" : "Valeur par défaut"
 }
