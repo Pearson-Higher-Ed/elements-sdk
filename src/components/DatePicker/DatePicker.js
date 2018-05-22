@@ -191,21 +191,29 @@ function _changeHandler(e) {
 
 function _parseDate(dateString) {
   const dateParts = dateString.split('/');
-  if (dateParts.length !== 3) return;
+  if (dateParts.length !== 3) {
+    return
+  };
 
   const dayPart = this.props.dateFormat.toLowerCase() === 'dd/mm/yyyy' ? dateParts[0] : dateParts[1];
   const monthPart = this.props.dateFormat.toLowerCase() === 'dd/mm/yyyy' ? dateParts[1] : dateParts[0];
 
   const year = Number.parseInt(dateParts[2]);
-  if (Number.isNaN(year) || year < 1900 || year > 9999) return;
+  if (Number.isNaN(year) || year < 1900 || year > 9999) {
+    return
+  };
 
   const isLeapYear = year % 4 === 0;
 
   const month = Number.parseInt(monthPart);
-  if (Number.isNaN(month) || month < 1 || month > 12) return;
+  if (Number.isNaN(month) || month < 1 || month > 12) {
+    return
+  };
 
   const day = Number.parseInt(dayPart);
-  if (Number.isNaN(day) || day < 1 || day > 31) return;
+  if (Number.isNaN(day) || day < 1 || day > 31) {
+    return
+  };
 
   if ((!isLeapYear && month === 2 && day > 28) ||
       (isLeapYear && month === 2 && day > 29) ||

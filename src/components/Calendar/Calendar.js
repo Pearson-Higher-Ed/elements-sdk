@@ -215,7 +215,9 @@ export default class Calendar extends Component {
       this.state.selectedElement.classList.remove('pe-cal-selected');
       this.state.selectedElement.removeAttribute('aria-selected');
     }
-    if (document.activeElement.hasAttribute('aria-disabled')) return;
+    if (document.activeElement.hasAttribute('aria-disabled')) {
+      return
+    };
     for (let i = 0; i < days.length; i++) {
       if (document.activeElement === days[i]) {
         document.activeElement.classList.add('pe-cal-selected');
