@@ -176,7 +176,8 @@ $textInput-basic-select-width : 100%;
 
 //=======multiLineText=================
 
-$multiLineText-border     : 1px solid $pe-color-concrete;
-$multiLineText-padding    : 9px 14px;
-$multiLineText-width      : 100%;
-$multiLineText-box-sizing : border-box;
+$multiLineText-border       : 1px solid $pe-color-concrete;
+$multiLineText-padding      : 9px 14px;
+$multiLineText-width        : 100%;
+$multiLineText-box-sizing   : border-box;
+$multiLineText-borderRadius : 3px;

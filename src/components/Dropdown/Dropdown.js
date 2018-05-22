@@ -59,13 +59,13 @@ export default class Dropdown extends Component {
     const top_tooclose = elementRect.top < elementRect.height;
 
     if (touch_bottom) {
-		//but is not at top of page (like demo site) 
+		//but is not at top of page (like demo site)
 		if (top_tooclose) {
 		  element.style.maxHeight = `${(window.screen.height - elementRect.top - 60)}px`;
 		}
 		else {
           // 4 because of margins
-          element.style.top = `-${(elementRect.height + 4)}px`; 
+          element.style.top = `-${(elementRect.height + 4)}px`;
       }
     }
 
@@ -259,13 +259,12 @@ export default class Dropdown extends Component {
     }
 
     return dom;
-    
+
   }
 
   itemSelected(e) {
     const selectedListItem = this.getParentLiSelected(e.target);
     if (selectedListItem.nodeName == 'LI') {
-    console.log(selectedListItem);
       if (selectedListItem.dataset.item !== 'divider') {
         this.props.changeHandler ? this.props.changeHandler(selectedListItem.dataset) : null;
         this.setState({
@@ -409,7 +408,7 @@ export default class Dropdown extends Component {
   }
 
   placeInBody() {
-  	
+
     var id = this.props.id.replace(" ", "_")+"-dropdown",
         menu = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
         fakeId = id+"--placeholder"

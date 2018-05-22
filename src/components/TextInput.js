@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
+import { Icon }             from '../../index';
 
 
 class TextInput extends Component {
@@ -27,7 +28,7 @@ class TextInput extends Component {
   render() {
 
     const { labelStyle, inputStyle, spanStyle, passwordStatusText, visibilityStatusText, passwordTypeSelector, butttonStyle, labelFocusStyle, labelStyleTmp  }  = this.state;
-    const { inputState, id, labelText, password, placeholder, infoMessage, errorMessage, changeHandler } = this.props;
+    const { inputState, id, labelText, password, placeholder, infoMessage, errorMessage, changeHandler, value } = this.props;
 
     const em = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
     const ariaDescribedby =  em + ((infoMessage) ? `infoMsg-${id}` : '');
@@ -48,12 +49,13 @@ class TextInput extends Component {
           onFocus          = {() => this.setState({labelStyleTmp:labelFocusStyle})}
           onBlur           = {() => this.setState({labelStyleTmp:labelStyle})}
           onChange         = { changeHandler }
-          />
+          value            = {value}
+        />
 
         {(inputState  !== 'readOnly' || inputState !== 'disabled') && <span className={spanStyle} />}
         {password     && <span><button type="button" className={butttonStyle} id={`showbutton-${id}`} onClick={this.togglePassword} disabled={inputState === 'disabled'}>{passwordStatusText}</button> <span aria-live="polite" aria-atomic="true" className="pe-sr-only">{visibilityStatusText}</span></span>}
         {infoMessage  && <span id={`infoMsg-${id}`} className="pe-input--info_message">{infoMessage}</span>}
-        {inputState === 'error' && errorMessage && <span id={`errMsg-${id}`} className="pe-input--error_message">{errorMessage}</span>}
+        {inputState === 'error' && errorMessage && <span id={`errMsg-${id}`} className="pe-input--error_message"><Icon name="warning-sm-18">Error</Icon> {errorMessage}</span>}
       </div>
     );
 
@@ -74,9 +76,13 @@ TextInput.propTypes = {
   infoMessage        : PropTypes.string,
   errorMessage       : PropTypes.string,
   fancy              : PropTypes.bool,
-  password           : PropTypes.bool
+  password           : PropTypes.bool,
+  value : PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object,
+    PropTypes.string
+  ])
 };
-
 
 function _togglePassword() {
   const { passwordTypeSelector, passwordStatusText } = this.state;

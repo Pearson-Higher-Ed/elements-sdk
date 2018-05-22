@@ -50,5 +50,5 @@ Footer.defaultProps = {
   light: false,
   singlePageStick: false,
   anchorTarget: 'self',
-  copyrightText: ['Copyright', <span>&copy;</span>, `${currentYear} Pearson Education Inc. All Rights Reserved.`]
+  copyrightText: ['Copyright', <span key='Unique'>&copy;</span>, `${currentYear} Pearson Education Inc. All Rights Reserved.`]
 }

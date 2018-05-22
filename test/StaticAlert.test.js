@@ -33,7 +33,7 @@ describe('StaticAlert', () => {
       const wrapper = mount(<StaticAlert type="Error" title="Test title" message="Test message" />);
       expect(wrapper.node.state.isOpen).toEqual(true);
 
-      wrapper.find('.close-title').simulate('click');
+      wrapper.find('.static-close-title').simulate('click');
       wrapper.update();
       expect(wrapper.node.state.isOpen).toEqual(false);
     });

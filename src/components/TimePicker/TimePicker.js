@@ -25,12 +25,12 @@ export default class TimePicker extends Component {
 
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.applyTimePickerStyles(this.props.inputState);
     document.addEventListener('click', this.clickListener);
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     this.applyTimePickerStyles(this.state.validatedState ? this.state.validatedState : nextProps.inputState);
     this.setState({timepickerValue: nextProps.timepickerValue});
   }
@@ -51,8 +51,8 @@ export default class TimePicker extends Component {
 
     const { inputStyle, labelStyleTmp, displayOpen, timepickerValue,
             containerStyle, placeholder } = this.state;
-    const { className, inputState, id, labelText, timeFormat, infoMessage,
-            errorMessage, twentyFourHour, TWENTYFOUR_HOURS, HOURS, disableLabel
+    const { className, inputState, id, labelText, infoMessage, errorMessage,
+            twentyFourHour, TWENTYFOUR_HOURS, HOURS, disableLabel
           } = this.props;
 
     const em                  = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
@@ -70,7 +70,7 @@ export default class TimePicker extends Component {
         ref={(dom) => this.container = dom}
       >
         <label className={`${labelStyleTmp}${labelCheck}`} htmlFor={id}>
-          {`${labelText} (${timeFormat})`}
+          {labelText}
         </label>
 
         <div className={containerStyle}>
@@ -98,7 +98,7 @@ export default class TimePicker extends Component {
           </span> }
         {errorMessage && inputState === 'error' &&
           <span id={`errMsg-${id}`} className="pe-input--error_message">
-            {errorMessage}
+            <Icon name="warning-sm-18">Error</Icon> {errorMessage}
           </span> }
 
         {displayOpen  && inputState !== 'readOnly' &&
@@ -122,15 +122,15 @@ export default class TimePicker extends Component {
 
 
 TimePicker.defaultProps = {
-  HOURS            : ["1:00 AM","2:00 AM","3:00 AM","4:00 AM","5:00 AM","6:00 AM","7:00 AM","8:00 AM","9:00 AM","10:00 AM","11:00 AM","12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM","6:00 PM","7:00 PM","8:00 PM","9:00 PM","10:00 PM","11:00 PM","12:00 AM"],
-  TWENTYFOUR_HOURS : ["1:00","2:00","3:00","4:00","5:00","6:00","7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00","24:00"]
+  HOURS            : ["6:00 AM","7:00 AM","8:00 AM","9:00 AM","10:00 AM","11:00 AM","12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM","6:00 PM","7:00 PM","8:00 PM","9:00 PM","10:00 PM","11:00 PM","12:00 AM","1:00 AM","2:00 AM","3:00 AM","4:00 AM","5:00 AM"],
+  TWENTYFOUR_HOURS : ["06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00","00:00","01:00","02:00","03:00","04:00","05:00"],
+  inputState: ''
 };
 
 
 TimePicker.propTypes = {
   id               : PropTypes.string.isRequired,
   labelText        : PropTypes.string.isRequired,
-  timeFormat       : PropTypes.string.isRequired,
   changeHandler    : PropTypes.func.isRequired,
   infoMessage      : PropTypes.string,
   errorMessage     : PropTypes.string,
@@ -143,15 +143,15 @@ TimePicker.propTypes = {
 };
 
 
-function _timepickerOpen(){
-  const { inputState } = this.state;
-  if(inputState !== 'readOnly' || inputState !== 'disabled'){
+function _timepickerOpen() {
+  const { inputState } = this.props;
+  if (inputState === '' || inputState === 'default' || inputState === 'error') {
     this.setState({ displayOpen: !this.state.displayOpen });
     this.input.focus();
   }
 };
 
-function _changeHandler(e){
+function _changeHandler(e) {
   this.setState({
     timepickerValue: e.target.value,
     displayOpen: false,
@@ -160,7 +160,7 @@ function _changeHandler(e){
   this.props.changeHandler.call(this, e.target.value);
 };
 
-function _listHandler(e){
+function _listHandler(e) {
   const changeHandlerParam = {
     target: {
       value: e.target.innerText.toUpperCase()
@@ -174,8 +174,12 @@ function _listHandler(e){
   this.changeHandler(changeHandlerParam);
 };
 
-function _inputEvents(e){
-  switch(e.which){
+function _inputEvents(e) {
+  // option & down arrow
+  if (e.altKey && e.which === 40) {
+    this.setState({ displayOpen: !this.state.displayOpen });
+  }
+  switch (e.which) {
     case 40:  //down arrow
       e.preventDefault();
       this.list.children[0].focus();
@@ -187,7 +191,8 @@ function _inputEvents(e){
     case 9:   //tab
       this.setState({ displayOpen:false, labelStyleTmp:this.state.labelStyle });
       break;
-    case 13:
+    case 13: // enter
+      e.preventDefault();
       this.setState({ displayOpen: !this.state.displayOpen });
       break;
   };
@@ -196,11 +201,11 @@ function _inputEvents(e){
 function _listEventInterface(e) {
   let { focusStartIndex } = this.state;
 
-  switch(e.which){
+  switch (e.which) {
     case 40:  //down arrow
       e.stopPropagation();
       e.preventDefault();
-      if(focusStartIndex >= 0 && focusStartIndex < this.list.children.length - 1){
+      if (focusStartIndex >= 0 && focusStartIndex < this.list.children.length - 1) {
         focusStartIndex++;
         this.setState({focusStartIndex});
         this.list.children[focusStartIndex].focus();
@@ -210,7 +215,7 @@ function _listEventInterface(e) {
     case 38:  //up arrow
       e.stopPropagation();
       e.preventDefault();
-      if(focusStartIndex > 0 && focusStartIndex < this.list.children.length){
+      if (focusStartIndex > 0 && focusStartIndex < this.list.children.length) {
         focusStartIndex--;
         this.setState({focusStartIndex});
         this.list.children[focusStartIndex].focus();
@@ -218,6 +223,7 @@ function _listEventInterface(e) {
       }
       break;
     case 13:  //enter
+    case 32:  //space
       e.preventDefault();
       this.listHandler(e);
       this.setState({ displayOpen: false });

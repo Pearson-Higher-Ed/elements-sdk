@@ -16,18 +16,17 @@
   text-overflow   : ellipsis;
   white-space     : nowrap;
   overflow        : hidden;
-  border		  : $border;
+  border		      : $border;
   overflow        : visible;
-
-  position: relative;
-  z-index: 1;
+  position        : relative;
+  z-index         : 1;
 
   &:hover,
   &:active {
     color            : $hover-color;
     background-color : $hover-bg;
     border			 : $border-hover;
-    
+
   }
   // &:focus {
 // 	outline: 1px solid $pe-color-hot-pink;
@@ -44,11 +43,11 @@
     width: calc(100% + 10px);
     height: calc(100% + 10px);
     top: -5px;
-	left: -5px;
+	  left: -5px;
     z-index: -100;
   	}
    }
-  
+
   &:disabled,
   &.pe-btn--disabled,
   &.pe-btn--disabled:hover {

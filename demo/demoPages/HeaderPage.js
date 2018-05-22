@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import { Dropdown, DropdownItem } from '../../index';
 
@@ -12,6 +13,7 @@ const HeaderPage = ({ children }) => (
           <Dropdown
             type="button"
             label="Styles"
+            mobileTitle="Styles"
             id="stylez">
             <DropdownItem label="Styles - Buttons" type="link" url="/elements-sdk/#/styles-buttons" />
             <DropdownItem label="Forms" type="link" url="/elements-sdk/#/forms" />
@@ -24,13 +26,13 @@ const HeaderPage = ({ children }) => (
             <DropdownItem label="Presentation Strategies" type="link" url="/elements-sdk/#/presentation-strategies" />
             <DropdownItem label="Grid" type="link" url="/elements-sdk/#/grid" />
             <DropdownItem label="Templates" type="link" url="/elements-sdk/#/templates" />
-            <DropdownItem label="Bootstrap - Grid" type="link" url="/elements-sdk/#/bootstrap-grid" />
           </Dropdown>
         </div>
         <div className="dropdown-wrapper">
           <Dropdown
             type="button"
             label="Components"
+            mobileTitle="Components"
             id="react-components">
             <DropdownItem label="Buttons" type="link" url="/elements-sdk/#/buttons" />
             <DropdownItem label="Icons" type="link" url="/elements-sdk/#/icons" />

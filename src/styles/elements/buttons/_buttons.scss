@@ -8,7 +8,7 @@
   vertical-align : middle;
   cursor         : pointer;
 
-  // Large: The standard button size, prefer this button as a default size 
+  // Large: The standard button size, prefer this button as a default size
   // unless there is a reason to go up or down.
   height         : $pe-btn-large-height;
   padding        : $pe-btn-large-padding;
@@ -32,7 +32,7 @@
   border-radius  : $pe-btn-xlarge-border-radius;
   padding        : $pe-btn-xlarge-padding;
   font-size      : $pe-font-size-large;
-  line-height    : $pe-line-height-large; 
+  line-height    : $pe-line-height-large;
 }
 
 
@@ -232,7 +232,7 @@
     );
     @extend %btn;
   }
-  
+
   .pe-btn__tertiary--btn_small {
     @include pe-btn(
       $pe-btn-tertiary-bg,
@@ -245,7 +245,7 @@
     @extend %btn;
     @extend %btn_small;
   }
- 
+
   .pe-btn__tertiary--btn_xlarge {
     @include pe-btn(
       $pe-btn-tertiary-bg,
@@ -274,7 +274,7 @@
   a[class='pe-btn__primary'], a[class='pe-btn__cta'], a[class='pe-btn__tertiary'], a[class='pe-btn'] {
     line-height: 36px !important;
   }
-  
+
   div[class$='--btn_small'], a[class$='--btn_small'] {
     line-height: 32px !important;
   }

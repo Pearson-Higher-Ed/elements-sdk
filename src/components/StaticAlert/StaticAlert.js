@@ -34,14 +34,14 @@ export default class StaticAlert extends Component {
   typeCheck = () => {
     if (this.props.type === 'Error') {
       return (
-        <span className="error-svg">
+        <span className="static-error-svg">
           <Icon name="warning-18" />
         </span>
       );
     }
     if (this.props.type === 'Success') {
       return (
-        <span className="success-svg">
+        <span className="static-success-svg">
           <Icon name="check-lg-18" />
         </span>
       );
@@ -58,20 +58,20 @@ export default class StaticAlert extends Component {
     return (
       <div>
         {this.state.isOpen &&
-          <div className={`pe-alert${inlineCheck} alert-${type}`}>
-            <div className="alert-content-container">
+          <div className={`static-pe-alert${inlineCheck} static-alert-${type}`}>
+            <div className="static-alert-content-container">
               {this.typeCheck()}
-              <div className={`alert-content-${infoCheck}`}>
-                <h2 className="pe-label alert-title">
+              <div className={`static-alert-content-${infoCheck}`}>
+                <h2 className="pe-label static-alert-title">
                   <strong>{title}</strong>
                 </h2>
-                <p className="pe-paragraph alert-text">
+                <p className="pe-paragraph static-alert-text">
                   {message}
                 </p>
               </div>
             </div>
 
-            <button className="pe-icon--btn close-title"
+            <button className="pe-icon--btn static-close-title"
                     disabled={disableCheck}
                     onClick={this.handleClose}
                     aria-label="Close alert">

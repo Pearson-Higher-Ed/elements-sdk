@@ -1,12 +1,10 @@
 language: node_js
 sudo: false
 node_js:
-- "stable"
+- 9.0.0
 script:
-- export REPO_NAME=glp-elements-sdk
-- export SUITE_NAME=glp_elements_sdk
-after_success:
-- npm run deploy-ci
+- npm run ci
+- export TEST_GROUP=desktop-ci
 deploy:
   provider: npm
   email: pearson-design-accelerator@pearson.com
