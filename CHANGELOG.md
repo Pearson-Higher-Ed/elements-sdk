@@ -5,6 +5,7 @@
 ### Bug Fixes
 
 * **dropdown:** add keys to drop down menu items ([83c4ebf](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/83c4ebf))
+* Fix disabled and disabled hover states for the buttons
 
 
 
@@ -375,6 +376,3 @@
 ### Bug Fixes
 
 * remove elements dependency ([1fc70d4](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/1fc70d4))
-
-
-
