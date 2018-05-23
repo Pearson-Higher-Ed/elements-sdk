@@ -1,3 +1,13 @@
+<a name="1.12.1"></a>
+## [1.12.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.12.0...v1.12.1) (2018-05-23)
+
+
+### Bug Fixes
+
+* **dropdown:** add keys to drop down menu items ([83c4ebf](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/83c4ebf))
+
+
+
 <a name="1.12.0"></a>
 # [1.12.0](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.11.3...v1.12.0) (2018-05-07)
 
