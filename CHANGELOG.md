@@ -1,3 +1,8 @@
+<a name="1.12.2"></a>
+## [1.12.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.12.1...v1.12.2) (2018-05-24)
+
+
+
 <a name="1.12.1"></a>
 ## [1.12.1](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.12.0...v1.12.1) (2018-05-23)
 
@@ -5,7 +10,6 @@
 ### Bug Fixes
 
 * **dropdown:** add keys to drop down menu items ([83c4ebf](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/83c4ebf))
-* Fix disabled and disabled hover states for the buttons
 
 
 
@@ -376,3 +380,6 @@
 ### Bug Fixes
 
 * remove elements dependency ([1fc70d4](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/1fc70d4))
+
+
+
