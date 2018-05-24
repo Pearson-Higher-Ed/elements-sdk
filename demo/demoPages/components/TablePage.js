@@ -21,10 +21,16 @@ class TablePage extends React.Component {
 
   handleColumnSort = (item) => {
     return () => {
-      this.setState(prevState => ({
-        itemSelected: item,
-        direction: prevState.direction === 'up' ? 'down' : 'up'
-      }));
+      if (this.state.itemSelected === item) {
+        this.setState(prevState => ({
+          direction: prevState.direction === 'up' ? 'down' : 'up'
+        }));
+      } else {
+        this.setState({
+          itemSelected: item, 
+          direction: 'down'
+        });
+      }
     }
   }
 
@@ -80,11 +86,11 @@ class TablePage extends React.Component {
             <li className="li-props">Allows you to change the alignment of the contents of a cell.  Acceptable strings are 'center' and 'right'. <br/>
               By default the element will maintain its left alignment.
             </li>
+            <li className="li-props">inputLabel:String</li>
+            <li className="li-props">Label for the corresponding checkbox, or sortable button in column header.</li>
             <li className="li-props">**The following props are only necessary on Selectable tables.**</li>
             <li className="li-props">inputId:String</li>
             <li className="li-props">The inputId is passed to the checkbox and its label. This can only start with letters or an underscore (applies to all id&#39;s).</li>
-            <li className="li-props">inputLabel:String</li>
-            <li className="li-props">Label for the corresponding checkbox.</li>
             <li className="li-props">containerId:String</li>
             <li className="li-props">Assigns the id to the {`<div>`} containing the checkbox.  This id must also be passed
               to the TableRowCell component and is <br/>referred to by the same prop name.
@@ -122,9 +128,9 @@ class TablePage extends React.Component {
                 <div style={thirtyTwo}>{`containerId="comic_select"`}</div>
                 <div style={thirtyTwo}>{`inputLabel="Select"`}</div>
               <div style={twentyFour}>{`/>`}</div>
-              <div style={twentyFour}>{`<TableHeaderCell columnSort={() => console.log('Hey')}>Comic</TableHeaderCell>`}</div>
-              <div style={twentyFour}>{`<TableHeaderCell>Main characters</TableHeaderCell>`}</div>
-              <div style={twentyFour}>{`<TableHeaderCell>Country</TableHeaderCell>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('comic')} iconName={this.getIconName('comic')} inputLabel='Comic'/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('characters')} iconName={this.getIconName('characters')} inputLabel='Main characters'/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('country')} iconName={this.getIconName('country')} inputLabel='Country'/>`}</div>
             <div style={sixteen}>{`</TableRow>`}</div>
           <div style={eight}>{`</TableHead>`}</div>
           <div style={eight}>{`<TableBody>`}</div>
@@ -161,9 +167,9 @@ class TablePage extends React.Component {
                 containerId="comic_select"
                 inputLabel="Select"
               />
-              <TableHeaderCell columnSort={this.handleColumnSort('mix')} iconName={this.getIconName('mix')} inputLabel="Mix"/>
-              <TableHeaderCell columnSort={this.handleColumnSort('lala')} iconName={this.getIconName('lala')} inputLabel="Lala"/>
-              <TableHeaderCell columnSort={this.handleColumnSort('yoyo')} iconName={this.getIconName('yoyo')} inputLabel="Yoyo"/>
+              <TableHeaderCell columnSort={this.handleColumnSort('comic')} iconName={this.getIconName('comic')} inputLabel='Comic'/>
+              <TableHeaderCell columnSort={this.handleColumnSort('characters')} iconName={this.getIconName('characters')} inputLabel='Main characters'/>
+              <TableHeaderCell columnSort={this.handleColumnSort('country')} iconName={this.getIconName('country')} inputLabel='Country'/>
             </TableRow>
           </TableHead>
           <TableBody>

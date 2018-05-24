@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const TableRow = ({ children }) => {
 
   const selectedRow = () => {
-    console.log('clicked');
     const tables = [].slice.call(document.getElementsByClassName('pe-table--selectable'));
 
     tables.forEach((table) => {
