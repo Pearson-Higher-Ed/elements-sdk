@@ -52,7 +52,17 @@ const StylesButtonPage = () => (
     <p>Buttons can be disabled when an action is not available to the user for the current context. Primary and call to action buttons have no disabled state.</p>
     <button className="pe-btn" disabled>Default</button> <br/><br/>
     <p className="code">{`<button class="pe-btn" disabled>Default</button>`}</p>
-
+    
+    <br />
+    
+    <p>For example, here are Disabled Primary and CTA buttons:</p>
+    <button className="pe-btn__primary" disabled>Disabled Primary</button>
+    <p className="code">{`<button class="pe-btn__primary" disabled>Disabled Primary</button>`}</p>
+    <br />
+    <button className="pe-btn__cta--btn_large" style={marginFour} disabled>Disabled CTA</button>
+    <p className="code">{`<button class="pe-btn__cta--btn_large" disabled>Disabled CTA</button>`}</p>
+	<br />
+	
     <p>For elements that do not support the `disabled` attribute, use `pe-btn--disabled` and `aria-disabled`.</p>
     <div className="pe-btn pe-btn--disabled" aria-disabled="true">Not a button</div> <br/><br/>
     <p className="code">{`<div className="pe-btn pe-btn--disabled" aria-disabled="true">Not a button</div>`}</p>
