@@ -72,6 +72,12 @@ export default class Tabs extends Component {
 
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      selected: nextProps.selected
+    });
+  }
+
   renderLabels() {
     function labels(child, i) {
       let activeClass = this.state.selected === i ? 'activeTab' : '';
