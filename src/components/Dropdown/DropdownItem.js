@@ -18,10 +18,10 @@ export default class DropdownItem extends Component {
     imgWidth: PropTypes.string,
     imgAlt: PropTypes.string
   };
- 
+
   render() {
     const { url, label, selectValue, type, selected, selectedName, checkmark, onClick, dropdownId, imgUrl, imgHeight, imgWidth, imgAlt, itemSelected } = this.props;
-	
+
     switch (type) {
       case 'divider':
         return (
@@ -32,7 +32,7 @@ export default class DropdownItem extends Component {
         break;
       case 'link':
         return (
-          <li role="presentation" data-item={label} ref={node => this.node = node}>
+          <li role="presentation" data-item={label} ref={node => this.node = node} key={dropdownId + selectValue}>
             <a href={url} className={checkmark ? 'checkmark' : ''} role="menuitem" tabIndex="-1">{label}</a>
           </li>
         );
@@ -40,20 +40,21 @@ export default class DropdownItem extends Component {
       case 'button':
         return (
           <li role="presentation"
-				data-item={label}
-				data-value={selectValue}
-				id={dropdownId + "-" + selectValue}
-				aria-checked={itemSelected === selectValue}
-				className={itemSelected === selectValue ? 'active' : ''}
-			>
+				    data-item={label}
+				    data-value={selectValue}
+				    id={dropdownId + "-" + selectValue}
+				    aria-checked={itemSelected === selectValue}
+				    className={itemSelected === selectValue ? 'active' : ''}
+            key={dropdownId + selectValue}
+			    >
             <button role="menuitem"
-				className={checkmark ? 'checkmark' : ''}
-				tabIndex="-1">
-				{checkmark ?
-					<span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
-						<Icon name="check-sm-18">{selectedName}</Icon>
-					</span> : null
-				}
+				      className={checkmark ? 'checkmark' : ''}
+				      tabIndex="-1">
+				      {checkmark ?
+					      <span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
+						      <Icon name="check-sm-18">{selectedName}</Icon>
+					      </span> : null
+				      }
               <span className={checkmark ? 'icon-padding' : ''}>
                 {label}
               </span>
@@ -64,30 +65,31 @@ export default class DropdownItem extends Component {
         case 'imageButton':
           return (
             <li role="presentation"
-				data-item={label}
-				data-value={selectValue}
-				id={dropdownId + "-" + selectValue}
-				aria-checked={itemSelected === selectValue}
-				className={itemSelected === selectValue ? 'active' : ''}
-			>
-				<button role="menuitem"
-					className={checkmark ? 'checkmark' : ''}
-					tabIndex="-1">
-						{checkmark ?
-							<span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
-								<Icon name="check-sm-18">{selectedName}</Icon>
-							</span> : null
-						}
-						<span className={checkmark ? 'icon-padding' : ''}>
-                			<img src={imgUrl}
-								 height={imgHeight}
-								 width={imgWidth}
-								 alt={selectValue}/>
-							&nbsp;{label}
-						</span>
-				</button>
-			</li>
-			);
+				      data-item={label}
+				      data-value={selectValue}
+				      id={dropdownId + "-" + selectValue}
+				      aria-checked={itemSelected === selectValue}
+				      className={itemSelected === selectValue ? 'active' : ''}
+              key={dropdownId + selectValue}
+			      >
+				      <button role="menuitem"
+					      className={checkmark ? 'checkmark' : ''}
+					      tabIndex="-1">
+						    {checkmark ?
+							    <span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
+								    <Icon name="check-sm-18">{selectedName}</Icon>
+							    </span> : null
+						    }
+						    <span className={checkmark ? 'icon-padding' : ''}>
+                  <img src={imgUrl}
+								    height={imgHeight}
+								    width={imgWidth}
+								    alt={selectValue}/>
+							    &nbsp;{label}
+						    </span>
+				      </button>
+			     </li>
+			  );
         break;
       default:
         return <li id="itemTypeNotRecognized">DropdownItem "type" prop not recognized...</li>
