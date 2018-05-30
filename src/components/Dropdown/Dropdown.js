@@ -442,10 +442,10 @@ export default class Dropdown extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.selectedItemDOM && typeof this.state.selectedItemDOM.scrollIntoView === 'function' && this.props.scrollable) {
+    if (this.state.selectedItemDOM && this.props.scrollable) {
       // delay necessary so allow the list to appear before trying to scroll into view
       setTimeout(() => {
-        this.state.selectedItemDOM.scrollIntoView(true);
+        this.state.selectedDOM.parentNode.scrollTop = this.state.selectedDOM.offsetTop;
       }, 1);
     }
   }
