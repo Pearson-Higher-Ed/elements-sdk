@@ -73,6 +73,7 @@ export default class DropdownItem extends Component {
               key={dropdownId + selectValue}
 			      >
 				      <button role="menuitem"
+                type="button"
 					      className={checkmark ? 'checkmark' : ''}
 					      tabIndex="-1">
 						    {checkmark ?
