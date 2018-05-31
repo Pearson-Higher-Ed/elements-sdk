@@ -75,7 +75,7 @@
 }
 
 /* checkbox */
-.pe-table--selectable tbody tr td:first-child {
+.pe-table--selectable tr th:first-child {
   width: 1px;
   padding-right: 0;
 
@@ -86,7 +86,6 @@
     /* so checkboxes can be clicked w/o JS */
     label {
       min-height: 18px;
-      padding-left: 18px;
     }
   }
 }

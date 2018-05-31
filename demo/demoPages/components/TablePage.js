@@ -164,8 +164,9 @@ class TablePage extends React.Component {
             <TableRow>
               <TableHeaderCell
                 inputId="comic_select_0"
-                containerId="comic_select"
-                inputLabel="Select"
+                containerId="comic_0" 
+                inputLabel="Select"           
+                scope="col"
               />
               <TableHeaderCell columnSort={this.handleColumnSort('comic')} iconName={this.getIconName('comic')} inputLabel='Comic'/>
               <TableHeaderCell columnSort={this.handleColumnSort('characters')} iconName={this.getIconName('characters')} inputLabel='Main characters'/>
@@ -174,22 +175,22 @@ class TablePage extends React.Component {
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableRowCell
-                inputId="c1"
-                containerId="comic_select"
-                labelledbyCellId="sel_Spirou"
+              <TableHeaderCell
+                inputId="comic_select_1"
+                containerId="comic_1"
+                scope="row"
               />
-              <TableRowCell cellId="sel_Spirou">Spirou</TableRowCell>
+              <TableRowCell>Spirou</TableRowCell>
               <TableRowCell>Spirou, Fantasio</TableRowCell>
               <TableRowCell>Belgium</TableRowCell>
             </TableRow>
             <TableRow>
-              <TableRowCell
-                inputId="c2"
-                containerId="comic_select"
-                labelledbyCellId="sel_sew"
+              <TableHeaderCell
+                inputId="comic_select_2"
+                containerId="comic_2"
+                scope="row"
               />
-              <TableRowCell cellId="sel_sew">Suske en Wiske</TableRowCell>
+              <TableRowCell>Suske en Wiske</TableRowCell>
               <TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>
               <TableRowCell>Belgium</TableRowCell>
             </TableRow>

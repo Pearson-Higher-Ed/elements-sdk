@@ -16,14 +16,15 @@ export default class TableHeaderCell extends Component {
   }
 
   static defaultProps = {
-    scope: 'col'
+    scope: 'col',
+    inputLabel: ' '
   }
 
   constructor(props) {
     super(props)
 
     this.state = {
-      iconName: this.props.defaultIcon || 'sortable-18'
+      iconName: this.props.defaultIcon
     }
 
     this.selectAll = _selectAll.bind(this);
@@ -46,7 +47,7 @@ export default class TableHeaderCell extends Component {
 
   render() {
     const { children, inputId, containerId, inputLabel, columnSort,
-            alignCell } = this.props;
+            alignCell, scope } = this.props;
     const { selectable, sortable } = this.context;
     const { iconName } = this.isControlled() ? this.props : this.state;
     const sortClass = sortable ? 'pe-table__sortable' :'';
@@ -60,15 +61,22 @@ export default class TableHeaderCell extends Component {
             ? 'ascending'
             : iconName === 'sort-down-18'
             ? 'descending'
-            : 'none' }
+            : iconName === 'sortable-18'
+            ? 'none'
+            : null}
           columnSort={sortCheck}
           className={`${sortClass}${columnAlignment}`}
+          scope={scope}
       >
         {
           selectable && !columnSort && !children
             ? <div className="pe-checkbox"
                    id={containerId}
-                   onClick={this.selectAll}>
+                   onClick={
+                     scope === 'col'
+                     ? this.selectAll
+                     : null
+                     }>
                 <input type="checkbox" id={inputId} />
                 <label htmlFor={inputId}>{inputLabel}</label>
                 <span>
