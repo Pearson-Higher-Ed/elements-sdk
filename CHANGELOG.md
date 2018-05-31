@@ -1,3 +1,13 @@
+<a name="1.12.3"></a>
+## [1.12.3](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.12.2...v1.12.3) (2018-05-31)
+
+
+### Bug Fixes
+
+* type=button back on imageButton case ([aba28fc](https://github.com/Pearson-Higher-Ed/elements-sdk/commit/aba28fc))
+
+
+
 <a name="1.12.2"></a>
 ## [1.12.2](https://github.com/Pearson-Higher-Ed/elements-sdk/compare/v1.12.1...v1.12.2) (2018-05-24)
 
