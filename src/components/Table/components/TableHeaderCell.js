@@ -10,6 +10,7 @@ export default class TableHeaderCell extends Component {
     inputId: PropTypes.string,
     containerId: PropTypes.string,
     inputLabel: PropTypes.string,
+    ariaLabel: PropTypes.string,
     columnSort: PropTypes.func,
     alignCell: PropTypes.oneOf(['center', 'right']),
     defaultIcon: PropTypes.string
@@ -46,7 +47,7 @@ export default class TableHeaderCell extends Component {
   }
 
   render() {
-    const { children, inputId, containerId, inputLabel, columnSort,
+    const { children, inputId, containerId, inputLabel, ariaLabel, columnSort,
             alignCell, scope } = this.props;
     const { selectable, sortable } = this.context;
     const { iconName } = this.isControlled() ? this.props : this.state;
@@ -54,6 +55,9 @@ export default class TableHeaderCell extends Component {
     const columnAlignment = (alignCell === 'center' || alignCell === 'right')
                             ? ' pe-table__' + alignCell :'';
     const sortCheck = columnSort ? columnSort :null;
+    const arialabel = ariaLabel
+                  ? ariaLabel
+                  : null;
 
     return (
       <th aria-sort={
@@ -77,7 +81,7 @@ export default class TableHeaderCell extends Component {
                      ? this.selectAll
                      : null
                      }>
-                <input type="checkbox" id={inputId} />
+                <input type="checkbox" id={inputId} aria-label={arialabel}/>
                 <label htmlFor={inputId}>{inputLabel}</label>
                 <span>
                   <Icon name="check-sm-18" />
@@ -86,8 +90,8 @@ export default class TableHeaderCell extends Component {
             : children
         }
         {
-          columnSort && !children
-          ? <button type="button" title={
+          columnSort && 
+            <button type="button" title={
               iconName === 'sort-up-18'
               ? 'Sorted up'
               : iconName === 'sort-down-18'
@@ -95,7 +99,6 @@ export default class TableHeaderCell extends Component {
               : 'Unsorted' } onClick={this.iconToggle}>
               {inputLabel}<Icon name={iconName} />
             </button>
-          : children
         }
       </th>
     )

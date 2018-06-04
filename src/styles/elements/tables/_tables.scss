@@ -39,6 +39,11 @@
       font-weight: $pe-label-bold;
       vertical-align: middle;
     }
+
+    .pe-table tbody th {
+      font-weight: 400;
+    }
+
     .pe-table td p {
       margin-bottom: 0;
     }
@@ -75,7 +80,7 @@
 }
 
 /* checkbox */
-.pe-table--selectable tr th:first-child {
+.pe-table--selectable tr th:first-child, .pe-table--selectable tr td:first-child {
   width: 1px;
   padding-right: 0;
 
@@ -123,6 +128,7 @@ th.pe-table__sortable button {
   padding: 0;
   text-align: left;
   cursor: pointer;
+  font-weight: $pe-label-bold;
 }
 
 /* alignments */
