@@ -59,14 +59,8 @@ export default class Dropdown extends Component {
     const top_tooclose = elementRect.top < elementRect.height;
 
     if (touch_bottom) {
-		//but is not at top of page (like demo site)
-		if (top_tooclose) {
-		  element.style.maxHeight = `${(window.screen.height - elementRect.top - 60)}px`;
-		}
-		else {
           // 4 because of margins
           element.style.top = `-${(elementRect.height + 4)}px`;
-      }
     }
 
     if (touch_right) {
@@ -88,14 +82,26 @@ export default class Dropdown extends Component {
       // don't run in tests (DOM manipulation)
       if(dropdown != null){
         const parentWrapper = dropdown.parentElement.parentElement
-        if (window.screen.width < 768) {
-        	this.list.children[1].children[0].focus();
-        	this.focusedItem = 1;
+        
+        //need to return focus to checked item
+        if (dropdown.hasAttribute("aria-activedescendant")) {
+        	var activeDescId = dropdown.getAttribute("aria-activedescendant"),
+        		activeDescendant = document.getElementById(activeDescId),
+        		activeDescIndex = [].indexOf.call(activeDescendant.parentNode.children, activeDescendant);
+        		
+        	activeDescendant.children[0].focus();
+        	this.focusedItem = activeDescIndex;
+        } else {
+        	if (window.screen.width < 768) {
+        		this.list.children[1].children[0].focus();
+        		this.focusedItem = 1;
+        	}
+        	else {
+        		this.list.children[0].children[0].focus();
+        	}
         }
-        else {
-        	this.list.children[0].children[0].focus();
-        }
-
+        
+    
         if (this.state.open) {
           this.placement(ReactDOM.findDOMNode(this));
           if(window.screen.width < 768){
@@ -275,7 +281,18 @@ export default class Dropdown extends Component {
         }, () => {
           this.handleSetItem()
         });
-        this.container.children[0].focus();
+        
+        //for mobile need setTimeout so button can get display before focus
+        if (window.screen.width < 768) {
+            //    	this.container.children[0].focus();
+
+        	var buttonToFocus = this.container.children[0];
+        	setTimeout(function(){ buttonToFocus.focus(); }, 0);
+        }
+        else {
+        	this.container.children[0].focus();
+        }
+        selectedListItem.parentNode.setAttribute('aria-activedescendant', selectedListItem.id);
       }
     }
   }
@@ -392,7 +409,6 @@ export default class Dropdown extends Component {
     // responsiveness events
     window.addEventListener("orientationChange", function() {
     this.placeInBody
-    console.log(this.props.id);
 
     }, false)
     window.addEventListener("resize", this.placeInBody)
@@ -445,7 +461,7 @@ export default class Dropdown extends Component {
     if (this.state.selectedItemDOM && this.props.scrollable) {
       // delay necessary so allow the list to appear before trying to scroll into view
       setTimeout(() => {
-        this.state.selectedDOM.parentNode.scrollTop = this.state.selectedDOM.offsetTop;
+        this.state.selectedItemDOM.parentNode.scrollTop = this.state.selectedItemDOM.offsetTop;
       }, 1);
     }
   }

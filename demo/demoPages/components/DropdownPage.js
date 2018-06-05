@@ -87,7 +87,71 @@ class DropdownPage extends React.Component {
             <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-3" label="list item 3" type="link" url="http://www.google.com" />
           </Dropdown>`}
           </p>
-
+			
+		  <h3>label /w Icon and long list (scrollable and selectable)</h3>
+          <Dropdown
+            dropdownControlLabel="Dropdown open"
+            mobileTitle={mobileTitle}
+            scrollable
+            type="text"
+            label="text"
+            id="text-long">
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-1" 
+              selectedName="selected" label="list item 1" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-2" 
+              selectedName="selected" label="list item 2" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-3" 
+              selectedName="selected" label="list item 3" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-4" 
+              selectedName="selected" label="list item 4" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-5" 
+              selectedName="selected" label="list item 5" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-6" 
+              selectedName="selected" label="list item 6" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-7" 
+              selectedName="selected" label="list item 7" type="button" />
+            <DropdownItem type="divider" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-8" label="list item 8" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-9" label="list item 9" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-10" label="list item 10" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-11" label="list item 11" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-12" label="list item 12" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-13" label="list item 13" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-14" label="list item 14" type="link" url="http://www.google.com" />
+          </Dropdown>
+          <p className="code">
+            {` <Dropdown
+            dropdownControlLabel="Dropdown open"
+            mobileTitle={mobileTitle}
+            scrollable
+            type="text"
+            label="text"
+            id="text-long">
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-1" 
+              selectedName="selected" label="list item 1" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-2" 
+              selectedName="selected" label="list item 2" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-3" 
+              selectedName="selected" label="list item 3" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-4" 
+              selectedName="selected" label="list item 4" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-5" 
+              selectedName="selected" label="list item 5" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-6" 
+              selectedName="selected" label="list item 6" type="button" />
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-7" 
+              selectedName="selected" label="list item 7" type="button" />
+            <DropdownItem type="divider" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-8" label="list item 8" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-9" label="list item 9" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-10" label="list item 10" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-11" label="list item 11" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-12" label="list item 12" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-13" label="list item 13" type="link" url="http://www.google.com" />
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-14" label="list item 14" type="link" url="http://www.google.com" />
+          </Dropdown>`}
+          </p>
+          
           <h3>button /w Icon (no checkmarks)</h3>
           <Dropdown
             mobileTitle={mobileTitle}
