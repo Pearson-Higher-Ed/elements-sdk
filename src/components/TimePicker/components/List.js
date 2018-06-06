@@ -4,10 +4,10 @@ import { Icon } from "../../../../index";
 import './List.scss';
 
 
-export const List = ({ id, itemsToList, itemToParent, selectedItem, listRef, listEvents }) => {
+export const List = ({ id, itemsToList, itemToParent, selectedItem, listRef, listEvents, ariaDesc }) => {
 
     return (
-      <ul id="itemlist" className="pe-itemList" ref={listRef} onKeyDown={listEvents} role="listbox" aria-expanded="true" aria-live="polite">
+      <ul id={id} className="pe-itemList" ref={listRef} onKeyDown={listEvents} aria-activedescendant={ariaDesc} role="listbox" aria-live="polite">
         {
           itemsToList.map((item,i) =>
             <li key           = {`${id}-item-${i}`}

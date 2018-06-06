@@ -91,10 +91,10 @@ const Dates = (props) => {
 
                 return (
                   <div className={`${className} pe-label ${dayContrast}`} key={`day${d}`}>
-                    <div className={isCurrentDate ? 'currentDate-box': ''}>
+                    <div className={isCurrentDate ? 'currentDate-box': ''} role="gridcell">
                        <div className={`pe-cal-cell-square ${isSecondaryDate ? 'secondary-date':''} ${newSelectedDtClass}`}
                           id={`day${d}`}
-                          role="gridcell"
+                          role="button"
                           aria-label={ariaLabel}
                           aria-current={isCurrentDate ? 'date' : null}
                           tabIndex="-1"

@@ -13,6 +13,7 @@ export default class TimePicker extends Component {
 
     this.state = {
       focusStartIndex : 0,
+      ariaDesc        : this.props.ariaDesc,
       timepickerValue : this.props.timepickerValue
     };
 
@@ -50,7 +51,7 @@ export default class TimePicker extends Component {
   render() {
 
     const { inputStyle, labelStyleTmp, displayOpen, timepickerValue,
-            containerStyle, placeholder } = this.state;
+            ariaDesc, containerStyle, placeholder } = this.state;
     const { className, inputState, id, labelText, infoMessage, errorMessage,
             twentyFourHour, TWENTYFOUR_HOURS, HOURS, disableLabel
           } = this.props;
@@ -73,7 +74,9 @@ export default class TimePicker extends Component {
           {labelText}
         </label>
 
-        <div className={containerStyle}>
+        <div className={containerStyle} role="combobox" 
+        	aria-haspopup="listbox" aria-owns={`${id}-list`} 
+        	aria-expanded={ this.state.displayOpen ? 'true' : 'false' }>
           <input
             ref              = {(input) => this.input = input}
             type             = "text"
@@ -81,6 +84,7 @@ export default class TimePicker extends Component {
             placeholder      = {placeholder}
             value            = {timepickerValue}
             className        = {inputStyles}
+            aria-controls    = {`${id}-list`}
             aria-describedby = {ariaDescribedby}
             aria-invalid     = {inputState === 'error'}
             disabled         = {inputState === 'disabled'}
@@ -110,6 +114,7 @@ export default class TimePicker extends Component {
               itemsToList={hoursToList}
               selectedItem={timepickerValue}
               itemToParent={this.listHandler}
+              ariaDesc={ariaDesc}
             />
           </div> }
 
@@ -180,8 +185,13 @@ function _inputEvents(e) {
   }
   switch (e.which) {
     case 40:  //down arrow
+    	var focusStart = this.state.ariaDesc;
       e.preventDefault();
-      this.list.children[0].focus();
+      if (focusStart) { 
+      	document.getElementById(focusStart).focus();
+      } else {
+      	this.list.children[0].focus();
+      }
       break;
     case 27:  //esc
       this.setState({ displayOpen:false, labelStyleTmp:this.state.labelStyle });
@@ -199,7 +209,6 @@ function _inputEvents(e) {
 
 function _listEventInterface(e) {
   let { focusStartIndex } = this.state;
-
   switch (e.which) {
     case 40:  //down arrow
       e.stopPropagation();
@@ -225,7 +234,7 @@ function _listEventInterface(e) {
     case 32:  //space
       e.preventDefault();
       this.listHandler(e);
-      this.setState({ displayOpen: false });
+      this.setState({ displayOpen: false, ariaDesc: this.list.children[focusStartIndex].id });
       this.input.focus();
       break;
   };

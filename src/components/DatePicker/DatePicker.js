@@ -43,11 +43,22 @@ export default class DatePicker extends Component {
   }
 
   handleKeys = (e) => {
-    if (e.which === 27) {
+    if (e.which === 27) { //ESC
       this.setState({ displayOpen: false });
       this.input.focus();
     }
-    if (e.altKey && e.which === 40) {
+    
+    if (e.which === 13) { // Enter
+      const enteredDate = this.parseDate(e.target.value);
+      this.setState({
+        displayOpen: true,
+        //displayOpen: !this.state.displayOpen, removed toggle until enter on arrows doesn't close
+        dateObject: enteredDate
+      });
+      
+    }
+    
+    if (e.altKey && e.which === 40) { //Alt plus down
       const enteredDate = this.parseDate(e.target.value);
       this.setState({
         displayOpen: true,
@@ -58,7 +69,7 @@ export default class DatePicker extends Component {
 
   focusCheck = (e) => {
     if (document.activeElement === this.cal.children[0].children[0].children[2]) {
-      if (!(e.shiftKey) && e.which === 9) {
+      if (!(e.shiftKey) && e.which === 9) { 
         this.setState({ displayOpen: false });
       }
     }
@@ -100,6 +111,7 @@ export default class DatePicker extends Component {
             placeholder      = {placeholder}
             value            = {datepickerValue}
             className        = {inputStyles}
+            aria-haspopup    = "true"
             aria-describedby = {ariaDescribedby}
             aria-invalid     = {inputState === 'error'}
             disabled         = {inputState === 'disabled'}
