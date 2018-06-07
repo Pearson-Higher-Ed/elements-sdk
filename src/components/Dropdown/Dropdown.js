@@ -469,7 +469,7 @@ export default class Dropdown extends Component {
             id={`${this.props.id.replace(' ', '_')}-dropdown`}
             ref={(parent) => { this.list = parent; }}
             className={this.state.open ? '' : 'dropdown-menu'}
-            aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
+            //aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
             onClick={this.itemSelected}
             onKeyDown={this.handleKeyDown}>
             {this.addMobileHeader()}
@@ -487,7 +487,7 @@ export default class Dropdown extends Component {
             id={`${this.props.id.replace(' ', '_')}-dropdown`}
             ref={(parent) => { this.list = parent; }}
             className={this.state.open ? '' : 'dropdown-menu'}
-            aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
+            //aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
             onClick={this.itemSelected}
             onKeyDown={this.handleKeyDown}>
             {this.addMobileHeader()}
