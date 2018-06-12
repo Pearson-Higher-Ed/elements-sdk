@@ -105,6 +105,8 @@ class TablePage extends React.Component {
             </li>
             <li className="li-props">defaultIcon:String - defaultIcon to show</li>
             <li className="li-props">iconName - control icon name yourself</li>
+            <li className="li-props">cellId:String</li>
+            <li className="li-props">cellId needs to be passed to the TableRowCell that follows the checkbox.</li>
           </ul>
           <h3>TableRow props</h3>
           <ul>

@@ -6,6 +6,7 @@ export default class TableHeaderCell extends Component {
 
   static propTypes = {
     children: PropTypes.node,
+    cellId: PropTypes.string,
     scope: PropTypes.string,
     inputId: PropTypes.string,
     containerId: PropTypes.string,
@@ -47,7 +48,7 @@ export default class TableHeaderCell extends Component {
   }
 
   render() {
-    const { children, inputId, containerId, inputLabel, ariaLabel, columnSort,
+    const { children, cellId, inputId, containerId, inputLabel, ariaLabel, columnSort,
             alignCell, scope } = this.props;
     const { selectable, sortable } = this.context;
     const { iconName } = this.isControlled() ? this.props : this.state;
@@ -60,7 +61,8 @@ export default class TableHeaderCell extends Component {
                   : null;
 
     return (
-      <th aria-sort={
+      <th  id={cellId}
+           aria-sort={
             iconName === 'sort-up-18'
             ? 'ascending'
             : iconName === 'sort-down-18'
