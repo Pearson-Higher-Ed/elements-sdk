@@ -25,17 +25,17 @@ export default class Tabs extends Component {
 
     this.state = {
       selected: this.props.selected,
-      tabId: ''
+      tabId: '',
+      panelId: ''
     }
   };
 
   getChildContext() {
-    return { id: this.state.tabId };
+    return { tabid: this.state.tabId.concat('', this.state.selected),
+             panelid: this.state.panelId.concat('', this.state.selected) };
   }
 
   handleClick(i, event) {
-    event.preventDefault();
-
     if (this.props.callback !== undefined) {
       this.props.callback(i);
     }
@@ -81,28 +81,27 @@ export default class Tabs extends Component {
   renderLabels() {
     function labels(child, i) {
       let activeClass = this.state.selected === i ? 'activeTab' : '';
-      let tabI = activeClass ? "0" : "-1";
+      let tabI = activeClass ? null : '-1';
       let ariaSelected = activeClass ? true : false;
       const themeCheck = this.props.light ? 'light' : '';
 
       return (
-        <li key={i} role="presentation" onFocus={() => this.setState({ tabId: `_${uuid.v1()}`})}>
-          <a href="#"
-             role="tab"
-             id={this.state.tabId}
-             tabIndex={tabI}
-             aria-selected={ariaSelected}
-             className={`pe-label ${themeCheck} ${activeClass}`}
-             onClick={this.handleClick.bind(this, i)}>
-               {child.props.label}
-          </a>
-        </li>
+        <button onFocus={() => this.setState({ tabId: num+`_${uuid.v1()}`,  panelId: num+`_${uuid.v4()}`})}
+          className={`pe-tabs--btn ${themeCheck} ${activeClass}`} 
+          id={this.state.tabId+i} 
+          role="tab"
+          tabIndex={tabI}
+          aria-controls={this.state.panelId+i} 
+          aria-selected={ariaSelected}
+          onClick={this.handleClick.bind(this, i)}
+          >{child.props.label}  
+        </button>
       );
     }
     return (
-      <ul className="tabs__labels" role="tablist" ref={(ul) => { this.doc = ul; }}>
+      <div className="pe-tabs" role="tablist" ref={(div) => { this.doc = div; }} onFocus={() => this.setState({ tabId: `_${uuid.v1()}`,  panelId: `_${uuid.v4()}`})}>
         {this.props.children.map(labels.bind(this))}
-      </ul>
+      </div>
     );
   }
 
@@ -126,5 +125,6 @@ export default class Tabs extends Component {
 };
 
 Tabs.childContextTypes = {
-  id: PropTypes.string
+  tabid: PropTypes.string,
+  panelid: PropTypes.string
 }
