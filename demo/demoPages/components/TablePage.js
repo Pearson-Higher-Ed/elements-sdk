@@ -92,7 +92,7 @@ class TablePage extends React.Component {
             <li className="li-props">inputLabel:String</li>
             <li className="li-props">Label for the corresponding checkbox, or sortable button in column header.</li>
             <li className="li-props">**The following props are only necessary on Selectable tables.**</li>
-            <li className="li-props"><ul>There are two ways that you could label a checkbox for accessibility purpose, only use one method for a single table:
+            <li className="li-props"><ul>There are two ways that you could label a checkbox for accessibility purpose, try to use only one method for a single table:
               <li className="li-props">1. Use the inputLabel to set up a visible label</li>
               <li className="li-props">2. Use the containerId and labelledbyCellId to set up the aria-labelledby attribute the checkbox</li>
               <li className="li-props">3. Use the ariaLabel to set up the aria-label attribute for the checkbox</li>
@@ -119,7 +119,7 @@ class TablePage extends React.Component {
           <ul>
             <li className="li-props">children:Node</li>
             <li className="li-props">**The following props are only necessary on Selectable tables.**</li>
-            <li className="li-props"><ul>There are three ways that you could label a checkbox for accessibility purpose, only use one method for a single table:
+            <li className="li-props"><ul>There are three ways that you could label a checkbox for accessibility purpose, try to use only one method for a single table:
               <li className="li-props">1. Use the inputLabel to set up a visible label</li>
               <li className="li-props">2. Use the containerId and labelledbyCellId to set up the aria-labelledby attribute the checkbox</li>
               <li className="li-props">3. Use the ariaLabel to set up the aria-label attribute for the checkbox</li>
@@ -156,18 +156,20 @@ class TablePage extends React.Component {
             <TableRow>
               <TableHeaderCell
                 inputId="c01"
-                inputLabel="Select row 1"
+                inputLabel="Select row 2"
+                scope="row"
               />
-              <TableRowCell scope="row">Spirou</TableRowCell>
+              <TableRowCell>Spirou</TableRowCell>
               <TableRowCell>Spirou, Fantasio</TableRowCell>
               <TableRowCell>Belgium</TableRowCell>
             </TableRow>
             <TableRow>
               <TableHeaderCell
                 inputId="c02"
-                inputLabel="Select row 2"
+                inputLabel="Select row 3"
+                scope="row"
               />
-              <TableRowCell scope="row">Suske en Wiske</TableRowCell>
+              <TableRowCell>Suske en Wiske</TableRowCell>
               <TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>
               <TableRowCell>Belgium</TableRowCell>
             </TableRow>
@@ -191,20 +193,18 @@ class TablePage extends React.Component {
             <TableRow>
               <TableRowCell
                 inputId="c11"
-                ariaLabel="Select Row 1"
-                scope="row"
+                ariaLabel="Select Row 2"
               />
-              <TableHeaderCell>Spirou</TableHeaderCell>
+              <TableHeaderCell scope="row">Spirou</TableHeaderCell>
               <TableRowCell>Spirou, Fantasio</TableRowCell>
               <TableRowCell>Belgium</TableRowCell>
             </TableRow>
             <TableRow>
               <TableRowCell
                 inputId="c12"
-                ariaLabel="Select Row 2"
-                scope="row"
+                ariaLabel="Select Row 3"
               />
-              <TableHeaderCell cellId="sel_sew">Suske en Wiske</TableHeaderCell>
+              <TableHeaderCell scope="row">Suske en Wiske</TableHeaderCell>
               <TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>
               <TableRowCell>Belgium</TableRowCell>
             </TableRow>
@@ -217,10 +217,10 @@ class TablePage extends React.Component {
               <TableHeaderCell
                 inputId="comic_select_02"
                 containerId="comic_select" 
-                labelledbyCellId="sel_comic"           
+                ariaLabel="Select all rows"   
                 scope="col"
               />
-              <TableHeaderCell cellId="sel_comic" columnSort={this.handleColumnSort('comic', 2)} iconName={this.getIconName('comic', 2)} inputLabel='Comic'/>
+              <TableHeaderCell columnSort={this.handleColumnSort('comic', 2)} iconName={this.getIconName('comic', 2)} inputLabel='Comic'/>
               <TableHeaderCell columnSort={this.handleColumnSort('characters', 2)} iconName={this.getIconName('characters', 2)} inputLabel='Main characters'/>
               <TableHeaderCell columnSort={this.handleColumnSort('country', 2)} iconName={this.getIconName('country', 2)} inputLabel='Country'/>
             </TableRow>
@@ -267,20 +267,22 @@ class TablePage extends React.Component {
           <div style={eight}>{`</TableHead>`}</div>
           <div style={eight}>{`<TableBody>`}</div>
             <div style={sixteen}>{`<TableRow>`}</div>
-              <div style={twentyFour}>{`<TableRowCell`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell`}</div>
                 <div style={thirtyTwo}>{`inputId="c01"`}</div>
-                <div style={thirtyTwo}>{`inputLabel="Select Row 1"`}</div>
+                <div style={thirtyTwo}>{`inputLabel="Select Row 2"`}</div>
+                <div style={thirtyTwo}>{`scope="row"`}</div>
               <div style={twentyFour}>{`/>`}</div>
-              <div style={twentyFour}>{`<TableHeaderCell scope="row">Spirou</TableHeaderCell>`}</div>
+              <div style={twentyFour}>{`<TableRowCell>Spirou</TableRowCell>`}</div>
               <div style={twentyFour}>{`<TableRowCell>Spirou, Fantasio</TableRowCell>`}</div>
               <div style={twentyFour}>{`<TableRowCell>Belgium</TableRowCell>`}</div>
             <div style={sixteen}>{`</TableRow>`}</div>
             <div style={sixteen}>{`<TableRow>`}</div>
-              <div style={twentyFour}>{`<TableRowCell`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell`}</div>
                 <div style={thirtyTwo}>{`inputId="c02"`}</div>
-                <div style={thirtyTwo}>{`inputLabel="Select Row 2"`}</div>
+                <div style={thirtyTwo}>{`inputLabel="Select Row 3"`}</div>
+                <div style={thirtyTwo}>{`scope="row"`}</div>
               <div style={twentyFour}>{`/>`}</div>
-              <div style={twentyFour}>{`<TableHeaderCell scope="row">Suske en Wiske</TableHeaderCell>`}</div>
+              <div style={twentyFour}>{`<TableRowCell scope="row">Suske en Wiske</TableRowCell>`}</div>
               <div style={twentyFour}>{`<TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>`}</div>
               <div style={twentyFour}>{`<TableRowCell>Belgium</TableRowCell>`}</div>
             <div style={sixteen}>{`</TableRow>`}</div>
@@ -304,7 +306,7 @@ class TablePage extends React.Component {
             <div style={sixteen}>{`<TableRow>`}</div>
               <div style={twentyFour}>{`<TableRowCell`}</div>
                 <div style={thirtyTwo}>{`inputId="c11"`}</div>
-                <div style={thirtyTwo}>{`ariaLabel="Select Row 1"`}</div>
+                <div style={thirtyTwo}>{`ariaLabel="Select Row 2"`}</div>
               <div style={twentyFour}>{`/>`}</div>
               <div style={twentyFour}>{`<TableHeaderCell scope="row">Spirou</TableHeaderCell>`}</div>
               <div style={twentyFour}>{`<TableRowCell>Spirou, Fantasio</TableRowCell>`}</div>
@@ -313,7 +315,7 @@ class TablePage extends React.Component {
             <div style={sixteen}>{`<TableRow>`}</div>
               <div style={twentyFour}>{`<TableRowCell`}</div>
                 <div style={thirtyTwo}>{`inputId="c12"`}</div>
-                <div style={thirtyTwo}>{`ariaLabel="Select Row 2"`}</div>
+                <div style={thirtyTwo}>{`ariaLabel="Select Row 3"`}</div>
               <div style={twentyFour}>{`/>`}</div>
               <div style={twentyFour}>{`<TableHeaderCell scope="row">Suske en Wiske</TableHeaderCell>`}</div>
               <div style={twentyFour}>{`<TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>`}</div>
@@ -328,10 +330,10 @@ class TablePage extends React.Component {
               <div style={twentyFour}>{`<TableHeaderCell`}</div>
                 <div style={thirtyTwo}>{`inputId="comic_select_02"`}</div>
                 <div style={thirtyTwo}>{`containerId="comic_select"`}</div>
-                <div style={thirtyTwo}>{`labelledbyCellId="sel_comic"`}</div>
+                <div style={thirtyTwo}>{`ariaLabel="Select all rows"`}</div>
                 <div style={thirtyTwo}>{`scope="col"`}</div>
               <div style={twentyFour}>{`/>`}</div>
-              <div style={twentyFour}>{`<TableHeaderCell cellId="sel_comic" columnSort={this.handleColumnSort('comic')} iconName={this.getIconName('comic')} inputLabel='Comic'/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('comic')} iconName={this.getIconName('comic')} inputLabel='Comic'/>`}</div>
               <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('characters')} iconName={this.getIconName('characters')} inputLabel='Main characters'/>`}</div>
               <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('country')} iconName={this.getIconName('country')} inputLabel='Country'/>`}</div>
             <div style={sixteen}>{`</TableRow>`}</div>
