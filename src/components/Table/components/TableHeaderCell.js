@@ -10,6 +10,7 @@ export default class TableHeaderCell extends Component {
     scope: PropTypes.string,
     inputId: PropTypes.string,
     containerId: PropTypes.string,
+    labelledbyCellId: PropTypes.string,
     inputLabel: PropTypes.string,
     ariaLabel: PropTypes.string,
     columnSort: PropTypes.func,
@@ -48,7 +49,7 @@ export default class TableHeaderCell extends Component {
   }
 
   render() {
-    const { children, cellId, inputId, containerId, inputLabel, ariaLabel, columnSort,
+    const { children, cellId, inputId, containerId, labelledbyCellId, inputLabel, ariaLabel, columnSort,
             alignCell, scope } = this.props;
     const { selectable, sortable } = this.context;
     const { iconName } = this.isControlled() ? this.props : this.state;
@@ -59,6 +60,9 @@ export default class TableHeaderCell extends Component {
     const arialabel = ariaLabel
                   ? ariaLabel
                   : null;
+    const labelledby = labelledbyCellId 
+                      ? labelledbyCellId
+                      : null;
 
     return (
       <th  id={cellId}
@@ -83,7 +87,7 @@ export default class TableHeaderCell extends Component {
                      ? this.selectAll
                      : null
                      }>
-                <input type="checkbox" id={inputId} aria-label={arialabel}/>
+                <input type="checkbox" id={inputId} aria-labelledby={labelledby} aria-label={arialabel}/>
                 <label htmlFor={inputId}>{inputLabel}</label>
                 <span>
                   <Icon name="check-sm-18" />

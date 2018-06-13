@@ -82,7 +82,7 @@
 /* checkbox */
 .pe-table--selectable tr th:first-child, .pe-table--selectable tr td:first-child {
   width: 1px;
-  padding-right: 0;
+  white-space: nowrap;
 
   .pe-checkbox {
     min-width: 20px;
