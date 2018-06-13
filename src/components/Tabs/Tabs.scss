@@ -1,8 +1,6 @@
 @import '../../styles/elements.scss';
-.pe-tabs {
-  background-color: $pe-color-white-gray;
-  border-bottom: solid 1px $pe-color-moonlight;
 
+.pe-tabs {
   .pe-tabs--btn {
     border: 0;
     background-color: transparent;
@@ -12,12 +10,29 @@
     padding: 8px 0;
     margin: 4px 16px -1px 16px;
 
+    &:not([aria-selected="true"]):hover, &:not([aria-selected="true"]):focus {
+      border-bottom: solid 3px $pe-color-concrete;
+    }
+
     &[aria-selected="true"], &[aria-selected="true"]:hover, &[aria-selected="true"]:focus {
       border-bottom: solid 3px $pe-color-digital-marine-turquoise;
     }
+  }
+}
 
-    &:hover, &:focus {
-      border-bottom: solid 3px $pe-color-concrete;
+.pe-tabs.bar {
+  background-color: $pe-color-white-gray;
+  border-bottom: solid 1px $pe-color-moonlight;
+}
+
+.pe-tabs.light {
+  .pe-tabs--btn {
+    color: $pe-color-white;
+
+    &:not([aria-selected="true"]):hover, &:not([aria-selected="true"]):focus {
+      border-bottom: solid 3px $pe-color-alto;
     }
   }
 }
+
+

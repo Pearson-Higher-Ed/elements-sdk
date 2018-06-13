@@ -12,7 +12,8 @@ export default class Tabs extends Component {
       PropTypes.array,
       PropTypes.element
     ]).isRequired,
-    light: PropTypes.bool
+    light: PropTypes.bool,
+    bar: PropTypes.bool
   }
 
   static defaultProps = {
@@ -35,7 +36,7 @@ export default class Tabs extends Component {
              panelid: this.state.panelId.concat('', this.state.selected) };
   }
 
-  handleClick(i, event) {
+  handleClick(i) {
     if (this.props.callback !== undefined) {
       this.props.callback(i);
     }
@@ -54,19 +55,19 @@ export default class Tabs extends Component {
       const selectedIndex = this.state.selected;
       if (selectedIndex === 0 && event.keyCode === 37) {
         tabArray[lastTabArray].focus();
-        this.setState({ selected: lastTabArray });
       }
       if (selectedIndex === lastTabArray && event.keyCode === 39) {
         tabArray[0].focus();
-        this.setState({ selected: 0 });
       }
       if (selectedIndex !== 0 && event.keyCode === 37) {
         tabArray[selectedIndex - 1].focus();
-        this.setState({ selected: selectedIndex - 1 });
       }
       if (selectedIndex !== lastTabArray && event.keyCode === 39) {
         tabArray[selectedIndex + 1].focus();
-        this.setState({ selected: selectedIndex + 1 });
+      }
+      if (event.keyCode === 13 || 32) {
+        const current = tabArray.indexOf(event.target);
+        this.setState({ selected: current });
       }
     }, true)
 
@@ -83,11 +84,10 @@ export default class Tabs extends Component {
       let activeClass = this.state.selected === i ? 'activeTab' : '';
       let tabI = activeClass ? null : '-1';
       let ariaSelected = activeClass ? true : false;
-      const themeCheck = this.props.light ? 'light' : '';
-
+      
       return (
         <button onFocus={() => this.setState({ tabId: num+`_${uuid.v1()}`,  panelId: num+`_${uuid.v4()}`})}
-          className={`pe-tabs--btn ${themeCheck} ${activeClass}`} 
+          className={`pe-tabs--btn ${activeClass}`} 
           id={this.state.tabId+i} 
           role="tab"
           tabIndex={tabI}
@@ -98,8 +98,9 @@ export default class Tabs extends Component {
         </button>
       );
     }
+    const themeCheck = this.props.light ? 'light' : this.props.bar ? 'bar': '';
     return (
-      <div className="pe-tabs" role="tablist" ref={(div) => { this.doc = div; }} onFocus={() => this.setState({ tabId: `_${uuid.v1()}`,  panelId: `_${uuid.v4()}`})}>
+      <div className={`pe-tabs ${themeCheck}`} role="tablist" ref={(div) => { this.doc = div; }} onFocus={() => this.setState({ tabId: `_${uuid.v1()}`,  panelId: `_${uuid.v4()}`})}>
         {this.props.children.map(labels.bind(this))}
       </div>
     );
