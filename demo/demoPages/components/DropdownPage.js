@@ -46,12 +46,13 @@ class DropdownPage extends React.Component {
               <li className="li-props">url: only required for link type</li>
               <li className="li-props">dropdownId: unique identifier of group of dropdown items</li>
               <li className="li-props">selectValue: unique identifier of dropdown item</li>
-              
+
             </ul>
             <h4>Optional:</h4>
             <ul>
               <li className="li-props">checkmark: whether or not to leave spacing for a selected checkmark</li>
               <li className="li-props">selected: accessibility/globalization word for 'selected'</li>
+              <li className="li-props">disabled: Boolean - Defaults to false.  If true the button will be disabled.</li>
               <li className="li-props">selectedName: accessibility label for name of icon</li>
               <li className="li-props">imgUrl: URL to image (if type is imageButton)</li>
               <li className="li-props">imgHeight: Display height of image (if type is imgButton)</li>
@@ -67,7 +68,7 @@ class DropdownPage extends React.Component {
             type="text"
             label="text"
             id="text">
-            <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-1" 
+            <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-1"
               selectedName="selected" label="list item 1" type="button" />
             <DropdownItem type="divider" />
             <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-2" label="list item 2" type="link" url="http://www.google.com" />
@@ -80,7 +81,7 @@ class DropdownPage extends React.Component {
             type="text"
             label="text"
             id="text">
-            <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-1" 
+            <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-1"
               selectedName="selected" label="list item 1" type="button" />
             <DropdownItem type="divider" />
             <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-2" label="list item 2" type="link" url="http://www.google.com" />
@@ -171,4 +172,5 @@ class DropdownPage extends React.Component {
     );
   }
 };
+
 export default DropdownPage;
