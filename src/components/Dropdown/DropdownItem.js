@@ -48,8 +48,10 @@ const DropdownItem = ({
             <button role="menuitem"
               disabled={disabled}
               type="button"
+              onClick={onClick}
 				      className={checkmark ? 'checkmark' : ''}
-				      tabIndex="-1">
+				      tabIndex="-1"
+            >
 				      {checkmark ?
 					      <span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
 						      <Icon name="check-sm-18">{selectedName}</Icon>
@@ -76,7 +78,9 @@ const DropdownItem = ({
                 disabled={disabled}
                 type="button"
 					      className={checkmark ? 'checkmark' : ''}
-					      tabIndex="-1">
+					      tabIndex="-1"
+                onClick={onClick}
+              >
 						    {checkmark ?
 							    <span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
 								    <Icon name="check-sm-18">{selectedName}</Icon>
