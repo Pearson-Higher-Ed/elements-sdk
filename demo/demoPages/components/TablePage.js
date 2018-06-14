@@ -94,15 +94,11 @@ class TablePage extends React.Component {
             <li className="li-props">**The following props are only necessary on Selectable tables.**</li>
             <li className="li-props"><ul>There are two ways that you could label a checkbox for accessibility purpose, try to use only one method for a single table:
               <li className="li-props">1. Use the inputLabel to set up a visible label</li>
-              <li className="li-props">2. Use the containerId and labelledbyCellId to set up the aria-labelledby attribute the checkbox</li>
+              <li className="li-props">2. Use the labelledbyCellId to set up the aria-labelledby attribute the checkbox</li>
               <li className="li-props">3. Use the ariaLabel to set up the aria-label attribute for the checkbox</li>
             </ul></li>
             <li className="li-props">inputId:String</li>
             <li className="li-props">The inputId is passed to the checkbox and its label. This can only start with letters or an underscore (applies to all id&#39;s).</li>
-            <li className="li-props">containerId:String</li>
-            <li className="li-props">Assigns the id to the {`<div>`} containing the checkbox.  This id could also be passed
-              to the TableRowCell component and is <br/>referred to by the same prop name.
-            </li>
             <li className="li-props">ariaLabel:String</li>
             <li className="li-props">Set up the aria-label attribute for the checkbox.
             </li>
@@ -121,13 +117,11 @@ class TablePage extends React.Component {
             <li className="li-props">**The following props are only necessary on Selectable tables.**</li>
             <li className="li-props"><ul>There are three ways that you could label a checkbox for accessibility purpose, try to use only one method for a single table:
               <li className="li-props">1. Use the inputLabel to set up a visible label</li>
-              <li className="li-props">2. Use the containerId and labelledbyCellId to set up the aria-labelledby attribute the checkbox</li>
+              <li className="li-props">2. Use the labelledbyCellId to set up the aria-labelledby attribute the checkbox</li>
               <li className="li-props">3. Use the ariaLabel to set up the aria-label attribute for the checkbox</li>
             </ul></li>
             <li className="li-props">inputId:String</li>
             <li className="li-props">The inputId is passed to the checkbox and its label</li>
-            <li className="li-props">containerId:String</li>
-            <li className="li-props">This must match what was passed into the TableHeaderCell component.  It is referenced here in the aria-labelledby of the checkbox.</li>
             <li className="li-props">labelledbyCellId:String</li>
             <li className="li-props">labelledbyCellId must match the cellId and is passed into the aria-labelledby of the checkbox.</li>
             <li className="li-props">ariaLabel:String</li>
@@ -216,7 +210,6 @@ class TablePage extends React.Component {
             <TableRow>
               <TableHeaderCell
                 inputId="comic_select_02"
-                containerId="comic_select" 
                 ariaLabel="Select all rows"   
                 scope="col"
               />
@@ -229,7 +222,6 @@ class TablePage extends React.Component {
             <TableRow>
               <TableRowCell
                 inputId="c21"
-                containerId="comic_select"
                 labelledbyCellId="sel_spirou"
               />
               <TableHeaderCell cellId="sel_spirou" scope="row">Spirou</TableHeaderCell>
@@ -239,7 +231,6 @@ class TablePage extends React.Component {
             <TableRow>
               <TableRowCell
                 inputId="c22"
-                containerId="comic_select"
                 labelledbyCellId="sel_sew"
               />
               <TableHeaderCell cellId="sel_sew" scope="row">Suske en Wiske</TableHeaderCell>
@@ -329,7 +320,6 @@ class TablePage extends React.Component {
             <div style={sixteen}>{`<TableRow>`}</div>
               <div style={twentyFour}>{`<TableHeaderCell`}</div>
                 <div style={thirtyTwo}>{`inputId="comic_select_02"`}</div>
-                <div style={thirtyTwo}>{`containerId="comic_select"`}</div>
                 <div style={thirtyTwo}>{`ariaLabel="Select all rows"`}</div>
                 <div style={thirtyTwo}>{`scope="col"`}</div>
               <div style={twentyFour}>{`/>`}</div>
@@ -342,7 +332,6 @@ class TablePage extends React.Component {
             <div style={sixteen}>{`<TableRow>`}</div>
               <div style={twentyFour}>{`<TableRowCell`}</div>
                 <div style={thirtyTwo}>{`inputId="c21"`}</div>
-                <div style={thirtyTwo}>{`containerId="comic_select"`}</div>
                 <div style={thirtyTwo}>{`labelledbyCellId="sel_spirou"`}</div>
               <div style={twentyFour}>{`/>`}</div>
               <div style={twentyFour}>{`<TableHeaderCell cellId="sel_spirou" scope="row">Spirou</TableHeaderCell>`}</div>
@@ -352,7 +341,6 @@ class TablePage extends React.Component {
             <div style={sixteen}>{`<TableRow>`}</div>
               <div style={twentyFour}>{`<TableRowCell`}</div>
                 <div style={thirtyTwo}>{`inputId="c22"`}</div>
-                <div style={thirtyTwo}>{`containerId="comic_select"`}</div>
                 <div style={thirtyTwo}>{`labelledbyCellId="sel_sew"`}</div>
               <div style={twentyFour}>{`/>`}</div>
               <div style={twentyFour}>{`<TableHeaderCell cellId="sel_sew" scope="row">Suske en Wiske</TableHeaderCell>`}</div>

@@ -9,7 +9,6 @@ export default class TableHeaderCell extends Component {
     cellId: PropTypes.string,
     scope: PropTypes.string,
     inputId: PropTypes.string,
-    containerId: PropTypes.string,
     labelledbyCellId: PropTypes.string,
     inputLabel: PropTypes.string,
     ariaLabel: PropTypes.string,
@@ -49,7 +48,7 @@ export default class TableHeaderCell extends Component {
   }
 
   render() {
-    const { children, cellId, inputId, containerId, labelledbyCellId, inputLabel, ariaLabel, columnSort,
+    const { children, cellId, inputId, labelledbyCellId, inputLabel, ariaLabel, columnSort,
             alignCell, scope } = this.props;
     const { selectable, sortable } = this.context;
     const { iconName } = this.isControlled() ? this.props : this.state;
@@ -81,7 +80,6 @@ export default class TableHeaderCell extends Component {
         {
           selectable && !columnSort && !children
             ? <div className="pe-checkbox"
-                   id={containerId}
                    onClick={
                      scope === 'col'
                      ? this.selectAll

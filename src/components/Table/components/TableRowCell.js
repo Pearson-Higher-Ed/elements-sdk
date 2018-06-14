@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../../Icon';
 
-const TableRowCell = ({ children, inputId, containerId, cellId, labelledbyCellId, ariaLabel, alignCell, inputLabel }, { selectable }) => {
+const TableRowCell = ({ children, inputId, cellId, labelledbyCellId, ariaLabel, alignCell, inputLabel }, { selectable }) => {
   const columnAlignment = alignCell === 'center' ? ' pe-table__center'
                           : alignCell === 'right'
                           ? ' pe-table__right'
                           : null,
-        labelledby = containerId && labelledbyCellId 
-                  ? containerId + " " + labelledbyCellId
+        labelledby = labelledbyCellId 
+                  ? labelledbyCellId
                   : null,
         arialabel = ariaLabel
                   ? ariaLabel
@@ -34,7 +34,6 @@ export default TableRowCell;
 TableRowCell.propTypes = {
   children: PropTypes.node,
   inputId: PropTypes.string,
-  containerId: PropTypes.string,
   cellId: PropTypes.string,
   labelledbyCellId: PropTypes.string,
   alignCell: PropTypes.oneOf(['center', 'right'])
