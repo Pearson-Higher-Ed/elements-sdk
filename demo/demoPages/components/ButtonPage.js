@@ -47,7 +47,7 @@ const ButtonPage = () => (
           <h3>Disabled Button:</h3>
           <Button disabled>Disabled</Button>
           <p className="code">{'<Button disabled>Disabled</Button>'}</p>
-          
+
           <br />
 
 		  <h3>Disabled Primary Button:</h3>
