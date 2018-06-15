@@ -43,6 +43,7 @@
 
   }
   input[type="checkbox"] ~ label {
+    min-height: 18px;
     display: inline-block;
     padding-left: $checkbox-box-width + $checkbox-box-rightMargin;
     line-height: 18px;
