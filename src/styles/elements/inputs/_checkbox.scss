@@ -33,6 +33,8 @@
     &:focus ~ span {
       border        : $checkbox-box-border-focus;
       border-radius : $checkbox-box-borderRadius;
+      outline: 2px solid $pe-focus-color;
+	  outline-offset: 4px;
     }
     &:disabled ~ span {
       background-color : $checkbox-box-disabled-color;

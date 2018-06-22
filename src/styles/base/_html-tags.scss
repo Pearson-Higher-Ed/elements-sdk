@@ -164,14 +164,33 @@ table {
 a {
   color: $pe-color-digital-pearson-blue;
   text-decoration: underline;
+  position:relative;
 
   &:hover,
   &:active,
-  &:focus,
   &.active {
     color: $pe-color-ink-blue;
     text-decoration: none;
   }
+  &:focus {
+    color: $pe-color-ink-blue;
+    text-decoration: none;
+    outline: 0;
+    
+      &:after {
+        content: "";
+        border: 2px solid $pe-focus-color;
+        position: absolute;
+        border-radius: 4px;
+        width: calc(100% + 4px); //2px offset
+        height: calc(100% + 4px);
+        top: -4px; //offset plus border width
+	    left: -4px;
+        z-index: 1;
+  	}
+   }
+  
+  
 }
 
 // Body copy
@@ -236,4 +255,10 @@ pre,
 code,
 kbd {
   font-family: $pe-font-family-mono;
+}
+
+//==== generic focus override =======
+:focus {
+	outline: 2px solid $pe-focus-color;
+	outline-offset: 4px;
 }

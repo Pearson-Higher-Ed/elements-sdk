@@ -48,6 +48,8 @@
         width: 100%;
         text-align: left;
         box-sizing: border-box;
+        position:relative;
+        display: block;
 
         &.checkmark {
           padding: 4px 16px;
@@ -58,6 +60,21 @@
         span.icon-padding {
             padding-left: 8px;
         }
+        
+        &:focus {
+        	outline:0;
+        	&:after {
+        	  content: "";
+        	  border: 2px solid $pe-focus-color;
+        	  position: absolute;
+        	  border-radius: 4px;
+        	  width: calc(100%);
+        	  height: calc(100% + 4px);
+      		  top: -2px;
+	    	  left: 0px;
+        	  z-index: 1;
+        	}
+        }
       }
 
       a {
@@ -65,9 +82,25 @@
         text-decoration: none;
         padding: 4px 24px;
         display: block;
-
+        position:relative;
+		box-sizing: border-box;
         &.checkmark {
           padding: 4px 42px;
+        }
+        
+        &:focus {
+        	outline:0;
+        	&:after {
+        	  content: "";
+        	  border: 2px solid $pe-focus-color;
+        	  position: absolute;
+        	  border-radius: 4px;
+        	  width: calc(100%);
+        	  height: calc(100% + 4px);
+      		  top: -2px;
+	    	  left: 0px;
+        	  z-index: 1;
+        	}
         }
       }
     }

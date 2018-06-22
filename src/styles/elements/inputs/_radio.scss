@@ -37,6 +37,8 @@
       color         : $radio-dot-color;
       border        : $radio-border-focus;
       border-radius : $radio-borderRadius;
+      outline: 2px solid $pe-focus-color;
+  	  outline-offset: 4px;
     }
     &:disabled ~ span {
       color            : $radio-dot-color-disabled;

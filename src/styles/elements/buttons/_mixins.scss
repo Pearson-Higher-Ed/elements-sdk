@@ -13,10 +13,8 @@
   background-color: $bg;
   border-radius   : $pe-btn-border-radius;
   text-decoration : none;
-  text-overflow   : ellipsis;
-  white-space     : nowrap;
-  overflow        : hidden;
   border		  : $border;
+  position: relative;
 
   &:hover,
   &:active {
@@ -25,9 +23,22 @@
     border			 : $border-hover;
   }
   &:focus {
-	outline: 1px solid $pe-color-hot-pink;
-	outline-offset: 2px;
-  }
+    color            : $hover-color;
+    background-color : $hover-bg;
+    border			 : $border-hover;
+    outline          : 0;
+      &:after {
+        content: "";
+        border: 2px solid $pe-focus-color;
+        position: absolute;
+        border-radius: 2*$pe-btn-border-radius;
+        width: calc(100% + 8px); //4px offset
+        height: calc(100% + 8px);
+        top: -6px; //offset plus border width
+	    left: -6px;
+        z-index: 1;
+  	}
+   }
   
   &:disabled,
   &.pe-btn--disabled,
@@ -38,5 +49,13 @@
     background-color: $disabled-bg;
     box-shadow      : none;
     text-decoration : none;
+  }
+  //====== overflow moved to a span inside btn to accomodate focus outline ======
+  span {
+  	display         : block;
+  	max-width       : 100%;
+  	text-overflow   : ellipsis;
+    white-space     : nowrap;
+    overflow        : hidden;
   }
 }

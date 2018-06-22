@@ -27,11 +27,12 @@
     @extend %multiLineText;
     background-color : $pe-color-white;
     &:focus {
-      outline    : none;
       border     : $textInput-basic-focus-border;
-      box-shadow : $textInput-basic-focus-boxShadow;
       resize     : both;
       overflow   : auto;
+      outline: 2px solid $pe-focus-color;
+	  outline-offset: 4px;
+   
     }
   }
 
@@ -40,11 +41,11 @@
     background-color : $pe-color-white;
     border           : $textInput-basic-error-border;
     &:focus {
-      outline    : none;
       resize     : both;
       overflow   : auto;
-      box-shadow : $textInput-basic-error-focus-boxShadow;
       border     : $textInput-basic-error-border;
+      outline    : 2px solid $pe-focus-color;
+	  outline-offset: 4px;
     }
   }
 

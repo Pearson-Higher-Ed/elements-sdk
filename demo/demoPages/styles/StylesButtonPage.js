@@ -1,6 +1,6 @@
 import React from 'react';
 
-const marginFour = {marginRight: 4};
+const marginFour = {marginRight: 14};
 
 const StylesButtonPage = () => (
   <div style={{padding: 14}}>
@@ -20,7 +20,7 @@ const StylesButtonPage = () => (
     <h2>Elements</h2>
 
     <p style={{marginBottom: 12}}>Button classes can be used with {`<div>`}, {`<span>`}, {`<a>`}, {`<button>`}, and {`<input>`} elements. But try very hard not to use button styles on divs, spans, or links.</p>
-      <div className="pe-btn" tabindex="0" role="button" style={marginFour}>Div</div>
+      <div className="pe-btn" tabIndex="0" role="button" style={marginFour}>Div</div>
       <a href="#void" className="pe-btn" role="button" style={marginFour}>Link</a>
       <a href="#void" className="pe-btn__primary--btn_xlarge" role="button" style={marginFour}>Large Primary Link</a>
       <button type="button" className="pe-btn" style={marginFour}>Button</button>
@@ -82,11 +82,11 @@ const StylesButtonPage = () => (
 
     <h2>Text overflow</h2>
 
-    <p>When the width of the buttons text exceeds the container width, it will be truncated with an ellipsis. <strong>However, you should generally avoid using long text strings with buttons.</strong></p>
-    <button className="pe-btn" style={{maxWidth: 200, marginBottom: 10}}>The quick brown fox jumps over the lazy dog.</button>
+    <p>When the width of the buttons text exceeds the container width, it will be truncated with an ellipsis. The text must be surrounded by a span tag. <strong>However, you should generally avoid using long text strings with buttons.</strong></p>
+    <button className="pe-btn" style={{maxWidth: 200, marginBottom: 10}}><span>The quick brown fox jumps over the lazy dog.</span></button>
 
     <p className="code">
-      {`<button class="pe-btn" style="max-width: 200px">The quick brown fox jumps over the lazy dog.</button>`}
+      {`<button class="pe-btn" style="max-width: 200px"><span>The quick brown fox jumps over the lazy dog.</span></button>`}
     </p>
 
     <h2 id="uibuttons">UI Buttons</h2>

@@ -13,9 +13,9 @@
     }
 
     &:focus {
-      outline    : none;
-      border     : $textInput-basic-focus-border;
-      box-shadow : $textInput-basic-focus-boxShadow;
+      outline        : 2px solid $pe-focus-color;
+      outline-offset : 4px;
+      box-shadow: none;
     }
   }
 
@@ -35,8 +35,9 @@
     }
 
     &:focus {
-      outline    : none;
-      box-shadow : $textInput-basic-error-focus-boxShadow;
+      outline        : 2px solid $pe-focus-color;
+      outline-offset : 4px;
+      box-shadow: none;
     }
   }
 

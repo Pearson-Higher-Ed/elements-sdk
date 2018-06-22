@@ -552,7 +552,7 @@ const StylesInputsPage = () => (
     <h2>Multiple line text - readonly</h2>
 
     <label className="pe-textLabelInput__label" htmlFor="andale">Multi-line label</label>
-    <textarea className="pe-multiLineText--readOnly" id="andale" cols="30" rows="5" readonly>Read this</textarea>
+    <textarea readOnly={true} className="pe-multiLineText--readOnly" id="andale" cols="30" rows="5">Read this</textarea>
 
     <p className="code">
     {`<label class="pe-textLabelInput__label" for="andale">Multi-line label</label>`} <br/>
