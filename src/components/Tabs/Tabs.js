@@ -26,6 +26,7 @@ export default class Tabs extends Component {
 
     this.state = {
       selected: this.props.selected,
+      focused: this.props.selected,
       tabId: '',
       panelId: ''
     }
@@ -52,18 +53,22 @@ export default class Tabs extends Component {
     const lastTabArray = tabArray.length - 1;
 
     parentUl.addEventListener("keydown", (event) => {
-      const selectedIndex = this.state.selected;
-      if (selectedIndex === 0 && event.keyCode === 37) {
+      const focusedIndex = this.state.focused;
+      if (focusedIndex === 0 && event.keyCode === 37) {
         tabArray[lastTabArray].focus();
+        this.setState({ focused: lastTabArray });
       }
-      if (selectedIndex === lastTabArray && event.keyCode === 39) {
+      if (focusedIndex === lastTabArray && event.keyCode === 39) {
         tabArray[0].focus();
+        this.setState({ focused: 0 });
       }
-      if (selectedIndex !== 0 && event.keyCode === 37) {
-        tabArray[selectedIndex - 1].focus();
+      if (focusedIndex !== 0 && event.keyCode === 37) {
+        tabArray[focusedIndex - 1].focus();
+        this.setState({ focused: (focusedIndex - 1) });
       }
-      if (selectedIndex !== lastTabArray && event.keyCode === 39) {
-        tabArray[selectedIndex + 1].focus();
+      if (focusedIndex !== lastTabArray && event.keyCode === 39) {
+        tabArray[focusedIndex + 1].focus();
+        this.setState({ focused: (focusedIndex + 1) });
       }
       if (event.keyCode === 13 || 32) {
         const current = tabArray.indexOf(event.target);
@@ -73,12 +78,6 @@ export default class Tabs extends Component {
 
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      selected: nextProps.selected
-    });
-  }
-
   renderLabels() {
     function labels(child, i) {
       let activeClass = this.state.selected === i ? 'activeTab' : '';
@@ -86,7 +85,7 @@ export default class Tabs extends Component {
       let ariaSelected = activeClass ? true : false;
       
       return (
-        <button onFocus={() => this.setState({ tabId: num+`_${uuid.v1()}`,  panelId: num+`_${uuid.v4()}`})}
+        <button
           className={`pe-tabs--btn ${activeClass}`} 
           id={this.state.tabId+i} 
           role="tab"

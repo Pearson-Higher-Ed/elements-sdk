@@ -66,7 +66,6 @@ const TabsPage = () => (
         <h3>Pane Props</h3>
         <h4>Required:</h4>
         <ul>
-          <li className="li-props">label:String === "Your Pane label"</li>
           <li className="li-props">children:Element</li>
         </ul>
         <h4>Optional:</h4>

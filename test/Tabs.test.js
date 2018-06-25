@@ -14,7 +14,7 @@ describe('Tabs', () => {
 
   describe('Tabs tests', function () {
 
-    it('renders a ul', function () {
+    it('renders a div', function () {
       const wrapper = shallow(<Tabs>
                                <Pane label="Tab 1">
                                  <div>Content 1</div>
@@ -23,7 +23,7 @@ describe('Tabs', () => {
                                  <div>Content 2</div>
                                </Pane>
                              </Tabs>);
-      expect(wrapper.node.props.children[0].type).toEqual('ul');
+      expect(wrapper.node.props.children[0].type).toEqual('div');
     });
 
     it('sets the correct selected tab', function () {
