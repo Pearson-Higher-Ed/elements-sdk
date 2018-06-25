@@ -15,7 +15,7 @@ const TabsPage = () => (
     <h2><a href="http://pearson-higher-ed.github.io/design/c/tab-navigation/beta/">Tabs</a></h2>
     <div className="elementContainer">
       <Tabs
-        callback={testHandler}
+        callback={testHandler} bar
       >
         <Pane label="Tabby">
           <div style={pad}>A bunch of words in Tab 1</div>
@@ -30,7 +30,7 @@ const TabsPage = () => (
 
       <h3>Example usage</h3>
         <p className="code">
-          {`<Tabs>`} <br/>
+          {`<Tabs bar>`} <br/>
           <div style={eight}>{`<Pane label="Tabby">`} <br/> </div>
           <div style={sixteen}>{`<div>Tab 1</div>`} <br/> </div>
           <div style={eight}>{`</Pane>`} <br/> </div>
@@ -59,6 +59,8 @@ const TabsPage = () => (
           <li className="li-props">light:Boolean === {`<Tabs light>`}</li>
           <li className="li-props">The light prop can be used to provide contrast
           on a darker background. <br/>Defaults to false.</li>
+          <li className="li-props">bar:Boolean === {`<Tabs bar>`}</li>
+          <li className="li-props">The bar prop can be used to provide bar style tabs. <br/>Defaults to false.</li>
         </ul>
 
         <h3>Pane Props</h3>

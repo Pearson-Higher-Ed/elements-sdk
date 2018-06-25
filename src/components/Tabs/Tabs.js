@@ -12,7 +12,8 @@ export default class Tabs extends Component {
       PropTypes.array,
       PropTypes.element
     ]).isRequired,
-    light: PropTypes.bool
+    light: PropTypes.bool,
+    bar: PropTypes.bool
   }
 
   static defaultProps = {
@@ -25,17 +26,18 @@ export default class Tabs extends Component {
 
     this.state = {
       selected: this.props.selected,
-      tabId: ''
+      focused: this.props.selected,
+      tabId: '',
+      panelId: ''
     }
   };
 
   getChildContext() {
-    return { id: this.state.tabId };
+    return { tabid: this.state.tabId.concat('', this.state.selected),
+             panelid: this.state.panelId.concat('', this.state.selected) };
   }
 
-  handleClick(i, event) {
-    event.preventDefault();
-
+  handleClick(i) {
     if (this.props.callback !== undefined) {
       this.props.callback(i);
     }
@@ -51,58 +53,55 @@ export default class Tabs extends Component {
     const lastTabArray = tabArray.length - 1;
 
     parentUl.addEventListener("keydown", (event) => {
-      const selectedIndex = this.state.selected;
-      if (selectedIndex === 0 && event.keyCode === 37) {
+      const focusedIndex = this.state.focused;
+      if (focusedIndex === 0 && event.keyCode === 37) {
         tabArray[lastTabArray].focus();
-        this.setState({ selected: lastTabArray });
+        this.setState({ focused: lastTabArray });
       }
-      if (selectedIndex === lastTabArray && event.keyCode === 39) {
+      if (focusedIndex === lastTabArray && event.keyCode === 39) {
         tabArray[0].focus();
-        this.setState({ selected: 0 });
+        this.setState({ focused: 0 });
       }
-      if (selectedIndex !== 0 && event.keyCode === 37) {
-        tabArray[selectedIndex - 1].focus();
-        this.setState({ selected: selectedIndex - 1 });
+      if (focusedIndex !== 0 && event.keyCode === 37) {
+        tabArray[focusedIndex - 1].focus();
+        this.setState({ focused: (focusedIndex - 1) });
       }
-      if (selectedIndex !== lastTabArray && event.keyCode === 39) {
-        tabArray[selectedIndex + 1].focus();
-        this.setState({ selected: selectedIndex + 1 });
+      if (focusedIndex !== lastTabArray && event.keyCode === 39) {
+        tabArray[focusedIndex + 1].focus();
+        this.setState({ focused: (focusedIndex + 1) });
+      }
+      if (event.keyCode === 13 || 32) {
+        const current = tabArray.indexOf(event.target);
+        this.setState({ selected: current });
       }
     }, true)
 
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      selected: nextProps.selected
-    });
-  }
-
   renderLabels() {
     function labels(child, i) {
       let activeClass = this.state.selected === i ? 'activeTab' : '';
-      let tabI = activeClass ? "0" : "-1";
+      let tabI = activeClass ? null : '-1';
       let ariaSelected = activeClass ? true : false;
-      const themeCheck = this.props.light ? 'light' : '';
-
+      
       return (
-        <li key={i} role="presentation" onFocus={() => this.setState({ tabId: `_${uuid.v1()}`})}>
-          <a href="#"
-             role="tab"
-             id={this.state.tabId}
-             tabIndex={tabI}
-             aria-selected={ariaSelected}
-             className={`pe-label ${themeCheck} ${activeClass}`}
-             onClick={this.handleClick.bind(this, i)}>
-               {child.props.label}
-          </a>
-        </li>
+        <button
+          className={`pe-tabs--btn ${activeClass}`} 
+          id={this.state.tabId+i} 
+          role="tab"
+          tabIndex={tabI}
+          aria-controls={this.state.panelId+i} 
+          aria-selected={ariaSelected}
+          onClick={this.handleClick.bind(this, i)}
+          >{child.props.label}  
+        </button>
       );
     }
+    const themeCheck = this.props.light ? 'light' : this.props.bar ? 'bar': '';
     return (
-      <ul className="tabs__labels" role="tablist" ref={(ul) => { this.doc = ul; }}>
+      <div className={`pe-tabs ${themeCheck}`} role="tablist" ref={(div) => { this.doc = div; }} onFocus={() => this.setState({ tabId: `_${uuid.v1()}`,  panelId: `_${uuid.v4()}`})}>
         {this.props.children.map(labels.bind(this))}
-      </ul>
+      </div>
     );
   }
 
@@ -126,5 +125,6 @@ export default class Tabs extends Component {
 };
 
 Tabs.childContextTypes = {
-  id: PropTypes.string
+  tabid: PropTypes.string,
+  panelid: PropTypes.string
 }
