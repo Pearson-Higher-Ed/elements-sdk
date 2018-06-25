@@ -52,10 +52,10 @@ export default class TableHeaderCell extends Component {
             alignCell, scope } = this.props;
     const { selectable, sortable } = this.context;
     const { iconName } = this.isControlled() ? this.props : this.state;
-    const sortClass = sortable ? 'pe-table__sortable' :'';
+    const sortClass = sortable && columnSort ? 'pe-table__sortable' : '';
     const columnAlignment = (alignCell === 'center' || alignCell === 'right')
-                            ? ' pe-table__' + alignCell :'';
-    const sortCheck = columnSort ? columnSort :null;
+                            ? ' pe-table__' + alignCell : '';
+    const sortCheck =  columnSort ? columnSort :null;
     const arialabel = ariaLabel
                   ? ariaLabel
                   : null;
@@ -74,7 +74,10 @@ export default class TableHeaderCell extends Component {
             ? 'none'
             : null}
           columnSort={sortCheck}
-          className={`${sortClass}${columnAlignment}`}
+          className={
+            sortClass !='' || columnAlignment != ''
+            ? `${sortClass}${columnAlignment}`
+            : null}
           scope={scope}
       >
         {

@@ -96,9 +96,20 @@
 }
 
 /* sortables */
-.pe-table th.pe-table__sortable span,
-.pe-table th button {
-  vertical-align: top;
+/* enlarge the clickable area */
+.pe-table th.pe-table__sortable {
+  padding: 0;
+}
+
+th.pe-table__sortable button {
+  box-sizing: border-box;
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  padding: $pe-table-paddings;
+  text-align: left;
+  cursor: pointer;
+  font-weight: $pe-label-bold;
 }
   .pe-table th span {
     line-height: 23px;
@@ -120,15 +131,6 @@
   button svg {
     color: $pe-table-text-color;
   }
-}
-
-th.pe-table__sortable button {
-  border: 0;
-  background-color: transparent;
-  padding: 0;
-  text-align: left;
-  cursor: pointer;
-  font-weight: $pe-label-bold;
 }
 
 /* alignments */
