@@ -4,23 +4,36 @@ import PropTypes from 'prop-types';
 const TableRow = ({ children }) => {
 
   const selectedRow = () => {
-    const tables = document.querySelectorAll('.pe-table--selectable');
-    for (let i=0; i<tables.length; i++) {
-      let table = tables[i];
-      let tbody = table.getElementsByTagName('tbody')[0];
-      let trs = [].slice.call(tbody.getElementsByTagName('TR'));
+    const tables = [].slice.call(document.getElementsByClassName('pe-table--selectable'));
+
+    tables.forEach((table) => {
+      let thead = table.getElementsByTagName('thead')[0],
+          tbody = table.getElementsByTagName('tbody')[0];
+      let thInput = thead.getElementsByTagName('INPUT')[0],
+          trs = [].slice.call(tbody.getElementsByTagName('TR'));
+      let trInputs = trs.map(tr => tr.getElementsByTagName('INPUT')[0]);
+      
+      if(trInputs.every(checkInput)) {
+        thInput.checked = true;
+      } else {
+        thInput.checked = false;
+      }
 
       trs.forEach((tr) => {
         let input = tr.getElementsByTagName('INPUT')[0];
-        if (input && input.type === 'checkbox') {
-          if (input.checked) {
+        if (checkInput(input)) {
             tr.classList.add('selected');
-           } else {
+          } else {
             tr.classList.remove('selected');
           }
-        }
       });
-    }
+    });
+
+    function checkInput(input) {
+      if (input && input.type === 'checkbox') {
+          return input.checked;
+      }
+    } 
 }
 
   return (
