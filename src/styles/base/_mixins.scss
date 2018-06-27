@@ -33,8 +33,6 @@
           content: "";
           position: absolute;
           border-radius: $pe-focus-cornerRadius;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
           width: calc(100% + 2*$pe-focus-cornerRadius);
           height: calc(100% + 2*$pe-focus-cornerRadius);
           top: -$pe-focus-cornerRadius;
