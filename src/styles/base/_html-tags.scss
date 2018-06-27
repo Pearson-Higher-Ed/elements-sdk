@@ -175,19 +175,8 @@ a {
   &:focus {
     color: $pe-color-ink-blue;
     text-decoration: none;
-    outline: 0;
-    
-      &:after {
-        content: "";
-        border: 2px solid $pe-focus-color;
-        position: absolute;
-        border-radius: 4px;
-        width: calc(100% + 4px); //2px offset
-        height: calc(100% + 4px);
-        top: -4px; //offset plus border width
-	    left: -4px;
-        z-index: 1;
-  	}
+    outline: 2px solid $pe-focus-color;
+	outline-offset: 2px;
    }
   
   
