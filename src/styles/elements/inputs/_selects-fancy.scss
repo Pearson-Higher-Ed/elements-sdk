@@ -243,7 +243,7 @@
         opacity : 0;
       }
     }
-
+	
 
     .pe-selectInput-fancy-readonly {
       @extend %pe-textInput;
@@ -255,5 +255,7 @@
       border              : none;
       border-radius       : 0px;
     }
-
+	select:focus+.pe-input_underline-readonly {
+		transform : scale(1);
+	}
 };

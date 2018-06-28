@@ -27,9 +27,8 @@
     @extend %multiLineText;
     background-color : $pe-color-white;
     &:focus {
-      outline    : none;
+      @include focusOutline;
       border     : $textInput-basic-focus-border;
-      box-shadow : $textInput-basic-focus-boxShadow;
       resize     : both;
       overflow   : auto;
     }
@@ -40,10 +39,9 @@
     background-color : $pe-color-white;
     border           : $textInput-basic-error-border;
     &:focus {
-      outline    : none;
+      @include focusOutline;
       resize     : both;
       overflow   : auto;
-      box-shadow : $textInput-basic-error-focus-boxShadow;
       border     : $textInput-basic-error-border;
     }
   }
@@ -60,7 +58,7 @@
     background-color : $pe-color-white;
     border : none;
     &:focus {
-      outline : none;
+      @include focusOutline;
     }
   }
 

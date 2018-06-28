@@ -13,9 +13,8 @@
     }
 
     &:focus {
-      outline    : none;
       border     : $textInput-basic-focus-border;
-      box-shadow : $textInput-basic-focus-boxShadow;
+      @include focusOutline;
     }
   }
 
@@ -35,8 +34,7 @@
     }
 
     &:focus {
-      outline    : none;
-      box-shadow : $textInput-basic-error-focus-boxShadow;
+      @include focusOutline;
     }
   }
 
@@ -49,5 +47,25 @@
     background-color : $pe-color-moonlight;
     margin-top       : $textInput-basic-marginTop;
   }
+
+};
+
+@mixin textInputBasicReadonly() {
+
+  .pe-textInput--basic_readonly {
+    @extend %abstract;
+    border     : $textInput-readonly-border;
+    margin-top : $textInput-basic-marginTop;
+
+    @include pe-placeholder {
+      font-size : $textInput-placeholder-font-size;
+      color     : $textInput-placeholder-color;
+    }
+
+    &:focus {
+      @include focusOutline;
+    }
+  }
+
 
 };

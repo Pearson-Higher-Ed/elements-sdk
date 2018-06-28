@@ -16,3 +16,24 @@
 		margin-bottom: pxToRem($margin-bottom);
 	}
 }
+
+// focus styles
+
+@mixin focusOutline {
+	box-shadow:none;
+	outline: 2px solid $pe-focus-color;
+	outline-offset: 4px;
+}
+@mixin focusPseudoOutline($radius: 4px, $widthOffset: 10px, $heightOffset: 10px, $top: -6px, $left: -6px) {
+        &:after {
+          border: 2px solid $pe-focus-color;
+          content: "";
+          position: absolute;
+          border-radius: $radius;
+          width: calc(100% + #{$widthOffset});
+          height: calc(100% + #{$heightOffset});
+          top: $top;
+          left: $left;
+          z-index: 1;
+        }
+}

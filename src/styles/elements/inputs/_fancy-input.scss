@@ -137,11 +137,24 @@
     @include pe-placeholder {
       font-size : $textInput-placeholder-font-size;
     }
-
     &:focus {
       outline : none;
     }
   }
+  .pe-input_underline-readonly {
+      background-color   : $textInput-disable-border-bottom-color;
+      display            : block;
+      height             : $textInput-error-focus-border-bottom;
+      -webkit-transform  : scale(0, 1);
+      transform          : scale(0, 1);
+      -webkit-transition : $textInput-animation;
+      transition         : $textInput-animation;
+      width              : $textInput-width;
+      margin-top         : $textInput-focus-marginTop;
+    }
+    input:focus+.pe-input_underline-readonly {
+      transform : scale(1);
+    }
 };
 
 

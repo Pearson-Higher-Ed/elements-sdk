@@ -33,6 +33,7 @@
     &:focus ~ span {
       border        : $checkbox-box-border-focus;
       border-radius : $checkbox-box-borderRadius;
+      @include focusOutline;
     }
     &:disabled ~ span {
       background-color : $checkbox-box-disabled-color;
