@@ -18,27 +18,21 @@
 }
 
 // focus styles
-
 @mixin focusOutline {
 	box-shadow:none;
-	outline: $pe-focus-strokeWidth solid $pe-focus-color;
-	outline-offset: 2*$pe-focus-strokeWidth;
+	outline: 2px solid $pe-focus-color;
+	outline-offset: 4px;
 }
-@mixin focusPseudoOutline {
-	box-shadow: none;
-    outline: none;
-
-        &:after {
-          border: $pe-focus-strokeWidth solid $pe-focus-color;
+@mixin focusPseudoOutline($radius: 4px, $widthOffset: 10px, $heightOffset: 10px, $top: -6px, $left: -6px) {
+    &:after {
+          border: 2px solid $pe-focus-color;
           content: "";
           position: absolute;
-          border-radius: $pe-focus-cornerRadius;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
-          width: calc(100% + 2*$pe-focus-cornerRadius);
-          height: calc(100% + 2*$pe-focus-cornerRadius);
-          top: -$pe-focus-cornerRadius;
-          left: -$pe-focus-cornerRadius;
-          z-index: -100;
-        }
+          border-radius: $radius;
+          width: calc(100% + #{$widthOffset});
+          height: calc(100% + #{$heightOffset});
+          top: $top;
+          left: $left;
+          z-index: 1;
+    }
 }

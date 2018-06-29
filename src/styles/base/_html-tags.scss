@@ -175,8 +175,7 @@ a {
   &:focus {
     color: $pe-color-ink-blue;
     text-decoration: none;
-    outline: 2px solid $pe-focus-color;
-	outline-offset: 2px;
+    @include focusOutline;
    }
   
   
@@ -248,6 +247,5 @@ kbd {
 
 //==== generic focus override =======
 :focus {
-	outline: 2px solid $pe-focus-color;
-	outline-offset: 4px;
+	@include focusOutline;
 }

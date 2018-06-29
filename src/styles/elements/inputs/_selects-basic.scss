@@ -6,10 +6,6 @@
     border     : $textInput-basic-border;
     padding    : 0px;
     margin-top : $textInput-basic-marginTop;
-    
-    &:focus-within {
-     border: $textInput-basic-focus-border;
-    }
   }
 
   .pe-select-container svg {
@@ -23,10 +19,8 @@
     padding: 0 14px;
 
     &:focus {
-      box-shadow    : none;
-      outline       : 2px solid $pe-focus-color;
-	  outline-offset: 4px;
-      
+      border     : $textInput-basic-focus-border;
+      @include focusOutline;
       &::-ms-value {
     		background : transparent;
     		color      : #222;
@@ -50,12 +44,9 @@
   // Styles for focus...
   .pe-select-container-focus {
     @extend %abstract, %container-extend;
-    border     : $textInput-basic-border;
+    border     : 1px solid transparent;
     padding    : 0px;
     margin-top : $textInput-basic-marginTop;
-    &:focus-within {
-     border: $textInput-basic-focus-border;
-    }
   }
 
   .pe-select-container-focus svg {
@@ -67,10 +58,9 @@
     padding      : .3em;
     padding-left : 14px;
     &:focus {
-      box-shadow    : none;
-      outline       : 2px solid $pe-focus-color;
-	  outline-offset: 4px;
-	  
+      border     : $textInput-basic-focus-border;
+      @include focusOutline;
+      
       &::-ms-value {
         background : transparent;
         color      : #222;
@@ -103,10 +93,9 @@
     padding-left : 14px;
 
     &:focus {
-       border        : 1px solid transparent;
-       box-shadow    : none;
-       outline       : 2px solid $pe-focus-color;
-	   outline-offset: 4px;
+
+      border     : $textInput-basic-error-border;
+	  @include focusOutline;
 	  
       &::-ms-value {
     		background : transparent;
@@ -121,7 +110,7 @@
   // Styles for focus...
   .pe-select-container-focus-error {
     @extend %abstract, %container-extend;
-    border     : $textInput-basic-error-border;
+    border     : 1px solid transparent;
     padding    : 0px;
     margin-top : $textInput-basic-marginTop;
   }
@@ -135,11 +124,9 @@
     padding      : .3em;
     padding-left : 14px;
     &:focus {
-       border        : 1px solid transparent;
-       box-shadow    : none;
-       outline       : 2px solid $pe-focus-color;
-	   outline-offset: 4px;
-	  
+      border     : $textInput-basic-error-border;
+      @include focusOutline;
+      
       &::-ms-value {
         background : transparent;
         color      : #222;
@@ -163,10 +150,8 @@
     }
 
     &:focus {
-      border        : 1px solid transparent;
-       box-shadow    : none;
-       outline       : 2px solid $pe-focus-color;
-	   outline-offset: 4px;
+      outline    : none;
+      box-shadow : $textInput-basic-error-focus-boxShadow;
     }
     &:-moz-focusring {
       color       : transparent;
@@ -201,10 +186,9 @@
     @extend %container-extend-select;
         border  : 1px solid $pe-color-concrete;
         &:focus {
-            border        : 1px solid transparent;
-      	 	box-shadow    : none;
-       		outline       : 2px solid $pe-focus-color;
-	   		outline-offset: 4px;
+              border     : $textInput-basic-error-border;
+              @include focusOutline;
+              
               &::-ms-value {
                 background : transparent;
                 color      : #222;
@@ -241,10 +225,9 @@
     padding      : .3em;
     padding-left : 14px;
     &:focus {
-       border        : none;
-       box-shadow    : none;
-       outline       : 2px solid $pe-focus-color;
-	   outline-offset: 4px;
+      border     : $textInput-readonly-border;
+      @include focusOutline;
+      
       &::-ms-value {
         background : transparent;
         color      : #222;

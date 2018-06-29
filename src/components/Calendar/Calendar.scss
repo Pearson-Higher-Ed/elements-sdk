@@ -1,4 +1,5 @@
 @import '../../styles/elements/color/_color';
+@import '../../styles/base/mixins';
 
 .pe-calendar {
   box-sizing: content-box;
@@ -31,17 +32,12 @@
       width: 40px;
     }
 
-    &:hover, &:focus {
+    &:hover {
       color: $pe-color-charcoal;
     }
     &:focus {
-    	&:after {
-    		border-radius:0;
-    		width: calc(100% - 4px);
-    		height: calc(100% - 4px);
-    		top:0;
-    		left:0;
-    	}
+      color: $pe-color-charcoal;
+    	@include focusPseudoOutline(0px, -4px, -4px, 0px, 0px);
     }
   }
   .pe-cal-cell {

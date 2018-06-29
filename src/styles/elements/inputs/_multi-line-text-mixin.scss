@@ -30,8 +30,7 @@
       border     : $textInput-basic-focus-border;
       resize     : both;
       overflow   : auto;
-      outline: 2px solid $pe-focus-color;
-	  outline-offset: 4px;
+      @include focusOutline;
    
     }
   }
@@ -44,8 +43,7 @@
       resize     : both;
       overflow   : auto;
       border     : $textInput-basic-error-border;
-      outline    : 2px solid $pe-focus-color;
-	  outline-offset: 4px;
+      @include focusOutline;
     }
   }
 
@@ -61,7 +59,7 @@
     background-color : $pe-color-white;
     border : none;
     &:focus {
-      outline : none;
+      @include focusOutline;
     }
   }
 

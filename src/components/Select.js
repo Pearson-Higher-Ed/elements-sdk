@@ -98,11 +98,11 @@ function _applySelectStyles() {
           case 'readOnly':
             labelStyle      = 'pe-textLabelInput__label';
             selectStyle     = fancy ? 'pe-selectInput-fancy-readonly' : 'pe-select-container-readonly';
-            spanStyle       = '';
+            spanStyle       = fancy ? 'pe-input_underline-readonly'         : '';
             disabledStyle   = 'disabled';
             containerStyle  = fancy ? 'pe-select-container-fancy-readonly' : 'pe-select-container-readonly';
             labelFocusStyle = 'pe-textLabelInput__label';
-            containerFocusStyle = fancy ? 'pe-select-container-fancy-readonly' : 'pe-select-container-readonly';
+            containerFocusStyle  = fancy ? 'pe-select-container-fancy-readonly' : 'pe-select-container-readonly';
             break;
           default:
             labelStyle      = 'pe-textLabelInput__label';

@@ -37,7 +37,9 @@
       &:hover, &:focus {
         background-color: $pe-color-moonlight;
       }
-
+	  &:focus-within {
+        background-color: $pe-color-moonlight;
+      }
 
       button[role=menuitem] {
         background-color: transparent;
@@ -63,17 +65,7 @@
         
         &:focus {
         	outline:0;
-        	&:after {
-        	  content: "";
-        	  border: 2px solid $pe-focus-color;
-        	  position: absolute;
-        	  border-radius: 4px;
-        	  width: calc(100%);
-        	  height: calc(100% + 4px);
-      		  top: -2px;
-	    	  left: 0px;
-        	  z-index: 1;
-        	}
+        	@include focusPseudoOutline(4px, 0px, 4px, -2px, 0px);
         }
       }
 
@@ -90,17 +82,7 @@
         
         &:focus {
         	outline:0;
-        	&:after {
-        	  content: "";
-        	  border: 2px solid $pe-focus-color;
-        	  position: absolute;
-        	  border-radius: 4px;
-        	  width: calc(100%);
-        	  height: calc(100% + 4px);
-      		  top: -2px;
-	    	  left: 0px;
-        	  z-index: 1;
-        	}
+        	@include focusPseudoOutline(4px, 0px, 4px, -2px, 0px);
         }
       }
     }

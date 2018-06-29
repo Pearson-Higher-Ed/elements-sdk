@@ -13,9 +13,8 @@
     }
 
     &:focus {
-      outline        : 2px solid $pe-focus-color;
-      outline-offset : 4px;
-      box-shadow: none;
+      border     : $textInput-basic-focus-border;
+      @include focusOutline;
     }
   }
 
@@ -35,9 +34,7 @@
     }
 
     &:focus {
-      outline        : 2px solid $pe-focus-color;
-      outline-offset : 4px;
-      box-shadow: none;
+    	@include focusOutline;
     }
   }
 
@@ -51,4 +48,22 @@
     margin-top       : $textInput-basic-marginTop;
   }
 
+};
+
+@mixin textInputBasicReadonly() {
+
+  .pe-textInput--basic_readonly {
+    @extend %abstract;
+    border     : $textInput-readonly-border;
+    margin-top : $textInput-basic-marginTop;
+
+    @include pe-placeholder {
+      font-size : $textInput-placeholder-font-size;
+      color     : $textInput-placeholder-color;
+    }
+
+    &:focus {
+      @include focusOutline;
+    }
+  }
 };

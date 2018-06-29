@@ -16,7 +16,11 @@ export default class Pane extends Component {
   render() {
 
     return (
-      <div role="tabpanel" aria-describedby={this.context.id}>
+      <div
+        id={this.context.panelid}
+        role="tabpanel" 
+        aria-labelledby={this.context.tabid}
+        tabIndex="0">
         {this.props.children}
       </div>
     )
@@ -24,5 +28,6 @@ export default class Pane extends Component {
 }
 
 Pane.contextTypes = {
-  id: PropTypes.string
+  tabid: PropTypes.string,
+  panelid: PropTypes.string
 }

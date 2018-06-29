@@ -25,6 +25,7 @@
 @include textInputBasic();
 @include textInputBasicError();
 @include textInputBasicDisabled();
+@include textInputBasicReadonly();
 
 @include selectAbstracts();
 @include textInputBasicSelect();

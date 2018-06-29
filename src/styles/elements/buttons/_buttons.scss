@@ -39,18 +39,7 @@
   
   &:focus {
     outline: 0;
-    
-      &:after {
-        content: "";
-        border: 2px solid $pe-focus-color;
-        position: absolute;
-        border-radius: 2*$pe-btn-border-radius;
-        width: calc(100% + 8px); //4px offset
-        height: calc(100% + 8px);
-        top: -6px; //offset plus border width
-	    left: -6px;
-        z-index: 1;
-  	}
+      @include focusPseudoOutline(4px, 10px, 10px, -7px, -7px);
    }
   
 }
@@ -78,17 +67,7 @@
     color: $pe-color-ink-blue;
     text-decoration: none;
     outline:0;
-    &:after {
-        content: "";
-        border: 2px solid $pe-focus-color;
-        position: absolute;
-        border-radius: 2*$pe-btn-border-radius;
-        width: calc(100% + 8px); //4px offset
-        height: calc(100% + 8px);
-        top: -6px; //offset plus border width
-	    left: -6px;
-        z-index: 1;
-    }
+      @include focusPseudoOutline(4px, 10px, 10px, -7px, -7px);
   }
 }
 .pe-link--btn {
@@ -102,17 +81,7 @@
   &:focus {
     text-decoration: none;
     outline:0;
-    &:after {
-        content: "";
-        border: 2px solid $pe-focus-color;
-        position: absolute;
-        border-radius: 2*$pe-btn-border-radius;
-        width: calc(100% + 8px); //4px offset
-        height: calc(100% + 8px);
-        top: -6px; //offset plus border width
-	    left: -6px;
-        z-index: 1;
-    }
+      @include focusPseudoOutline(4px, 10px, 10px, -7px, -7px);
   }
 
   &:disabled {
@@ -386,8 +355,7 @@
 //=== if input tag has pe-btn class change focus ====
   input[class^="pe-btn"] {
   	&:focus {
-  		outline: 2px solid $pe-focus-color;
-  		outline-offset: 4px;
+  		@include focusOutline;
   	}
   }
 
