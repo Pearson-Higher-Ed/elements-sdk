@@ -31,7 +31,7 @@
     border			 : $border-hover;
     outline: 0;
     
-    @include focusPseudoOutline($pe-btn-border-radius, 10px, 10px, -5px, -5px);
+    @include focusPseudoOutline();
     
    }
 

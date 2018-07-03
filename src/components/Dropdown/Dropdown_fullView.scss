@@ -69,6 +69,7 @@
         }
         &:focus {
         	outline:0;
+        	background-color: $pe-color-moonlight;
         	@include focusPseudoOutline(4px, 0px, 4px, -2px, 0px);
         }
       }
@@ -86,6 +87,7 @@
         }
         &:focus {
         	outline:0;
+        	background-color: $pe-color-moonlight;
         	@include focusPseudoOutline(4px, 0px, 4px, -2px, 0px);
         }
         

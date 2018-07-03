@@ -18,7 +18,6 @@
 }
 
 // focus styles
-
 @mixin focusOutline {
 	box-shadow:none;
 	outline: 2px solid $pe-focus-color;
