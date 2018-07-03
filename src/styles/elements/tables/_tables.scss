@@ -39,6 +39,11 @@
       font-weight: $pe-label-bold;
       vertical-align: middle;
     }
+
+    .pe-table tbody th {
+      font-weight: 400;
+    }
+
     .pe-table td p {
       margin-bottom: 0;
     }
@@ -75,9 +80,9 @@
 }
 
 /* checkbox */
-.pe-table--selectable tbody tr td:first-child {
+.pe-table--selectable tr th:first-child, .pe-table--selectable tr td:first-child {
   width: 1px;
-  padding-right: 0;
+  white-space: nowrap;
 
   .pe-checkbox {
     min-width: 20px;
@@ -86,21 +91,31 @@
     /* so checkboxes can be clicked w/o JS */
     label {
       min-height: 18px;
-      padding-left: 18px;
     }
   }
 }
 
 /* sortables */
-.pe-table th.pe-table__sortable span,
-.pe-table th button {
-  vertical-align: top;
+/* enlarge the clickable area */
+.pe-table th.pe-table__sortable {
+  padding: 0;
+}
+
+th.pe-table__sortable button {
+  box-sizing: border-box;
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  padding: $pe-table-paddings;
+  text-align: left;
+  cursor: pointer;
+  font-weight: $pe-label-bold;
 }
   .pe-table th span {
     line-height: 23px;
     margin-right: -3px;
   }
-  .pe-table th button {
+  .pe-table th button svg {
     color: $pe-color-medium-gray; /* #6a7070; */
   }
 
@@ -113,11 +128,10 @@
   cursor: pointer;
 
   /* color the SVG */
-  button {
+  button svg {
     color: $pe-table-text-color;
   }
 }
-
 
 /* alignments */
 
