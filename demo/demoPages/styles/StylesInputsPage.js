@@ -297,8 +297,8 @@ const StylesInputsPage = () => (
       </select>
       <svg aria-hidden="true"
         focusable="false"
-        className="pe-icon--dropdown-open-18">
-      <use xlinkHref="#dropdown-open-18"></use>
+        className="pe-icon--dropdown-open-sm-24">
+      <use xlinkHref="#dropdown-open-sm-24"></use>
       </svg>
     </div>
 
@@ -331,8 +331,8 @@ const StylesInputsPage = () => (
       </select>
       <svg aria-hidden="true"
         focusable="false"
-        className="pe-icon--dropdown-open-18">
-      <use xlinkHref="#dropdown-open-18"></use>
+        className="pe-icon--dropdown-open-sm-24">
+      <use xlinkHref="#dropdown-open-sm-24"></use>
       </svg>
     </div>
     <p id="select_error" className="pe-input--error_message">error message</p>
@@ -366,8 +366,8 @@ const StylesInputsPage = () => (
       </select>
       <svg aria-hidden="true"
         focusable="false"
-        className="pe-icon--dropdown-open-18">
-      <use xlinkHref="#dropdown-open-18"></use>
+        className="pe-icon--dropdown-open-sm-24">
+      <use xlinkHref="#dropdown-open-sm-24"></use>
       </svg>
     </div>
     <p id="readonly_hint" className="pe-input--info_message">Only valid with coupon</p>
@@ -397,8 +397,8 @@ const StylesInputsPage = () => (
            <option>iphone</option>
          </select>
          <span className="pe-input_underline"></span>
-         <svg focusable="false" aria-hidden="true" className="pe-icon--dropdown-open-18">
-           <use xlinkHref="#dropdown-open-18"></use>
+         <svg focusable="false" aria-hidden="true" className="pe-icon--dropdown-open-sm-24">
+           <use xlinkHref="#dropdown-open-sm-24"></use>
          </svg>
       </div>
       <span id="hinty_mchint" className="pe-input--info_message">This is an info message</span>
@@ -429,8 +429,8 @@ const StylesInputsPage = () => (
           <option>iphone</option>
         </select>
         <span className="pe-inputError_underline"></span>
-        <svg focusable="false" aria-hidden="true" className="pe-icon--dropdown-open-18">
-          <use xlinkHref="#dropdown-open-18"></use>
+        <svg focusable="false" aria-hidden="true" className="pe-icon--dropdown-open-sm-24">
+          <use xlinkHref="#dropdown-open-sm-24"></use>
         </svg>
       </div>
       <span id="fancy_error" className="pe-input--error_message">This is an error message</span>
@@ -461,8 +461,8 @@ const StylesInputsPage = () => (
           <option>iphone</option>
         </select>
         <span className=""></span>
-        <svg focusable="false" aria-hidden="true" className="pe-icon--dropdown-open-18">
-          <use xlinkHref="#dropdown-open-18"></use>
+        <svg focusable="false" aria-hidden="true" className="pe-icon--dropdown-open-sm-24">
+          <use xlinkHref="#dropdown-open-sm-24"></use>
         </svg>
       </div>
 
@@ -491,8 +491,8 @@ const StylesInputsPage = () => (
           <option>iphone</option>
         </select>
         <span className=""></span>
-        <svg focusable="false" aria-hidden="true" className="pe-icon--dropdown-open-18">
-          <use xlinkHref="#dropdown-open-18"></use>
+        <svg focusable="false" aria-hidden="true" className="pe-icon--dropdown-open-sm-24">
+          <use xlinkHref="#dropdown-open-sm-24"></use>
         </svg>
       </div>
 
@@ -552,7 +552,7 @@ const StylesInputsPage = () => (
     <h2>Multiple line text - readonly</h2>
 
     <label className="pe-textLabelInput__label" htmlFor="andale">Multi-line label</label>
-    <textarea className="pe-multiLineText--readOnly" id="andale" cols="30" rows="5" readonly>Read this</textarea>
+    <textarea className="pe-multiLineText--readOnly" id="andale" cols="30" rows="5" readOnly={true}>Read this</textarea>
 
     <p className="code">
     {`<label class="pe-textLabelInput__label" for="andale">Multi-line label</label>`} <br/>

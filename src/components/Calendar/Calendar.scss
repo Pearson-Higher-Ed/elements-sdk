@@ -1,4 +1,5 @@
 @import '../../styles/elements/color/_color';
+@import '../../styles/base/mixins';
 
 .pe-calendar {
   box-sizing: content-box;
@@ -31,8 +32,13 @@
       width: 40px;
     }
 
-    &:hover, &:focus {
+    &:hover {
       color: $pe-color-charcoal;
+    }
+    &:focus {
+      color: $pe-color-charcoal;
+      
+      @include focusPseudoOutline(0px, -4px, -4px, 0px, 0px);
     }
   }
   .pe-cal-cell {
@@ -108,7 +114,7 @@
 }
 /* for IE */
 .pe-cal-row div[tabindex]:focus {
-  outline: 1px dotted $pe-color-charcoal;
+  outline: 2px solid $pe-focus-color;
 }
 /* inverse */
 .pe-cal-date.date-inverse .pe-cal-selected {
@@ -116,7 +122,7 @@
   background-color: $pe-color-white;
 }
 .calendar-contrast .pe-cal-row div[tabindex]:focus {
-  outline: 1px dotted $pe-color-white;
+  outline: 2px solid $pe-focus-color;
 }
 
 .pe-calendar .pe-cal-cell.pe-cal-date.pe-cal-past {

@@ -167,10 +167,15 @@ a {
 
   &:hover,
   &:active,
-  &:focus,
   &.active {
     color: $pe-color-ink-blue;
     text-decoration: none;
+  }
+  
+  &:focus {
+    color: $pe-color-ink-blue;
+    text-decoration: none;
+	@include focusOutline;
   }
 }
 
@@ -236,4 +241,8 @@ pre,
 code,
 kbd {
   font-family: $pe-font-family-mono;
+}
+
+:focus {
+	@include focusOutline;
 }

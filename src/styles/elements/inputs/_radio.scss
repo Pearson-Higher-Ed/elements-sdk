@@ -37,6 +37,7 @@
       color         : $radio-dot-color;
       border        : $radio-border-focus;
       border-radius : $radio-borderRadius;
+      @include focusOutline;
     }
     &:disabled ~ span {
       color            : $radio-dot-color-disabled;
