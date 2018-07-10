@@ -37,7 +37,9 @@
       &:hover, &:focus {
         background-color: $pe-color-moonlight;
       }
-
+	  &:focus-within {
+        background-color: $pe-color-moonlight;
+      }
 
       button[role=menuitem] {
         background-color: transparent;
@@ -48,6 +50,8 @@
         width: 100%;
         text-align: left;
         box-sizing: border-box;
+        position:relative;
+        display: block;
 
         &.checkmark {
           padding: 4px 16px;
@@ -58,6 +62,12 @@
         span.icon-padding {
             padding-left: 8px;
         }
+        
+        &:focus {
+        	outline:0;
+        	background-color: $pe-color-moonlight;
+        	@include focusPseudoOutline(4px, 0px, 4px, -2px, 0px);
+        }
       }
 
       a {
@@ -65,9 +75,16 @@
         text-decoration: none;
         padding: 4px 24px;
         display: block;
-
+        position:relative;
+		box-sizing: border-box;
         &.checkmark {
           padding: 4px 42px;
+        }
+        
+        &:focus {
+        	outline:0;
+        	background-color: $pe-color-moonlight;
+        	@include focusPseudoOutline(4px, 0px, 4px, -2px, 0px);
         }
       }
     }

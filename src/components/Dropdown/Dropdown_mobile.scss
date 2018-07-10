@@ -43,6 +43,11 @@
             svg {
               vertical-align: middle;
             }
+            
+            &:focus:after {
+            	top: -4px;
+            	left: -4px;
+            }
         }
         
       }

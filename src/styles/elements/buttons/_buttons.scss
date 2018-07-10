@@ -35,6 +35,13 @@
   padding: 0;
   background-color: transparent;
   border: 0;  
+  position:relative;
+  
+  &:focus {
+    outline: 0;
+      @include focusPseudoOutline(4px, 10px, 10px, -7px, -7px);
+   }
+  
 }
 
 // for fake links
@@ -44,6 +51,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  position:relative;
 }
 
 .pe-link {
@@ -51,21 +59,29 @@
   color: $pe-color-digital-pearson-blue;
   padding: 0;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: $pe-color-ink-blue;
     text-decoration: none;
   }
+  &:focus {
+    color: $pe-color-ink-blue;
+    text-decoration: none;
+    outline:0;
+      @include focusPseudoOutline(4px, 10px, 10px, -7px, -7px);
+  }
 }
-
 .pe-link--btn {
   @extend %pe-link-extend;
   color: $pe-color-digital-pearson-blue;
   padding: 4px;
 
-  &:hover,
+  &:hover {
+    text-decoration: none;
+  }
   &:focus {
     text-decoration: none;
+    outline:0;
+      @include focusPseudoOutline(4px, 10px, 10px, -7px, -7px);
   }
 
   &:disabled {
@@ -89,6 +105,7 @@
     $pe-btn-default-hover-border
   );
   @extend %btn;
+  
 }
 
 .pe-btngroup {
@@ -334,3 +351,12 @@
     text-decoration: none;
   }
 }
+
+//=== if input tag has pe-btn class change focus ====
+  input[class^="pe-btn"] {
+  	&:focus {
+  		@include focusOutline;
+  	}
+  }
+
+

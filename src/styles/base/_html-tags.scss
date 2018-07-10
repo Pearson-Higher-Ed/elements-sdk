@@ -164,14 +164,21 @@ table {
 a {
   color: $pe-color-digital-pearson-blue;
   text-decoration: underline;
+  position:relative;
 
   &:hover,
   &:active,
-  &:focus,
   &.active {
     color: $pe-color-ink-blue;
     text-decoration: none;
   }
+  &:focus {
+    color: $pe-color-ink-blue;
+    text-decoration: none;
+    @include focusOutline;
+   }
+  
+  
 }
 
 // Body copy
@@ -236,4 +243,9 @@ pre,
 code,
 kbd {
   font-family: $pe-font-family-mono;
+}
+
+//==== generic focus override =======
+:focus {
+	@include focusOutline;
 }

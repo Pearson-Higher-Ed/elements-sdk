@@ -18,6 +18,10 @@
     &[aria-selected="true"], &[aria-selected="true"]:hover, &[aria-selected="true"]:focus {
       border-bottom: solid 3px $pe-color-digital-marine-turquoise;
     }
+    &:focus {
+      outline:0;
+    	@include focusPseudoOutline(4px, 8px, -6px, 1px, -6px);
+    }
   }
 }
 
@@ -35,5 +39,3 @@
     }
   }
 }
-
-

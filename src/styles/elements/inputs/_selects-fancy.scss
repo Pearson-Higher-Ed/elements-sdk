@@ -255,5 +255,8 @@
       border              : none;
       border-radius       : 0px;
     }
+    select:focus+.pe-input_underline-readonly {
+		transform : scale(1);
+	}
 
 };
