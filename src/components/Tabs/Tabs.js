@@ -99,7 +99,8 @@ export default class Tabs extends Component {
       return (
         <button
           className={`pe-tabs--btn ${activeClass}`} 
-          id={this.state.tabId+i} 
+          id={this.state.tabId+i}
+          key={this.state.tabId+i}
           role="tab"
           tabIndex={tabI}
           aria-controls={this.state.panelId+i} 
