@@ -34,6 +34,8 @@ const FooterPage = () => {
             <li className="li-props">Used to insert copyright information. Defaults to
             Copyright &copy; {currentYear} Pearson Education Inc. All Rights Reserved.
             </li>
+            <li className="li-props">logo:Boolean === {`<Footer logo />`}</li>
+            <li className="li-props">The <b>logo</b> prop can be used to place the full Pearson logo in any applicable footers in order to keep Pearson branding.</li>
             <li className="li-props">light:Boolean === {`<Footer light />`}</li>
             <li className="li-props">The <b>light</b> prop can be used to provide contrast
             on a darker background.</li>
