@@ -5,10 +5,10 @@ import './Footer.scss';
 
 const currentYear = new Date().getFullYear();
 
-const Footer = ({ copyrightText, links, anchorTarget, light, singlePageStick }) => {
+const Footer = ({ copyrightText, links, anchorTarget, light, logo, singlePageStick }) => {
 
   const renderCopy = () => {
-    return <p className="pe-label">{copyrightText}</p>;
+    return <p className="pe-label logo-test-copy">{copyrightText}</p>;
   };
 
   const renderLinks = () => {
@@ -18,23 +18,44 @@ const Footer = ({ copyrightText, links, anchorTarget, light, singlePageStick }) 
       let item = links[i];
       items.push(<li key={i}>
                    <a href={item.href} target={`_${anchorTarget}`}>{item.text}</a>
-                   <span aria-hidden={true}>|</span>
                  </li>);
     }
     return items;
   };
 
-  const lightCheck = light ? 'pe-footer--light':'';
-  const stickCheck = singlePageStick ? '--stick':'';
+  const renderFooter = () => {
+    if (logo && !light) {
+      return (
+        <div className="pe-footer--logo">
+          <div className="logo-link-wrapper">
+            <img src="/images/PearsonLogo.svg" role="img" aria-label="Pearson logo"/>
+            <ul>
+              {renderLinks()}
+            </ul>
+          </div>
+          {renderCopy()}
+        </div>
+      );
+    } else {
+      return (
+          <div>
+            <ul>
+              {renderLinks()}
+            </ul>
+            {renderCopy()}
+          </div>
+      );
+    }    
+  }
 
-  return (
-      <footer className={`pe-footer${stickCheck} pe-label ${lightCheck}`}>
-        <ul>
-          {renderLinks()}
-        </ul>
-        {renderCopy()}
-      </footer>
-  );
+  const lightCheck = light ? ' pe-footer--light':'';
+  const stickCheck = singlePageStick ? '--stick':'';
+  
+    return (
+      <footer className={`pe-footer${stickCheck} pe-label${lightCheck}`}>
+        {renderFooter()}
+      </footer> 
+    );
 }
 
 export default Footer;
