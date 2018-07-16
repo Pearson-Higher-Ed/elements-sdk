@@ -105,6 +105,7 @@ export default class DatePicker extends Component {
             disabled         = {inputState === 'disabled'}
             readOnly         = {inputState === 'readOnly'}
             onChange         = {this.changeHandler}
+            autoComplete     = "off"
           />
           <span className="pe-icon-wrapper">
             <Icon name="calendar-18" />
