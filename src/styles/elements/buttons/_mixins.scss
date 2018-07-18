@@ -31,7 +31,7 @@
     border			 : $border-hover;
     outline: 0;
     
-    @include focusPseudoOutline();
+    @include focusPseudoOutline($radius: $pe-btn-border-radius, $widthOffset: 12px, $heightOffset: 12px, $top: -6px, $left: -6px);
     
    }
 
@@ -47,10 +47,11 @@
   }
    //====== overflow moved to a span inside btn to accomodate focus outline ======
   span {
-  	display         : block;
+  	display         : inline-block;
   	max-width       : 100%;
   	text-overflow   : ellipsis;
     white-space     : nowrap;
     overflow        : hidden;
+    vertical-align  : middle;
   }
 }
