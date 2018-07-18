@@ -23,7 +23,7 @@
 	outline: 2px solid $pe-focus-color;
 	outline-offset: 4px;
 }
-@mixin focusPseudoOutline($radius: 4px, $widthOffset: 10px, $heightOffset: 10px, $top: -6px, $left: -6px) {
+@mixin focusPseudoOutline($radius: 4px, $widthOffset: 8px, $heightOffset: 8px, $top: -6px, $left: -6px) {
         &:after {
           border: 2px solid $pe-focus-color;
           content: "";
