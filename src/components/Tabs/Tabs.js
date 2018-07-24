@@ -38,6 +38,7 @@ export default class Tabs extends Component {
   }
 
   handleClick(i, e) {
+    console.log('clicked');
     if (this.props.callback !== undefined) {
       this.props.callback(i);
     }
@@ -45,7 +46,7 @@ export default class Tabs extends Component {
     this.setState({
       selected: i
     });
-    
+    console.log('clicked');
     this.getDimensions(e.target);
   }
 
@@ -100,7 +101,7 @@ export default class Tabs extends Component {
         <button
           className={`pe-tabs--btn ${activeClass}`} 
           id={this.state.tabId+i}
-          key={this.state.tabId+i}
+          key={i}
           role="tab"
           tabIndex={tabI}
           aria-controls={this.state.panelId+i} 
@@ -112,7 +113,7 @@ export default class Tabs extends Component {
     }
     const themeCheck = this.props.light ? 'light' : this.props.bar ? 'bar': '';
     return (
-      <div className={`pe-tabs ${themeCheck}`} role="tablist" ref={(div) => { this.doc = div; }} onFocus={() => this.setState({ tabId: `_${uuid.v1()}`,  panelId: `_${uuid.v4()}`})}>
+      <div className={`pe-tabs ${themeCheck}`} role="tablist" ref={(div) => { this.doc = div}} onFocus={() => this.setState({ tabId: `_${uuid.v1()}`,  panelId: `_${uuid.v4()}`})}>
         {this.props.children.map(labels.bind(this))}
         <div className="pe-tabs--slider" ref={ref => this.slider = ref }></div>
       </div>
