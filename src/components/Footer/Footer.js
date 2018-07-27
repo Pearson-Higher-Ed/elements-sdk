@@ -61,12 +61,14 @@ export default Footer;
 Footer.propTypes = {
   links: PropTypes.array.isRequired,
   light: PropTypes.bool,
+  logo: PropTypes.bool,
   singlePageStick: PropTypes.bool,
   anchorTarget: PropTypes.oneOf(['blank', 'self'])
 }
 
 Footer.defaultProps = {
   light: false,
+  logo: false,
   singlePageStick: false,
   anchorTarget: 'self',
   copyrightText: ['Copyright', <span key='Unique'>&copy;</span>, `${currentYear} Pearson Education Inc. All Rights Reserved.`]
