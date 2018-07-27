@@ -27,12 +27,10 @@ const Footer = ({ copyrightText, links, anchorTarget, light, logo, singlePageSti
     if (logo && !light) {
       return (
         <div className="pe-footer--logo">
-          <div className="logo-link-wrapper">
             <img src="/images/PearsonLogo.svg" role="img" aria-label="Pearson logo"/>
             <ul>
               {renderLinks()}
             </ul>
-          </div>
           {renderCopy()}
         </div>
       );

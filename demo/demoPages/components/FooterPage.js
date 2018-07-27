@@ -41,7 +41,7 @@ const FooterPage = () => {
             on a darker background.</li>
             <li className="li-props">singlePageStick:Boolean === {`<Footer singlePageStick />`}</li>
             <li className="li-props">The <b>singlePageStick</b> prop can be used if the page you are using the Footer on does <br/>
-            not exceed the screen&#39;s height. If the page exceeds one screen in height do not use <br/>
+            not exceed the screen&#39;s height. If the page exceeds one screen in height on any screen size do not use <br/>
             this prop as this will absolutely position the Footer over your content.</li>
             <li className="li-props">anchorTarget:String === {`'blank' || 'self'`}</li>
             <li className="li-props">The anchorTarget prop specifies where to open the linked document.</li>
@@ -60,9 +60,17 @@ const FooterPage = () => {
               text: 'Last link',
               href: 'last'
             }];`} <br/>
-            {`<Footer links={testLinks} singlePageStick />`}
+            {`<Footer links={testLinks} logo/>`}<br/>
+            {`<Footer links={testLinks}/>`}<br/>
+            {`<div className="footer-dark-bg">`}<br/>
+            {`<Footer links={testLinks} light/>`}<br/>
+            {`</div>`}
           </p>
-        <Footer links={testLinks} singlePageStick />
+        <Footer links={testLinks} logo/>
+        <Footer links={testLinks}/>
+        <div className="footer-dark-bg">
+          <Footer links={testLinks} light/>
+        </div>
       </div>
     </div>
     );
