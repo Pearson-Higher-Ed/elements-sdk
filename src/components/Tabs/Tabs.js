@@ -37,7 +37,8 @@ export default class Tabs extends Component {
              panelid: this.state.panelId.concat('', this.state.selected) };
   }
 
-  handleClick(i) {
+  handleClick(i, e) {
+    console.log('clicked');
     if (this.props.callback !== undefined) {
       this.props.callback(i);
     }
@@ -45,13 +46,24 @@ export default class Tabs extends Component {
     this.setState({
       selected: i
     });
+    console.log('clicked');
+    this.getDimensions(e.target);
+  }
+
+  getDimensions(activetab) {
+    this.slider.style.width = activetab.offsetWidth + 'px';
+    this.slider.style.left = activetab.offsetLeft + 'px';
   }
 
   componentDidMount() {
     const parentUl = this.doc;
-    const tabArray = parentUl.querySelectorAll('[role=tab]');
+    const tabArray = parentUl.querySelectorAll('[role=tab]'),
+          selectedTab = parentUl.querySelector('.activeTab');
     const lastTabArray = tabArray.length - 1;
-
+    //set up the initial active bottom bar
+    this.getDimensions(selectedTab);
+    
+    //for keyboard users to navigate through tabs
     parentUl.addEventListener("keydown", (event) => {
       const focusedIndex = this.state.focused;
       if (focusedIndex === 0 && event.keyCode === 37) {
@@ -70,12 +82,13 @@ export default class Tabs extends Component {
         tabArray[focusedIndex + 1].focus();
         this.setState({ focused: (focusedIndex + 1) });
       }
-      if (event.keyCode === 13 || 32) {
-        const current = tabArray.indexOf(event.target);
+      //tabs only get actived on space and enter key
+      if (event.keyCode === 13 || event.keyCode === 32) {
+        let targetid = event.target.id;
+        let current = targetid.substr(targetid.length - 1);
         this.setState({ selected: current });
       }
     }, true)
-
   }
 
   renderLabels() {
@@ -87,7 +100,8 @@ export default class Tabs extends Component {
       return (
         <button
           className={`pe-tabs--btn ${activeClass}`} 
-          id={this.state.tabId+i} 
+          id={this.state.tabId+i}
+          key={i}
           role="tab"
           tabIndex={tabI}
           aria-controls={this.state.panelId+i} 
@@ -99,8 +113,9 @@ export default class Tabs extends Component {
     }
     const themeCheck = this.props.light ? 'light' : this.props.bar ? 'bar': '';
     return (
-      <div className={`pe-tabs ${themeCheck}`} role="tablist" ref={(div) => { this.doc = div; }} onFocus={() => this.setState({ tabId: `_${uuid.v1()}`,  panelId: `_${uuid.v4()}`})}>
+      <div className={`pe-tabs ${themeCheck}`} role="tablist" ref={(div) => { this.doc = div}} onFocus={() => this.setState({ tabId: `_${uuid.v1()}`,  panelId: `_${uuid.v4()}`})}>
         {this.props.children.map(labels.bind(this))}
+        <div className="pe-tabs--slider" ref={ref => this.slider = ref }></div>
       </div>
     );
   }

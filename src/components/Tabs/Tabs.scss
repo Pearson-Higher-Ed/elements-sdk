@@ -1,6 +1,7 @@
 @import '../../styles/elements.scss';
 
 .pe-tabs {
+  position: relative;
   .pe-tabs--btn {
     cursor: pointer;
     border: 0;
@@ -10,17 +11,10 @@
 
     padding: 8px 0;
     margin: 4px 16px -1px 16px;
+    border-bottom: solid 3px transparent;
 
     &:not([aria-selected="true"]):hover, &:not([aria-selected="true"]):focus {
       border-bottom: solid 3px $pe-color-concrete;
-    }
-
-    &[aria-selected="true"], &[aria-selected="true"]:hover, &[aria-selected="true"]:focus {
-      border-bottom: solid 3px $pe-color-digital-marine-turquoise;
-    }
-    &:focus {
-      outline:0;
-    	@include focusPseudoOutline(4px, 8px, -6px, 1px, -6px);
     }
   }
 }
@@ -32,10 +26,21 @@
 
 .pe-tabs.light {
   .pe-tabs--btn {
-    color: $pe-color-white;
+    color: $pe-color-white; 
 
     &:not([aria-selected="true"]):hover, &:not([aria-selected="true"]):focus {
-      border-bottom: solid 3px $pe-color-alto;
+      border-bottom-color: $pe-color-alto;
     }
   }
+}
+
+.pe-tabs--slider {
+  display: inline-block;
+  height:3px;
+  background-color:$pe-color-digital-marine-turquoise;
+  position:absolute;
+  z-index:2;
+  bottom:0;
+  transition:all .3s linear;
+  pointer-events: none;
 }

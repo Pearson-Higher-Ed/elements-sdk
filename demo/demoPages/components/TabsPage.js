@@ -7,7 +7,7 @@ const sixteen = {paddingLeft: 16};
 
 const testHandler = function(i){
   // test handler
-  console.log(i)
+  //console.log(i)
 }
 
 const TabsPage = () => (
