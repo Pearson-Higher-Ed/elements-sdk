@@ -17,7 +17,7 @@ describe('Footer', () => {
     });
 
     it('has the correct Copyright text', function () {
-      expect(this.wrapper.node.props.children[1].props.children)
+      expect(this.wrapper.node.props.children.props.children[1].props.children)
       .toEqual("CR text");
     });
 

@@ -1,3 +1,5 @@
+@import '../../styles/elements/color/variables.scss';
+
 .pe-footer,
 .pe-footer--stick {
   padding: 24px 0;
@@ -15,14 +17,22 @@
   padding: 0;
 }
 
-.pe-footer span,
-.pe-footer--stick span {
-  display: inline-block;
-  padding: 0 2px;
+.pe-footer li, .pe-footer--stick li {
+  &:after {
+    content: "|";
+    margin: 5px;
+  }
+
+  @media (max-width: 767px) {
+    &:last-child:after {
+      content: "";
+      margin: 0;
+    }
+  }
 }
 
 .pe-footer--stick {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -45,11 +55,6 @@
     margin-bottom: 12px;
   }
 
-  .pe-footer li:last-child span,
-  .pe-footer--stick li:last-child span {
-    display: none;
-  }
-
   .pe-footer p,
   .pe-footer--stick p {
     display: block;
@@ -57,4 +62,28 @@
     line-height: 16px;
     text-align: center;
   }
+}
+
+.pe-footer--logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    margin-left: 28px;
+  }
+  @media (max-width: 848px) {
+    flex-direction: column;
+    ul {
+      margin: 12px 0;
+      li:last-child:after {
+        content: "";
+        margin: 0;
+      }
+    }
+  }
+}
+
+.footer-dark-bg {
+  background-color: $pe-color-ink-blue;
+  padding: 1rem;
 }
