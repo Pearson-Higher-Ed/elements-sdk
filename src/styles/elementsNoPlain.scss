@@ -13,21 +13,8 @@
 
 .pe-typography {
   @import 'base/html-tags';
-
-  /* TODO: DRY */
-  html.pe-typography {
-    font-size: pxToRem($pe-font-size-base, 16px);
-  }
-
-  body.pe-typography {
-    color: $pe-font-color-base;
-    font-family: $pe-font-family-sans;
-  }
-
-  * {
-    color: $pe-font-color-base;
-    font-family: $pe-font-family-sans;
-  }
+  color: $pe-font-color-base;
+  font-family: $pe-font-family-sans;
 }
 
 @import 'elements/icons/icons';
