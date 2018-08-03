@@ -18,7 +18,7 @@ describe('Pane', () => {
     });
 
     it('passes the label through props', function () {
-      expect(this.wrapper.node.props.children[0].props.children[0].props.children)
+      expect(this.wrapper.node.props.children[0].props.children[0][0].props.children)
             .toBe('Tab 1');
     });
 
