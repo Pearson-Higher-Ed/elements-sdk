@@ -2,11 +2,14 @@
 .dropdown-mobile-wrapper {
 	overflow:hidden;
 	display:unset;
+	.dropdown-container {
+		display:unset;
+	}
 }
   .dropdown-container {
     width: 100%;
     height: 100%;
-    display:unset;
+    
 
     ul {
       box-sizing: border-box;
