@@ -437,7 +437,7 @@ export default class Dropdown extends Component {
             curParent = menu.parentElement
         placeholder.setAttribute("id", fakeId),
         placeholder.setAttribute("style", "display:none;")
-        divWrapper.className = "dropdown-wrapper"
+        divWrapper.className = "dropdown-mobile-wrapper"
         divContainer.className = "dropdown-container"
 
         // insert a placeholder
