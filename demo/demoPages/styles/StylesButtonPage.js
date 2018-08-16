@@ -89,8 +89,8 @@ const StylesButtonPage = () => (
 
     <h2>Text overflow</h2>
 
-    <p>Since the custom focus indicator on buttons requires overflow to be set to visible, a span tag must be placed inside the button to control text overflow properties. When the width of the text inside the button exceeds its container width, it will be truncated with an ellipsis. <strong>However, you should generally avoid using long text strings with buttons.</strong></p>
-    <button className="pe-btn" style={{maxWidth: 200, marginBottom: 10}}><span>The quick brown fox jumps over the lazy dog.</span></button>
+    <p>Since the custom focus indicator on buttons requires overflow to be set to visible, a span tag with class btn-overflow must be placed inside the button to control text overflow properties. When the width of the text inside the button exceeds its container width, it will be truncated with an ellipsis. <strong>However, you should generally avoid using long text strings with buttons.</strong></p>
+    <button className="pe-btn" style={{maxWidth: 200, marginBottom: 10}}><span className="btn-overflow">The quick brown fox jumps over the lazy dog.</span></button>
 
     <p className="code">
       {`<button class="pe-btn" style="max-width: 200px"><span>The quick brown fox jumps over the lazy dog.</span></button>`}

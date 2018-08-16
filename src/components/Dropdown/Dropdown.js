@@ -82,13 +82,13 @@ export default class Dropdown extends Component {
       // don't run in tests (DOM manipulation)
       if(dropdown != null){
         const parentWrapper = dropdown.parentElement.parentElement
-        
+
         //need to return focus to checked item
         if (dropdown.hasAttribute("aria-activedescendant")) {
         	var activeDescId = dropdown.getAttribute("aria-activedescendant"),
         		activeDescendant = document.getElementById(activeDescId),
         		activeDescIndex = [].indexOf.call(activeDescendant.parentNode.children, activeDescendant);
-        		
+
         	activeDescendant.children[0].focus();
         	this.focusedItem = activeDescIndex;
         } else {
@@ -100,8 +100,8 @@ export default class Dropdown extends Component {
         		this.list.children[0].children[0].focus();
         	}
         }
-        
-    
+
+
         if (this.state.open) {
           this.placement(ReactDOM.findDOMNode(this));
           if(window.screen.width < 768){
@@ -281,7 +281,7 @@ export default class Dropdown extends Component {
         }, () => {
           this.handleSetItem()
         });
-        
+
         //for mobile need setTimeout so button can get display before focus
         if (window.screen.width < 768) {
             //    	this.container.children[0].focus();
@@ -427,31 +427,59 @@ export default class Dropdown extends Component {
 
     var id = this.props.id.replace(" ", "_")+"-dropdown",
         menu = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
-        fakeId = id+"--placeholder"
+        fakeId = id+"--placeholder",
+        wrapperId = id+"-wrapper"
     // don't manipulate DOM for tests
     if(menu != null){
       if(window.screen.width < 768){
-        var divWrapper = document.createElement("div"),
-            divContainer = document.createElement("div"),
-            placeholder = document.createElement("div"),
-            curParent = menu.parentElement
-        placeholder.setAttribute("id", fakeId),
-        placeholder.setAttribute("style", "display:none;")
-        divWrapper.className = "dropdown-wrapper"
-        divContainer.className = "dropdown-container"
+      	//if id exists put it inside
+      	if (document.getElementById(wrapperId)) {
+      		var divWrapper = document.getElementById(wrapperId),
+      			divContainer = divWrapper.firstChild,
+      			placeholder = document.createElement("div"),
+            	curParent = menu.parentElement
 
-        // insert a placeholder
-        curParent.insertBefore(placeholder, menu)
+            placeholder.setAttribute("id", fakeId)
+	        placeholder.setAttribute("style", "display:none;")
 
-        // put the new stuff on the DOM
-        divContainer.appendChild(menu)
-        divWrapper.appendChild(divContainer)
-        document.body.appendChild(divWrapper)
+	        // insert a placeholder
+	        curParent.insertBefore(placeholder, menu)
+
+	        // put the new stuff on the DOM
+	        divContainer.appendChild(menu)
+	        menu.removeAttribute('style')
+
+      	} else {
+      		var divWrapper = document.createElement("div"),
+            	divContainer = document.createElement("div"),
+            	placeholder = document.createElement("div"),
+            	curParent = menu.parentElement
+	        placeholder.setAttribute("id", fakeId)
+	        placeholder.setAttribute("style", "display:none;")
+	        divWrapper.className = "dropdown-mobile-wrapper"
+	        divWrapper.setAttribute("id", wrapperId)
+	        divContainer.className = "dropdown-container"
+
+	        // insert a placeholder
+	        curParent.insertBefore(placeholder, menu)
+
+	        // put the new stuff on the DOM
+	        divContainer.appendChild(menu)
+	        divWrapper.appendChild(divContainer)
+	        document.body.appendChild(divWrapper)
+	        menu.removeAttribute('style')
+      	}
+
+
       } else {
         if(menu.parentElement.parentElement.parentElement.tagName === "BODY"){
           var placeholder = document.getElementById(fakeId),
               curParent = placeholder.parentElement
           curParent.replaceChild(menu, placeholder)
+          menu.removeAttribute('style')
+          if(placeholder){
+            placeholder.remove()
+          }
         }
       }
     }
