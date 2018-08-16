@@ -93,7 +93,7 @@ const StylesButtonPage = () => (
     <button className="pe-btn" style={{maxWidth: 200, marginBottom: 10}}><span className="btn-overflow">The quick brown fox jumps over the lazy dog.</span></button>
 
     <p className="code">
-      {`<button class="pe-btn" style="max-width: 200px"><span>The quick brown fox jumps over the lazy dog.</span></button>`}
+      {`<button class="pe-btn" style="max-width: 200px"><span class="btn-overflow">The quick brown fox jumps over the lazy dog.</span></button>`}
     </p>
 
     <h2 id="uibuttons">UI Buttons</h2>
