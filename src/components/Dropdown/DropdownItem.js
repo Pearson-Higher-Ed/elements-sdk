@@ -30,7 +30,7 @@ const DropdownItem = ({
         break;
       case 'link':
         return (
-          <li role="presentation" data-item={label} key={`${dropdownId}${selectValue}`}>
+          <li role="presentation" data-item={label} key={`${dropdownId}${selectValue}`} id={dropdownId + "-" + selectValue}>
             <a href={url} className={checkmark ? 'checkmark' : ''} role="menuitem" tabIndex="-1">{label}</a>
           </li>
         );

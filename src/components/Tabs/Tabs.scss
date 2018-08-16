@@ -1,4 +1,10 @@
-@import '../../styles/elements.scss';
+@import '../../styles/base/mixins';
+@import '../../styles/base/variables';
+@import '../../styles/base/functions';
+@import '../../styles/elements/color/variables';
+@import '../../styles/elements/typography/type';
+@import '../../styles/elements/typography/variables';
+
 
 .pe-tabs {
   position: relative;
