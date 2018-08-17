@@ -535,7 +535,7 @@ export default class Dropdown extends Component {
             onClick={this.itemSelected}
             onKeyDown={this.handleKeyDown}>
             {this.addMobileHeader()}
-            {React.Children.map(this.props.children, child => React.cloneElement(child, {itemSelected: this.state.selectedValue}))}
+            {React.Children.map(this.props.children, child => child && React.cloneElement(child, {itemSelected: this.state.selectedValue}))}
           </ul>
         </div>
       )
