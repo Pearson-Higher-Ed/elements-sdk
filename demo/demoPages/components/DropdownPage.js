@@ -88,7 +88,7 @@ class DropdownPage extends React.Component {
             <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-3" label="list item 3" type="link" url="http://www.google.com" />
           </Dropdown>`}
           </p>
-			
+
 		  <h3>label /w Icon and long list (scrollable and selectable)</h3>
           <Dropdown
             dropdownControlLabel="Dropdown open"
@@ -97,19 +97,19 @@ class DropdownPage extends React.Component {
             type="text"
             label="text"
             id="text-long">
-            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-1" 
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-1"
               selectedName="selected" label="list item 1" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-2" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-2"
               selectedName="selected" label="list item 2" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-3" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-3"
               selectedName="selected" label="list item 3" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-4" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-4"
               selectedName="selected" label="list item 4" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-5" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-5"
               selectedName="selected" label="list item 5" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-6" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-6"
               selectedName="selected" label="list item 6" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-7" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-7"
               selectedName="selected" label="list item 7" type="button" />
             <DropdownItem type="divider" />
             <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-8" label="list item 8" type="link" url="http://www.google.com" />
@@ -128,19 +128,19 @@ class DropdownPage extends React.Component {
             type="text"
             label="text"
             id="text-long">
-            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-1" 
+            <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-1"
               selectedName="selected" label="list item 1" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-2" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-2"
               selectedName="selected" label="list item 2" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-3" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-3"
               selectedName="selected" label="list item 3" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-4" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-4"
               selectedName="selected" label="list item 4" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-5" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-5"
               selectedName="selected" label="list item 5" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-6" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-6"
               selectedName="selected" label="list item 6" type="button" />
-              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-7" 
+              <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-7"
               selectedName="selected" label="list item 7" type="button" />
             <DropdownItem type="divider" />
             <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-8" label="list item 8" type="link" url="http://www.google.com" />
@@ -152,7 +152,7 @@ class DropdownPage extends React.Component {
             <DropdownItem checkmark dropdownId="dropTextIconsLong" selectValue="list-item-14" label="list item 14" type="link" url="http://www.google.com" />
           </Dropdown>`}
           </p>
-          
+
           <h3>button /w Icon (no checkmarks)</h3>
           <Dropdown
             mobileTitle={mobileTitle}
@@ -231,6 +231,33 @@ class DropdownPage extends React.Component {
               <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" imgAlt="African flag" />
             </Dropdown>`}
             </p>
+            <h3>Icon only /w Round, Specified Icon, Hover State, Menu Arrow, and Open state</h3>
+              <Dropdown
+                mobileTitle={mobileTitle}
+                iconName="ellipsis"
+                iconSize="18"
+                btnHover
+                btnRound
+                btnOpen
+                menuArrow
+                type="icon"
+                label="icon text"
+                id="iconOptions">
+                <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
+                <DropdownItem type="divider" />
+                <DropdownItem dropdownId="dropIcon" selectValue="list-item-2" label="list item 2" type="link" url="www.google.com" />
+              </Dropdown>
+              <p className="code">
+                {`<Dropdown
+                mobileTitle={mobileTitle}
+                type="icon"
+                label="icon text"
+                id="iconText">
+                <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
+                <DropdownItem type="divider" />
+                <DropdownItem dropdownId="dropIcon" selectValue="list-item-2" label="list item 2" type="link" url="www.google.com" />
+              </Dropdown>`}
+              </p>
         </div>
       </div>
     );

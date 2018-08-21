@@ -1,6 +1,6 @@
 .dropdown-activator {
   cursor: pointer;
-  
+
   //prevent arrow from wrapping to new line in mobile
   div {
   	white-space:nowrap;
@@ -90,7 +90,7 @@
         	background-color: $pe-color-moonlight;
         	@include focusPseudoOutline(4px, 0px, 4px, -2px, 0px);
         }
-        
+
       }
     }
   }
@@ -115,5 +115,28 @@
 
   .dropdown-menu {
     display: none;
+  }
+
+  .dropdown-hover-btn {
+
+    &:hover {
+      background: $pe-color-alto;
+    }
+  }
+
+  .dropdown-round-btn {
+    height: 32px;
+    width: 32px;
+    border-radius: 20px;
+  }
+
+  .dropdown-btn-open {
+    background: #505759;
+    color: $pe-color-white;
+
+    &:hover {
+      background: #505759;
+      color: $pe-color-white;
+    }
   }
 }

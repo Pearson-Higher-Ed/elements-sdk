@@ -18,8 +18,23 @@ export default class Dropdown extends Component {
     btnImageHeight: PropTypes.string,
     scrollable: PropTypes.bool,
     btnImageWidth: PropTypes.string,
-    btnImageAlt: PropTypes.string
+    btnImageAlt: PropTypes.string,
+    btnHover: PropTypes.bool,
+    btnRound: PropTypes.bool,
+    btnOpen: PropTypes.bool,
+    iconName: PropTypes.string,
+    iconSize: PropTypes.string,
+    menuArrow: PropTypes.bool
   };
+
+  static defaultProps = {
+    btnHover: false,
+    btnRound: false,
+    btnOpen: false,
+    iconName: 'dropdown-open-sm',
+    iconSize: '18',
+    menuArrow: false
+  }
 
   constructor(props) {
     super(props)
@@ -77,18 +92,19 @@ export default class Dropdown extends Component {
   }
 
   toggleDropdown() {
+    const dropdownButton = document.getElementById(`${this.props.id}-button`);
     this.setState({ open: !this.state.open }, () => {
       const dropdown = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
       // don't run in tests (DOM manipulation)
       if(dropdown != null){
         const parentWrapper = dropdown.parentElement.parentElement
-        
+
         //need to return focus to checked item
         if (dropdown.hasAttribute("aria-activedescendant")) {
         	var activeDescId = dropdown.getAttribute("aria-activedescendant"),
         		activeDescendant = document.getElementById(activeDescId),
         		activeDescIndex = [].indexOf.call(activeDescendant.parentNode.children, activeDescendant);
-        		
+
         	activeDescendant.children[0].focus();
         	this.focusedItem = activeDescIndex;
         } else {
@@ -100,9 +116,10 @@ export default class Dropdown extends Component {
         		this.list.children[0].children[0].focus();
         	}
         }
-        
-    
+
+
         if (this.state.open) {
+          dropdownButton.classList.add('dropdown-btn-open');
           this.placement(ReactDOM.findDOMNode(this));
           if(window.screen.width < 768){
             // hide children of body
@@ -114,6 +131,7 @@ export default class Dropdown extends Component {
             }
           }
         } else {
+          dropdownButton.classList.remove('dropdown-btn-open');
           this.resetPlacement(ReactDOM.findDOMNode(this));
           this.focusedItem = 0;
           if(window.screen.width < 768){
@@ -156,7 +174,8 @@ export default class Dropdown extends Component {
       if (event.which === 27) {
         // escape
         return this.setState({ open: false }, () => {
-          this.handleSetItem()
+          this.handleSetItem();
+          document.getElementById(`${this.props.id}-button`).classList.remove('dropdown-btn-open');
         });
       }
 
@@ -229,9 +248,9 @@ export default class Dropdown extends Component {
         	}
         }
         else {
-        	this.setState({
-        	  open: false
-        	});
+          this.setState({ open: false }, () => {
+            document.getElementById(`${this.props.id}-button`).classList.remove('dropdown-btn-open');
+          });
         }
       }
 
@@ -279,9 +298,10 @@ export default class Dropdown extends Component {
           selectedValue: selectedListItem.getAttribute('data-value'),
           selectedItemDOM: selectedListItem
         }, () => {
-          this.handleSetItem()
+          this.handleSetItem();
+          document.getElementById(`${this.props.id}-button`).classList.remove('dropdown-btn-open');
         });
-        
+
         //for mobile need setTimeout so button can get display before focus
         if (window.screen.width < 768) {
             //    	this.container.children[0].focus();
@@ -302,7 +322,7 @@ export default class Dropdown extends Component {
     let btnIcon=false;
     let buttonLabel = (
       <div>
-        {this.props.label} <Icon name="dropdown-open-sm-18"></Icon>
+        {this.props.label} <Icon name={`${this.props.iconName}-${this.props.iconSize}`}></Icon>
       </div>
     );
 
@@ -314,7 +334,7 @@ export default class Dropdown extends Component {
         btnIcon = true;
         buttonClass = 'dropdown-activator pe-icon--btn';
         buttonLabel = (
-          <Icon name="dropdown-open-sm-24">{this.props.label}</Icon>
+          <Icon name={`${this.props.iconName}-${this.props.iconSize}`}>{this.props.label}</Icon>
         );
         break;
       case 'image':
@@ -327,7 +347,7 @@ export default class Dropdown extends Component {
         buttonLabel = (
           <div>
             <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt={this.props.btnImageAlt} />
-            <Icon name="dropdown-open-sm-18"></Icon>
+            <Icon name={`${this.props.iconName}-${this.props.iconSize}`}></Icon>
           </div>
         );
       break;
@@ -338,8 +358,17 @@ export default class Dropdown extends Component {
         break;
     }
 
+    if (this.props.btnHover) {
+      buttonClass = buttonClass + ' dropdown-hover-btn';
+    }
+
+    if (this.props.btnRound) {
+      buttonClass = buttonClass + ' dropdown-round-btn';
+    }
+
     return (
       <Button
+        id={`${this.props.id}-button`}
         className={buttonClass}
         type="button"
         aria-expanded={this.state.open}
@@ -380,7 +409,9 @@ export default class Dropdown extends Component {
     	const currentElement = e.target;
 
     	if (!this.container.contains(currentElement)) {
-    	  this.setState({open: false});
+        this.setState({open: false}, () => {
+          document.getElementById(`${this.props.id}-button`).classList.remove('dropdown-btn-open');
+        });
     	}
     } else {
     	return
