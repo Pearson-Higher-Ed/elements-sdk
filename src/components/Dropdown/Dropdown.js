@@ -23,7 +23,6 @@ export default class Dropdown extends Component {
     btnRound: PropTypes.bool,
     btnOpen: PropTypes.bool,
     iconName: PropTypes.string,
-    iconSize: PropTypes.string,
     menuArrow: PropTypes.bool
   };
 
@@ -31,8 +30,7 @@ export default class Dropdown extends Component {
     btnHover: false,
     btnRound: false,
     btnOpen: false,
-    iconName: 'dropdown-open-sm',
-    iconSize: '18',
+    iconName: 'dropdown-open-sm-18',
     menuArrow: false
   }
 
@@ -47,7 +45,8 @@ export default class Dropdown extends Component {
       selectedItemDOM: '',
       buttonFocus: true,
       btnImage: props.btnImage,
-      width: window.innerWidth
+      width: window.innerWidth,
+      menuArrowPos: 'up'
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -77,11 +76,7 @@ export default class Dropdown extends Component {
       const topAdjust = this.props.menuArrow ? elementRect.height + 22 : elementRect.height + 4;
 
       if (this.props.menuArrow) {
-        const arrowChild = document.getElementById(`${this.props.id}-arrow`).children;
-        arrowChild[0].classList.remove('dropdown-up-arrow-border');
-        arrowChild[0].classList.add('dropdown-down-arrow-border');
-        arrowChild[1].classList.remove('dropdown-up-arrow-filler');
-        arrowChild[1].classList.add('dropdown-down-arrow-filler');
+        this.setState({menuArrowPos: 'down'});
       }
       element.style.top = `-${(topAdjust)}px`;
 
@@ -98,11 +93,7 @@ export default class Dropdown extends Component {
     const element = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown");
 
     if (this.props.menuArrow) {
-      const arrowChild = document.getElementById(`${this.props.id}-arrow`).children;
-      arrowChild[0].classList.remove('dropdown-down-arrow-border');
-      arrowChild[0].classList.add('dropdown-up-arrow-border');
-      arrowChild[1].classList.remove('dropdown-down-arrow-filler');
-      arrowChild[1].classList.add('dropdown-up-arrow-filler');
+      this.setState({menuArrowPos: 'up'});
     }
 
     element.style.left = null;
@@ -342,7 +333,7 @@ export default class Dropdown extends Component {
     let btnIcon=false;
     let buttonLabel = (
       <div>
-        {this.props.label} <Icon name={`${this.props.iconName}-${this.props.iconSize}`}></Icon>
+        {this.props.label} <Icon name={this.props.iconName}></Icon>
       </div>
     );
 
@@ -354,7 +345,7 @@ export default class Dropdown extends Component {
         btnIcon = true;
         buttonClass = 'dropdown-activator pe-icon--btn';
         buttonLabel = (
-          <Icon name={`${this.props.iconName}-${this.props.iconSize}`}>{this.props.label}</Icon>
+          <Icon name={this.props.iconName}>{this.props.label}</Icon>
         );
         break;
       case 'image':
@@ -367,7 +358,7 @@ export default class Dropdown extends Component {
         buttonLabel = (
           <div>
             <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt={this.props.btnImageAlt} />
-            <Icon name={`${this.props.iconName}-${this.props.iconSize}`}></Icon>
+            <Icon name={this.props.iconName}></Icon>
           </div>
         );
       break;
@@ -379,11 +370,11 @@ export default class Dropdown extends Component {
     }
 
     if (this.props.btnHover) {
-      buttonClass = buttonClass + ' dropdown-hover-btn';
+      buttonClass = `${buttonClass} dropdown-hover-btn`;
     }
 
     if (this.props.btnRound) {
-      buttonClass = buttonClass + ' dropdown-round-btn';
+      buttonClass = `${buttonClass} dropdown-round-btn`
     }
 
     return (
@@ -407,7 +398,7 @@ export default class Dropdown extends Component {
     const dispArrow = this.state.open ? {} : {display: 'none'};
     return (
       <div id={`${this.props.id}-arrow`} className="dropdown-menu-arrow" style={dispArrow}>
-        <div className="dropdown-up-arrow-border" /><div className="dropdown-up-arrow-filler" />
+        <div className={`dropdown-${this.state.menuArrowPos}-arrow-border`} /><div className={`dropdown-${this.state.menuArrowPos}-arrow-filler`} />
       </div>
     );
   }

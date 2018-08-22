@@ -41,7 +41,6 @@ class DropdownPage extends React.Component {
               <li className="li-props">btnOpen:Boolean === "Activator button changes color while menu is open" (default is false)</li>
               <li className="li-props">menuArrow:Boolean === "Menu has carat pointing to activator button" (default is false)</li>
               <li className="li-props">iconName:String === "Use different icon from Elements Icon list" (default is 'dropdown-open-sm')</li>
-              <li className="li-props">iconSize:String === "Use different size for icon" (must be either 18 or 24) (default is 18)</li>
 
             </ul>
             <h3>Dropdown item Props </h3>
@@ -186,6 +185,7 @@ class DropdownPage extends React.Component {
               mobileTitle={mobileTitle}
               type="icon"
               label="icon text"
+              iconName="dropdown-open-sm-24"
               id="iconText">
               <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
               <DropdownItem type="divider" />
@@ -196,6 +196,7 @@ class DropdownPage extends React.Component {
               mobileTitle={mobileTitle}
               type="icon"
               label="icon text"
+              iconName="dropdown-open-sm-24"
               id="iconText">
               <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
               <DropdownItem type="divider" />
@@ -240,8 +241,7 @@ class DropdownPage extends React.Component {
             <h3>Icon only /w Round, Specified Icon, Hover State, Menu Arrow, and Open state</h3>
               <Dropdown
                 mobileTitle={mobileTitle}
-                iconName="ellipsis"
-                iconSize="18"
+                iconName="ellipsis-18"
                 btnHover
                 btnRound
                 btnOpen
@@ -256,8 +256,7 @@ class DropdownPage extends React.Component {
               <p className="code">
                 {`<Dropdown
                   mobileTitle={mobileTitle}
-                  iconName="ellipsis"
-                  iconSize="18"
+                  iconName="ellipsis-18"
                   btnHover
                   btnRound
                   btnOpen
