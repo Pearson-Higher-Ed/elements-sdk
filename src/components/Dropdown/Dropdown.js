@@ -10,7 +10,7 @@ export default class Dropdown extends Component {
 
   static propTypes = {
     mobileTitle: PropTypes.string,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['text', 'button', 'icon', 'icon-round', 'image']),
     label: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     changeHandler: PropTypes.func,
@@ -20,7 +20,6 @@ export default class Dropdown extends Component {
     btnImageWidth: PropTypes.string,
     btnImageAlt: PropTypes.string,
     btnHover: PropTypes.bool,
-    btnRound: PropTypes.bool,
     btnOpen: PropTypes.bool,
     iconName: PropTypes.string,
     menuArrow: PropTypes.bool
@@ -28,7 +27,6 @@ export default class Dropdown extends Component {
 
   static defaultProps = {
     btnHover: false,
-    btnRound: false,
     btnOpen: false,
     iconName: 'dropdown-open-sm-18',
     menuArrow: false
@@ -101,7 +99,6 @@ export default class Dropdown extends Component {
   }
 
   toggleDropdown() {
-    const dropdownButton = document.getElementById(`${this.props.id}-button`);
     this.setState({ open: !this.state.open }, () => {
       const dropdown = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
       // don't run in tests (DOM manipulation)
@@ -128,9 +125,6 @@ export default class Dropdown extends Component {
 
 
         if (this.state.open) {
-          if (this.props.btnOpen) {
-            dropdownButton.classList.add('dropdown-btn-open');
-          }
           this.placement(ReactDOM.findDOMNode(this));
           if(window.screen.width < 768){
             // hide children of body
@@ -142,7 +136,6 @@ export default class Dropdown extends Component {
             }
           }
         } else {
-          dropdownButton.classList.remove('dropdown-btn-open');
           this.resetPlacement(ReactDOM.findDOMNode(this));
           this.focusedItem = 0;
           if(window.screen.width < 768){
@@ -186,7 +179,6 @@ export default class Dropdown extends Component {
         // escape
         return this.setState({ open: false }, () => {
           this.handleSetItem();
-          document.getElementById(`${this.props.id}-button`).classList.remove('dropdown-btn-open');
         });
       }
 
@@ -259,9 +251,7 @@ export default class Dropdown extends Component {
         	}
         }
         else {
-          this.setState({ open: false }, () => {
-            document.getElementById(`${this.props.id}-button`).classList.remove('dropdown-btn-open');
-          });
+          this.setState({ open: false });
         }
       }
 
@@ -310,7 +300,6 @@ export default class Dropdown extends Component {
           selectedItemDOM: selectedListItem
         }, () => {
           this.handleSetItem();
-          document.getElementById(`${this.props.id}-button`).classList.remove('dropdown-btn-open');
         });
 
         //for mobile need setTimeout so button can get display before focus
@@ -348,6 +337,13 @@ export default class Dropdown extends Component {
           <Icon name={this.props.iconName}>{this.props.label}</Icon>
         );
         break;
+      case 'icon-round':
+        btnIcon = true;
+        buttonClass = 'dropdown-activator pe-icon--btn dropdown-round-btn';
+        buttonLabel = (
+          <Icon name={this.props.iconName}>{this.props.label}</Icon>
+        );
+        break;
       case 'image':
         let imgPad = '0';
         if (this.props.btnImageHeight < 18) {
@@ -371,10 +367,6 @@ export default class Dropdown extends Component {
 
     if (this.props.btnHover) {
       buttonClass = `${buttonClass} dropdown-hover-btn`;
-    }
-
-    if (this.props.btnRound) {
-      buttonClass = `${buttonClass} dropdown-round-btn`
     }
 
     return (
@@ -429,9 +421,7 @@ export default class Dropdown extends Component {
     	const currentElement = e.target;
 
     	if (!this.container.contains(currentElement)) {
-        this.setState({open: false}, () => {
-          document.getElementById(`${this.props.id}-button`).classList.remove('dropdown-btn-open');
-        });
+        this.setState({open: false});
     	}
     } else {
     	return

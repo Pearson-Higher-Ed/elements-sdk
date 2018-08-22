@@ -129,7 +129,7 @@
     border-radius: 20px;
   }
 
-  .dropdown-btn-open {
+  [aria-expanded='true'] {
     background: #505759;
     color: $pe-color-white;
 
