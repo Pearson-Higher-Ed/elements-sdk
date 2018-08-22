@@ -127,15 +127,15 @@
     height: 32px;
     width: 32px;
     border-radius: 20px;
-  }
 
-  [aria-expanded='true'] {
-    background: #505759;
-    color: $pe-color-white;
-
-    &:hover {
+    &[aria-expanded='true'] {
       background: #505759;
       color: $pe-color-white;
+
+      &:hover {
+        background: #505759;
+        color: $pe-color-white;
+      }
     }
   }
 

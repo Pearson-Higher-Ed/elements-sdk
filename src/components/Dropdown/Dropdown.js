@@ -10,7 +10,7 @@ export default class Dropdown extends Component {
 
   static propTypes = {
     mobileTitle: PropTypes.string,
-    type: PropTypes.oneOf(['text', 'button', 'icon', 'icon-round', 'image']),
+    type: PropTypes.oneOf(['text', 'button', 'icon', 'icon-round', 'image']).isRequired,
     label: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     changeHandler: PropTypes.func,
