@@ -260,7 +260,7 @@ class DropdownPage extends React.Component {
                   btnRound
                   btnOpen
                   menuArrow
-                  type="icon"
+                  type="icon-round"
                   label="icon text"
                   id="iconOptions">
                   <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
