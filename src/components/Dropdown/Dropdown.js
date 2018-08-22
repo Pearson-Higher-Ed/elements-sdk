@@ -26,6 +26,7 @@ export default class Dropdown extends Component {
   };
 
   static defaultProps = {
+    type: 'button',
     btnHover: false,
     btnOpen: false,
     iconName: 'dropdown-open-sm-18',
