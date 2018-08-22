@@ -118,7 +118,7 @@
 
   .dropdown-hover-btn {
 
-    &:hover {
+    &:hover, &:focus {
       background: $pe-color-alto;
     }
   }
