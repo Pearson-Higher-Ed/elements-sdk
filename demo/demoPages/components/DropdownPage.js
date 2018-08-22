@@ -249,14 +249,20 @@ class DropdownPage extends React.Component {
               </Dropdown>
               <p className="code">
                 {`<Dropdown
-                mobileTitle={mobileTitle}
-                type="icon"
-                label="icon text"
-                id="iconText">
-                <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
-                <DropdownItem type="divider" />
-                <DropdownItem dropdownId="dropIcon" selectValue="list-item-2" label="list item 2" type="link" url="www.google.com" />
-              </Dropdown>`}
+                  mobileTitle={mobileTitle}
+                  iconName="ellipsis"
+                  iconSize="18"
+                  btnHover
+                  btnRound
+                  btnOpen
+                  menuArrow
+                  type="icon"
+                  label="icon text"
+                  id="iconOptions">
+                  <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
+                  <DropdownItem type="divider" />
+                  <DropdownItem dropdownId="dropIcon" selectValue="list-item-2" label="list item 2" type="link" url="www.google.com" />
+                </Dropdown>`}
               </p>
         </div>
       </div>

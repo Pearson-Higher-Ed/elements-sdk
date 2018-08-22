@@ -74,8 +74,17 @@ export default class Dropdown extends Component {
     const top_tooclose = elementRect.top < elementRect.height;
 
     if (touch_bottom) {
-          // 4 because of margins
-          element.style.top = `-${(elementRect.height + 4)}px`;
+      const arrowChild = document.getElementById(`${this.props.id}-arrow`).children;
+      const topAdjust = this.props.menuArrow ? elementRect.height + 22 : elementRect.height + 4;
+
+      if (this.props.menuArrow) {
+        arrowChild[0].classList.remove('dropdown-up-arrow-border');
+        arrowChild[0].classList.add('dropdown-down-arrow-border');
+        arrowChild[1].classList.remove('dropdown-up-arrow-filler');
+        arrowChild[1].classList.add('dropdown-down-arrow-filler');
+      }
+      element.style.top = `-${(topAdjust)}px`;
+
     }
 
     if (touch_right) {
@@ -86,7 +95,16 @@ export default class Dropdown extends Component {
   }
 
   resetPlacement(dropdown) {
-    const element = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
+    const element = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown");
+    const arrowChild = document.getElementById(`${this.props.id}-arrow`).children;
+
+    if (this.props.menuArrow) {
+      arrowChild[0].classList.remove('dropdown-down-arrow-border');
+      arrowChild[0].classList.add('dropdown-up-arrow-border');
+      arrowChild[1].classList.remove('dropdown-down-arrow-filler');
+      arrowChild[1].classList.add('dropdown-up-arrow-filler');
+    }
+
     element.style.left = null;
     element.style.top = null;
   }
@@ -119,7 +137,9 @@ export default class Dropdown extends Component {
 
 
         if (this.state.open) {
-          dropdownButton.classList.add('dropdown-btn-open');
+          if (this.props.btnOpen) {
+            dropdownButton.classList.add('dropdown-btn-open');
+          }
           this.placement(ReactDOM.findDOMNode(this));
           if(window.screen.width < 768){
             // hide children of body
@@ -383,6 +403,15 @@ export default class Dropdown extends Component {
     );
   }
 
+  insertArrow() {
+    const dispArrow = this.state.open ? {} : {display: 'none'};
+    return (
+      <div id={`${this.props.id}-arrow`} className="dropdown-menu-arrow" style={dispArrow}>
+        <div className="dropdown-up-arrow-border" /><div className="dropdown-up-arrow-filler" />
+      </div>
+    );
+  }
+
   addMobileHeader() {
     if (window.screen.width < 768) {
       return (
@@ -506,6 +535,7 @@ export default class Dropdown extends Component {
 
   render() {
     const isMobile = window.screen.width < 768;
+    const menuMarginTop = this.props.menuArrow ? '11px' : '2px';
 
     if (isMobile) {
       return (
@@ -529,11 +559,13 @@ export default class Dropdown extends Component {
       return (
         <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
           {this.insertAnchor()}
+          {this.props.menuArrow && this.insertArrow()}
           <ul
             role="menu"
             id={`${this.props.id.replace(' ', '_')}-dropdown`}
             ref={(parent) => { this.list = parent; }}
             className={this.state.open ? '' : 'dropdown-menu'}
+            style={{ marginTop: menuMarginTop }}
             //aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
             onClick={this.itemSelected}
             onKeyDown={this.handleKeyDown}>
