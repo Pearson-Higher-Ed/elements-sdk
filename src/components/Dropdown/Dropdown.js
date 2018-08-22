@@ -74,10 +74,10 @@ export default class Dropdown extends Component {
     const top_tooclose = elementRect.top < elementRect.height;
 
     if (touch_bottom) {
-      const arrowChild = document.getElementById(`${this.props.id}-arrow`).children;
       const topAdjust = this.props.menuArrow ? elementRect.height + 22 : elementRect.height + 4;
 
       if (this.props.menuArrow) {
+        const arrowChild = document.getElementById(`${this.props.id}-arrow`).children;
         arrowChild[0].classList.remove('dropdown-up-arrow-border');
         arrowChild[0].classList.add('dropdown-down-arrow-border');
         arrowChild[1].classList.remove('dropdown-up-arrow-filler');
@@ -96,9 +96,9 @@ export default class Dropdown extends Component {
 
   resetPlacement(dropdown) {
     const element = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown");
-    const arrowChild = document.getElementById(`${this.props.id}-arrow`).children;
 
     if (this.props.menuArrow) {
+      const arrowChild = document.getElementById(`${this.props.id}-arrow`).children;
       arrowChild[0].classList.remove('dropdown-down-arrow-border');
       arrowChild[0].classList.add('dropdown-up-arrow-border');
       arrowChild[1].classList.remove('dropdown-down-arrow-filler');

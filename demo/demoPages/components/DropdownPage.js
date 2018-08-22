@@ -36,6 +36,12 @@ class DropdownPage extends React.Component {
               <li className="li-props">btnImageHeight:String === "Display height of image in pixels" (if dropdown is image type)</li>
               <li className="li-props">btnImageWidth:String === "Display width of the image in pixels" (if dropdown is image type)</li>
               <li className="li-props">btnImageAlt:String === "Alt text for image" (if dropdown is image type)</li>
+              <li className="li-props">btnHover:Boolean === "Add hover state to activator button" (default is false)</li>
+              <li className="li-props">btnRound:Boolean === "Activator button is round" (use only with icon type) (default is false)</li>
+              <li className="li-props">btnOpen:Boolean === "Activator button changes color while menu is open" (default is false)</li>
+              <li className="li-props">menuArrow:Boolean === "Menu has carat pointing to activator button" (default is false)</li>
+              <li className="li-props">iconName:String === "Use different icon from Elements Icon list" (default is 'dropdown-open-sm')</li>
+              <li className="li-props">iconSize:String === "Use different size for icon" (must be either 18 or 24) (default is 18)</li>
 
             </ul>
             <h3>Dropdown item Props </h3>
