@@ -10,7 +10,7 @@ export default class Dropdown extends Component {
 
   static propTypes = {
     mobileTitle: PropTypes.string,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['text', 'button', 'icon', 'icon-round', 'image']).isRequired,
     label: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     changeHandler: PropTypes.func,
@@ -18,8 +18,20 @@ export default class Dropdown extends Component {
     btnImageHeight: PropTypes.string,
     scrollable: PropTypes.bool,
     btnImageWidth: PropTypes.string,
-    btnImageAlt: PropTypes.string
+    btnImageAlt: PropTypes.string,
+    btnHover: PropTypes.bool,
+    btnOpen: PropTypes.bool,
+    iconName: PropTypes.string,
+    menuArrow: PropTypes.bool
   };
+
+  static defaultProps = {
+    type: 'button',
+    btnHover: false,
+    btnOpen: false,
+    iconName: 'dropdown-open-sm-18',
+    menuArrow: false
+  }
 
   constructor(props) {
     super(props)
@@ -32,7 +44,8 @@ export default class Dropdown extends Component {
       selectedItemDOM: '',
       buttonFocus: true,
       btnImage: props.btnImage,
-      width: window.innerWidth
+      width: window.innerWidth,
+      menuArrowPos: 'up'
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -59,8 +72,13 @@ export default class Dropdown extends Component {
     const top_tooclose = elementRect.top < elementRect.height;
 
     if (touch_bottom) {
-          // 4 because of margins
-          element.style.top = `-${(elementRect.height + 4)}px`;
+      const topAdjust = this.props.menuArrow ? elementRect.height + 22 : elementRect.height + 4;
+
+      if (this.props.menuArrow) {
+        this.setState({menuArrowPos: 'down'});
+      }
+      element.style.top = `-${(topAdjust)}px`;
+
     }
 
     if (touch_right) {
@@ -71,7 +89,12 @@ export default class Dropdown extends Component {
   }
 
   resetPlacement(dropdown) {
-    const element = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
+    const element = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown");
+
+    if (this.props.menuArrow) {
+      this.setState({menuArrowPos: 'up'});
+    }
+
     element.style.left = null;
     element.style.top = null;
   }
@@ -82,13 +105,13 @@ export default class Dropdown extends Component {
       // don't run in tests (DOM manipulation)
       if(dropdown != null){
         const parentWrapper = dropdown.parentElement.parentElement
-        
+
         //need to return focus to checked item
         if (dropdown.hasAttribute("aria-activedescendant")) {
         	var activeDescId = dropdown.getAttribute("aria-activedescendant"),
         		activeDescendant = document.getElementById(activeDescId),
         		activeDescIndex = [].indexOf.call(activeDescendant.parentNode.children, activeDescendant);
-        		
+
         	activeDescendant.children[0].focus();
         	this.focusedItem = activeDescIndex;
         } else {
@@ -100,8 +123,8 @@ export default class Dropdown extends Component {
         		this.list.children[0].children[0].focus();
         	}
         }
-        
-    
+
+
         if (this.state.open) {
           this.placement(ReactDOM.findDOMNode(this));
           if(window.screen.width < 768){
@@ -156,7 +179,7 @@ export default class Dropdown extends Component {
       if (event.which === 27) {
         // escape
         return this.setState({ open: false }, () => {
-          this.handleSetItem()
+          this.handleSetItem();
         });
       }
 
@@ -229,9 +252,7 @@ export default class Dropdown extends Component {
         	}
         }
         else {
-        	this.setState({
-        	  open: false
-        	});
+          this.setState({ open: false });
         }
       }
 
@@ -279,9 +300,9 @@ export default class Dropdown extends Component {
           selectedValue: selectedListItem.getAttribute('data-value'),
           selectedItemDOM: selectedListItem
         }, () => {
-          this.handleSetItem()
+          this.handleSetItem();
         });
-        
+
         //for mobile need setTimeout so button can get display before focus
         if (window.screen.width < 768) {
             //    	this.container.children[0].focus();
@@ -302,7 +323,7 @@ export default class Dropdown extends Component {
     let btnIcon=false;
     let buttonLabel = (
       <div>
-        {this.props.label} <Icon name="dropdown-open-sm-18"></Icon>
+        {this.props.label} <Icon name={this.props.iconName}></Icon>
       </div>
     );
 
@@ -314,7 +335,14 @@ export default class Dropdown extends Component {
         btnIcon = true;
         buttonClass = 'dropdown-activator pe-icon--btn';
         buttonLabel = (
-          <Icon name="dropdown-open-sm-24">{this.props.label}</Icon>
+          <Icon name={this.props.iconName}>{this.props.label}</Icon>
+        );
+        break;
+      case 'icon-round':
+        btnIcon = true;
+        buttonClass = 'dropdown-activator pe-icon--btn dropdown-round-btn';
+        buttonLabel = (
+          <Icon name={this.props.iconName}>{this.props.label}</Icon>
         );
         break;
       case 'image':
@@ -327,7 +355,7 @@ export default class Dropdown extends Component {
         buttonLabel = (
           <div>
             <img src={this.props.btnImage} height={this.props.btnImageHeight} width={this.props.btnImageWidth} style={{marginTop: imgPad + 'px'}} alt={this.props.btnImageAlt} />
-            <Icon name="dropdown-open-sm-18"></Icon>
+            <Icon name={this.props.iconName}></Icon>
           </div>
         );
       break;
@@ -338,8 +366,13 @@ export default class Dropdown extends Component {
         break;
     }
 
+    if (this.props.btnHover) {
+      buttonClass = `${buttonClass} dropdown-hover-btn`;
+    }
+
     return (
       <Button
+        id={`${this.props.id}-button`}
         className={buttonClass}
         type="button"
         aria-expanded={this.state.open}
@@ -351,6 +384,15 @@ export default class Dropdown extends Component {
       >
         {buttonLabel}
       </Button>
+    );
+  }
+
+  insertArrow() {
+    const dispArrow = this.state.open ? {} : {display: 'none'};
+    return (
+      <div id={`${this.props.id}-arrow`} className="dropdown-menu-arrow" style={dispArrow}>
+        <div className={`dropdown-${this.state.menuArrowPos}-arrow-border`} /><div className={`dropdown-${this.state.menuArrowPos}-arrow-filler`} />
+      </div>
     );
   }
 
@@ -380,7 +422,7 @@ export default class Dropdown extends Component {
     	const currentElement = e.target;
 
     	if (!this.container.contains(currentElement)) {
-    	  this.setState({open: false});
+        this.setState({open: false});
     	}
     } else {
     	return
@@ -475,6 +517,7 @@ export default class Dropdown extends Component {
 
   render() {
     const isMobile = window.screen.width < 768;
+    const menuMarginTop = this.props.menuArrow ? '11px' : '2px';
 
     if (isMobile) {
       return (
@@ -498,11 +541,13 @@ export default class Dropdown extends Component {
       return (
         <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
           {this.insertAnchor()}
+          {this.props.menuArrow && this.insertArrow()}
           <ul
             role="menu"
             id={`${this.props.id.replace(' ', '_')}-dropdown`}
             ref={(parent) => { this.list = parent; }}
             className={this.state.open ? '' : 'dropdown-menu'}
+            style={{ marginTop: menuMarginTop }}
             //aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
             onClick={this.itemSelected}
             onKeyDown={this.handleKeyDown}>
