@@ -256,6 +256,14 @@ const IconPage = () => (
             <li><Icon name="popout-24"> Pop Out 24</Icon> popout-24</li>
             <li><Icon name="star-18"> Star 18</Icon> star-18</li>
             <li><Icon name="star-24"> Star 24</Icon> star-24</li>
+            <li><Icon name="star-outline-18">Star outline 18</Icon> star-outline-18</li>
+            <li><Icon name="star-outline-24">Star outline 24</Icon> star-outline-24</li>
+            <li><Icon name="file-zip-18">File zip 18</Icon> file-zip-18</li>
+            <li><Icon name="file-zip-24">File zip 24</Icon> file-zip-24</li>
+            <li><Icon name="label-18">Label 18</Icon> label-18</li>
+            <li><Icon name="label-24">Label 24</Icon> label-24</li>
+            <li><Icon name="drag-handle-18">Drag handle 18</Icon> drag-handle-18</li>
+            <li><Icon name="drag-handle-24">Drag handle 24</Icon> drag-handle-24</li>
           </ul>
         </div>
       </div>
