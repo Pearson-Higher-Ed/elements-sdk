@@ -1,4 +1,10 @@
-@import '../../styles/elements.scss';
+// @import '../../styles/elements.scss';
+@import '../../styles/base/mixins';
+@import '../../styles/base/variables';
+@import '../../styles/elements/color/variables';
+@import '../../styles/elements/inputs/variables';
+@import '../../styles/elements/inputs/basic-input-mixins';
+@import '../../styles/elements/typography/variables';
 
 %abstract {
   padding          : $textInput-basic-padding;
