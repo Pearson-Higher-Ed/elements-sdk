@@ -108,7 +108,7 @@ export default DropdownItem;
 DropdownItem.propTypes = {
   label: PropTypes.string,
   selectValue: PropTypes.string,
-  type: PropTypes.oneOf(['link', 'button', 'icon', 'image']),
+  type: PropTypes.oneOf(['link', 'button', 'icon', 'image', 'divider', 'imageButton']),
   itemSelected: PropTypes.string,
   selected: PropTypes.bool,
   selectedName: PropTypes.string,
