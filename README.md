@@ -60,17 +60,17 @@ sprite to enable the entire Elements-SDK library to be used.
 ```
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@pearson-components/elements-sdk@1.6.1/build/css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@pearson-components/elements-sdk/build/css/elements.css" />
     <script type="text/javascript" src="https://unpkg.com/react@15.6.2/dist/react.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/react-dom@15.6.2/dist/react-dom.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/@pearson-components/elements-sdk@1.6.1/build/dist.elements-sdk.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@pearson-components/elements-sdk/build/dist.elements-sdk.js"></script>
   </head>
   <body>
     <div id="app"></div>
     <script>
       if (document.body.children[0].nodeName !== 'svg') {
         var pe_ajax = new XMLHttpRequest();
-        pe_ajax.open("GET", "https://unpkg.com/@pearson-components/elements-sdk@1.6.1/build/icons/p-icons-sprite-1.1.svg", true);
+        pe_ajax.open("GET", "https://unpkg.com/@pearson-components/elements-sdk/build/icons/p-icons-sprite-1.1.svg", true);
         pe_ajax.responseType = "document";
         pe_ajax.onload = function(e) {
           document.body.insertBefore(
