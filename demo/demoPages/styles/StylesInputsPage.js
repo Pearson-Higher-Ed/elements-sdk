@@ -668,6 +668,43 @@ const StylesInputsPage = () => (
     {`</div>`}
     </p>
 
+    GLP rounded checkbox - Top level
+    <div className="pe-checkbox circle-checks top-level">
+      <input type="checkbox" aria-label="" id="checkBoxId4-1" value="Bacon top level" checked/>
+      <label htmlFor="checkBoxId4-1" for='checkBoxId4-1'>Bacon top level</label>
+      <span>
+        <span className="checked">
+          <svg focusable="false" className="pe-icon--check-sm-18" aria-hidden="true" >
+              <use xlinkHref="#check-sm-18"></use>
+          </svg>
+          </span>
+            <span className="indeterminate-icon">
+              <svg focusable="false" className="pe-icon--placeholder-indeterminate-18" aria-hidden="true" >
+                <use xlinkHref="#placeholder-indeterminate-18"></use>
+              </svg>
+          </span>
+      </span>
+    </div>
+
+    GLP rounded checkbox - second level
+    <div class="pe-checkbox circle-checks second-level">
+      <input type="checkbox" aria-label="" id="checkBoxId-2" value="Bacon second level" checked/>
+      <label htmlFor="checkBoxId-2">Bacon second level</label>
+      <span>
+        <span className="checked">
+          <svg focusable="false" className="pe-icon--check-sm-18" aria-hidden="true" >
+              <use xlinkHref="#check-sm-18"></use>
+          </svg>
+          </span>
+            <span className="indeterminate-icon">
+                <svg focusable="false" className="pe-icon--placeholder-indeterminate-18" aria-hidden="true" >
+              <use xlinkHref="#placeholder-indeterminate-18"></use>
+          </svg>
+        </span>
+      </span>
+    </div>
+    
+
     <h2>Inputs (radio buttons)</h2>
 
     <p>Radio buttons are for times when the user needs to make a single choice among many options. Unlike a select box, all options are available and visible to all users at once.</p>

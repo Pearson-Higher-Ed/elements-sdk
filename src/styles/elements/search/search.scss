@@ -1,0 +1,29 @@
+.pe-search {
+  border: 1px solid $pe-color-concrete;
+  background-color: $pe-color-white;
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+  input {
+    margin: 11px 4px 11px 16px; 
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    &::placeholder {
+      color: $pe-color-medium-gray;
+    }
+  }
+  button {
+    padding: 11px 12px;
+    margin-right: 4px;
+  }
+}
+
+.pe-search--rounded {
+  border-radius: 20px;
+}
+
+.pe-search--square {
+  border-radius: 4px;
+}

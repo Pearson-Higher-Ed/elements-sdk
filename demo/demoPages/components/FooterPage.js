@@ -19,7 +19,7 @@ const FooterPage = () => {
   return (
     <div className="displaySection">
       <h2><a href="http://pearson-higher-ed.github.io/design/c/footer/">Footer</a></h2>
-
+      <div>
       <div className="elementContainer">
         <div className="code">
           <h3>Props</h3>
@@ -46,21 +46,23 @@ const FooterPage = () => {
           </ul>
         </div>
 
-        <h3>Example usage</h3>
-          <p className="code">
-            {`const testLinks = [{
-              text: 'First link',
-              href: 'first'
-            }, {
-              text: 'Second link',
-              href: 'second'
-            }, {
-              text: 'Last link',
-              href: 'last'
-            }];`} <br/>
-            {`<Footer links={testLinks} singlePageStick />`}
-          </p>
-        <Footer links={testLinks} singlePageStick />
+          <h3>Example usage</h3>
+            <p className="code">
+              {`const testLinks = [{
+                text: 'First link',
+                href: 'first'
+              }, {
+                text: 'Second link',
+                href: 'second'
+              }, {
+                text: 'Last link',
+                href: 'last'
+              }];`} <br/>
+              {`<Footer links={testLinks} glp />`}
+            </p>
+        </div>
+
+        <Footer links={testLinks} glp/>
       </div>
     </div>
     );
