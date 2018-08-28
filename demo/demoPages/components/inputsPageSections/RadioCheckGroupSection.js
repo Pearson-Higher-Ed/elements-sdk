@@ -8,7 +8,9 @@ export default class RadioCheckGroupSection extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checkboxOptions         : [{value: 0, label: 'coffee'}, {value: 1, label: 'tea'}, {value: 2, label: 'hot cocoa'}],
+      checkboxOptions1         : [{value: 0, label: 'coffee'}, {value: 1, label: 'tea'}, {value: 2, label: 'hot cocoa'}],
+      checkboxOptions2         : [{value: 0, label: 'coffee'}, {value: 1, label: 'tea'}, {value: 2, label: 'hot cocoa'}],
+      checkboxOptions3         : [{value: 0, label: 'coffee'}, {value: 1, label: 'tea'}, {value: 2, label: 'hot cocoa'}],
       radioOptions1           : [{value: 0, label: 'coffee', checked: true, disabled: true}, {value: 1, label: 'tea', disabled: true}, {value: 2, label: 'hot cocoa', disabled: true}],
       radioOptions2           : [{value: 0, label: 'coffee', checked: true}, {value: 1, label: 'tea'}, {value: 2, label: 'hot cocoa'}]
     };
@@ -17,8 +19,9 @@ export default class RadioCheckGroupSection extends Component {
     this.radioHandler = this.radioHandler.bind(this);
   }
 
-  checkboxHandler (e) {
-    const checkboxOptions = this.state.checkboxOptions.map((option) => {
+  checkboxHandler (options) {
+    const updatedOptions = (e) => {
+    const checkboxOptions = this.state[options].map((option) => {
       if (option.value.toString() === e.target.value) {
         return option.checked ? Object.assign(option, { checked: false }) : Object.assign(option, { checked: true });
       }
@@ -26,8 +29,10 @@ export default class RadioCheckGroupSection extends Component {
     });
 
     this.setState({
-      checkboxOptions
+      [options]: checkboxOptions
     });
+  }
+  return updatedOptions
   }
 
   radioHandler (options) {
@@ -98,11 +103,39 @@ export default class RadioCheckGroupSection extends Component {
             id              = "checkbox1"
             name            = "checkbox1"
             legendText      = "These are checkboxes"
-            options         = {this.state.checkboxOptions}
-            changeHandler   = {this.checkboxHandler}
+            options         = {this.state.checkboxOptions1}
+            changeHandler   = {this.checkboxHandler('checkboxOptions1')}
             />
           <p className="code">{'<RadioCheckGroup inputType="checkbox" id="checkbox1" legendText="checkbox1" options={[{value: 0, label: "coffee", checked: true}, {value: 1, label: "tea"}, {value: 2, label: "hot cocoa"}]} changeHandler={() => {}} />'}</p>
-      </div>
+
+
+          <h3>GLP Rounded Checkbox Group - Top Level:</h3>
+
+            <RadioCheckGroup
+              inputType       = "checkbox"
+              glpType         = {true}
+              glpTopLevel     = {true}
+              id              = "checkbox2"
+              name            = "checkbox2"
+              legendText      = "These are checkboxes"
+              options         = {this.state.checkboxOptions2}
+              changeHandler   = {this.checkboxHandler('checkboxOptions2')}
+              />
+            <p className="code">{'<RadioCheckGroup inputType="checkbox" id="checkbox2" legendText="checkbox2" options={[{value: 0, label: "coffee", checked: true}, {value: 1, label: "tea"}, {value: 2, label: "hot cocoa"}]} changeHandler={() => {}} />'}</p>
+
+          <h3>GLP Rounded Checkbox Group - Second Level:</h3>
+
+            <RadioCheckGroup
+              inputType       = "checkbox"
+              glpType         = {true}
+              id              = "checkbox3"
+              name            = "checkbox3"
+              legendText      = "These are checkboxes"
+              options         = {this.state.checkboxOptions3}
+              changeHandler   = {this.checkboxHandler('checkboxOptions3')}
+              />
+            <p className="code">{'<RadioCheckGroup inputType="checkbox" id="checkbox2" legendText="checkbox2" options={[{value: 0, label: "coffee", checked: true}, {value: 1, label: "tea"}, {value: 2, label: "hot cocoa"}]} changeHandler={() => {}} />'}</p>
+        </div>
     )
   }
 }

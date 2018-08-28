@@ -7,7 +7,7 @@ const thrtytwo = {paddingLeft: 32};
 const forty = {paddingLeft: 40};
 
 const SearchPage = () => (
-    <div>
+    <div className='elementContainer'>
         <form className="pe-search pe-search--rounded" onsubmit="return false;">
             <div>
                 <input className="pe-label" type="search" placeholder="Search"/>

@@ -49,25 +49,25 @@ const StylesInputsPage = () => (
 
     <h2>Inputs - Fancy (single line - focus)</h2>
 
-    <label className="pe-textLabelInput__label--label_focus" htmlFor="name1_again">First Name</label>
+    <label className="pe-textLabelInput__label" htmlFor="name1_again">First Name</label>
     <input type="text" className="pe-textInput" id="name1_again" placeholder="m0ar placeholder" />
     <span className="pe-input_underline"></span>
 
     <p className="code">
-    {`<label class="pe-textLabelInput__label--label_focus" for="name1_again">First Name</label>`} <br/>
+    {`<label class="pe-textLabelInput__label" for="name1_again">First Name</label>`} <br/>
     {`<input type="text" class="pe-textInput" id="name1_again" placeholder="m0ar placeholder">`} <br/>
     {`<span class="pe-input_underline"></span>`}
     </p>
 
     <h2>Inputs - Fancy (single line - error)</h2>
 
-    <label className="pe-textLabelInput__label--label_error" htmlFor="name2">First Name</label>
+    <label className="pe-textLabelInput__label" htmlFor="name2">First Name</label>
     <input type="text" className="pe-textInput--input_error" id="name2" value="Cher" aria-describedby="someError" aria-invalid="true" />
     <span className="pe-inputError_underline"></span>
     <span id="someError" className="pe-input--error_message">this is an error message</span>
 
     <p className="code">
-    {`<label class="pe-textLabelInput__label--label_error" for="name2">First Name</label>`} <br/>
+    {`<label class="pe-textLabelInput__label" for="name2">First Name</label>`} <br/>
     {`<input type="text" class="pe-textInput--input_error" id="name2" value="Cher" aria-describedby="someError" aria-invalid="true">`} <br/>
     {`<span class="pe-inputError_underline"></span>`} <br/>
     {`<span id="someError" class="pe-input--error_message">this is an error message</span>`}
@@ -108,22 +108,22 @@ const StylesInputsPage = () => (
     <h2>Inputs - Basic (single line - focus)</h2>
     <p>This is just showing that, on focus, the label should turn blue. This needs JavaScript to show, and is not naturally included in Elements css.</p>
 
-    <label className="pe-textLabelInput__label--label_focus" htmlFor="anotherInput">Label</label>
+    <label className="pe-textLabelInput__label" htmlFor="anotherInput">Label</label>
     <input type="text" className="pe-textInput--basic" id="anotherInput" placeholder="Example placeholder" />
 
     <p className="code">
-    {`<label class="pe-textLabelInput__label--label_focus" for="anotherInput">Label</label>`} <br/>
+    {`<label class="pe-textLabelInput__label" for="anotherInput">Label</label>`} <br/>
     {`<input type="text" class="pe-textInput--basic" id="anotherInput" placeholder="Example placeholder">`}
     </p>
 
     <h2>Inputs - Basic (single line - error)</h2>
 
-    <label className="pe-textLabelInput__label--label_error" htmlFor="emailz">Email address</label>
+    <label className="pe-textLabelInput__label" htmlFor="emailz">Email address</label>
     <input type="text" className="pe-textInput--basic_error" id="emailz" value="email@domain" aria-invalid="true" aria-describedby="no_tld_error" />
     <p id="no_tld_error" className="pe-input--error_message">This address looks like it&#39;s missing the TLD.</p>
 
     <p className="code">
-    {`<label class="pe-textLabelInput__label--label_error" for="emailz">Email address</label>`} <br/>
+    {`<label class="pe-textLabelInput__label" for="emailz">Email address</label>`} <br/>
     {`<input type="text" class="pe-textInput--basic_error" id="emailz" value="email@domain" aria-invalid="true" aria-describedby="no_tld_error">`} <br/>
     {`<p id="no_tld_error" class="pe-input--error_message">This address looks like it's missing the TLD.</p>`}
     </p>
@@ -169,7 +169,7 @@ const StylesInputsPage = () => (
 
     <h2>Inputs (password) - Fancy (error)</h2>
 
-    <label htmlFor="PasswordInputFancyError" className="pe-textLabelInput__label--label_error">Set a Password</label>
+    <label htmlFor="PasswordInputFancyError" className="pe-textLabelInput__label">Set a Password</label>
     <input type="password" id="PasswordInputFancyError" className="pe-textInput--input_error" aria-describedby="password_error2 password_hint2" aria-invalid="true" />
     <span className="pe-inputError_underline"></span>
     <button type="button" id="showbutton-PasswordInputFancyError" className="pe-textInput__showButton--error">show</button>
@@ -177,7 +177,7 @@ const StylesInputsPage = () => (
     <span id="password_error2" className="pe-input--error_message">This is an error message</span>
 
     <p className="code">
-    {`<label for="PasswordInputFancyError" class="pe-textLabelInput__label--label_error">Set a Password</label>`} <br/>
+    {`<label for="PasswordInputFancyError" class="pe-textLabelInput__label">Set a Password</label>`} <br/>
     {`<input type="password" id="PasswordInputFancyError" class="pe-textInput--input_error" aria-describedby="password_error2 password_hint2" aria-invalid="true">`} <br/>
     {`<span class="pe-inputError_underline"></span>`} <br/>
     {`<button type="button" id="showbutton-PasswordInputFancyError" class="pe-textInput__showButton--error">show</button>`} <br/>
@@ -234,7 +234,7 @@ const StylesInputsPage = () => (
 
     <h2>Inputs (password) - Basic (error)</h2>
 
-    <label htmlFor="PasswordInputBasicError" className="pe-textLabelInput__label--label_error">Password: </label>
+    <label htmlFor="PasswordInputBasicError" className="pe-textLabelInput__label">Password: </label>
     <input type="password" id="PasswordInputBasicError" value="star wars" className="pe-textInput--basic_error" aria-invalid="true" aria-describedby="pw_error2 pw_hint2" />
     <span className=""></span>
     <button type="button" id="showbutton-PasswordInputBasicError" className="pe-textInput__showButton-basic">show</button>
@@ -242,7 +242,7 @@ const StylesInputsPage = () => (
     <span id="pw_error2" className="pe-input--error_message">Srsly. Choose something more secure.</span>
 
     <p className="code">
-    {`<label for="PasswordInputBasicError" class="pe-textLabelInput__label--label_error">Password: </label>`} <br/>
+    {`<label for="PasswordInputBasicError" class="pe-textLabelInput__label">Password: </label>`} <br/>
     {`<input type="password" id="PasswordInputBasicError" value="star wars" class="pe-textInput--basic_error" aria-invalid="true" aria-describedby="pw_error2 pw_hint2">`} <br/>
     {`<span class=""></span>`} <br/>
     {`<button type="button" id="showbutton-PasswordInputBasicError" class="pe-textInput__showButton-basic">show</button>`} <br/>
@@ -321,7 +321,7 @@ const StylesInputsPage = () => (
 
     <h2>Select Inputs - Basic (error)</h2>
 
-    <label className="pe-textLabelInput__label--label_error" htmlFor="fout">Error label</label>
+    <label className="pe-textLabelInput__label" htmlFor="fout">Error label</label>
     <div className="pe-select-container-error">
       <select className="pe-selectInput--basic" id="fout" aria-describedby="select_error">
         <option value="uno">Uno</option>
@@ -338,7 +338,7 @@ const StylesInputsPage = () => (
     <p id="select_error" className="pe-input--error_message">error message</p>
 
     <p className="code">
-    {`<label class="pe-textLabelInput__label--label_error" for="fout">Error label</label>`} <br/>
+    {`<label class="pe-textLabelInput__label" for="fout">Error label</label>`} <br/>
     {`<div class="pe-select-container-error">`} <br/>
       <div style={eight}>{`<select class="pe-selectInput--basic" id="fout" aria-describedby="select_error">`}</div>
         <div style={sixtn}>{`<option value="uno">Uno</option>`}</div>
@@ -421,7 +421,7 @@ const StylesInputsPage = () => (
 
     <h2>Select Inputs - fancy (error)</h2>
 
-    <label htmlFor="select_fancy_error" className="pe-textLabelInput__label--label_error">Select Label:</label>
+    <label htmlFor="select_fancy_error" className="pe-textLabelInput__label">Select Label:</label>
       <div className="pe-select-container-fancy-error">
         <select id="select_fancy_error" className="pe-selectInput-fancy-error" aria-invalid="true" aria-describedby="fancy_error">
           <option>ipad</option>
@@ -436,7 +436,7 @@ const StylesInputsPage = () => (
       <span id="fancy_error" className="pe-input--error_message">This is an error message</span>
 
     <p className="code">
-    {`<label for="select_fancy_error" class="pe-textLabelInput__label--label_error">Select Label:</label>`} <br/>
+    {`<label for="select_fancy_error" class="pe-textLabelInput__label">Select Label:</label>`} <br/>
       <div style={eight}>{`<div class="pe-select-container-fancy-error">`}</div>
         <div style={sixtn}>{`<select id="select_fancy_error" class="pe-selectInput-fancy-error" aria-invalid="true" aria-describedby="fancy_error">`}</div>
           <div style={twntyFr}>{`<option>ipad</option>`}</div>
@@ -527,13 +527,13 @@ const StylesInputsPage = () => (
 
     <h2>Multiple line text - error</h2>
 
-    <label className="pe-textLabelInput__label--label_error" htmlFor="vlaai_fout">Multi-line label</label>
+    <label className="pe-textLabelInput__label" htmlFor="vlaai_fout">Multi-line label</label>
     <textarea className="pe-multiLineText--error" id="vlaai_fout" cols="30" rows="5"
       aria-invalid="true" aria-describedby="vlaai_error">You Can&#39;t Have Too Much Truck </textarea>
     <p id="vlaai_error" className="pe-input--error_message">Too much truck</p>
 
     <p className="code">
-    {`<label class="pe-textLabelInput__label--label_error" for="vlaai_fout">Multi-line label</label>`} <br/>
+    {`<label class="pe-textLabelInput__label" for="vlaai_fout">Multi-line label</label>`} <br/>
     {`<textarea class="pe-multiLineText--error" id="vlaai_fout" cols="30" rows="5"`} <br/>
       {`aria-invalid="true" aria-describedby="vlaai_error">You Can't Have Too Much Truck </textarea>`} <br/>
     {`<p id="vlaai_error" class="pe-input--error_message">Too much truck</p>`}
@@ -670,35 +670,35 @@ const StylesInputsPage = () => (
 
     GLP rounded checkbox - Top level
     <div className="pe-checkbox circle-checks top-level">
-      <input type="checkbox" aria-label="" id="checkBoxId4-1" value="Bacon top level" checked/>
-      <label htmlFor="checkBoxId4-1" for='checkBoxId4-1'>Bacon top level</label>
+      <input type="checkbox" aria-label="" id="checkBoxId4-1" value="Bacon top level"/>
+      <label htmlFor="checkBoxId4-1" htmlFor='checkBoxId4-1'>Bacon top level</label>
       <span>
         <span className="checked">
           <svg focusable="false" className="pe-icon--check-sm-18" aria-hidden="true" >
               <use xlinkHref="#check-sm-18"></use>
           </svg>
-          </span>
-            <span className="indeterminate-icon">
-              <svg focusable="false" className="pe-icon--placeholder-indeterminate-18" aria-hidden="true" >
-                <use xlinkHref="#placeholder-indeterminate-18"></use>
-              </svg>
+        </span>
+        <span className="indeterminate-icon">
+            <svg focusable="false" className="pe-icon--placeholder-indeterminate-18" aria-hidden="true" >
+              <use xlinkHref="#placeholder-indeterminate-18"></use>
+            </svg>
           </span>
       </span>
     </div>
 
     GLP rounded checkbox - second level
-    <div class="pe-checkbox circle-checks second-level">
-      <input type="checkbox" aria-label="" id="checkBoxId-2" value="Bacon second level" checked/>
+    <div className="pe-checkbox circle-checks second-level">
+      <input type="checkbox" aria-label="" id="checkBoxId-2" value="Bacon second level"/>
       <label htmlFor="checkBoxId-2">Bacon second level</label>
       <span>
         <span className="checked">
           <svg focusable="false" className="pe-icon--check-sm-18" aria-hidden="true" >
               <use xlinkHref="#check-sm-18"></use>
           </svg>
-          </span>
-            <span className="indeterminate-icon">
-                <svg focusable="false" className="pe-icon--placeholder-indeterminate-18" aria-hidden="true" >
-              <use xlinkHref="#placeholder-indeterminate-18"></use>
+        </span>
+        <span className="indeterminate-icon">
+          <svg focusable="false" className="pe-icon--placeholder-indeterminate-18" aria-hidden="true" >
+            <use xlinkHref="#placeholder-indeterminate-18"></use>
           </svg>
         </span>
       </span>

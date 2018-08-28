@@ -54,6 +54,7 @@
 
 
   .pe-checkbox.circle-checks {
+    box-sizing: border-box;
     &.top-level {
       input[type="checkbox"] {
         z-index: 1;
@@ -61,6 +62,10 @@
         width: 24px;
         margin: 0;
   
+        ~ label {
+          line-height: 24px;
+        }
+
         ~ span {
           height: 24px;
           width: 24px;
@@ -150,7 +155,7 @@
           top: calc(50% - 9px);
           height: 18px;
           width: 18px;
-  
+        
           //background: white; //what to do on hover
           //padding:3px;
           border-radius: 50%;
@@ -161,7 +166,16 @@
           }
         }
   
-        &:checked {}
+        &:checked {
+          ~ span {
+            background: $pe-color-digital-pearson-blue;
+            border: 1px solid $pe-color-digital-pearson-blue;
+            svg {
+              opacity: 1;
+              fill: $pe-color-white;
+            }
+          }
+        }
   
         &:indeterminate {
           ~ span {
