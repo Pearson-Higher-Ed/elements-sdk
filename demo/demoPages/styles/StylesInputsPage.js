@@ -75,11 +75,11 @@ const StylesInputsPage = () => (
 
     <h2>Inputs - Fancy (single line - disabled)</h2>
 
-    <label className="pe-textLabelInput__label--label-disabled" htmlForfor="name3">First Name</label>
+    <label className="pe-textLabelInput__label--label_disabled" htmlForfor="name3">First Name</label>
     <input type="text" className="pe-textInput" id="name3" value="The Donald" disabled />
 
     <p className="code">
-    {`<label class="pe-textLabelInput__label--label-disabled" for="name3">First Name</label>`} <br/>
+    {`<label class="pe-textLabelInput__label--label_disabled" for="name3">First Name</label>`} <br/>
     {`<input type="text" class="pe-textInput" id="name3" value="The Donald" disabled>`}
     </p>
 
@@ -130,11 +130,11 @@ const StylesInputsPage = () => (
 
     <h2>Inputs - Basic (single line - disabled)</h2>
 
-    <label className="pe-textLabelInput__label--label-disabled" htmlFor="x">Label</label>
+    <label className="pe-textLabelInput__label--label_disabled" htmlFor="x">Label</label>
     <input type="text" className="pe-textInput--basic" id="x" disabled value="some pre-filled value" />
 
     <p className="code">
-    {`<label class="pe-textLabelInput__label--label-disabled" for="x">Label</label>`} <br/>
+    {`<label class="pe-textLabelInput__label--label_disabled" for="x">Label</label>`} <br/>
     {`<input type="text" class="pe-textInput--basic" id="x" disabled value="some pre-filled value">`}
     </p>
 
@@ -202,13 +202,13 @@ const StylesInputsPage = () => (
 
     <h2>Inputs (password) - Fancy (disabled)</h2>
 
-    <label htmlFor="PasswordInputFancyDisabled" className="pe-textLabelInput__label--label-disabled">Choose a password</label>
+    <label htmlFor="PasswordInputFancyDisabled" className="pe-textLabelInput__label--label_disabled">Choose a password</label>
     <input type="password" id="PasswordInputFancyDisabled" disabled className="pe-textInput" />
     <span className=""></span>
     <button type="button" id="showbutton-PasswordInputFancyDisabled" disabled className="pe-textInput__showButton--disabled">show</button>
 
     <p className="code">
-    {`<label htmlFor="PasswordInputFancyDisabled" className="pe-textLabelInput__label--label-disabled">Choose a password</label>`} <br/>
+    {`<label htmlFor="PasswordInputFancyDisabled" className="pe-textLabelInput__label--label_disabled">Choose a password</label>`} <br/>
     {`<input type="password" id="PasswordInputFancyDisabled" disabled className="pe-textInput">`} <br/>
     {`<span className=""></span>`} <br/>
     {`<button type="button" id="showbutton-PasswordInputFancyDisabled" disabled className="pe-textInput__showButton--disabled">show</button>`}
@@ -252,13 +252,13 @@ const StylesInputsPage = () => (
 
     <h2>Inputs (password) - Basic (disabled)</h2>
 
-    <label htmlFor="PasswordInputBasicDisabled" className="pe-textLabelInput__label--label-disabled">Password</label>
+    <label htmlFor="PasswordInputBasicDisabled" className="pe-textLabelInput__label--label_disabled">Password</label>
     <input type="password" id="PasswordInputBasicDisabled" value="***********" disabled className="pe-textInput--basic" />
     <span className=""></span>
     <button type="button" id="showbutton-PasswordInputBasicDisabled" disabled className="pe-textInput__showButton-basic--disabled">show</button>
 
     <p className="code">
-    {`<label for="PasswordInputBasicDisabled" class="pe-textLabelInput__label--label-disabled">Password</label>`} <br/>
+    {`<label for="PasswordInputBasicDisabled" class="pe-textLabelInput__label--label_disabled">Password</label>`} <br/>
     {`<input type="password" id="PasswordInputBasicDisabled" value="***********" disabled class="pe-textInput--basic">`} <br/>
     {`<span class=""></span>`} <br/>
     {`<button type="button" id="showbutton-PasswordInputBasicDisabled" disabled class="pe-textInput__showButton-basic--disabled">show</button>`} <br/>
@@ -453,7 +453,7 @@ const StylesInputsPage = () => (
 
     <h2>Select Inputs - fancy (disabled)</h2>
 
-    <label htmlFor="select_disabled" className="pe-textLabelInput__label--label-disabled">Select Label:</label>
+    <label htmlFor="select_disabled" className="pe-textLabelInput__label--label_disabled">Select Label:</label>
       <div className="pe-select-container-fancy-disabled">
         <select id="select_disabled" disabled className="pe-selectInput-fancy-disabled">
           <option>ipad</option>
@@ -467,7 +467,7 @@ const StylesInputsPage = () => (
       </div>
 
     <p className="code">
-    {`<label for="select_disabled" class="pe-textLabelInput__label--label-disabled">Select Label:</label>`}
+    {`<label for="select_disabled" class="pe-textLabelInput__label--label_disabled">Select Label:</label>`}
       <div style={eight}>{`<div class="pe-select-container-fancy-disabled">`}</div>
         <div style={sixtn}>{`<select id="select_disabled" disabled class="pe-selectInput-fancy-disabled">`}</div>
           <div style={twntyFr}>{`<option>ipad</option>`}</div>
@@ -541,11 +541,11 @@ const StylesInputsPage = () => (
 
     <h2>Multiple line text - disabled</h2>
 
-    <label className="pe-textLabelInput__label--label-disabled" htmlFor="nope">Multi-line label</label>
+    <label className="pe-textLabelInput__label--label_disabled" htmlFor="nope">Multi-line label</label>
     <textarea className="pe-multiLineText--disabled" id="nope" cols="30" rows="5" disabled> </textarea>
 
     <p className="code">
-    {`<label class="pe-textLabelInput__label--label-disabled" for="nope">Multi-line label</label>`} <br/>
+    {`<label class="pe-textLabelInput__label--label_disabled" for="nope">Multi-line label</label>`} <br/>
     {`<textarea class="pe-multiLineText--disabled" id="nope" cols="30" rows="5" disabled> </textarea>`}
     </p>
 
@@ -655,6 +655,18 @@ const StylesInputsPage = () => (
         </svg>
       </span>
     </div>
+
+    <p className="code">
+    {`<div class="pe-checkbox">`}
+      <div style={eight}>{`<input type="checkbox" id="checkboxInput5" checked disabled/>`}</div>
+      <div style={eight}>{`<label for="checkboxInput5">Tripe</label>`}</div>
+      <div style={eight}>{`<span>`}</div>
+        <div style={sixtn}>{`<svg aria-hidden="true" focusable="false" class="pe-icon--check-sm-18">`}</div>
+          <div style={twntyFr}>{`<use xlink:href="#check-sm-18"></use>`}</div>
+        <div style={sixtn}>{`</svg>`}</div>
+      <div style={eight}>{`</span>`}</div>
+    {`</div>`}
+    </p>
 
     GLP rounded checkbox - Top level
     <div className="pe-checkbox circle-checks top-level">

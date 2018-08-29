@@ -15,20 +15,6 @@ const HeaderPage = ({ children }) => (
             label="Styles"
             mobileTitle="Styles"
             id="stylez">
-<<<<<<< HEAD
-            <DropdownItem label="Styles - Buttons" type="link" url="#/styles-buttons" />
-            <DropdownItem label="Forms" type="link" url="#/forms" />
-            <DropdownItem label="Styles - Icons" type="link" url="#/styles-icons" />
-            <DropdownItem label="Responsive Utilities" type="link" url="#/responsive-utils" />
-            <DropdownItem label="Typography" type="link" url="#/typography" />
-            <DropdownItem label="Styles - Inputs" type="link" url="#/styles-inputs" />
-            <DropdownItem label="Color" type="link" url="#/color" />
-            <DropdownItem label="Styles - Tables" type="link" url="#/styles-tables" />
-            <DropdownItem label="Presentation Strategies" type="link" url="#/presentation-strategies" />
-            <DropdownItem label="Grid" type="link" url="#/grid" />
-            <DropdownItem label="Templates" type="link" url="#/templates" />
-            <DropdownItem label="Search" type="link" url="#/search" />
-=======
             <DropdownItem dropdownId="styles-buttons" selectValue="style-item-1" label="Styles - Buttons" type="link" url="/elements-sdk/#/styles-buttons" />
             <DropdownItem dropdownId="styles-forms" selectValue="style-item-2" label="Forms" type="link" url="/elements-sdk/#/forms" />
             <DropdownItem dropdownId="styles-icons" selectValue="style-item-3" label="Styles - Icons" type="link" url="/elements-sdk/#/styles-icons" />
@@ -40,7 +26,7 @@ const HeaderPage = ({ children }) => (
             <DropdownItem dropdownId="styles-presentation" selectValue="style-item-9" label="Presentation Strategies" type="link" url="/elements-sdk/#/presentation-strategies" />
             <DropdownItem dropdownId="styles-grid" selectValue="style-item-10" label="Grid" type="link" url="/elements-sdk/#/grid" />
             <DropdownItem dropdownId="styles-templates" selectValue="style-item-11" label="Templates" type="link" url="/elements-sdk/#/templates" />
->>>>>>> bfc0e85045ab2f1fa46e38dafa3846e45b84759b
+            <DropdownItem dropdownId="styles-search" selectValue="style-item-12" label="Search" type="link" url="/elements-sdk/#/search" />
           </Dropdown>
         </div>
         <div className="dropdown-wrapper">

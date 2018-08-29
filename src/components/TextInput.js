@@ -106,7 +106,7 @@ function _applyTextInputStyles() {
       butttonStyle    = fancy ? 'pe-textInput__showButton--error'  : 'pe-textInput__showButton-basic'
       break;
     case 'disabled':
-      labelStyle      = 'pe-textLabelInput__label--label-disabled';
+      labelStyle      = 'pe-textLabelInput__label--label_disabled';
       inputStyle      = fancy ? 'pe-textInput' : 'pe-textInput--basic';
       spanStyle       = '';
       butttonStyle    = fancy ? 'pe-textInput__showButton--disabled' : 'pe-textInput__showButton-basic--disabled';

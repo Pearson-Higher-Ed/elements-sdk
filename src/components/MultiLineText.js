@@ -74,7 +74,7 @@ function _applyMultiLineStyles() {
       inputStyle      = 'pe-multiLineText--error';
       break;
     case 'disabled':
-      labelStyle      = 'pe-textLabelInput__label--label-disabled';
+      labelStyle      = 'pe-textLabelInput__label--label_disabled';
       inputStyle      = 'pe-multiLineText--disabled';
       break;
     case 'readOnly':

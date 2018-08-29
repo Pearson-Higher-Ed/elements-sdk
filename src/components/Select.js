@@ -87,7 +87,7 @@ function _applySelectStyles() {
             containerFocusStyle = fancy ? 'pe-select-container-fancy-error-focus' : 'pe-select-container-focus-error';
             break;
           case 'disabled':
-            labelStyle      = 'pe-textLabelInput__label--label-disabled';
+            labelStyle      = 'pe-textLabelInput__label--label_disabled';
             selectStyle     = fancy ? 'pe-selectInput-fancy-disabled'      : 'pe-select-container-disabled';
             spanStyle       = '';
             disabledStyle   = 'disabled';
