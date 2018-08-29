@@ -544,46 +544,23 @@ export default class Dropdown extends Component {
   }
 
   render() {
-    const isMobile = window.screen.width < 768;
     const menuMarginTop = this.props.menuArrow ? '11px' : '2px';
 
-    if (isMobile) {
-      return (
-        <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
-          {this.insertAnchor()}
-          <ul
-            role="menu"
-            id={`${this.props.id.replace(' ', '_')}-dropdown`}
-            ref={(parent) => { this.list = parent; }}
-            className={this.state.open ? '' : 'dropdown-menu'}
-            //aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
-            onClick={this.itemSelected}
-            onKeyDown={this.handleKeyDown}>
-            {this.addMobileHeader()}
-            {React.Children.map(this.props.children, child => React.cloneElement(child, {itemSelected: this.state.selectedValue}))}
-          </ul>
-        </div>
-
-      )
-    } else {
-      return (
-        <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
-          {this.insertAnchor()}
-          {this.props.menuArrow && this.insertArrow()}
-          <ul
-            role="menu"
-            id={`${this.props.id.replace(' ', '_')}-dropdown`}
-            ref={(parent) => { this.list = parent; }}
-            className={this.state.open ? '' : 'dropdown-menu'}
-            style={{ marginTop: menuMarginTop }}
-            //aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
-            onClick={this.itemSelected}
-            onKeyDown={this.handleKeyDown}>
-            {this.addMobileHeader()}
-            {React.Children.map(this.props.children, child => React.cloneElement(child, {itemSelected: this.state.selectedValue}))}
-          </ul>
-        </div>
-      )
-    }
+    return (
+      <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
+        {this.insertAnchor()}
+        <ul
+          role="menu"
+          id={`${this.props.id.replace(' ', '_')}-dropdown`}
+          ref={(parent) => { this.list = parent; }}
+          className={this.state.open ? '' : 'dropdown-menu'}
+          //aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
+          onClick={this.itemSelected}
+          onKeyDown={this.handleKeyDown}>
+          {this.addMobileHeader()}
+          {React.Children.map(this.props.children, child => React.isValidElement(child) && typeof child.type === 'function' ? React.cloneElement(child, {itemSelected: this.state.selectedValue}) : child)}
+        </ul>
+      </div>
+    )
   }
 };
