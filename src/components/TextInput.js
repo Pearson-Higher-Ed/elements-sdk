@@ -27,7 +27,7 @@ class TextInput extends Component {
 
   render() {
 
-    const { labelStyle, inputStyle, spanStyle, passwordStatusText, visibilityStatusText, passwordTypeSelector, butttonStyle, labelFocusStyle, labelStyleTmp  }  = this.state;
+    const { labelStyle, inputStyle, spanStyle, passwordStatusText, visibilityStatusText, passwordTypeSelector, butttonStyle, labelStyleTmp  }  = this.state;
     const { inputState, id, labelText, password, placeholder, infoMessage, errorMessage, changeHandler, value } = this.props;
 
     const em = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
@@ -46,8 +46,6 @@ class TextInput extends Component {
           aria-describedby = {ariaDescribedby}
           disabled         = {inputState === 'disabled'}
           readOnly         = {inputState === 'readOnly'}
-          onFocus          = {() => this.setState({labelStyleTmp:labelFocusStyle})}
-          onBlur           = {() => this.setState({labelStyleTmp:labelStyle})}
           onChange         = { changeHandler }
           value            = {value}
         />
@@ -97,19 +95,18 @@ function _togglePassword() {
 };
 
 function _applyTextInputStyles() {
-  let { labelStyle, inputStyle, spanStyle, butttonStyle, labelFocusStyle, labelStyleTmp } = this.state;
+  let { labelStyle, inputStyle, spanStyle, butttonStyle, labelStyleTmp } = this.state;
   const { fancy, inputState } = this.props;
 
   switch (inputState) {
     case 'error':
-      labelStyle      = 'pe-textLabelInput__label--label_error';
+      labelStyle      = 'pe-textLabelInput__label';
       inputStyle      = fancy ? 'pe-textInput--input_error' : 'pe-textInput--basic_error';
       spanStyle       = fancy ? 'pe-inputError_underline'   : '';
       butttonStyle    = fancy ? 'pe-textInput__showButton--error'  : 'pe-textInput__showButton-basic'
-      labelFocusStyle = 'pe-textLabelInput__label--label_error';
       break;
     case 'disabled':
-      labelStyle      = 'pe-textLabelInput__label';
+      labelStyle      = 'pe-textLabelInput__label--label_disabled';
       inputStyle      = fancy ? 'pe-textInput' : 'pe-textInput--basic';
       spanStyle       = '';
       butttonStyle    = fancy ? 'pe-textInput__showButton--disabled' : 'pe-textInput__showButton-basic--disabled';
@@ -119,18 +116,16 @@ function _applyTextInputStyles() {
       inputStyle      = fancy ? 'pe-textInput--input_readonly' : 'pe-textInput--basic_readonly';
       spanStyle       = fancy ? 'pe-input_underline-readonly' : '';
       butttonStyle    = fancy ? 'pe-textInput__showButton' : 'pe-textInput__showButton-basic';
-      labelFocusStyle = 'pe-textLabelInput__label';
       break;
     default:
       labelStyle      = 'pe-textLabelInput__label';
       inputStyle      = fancy ? 'pe-textInput'             : 'pe-textInput--basic';
       spanStyle       = fancy ? 'pe-input_underline'       : '';
       butttonStyle    = fancy ? 'pe-textInput__showButton' : 'pe-textInput__showButton-basic';
-      labelFocusStyle = 'pe-textLabelInput__label--label_focus';
   };
 
   labelStyleTmp = labelStyle;
 
-  this.setState({labelStyle, labelStyleTmp, inputStyle, spanStyle, butttonStyle, labelFocusStyle});
+  this.setState({labelStyle, labelStyleTmp, inputStyle, spanStyle, butttonStyle});
 
 };

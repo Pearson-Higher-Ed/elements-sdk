@@ -20,7 +20,7 @@ class Select extends Component {
 
   render() {
 
-    const { labelStyle, spanStyle, selectStyle, containerStyle, containerFocusStyle, containerStyleTmp, labelFocusStyle, labelStyleTmp } = this.state;
+    const { labelStyle, spanStyle, selectStyle, containerStyle, containerFocusStyle, containerStyleTmp, labelStyleTmp } = this.state;
     const { id, fancy, labelText, inputState, options, infoMessage, errorMessage, changeHandler, selectedOption } = this.props;
 
     const em = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
@@ -37,8 +37,8 @@ class Select extends Component {
                     aria-describedby = {ariaDescribedby}
                     disabled         = {inputState === 'disabled'}
                     readOnly         = {inputState === 'readOnly'}
-                    onFocus      = { () => this.setState({labelStyleTmp:labelFocusStyle, containerStyleTmp:containerFocusStyle}) }
-                    onBlur       = { () => this.setState({labelStyleTmp:labelStyle, containerStyleTmp:containerStyle}) }
+                    onFocus      = { () => this.setState({containerStyleTmp:containerFocusStyle}) }
+                    onBlur       = { () => this.setState({containerStyleTmp:containerStyle}) }
                     onChange     = { changeHandler }
                     >
               {options.map((o, i) => <option key={`select-${id}-${i}`}>{o}</option>)}
@@ -75,25 +75,23 @@ Select.propTypes = {
 
 function _applySelectStyles() {
 
-        let { containerStyle, containerStyleTmp, containerFocusStyle, labelStyle, selectStyle, spanStyle, disabledStyle, labelFocusStyle, labelStyleTmp } = this.state;
+        let { containerStyle, containerStyleTmp, containerFocusStyle, labelStyle, selectStyle, spanStyle, disabledStyle, labelStyleTmp } = this.state;
         const { fancy, inputState } = this.props;
 
         switch (inputState) {
           case 'error':
-            labelStyle          = 'pe-textLabelInput__label--label_error';
+            labelStyle          = 'pe-textLabelInput__label';
             selectStyle         = fancy ? 'pe-selectInput-fancy-error' : 'pe-select--basic_error';
             spanStyle           = fancy ? 'pe-inputError_underline'          : '';
             containerStyle      = fancy ? 'pe-select-container-fancy-error'       : 'pe-select-container-error';
-            labelFocusStyle     = 'pe-textLabelInput__label--label_error';
             containerFocusStyle = fancy ? 'pe-select-container-fancy-error-focus' : 'pe-select-container-focus-error';
             break;
           case 'disabled':
-            labelStyle      = 'pe-textLabelInput__label';
+            labelStyle      = 'pe-textLabelInput__label--label_disabled';
             selectStyle     = fancy ? 'pe-selectInput-fancy-disabled'      : 'pe-select-container-disabled';
             spanStyle       = '';
             disabledStyle   = 'disabled';
             containerStyle  = fancy ? 'pe-select-container-fancy-disabled' : 'pe-select-container-disabled';
-            labelFocusStyle = 'pe-textLabelInput__label';
             break;
           case 'readOnly':
             labelStyle      = 'pe-textLabelInput__label';
@@ -101,7 +99,6 @@ function _applySelectStyles() {
             spanStyle       = fancy ? 'pe-input_underline-readonly'         : '';
             disabledStyle   = 'disabled';
             containerStyle  = fancy ? 'pe-select-container-fancy-readonly' : 'pe-select-container-readonly';
-            labelFocusStyle = 'pe-textLabelInput__label';
             containerFocusStyle  = fancy ? 'pe-select-container-fancy-readonly' : 'pe-select-container-readonly';
             break;
           default:
@@ -109,13 +106,12 @@ function _applySelectStyles() {
             selectStyle     = fancy ? 'pe-selectInput--fancy'      : 'pe-selectInput--basic';
             spanStyle       = fancy ? 'pe-input_underline'         : '';
             containerStyle  = fancy ? 'pe-select-container--fancy' : 'pe-select-container';
-            labelFocusStyle = 'pe-textLabelInput__label--label_focus';
             containerFocusStyle = fancy ? 'pe-select-container-fancy-focus' : 'pe-select-container-focus';
         };
 
         labelStyleTmp     = labelStyle;
         containerStyleTmp = containerStyle;
 
-        this.setState({containerStyle, containerFocusStyle, labelStyle, selectStyle, spanStyle, disabledStyle, labelFocusStyle, labelStyleTmp, containerStyleTmp});
+        this.setState({containerStyle, containerFocusStyle, labelStyle, selectStyle, spanStyle, disabledStyle, labelStyleTmp, containerStyleTmp});
 
 };

@@ -16,13 +16,13 @@ describe('TextInput', () => {
     it('should apply correct style for error type', function(){
       this.wrapper = shallow(<TextInput id="textInputTestId2" labelText="TextInput Label:"  changeHandler={() => {}} inputState='error' />);
       this.wrapper.instance().applyTextInputStyles();
-      expect(this.wrapper.find('label').node.props.className).toEqual('pe-textLabelInput__label--label_error')
+      expect(this.wrapper.find('label').node.props.className).toEqual('pe-textLabelInput__label')
     });
 
     it('should apply correct style for disabled type', function(){
       this.wrapper = shallow(<TextInput id="textInputTestId3" labelText="TextInput Label:"  changeHandler={() => {}} inputState='disabled' />);
       this.wrapper.instance().applyTextInputStyles();
-      expect(this.wrapper.find('label').node.props.className).toEqual('pe-textLabelInput__label')
+      expect(this.wrapper.find('label').node.props.className).toEqual('pe-textLabelInput__label--label_disabled')
     });
 
     it('should apply correct style for readOnly type', function(){

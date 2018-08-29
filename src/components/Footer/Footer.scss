@@ -58,3 +58,26 @@
     text-align: center;
   }
 }
+
+
+.pe-footer--glp {
+  max-width: 1240px;
+  padding: 2em 3.6em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  @media (max-width: 800px) {
+    justify-content: center;
+    flex-direction: column;
+    ul {
+      margin-bottom: 1em;
+    }
+  }
+  li:last-child span {
+    display: none;
+  }
+  li a {
+    color: #252525;
+  }
+}

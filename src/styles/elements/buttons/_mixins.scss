@@ -46,7 +46,7 @@
     text-decoration : none;
   }
    //====== overflow moved to a span inside btn to accomodate focus outline ======
-  span {
+  span.btn-overflow {
   	display         : inline-block;
   	max-width       : 100%;
   	text-overflow   : ellipsis;

@@ -15,7 +15,7 @@ describe('Select', () => {
     it('should apply correct style for error type', function(){
       this.wrapper = shallow(<Select id="selectTestId1" labelText="Select Label:" changeHandler={() => {}} options={["coffee", "tea"]} inputState='error' />);
       this.wrapper.instance().applySelectStyles();
-      expect(this.wrapper.find('label').node.props.className).toEqual('pe-textLabelInput__label--label_error')
+      expect(this.wrapper.find('label').node.props.className).toEqual('pe-textLabelInput__label')
     });
 
     it('should apply correct style for readOnly type', function(){

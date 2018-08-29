@@ -1,16 +1,22 @@
 @import 'base/mixins';
 @import 'base/functions';
 
-// no base HTML tags!
-//@import 'base/normalize';
-//@import 'base/html-tags';
-
 // base variables
 @import 'base/variables';
 
+// colors
 @import 'elements/color/color';
+
+// typography
 @import 'elements/typography/font-face';
 @import 'elements/typography/type';
+
+.pe-typography {
+  @import 'base/html-tags';
+  color: $pe-font-color-base;
+  font-family: $pe-font-family-sans;
+}
+
 @import 'elements/icons/icons';
 @import 'elements/buttons/buttons';
 @import 'elements/inputs/inputs';
@@ -19,3 +25,4 @@
 @import 'elements/responsive-utilities/responsive-utilities';
 @import 'elements/templates/templates';
 @import 'elements/presentation-strategies/presentation-strategies';
+@import 'elements/tables/tables';
