@@ -37,6 +37,8 @@ const FooterPage = () => {
             <li className="li-props">light:Boolean === {`<Footer light />`}</li>
             <li className="li-props">The <b>light</b> prop can be used to provide contrast
             on a darker background.</li>
+            <li className="li-props">glp:Boolean === {`<Footer light />`}</li>
+            <li className="li-props">The <b>glp</b> prop can be used to provide match the GLP style.</li>
             <li className="li-props">singlePageStick:Boolean === {`<Footer singlePageStick />`}</li>
             <li className="li-props">The <b>singlePageStick</b> prop can be used if the page you are using the Footer on does <br/>
             not exceed the screen&#39;s height. If the page exceeds one screen in height do not use <br/>

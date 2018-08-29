@@ -656,18 +656,6 @@ const StylesInputsPage = () => (
       </span>
     </div>
 
-    <p className="code">
-    {`<div class="pe-checkbox">`}
-      <div style={eight}>{`<input type="checkbox" id="checkboxInput6" disabled/>`}</div>
-      <div style={eight}>{`<label for="checkboxInput6">Meatball</label>`}</div>
-      <div style={eight}>{`<span>`}</div>
-        <div style={sixtn}>{`<svg aria-hidden="true" focusable="false" class="pe-icon--check-sm-18">`}</div>
-          <div style={twntyFr}>{`<use xlink:href="#check-sm-18"></use>`}</div>
-        <div style={sixtn}>{`</svg>`}</div>
-      <div style={eight}>{`</span>`}</div>
-    {`</div>`}
-    </p>
-
     GLP rounded checkbox - Top level
     <div className="pe-checkbox circle-checks top-level">
       <input type="checkbox" aria-label="" id="checkBoxId4-1" value="Bacon top level"/>
