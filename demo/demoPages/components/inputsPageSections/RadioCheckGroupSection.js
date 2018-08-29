@@ -62,6 +62,8 @@ export default class RadioCheckGroupSection extends Component {
             <p>RadioCheckGroup:</p>
             <ul>
               <li>inputType:String(required)       === "radio or checkbox"</li>
+              <li>glpType:Boolean</li>
+              <li>glpTopLevel:Boolean</li>
               <li>id:String(required)              === "a unique name"</li>
               <li>legendText:String(required)      === "a desciptive label"</li>
               <li>options:Array(required)          === "[{'value', 'label', 'checked', 'disabled'}, {'value', 'label', 'checked', 'disabled'}] where checked and disabled take a boolean." </li>

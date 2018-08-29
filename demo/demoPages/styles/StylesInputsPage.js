@@ -3,6 +3,8 @@ import React from 'react';
 const eight = {paddingLeft: 8};
 const sixtn = {paddingLeft: 16};
 const twntyFr = {paddingLeft: 24};
+const thrtytwo = {paddingLeft: 32};
+const forty = {paddingLeft: 40};
 
 const StylesInputsPage = () => (
   <div style={{padding: 14}}>
@@ -657,13 +659,20 @@ const StylesInputsPage = () => (
     </div>
 
     <p className="code">
-    {`<div class="pe-checkbox">`}
-      <div style={eight}>{`<input type="checkbox" id="checkboxInput5" checked disabled/>`}</div>
-      <div style={eight}>{`<label for="checkboxInput5">Tripe</label>`}</div>
+    {`<div class="pe-checkbox circle-checks top-level">`}
+      <div style={eight}>{`<input type="checkbox" aria-label="" id="checkBoxId4-1" value="Bacon top level"/>`}</div>
+      <div style={eight}>{`<label for="checkBoxId4-1" for='checkBoxId4-1'>Bacon top level</label>`}</div>
       <div style={eight}>{`<span>`}</div>
-        <div style={sixtn}>{`<svg aria-hidden="true" focusable="false" class="pe-icon--check-sm-18">`}</div>
-          <div style={twntyFr}>{`<use xlink:href="#check-sm-18"></use>`}</div>
-        <div style={sixtn}>{`</svg>`}</div>
+        <div style={sixtn}>{`<span>`}</div>
+          <div style={twntyFr}>{`<svg focusable="false" class="pe-icon--check-sm-18" aria-hidden="true">`}</div>
+            <div style={thrtytwo}>{`<use xlink:href="#check-sm-18"></use>`}</div>
+          <div style={sixtn}>{`</svg>`}</div>
+        <div style={sixtn}>{`</span>`}</div>
+        <div style={sixtn}>{`<span class="indeterminate-icon">`}</div>
+          <div style={twntyFr}>{`<svg focusable="false" class="pe-icon--placeholder-indeterminate-18" aria-hidden="true">`}</div>
+            <div style={thrtytwo}>{`<use xlink:href="#placeholder-indeterminate-18"></use>`}</div>
+          <div style={sixtn}>{`</svg>`}</div>
+        <div style={sixtn}>{`</span>`}</div>
       <div style={eight}>{`</span>`}</div>
     {`</div>`}
     </p>
@@ -674,7 +683,7 @@ const StylesInputsPage = () => (
       <label htmlFor="checkBoxId4-1" htmlFor='checkBoxId4-1'>Bacon top level</label>
       <span>
         <span className="checked">
-          <svg focusable="false" className="pe-icon--check-sm-18" aria-hidden="true" >
+          <svg focusable="false" className="pe-icon--check-sm-18" aria-hidden="true">
               <use xlinkHref="#check-sm-18"></use>
           </svg>
         </span>
@@ -685,6 +694,25 @@ const StylesInputsPage = () => (
           </span>
       </span>
     </div>
+
+<p className="code">
+{`<div class="pe-checkbox circle-checks second-level">`}
+  <div style={eight}>{`<input type="checkbox" aria-label="" id="checkBoxId4-1" value="Bacon second level"/>`}</div>
+  <div style={eight}>{`<label for="checkBoxId4-1" for='checkBoxId4-1'>Bacon second level</label>`}</div>
+  <div style={eight}>{`<span>`}</div>
+    <div style={sixtn}>{`<span>`}</div>
+      <div style={twntyFr}>{`<svg focusable="false" class="pe-icon--check-sm-18" aria-hidden="true">`}</div>
+        <div style={thrtytwo}>{`<use xlink:href="#check-sm-18"></use>`}</div>
+      <div style={sixtn}>{`</svg>`}</div>
+    <div style={sixtn}>{`</span>`}</div>
+    <div style={sixtn}>{`<span class="indeterminate-icon">`}</div>
+      <div style={twntyFr}>{`<svg focusable="false" class="pe-icon--placeholder-indeterminate-18" aria-hidden="true">`}</div>
+        <div style={thrtytwo}>{`<use xlink:href="#placeholder-indeterminate-18"></use>`}</div>
+      <div style={sixtn}>{`</svg>`}</div>
+    <div style={sixtn}>{`</span>`}</div>
+  <div style={eight}>{`</span>`}</div>
+{`</div>`}
+</p>
 
     GLP rounded checkbox - second level
     <div className="pe-checkbox circle-checks second-level">
