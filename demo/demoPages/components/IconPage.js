@@ -46,6 +46,7 @@ const IconPage = () => (
 
           <h3>Available icons</h3>
           <p>These are icons with their names inside as example alternative text.</p>
+          <p>Icons marked with "(FS)" are updated for Future State designs</p>
           <ul>
             <li><Icon name="archive-18">Archive 18</Icon> archive-18</li>
             <li><Icon name="archive-24">Archive 24</Icon> archive-24</li>
@@ -94,7 +95,7 @@ const IconPage = () => (
             <li><Icon name="clock-18">Clock 18</Icon> clock-18</li>
             <li><Icon name="clock-24">Clock 24</Icon> clock-24</li>
             <li><Icon name="delete-18">Delete 18</Icon> delete-18</li>
-            <li><Icon name="delete-24">Delete 24</Icon> delete-24</li>
+            <li><Icon name="delete-24">Delete 24</Icon> delete-24 (FS)</li>
             <li><Icon name="desktop-18">Desktop 18</Icon> desktop-18</li>
             <li><Icon name="desktop-24">Desktop 24</Icon> desktop-24</li>
             <li><Icon name="dropdown-close-sm-18">Small Dropdown Close 18</Icon> dropdown-close-sm-18</li>
@@ -181,7 +182,7 @@ const IconPage = () => (
             <li><Icon name="search-lg-18">Large Seach 18</Icon> search-lg-18</li>
             <li><Icon name="search-lg-24">Large Seach 24</Icon> search-lg-24</li>
             <li><Icon name="settings-18">Settings 18</Icon> settings-18</li>
-            <li><Icon name="settings-24">Settings 24</Icon> settings-24</li>
+            <li><Icon name="settings-24">Settings 24</Icon> settings-24 (FS)</li>
             <li><Icon name="show-off-18">Show Off 18</Icon> show-off-18</li>
             <li><Icon name="show-off-24">Show Off 24</Icon> show-off-24</li>
             <li><Icon name="show-on-18">Show On 18</Icon> show-on-18</li>
@@ -189,9 +190,9 @@ const IconPage = () => (
             <li><Icon name="sortable-18">Sort 18</Icon> sortable-18</li>
             <li><Icon name="sortable-24">Sort 24</Icon> sortable-24</li>
             <li><Icon name="sort-up-18">Sort Up 18</Icon> sort-up-18</li>
-            <li><Icon name="sort-up-24">Sort Up 24</Icon> sort-up-24</li>
+            <li><Icon name="sort-up-24">Sort Up 24</Icon> sort-up-24 (FS)</li>
             <li><Icon name="sort-down-18">Sort Down 18</Icon> sort-down-18</li>
-            <li><Icon name="sort-down-24">Sort Down 24</Icon> sort-down-24</li>
+            <li><Icon name="sort-down-24">Sort Down 24</Icon> sort-down-24 (FS)</li>
             <li><Icon name="tip-18">Tip 18</Icon> tip-18</li>
             <li><Icon name="tip-24">Tip 24</Icon> tip-24</li>
             <li><Icon name="view-list-18">View List 18</Icon> view-list-18</li>
