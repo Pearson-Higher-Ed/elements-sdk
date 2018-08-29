@@ -5,7 +5,7 @@ import './Footer.scss';
 
 const currentYear = new Date().getFullYear();
 
-const Footer = ({ copyrightText, links, anchorTarget, light, singlePageStick }) => {
+const Footer = ({ copyrightText, links, anchorTarget, light, glp, singlePageStick }) => {
 
   const renderCopy = () => {
     return <p className="pe-label">{copyrightText}</p>;
@@ -24,11 +24,12 @@ const Footer = ({ copyrightText, links, anchorTarget, light, singlePageStick }) 
     return items;
   };
 
-  const lightCheck = light ? 'pe-footer--light':'';
+  const lightCheck = light ? ' pe-footer--light':'';
   const stickCheck = singlePageStick ? '--stick':'';
+  const glpCheck = glp ? ' pe-footer--glp':'';
 
   return (
-      <footer className={`pe-footer${stickCheck} pe-label ${lightCheck}`}>
+      <footer className={`pe-footer${stickCheck} pe-label${lightCheck}${glpCheck}`}>
         <ul>
           {renderLinks()}
         </ul>
@@ -42,6 +43,7 @@ export default Footer;
 Footer.propTypes = {
   links: PropTypes.array.isRequired,
   light: PropTypes.bool,
+  glp: PropTypes.bool,
   singlePageStick: PropTypes.bool,
   anchorTarget: PropTypes.oneOf(['blank', 'self'])
 }

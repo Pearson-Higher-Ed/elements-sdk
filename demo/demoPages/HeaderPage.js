@@ -26,6 +26,7 @@ const HeaderPage = ({ children }) => (
             <DropdownItem dropdownId="styles-presentation" selectValue="style-item-9" label="Presentation Strategies" type="link" url="/elements-sdk/#/presentation-strategies" />
             <DropdownItem dropdownId="styles-grid" selectValue="style-item-10" label="Grid" type="link" url="/elements-sdk/#/grid" />
             <DropdownItem dropdownId="styles-templates" selectValue="style-item-11" label="Templates" type="link" url="/elements-sdk/#/templates" />
+            <DropdownItem dropdownId="styles-search" selectValue="style-item-12" label="Search" type="link" url="/elements-sdk/#/search" />
           </Dropdown>
         </div>
         <div className="dropdown-wrapper">

@@ -114,7 +114,7 @@
     color : $textInput-error-focus-label-color;
   }
 
-  .pe-textLabelInput__label--label-disabled {
+  .pe-textLabelInput__label--label_disabled {
     @extend %pe-textLabelInput__label;
     color : $textInput-disable-text-color;
   }

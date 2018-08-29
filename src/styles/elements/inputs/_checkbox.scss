@@ -52,4 +52,154 @@
     z-index: 2;
   }
 
+
+  .pe-checkbox.pe-checkbox__circle {
+    box-sizing: border-box;
+    &.pe-checkbox__circle_top {
+      input[type="checkbox"] {
+        z-index: 1;
+        height: 24px;
+        width: 24px;
+        margin: 0;
+  
+        ~ label {
+          line-height: 24px;
+        }
+
+        ~ span {
+          height: 24px;
+          width: 24px;
+          padding: 2px;
+          border-width: 2px;
+          //background: white;
+          margin: 0;
+  
+          //to center  icon
+          border-radius: 50%;
+  
+          .indeterminate-icon {
+            display: none;
+          }
+  
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+  
+        &:checked {
+          ~ span {
+            background: $pe-color-digital-pearson-blue;
+            border: 4px solid $pe-color-digital-pearson-blue;
+  
+            span.checked {
+              display: block;
+              position: absolute;
+              top: -2px;
+              left: -2px;
+              z-index: 1;
+              color: white;
+              border: 2px solid white;
+              border-radius: 50%;
+            }
+  
+            .pe-icon--check-sm-18 {
+              display: block;
+            }
+  
+            .indeterminate-icon {
+              display: none;
+            }
+          }
+  
+          &:disabled {
+            .indeterminate-icon {
+              display: none;
+            }
+          }
+        }
+  
+        &:indeterminate {
+          ~ span {
+            background: $pe-color-digital-pearson-blue;
+            border: 4px solid $pe-color-digital-pearson-blue;
+  
+            .indeterminate-icon {
+              display: block;
+              position: absolute;
+              top: -2px;
+              left: -2px;
+              z-index: 1;
+              color: white;
+              border: 2px solid white;
+              border-radius: 50%;
+  
+              svg {
+                opacity: 1;
+                fill: currentColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    &.pe-checkbox__circle_second {
+      input[type="checkbox"] {
+        z-index: 1;
+        height: 100%;
+        width: 24px;
+        margin: 0;
+  
+        ~ span {
+          top: calc(50% - 9px);
+          height: 18px;
+          width: 18px;
+        
+          //background: white; //what to do on hover
+          //padding:3px;
+          border-radius: 50%;
+          margin: 0;
+  
+          .indeterminate-icon {
+            display: none;
+          }
+        }
+  
+        &:checked {
+          ~ span {
+            background: $pe-color-digital-pearson-blue;
+            border: 1px solid $pe-color-digital-pearson-blue;
+            svg {
+              opacity: 1;
+              fill: $pe-color-white;
+            }
+          }
+        }
+  
+        &:indeterminate {
+          ~ span {
+            background: $pe-color-digital-pearson-blue;
+            border: 4px solid $pe-color-digital-pearson-blue;
+  
+            .indeterminate-icon {
+              display: block;
+              position: absolute;
+              top: -2px;
+              left: -2px;
+              z-index: 1;
+              color: white;
+              border: 2px solid white;
+              border-radius: 50%;
+  
+              svg {
+                opacity: 1;
+                fill: currentColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 };
