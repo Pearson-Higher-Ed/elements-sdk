@@ -659,7 +659,7 @@ const StylesInputsPage = () => (
     </div>
 
     <p className="code">
-    {`<div class="pe-checkbox circle-checks top-level">`}
+    {`<div class="pe-checkbox pe-checkbox__circle pe-checkbox__circle_top">`}
       <div style={eight}>{`<input type="checkbox" aria-label="" id="checkBoxId4-1" value="Bacon top level"/>`}</div>
       <div style={eight}>{`<label for="checkBoxId4-1" for='checkBoxId4-1'>Bacon top level</label>`}</div>
       <div style={eight}>{`<span>`}</div>
@@ -678,7 +678,7 @@ const StylesInputsPage = () => (
     </p>
 
     GLP rounded checkbox - Top level
-    <div className="pe-checkbox circle-checks top-level">
+    <div className="pe-checkbox pe-checkbox__circle pe-checkbox__circle_top">
       <input type="checkbox" aria-label="" id="checkBoxId4-1" value="Bacon top level"/>
       <label htmlFor="checkBoxId4-1" htmlFor='checkBoxId4-1'>Bacon top level</label>
       <span>
@@ -696,7 +696,7 @@ const StylesInputsPage = () => (
     </div>
 
 <p className="code">
-{`<div class="pe-checkbox circle-checks second-level">`}
+{`<div class="pe-checkbox pe-checkbox__circle pe-checkbox__circle_second">`}
   <div style={eight}>{`<input type="checkbox" aria-label="" id="checkBoxId4-1" value="Bacon second level"/>`}</div>
   <div style={eight}>{`<label for="checkBoxId4-1" for='checkBoxId4-1'>Bacon second level</label>`}</div>
   <div style={eight}>{`<span>`}</div>
@@ -715,7 +715,7 @@ const StylesInputsPage = () => (
 </p>
 
     GLP rounded checkbox - second level
-    <div className="pe-checkbox circle-checks second-level">
+    <div className="pe-checkbox pe-checkbox__circle pe-checkbox__circle_second">
       <input type="checkbox" aria-label="" id="checkBoxId-2" value="Bacon second level"/>
       <label htmlFor="checkBoxId-2">Bacon second level</label>
       <span>

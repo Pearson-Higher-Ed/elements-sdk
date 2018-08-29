@@ -7,7 +7,7 @@ const RadioCheckGroup = ({ legendText, options, name, inputType, glpType, glpTop
             <legend className="pe-legend">{legendText}</legend>
             {options.map((opt, i) => {
               return (
-                    <div key={`${name}-${opt.value}-${i}`} className={(inputType === 'radio')?"pe-radio": !glpType ? "pe-checkbox": glpTopLevel?"pe-checkbox  circle-checks top-level" :"pe-checkbox circle-checks second-level"}>
+                    <div key={`${name}-${opt.value}-${i}`} className={(inputType === 'radio')?"pe-radio": !glpType ? "pe-checkbox": glpTopLevel?"pe-checkbox  pe-checkbox__circle pe-checkbox__circle_top" :"pe-checkbox pe-checkbox__circle pe-checkbox__circle_second"}>
                       <input id       = {`radiocheck-${name}-${opt.value}-${i}`}
                              type     = {inputType}
                              name     = {name}

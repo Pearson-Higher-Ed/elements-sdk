@@ -53,9 +53,9 @@
   }
 
 
-  .pe-checkbox.circle-checks {
+  .pe-checkbox.pe-checkbox__circle {
     box-sizing: border-box;
-    &.top-level {
+    &.pe-checkbox__circle_top {
       input[type="checkbox"] {
         z-index: 1;
         height: 24px;
@@ -144,7 +144,7 @@
       }
     }
   
-    &.second-level {
+    &.pe-checkbox__circle_second {
       input[type="checkbox"] {
         z-index: 1;
         height: 100%;
