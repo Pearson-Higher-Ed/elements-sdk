@@ -106,8 +106,8 @@ const IconPage = () => (
             <li><Icon name="dropdown-close-24">Dropdown Close 24</Icon> dropdown-close-24</li>
             <li><Icon name="dropdown-open-18">Dropdown Open 18</Icon> dropdown-open-18</li>
             <li><Icon name="dropdown-open-24">Dropdown Open 24</Icon> dropdown-open-24</li>
-            <li><Icon name="edit-18">Edit 18</Icon> ellipsis-18</li>
-            <li><Icon name="edit-24">Edit 24</Icon> ellipsis-24</li>
+            <li><Icon name="edit-18">Edit 18</Icon> edit-18</li>
+            <li><Icon name="edit-24">Edit 24</Icon> edit-24</li>
             <li><Icon name="ellipsis-18">Ellipsis 18</Icon> ellipsis-18</li>
             <li><Icon name="ellipsis-24">Ellipsis 24</Icon> ellipsis-24</li>
             <li><Icon name="email-18">Email 18</Icon> email-18</li>
