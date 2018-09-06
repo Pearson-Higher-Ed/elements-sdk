@@ -12,6 +12,7 @@ export default class Dropdown extends Component {
     mobileTitle: PropTypes.string,
     type: PropTypes.oneOf(['text', 'button', 'icon', 'icon-round', 'image']).isRequired,
     label: PropTypes.string.isRequired,
+    ariaLabel: PropTypes.string,
     id: PropTypes.string.isRequired,
     changeHandler: PropTypes.func,
     btnImage: PropTypes.string,
@@ -376,6 +377,7 @@ export default class Dropdown extends Component {
         className={buttonClass}
         type="button"
         aria-expanded={this.state.open}
+        aria-label={this.props.ariaLabel}
         aria-controls={`${this.props.id.replace(' ', '_')}-dropdown`}
         aria-haspopup="true"
         btnIcon={btnIcon}
