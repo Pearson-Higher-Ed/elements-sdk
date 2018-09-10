@@ -11,7 +11,7 @@ describe('Icon', () => {
     });
 
     it('should render the icon as svg', function() {
-      expect(this.wrapper.node.type).toEqual('svg');
+      expect(this.wrapper.getElement().type).toEqual('svg');
     });
 
     it('should have the correct default className', function() {
@@ -29,7 +29,7 @@ describe('Icon', () => {
     });
 
     it('should render the icon as svg', function() {
-      expect(this.wrapper.node.type).toEqual('svg');
+      expect(this.wrapper.getElement().type).toEqual('svg');
     });
 
     it('should have the larger (24px) className if set', function() {

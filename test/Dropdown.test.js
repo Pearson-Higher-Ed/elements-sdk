@@ -54,9 +54,9 @@ describe('Dropdown', () => {
         global[property] = document.defaultView[property];
       }
     });
-	
+
     it('selecting item should set dropdown state to closed', function () {
-    
+
       const mounted = shallow(
       	<Dropdown label="test label" id="testId" type="text">
       		<DropdownItem checkmark selectValue="testitem1" dropdownId="test1" selectedName="selected" label="list item 1" type="button" />
@@ -151,5 +151,6 @@ describe('Dropdown', () => {
       expect(instance.state.open).toEqual(true);
       expect(instance.focusedItem).toEqual(1);
     });
+    
   });
 });
