@@ -327,6 +327,7 @@ export default class Dropdown extends Component {
         {this.props.label} <Icon name={this.props.iconName}></Icon>
       </div>
     );
+    let ariaLabel = (!this.props.label && this.props.ariaLabel) ? this.props.ariaLabel : null;
 
     switch (this.props.type) {
       case 'button':
@@ -359,6 +360,7 @@ export default class Dropdown extends Component {
             <Icon name={this.props.iconName}></Icon>
           </div>
         );
+        ariaLabel = this.props.ariaLabel || null;
       break;
       // if not one of the types go to text
       default:
@@ -377,7 +379,7 @@ export default class Dropdown extends Component {
         className={buttonClass}
         type="button"
         aria-expanded={this.state.open}
-        aria-label={this.props.ariaLabel}
+        aria-label={ariaLabel}
         aria-controls={`${this.props.id.replace(' ', '_')}-dropdown`}
         aria-haspopup="true"
         btnIcon={btnIcon}

@@ -71,7 +71,7 @@ class DropdownPage extends React.Component {
             mobileTitle={mobileTitle}
             type="text"
             label="text"
-            ariaLabel="This is a dropdown"
+            ariaLabel="More Information"
             id="text">
             <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-1"
               selectedName="selected" label="list item 1" type="button" />
@@ -85,7 +85,7 @@ class DropdownPage extends React.Component {
             mobileTitle={mobileTitle}
             type="text"
             label="text"
-            ariaLabel="This is a dropdown"
+            ariaLabel="More information"
             id="text">
             <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-1"
               selectedName="selected" label="list item 1" type="button" />
@@ -210,8 +210,7 @@ class DropdownPage extends React.Component {
               dropdownId="dropImg"
               mobileTitle={mobileTitle}
               type="image"
-              label="image"
-              ariaLabel="This is a dropdown"
+              ariaLabel="More choices of flags"
               id="image"
               btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
               btnImageHeight="10"
@@ -228,8 +227,7 @@ class DropdownPage extends React.Component {
               dropdownId="dropImg"
               mobileTitle={mobileTitle}
               type="image"
-              label="image"
-              ariaLabel="This is a dropdown"
+              ariaLabel="More choices of flags"
               id="image"
               btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
               btnImageHeight="10"
@@ -250,8 +248,7 @@ class DropdownPage extends React.Component {
                 btnOpen
                 menuArrow
                 type="icon-round"
-                label="icon text"
-                ariaLabel="This is a dropdown"
+                ariaLabel="More information"
                 id="iconOptions">
                 <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
                 <DropdownItem type="divider" />
@@ -266,8 +263,7 @@ class DropdownPage extends React.Component {
                   btnOpen
                   menuArrow
                   type="icon-round"
-                  label="icon text"
-                  ariaLabel="This is a dropdown"
+                  ariaLabel="More information"
                   id="iconOptions">
                   <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
                   <DropdownItem type="divider" />
