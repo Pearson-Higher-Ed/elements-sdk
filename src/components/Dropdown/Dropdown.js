@@ -329,6 +329,11 @@ export default class Dropdown extends Component {
     );
     let ariaLabel = (!this.props.label && this.props.ariaLabel) ? this.props.ariaLabel : null;
 
+    // add the selected value to to the aria-label
+    if (this.props.ariaLabel && this.state.selectedItem) {
+        ariaLabel = `${this.state.selectedItem}, ${this.props.ariaLabel}`;
+    }
+
     switch (this.props.type) {
       case 'button':
         buttonClass='pe-btn__primary dropdown-activator';
@@ -360,7 +365,6 @@ export default class Dropdown extends Component {
             <Icon name={this.props.iconName}></Icon>
           </div>
         );
-        ariaLabel = this.props.ariaLabel || null;
       break;
       // if not one of the types go to text
       default:
