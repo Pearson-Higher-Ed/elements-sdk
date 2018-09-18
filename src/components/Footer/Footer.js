@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from '../Icon';
 
 import './Footer.scss';
 
@@ -27,7 +28,9 @@ const Footer = ({ copyrightText, links, anchorTarget, light, logo, singlePageSti
     if (logo && !light) {
       return (
         <div className="pe-footer--logo">
-            <img src="/images/PearsonLogo.svg" role="img" aria-label="Pearson logo"/>
+            <Icon name="pearson-logo">
+            Pearson logo
+            </Icon>
             <ul>
               {renderLinks()}
             </ul>
