@@ -330,8 +330,10 @@ export default class Dropdown extends Component {
     let ariaLabel = (!this.props.label && this.props.ariaLabel) ? this.props.ariaLabel : null;
 
     // add the selected value to to the aria-label
-    if (this.props.ariaLabel && this.state.selectedItem) {
-        ariaLabel = `${this.state.selectedItem}, ${this.props.ariaLabel}`;
+    if (this.props.ariaLabel && this.state.selectedValue) {
+        ariaLabel = `${this.state.selectedValue}, ${this.props.ariaLabel}`;
+    } else if (this.props.ariaLabel && this.props.label) {
+        ariaLabel = `${this.props.label}, ${this.props.ariaLabel}`;
     }
 
     switch (this.props.type) {
@@ -365,6 +367,9 @@ export default class Dropdown extends Component {
             <Icon name={this.props.iconName}></Icon>
           </div>
         );
+        if (this.props.btnImageAlt) {
+            ariaLabel = `${this.props.btnImageAlt}, ${this.props.ariaLabel}`;
+        }
       break;
       // if not one of the types go to text
       default:
