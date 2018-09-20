@@ -28,7 +28,7 @@ export default class DatePicker extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.applyDatePickerStyles(nextProps.inputState);
-    this.setState({datepickerValue: nextProps.datepickerValue});
+    this.setState({datepickerValue: nextProps.datePickerValue});
   }
 
   componentWillUnmount() {
