@@ -331,7 +331,7 @@ export default class Dropdown extends Component {
 
     // add the selected value to to the aria-label
     if (this.props.ariaLabel && this.state.selectedValue) {
-        ariaLabel = `${this.state.selectedValue}, ${this.props.ariaLabel}`;
+        ariaLabel = `${this.state.selectedValue} selected, ${this.props.ariaLabel}`;
     } else if (this.props.ariaLabel && this.props.label) {
         ariaLabel = `${this.props.label}, ${this.props.ariaLabel}`;
     }
@@ -367,7 +367,11 @@ export default class Dropdown extends Component {
             <Icon name={this.props.iconName}></Icon>
           </div>
         );
-        if (this.props.btnImageAlt) {
+
+        if (this.props.ariaLabel && this.state.selectedValue) {
+            ariaLabel = `${this.state.selectedValue} selected, ${this.props.ariaLabel}`;
+        } else
+            if (this.props.ariaLabel && this.props.btnImageAlt) {
             ariaLabel = `${this.props.btnImageAlt}, ${this.props.ariaLabel}`;
         }
       break;
