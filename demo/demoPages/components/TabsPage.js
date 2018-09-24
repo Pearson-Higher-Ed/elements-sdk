@@ -14,6 +14,7 @@ const TabsPage = () => (
   <div className="displaySection">
     <h2><a href="http://pearson-higher-ed.github.io/design/c/tab-navigation/beta/">Tabs</a></h2>
     <div className="elementContainer">
+      <div className='tab-reposition-demo'>
       <Tabs
         callback={testHandler} bar
       >
@@ -27,6 +28,7 @@ const TabsPage = () => (
           <div style={pad}>You get the point</div>
         </Pane>
       </Tabs>
+      </div>
 
       <h3>Example usage</h3>
         <p className="code">
