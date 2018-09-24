@@ -40,7 +40,7 @@ class DropdownPage extends React.Component {
               <li className="li-props">btnOpen:Boolean === "Activator button changes color while menu is open" (default is false)</li>
               <li className="li-props">menuArrow:Boolean === "Menu has carat pointing to activator button" (default is false)</li>
               <li className="li-props">iconName:String === "Use different icon from Elements Icon list" (default is 'dropdown-open-sm')</li>
-
+              <li className="li-props">ariaLabel:String === text for the aria-label</li>
             </ul>
             <h3>Dropdown item Props </h3>
             <h4>Required:</h4>
@@ -71,6 +71,7 @@ class DropdownPage extends React.Component {
             mobileTitle={mobileTitle}
             type="text"
             label="text"
+            ariaLabel="More Information"
             id="text">
             <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-1"
               selectedName="selected" label="list item 1" type="button" />
@@ -84,6 +85,7 @@ class DropdownPage extends React.Component {
             mobileTitle={mobileTitle}
             type="text"
             label="text"
+            ariaLabel="More information"
             id="text">
             <DropdownItem checkmark dropdownId="dropTextIcons" selectValue="list-item-1"
               selectedName="selected" label="list item 1" type="button" />
@@ -208,7 +210,7 @@ class DropdownPage extends React.Component {
               dropdownId="dropImg"
               mobileTitle={mobileTitle}
               type="image"
-              label="image"
+              ariaLabel="More choices of flags"
               id="image"
               btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
               btnImageHeight="10"
@@ -225,7 +227,7 @@ class DropdownPage extends React.Component {
               dropdownId="dropImg"
               mobileTitle={mobileTitle}
               type="image"
-              label="image"
+              ariaLabel="More choices of flags"
               id="image"
               btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
               btnImageHeight="10"
@@ -246,7 +248,7 @@ class DropdownPage extends React.Component {
                 btnOpen
                 menuArrow
                 type="icon-round"
-                label="icon text"
+                ariaLabel="More information"
                 id="iconOptions">
                 <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
                 <DropdownItem type="divider" />
@@ -261,7 +263,7 @@ class DropdownPage extends React.Component {
                   btnOpen
                   menuArrow
                   type="icon-round"
-                  label="icon text"
+                  ariaLabel="More information"
                   id="iconOptions">
                   <DropdownItem dropdownId="dropIcon" selectValue="list-item-1" label="list item 1" type="button" />
                   <DropdownItem type="divider" />

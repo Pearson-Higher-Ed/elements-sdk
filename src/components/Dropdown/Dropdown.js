@@ -12,6 +12,7 @@ export default class Dropdown extends Component {
     mobileTitle: PropTypes.string,
     type: PropTypes.oneOf(['text', 'button', 'icon', 'icon-round', 'image']).isRequired,
     label: PropTypes.string.isRequired,
+    ariaLabel: PropTypes.string,
     id: PropTypes.string.isRequired,
     changeHandler: PropTypes.func,
     btnImage: PropTypes.string,
@@ -326,6 +327,14 @@ export default class Dropdown extends Component {
         {this.props.label} <Icon name={this.props.iconName}></Icon>
       </div>
     );
+    let ariaLabel = (!this.props.label && this.props.ariaLabel) ? this.props.ariaLabel : null;
+
+    // add the selected value to to the aria-label
+    if (this.props.ariaLabel && this.state.selectedValue) {
+        ariaLabel = `${this.state.selectedValue} selected, ${this.props.ariaLabel}`;
+    } else if (this.props.ariaLabel && this.props.label) {
+        ariaLabel = `${this.props.label}, ${this.props.ariaLabel}`;
+    }
 
     switch (this.props.type) {
       case 'button':
@@ -358,6 +367,13 @@ export default class Dropdown extends Component {
             <Icon name={this.props.iconName}></Icon>
           </div>
         );
+
+        if (this.props.ariaLabel && this.state.selectedValue) {
+            ariaLabel = `${this.state.selectedValue} selected, ${this.props.ariaLabel}`;
+        } else
+            if (this.props.ariaLabel && this.props.btnImageAlt) {
+            ariaLabel = `${this.props.btnImageAlt}, ${this.props.ariaLabel}`;
+        }
       break;
       // if not one of the types go to text
       default:
@@ -376,6 +392,7 @@ export default class Dropdown extends Component {
         className={buttonClass}
         type="button"
         aria-expanded={this.state.open}
+        aria-label={ariaLabel}
         aria-controls={`${this.props.id.replace(' ', '_')}-dropdown`}
         aria-haspopup="true"
         btnIcon={btnIcon}
