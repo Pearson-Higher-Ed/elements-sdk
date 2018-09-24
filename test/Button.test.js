@@ -11,7 +11,7 @@ describe('Button', () => {
     });
 
     it('should render the Button as button element', function() {
-      expect(this.wrapper.node.type).toEqual('button');
+      expect(this.wrapper.getElement().type).toEqual('button');
     });
 
     it('should have the correct default className', function() {
@@ -25,7 +25,7 @@ describe('Button', () => {
     });
 
     it('should render the Button as button element', function() {
-      expect(this.wrapper.node.type).toEqual('button');
+      expect(this.wrapper.getElement().type).toEqual('button');
     });
 
     it('should have the correct classNames', function() {
@@ -43,7 +43,7 @@ describe('Button', () => {
     });
 
     it('should render the Button as button element', function() {
-      expect(this.wrapper.node.type).toEqual('button');
+      expect(this.wrapper.getElement().type).toEqual('button');
     });
 
     it('should have the correct classNames', function() {
@@ -65,7 +65,7 @@ describe('Button', () => {
     });
 
     it('should render the Button as button element', function() {
-      expect(this.wrapper.node.type).toEqual('button');
+      expect(this.wrapper.getElement().type).toEqual('button');
     });
 
     it('should have the correct classNames', function() {
@@ -88,7 +88,7 @@ describe('Button', () => {
     });
 
     it('should render the Button as button element', function() {
-      expect(this.wrapper.node.type).toEqual('button');
+      expect(this.wrapper.getElement().type).toEqual('button');
     });
 
     it('should have the correct classNames', function() {
@@ -107,7 +107,7 @@ describe('Button', () => {
     });
 
     it('should render the Button as button element', function() {
-      expect(this.wrapper.node.type).toEqual('button');
+      expect(this.wrapper.getElement().type).toEqual('button');
     });
 
     it('should have the correct classNames', function() {
@@ -126,7 +126,7 @@ describe('Button', () => {
     });
 
     it('should render the Button as button element', function() {
-      expect(this.wrapper.node.type).toEqual('button');
+      expect(this.wrapper.getElement().type).toEqual('button');
     });
 
     it('should have the correct classNames', function() {

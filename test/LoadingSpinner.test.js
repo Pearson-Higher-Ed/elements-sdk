@@ -9,7 +9,7 @@ describe('LoadingSpinner', () => {
 
     it('should render the LoadinSpinner as a div element', function() {
       const wrapper = shallow(<LoadingSpinner />);
-      expect(wrapper.node.type).toEqual('div');
+      expect(wrapper.getElement().type).toEqual('div');
     });
   });
 });

@@ -15,7 +15,7 @@ describe('Tabs', () => {
   describe('Tabs tests', function () {
 
     it('renders a div', function () {
-      const wrapper = shallow(<Tabs>
+      const wrapper = mount(<Tabs>
                                <Pane label="Tab 1">
                                  <div>Content 1</div>
                                </Pane>
@@ -23,15 +23,17 @@ describe('Tabs', () => {
                                  <div>Content 2</div>
                                </Pane>
                              </Tabs>);
-      expect(wrapper.node.props.children[0].type).toEqual('div');
+
+      const divs = wrapper.find("div");
+      expect(divs.length).toBeGreaterThan(0);
     });
 
     it('sets the correct selected tab', function () {
       const wrap = mount(<Tabs><Pane label="1"><div>1</div></Pane><Pane label="2"><div>Content 2</div></Pane></Tabs>);
       const wrappy = mount(<Tabs selected={1}><Pane label="1"><div>1</div></Pane><Pane label="2"><div>Content 2</div></Pane></Tabs>);
-      expect(wrap.node.state.selected).toEqual(0);
-      expect(wrappy.node.state.selected).toEqual(1);
+      expect(wrap.instance().state.selected).toEqual(0);
+      expect(wrappy.instance().state.selected).toEqual(1);
     });
-
+    
   });
 });
