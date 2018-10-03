@@ -502,6 +502,7 @@ export default class Dropdown extends Component {
   }
 
   render() {
+    console.log('state', this.state);
       return (
         <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
           {this.insertAnchor()}
