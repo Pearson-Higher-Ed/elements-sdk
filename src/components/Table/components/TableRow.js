@@ -12,10 +12,12 @@ const TableRow = ({ children }) => {
       let thInput = thead.getElementsByTagName('INPUT')[0],
           trs = [].slice.call(tbody.getElementsByTagName('TR'));
       let trInputs = trs.map(tr => tr.getElementsByTagName('INPUT')[0]);
-      
-      if(trInputs.every(checkInput)) {
+
+      if(thInput && trInputs.every(checkInput)) {
         thInput.checked = true;
-      } else {
+      }
+
+      if(thInput && !trInputs.every(checkInput)){
         thInput.checked = false;
       }
 
@@ -33,7 +35,7 @@ const TableRow = ({ children }) => {
       if (input && input.type === 'checkbox') {
           return input.checked;
       }
-    } 
+    }
 }
 
   return (
