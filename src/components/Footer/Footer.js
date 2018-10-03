@@ -34,28 +34,25 @@ const Footer = ({ copyrightText, links, anchorTarget, light, logo, singlePageSti
             <ul>
               {renderLinks()}
             </ul>
-          {renderCopy()}
         </div>
       );
     } else {
       return (
-          <div>
-            <ul>
-              {renderLinks()}
-            </ul>
-            {renderCopy()}
-          </div>
+          <ul>
+            {renderLinks()}
+          </ul>
       );
-    }    
+    }
   }
 
   const lightCheck = light ? ' pe-footer--light':'';
   const stickCheck = singlePageStick ? '--stick':'';
-  
+
     return (
       <footer className={`pe-footer${stickCheck} pe-label${lightCheck}`}>
         {renderFooter()}
-      </footer> 
+        {renderCopy()}
+      </footer>
     );
 }
 
