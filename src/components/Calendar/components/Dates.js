@@ -31,7 +31,7 @@ const Dates = (props) => {
   const startDay = firstOfMonth.getUTCDay();
   const first = firstOfMonth.getDay();
   const janOne = new Date(year, 0, 1);
-  let rows = 5;
+  let rows = 6;
 
   if (startDay === 5 && daysInMonth === 31 || startDay === 6 && daysInMonth > 29) rows = 6;
   if (startDay === 0 && daysInMonth === 28) rows = 4;
