@@ -16,7 +16,7 @@
   .pe-select-container select {
     @extend %container-extend-select;
 
-    padding: 0 14px;
+    padding: 0 46px 0 14px;
 
     &:focus {
       border     : $textInput-basic-focus-border;
@@ -57,6 +57,7 @@
     @extend %container-extend-select;
     padding      : .3em;
     padding-left : 14px;
+    padding-right: 46px;
     &:focus {
       border     : $textInput-basic-focus-border;
       @include focusOutline;
@@ -91,7 +92,7 @@
     @extend %container-extend-select;
     padding      : .3em;
     padding-left : 14px;
-
+    padding-right: 46px;
     &:focus {
 
       border     : $textInput-basic-error-border;
@@ -123,6 +124,7 @@
     @extend %container-extend-select;
     padding      : .3em;
     padding-left : 14px;
+    padding-right: 46px;
     &:focus {
       border     : $textInput-basic-error-border;
       @include focusOutline;
@@ -224,6 +226,7 @@
     @extend %container-extend-select;
     padding      : .3em;
     padding-left : 14px;
+    padding-right: 34px; // to match the icon being further right for readonly state
     &:focus {
       border     : $textInput-readonly-border;
       @include focusOutline;
