@@ -8,7 +8,7 @@ import { Button } from '../index';
 describe('Dropdown', () => {
 
   it('should create an anchor for text', function () {
-    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'text'});
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'text', iconName: 'audio-high-18'});
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
@@ -16,7 +16,7 @@ describe('Dropdown', () => {
   });
 
   it('should create an anchor for button', function () {
-    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'button'});
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'button', iconName: 'audio-high-18'});
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
@@ -24,7 +24,7 @@ describe('Dropdown', () => {
   });
 
   it('should create an anchor for icon', function () {
-    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'icon'});
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'icon', iconName: 'audio-high-18'});
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
@@ -32,7 +32,7 @@ describe('Dropdown', () => {
   });
 
   it('should create an anchor for image', function () {
-    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'image'});
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'image', iconName: 'audio-high-18'});
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
@@ -40,7 +40,7 @@ describe('Dropdown', () => {
   });
 
   it('should create an anchor for unknown should render text', function () {
-    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'asdf'});
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'asdf', iconName: 'audio-high-18'});
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
@@ -54,9 +54,9 @@ describe('Dropdown', () => {
         global[property] = document.defaultView[property];
       }
     });
-	
+
     it('selecting item should set dropdown state to closed', function () {
-    
+
       const mounted = shallow(
       	<Dropdown label="test label" id="testId" type="text">
       		<DropdownItem checkmark selectValue="testitem1" dropdownId="test1" selectedName="selected" label="list item 1" type="button" />
