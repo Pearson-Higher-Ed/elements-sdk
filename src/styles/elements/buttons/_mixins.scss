@@ -39,7 +39,7 @@
   &.pe-btn--disabled,
   &.pe-btn--disabled:hover {
     cursor          : default;
-    border			: $disabled-bg;
+    border			: 1px solid $disabled-bg;
     color           : $disabled-color;
     background-color: $disabled-bg;
     box-shadow      : none;

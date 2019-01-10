@@ -13,14 +13,15 @@ $pe-btn-xlarge-border-radius : 40px !default;
 $pe-btn-xlarge-padding       : 0 20px !default;
 
 $pe-btn-default-bg            : transparent !default;
-$pe-btn-default-text          : $pe-color-graphite !default;
-$pe-btn-default-border        : 1px solid $pe-color-concrete !default;
+$pe-btn-default-text          : $pe-color-medium-gray !default;
+$pe-btn-default-border        : 1px solid $pe-color-medium-gray !default;
 $pe-btn-default-hover-bg      : transparent !default;
-$pe-btn-default-hover-border  : 1px solid $pe-color-concrete !default;
-$pe-btn-default-hover-text    : $pe-color-graphite !default;
-$pe-btn-default-hover-border  : 1px solid $pe-color-graphite !default;
+$pe-btn-default-hover-text    : $pe-color-charcoal !default;
+$pe-btn-default-hover-border  : 1px solid $pe-color-charcoal !default;
 $pe-btn-default-disabled-bg   : $pe-color-moonlight !default;
-$pe-btn-default-disabled-text : $pe-color-concrete !default;
+$pe-btn-default-disabled-text : $pe-color-medium-gray !default;
+$pe-btn-default-disabled-border   : 1px solid $pe-color-moonlight !default;
+
 
 $pe-btn-primary-bg            : $pe-color-digital-pearson-blue !default;
 $pe-btn-primary-border		  : 1px solid $pe-color-digital-pearson-blue !default;

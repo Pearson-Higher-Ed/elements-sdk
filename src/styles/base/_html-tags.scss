@@ -243,6 +243,19 @@ kbd {
   font-family: $pe-font-family-mono;
 }
 
-:focus {
-	@include focusOutline;
+//==== generic focus override =======
+a[href]:not([tabindex^="-"]),
+area[href]:not([tabindex^="-"]),
+input,
+select,
+textarea,
+button,
+iframe:not([tabindex^="-"]),
+audio:not([tabindex^="-"]),
+video:not([tabindex^="-"]),
+[contenteditable]:not([tabindex^="-"]),
+[tabindex]:not([tabindex^="-"]) {
+  &:focus {
+    @include focusOutline;
+  }
 }
