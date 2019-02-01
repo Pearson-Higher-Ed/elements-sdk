@@ -18,7 +18,8 @@ export default class Dropdown extends Component {
     btnImageHeight: PropTypes.string,
     scrollable: PropTypes.bool,
     btnImageWidth: PropTypes.string,
-    btnImageAlt: PropTypes.string
+    btnImageAlt: PropTypes.string,
+    disabled: PropTypes.bool
   };
 
   constructor(props) {
@@ -348,6 +349,7 @@ export default class Dropdown extends Component {
         btnIcon={btnIcon}
         focus={this.state.buttonFocus}
         onClick={this.toggleDropdown}
+        disabled={this.props.disabled}
       >
         {buttonLabel}
       </Button>
