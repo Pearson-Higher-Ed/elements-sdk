@@ -44,7 +44,7 @@ class Select extends Component {
               {options.map((o, i) => <option key={`select-${id}-${i}`}>{o}</option>)}
             </select>
             {fancy && <span className={spanStyle} />}
-            <Icon name='dropdown-open-sm-24' />
+            <Icon name='drop-down-18' />
           </div>
             {infoMessage  && <span id={`infoMsg-${id}`} className="pe-input--info_message">{infoMessage}</span>}
             {inputState === 'error' && errorMessage && <span id={`errMsg-${id}`} className="pe-input--error_message"><Icon name="warning-sm-18">Error</Icon> {errorMessage}</span>}

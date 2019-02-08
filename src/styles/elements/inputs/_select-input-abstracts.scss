@@ -8,10 +8,11 @@
 
   %container-extend-svg {
     position       : absolute;
-    top            : 5px;
+    top            : 8px;
     bottom         : $svg-bottom;
     right          : $svg-right;
     pointer-events : none;
+    fill : $pe-color-medium-gray;
   }
 
   %container-extend-select {
@@ -19,7 +20,7 @@
     width      : 100%;
     min-height : 34px;
     margin     : 0;
-    padding    : 0 14px;
+    padding    : 0 12px;
     outline    : none;
   }
 

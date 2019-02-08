@@ -30,7 +30,7 @@ export default class Dropdown extends Component {
     type: 'button',
     btnHover: false,
     btnOpen: false,
-    iconName: 'dropdown-open-sm-18',
+    iconName: 'drop-down-18',
     menuArrow: false
   }
 

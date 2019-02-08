@@ -32,7 +32,7 @@ $textInput-placeholder-font-size : 14px;
 
 //=====Input Messages================
 
-$textInput-messages-padding-top   : 3px;
+$textInput-messages-padding-top   : 4px;
 $textInput-messages-display       : block;
 $textInput-messages-margin-bottom : 0;
 
@@ -97,34 +97,35 @@ $textInput-readonly-label-font-size : 12px;
 //=============checkboxes=============
 
 $checkbox-checkmark                : '#pe-icon--check-sm-18';
-$checkbox-checkmark-color-active   : $pe-color-medium-gray;
+$checkbox-checkmark-color-active   : $pe-color-white;
 $checkbox-checkmark-color-disabled : $pe-color-concrete;
 
-$checkbox-box-height         : 16px;
-$checkbox-box-width          : 16px;
+$checkbox-box-height         : 20px;
+$checkbox-box-width          : 20px;
 $checkbox-box-rightMargin    : 12px;
-$checkbox-box-borderRadius   : 2px;
-$checkbox-box-border         : 1px solid $pe-color-concrete;
-$checkbox-box-border-focus   : 1px solid $pe-color-digital-pearson-blue;
+$checkbox-box-borderRadius   : 4px;
+$checkbox-box-border         : 2px solid $pe-color-concrete;
+$checkbox-box-border-focus   : 2px solid $pe-color-digital-pearson-blue;
 $checkbox-box-disabled-color : $pe-color-moonlight;
 
 //=============radio buttons=============
 
 $radio-dot                : '#pe-icon--new-notifications-9';
-$radio-dot-color          : $pe-color-medium-gray;
+$radio-dot-color          : $pe-color-digital-pearson-blue;
 $radio-dot-color-focused  : $pe-color-digital-pearson-blue;
 $radio-dot-color-disabled : $pe-color-concrete;
-$label-padding            : 28px;
+$label-padding            : 32px;
 
-$radio-dot-height            : 8px;
-$radio-dot-width             : 8px;
-$radio-border-padding        : 3px 6px 6px 3px;
-$radio-border-height         : 5px;
-$radio-border-width          : 5px;
+$radio-dot-height            : 12px;
+$radio-dot-width             : 12px;
+$radio-border-padding        : 2px;
+$radio-border-height         : 20px;
+$radio-border-width          : 20px;
 $radio-borderRadius          : 50%;
-$radio-border                : 1px solid $pe-color-concrete;
-$radio-border-focus          : 1px solid $pe-color-digital-pearson-blue;
+$radio-border                : 2px solid $pe-color-concrete;
+$radio-border-focus          : 2px solid $pe-color-digital-pearson-blue;
 $radio-disabled-color        : $pe-color-moonlight;
+$radio-disabled-border		 : 2px solid $pe-color-concrete;
 
 //=============passwordInput==========
 
@@ -143,11 +144,11 @@ $pe-passwordInput-button-margin-right : 14px;
 $pe-passwordInput-basic-disabled-margin-top : -35px;
 //============textInput-basic==========
 
-$textInput-basic-padding      : 0px 14px 0px 14px;
+$textInput-basic-padding      : 0px 12px 0px 12px;
 $textInput-basic-height       : 36px;
-$textInput-basic-borderRadius : 3px;
+$textInput-basic-borderRadius : 4px;
 $textInput-basic-display      : block;
-$textInput-basic-marginTop    : 6px;
+$textInput-basic-marginTop    : 4px;
 $textInput-basic-width        : 100%;
 $textInput-basic-box-sizing  : border-box;
 
@@ -171,13 +172,13 @@ $textInput-basic-error-focus-boxShadow : 0px 0px 4px 0px $pe-color-strawberry-re
 $textInput-basic-select-minWidth : 250px;
 
 $svg-bottom : 8px;
-$svg-right  : 14px;
+$svg-right  : 12px;
 $textInput-basic-select-width : 100%;
 
 //=======multiLineText=================
 
 $multiLineText-border       : 1px solid $pe-color-concrete;
-$multiLineText-padding      : 9px 14px;
+$multiLineText-padding      : 8px 12px;
 $multiLineText-width        : 100%;
 $multiLineText-box-sizing   : border-box;
-$multiLineText-borderRadius : 3px;
+$multiLineText-borderRadius : 4px;

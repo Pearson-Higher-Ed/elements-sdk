@@ -2,8 +2,8 @@
 
   .pe-checkbox {
     position      : relative;
-    min-height    : 16px;
-    margin-bottom : 14px;
+    min-height    : 20px;
+    margin-bottom : 12px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -21,11 +21,25 @@
       width         : $checkbox-box-width;
       border        : $checkbox-box-border;
       border-radius : $checkbox-box-borderRadius;
+      box-sizing: content-box;
     }
     ~ span svg {
       opacity : 0;
-      height  : $checkbox-box-height;
-      width   : $checkbox-box-width;
+      height  : 18px;
+      width   : 18px;
+      margin-left: -1px;
+      margin-top: -1px;
+    }
+    &:checked ~ span {
+      border        : $checkbox-box-border-focus;
+      border-radius : $checkbox-box-borderRadius;
+      background-color: $pe-color-digital-pearson-blue;
+      color: $pe-color-white;
+      
+      &:disabled ~ span {
+	      background-color : $checkbox-box-disabled-color;
+	      border           : $checkbox-box-border;
+      }
     }
     &:checked ~ span svg {
       opacity : 1;
@@ -37,6 +51,7 @@
     }
     &:disabled ~ span {
       background-color : $checkbox-box-disabled-color;
+      border           : $checkbox-box-border;
     }
     &:disabled ~ span svg{
       fill : $checkbox-checkmark-color-disabled;
@@ -44,10 +59,10 @@
 
   }
   input[type="checkbox"] ~ label {
-    min-height: 18px;
+    min-height: 20px;
     display: inline-block;
     padding-left: $checkbox-box-width + $checkbox-box-rightMargin;
-    line-height: 18px;
+    line-height: 20px;
     position: relative;
     z-index: 2;
   }
@@ -67,23 +82,24 @@
         }
 
         ~ span {
-          height: 24px;
-          width: 24px;
-          padding: 2px;
+          height: 16px;
+          width: 16px;
+          padding: 0px;
           border-width: 2px;
           //background: white;
           margin: 0;
   
           //to center  icon
           border-radius: 50%;
+          
   
           .indeterminate-icon {
             display: none;
           }
   
           svg {
-            width: 16px;
-            height: 16px;
+            width: 17px;
+            height: 17px;
           }
         }
   
@@ -148,13 +164,13 @@
       input[type="checkbox"] {
         z-index: 1;
         height: 100%;
-        width: 24px;
+        width: 20px;
         margin: 0;
   
         ~ span {
           top: calc(50% - 9px);
-          height: 18px;
-          width: 18px;
+          height: 16px;
+          width: 16px;
         
           //background: white; //what to do on hover
           //padding:3px;
@@ -169,7 +185,7 @@
         &:checked {
           ~ span {
             background: $pe-color-digital-pearson-blue;
-            border: 1px solid $pe-color-digital-pearson-blue;
+            border: 2px solid $pe-color-digital-pearson-blue;
             svg {
               opacity: 1;
               fill: $pe-color-white;

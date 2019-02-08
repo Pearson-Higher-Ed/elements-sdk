@@ -570,7 +570,7 @@ const StylesInputsPage = () => (
       <li>When there is more than one option but only one can be selected, use a radio button instead.</li>
     </ul>
 
-    Unselected
+    <p style={{marginBottom: 8}}>Unselected</p>
     <div className="pe-checkbox">
       <input type="checkbox"  id="checkboxInput" value="1" />
       <label htmlFor="checkboxInput">Bacon</label>
@@ -595,7 +595,7 @@ const StylesInputsPage = () => (
     {`</div>`}
     </p>
 
-    Selected
+    <p style={{marginBottom: 8}}>Selected</p>
      <div className="pe-checkbox">
        <input type="checkbox" id="checkboxInput2" value="1" checked/>
        <label htmlFor="checkboxInput2">Pastrami</label>
@@ -620,7 +620,7 @@ const StylesInputsPage = () => (
      {`</div>`}
     </p>
 
-    Disabled Selected
+    <p style={{marginBottom: 8}}>Disabled Selected</p>
     <div className="pe-checkbox">
       <input type="checkbox" id="checkboxInput5" checked disabled/>
       <label htmlFor="checkboxInput5">Tripe</label>
@@ -645,7 +645,7 @@ const StylesInputsPage = () => (
     {`</div>`}
     </p>
 
-    Disabled Unselected
+    <p style={{marginBottom: 8}}>Disabled Unselected</p>
     <div className="pe-checkbox">
       <input type="checkbox" id="checkboxInput6" disabled/>
       <label htmlFor="checkboxInput6">Meatball</label>
@@ -783,6 +783,18 @@ const StylesInputsPage = () => (
           </svg>
         </span>
       </div>
+      
+      <div className="pe-radio">
+        <input type="radio" name="scotch2" id="scotchDC" disabled checked />
+        <label htmlFor="scotchDC">Glenfiddich 12 years (disabled selected)</label>
+        <span>
+          <svg aria-hidden="true"
+               focusable="false"
+               className="pe-icon--radio-dot">
+            <use xlinkHref="#new-notification-9"></use>
+          </svg>
+        </span>
+      </div>
     </fieldset>
 
     <p className="code">
@@ -811,6 +823,16 @@ const StylesInputsPage = () => (
       <div style={eight}>{`<div class="pe-radio">`}</div>
         <div style={sixtn}>{`<input type="radio" name="scotch" id="scotchT" disabled>`}</div>
         <div style={sixtn}>{`<label for="scotchT">Talisker 18 years (disabled unselected)</label>`}</div>
+        <div style={sixtn}>{`<span>`}</div>
+          <div style={twntyFr}>{`<svg aria-hidden="true" focusable="false" class="pe-icon--radio-dot">`}</div>
+            <div style={{paddingLeft: 32}}>{`<use xlink:href="#new-notification-9"></use>`}</div>
+          <div style={twntyFr}>{`</svg>`}</div>
+        <div style={sixtn}>{`</span>`}</div>
+      <div style={eight}>{`</div>`}</div>
+      
+      <div style={eight}>{`<div class="pe-radio">`}</div>
+        <div style={sixtn}>{`<input type="radio" name="scotch" id="scotchDC" disabled checked>`}</div>
+        <div style={sixtn}>{`<label for="scotchDC">Glenfiddich 12 years (disabled selected)</label>`}</div>
         <div style={sixtn}>{`<span>`}</div>
           <div style={twntyFr}>{`<svg aria-hidden="true" focusable="false" class="pe-icon--radio-dot">`}</div>
             <div style={{paddingLeft: 32}}>{`<use xlink:href="#new-notification-9"></use>`}</div>

@@ -3,8 +3,8 @@
 
   .pe-radio {
     position : relative;
-    min-height: 16px;
-    margin-bottom: 14px;
+    min-height: 20px;
+    margin-bottom: 16px;
   }
   .pe-radio:last-child {
     margin-bottom: 0;
@@ -17,11 +17,11 @@
     &+label {
       display: inline-block;
       padding-left: $label-padding;
-      line-height: 18px;
+      line-height: 20px;
     }
     ~ span {
       display       : block;
-      box-sizing    : content-box;// for IE
+      box-sizing    : border-box;
       position      : absolute;
       left          : 0;
       top           : 0;
@@ -39,14 +39,19 @@
       border-radius : $radio-borderRadius;
       @include focusOutline;
     }
-    &:disabled ~ span {
+    &:disabled ~ span, &:disabled:checked ~ span {
       color            : $radio-dot-color-disabled;
       background-color : $radio-disabled-color;
+      border		   : $radio-disabled-border;
     }
     ~ span svg {
       opacity : 0;
       height  : $radio-dot-height;
       width   : $radio-dot-width;
+    }
+    &:checked ~ span {
+      border        : $radio-border-focus;
+      border-radius : $radio-borderRadius;
     }
     &:checked ~ span svg {
       opacity : 1;

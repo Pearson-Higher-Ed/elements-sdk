@@ -27,7 +27,6 @@ const StylesButtonPage = () => (
       <button className="pe-btn__cta" style={marginFour}>Call To Action</button>
       <button className="pe-btn__primary" style={marginFour}>Primary</button>
       <button className="pe-btn" style={marginFour}>Default</button>
-      <button className="pe-btn__tertiary">Tertiary</button>
     <p className="code" style={{marginTop: 12, marginBottom: 16}}>
       {`<button class="pe-btn__cta">Call To Action</button>`} <br/>
       {`<button class="pe-btn__primary">Primary</button>`} <br/>
@@ -68,6 +67,8 @@ const StylesButtonPage = () => (
     <h2>Disabled</h2>
 
     <p>Buttons can be disabled when an action is not available to the user for the current context. Primary and call to action buttons have no disabled state.</p>
+    <button className="pe-btn__cta" disabled style={marginFour}>Call to Action</button>
+    <button className="pe-btn__primary" disabled style={marginFour}>Primary</button>
     <button className="pe-btn" disabled>Default</button><br/><br/>
     <p className="code">{`<button class="pe-btn" disabled>Default</button>`}</p>
 

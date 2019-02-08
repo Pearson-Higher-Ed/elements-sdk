@@ -18,7 +18,10 @@ svg[class^='pe-icon--'] {
   margin-left  : .5em;
   margin-bottom: .3em;
 }
-
+svg[class$='-16'] {
+  width: 16px;
+  height: 16px;
+}
 svg[class$='-18'] {
   width: 18px;
   height: 18px;
