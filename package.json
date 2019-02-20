@@ -50,9 +50,9 @@
     "babel-plugin-array-includes": "^2.0.3",
     "babel-polyfill": "^6.23.0",
     "babel-runtime": "^6.26.0",
+    "classnames": "^2.2.6",
     "input-format": "^0.1.15",
-    "libphonenumber-js": "^0.4.42",
-    "react-responsive-ui": "^0.10.6"
+    "libphonenumber-js": "^0.4.42"
   },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.5.6",
