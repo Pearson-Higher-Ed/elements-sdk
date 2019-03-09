@@ -7,6 +7,6 @@ describe('ProgressBar', () => {
 
   it('Should render the ProgressBar', function () {
     this.wrapper = shallow(<ProgressBar id="test" />);
-    expect(this.wrapper.node.type).toEqual('div');
+    expect(this.wrapper.getElement().type).toEqual('div');
   });
 });

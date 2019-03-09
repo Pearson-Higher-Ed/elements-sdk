@@ -16,7 +16,7 @@ describe('DatePicker', () => {
 
     it('should render the DatePicker as div element', function() {
       this.wrapper = shallow(<DatePicker id="test" labelText="test" dateFormat="hh:mm" changeHandler={() => {}} />);
-      expect(this.wrapper.node.type).toEqual('div');
+      expect(this.wrapper.getElement().type).toEqual('div');
     });
 
     it('should render the DatePicker in error state', function() {
@@ -61,6 +61,5 @@ describe('DatePicker', () => {
       this.wrapper.instance().changeHandler(e);
       expect(this.wrapper.instance().state.datepickerValue).toEqual("Hi There");
     });
-
-  })
+  });
 })

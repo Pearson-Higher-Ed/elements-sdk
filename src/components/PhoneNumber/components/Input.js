@@ -7,12 +7,6 @@ import classNames from 'classnames'
 import Dropdown from '../../Dropdown/Dropdown';
 import DropdownItem from '../../Dropdown/DropdownItem';
 import Icon from '../../Icon';
-
-
-// Could have been `import { Select } from 'react-responsive-ui'`
-// but in that case Webpack bundles the whole `react-responsive-ui` package.
-import Select from 'react-responsive-ui/commonjs/Select'
-
 import country_names from './countries'
 import InternationalIcon from './InternationalIcon'
 
@@ -190,9 +184,6 @@ export default class Input extends Component
 		// (both for the phone number `<input/>` and the autocomplete `<input/>`)
 		inputClassName : PropTypes.string,
 
-		// `<Select/>` from `react-responsive-ui` is used by default
-		selectComponent : PropTypes.func.isRequired,
-
 		// `<ReactInput/>` from `input-format` is used by default
 		inputComponent : PropTypes.func.isRequired,
 
@@ -250,9 +241,6 @@ export default class Input extends Component
 		// phone numbers with a `+` in their smartphones so local phone numbers
 		// should now be considered obsolete.
 		convertToNational: false,
-
-		// `<Select/>` from `react-responsive-ui` is used by default
-		selectComponent : Select,
 
 		// `<ReactInput/>` from `input-format` is used by default
 		inputComponent : ReactInput
@@ -969,7 +957,6 @@ export default class Input extends Component
 			error,
 			indicateInvalid,
 
-			selectComponent : SelectComponent,
 			inputComponent  : InputComponent,
 
 			// Extract `input_props` via "object rest spread":

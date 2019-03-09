@@ -19,7 +19,7 @@ class MultiLineText extends Component {
   render() {
 
       const { id, labelText, placeholder, infoMessage, errorMessage, inputState, changeHandler } = this.props;
-      const { labelStyle, inputStyle, labelFocusStyleTmp } = this.state;
+      const { labelStyle, inputStyle, labelFocusStyle, labelFocusStyleTmp } = this.state;
 
       const em = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
       const ariaDescribedby =  em + ((infoMessage) ? `infoMsg-${id}` : '');
@@ -36,6 +36,8 @@ class MultiLineText extends Component {
                     aria-describedby = {ariaDescribedby}
                     disabled         = {inputState === 'disabled'}
                     readOnly         = {inputState === 'readOnly'}
+                    onFocus     = {() => this.setState({labelFocusStyleTmp:labelFocusStyle})}
+                    onBlur      = {() => this.setState({labelFocusStyleTmp:labelStyle})}
                     onChange    = {changeHandler}
                     >
           </textarea>

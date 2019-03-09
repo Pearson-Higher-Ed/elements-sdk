@@ -38,7 +38,6 @@ export default class Tabs extends Component {
   }
 
   handleClick(i, e) {
-    console.log('clicked');
     if (this.props.callback !== undefined) {
       this.props.callback(i);
     }
@@ -46,7 +45,6 @@ export default class Tabs extends Component {
     this.setState({
       selected: i
     });
-    console.log('clicked');
     this.getDimensions(e.target);
   }
 
@@ -89,7 +87,20 @@ export default class Tabs extends Component {
         this.setState({ selected: current });
       }
     }, true)
+
+    //update the slider position when screen resizes
+    window.addEventListener("resize", () => {
+      const selectedTab = parentUl.querySelector('.activeTab');
+      this.getDimensions(selectedTab);
+    });
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", () => {
+      const selectedTab = parentUl.querySelector('.activeTab');
+      this.getDimensions(selectedTab);
+    });
+}
 
   renderLabels() {
     function labels(child, i) {
