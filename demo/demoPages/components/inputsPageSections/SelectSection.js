@@ -16,7 +16,8 @@ const SelectSection = (props) => (
           <li>inputType:String === "error","disabled","readOnly" leave off for default</li>
           <li>fancy:Boolean === true/false</li>
           <li>options:Array(required) === list of options</li>
-          <li>selectedOption:String === the option selected</li>
+          <li>selectedOption:String === the default option</li>
+          <li>value:String === the option selected</li>
           <li>changeHandler:Function(required) === handles selection</li>
           <li>infoMessage:String === "an optional info message displayed below the input"</li>
           <li>errorMessage:String === "an optional error message displayed below the input"</li>
@@ -33,7 +34,7 @@ const SelectSection = (props) => (
         changeHandler  = {() => {}}
         infoMessage    = "This is an info message"
         errorMessage   = "This is an error message"
-        />
+      />
 
       <p className="code">{'<Select id="select" changeHandler={() => {}} selectedOption="mac" labelText="Select Label:" options={ ["ipad", "mac", "iphone"] } infoMessage="This is an info message" errorMessage="This is an error message" />'}</p>
 

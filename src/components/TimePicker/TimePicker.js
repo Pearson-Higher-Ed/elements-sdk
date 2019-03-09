@@ -52,7 +52,7 @@ export default class TimePicker extends Component {
     const { inputStyle, labelStyleTmp, displayOpen, timepickerValue,
             containerStyle, placeholder } = this.state;
     const { className, inputState, id, labelText, infoMessage, errorMessage,
-            twentyFourHour, TWENTYFOUR_HOURS, HOURS, disableLabel
+            twentyFourHour, TWENTYFOUR_HOURS, HOURS, disableLabel, onBlur
           } = this.props;
 
     const em                  = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
@@ -87,6 +87,7 @@ export default class TimePicker extends Component {
             readOnly         = {inputState === 'readOnly'}
             onChange         = {this.changeHandler}
             autoComplete     = "off"
+            onBlur           = {onBlur}
           />
           <span className="pe-icon-wrapper">
             <Icon name="clock-18" />
@@ -140,7 +141,8 @@ TimePicker.propTypes = {
   HOURS            : PropTypes.array,
   TWENTYFOUR_HOURS : PropTypes.array,
   twentyFourHour   : PropTypes.bool,
-  disableLabel     : PropTypes.bool
+  disableLabel     : PropTypes.bool,
+  onBlur           : PropTypes.func
 };
 
 
