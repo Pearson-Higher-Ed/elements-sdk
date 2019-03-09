@@ -42,7 +42,7 @@ class MultiLineText extends Component {
                     >
           </textarea>
             {infoMessage  && <span id={`infoMsg-${id}`} className="pe-input--info_message">{infoMessage}</span>}
-            {inputState === 'error' && errorMessage && <span id={`errMsg-${id}`} className="pe-input--error_message"><Icon name="warning-sm-18">Error</Icon> {errorMessage}</span>}
+            {inputState === 'error' && errorMessage && <span id={`errMsg-${id}`} className="pe-input--error_message"><Icon name="warning-16">Error</Icon> {errorMessage}</span>}
         </div>
       )
 
@@ -67,29 +67,33 @@ MultiLineText.propTypes = {
 
 function _applyMultiLineStyles() {
 
-  let { labelStyle, inputStyle, labelFocusStyleTmp } = this.state;
+  let { labelStyle, inputStyle, labelFocusStyle, labelFocusStyleTmp } = this.state;
   const { inputState } = this.props;
 
   switch (inputState) {
     case 'error':
-      labelStyle      = 'pe-textLabelInput__label';
+      labelStyle      = 'pe-textLabelInput__label--label_error';
       inputStyle      = 'pe-multiLineText--error';
+      labelFocusStyle = 'pe-textLabelInput__label--label_error';
       break;
     case 'disabled':
-      labelStyle      = 'pe-textLabelInput__label--label_disabled';
+      labelStyle      = 'pe-textLabelInput__label';
       inputStyle      = 'pe-multiLineText--disabled';
+      labelFocusStyle = 'pe-textLabelInput__label';
       break;
     case 'readOnly':
       labelStyle      = 'pe-textLabelInput__label';
       inputStyle      = 'pe-multiLineText--readOnly';
+      labelFocusStyle = 'pe-textLabelInput__label';
       break;
     default:
       labelStyle      = 'pe-textLabelInput__label';
       inputStyle      = 'pe-multiLineText';
+      labelFocusStyle = 'pe-textLabelInput__label--label_focus';
   };
 
   labelFocusStyleTmp = labelStyle;
 
-  this.setState({labelStyle, inputStyle, labelFocusStyleTmp});
+  this.setState({labelStyle, inputStyle, labelFocusStyle, labelFocusStyleTmp});
 
 };

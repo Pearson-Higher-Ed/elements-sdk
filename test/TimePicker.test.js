@@ -16,7 +16,7 @@ describe('TimePicker', () => {
 
     it('should render the TimePicker as div element', function() {
       this.wrapper = shallow(<TimePicker id="test" labelText="test" timeFormat="hh:mm" changeHandler={() => {}} />);
-      expect(this.wrapper.node.type).toEqual('div');
+      expect(this.wrapper.getElement().type).toEqual('div');
     });
 
     it('should render the TimePicker in error state', function() {
@@ -61,6 +61,7 @@ describe('TimePicker', () => {
       this.wrapper.find('input').simulate('click');
       const e = {"which":27};
       this.wrapper.instance().inputEvents(e);
+      this.wrapper.update();
       expect(this.wrapper.find('ul').exists()).toEqual(false);
     });
 
@@ -69,6 +70,7 @@ describe('TimePicker', () => {
       this.wrapper.find('input').simulate('click');
       const e = {"which":9, preventDefault:() => {}};
       this.wrapper.instance().inputEvents(e);
+      this.wrapper.update();
       expect(this.wrapper.find('ul').exists()).toEqual(false);
     });
 
@@ -77,6 +79,7 @@ describe('TimePicker', () => {
       this.wrapper.find('input').simulate('click');
       const e = {"target":{"innerText":"Hi there"},"which":13, preventDefault:() => {}};
       this.wrapper.instance().inputEvents(e);
+      this.wrapper.update();
       expect(this.wrapper.find('ul').exists()).toEqual(false);
     });
 
