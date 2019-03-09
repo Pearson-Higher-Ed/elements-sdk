@@ -21,7 +21,7 @@ class Select extends Component {
   render() {
 
     const { labelStyle, spanStyle, selectStyle, containerStyle, containerFocusStyle, containerStyleTmp, labelFocusStyle, labelStyleTmp } = this.state;
-    const { id, fancy, labelText, inputState, options, infoMessage, errorMessage, changeHandler, selectedOption } = this.props;
+    const { id, fancy, labelText, inputState, options, infoMessage, errorMessage, changeHandler, selectedOption, value } = this.props;
 
     const em = (inputState === 'error' && errorMessage) ? `errMsg-${id} ` : '';
     const ariaDescribedby =  em + ((infoMessage) ? `infoMsg-${id}` : '');
@@ -32,6 +32,7 @@ class Select extends Component {
           <div className={containerStyleTmp}>
             <select id           = {id}
                     defaultValue = {selectedOption}
+                    value        = {value}
                     className    = {selectStyle}
                     aria-invalid     = {inputState === 'error'}
                     aria-describedby = {ariaDescribedby}
