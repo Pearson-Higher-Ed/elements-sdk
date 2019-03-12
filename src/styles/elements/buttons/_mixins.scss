@@ -26,7 +26,7 @@
     color            : $hover-color;
     background-color : $hover-bg;
     border			 : $border-hover;
-    outline          : 0;
+      @include focusOutline;
       @include focusPseudoOutline(4px, 8px, 8px, -6px, -6px);
    }
   
