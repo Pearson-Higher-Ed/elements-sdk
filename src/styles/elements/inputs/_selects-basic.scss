@@ -1,5 +1,10 @@
 
 @mixin textInputBasicSelect() {
+  @-moz-document url-prefix() {
+    .pe-select-container select {
+      padding-top: 6px;
+    }
+  }
 
   .pe-select-container {
     @extend %abstract, %container-extend;
@@ -61,7 +66,7 @@
     &:focus {
       border     : $textInput-basic-focus-border;
       @include focusOutline;
-      
+
       &::-ms-value {
         background : transparent;
         color      : #222;
@@ -76,6 +81,11 @@
 
 
 @mixin textInputBasicSelectError() {
+  @-moz-document url-prefix() {
+    .pe-select-container-error select {
+      padding-top: 6px !important;
+    }
+  }
 
   .pe-select-container-error {
     @extend %abstract, %container-extend;
@@ -97,7 +107,7 @@
 
       border     : $textInput-basic-error-border;
 	  @include focusOutline;
-	  
+
       &::-ms-value {
     		background : transparent;
     		color      : #222;
@@ -128,7 +138,7 @@
     &:focus {
       border     : $textInput-basic-error-border;
       @include focusOutline;
-      
+
       &::-ms-value {
         background : transparent;
         color      : #222;
@@ -165,6 +175,11 @@
 
 
 @mixin textInputBasicSelectDisabled() {
+  @-moz-document url-prefix() {
+    .pe-select-container select {
+      padding-top: 6px;
+    }
+  }
 
   .pe-select-container-disabled {
     @extend %abstract, %container-extend;
@@ -190,7 +205,7 @@
         &:focus {
               border     : $textInput-basic-error-border;
               @include focusOutline;
-              
+
               &::-ms-value {
                 background : transparent;
                 color      : #222;
@@ -204,6 +219,11 @@
 };
 
 @mixin textInputBasicSelectReadOnly() {
+  @-moz-document url-prefix() {
+    .pe-select-container select {
+      padding-top: 6px;
+    }
+  }
 
   .pe-select-container-readonly {
     @extend %abstract, %container-extend;
@@ -230,7 +250,7 @@
     &:focus {
       border     : $textInput-readonly-border;
       @include focusOutline;
-      
+
       &::-ms-value {
         background : transparent;
         color      : #222;
