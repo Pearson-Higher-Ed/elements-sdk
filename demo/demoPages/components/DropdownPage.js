@@ -164,8 +164,11 @@ class DropdownPage extends React.Component {
             mobileTitle={mobileTitle}
             type="button"
             label="Button text"
-            id="buttontext">
-            <DropdownItem dropdownId="dropBtnIcons" selectValue="list-item-1" label="list item 1" type="button" />
+            id="buttontext"
+            changeHandler={() => console.log('hey')}
+          >
+            <DropdownItem disabled onClick={() => console.log('wut')} dropdownId="dropBtnIcons" selectValue="list-item-1" label="list item 1" type="button" />
+            <DropdownItem dropdownId="dropBtnIcons" selectValue="list-item-3" label="list item 124" type="button" />
             <DropdownItem type="divider" />
             <DropdownItem dropdownId="dropBtnIcons" selectValue="list-item-2" label="list item 2" type="link" url="www.google.com"/>
           </Dropdown>
