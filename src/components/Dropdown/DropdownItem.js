@@ -48,7 +48,7 @@ const DropdownItem = ({
             <button role="menuitem"
               disabled={disabled}
               type="button"
-              onClick={onClick}
+              onClick={!disabled ? onClick : (e) => e.preventDefault()}
 				      className={checkmark ? 'checkmark' : ''}
 				      tabIndex="-1"
             >

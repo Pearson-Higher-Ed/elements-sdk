@@ -295,6 +295,9 @@ export default class Dropdown extends Component {
     const selectedListItem = this.getParentLiSelected(e.target);
     if (selectedListItem.nodeName == 'LI') {
       if (selectedListItem.dataset.item !== 'divider') {
+        if (selectedListItem.children[0].disabled) {
+          return;
+        }
         this.props.changeHandler ? this.props.changeHandler(selectedListItem.dataset) : null;
         this.setState({
           open: false,

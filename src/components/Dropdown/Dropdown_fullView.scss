@@ -43,7 +43,7 @@
     max-height: 300px;
     overflow-y: auto;
 
-    li {
+    li:not([disabled]) {
 
       &:hover, &:focus {
         background-color: $pe-color-moonlight;
@@ -51,7 +51,6 @@
       &:focus-within {
         background-color: $pe-color-moonlight;
       }
-
 
       button[role=menuitem] {
         background-color: transparent;
@@ -67,9 +66,9 @@
         &.checkmark {
           padding: 4px 16px;
         }
-		span.icon {
-			color: $pe-color-medium-gray;
-		}
+    		span.icon {
+    			color: $pe-color-medium-gray;
+    		}
         span.icon-padding {
             padding-left: 8px;
         }
@@ -78,6 +77,12 @@
         	background-color: $pe-color-moonlight;
         	@include focusPseudoOutline(4px, 0px, 4px, -2px, 0px);
         }
+      }
+
+      button[disabled] {
+        background-color: $pe-color-white;
+        cursor: not-allowed;
+        pointer-events: none;
       }
 
       a {
