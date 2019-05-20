@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from '../Icon';
 
 import './Footer.scss';
 
 const currentYear = new Date().getFullYear();
 
-const Footer = ({ copyrightText, links, anchorTarget, light, glp, singlePageStick }) => {
+const Footer = ({ copyrightText, links, anchorTarget, light, logo, glp, singlePageStick }) => {
 
   const renderCopy = () => {
     return <p className="pe-label">{copyrightText}</p>;
@@ -18,11 +19,31 @@ const Footer = ({ copyrightText, links, anchorTarget, light, glp, singlePageStic
       let item = links[i];
       items.push(<li key={i}>
                    <a href={item.href} target={`_${anchorTarget}`}>{item.text}</a>
-                   <span aria-hidden={true}>|</span>
                  </li>);
     }
     return items;
   };
+  
+    const renderFooter = () => {
+    if (logo && !light) {
+      return (
+        <div className="pe-footer--logo">
+            <Icon name="pearson-logo">
+            Pearson logo
+            </Icon>
+            <ul>
+              {renderLinks()}
+            </ul>
+        </div>
+      );
+    } else {
+      return (
+          <ul>
+            {renderLinks()}
+          </ul>
+      );
+    }
+  }
 
   const lightCheck = light ? ' pe-footer--light':'';
   const stickCheck = singlePageStick ? '--stick':'';
@@ -30,9 +51,7 @@ const Footer = ({ copyrightText, links, anchorTarget, light, glp, singlePageStic
 
   return (
       <footer className={`pe-footer${stickCheck} pe-label${lightCheck}${glpCheck}`}>
-        <ul>
-          {renderLinks()}
-        </ul>
+        {renderFooter()}
         {renderCopy()}
       </footer>
   );
@@ -43,6 +62,7 @@ export default Footer;
 Footer.propTypes = {
   links: PropTypes.array.isRequired,
   light: PropTypes.bool,
+  logo: PropTypes.bool,
   glp: PropTypes.bool,
   singlePageStick: PropTypes.bool,
   anchorTarget: PropTypes.oneOf(['blank', 'self'])
@@ -50,6 +70,7 @@ Footer.propTypes = {
 
 Footer.defaultProps = {
   light: false,
+  logo: false,
   singlePageStick: false,
   anchorTarget: 'self',
   copyrightText: ['Copyright', <span key='Unique'>&copy;</span>, `${currentYear} Pearson Education Inc. All Rights Reserved.`]

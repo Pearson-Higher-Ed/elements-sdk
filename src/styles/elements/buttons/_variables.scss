@@ -2,25 +2,29 @@
 
 $pe-btn-small-height        : 32px !default;
 $pe-btn-small-border-radius : 32px !default;
-$pe-btn-small-padding       : 0 12px !default;
+$pe-btn-small-padding       : 0 24px !default;
+$pe-btn-small-min-width		: 128px !default;
 
 $pe-btn-large-height        : 36px !default;
 $pe-btn-large-border-radius : 36px !default;
-$pe-btn-large-padding       : 0 20px !default;
+$pe-btn-large-padding       : 0 24px !default;
+$pe-btn-large-min-width		: 152px !default;
 
 $pe-btn-xlarge-height        : 40px !default;
 $pe-btn-xlarge-border-radius : 40px !default;
-$pe-btn-xlarge-padding       : 0 20px !default;
+$pe-btn-xlarge-padding       : 0 24px !default;
+$pe-btn-xlarge-min-width	 : 152px !default;
 
 $pe-btn-default-bg            : transparent !default;
-$pe-btn-default-text          : $pe-color-graphite !default;
-$pe-btn-default-border        : 1px solid $pe-color-concrete !default;
+$pe-btn-default-text          : $pe-color-medium-gray !default;
+$pe-btn-default-border        : 1px solid $pe-color-medium-gray !default;
 $pe-btn-default-hover-bg      : transparent !default;
-$pe-btn-default-hover-border  : 1px solid $pe-color-concrete !default;
-$pe-btn-default-hover-text    : $pe-color-graphite !default;
-$pe-btn-default-hover-border  : 1px solid $pe-color-graphite !default;
+$pe-btn-default-hover-text    : $pe-color-charcoal !default;
+$pe-btn-default-hover-border  : 1px solid $pe-color-charcoal !default;
 $pe-btn-default-disabled-bg   : $pe-color-moonlight !default;
-$pe-btn-default-disabled-text : $pe-color-concrete !default;
+$pe-btn-default-disabled-text : $pe-color-medium-gray !default;
+$pe-btn-default-disabled-border   : 1px solid $pe-color-moonlight !default;
+
 
 $pe-btn-primary-bg            : $pe-color-digital-pearson-blue !default;
 $pe-btn-primary-border		  : 1px solid $pe-color-digital-pearson-blue !default;

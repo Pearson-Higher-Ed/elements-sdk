@@ -17,7 +17,7 @@ describe('PhoneNumber', () => {
           onChange={(num) => console.log(num)}
         />
       );
-      expect(wrapper.node.type).toEqual('div');
+      expect(wrapper.getElement().type).toEqual('div');
     });
 
     it('should render the PhoneNumber in an error state', function() {
@@ -30,7 +30,7 @@ describe('PhoneNumber', () => {
           errorMessage={"Error"}
         />
       );
-      expect(wrapper.node.props.children[1].props.inputClassName).toEqual('react-phone-number-input__phone--error');
+      expect(wrapper.getElement().props.children[1].props.inputClassName).toEqual('react-phone-number-input__phone--error');
     });
   });
 });

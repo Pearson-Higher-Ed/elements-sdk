@@ -6,24 +6,27 @@ export default class TableHeaderCell extends Component {
 
   static propTypes = {
     children: PropTypes.node,
+    cellId: PropTypes.string,
     scope: PropTypes.string,
     inputId: PropTypes.string,
-    containerId: PropTypes.string,
+    labelledbyCellId: PropTypes.string,
     inputLabel: PropTypes.string,
+    ariaLabel: PropTypes.string,
     columnSort: PropTypes.func,
     alignCell: PropTypes.oneOf(['center', 'right']),
     defaultIcon: PropTypes.string
   }
 
   static defaultProps = {
-    scope: 'col'
+    scope: 'col',
+    inputLabel: ' '
   }
 
   constructor(props) {
     super(props)
 
     this.state = {
-      iconName: this.props.defaultIcon || 'sortable-18'
+      iconName: this.props.defaultIcon
     }
 
     this.selectAll = _selectAll.bind(this);
@@ -45,31 +48,47 @@ export default class TableHeaderCell extends Component {
   }
 
   render() {
-    const { children, inputId, containerId, inputLabel, columnSort,
-            alignCell } = this.props;
+    const { children, cellId, inputId, labelledbyCellId, inputLabel, ariaLabel, columnSort,
+            alignCell, scope } = this.props;
     const { selectable, sortable } = this.context;
     const { iconName } = this.isControlled() ? this.props : this.state;
-    const sortClass = sortable ? 'pe-table__sortable' :'';
+    const sortClass = sortable && columnSort ? 'pe-table__sortable' : '';
     const columnAlignment = (alignCell === 'center' || alignCell === 'right')
-                            ? ' pe-table__' + alignCell :'';
-    const sortCheck = columnSort ? columnSort :null;
+                            ? ' pe-table__' + alignCell : '';
+    const sortCheck =  columnSort ? columnSort :null;
+    const arialabel = ariaLabel
+                  ? ariaLabel
+                  : null;
+    const labelledby = labelledbyCellId 
+                      ? labelledbyCellId
+                      : null;
 
     return (
-      <th aria-sort={
+      <th  id={cellId}
+           aria-sort={
             iconName === 'sort-up-18'
             ? 'ascending'
             : iconName === 'sort-down-18'
             ? 'descending'
-            : null }
+            : iconName === 'sortable-18'
+            ? 'none'
+            : null}
           columnSort={sortCheck}
-          className={`${sortClass}${columnAlignment}`}
+          className={
+            sortClass !='' || columnAlignment != ''
+            ? `${sortClass}${columnAlignment}`
+            : null}
+          scope={scope}
       >
         {
-          selectable && !children
+          selectable && !columnSort && !children
             ? <div className="pe-checkbox"
-                   id={containerId}
-                   onClick={this.selectAll}>
-                <input type="checkbox" id={inputId} />
+                   onClick={
+                     scope === 'col'
+                     ? this.selectAll
+                     : null
+                     }>
+                <input type="checkbox" id={inputId} aria-labelledby={labelledby} aria-label={arialabel}/>
                 <label htmlFor={inputId}>{inputLabel}</label>
                 <span>
                   <Icon name="check-sm-18" />
@@ -78,9 +97,14 @@ export default class TableHeaderCell extends Component {
             : children
         }
         {
-          columnSort &&
-            <button type="button" className="pe-icon--btn" onClick={this.iconToggle}>
-              <Icon name={iconName} />
+          columnSort && 
+            <button type="button" title={
+              iconName === 'sort-up-18'
+              ? 'Sorted up'
+              : iconName === 'sort-down-18'
+              ? 'Sorted down'
+              : 'Unsorted' } onClick={this.iconToggle}>
+              {inputLabel}<Icon name={iconName} />
             </button>
         }
       </th>
@@ -94,8 +118,19 @@ TableHeaderCell.contextTypes = {
 }
 
 function _selectAll() {
-  const checkboxes = document.querySelectorAll('div.pe-checkbox input');
-  for (let i = 1; i < checkboxes.length; i++) {
-    checkboxes[i].checked = checkboxes[0].checked;
-  }
+  const tables = [].slice.call(document.getElementsByClassName('pe-table--selectable'));
+
+  tables.forEach((table) => {
+    let thead = table.getElementsByTagName('thead')[0],
+        tbody = table.getElementsByTagName('tbody')[0];
+    let thInput = thead.getElementsByTagName('INPUT')[0],
+        trs = [].slice.call(tbody.getElementsByTagName('TR'));
+    let trInputs = trs.map(tr => tr.getElementsByTagName('INPUT')[0]);
+
+    if (thInput && thInput.type === 'checkbox') {
+        trInputs.forEach((input) => {
+          input.checked = thInput.checked;
+        });
+    }   
+  });
 }

@@ -15,22 +15,29 @@ class TablePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemSelected: ''
+      itemSelected: '',
+      tableSelected: 3
     };
   }
 
-  handleColumnSort = (item) => {
+  handleColumnSort = (item, num) => {
     return () => {
-      console.log(item);
-      this.setState(prevState => ({
-        itemSelected: item,
-        direction: prevState.direction === 'up' ? 'down' : 'up'
-      }));
+      this.setState({tableSelected: num});
+      if (this.state.itemSelected === item) {
+        this.setState(prevState => ({
+          direction: prevState.direction === 'up' ? 'down' : 'up'
+        }));
+      } else {
+        this.setState({
+          itemSelected: item, 
+          direction: 'down'
+        });
+      }
     }
   }
 
-  getIconName = () => {
-    if (this.state.itemSelected === 'country') {
+  getIconName = (columnname, num) => {
+    if (this.state.itemSelected === columnname && this.state.tableSelected === num) {
       return this.state.direction === 'up' ? 'sort-down-18' : 'sort-up-18';
     }
 
@@ -68,6 +75,7 @@ class TablePage extends React.Component {
           </ul>
           <h3>TableHeaderCell props</h3>
           <ul>
+            <li className="li-props">Not only does thead needs header cell, rows in tbody shall have row headers too. The cell holding the title text of each row should be a {`<th scope="row">`} row header. That's being said, if the first table cell in selectable table doesn't have a visible label, you could make the column 2 cells as the row headers.</li>
             <li className="li-props">children:Node</li>
             <li className="li-props">scope:String</li>
             <li className="li-props">Scope specifies whether the cell is a header
@@ -81,17 +89,23 @@ class TablePage extends React.Component {
             <li className="li-props">Allows you to change the alignment of the contents of a cell.  Acceptable strings are 'center' and 'right'. <br/>
               By default the element will maintain its left alignment.
             </li>
+            <li className="li-props">inputLabel:String</li>
+            <li className="li-props">Label for the corresponding checkbox, or sortable button in column header.</li>
             <li className="li-props">**The following props are only necessary on Selectable tables.**</li>
+            <li className="li-props"><ul>There are two ways that you could label a checkbox for accessibility purpose, try to use only one method for a single table:
+              <li className="li-props">1. Use the inputLabel to set up a visible label</li>
+              <li className="li-props">2. Use the labelledbyCellId to set up the aria-labelledby attribute the checkbox</li>
+              <li className="li-props">3. Use the ariaLabel to set up the aria-label attribute for the checkbox</li>
+            </ul></li>
             <li className="li-props">inputId:String</li>
             <li className="li-props">The inputId is passed to the checkbox and its label. This can only start with letters or an underscore (applies to all id&#39;s).</li>
-            <li className="li-props">inputLabel:String</li>
-            <li className="li-props">Label for the corresponding checkbox.</li>
-            <li className="li-props">containerId:String</li>
-            <li className="li-props">Assigns the id to the {`<div>`} containing the checkbox.  This id must also be passed
-              to the TableRowCell component and is <br/>referred to by the same prop name.
+            <li className="li-props">ariaLabel:String</li>
+            <li className="li-props">Set up the aria-label attribute for the checkbox.
             </li>
             <li className="li-props">defaultIcon:String - defaultIcon to show</li>
             <li className="li-props">iconName - control icon name yourself</li>
+            <li className="li-props">cellId:String</li>
+            <li className="li-props">cellId needs to be passed to the TableRowCell that follows the checkbox.</li>
           </ul>
           <h3>TableRow props</h3>
           <ul>
@@ -101,16 +115,130 @@ class TablePage extends React.Component {
           <ul>
             <li className="li-props">children:Node</li>
             <li className="li-props">**The following props are only necessary on Selectable tables.**</li>
+            <li className="li-props"><ul>There are three ways that you could label a checkbox for accessibility purpose, try to use only one method for a single table:
+              <li className="li-props">1. Use the inputLabel to set up a visible label</li>
+              <li className="li-props">2. Use the labelledbyCellId to set up the aria-labelledby attribute the checkbox</li>
+              <li className="li-props">3. Use the ariaLabel to set up the aria-label attribute for the checkbox</li>
+            </ul></li>
             <li className="li-props">inputId:String</li>
             <li className="li-props">The inputId is passed to the checkbox and its label</li>
-            <li className="li-props">containerId:String</li>
-            <li className="li-props">This must match what was passed into the TableHeaderCell component.  It is referenced here in the aria-labelledby of the checkbox.</li>
             <li className="li-props">labelledbyCellId:String</li>
             <li className="li-props">labelledbyCellId must match the cellId and is passed into the aria-labelledby of the checkbox.</li>
+            <li className="li-props">ariaLabel:String</li>
+            <li className="li-props">Set up the aria-label attribute for the checkbox.
+            </li>
             <li className="li-props">cellId:String</li>
             <li className="li-props">cellId needs to be passed to the TableRowCell that follows the checkbox.</li>
           </ul>
         </div> <br/>
+
+        <div> {this.state.itemSelected.length ? 'Sorting by ' + this.state.itemSelected : ''} </div>
+        <Table selectable sortable>
+          <TableHead>
+            <TableRow>
+              <TableHeaderCell
+                inputId="comic_select_00"
+                inputLabel="Select all rows"           
+                scope="col"
+              />
+              <TableHeaderCell columnSort={this.handleColumnSort('comic', 0)} iconName={this.getIconName('comic', 0)} inputLabel='Comic'/>
+              <TableHeaderCell columnSort={this.handleColumnSort('characters', 0)} iconName={this.getIconName('characters', 0)} inputLabel='Main characters'/>
+              <TableHeaderCell columnSort={this.handleColumnSort('country', 0)} iconName={this.getIconName('country', 0)} inputLabel='Country'/>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableHeaderCell
+                inputId="c01"
+                inputLabel="Select row 2"
+                scope="row"
+              />
+              <TableRowCell>Spirou</TableRowCell>
+              <TableRowCell>Spirou, Fantasio</TableRowCell>
+              <TableRowCell>Belgium</TableRowCell>
+            </TableRow>
+            <TableRow>
+              <TableHeaderCell
+                inputId="c02"
+                inputLabel="Select row 3"
+                scope="row"
+              />
+              <TableRowCell>Suske en Wiske</TableRowCell>
+              <TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>
+              <TableRowCell>Belgium</TableRowCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+
+        <Table selectable sortable>
+          <TableHead>
+            <TableRow>
+              <TableHeaderCell
+                inputId="comic_select_01"
+                ariaLabel="Select all rows"           
+                scope="col"
+              />
+              <TableHeaderCell columnSort={this.handleColumnSort('comic', 1)} iconName={this.getIconName('comic', 1)} inputLabel='Comic'/>
+              <TableHeaderCell columnSort={this.handleColumnSort('characters', 1)} iconName={this.getIconName('characters', 1)} inputLabel='Main characters'/>
+              <TableHeaderCell columnSort={this.handleColumnSort('country', 1)} iconName={this.getIconName('country', 1)} inputLabel='Country'/>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableRowCell
+                inputId="c11"
+                ariaLabel="Select Row 2"
+              />
+              <TableHeaderCell scope="row">Spirou</TableHeaderCell>
+              <TableRowCell>Spirou, Fantasio</TableRowCell>
+              <TableRowCell>Belgium</TableRowCell>
+            </TableRow>
+            <TableRow>
+              <TableRowCell
+                inputId="c12"
+                ariaLabel="Select Row 3"
+              />
+              <TableHeaderCell scope="row">Suske en Wiske</TableHeaderCell>
+              <TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>
+              <TableRowCell>Belgium</TableRowCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+
+        <Table selectable sortable>
+          <TableHead>
+            <TableRow>
+              <TableHeaderCell
+                inputId="comic_select_02"
+                ariaLabel="Select all rows"   
+                scope="col"
+              />
+              <TableHeaderCell columnSort={this.handleColumnSort('comic', 2)} iconName={this.getIconName('comic', 2)} inputLabel='Comic'/>
+              <TableHeaderCell columnSort={this.handleColumnSort('characters', 2)} iconName={this.getIconName('characters', 2)} inputLabel='Main characters'/>
+              <TableHeaderCell columnSort={this.handleColumnSort('country', 2)} iconName={this.getIconName('country', 2)} inputLabel='Country'/>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableRowCell
+                inputId="c21"
+                labelledbyCellId="sel_spirou"
+              />
+              <TableHeaderCell cellId="sel_spirou" scope="row">Spirou</TableHeaderCell>
+              <TableRowCell>Spirou, Fantasio</TableRowCell>
+              <TableRowCell>Belgium</TableRowCell>
+            </TableRow>
+            <TableRow>
+              <TableRowCell
+                inputId="c22"
+                labelledbyCellId="sel_sew"
+              />
+              <TableHeaderCell cellId="sel_sew" scope="row">Suske en Wiske</TableHeaderCell>
+              <TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>
+              <TableRowCell>Belgium</TableRowCell>
+            </TableRow>
+          </TableBody>
+        </Table>
 
         <h3>Example usage</h3>
 
@@ -119,33 +247,103 @@ class TablePage extends React.Component {
           <div style={eight}>{`<TableHead>`}</div>
             <div style={sixteen}>{`<TableRow>`}</div>
               <div style={twentyFour}>{`<TableHeaderCell`}</div>
-                <div style={thirtyTwo}>{`inputId="comic_select_0"`}</div>
-                <div style={thirtyTwo}>{`containerId="comic_select"`}</div>
-                <div style={thirtyTwo}>{`inputLabel="Select"`}</div>
+                <div style={thirtyTwo}>{`inputId="comic_select_00"`}</div>
+                <div style={thirtyTwo}>{`inputLabel="Select all rows"`}</div>
+                <div style={thirtyTwo}>{`scope="col"`}</div>
               <div style={twentyFour}>{`/>`}</div>
-              <div style={twentyFour}>{`<TableHeaderCell columnSort={() => console.log('Hey')}>Comic</TableHeaderCell>`}</div>
-              <div style={twentyFour}>{`<TableHeaderCell>Main characters</TableHeaderCell>`}</div>
-              <div style={twentyFour}>{`<TableHeaderCell>Country</TableHeaderCell>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('comic')} iconName={this.getIconName('comic')} inputLabel='Comic'/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('characters')} iconName={this.getIconName('characters')} inputLabel='Main characters'/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('country')} iconName={this.getIconName('country')} inputLabel='Country'/>`}</div>
+            <div style={sixteen}>{`</TableRow>`}</div>
+          <div style={eight}>{`</TableHead>`}</div>
+          <div style={eight}>{`<TableBody>`}</div>
+            <div style={sixteen}>{`<TableRow>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell`}</div>
+                <div style={thirtyTwo}>{`inputId="c01"`}</div>
+                <div style={thirtyTwo}>{`inputLabel="Select Row 2"`}</div>
+                <div style={thirtyTwo}>{`scope="row"`}</div>
+              <div style={twentyFour}>{`/>`}</div>
+              <div style={twentyFour}>{`<TableRowCell>Spirou</TableRowCell>`}</div>
+              <div style={twentyFour}>{`<TableRowCell>Spirou, Fantasio</TableRowCell>`}</div>
+              <div style={twentyFour}>{`<TableRowCell>Belgium</TableRowCell>`}</div>
+            <div style={sixteen}>{`</TableRow>`}</div>
+            <div style={sixteen}>{`<TableRow>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell`}</div>
+                <div style={thirtyTwo}>{`inputId="c02"`}</div>
+                <div style={thirtyTwo}>{`inputLabel="Select Row 3"`}</div>
+                <div style={thirtyTwo}>{`scope="row"`}</div>
+              <div style={twentyFour}>{`/>`}</div>
+              <div style={twentyFour}>{`<TableRowCell scope="row">Suske en Wiske</TableRowCell>`}</div>
+              <div style={twentyFour}>{`<TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>`}</div>
+              <div style={twentyFour}>{`<TableRowCell>Belgium</TableRowCell>`}</div>
+            <div style={sixteen}>{`</TableRow>`}</div>
+          <div style={eight}>{`</TableBody>`}</div>
+        {`</Table>`}
+
+        {`<Table selectable sortable>`} <br/>
+          <div style={eight}>{`<TableHead>`}</div>
+            <div style={sixteen}>{`<TableRow>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell`}</div>
+                <div style={thirtyTwo}>{`inputId="comic_select_01"`}</div>
+                <div style={thirtyTwo}>{`ariaLabel="Select all rows"`}</div>
+                <div style={thirtyTwo}>{`scope="col"`}</div>
+              <div style={twentyFour}>{`/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('comic')} iconName={this.getIconName('comic')} inputLabel='Comic'/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('characters')} iconName={this.getIconName('characters')} inputLabel='Main characters'/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('country')} iconName={this.getIconName('country')} inputLabel='Country'/>`}</div>
             <div style={sixteen}>{`</TableRow>`}</div>
           <div style={eight}>{`</TableHead>`}</div>
           <div style={eight}>{`<TableBody>`}</div>
             <div style={sixteen}>{`<TableRow>`}</div>
               <div style={twentyFour}>{`<TableRowCell`}</div>
-                <div style={thirtyTwo}>{`inputId="c1"`}</div>
-                <div style={thirtyTwo}>{`containerId="comic_select"`}</div>
-                <div style={thirtyTwo}>{`labelledbyCellId="sel_Spirou"`}</div>
+                <div style={thirtyTwo}>{`inputId="c11"`}</div>
+                <div style={thirtyTwo}>{`ariaLabel="Select Row 2"`}</div>
               <div style={twentyFour}>{`/>`}</div>
-              <div style={twentyFour}>{`<TableRowCell cellId="sel_Spirou">Spirou</TableRowCell>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell scope="row">Spirou</TableHeaderCell>`}</div>
               <div style={twentyFour}>{`<TableRowCell>Spirou, Fantasio</TableRowCell>`}</div>
               <div style={twentyFour}>{`<TableRowCell>Belgium</TableRowCell>`}</div>
             <div style={sixteen}>{`</TableRow>`}</div>
             <div style={sixteen}>{`<TableRow>`}</div>
               <div style={twentyFour}>{`<TableRowCell`}</div>
-                <div style={thirtyTwo}>{`inputId="c2"`}</div>
-                <div style={thirtyTwo}>{`containerId="comic_select"`}</div>
+                <div style={thirtyTwo}>{`inputId="c12"`}</div>
+                <div style={thirtyTwo}>{`ariaLabel="Select Row 3"`}</div>
+              <div style={twentyFour}>{`/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell scope="row">Suske en Wiske</TableHeaderCell>`}</div>
+              <div style={twentyFour}>{`<TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>`}</div>
+              <div style={twentyFour}>{`<TableRowCell>Belgium</TableRowCell>`}</div>
+            <div style={sixteen}>{`</TableRow>`}</div>
+          <div style={eight}>{`</TableBody>`}</div>
+        {`</Table>`}
+
+        {`<Table selectable sortable>`} <br/>
+          <div style={eight}>{`<TableHead>`}</div>
+            <div style={sixteen}>{`<TableRow>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell`}</div>
+                <div style={thirtyTwo}>{`inputId="comic_select_02"`}</div>
+                <div style={thirtyTwo}>{`ariaLabel="Select all rows"`}</div>
+                <div style={thirtyTwo}>{`scope="col"`}</div>
+              <div style={twentyFour}>{`/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('comic')} iconName={this.getIconName('comic')} inputLabel='Comic'/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('characters')} iconName={this.getIconName('characters')} inputLabel='Main characters'/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell columnSort={this.handleColumnSort('country')} iconName={this.getIconName('country')} inputLabel='Country'/>`}</div>
+            <div style={sixteen}>{`</TableRow>`}</div>
+          <div style={eight}>{`</TableHead>`}</div>
+          <div style={eight}>{`<TableBody>`}</div>
+            <div style={sixteen}>{`<TableRow>`}</div>
+              <div style={twentyFour}>{`<TableRowCell`}</div>
+                <div style={thirtyTwo}>{`inputId="c21"`}</div>
+                <div style={thirtyTwo}>{`labelledbyCellId="sel_spirou"`}</div>
+              <div style={twentyFour}>{`/>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell cellId="sel_spirou" scope="row">Spirou</TableHeaderCell>`}</div>
+              <div style={twentyFour}>{`<TableRowCell>Spirou, Fantasio</TableRowCell>`}</div>
+              <div style={twentyFour}>{`<TableRowCell>Belgium</TableRowCell>`}</div>
+            <div style={sixteen}>{`</TableRow>`}</div>
+            <div style={sixteen}>{`<TableRow>`}</div>
+              <div style={twentyFour}>{`<TableRowCell`}</div>
+                <div style={thirtyTwo}>{`inputId="c22"`}</div>
                 <div style={thirtyTwo}>{`labelledbyCellId="sel_sew"`}</div>
               <div style={twentyFour}>{`/>`}</div>
-              <div style={twentyFour}>{`<TableRowCell cellId="sel_sew">Suske en Wiske</TableRowCell>`}</div>
+              <div style={twentyFour}>{`<TableHeaderCell cellId="sel_sew" scope="row">Suske en Wiske</TableHeaderCell>`}</div>
               <div style={twentyFour}>{`<TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>`}</div>
               <div style={twentyFour}>{`<TableRowCell>Belgium</TableRowCell>`}</div>
             <div style={sixteen}>{`</TableRow>`}</div>
@@ -153,43 +351,6 @@ class TablePage extends React.Component {
         {`</Table>`}
         </div><br/>
 
-        <div> {this.state.itemSelected.length ? 'Sorting by ' + this.state.itemSelected : ''} </div>
-        <Table selectable sortable>
-          <TableHead>
-            <TableRow>
-              <TableHeaderCell
-                inputId="comic_select_0"
-                containerId="comic_select"
-                inputLabel="Select"
-              />
-              <TableHeaderCell columnSort={this.handleColumnSort('comic')} defaultIcon="sort-up-18">Comic</TableHeaderCell>
-              <TableHeaderCell columnSort={this.handleColumnSort('character')}>Main characters</TableHeaderCell>
-              <TableHeaderCell columnSort={this.handleColumnSort('country')} iconName={this.getIconName()}>Country</TableHeaderCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableRowCell
-                inputId="c1"
-                containerId="comic_select"
-                labelledbyCellId="sel_Spirou"
-              />
-              <TableRowCell cellId="sel_Spirou">Spirou</TableRowCell>
-              <TableRowCell>Spirou, Fantasio</TableRowCell>
-              <TableRowCell>Belgium</TableRowCell>
-            </TableRow>
-            <TableRow>
-              <TableRowCell
-                inputId="c2"
-                containerId="comic_select"
-                labelledbyCellId="sel_sew"
-              />
-              <TableRowCell cellId="sel_sew">Suske en Wiske</TableRowCell>
-              <TableRowCell>Suske, Wiske, Tante Sidonia, Krimson</TableRowCell>
-              <TableRowCell>Belgium</TableRowCell>
-            </TableRow>
-          </TableBody>
-        </Table>
       </div>
     );
   }

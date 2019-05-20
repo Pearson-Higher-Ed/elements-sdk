@@ -53,7 +53,7 @@ const DropdownItem = ({
 				      tabIndex="-1"
             >
 				      {checkmark ?
-					      <span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
+					      <span className="icon" style={{visibility: itemSelected === selectValue || selected ? 'visible' : 'hidden'}}>
 						      <Icon name="check-sm-18">{selectedName}</Icon>
 					      </span> : null
 				      }
@@ -82,7 +82,7 @@ const DropdownItem = ({
                 onClick={onClick}
               >
 						    {checkmark ?
-							    <span className="icon" style={{visibility: itemSelected === selectValue ? 'visible' : 'hidden'}}>
+							    <span className="icon" style={{visibility: itemSelected === selectValue || selected ? 'visible' : 'hidden'}}>
 								    <Icon name="check-sm-18">{selectedName}</Icon>
 							    </span> : null
 						    }

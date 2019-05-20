@@ -20,6 +20,7 @@ export default class Dropdown extends Component {
     scrollable: PropTypes.bool,
     btnImageWidth: PropTypes.string,
     btnImageAlt: PropTypes.string,
+    disabled: PropTypes.bool,
     btnHover: PropTypes.bool,
     btnOpen: PropTypes.bool,
     iconName: PropTypes.string,
@@ -30,7 +31,7 @@ export default class Dropdown extends Component {
     type: 'button',
     btnHover: false,
     btnOpen: false,
-    iconName: 'dropdown-open-sm-18',
+    iconName: 'drop-down-18',
     menuArrow: false
   }
 
@@ -401,6 +402,7 @@ export default class Dropdown extends Component {
         btnIcon={btnIcon}
         focus={this.state.buttonFocus}
         onClick={this.toggleDropdown}
+        disabled={this.props.disabled}
       >
         {buttonLabel}
       </Button>

@@ -57,6 +57,7 @@
     @extend %multiLineText;
     background-color : $pe-color-white;
     border : none;
+    margin-top: 0;
     &:focus {
       @include focusOutline;
     }

@@ -8,7 +8,7 @@ import { Button } from '../index';
 describe('Dropdown', () => {
 
   it('should create an anchor for text', function () {
-    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'text', iconName: 'audio-high-18'});
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'text'});
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
@@ -16,7 +16,7 @@ describe('Dropdown', () => {
   });
 
   it('should create an anchor for button', function () {
-    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'button', iconName: 'audio-high-18'});
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'button'});
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
@@ -24,7 +24,7 @@ describe('Dropdown', () => {
   });
 
   it('should create an anchor for icon', function () {
-    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'icon', iconName: 'audio-high-18'});
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'icon'});
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
@@ -32,7 +32,7 @@ describe('Dropdown', () => {
   });
 
   it('should create an anchor for image', function () {
-    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'image', iconName: 'audio-high-18'});
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'image'});
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
@@ -40,7 +40,7 @@ describe('Dropdown', () => {
   });
 
   it('should create an anchor for unknown should render text', function () {
-    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'asdf', iconName: 'audio-high-18'});
+    const dropDown = new Dropdown({label: 'test label', id: 'testId', type: 'asdf'});
     const anchor = dropDown.insertAnchor();
 
     expect(anchor.type).toEqual(Button);
@@ -151,5 +151,6 @@ describe('Dropdown', () => {
       expect(instance.state.open).toEqual(true);
       expect(instance.focusedItem).toEqual(1);
     });
+    
   });
 });

@@ -100,7 +100,7 @@ export default class TimePicker extends Component {
           </span> }
         {errorMessage && inputState === 'error' &&
           <span id={`errMsg-${id}`} className="pe-input--error_message">
-            <Icon name="warning-sm-18">Error</Icon> {errorMessage}
+            <Icon name="warning-16">Error</Icon> {errorMessage}
           </span> }
 
         {displayOpen  && inputState !== 'readOnly' &&
@@ -178,7 +178,6 @@ function _listHandler(e) {
 };
 
 function _inputEvents(e) {
-  // option & down arrow
   if (e.altKey && e.which === 40) {
     this.setState({ displayOpen: !this.state.displayOpen });
   }

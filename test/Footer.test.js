@@ -13,18 +13,18 @@ describe('Footer', () => {
     });
 
     it('should render the Footer', function () {
-      expect(this.wrapper.node.type).toEqual('footer');
+      expect(this.wrapper.getElement().type).toEqual('footer');
     });
 
     it('has the correct Copyright text', function () {
-      expect(this.wrapper.node.props.children[1].props.children)
+      expect(this.wrapper.getElement().props.children[1].props.children)
       .toEqual("CR text");
     });
 
     it('correctly passes the light prop', function () {
       const lightProp = shallow(<Footer links={moreLinks} light />);
-      expect(this.wrapper.instance().props.light).toEqual(false);
-      expect(lightProp.instance().props.light).toEqual(true);
+      expect(this.wrapper.find('footer').hasClass('pe-footer--light')).toEqual(false);
+      expect(lightProp.find('footer').hasClass('pe-footer--light')).toEqual(true);
     });
 
     it('correctly assigns the stick class ', function() {

@@ -13,9 +13,10 @@
   height         : $pe-btn-large-height;
   padding        : $pe-btn-large-padding;
   border-radius  : $pe-btn-large-border-radius;
-  font-size      : $pe-font-size-base;
-  line-height    : $pe-line-height-base;
+  font-size      : $pe-font-size-large;
+  line-height    : $pe-line-height-large;
   font-weight    : $pe-label-bold;
+  min-width		 : $pe-btn-large-min-width;
 }
 
 %btn_small {
@@ -24,6 +25,7 @@
   padding        : $pe-btn-small-padding;
   font-size      : $pe-font-size-base;
   line-height    : $pe-line-height-base;
+  min-width		 : $pe-btn-small-min-width;
 }
 
 
@@ -33,6 +35,7 @@
   padding        : $pe-btn-xlarge-padding;
   font-size      : $pe-font-size-large;
   line-height    : $pe-line-height-large;
+  min-width		 : $pe-btn-xlarge-min-width;
 }
 
 
@@ -165,6 +168,8 @@
     $pe-btn-primary-text,
     $pe-btn-primary-hover-bg,
     $pe-btn-primary-hover-text,
+    $pe-btn-default-disabled-bg,
+    $pe-btn-default-disabled-text,
     $border:($pe-btn-primary-border),
     $border-hover:($pe-btn-primary-hover-border)
   );
@@ -177,6 +182,8 @@
     $pe-btn-primary-text,
     $pe-btn-primary-hover-bg,
     $pe-btn-primary-hover-text,
+    $pe-btn-default-disabled-bg,
+    $pe-btn-default-disabled-text,
     $border:($pe-btn-primary-border),
     $border-hover:($pe-btn-primary-hover-border)
   );
@@ -190,6 +197,8 @@
     $pe-btn-primary-text,
     $pe-btn-primary-hover-bg,
     $pe-btn-primary-hover-text,
+    $pe-btn-default-disabled-bg,
+    $pe-btn-default-disabled-text,
     $border:($pe-btn-primary-border),
     $border-hover:($pe-btn-primary-hover-border)
   );
@@ -204,6 +213,8 @@
     $pe-btn-cta-text,
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text,
+    $pe-btn-default-disabled-bg,
+    $pe-btn-default-disabled-text,
     $border:($pe-btn-cta-border),
     $border-hover:($pe-btn-cta-hover-border)
   );
@@ -216,6 +227,8 @@
     $pe-btn-cta-text,
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text,
+    $pe-btn-default-disabled-bg,
+    $pe-btn-default-disabled-text,
     $border:($pe-btn-cta-border),
     $border-hover:($pe-btn-cta-hover-border)
   );
@@ -229,6 +242,8 @@
     $pe-btn-cta-text,
     $pe-btn-cta-hover-bg,
     $pe-btn-cta-hover-text,
+    $pe-btn-default-disabled-bg,
+    $pe-btn-default-disabled-text,
     $border:($pe-btn-cta-border),
     $border-hover:($pe-btn-cta-hover-border)
   );
@@ -237,26 +252,33 @@
 }
 
 //===========TERTIARY=================================
-.pe-btn__tertiary, .pe-btn__tertiary--btn_large {
+//Tertiary buttons are no longer supported as they too closely resemble disabled state. 
+//Classes are retained for backwards compatibility but have been restyled as default buttons.
+
+.pe-btn__tertiary, .pe-btn__tertiary--btn_large {    
     @include pe-btn(
-      $pe-btn-tertiary-bg,
-      $pe-btn-tertiary-text,
-      $pe-btn-tertiary-hover-bg,
-      $pe-btn-tertiary-hover-text,
-      $border:($pe-btn-tertiary-border),
-      $border-hover:($pe-btn-tertiary-hover-border)
+      $pe-btn-default-bg,
+      $pe-btn-default-text,
+      $pe-btn-default-hover-bg,
+      $pe-btn-default-hover-text,
+      $pe-btn-default-disabled-bg,
+      $pe-btn-default-disabled-text,
+      $pe-btn-default-border,
+      $pe-btn-default-hover-border
     );
-    @extend %btn;
+	@extend %btn;
   }
 
   .pe-btn__tertiary--btn_small {
     @include pe-btn(
-      $pe-btn-tertiary-bg,
-      $pe-btn-tertiary-text,
-      $pe-btn-tertiary-hover-bg,
-      $pe-btn-tertiary-hover-text,
-      $border:($pe-btn-tertiary-border),
-      $border-hover:($pe-btn-tertiary-hover-border)
+      $pe-btn-default-bg,
+      $pe-btn-default-text,
+      $pe-btn-default-hover-bg,
+      $pe-btn-default-hover-text,
+      $pe-btn-default-disabled-bg,
+      $pe-btn-default-disabled-text,
+      $pe-btn-default-border,
+      $pe-btn-default-hover-border
     );
     @extend %btn;
     @extend %btn_small;
@@ -264,16 +286,19 @@
 
   .pe-btn__tertiary--btn_xlarge {
     @include pe-btn(
-      $pe-btn-tertiary-bg,
-      $pe-btn-tertiary-text,
-      $pe-btn-tertiary-hover-bg,
-      $pe-btn-tertiary-hover-text,
-      $border:($pe-btn-tertiary-border),
-      $border-hover:($pe-btn-tertiary-hover-border)
+      $pe-btn-default-bg,
+      $pe-btn-default-text,
+      $pe-btn-default-hover-bg,
+      $pe-btn-default-hover-text,
+      $pe-btn-default-disabled-bg,
+      $pe-btn-default-disabled-text,
+      $pe-btn-default-border,
+      $pe-btn-default-hover-border
     );
     @extend %btn;
     @extend %btn_xlarge;
   }
+
 
 // vertical align doesn't work in div and a, the text in those sticks to the top border.
 // It stayed at center before because the line height in this file was mistakenly set as height.
