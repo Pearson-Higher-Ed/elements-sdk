@@ -413,7 +413,8 @@ export default class Dropdown extends Component {
     const dispArrow = this.state.open ? {} : {display: 'none'};
     return (
       <div id={`${this.props.id}-arrow`} className="dropdown-menu-arrow" style={dispArrow}>
-        <div className={`dropdown-${this.state.menuArrowPos}-arrow-border`} /><div className={`dropdown-${this.state.menuArrowPos}-arrow-filler`} />
+        <div className={`dropdown-${this.state.menuArrowPos}-arrow-border`} />
+        <div className={`dropdown-${this.state.menuArrowPos}-arrow-filler`} />
       </div>
     );
   }
@@ -570,6 +571,7 @@ export default class Dropdown extends Component {
 
     return (
       <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
+        {this.props.menuArrow && this.insertArrow()}
         {this.insertAnchor()}
         <ul
           role="menu"
