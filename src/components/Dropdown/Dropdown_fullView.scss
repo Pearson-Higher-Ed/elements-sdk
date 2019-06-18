@@ -8,7 +8,7 @@
   div {
   	white-space:nowrap;
   }
-  
+
   svg[class$='-18'] {
   margin-bottom:0 !important;
   }
@@ -154,6 +154,7 @@
 
   .dropdown-menu-arrow {
     position: absolute;
+    margin-left: 2px;
 
     .dropdown-up-arrow-border {
       position: relative;
