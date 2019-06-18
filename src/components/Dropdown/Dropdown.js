@@ -571,8 +571,8 @@ export default class Dropdown extends Component {
 
     return (
       <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
-        {this.props.menuArrow && this.insertArrow()}
         {this.insertAnchor()}
+        {this.props.menuArrow && this.insertArrow()}
         <ul
           role="menu"
           id={`${this.props.id.replace(' ', '_')}-dropdown`}
