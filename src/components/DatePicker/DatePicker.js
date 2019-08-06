@@ -48,7 +48,7 @@ export default class DatePicker extends Component {
       this.setState({ displayOpen: false });
       this.input.focus();
     }
-    if (e.altKey && e.which === 40) {
+    if (e.altKey && e.which === 40 || e.which === 13) {
       const enteredDate = this.parseDate(e.target.value);
       this.setState({
         displayOpen: true,
