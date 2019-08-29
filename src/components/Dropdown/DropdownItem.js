@@ -17,7 +17,8 @@ const DropdownItem = ({
   imgWidth,
   imgAlt,
   itemSelected,
-  disabled
+  disabled,
+  enabled // custom attribute used by IIE automation
 }) => {
 
     switch (type) {
@@ -45,8 +46,10 @@ const DropdownItem = ({
 			      className={itemSelected === selectValue ? 'active' : ''}
             key={dropdownId + selectValue}
 			    >
+          {console.log(enabled, '**')}
             <button role="menuitem"
               disabled={disabled}
+              enabled={enabled}
               type="button"
               onClick={!disabled ? onClick : (e) => e.preventDefault()}
 				      className={checkmark ? 'checkmark' : ''}
@@ -119,7 +122,8 @@ DropdownItem.propTypes = {
   imgHeight: PropTypes.string,
   imgWidth: PropTypes.string,
   imgAlt: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  enabled: PropTypes.string
 }
 
 DropdownItem.defaultProps = {
