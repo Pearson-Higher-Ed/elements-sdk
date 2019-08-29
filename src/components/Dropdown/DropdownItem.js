@@ -46,7 +46,6 @@ const DropdownItem = ({
 			      className={itemSelected === selectValue ? 'active' : ''}
             key={dropdownId + selectValue}
 			    >
-          {console.log(enabled, '**')}
             <button role="menuitem"
               disabled={disabled}
               enabled={enabled}
