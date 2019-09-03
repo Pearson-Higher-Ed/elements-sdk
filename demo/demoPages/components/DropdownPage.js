@@ -170,7 +170,7 @@ class DropdownPage extends React.Component {
             <DropdownItem disabled enabled="false" onClick={() => console.log('wut')} dropdownId="dropBtnIcons" selectValue="list-item-1" label="list item 1" type="button" />
             <DropdownItem enabled="true" dropdownId="dropBtnIcons" selectValue="list-item-3" label="list item 124" type="button" />
             <DropdownItem type="divider" />
-            <DropdownItem dropdownId="dropBtnIcons" selectValue="list-item-2" label="list item 2" type="link" url="www.google.com"/>
+            <DropdownItem enabled="true" dropdownId="dropBtnIcons" selectValue="list-item-2" label="list item 2" type="link" url="www.google.com"/>
           </Dropdown>
           <p className="code">
             {`<Dropdown
