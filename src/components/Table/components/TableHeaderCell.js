@@ -36,15 +36,33 @@ export default class TableHeaderCell extends Component {
     return this.props.iconName != null
   }
 
-  iconToggle = () => {
-    const { iconName } = this.state;
-    this.props.columnSort()
+  iconToggle = (event) => {
+    const { iconName } = this.isControlled() ? this.props : this.state;
+    const value = event.currentTarget.innerText + " " + event.currentTarget.title,
+      node = event.currentTarget.parentNode.parentNode.parentNode.parentNode,
+      span = document.createElement('div'),
+      nodeid = node.nextElementSibling.id;
 
-    if (iconName === 'sort-up-18') {
-      return this.setState({ iconName: 'sort-down-18' })
+    if (nodeid === 'allyAlert') {
+      node.nextSibling.remove();
     }
 
-    return this.setState({ iconName: 'sort-up-18' });
+    span.setAttribute('role', 'alert');
+    span.setAttribute('id', 'allyAlert');
+    span.style.position = 'absolute';
+    span.style.top = '-9999px';
+    span.style.left = '-9999px';
+    this.props.columnSort();
+
+    if (iconName === 'sort-up-18') {
+      span.innerHTML = event.currentTarget.innerText + " " + 'Sorted down';
+      node.parentNode.insertBefore(span, node.nextSibling);
+      return this.setState({ iconName: 'sort-down-18' })
+    } else if (iconName === 'sort-down-18') {
+      span.innerHTML = event.currentTarget.innerText + " " + 'Sorted Up';
+      node.parentNode.insertBefore(span, node.nextSibling);
+      return this.setState({ iconName: 'sort-up-18' });
+    }
   }
 
   render() {
@@ -59,7 +77,7 @@ export default class TableHeaderCell extends Component {
     const arialabel = ariaLabel
                   ? ariaLabel
                   : null;
-    const labelledby = labelledbyCellId 
+    const labelledby = labelledbyCellId
                       ? labelledbyCellId
                       : null;
 
@@ -97,7 +115,7 @@ export default class TableHeaderCell extends Component {
             : children
         }
         {
-          columnSort && 
+          columnSort &&
             <button type="button" title={
               iconName === 'sort-up-18'
               ? 'Sorted up'
@@ -131,6 +149,6 @@ function _selectAll() {
         trInputs.forEach((input) => {
           input.checked = thInput.checked;
         });
-    }   
+    }
   });
 }
