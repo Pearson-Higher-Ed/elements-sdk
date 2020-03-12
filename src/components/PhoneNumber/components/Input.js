@@ -1063,6 +1063,7 @@ export default class Input extends Component
 							type="image"
 							label="choose country code"
 							id={id + "-phoneNumber"}
+							btnImageAlt={this.state.country_code + ' flag'}
 							btnImage={menuImage}
 							btnImageHeight="10"
 							btnImageWidth="20">
