@@ -54,7 +54,8 @@
     "classnames": "^2.2.6",
     "input-format": "^0.1.15",
     "libphonenumber-js": "^0.4.42",
-    "npm": "^6.4.1"
+    "npm": "^6.4.1",
+    "tether": "^1.4.7"
   },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.5.6",

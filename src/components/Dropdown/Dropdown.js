@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import Tether from 'tether';
 import Button from '../Button';
 import Icon from '../Icon';
 
@@ -24,7 +25,7 @@ export default class Dropdown extends Component {
     btnHover: PropTypes.bool,
     btnOpen: PropTypes.bool,
     iconName: PropTypes.string,
-    menuArrow: PropTypes.bool
+    scrollParentId: PropTypes.string,
   };
 
   static defaultProps = {
@@ -32,13 +33,13 @@ export default class Dropdown extends Component {
     btnHover: false,
     btnOpen: false,
     iconName: 'drop-down-18',
-    menuArrow: false
   }
 
   constructor(props) {
     super(props)
 
     this.focusedItem = 0;
+    this.menuTether = null;
 
     this.state = {
       open: false,
@@ -47,7 +48,6 @@ export default class Dropdown extends Component {
       buttonFocus: true,
       btnImage: props.btnImage,
       width: window.innerWidth,
-      menuArrowPos: 'up'
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -55,50 +55,6 @@ export default class Dropdown extends Component {
     this.itemSelected = this.itemSelected.bind(this);
     this.clickListener = this.clickListener.bind(this);
     this.getSelectedIndex = this.getSelectedIndex.bind(this);
-    this.placeInBody = this.placeInBody.bind(this);
-  }
-
-  placement(dropdown) {
-    const anchor = dropdown.children[0];
-    // fetch by ID vs children
-    //const element = dropdown.children[1];
-    const element = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown")
-    // get window geometry - this is how jQuery does it
-    const elementRect = element.getBoundingClientRect();
-    const anchorRect = anchor.getBoundingClientRect();
-    // then we are past the right side and need to right justify
-    const touch_right = window.innerWidth < elementRect.right;
-    // we need to push up
-    const touch_bottom = elementRect.bottom > window.innerHeight;
-    // get how close button is from top
-    const top_tooclose = elementRect.top < elementRect.height;
-
-    if (touch_bottom) {
-      const topAdjust = this.props.menuArrow ? elementRect.height + 22 : elementRect.height + 4;
-
-      if (this.props.menuArrow) {
-        this.setState({menuArrowPos: 'down'});
-      }
-      element.style.top = `-${(topAdjust)}px`;
-
-    }
-
-    if (touch_right) {
-    	if (window.screen.width >= 768) {
-      		element.style.left = `-${elementRect.width - anchorRect.width}px`;
-      }
-    }
-  }
-
-  resetPlacement(dropdown) {
-    const element = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown");
-
-    if (this.props.menuArrow) {
-      this.setState({menuArrowPos: 'up'});
-    }
-
-    element.style.left = null;
-    element.style.top = null;
   }
 
   toggleDropdown() {
@@ -128,7 +84,6 @@ export default class Dropdown extends Component {
 
 
         if (this.state.open) {
-          this.placement(ReactDOM.findDOMNode(this));
           if(window.screen.width < 768){
             // hide children of body
             for(let key in document.body.children){
@@ -139,7 +94,6 @@ export default class Dropdown extends Component {
             }
           }
         } else {
-          this.resetPlacement(ReactDOM.findDOMNode(this));
           this.focusedItem = 0;
           if(window.screen.width < 768){
             // show children of body
@@ -161,7 +115,6 @@ export default class Dropdown extends Component {
     if(dropdown != null){
       const parentWrapper = dropdown.parentElement.parentElement
 
-      this.resetPlacement(ReactDOM.findDOMNode(this));
       this.focusedItem = 0;
 
       if(window.screen.width < 768){
@@ -409,16 +362,6 @@ export default class Dropdown extends Component {
     );
   }
 
-  insertArrow() {
-    const dispArrow = this.state.open ? {} : {display: 'none'};
-    return (
-      <div id={`${this.props.id}-arrow`} className="dropdown-menu-arrow" style={dispArrow}>
-        <div className={`dropdown-${this.state.menuArrowPos}-arrow-border`} />
-        <div className={`dropdown-${this.state.menuArrowPos}-arrow-filler`} />
-      </div>
-    );
-  }
-
   addMobileHeader() {
     if (window.screen.width < 768) {
       return (
@@ -471,86 +414,66 @@ export default class Dropdown extends Component {
   componentDidMount() {
     const selectedIndex = this.getSelectedIndex();
     document.addEventListener('click', this.clickListener);
-    // responsiveness events
-    window.addEventListener("orientationChange", function() {
-    this.placeInBody
 
-    }, false)
-    window.addEventListener("resize", this.placeInBody)
+    this.tetherMenu();
 
     if (selectedIndex >= 0 && this.props.children) {
       this.setState({
         selectedItemDOM: document.getElementById(this.props.id + '-' + this.props.children[selectedIndex].props.selectValue)
       });
     }
-
-    // If it's on mobile, place the dropdown as a child of the body
-    this.placeInBody()
   }
 
-  placeInBody() {
+  tetherMenu = () => {
+    const propId = this.props.id.replace(' ', '_');
+    const menuElement = document.getElementById(`${propId}-dropdown`);
+    const containerElement = document.getElementById(`${propId}-dropdown-container`);
 
-    var id = this.props.id.replace(" ", "_")+"-dropdown",
-        menu = document.getElementById(this.props.id.replace(" ", "_")+"-dropdown"),
-        fakeId = id+"--placeholder",
-        wrapperId = id+"-wrapper"
-    // don't manipulate DOM for tests
-    if(menu != null){
-      if(window.screen.width < 768){
-      	//if id exists put it inside
-      	if (document.getElementById(wrapperId)) {
-      		var divWrapper = document.getElementById(wrapperId),
-      			divContainer = divWrapper.firstChild,
-      			placeholder = document.createElement("div"),
-            	curParent = menu.parentElement
+    // don't manipulate DOM for tests...?
+    if (!menuElement) return;
 
-            placeholder.setAttribute("id", fakeId)
-	        placeholder.setAttribute("style", "display:none;")
+    this.menuTether = new Tether({
+      element: menuElement,
+      target: containerElement,
 
-	        // insert a placeholder
-	        curParent.insertBefore(placeholder, menu)
+      attachment: 'top right',
+      targetAttachment: 'bottom right',
 
-	        // put the new stuff on the DOM
-	        divContainer.appendChild(menu)
-	        menu.removeAttribute('style')
+      // optimizations: {
+      //   moveElement: false,
+      //   gpu: false,
+      // },
 
-      	} else {
-      		var divWrapper = document.createElement("div"),
-            	divContainer = document.createElement("div"),
-            	placeholder = document.createElement("div"),
-            	curParent = menu.parentElement
-	        placeholder.setAttribute("id", fakeId)
-	        placeholder.setAttribute("style", "display:none;")
-	        divWrapper.className = "dropdown-mobile-wrapper"
-	        divWrapper.setAttribute("id", wrapperId)
-	        divContainer.className = "dropdown-container"
+      constraints: [
+        {
+          to: 'scrollParent',
+          attachment: 'together none',
+        },
+        {
+          to: 'window',
+          attachment: 'together',
+        },
+      ]
+    })
+  }
 
-	        // insert a placeholder
-	        curParent.insertBefore(placeholder, menu)
+  componentDidUpdate(prevProps, prevState) {
 
-	        // put the new stuff on the DOM
-	        divContainer.appendChild(menu)
-	        divWrapper.appendChild(divContainer)
-	        document.body.appendChild(divWrapper)
-	        menu.removeAttribute('style')
-      	}
+    const scrollParent = document.getElementById(this.props.scrollParentId);
 
-
-      } else {
-        if(menu.parentElement.parentElement.parentElement.tagName === "BODY"){
-          var placeholder = document.getElementById(fakeId),
-              curParent = placeholder.parentElement
-          curParent.replaceChild(menu, placeholder)
-          menu.removeAttribute('style')
-          if(placeholder){
-            placeholder.remove()
-          }
-        }
-      }
+    // menu was opened... update menu position and disable scrolling
+    if (this.state.open && !prevState.open) {
+      this.menuTether && this.menuTether.position();
+      scrollParent && scrollParent.classList.add('stop-scrolling');
+      scrollParent && document.body.classList.add('stop-scrolling');
     }
-  }
 
-  componentDidUpdate() {
+    // menu was closed... re-enable scrolling
+    if (prevState.open && !this.state.open) {
+      scrollParent && scrollParent.classList.remove('stop-scrolling');
+      scrollParent && document.body.classList.remove('stop-scrolling');
+    }
+
     if (this.state.selectedItemDOM && this.props.scrollable) {
       // delay necessary so allow the list to appear before trying to scroll into view
       setTimeout(() => {
@@ -562,29 +485,35 @@ export default class Dropdown extends Component {
   componentWillUnmount() {
     // garbage cleanup
     document.removeEventListener('click', this.clickListener);
-    window.removeEventListener("orientationChange", this.placeInBody)
-    window.removeEventListener("resize", this.placeInBody)
+
+    // remove menu from DOM
+    const menuElement = document.getElementById(`${this.props.id.replace(' ', '_')}-dropdown`);
+    menuElement && menuElement.remove();
+    this.menuTether && this.menuTether.destroy();
+
+    // re-enable scrolling
+    const scrollParent = document.getElementById(this.props.scrollParentId);
+    scrollParent && document.body.classList.remove('stop-scrolling');
+    scrollParent && scrollParent.classList.remove('stop-scrolling');
   }
 
   render() {
-    const menuMarginTop = this.props.menuArrow ? '11px' : '2px';
 
     return (
-      <div className="dropdown-container" ref={(dom) => { this.container = dom; }}>
+      <div id={`${this.props.id.replace(' ', '_')}-dropdown-container`} className="dropdown-container" ref={(dom) => { this.container = dom; }}>
         {this.insertAnchor()}
-        {this.props.menuArrow && this.insertArrow()}
         <ul
           role="menu"
           id={`${this.props.id.replace(' ', '_')}-dropdown`}
           ref={(parent) => { this.list = parent; }}
-          className={this.state.open ? '' : 'dropdown-menu'}
-          style={{ marginTop: menuMarginTop }}
+          className={this.state.open ? 'dropdown-menu-open' : 'dropdown-menu-closed'}
           //aria-labelledby={`${this.props.id.replace(' ', '_')}-title`}
           onClick={this.itemSelected}
           onKeyDown={this.handleKeyDown}>
           {this.addMobileHeader()}
           {React.Children.map(this.props.children, child => React.isValidElement(child) && typeof child.type === 'function' ? React.cloneElement(child, {itemSelected: this.state.selectedValue}) : child)}
         </ul>
+
       </div>
     )
   }
