@@ -435,15 +435,8 @@ export default class Dropdown extends Component {
     this.menuTether = new Tether({
       element: menuElement,
       target: containerElement,
-
       attachment: 'top right',
       targetAttachment: 'bottom right',
-
-      // optimizations: {
-      //   moveElement: false,
-      //   gpu: false,
-      // },
-
       constraints: [
         {
           to: 'scrollParent',
