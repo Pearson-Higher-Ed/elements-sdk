@@ -440,7 +440,7 @@ export default class Dropdown extends Component {
       constraints: [
         {
           to: 'scrollParent',
-          attachment: 'together none',
+          attachment: 'together',
         },
         {
           to: 'window',
