@@ -6,14 +6,8 @@
   "scripts": {
     "start": "npm run serve",
     "serve": "NODE_ENV=development webpack-dev-server --hot",
-    "gh-pages": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/gh-pages.js",
     "build": "NODE_ENV=production webpack -p",
     "test": "jest --no-cache --coverage",
-    "gen-changelog": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/gen-changelog.js",
-    "version": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/version.js",
-    "ci": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/ci.js",
-    "release": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/release.js",
-    "verify": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/verify.js",
     "postpublish": "npm access public && echo 'Package scope set to public!'"
   },
   "jest": {
@@ -53,11 +47,9 @@
     "babel-runtime": "^6.26.0",
     "input-format": "^0.1.15",
     "libphonenumber-js": "^0.4.42",
-    "npm": "^6.14.4",
     "react-responsive-ui": "^0.10.44"
   },
   "devDependencies": {
-    "@pearson-components/npm-scripts": "^0.5.6",
     "autoprefixer": "^6.1.0",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
