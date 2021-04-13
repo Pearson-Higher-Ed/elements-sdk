@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'mixins';
+@import '../typography/_variables.scss';
 
 %btn {
   box-sizing     : border-box;
@@ -252,10 +253,10 @@
 }
 
 //===========TERTIARY=================================
-//Tertiary buttons are no longer supported as they too closely resemble disabled state. 
+//Tertiary buttons are no longer supported as they too closely resemble disabled state.
 //Classes are retained for backwards compatibility but have been restyled as default buttons.
 
-.pe-btn__tertiary, .pe-btn__tertiary--btn_large {    
+.pe-btn__tertiary, .pe-btn__tertiary--btn_large {
     @include pe-btn(
       $pe-btn-default-bg,
       $pe-btn-default-text,
@@ -319,7 +320,7 @@
   div[class$='--btn_small'], a[class$='--btn_small'] {
     line-height: 32px !important;
   }
-  
+
 //=== if input tag has pe-btn class change focus ====
   input[class^="pe-btn"] {
   	&:focus {
