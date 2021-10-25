@@ -220,7 +220,7 @@ export default class Input extends Component
 		flagComponent: FlagComponent,
 
 		// By default use the ones from `flag-icon-css` github repo.
-		flagsPath: 'https://lipis.github.io/flag-icon-css/flags/4x3/',
+		flagsPath: 'https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/',
 
 		// Default international icon (globe)
 		internationalIcon: (
@@ -1007,7 +1007,7 @@ export default class Input extends Component
 		}
 		= this.state
 
-		const imgBaseUrl = 'https://lipis.github.io/flag-icon-css/flags/4x3/';
+		const imgBaseUrl = 'https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/';
 		const phoneCodeLabel = country_select_is_shown ? 'rrui-input__intlCode--disabled' : 'rrui-input__intlCode';
 		const ariaDescribedbyInput =  id + 'phoneNumberInfo ' + id + 'phoneNumberError';
 		const selectLabelAria = selectAriaLabel ? selectAriaLabel + ' screen readers, skip to ' + labelText : 'Select country screen readers, skip to ' + labelText;
