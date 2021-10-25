@@ -231,14 +231,14 @@ class DropdownPage extends React.Component {
               type="image"
               label="image"
               id="image"
-              btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
+              btnImage="https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/us.svg"
               btnImageHeight="10"
               btnImageWidth="20"
               btnImageAlt="US flag">
-              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 1" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" imgHeight="10" imgWidth="20" selectValue="US" imgAlt="US flag" />
+              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 1" type="imageButton" imgUrl="https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/us.svg" imgHeight="10" imgWidth="20" selectValue="US" imgAlt="US flag" />
               <DropdownItem type="divider" />
-              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 2" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" imgAlt="UK flag" />
-              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" imgAlt="African flag" />
+              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 2" type="imageButton" imgUrl="https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" imgAlt="UK flag" />
+              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 3" type="imageButton" imgUrl="https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" imgAlt="African flag" />
             </Dropdown>
             <p className="code">
               {`<Dropdown
@@ -248,14 +248,14 @@ class DropdownPage extends React.Component {
               type="image"
               label="image"
               id="image"
-              btnImage="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg"
+              btnImage="https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/us.svg"
               btnImageHeight="10"
               btnImageWidth="20"
               btnImageAlt="US flag">
-              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 1" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" imgHeight="10" imgWidth="20" selectValue="US" imgAlt="US flag" />
+              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 1" type="imageButton" imgUrl="https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/us.svg" imgHeight="10" imgWidth="20" selectValue="US" imgAlt="US flag" />
               <DropdownItem type="divider" />
-              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 2" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" imgAlt="UK flag" />
-              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" imgAlt="African flag" />
+              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 2" type="imageButton" imgUrl="https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/gb.svg" imgHeight="10" imgWidth="20" selectValue="GB" imgAlt="UK flag" />
+              <DropdownItem checkmark selectedName="selected" dropdownId="dropImg" label="image item 3" type="imageButton" imgUrl="https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/af.svg" imgHeight="10" imgWidth="20" selectValue="AF" imgAlt="African flag" />
             </Dropdown>`}
             </p>
         </div>

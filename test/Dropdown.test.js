@@ -101,7 +101,7 @@ describe('Dropdown', () => {
           <DropdownItem selectedName="selected" label="list item 1" type="button" />
           <DropdownItem type="divider" />
           <DropdownItem label="list item 2" type="link" url="http://www.google.com" />
-          <DropdownItem label="list item 3" type="imageButton" imgUrl="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" />
+          <DropdownItem label="list item 3" type="imageButton" imgUrl="https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/us.svg" />
         </Dropdown>
       );
       const instance = mounted.instance();
