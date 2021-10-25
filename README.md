@@ -1,11 +1,14 @@
 [![Build Status](https://travis-ci.org/Pearson-Higher-Ed/elements-sdk.svg?branch=master)](https://travis-ci.org/Pearson-Higher-Ed/elements-sdk)
 
-# Pearson Elements-SDK
+# DEPRECATED - Pearson Elements-SDK
+(As of August 2021 we are no longer supporting this package.  Please do not include this in your projects.)
+
+
+
 
 The Pearson Elements-SDK library contains a number of UI/UX interface elements that allow developers to develop applications using a consistent look and feel.  Elements-SDK is split into two separate sets of functionality.  
 
-First are the CSS styles which allow the application to be developed according to the standards found at the [Pearson UI/UX design site](http://pearson-higher-ed.github.io/design/).  Any UI/UX piece which only requires styling can be found in the /src/styles directory.  This portion of the library is written exclusively in SASS and is transpiled at build time (either when Elements-SDK is built or when the SASS files are built by the consuming app).  
-
+First are the CSS styles which allow the application to be developed according to the standards found at the [Pearson UI/UX design site](http://pearson-higher-ed.github.io/design/).  Any UI/UX piece which only requires styling can be found in the /src/styles directory.  This portion of the library is written exclusively in SASS and is transpiled at build time (either when Elements-SDK is built or when the SASS files are built by the consuming app).
 Second, are the JavaScript components which bring behaviors and programmatic functionality to the elements.  This components are a mix of SASS/CSS styling and JavaScript functionality.  Any UI/UX piece which requires both styling and functionality can be found in the /src/components directory.  Components found in this directory need to be imported into the application from the built distribution file found in /build/dist.compounds.js
 
 The Pearson Elements-SDK is intended for developers to consume as much or as little as needed to get the job done.  
