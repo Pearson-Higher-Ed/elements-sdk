@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/Pearson-Higher-Ed/elements-sdk.svg?branch=master)](https://travis-ci.org/Pearson-Higher-Ed/elements-sdk)
 
 # DEPRECATED - Pearson Elements-SDK
-(As of August 2021 we are no longer supporting, maintaining, or updating this package.  Please do not include this in your projects.  If you are looking for an alternative you can try our [Web Component library]((https://ux.pearson.com/web-components/)) )
+(As of August 2021 we are no longer supporting, maintaining, or updating this package.  Please do not include this in your projects.  If you are looking for an alternative you can try our [Web Component library](https://ux.pearson.com/web-components/) )
 
 
 
