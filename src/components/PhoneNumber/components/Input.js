@@ -1012,7 +1012,7 @@ export default class Input extends Component
 		const ariaDescribedbyInput =  id + 'phoneNumberInfo ' + id + 'phoneNumberError';
 		const selectLabelAria = selectAriaLabel ? selectAriaLabel + ' screen readers, skip to ' + labelText : 'Select country screen readers, skip to ' + labelText;
 		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
-		const intFlagUrl = 'https://pearsonux.sfo2.digitaloceanspaces.com/flags/Flag_of_the_United_Nations.svg';
+		const intFlagUrl = 'https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/Flag_of_the_United_Nations.svg';
 		const menuImage = country_code === 'INT' || !country_code ? intFlagUrl : imgBaseUrl + country_code.toLowerCase() + '.svg'
 		let errorMsg = indicateInvalid && validNumber ? error : 'Invalid Number';
 		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
