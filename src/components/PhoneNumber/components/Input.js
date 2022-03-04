@@ -1009,7 +1009,7 @@ export default class Input extends Component
 
 		const imgBaseUrl = 'https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/';
 		const phoneCodeLabel = country_select_is_shown ? 'rrui-input__intlCode--disabled' : 'rrui-input__intlCode';
-		const ariaDescribedbyInput =  id + 'phoneNumberInfo ' + id + 'phoneNumberError';
+		const ariaDescribedbyInput =  id + 'phoneNumberError';
 		const selectLabelAria = selectAriaLabel ? selectAriaLabel + ' screen readers, skip to ' + labelText : 'Select country screen readers, skip to ' + labelText;
 		const fancyGroup = fancy ? 'rrui__buttonCodeGroup' : 'rrui__buttonCodeGroup-basic';
 		const intFlagUrl = 'https://pearsonux.sfo2.cdn.digitaloceanspaces.com/flags/Flag_of_the_United_Nations.svg';
@@ -1017,6 +1017,7 @@ export default class Input extends Component
 		let errorMsg = indicateInvalid && validNumber ? error : 'Invalid Number';
 		let underlineSpan = fancy ? (<span className='pe-input_underline'></span>) : '';
 		let useFancy = fancy ? 'pe-textInput rrui-input__padding' : 'pe-textInput--basic';
+		let conditionalAttributes = {};
 
 		errorMsg = inputDirty ? errorMsg : '';
 
@@ -1033,6 +1034,9 @@ export default class Input extends Component
 			inputStyle.marginTop = '0px';
 		}
 
+		if (errorMsg) {
+			conditionalAttributes['aria-describedby'] = ariaDescribedbyInput;
+		}
 
 		// `type="tel"` was reported to have issues with
 		// Samsung keyboards caret position on Android OS.
@@ -1103,7 +1107,7 @@ export default class Input extends Component
 								style={ inputStyle }
 								metadata={ metadata }
 								className={ useFancy }
-								aria-describedby={ ariaDescribedbyInput }
+								{ ...conditionalAttributes }
 								/>
 								{ underlineSpan }
 							</div>
